@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper,twoside]{article}
+\usepackage{graphicx,xcolor,textpos}
+\usepackage{helvet}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{relsize}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{physics}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{changepage}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\renewcommand{\d}{\text{d}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\e}{\mathlarger{e}}
+\newcommand{\defeq}{\vcentcolon=}
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+\title{1D SPT classification with translation symmetry}
+\author{Tijl Jappens}
+\date{\today}
+
+\newcommand{\UU}{\mathcal U}
+\newcommand{\KK}{\mathcal K}
+\newcommand{\BB}{\mathcal B}
+\newcommand{\PP}{\mathcal P}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\TT}{\mathbb T}
+\renewcommand{\AA}{\mathcal A}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\one}{\mathbbm{1}}
+
+\newcommand{\Ad}{\textrm{Ad}}
+
+\newcommand{\qe}{\underset{\text{q.e.}}{\sim}}
+
+\newcommand{\Mod}[1]{\mathrm{mod} #1}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+\begin{document}
+Take $\omega\PP(\AA)$ to be such that there exists an automorphism $\alpha\in\textrm{Aut}(\AA)$ of the form
+\begin{equation}
+	\alpha=\Ad(V)\circ\alpha_L\otimes\alpha_R\circ\Theta
+\end{equation}
+where $\Theta\in\textrm{Aut}(\AA_{(C_\theta\cup C_\theta')^c})$ is supported in the complement of the union of the (horizontally oriented cone) through the origin with angle $\theta$ and the cone that is shifted one site upwards (through site $(0,1)$), $\alpha_L\in\textrm{Aut}(\AA_L)$, $\alpha_R\in\textrm{Aut}(\AA_R)$ and $V\in\AA$.
+\bibliography{FSPT}{}
+\bibliographystyle{plain}
+\end{document}
