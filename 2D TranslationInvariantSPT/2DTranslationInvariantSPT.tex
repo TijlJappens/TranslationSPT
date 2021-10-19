@@ -90,16 +90,28 @@ We now have to define one more object
 \begin{lemma}
 	There exist $K_g^L\in\UU(\HH_L)$ and $K_g^R\in\UU(\HH_R)$ such that
 	\begin{equation}
-		v^\dagger W_g v W_g^\dagger=K_g^L\otimes K_g^R
+		v^\dagger W_g v W_g^\dagger=K_g^L\otimes K_g^R=K_g
 	\end{equation}
 	and they are unique (up to a phase). They satisfy the identity
 	\begin{equation}
-		\Ad{K^R_g}\circ\pi_0=\pi_0\circ \alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ\beta_g^{RU\:-1}\circ\eta_g^{R\:-1}\circ\alpha_0^{-1}.\quad\footnote{Observe in particular that $\Theta$ has cancelled out}
+		\Ad{K^R_g}\circ\pi_0=\pi_0\circ \alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_0^{-1}.\quad\footnote{Observe in particular that $\Theta$ has cancelled out}
 	\end{equation}
 \end{lemma}
 \begin{proof}
 	content...
 \end{proof}
+\begin{lemma}
+	Take $\gamma_{L/R}\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})^c\cap\AA_{L/R}}$ and take $\Gamma_{L/R}$ to be such that
+	\begin{equation}
+		\pi_{L/R}\circ\alpha_{L/R}\circ\gamma_{L/R}\circ\alpha_{L/R}^{-1}= \Ad{\Gamma_{L/R}}\circ\pi_{L/R}
+	\end{equation}
+	then
+	\begin{equation}
+		\Ad{W_g}(\Gamma_{L}\otimes\Gamma_{R})=\Ad{W_g}(\Gamma_L)\otimes\Ad{W_g}(\Gamma_{R})
+	\end{equation}
+	and moreover there exist $\tilde\gamma_{L/R}\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})^c\cap\AA_{L/R}}$ such that
+	
+\end{lemma}
 \begin{lemma}
 	The following identity holds:
 	\begin{equation}
@@ -108,7 +120,15 @@ We now have to define one more object
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	We first prove the result for the full tensor product:
+	\begin{align}
+		&\Ad{v^\dagger u_L(g,h)\otimes u_R(g,h) v}\circ\pi_0\\
+		&=\Ad{v^\dagger W_g W_h W_{gh}^{-1}v}\circ\pi_0\\
+		&=\Ad{K_g W_gK_h W_hK_{gh}^{-1}W_gW_hW_{gh}^{-1}}\circ\pi_0\\
+		&=\Ad{K_g\Ad{W_g}\left(K_h\Ad{W_h}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
+			R(g,h)}\circ\pi_0.
+	\end{align}
+	
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
