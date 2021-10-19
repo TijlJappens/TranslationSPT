@@ -46,7 +46,8 @@
 \newcommand{\NN}{\mathbb{N}}
 \newcommand{\one}{\mathbbm{1}}
 
-\newcommand{\Ad}{\textrm{Ad}}
+\newcommand{\Ad}[1]{\textrm{Ad}\left(#1\right)}
+\newcommand{\Aut}[1]{\textrm{Aut}\left(#1\right)}
 
 \newcommand{\qe}{\underset{\text{q.e.}}{\sim}}
 
@@ -60,14 +61,22 @@
 
 \numberwithin{equation}{section}
 \begin{document}
-Take $\omega\in\PP(\AA)$ to be such that there exists an automorphism $\alpha\in\textrm{Aut}(\AA)$ such that
+Take $\omega\in\PP(\AA)$ to be such that
 \begin{enumerate}
-	\item $\omega=\omega_0\circ\alpha.$
-	\item it is of the the form
+	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ such that
+	\begin{align}
+		\omega&=\omega_0\circ\alpha&\alpha&=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta
+	\end{align}
+	where $\Theta\in\Aut{\AA_{(C_\theta\cup C_\theta')^c}}$\footnote{By this I mean it is supported in the complement of the union of the horizontally oriented cone through the origin with angle $\theta$ and the cone that is shifted one site upwards (through site $(0,1)$)}, $\alpha_L\in\Aut{\AA_L}$, $\alpha_R\in\Aut{\AA_R}$ and $V_1\in\AA$.
+	\item there exists a map
 	\begin{equation}
-		\alpha=\Ad(V)\circ\alpha_L\otimes\alpha_R\circ\Theta
+		\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
 	\end{equation}
-	where $\Theta\in\textrm{Aut}(\AA_{(C_\theta\cup C_\theta')^c})$\footnote{By this I mean it is supported in the complement of the union of the horizontally oriented cone through the origin with angle $\theta$ and the cone that is shifted one site upwards (through site $(0,1)$)}, $\alpha_L\in\textrm{Aut}(\AA_L)$, $\alpha_R\in\textrm{Aut}(\AA_R)$ and $V\in\AA$.
+	satisfying
+	\begin{align}
+		\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_2}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
+	\end{align}
+	where $V_2\in\AA,\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}},\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$ and $$
 \end{enumerate}
 
 \bibliography{FSPT}{}
