@@ -101,34 +101,45 @@ We now have to define one more object
 	content...
 \end{proof}
 \begin{lemma}
-	Take $\gamma_{L/R}\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})^c\cap\AA_{L/R}}$ and take $\Gamma_{L/R}$ to be such that
+	Take $\gamma^{L/R}\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})\cap\AA_{L/R}}$ and take $\Gamma^{L/R}$ to be such that
 	\begin{equation}
-		\pi_{L/R}\circ\alpha_{L/R}\circ\gamma_{L/R}\circ\alpha_{L/R}^{-1}= \Ad{\Gamma_{L/R}}\circ\pi_{L/R}
+		\pi_{L/R}\circ\alpha_{L/R}\circ\gamma^{L/R}\circ\alpha_{L/R}^{-1}= \Ad{\Gamma^{L/R}}\circ\pi_{L/R}
 	\end{equation}
 	then
 	\begin{equation}
-		\Ad{W_g}(\Gamma_{L}\otimes\Gamma_{R})=\Ad{W_g}(\Gamma_L)\otimes\Ad{W_g}(\Gamma_{R})
+		\Ad{W_g}(\Gamma_{L}\otimes\Gamma_{R})=\Ad{W_g}(\Gamma_L)\otimes\Ad{W_g}(\Gamma_{R}).
 	\end{equation}
-	and moreover there exist $\tilde\gamma_{L/R}\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})^c\cap\AA_{L/R}}$ such that
-	
+	Moreover there exist $\tilde\gamma^{L/R}_g\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})\cap\AA_{L/R}}$ such that
+	\begin{equation}
+		\pi_{L/R}\circ\alpha_{L/R}\circ\tilde\gamma^{L/R}_g\circ\alpha_{L/R}^{-1}= \Ad{\Ad{W_g}(\Gamma^{L/R})}\circ\pi_{L/R}.
+	\end{equation}
 \end{lemma}
-\begin{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}\label{lem:AdjointOverConeIsInCone}
 	The following identity holds:
 	\begin{equation}
 		\Ad{K_g^R\Ad{W_g}\left(K_h^R\Ad{W_h}\left((K_{gh}^R)^\dagger\right)\right)u_
-		R(g,h)}\circ\pi_0=\Ad{v^\dagger u_R(g,h)v}\circ\pi_0.
+		R(g,h)}\circ\pi_R=\Ad{v^\dagger u_R(g,h)v}\circ\pi_R.
 	\end{equation}
 \end{lemma}
 \begin{proof}
 	We first prove the result for the full tensor product:
 	\begin{align}
-		&\Ad{v^\dagger u_L(g,h)\otimes u_R(g,h) v}\circ\pi_0\\
+		&=\Ad{v^\dagger u_L(g,h)v\otimes v^\dagger u_R(g,h) v}\circ\pi_0\\
+		&=\Ad{v^\dagger (u_L(g,h)\otimes u_R(g,h)) v}\circ\pi_0\\
 		&=\Ad{v^\dagger W_g W_h W_{gh}^{-1}v}\circ\pi_0\\
 		&=\Ad{K_g W_gK_h W_hK_{gh}^{-1}W_gW_hW_{gh}^{-1}}\circ\pi_0\\
 		&=\Ad{K_g\Ad{W_g}\left(K_h\Ad{W_h}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
 			R(g,h)}\circ\pi_0.
 	\end{align}
-	
+	Using lemma \ref{lem:AdjointOverConeIsInCone} we get that
+	\begin{align}
+		&(K_g^L\otimes K_g^R)\Ad{W_g}\left((K_h^L\otimes K_h^R)\Ad{W_h}\left((K_{gh}^L\otimes K_{gh}^R)^{-1}\right)\right)\\
+		&=K_g^L\Ad{W_g}\left(K_h^L\Ad{W_h}\left((K_{gh}^L)^{-1}\right)\right)\otimes K_g^R\Ad{W_g}\left(K_h^R\Ad{W_h}\left((K_{gh}^R)^{-1}\right)\right)
+	\end{align}
+	concluding the proof.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
