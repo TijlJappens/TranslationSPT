@@ -102,7 +102,7 @@ We now have to define one more object
 \begin{proof}
 	content...
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{lem:AdjointOverConeIsInCone}
 	Take $\gamma^{L/R}\in\Aut{(\AA_{C_\theta}\cup\AA_{C_\theta'})\cap\AA_{L/R}}$ and take $\Gamma^{L/R}$ to be such that
 	\begin{equation}
 		\pi_{L/R}\circ\alpha_{L/R}\circ\gamma^{L/R}\circ\alpha_{L/R}^{-1}= \Ad{\Gamma^{L/R}}\circ\pi_{L/R}
@@ -119,29 +119,39 @@ We now have to define one more object
 \begin{proof}
 	content...
 \end{proof}
-\begin{lemma}\label{lem:AdjointOverConeIsInCone}
-	The following identity holds:
-	\begin{equation}
-		\Ad{K_g^R\Ad{W_g}\left(K_h^R\Ad{W_h}\left((K_{gh}^R)^\dagger\right)\right)u_
-		R(g,h)}\circ\pi_R=\Ad{v^\dagger u_R(g,h)v}\circ\pi_R.
+\begin{lemma}\label{lem:Definition2Cochain}
+	There exists a $C:G^2\rightarrow U(1)$ such that
+	\begin{equation}\label{eq:Definition2Cochain}
+		K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_
+		R(g,h)=C(g,h)v^\dagger u_R(g,h)v
 	\end{equation}
+	for all $g,h\in G.$
 \end{lemma}
 \begin{proof}
-	We first prove the result for the full tensor product:
+	Since the GNS representation is irreducible this is equivalent to showing that the left and righthandside of equation \eqref{eq:Definition2Cochain} have the same adjoint action on the GNS representation. We first prove the result for the full tensor product:
 	\begin{align}
-		&=\Ad{v^\dagger u_L(g,h)v\otimes v^\dagger u_R(g,h) v}\circ\pi_0\\
+		&\Ad{v^\dagger u_L(g,h)v\otimes v^\dagger u_R(g,h) v}\circ\pi_0\\
 		&=\Ad{v^\dagger (u_L(g,h)\otimes u_R(g,h)) v}\circ\pi_0\\
 		&=\Ad{v^\dagger W_g W_h W_{gh}^{-1}v}\circ\pi_0\\
-		&=\Ad{K_g W_gK_h W_hK_{gh}^{-1}W_gW_hW_{gh}^{-1}}\circ\pi_0\\
-		&=\Ad{K_g\Ad{W_g}\left(K_h\Ad{W_h}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
+		&=\Ad{K_gW_g v^\dagger W_h W_{gh}^{-1}v}\circ\pi_0\\
+		&=\Ad{K_gW_g K_h W_h v^\dagger W_{gh}^{-1}v}\circ\pi_0\\
+		&=\Ad{K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger }\circ\pi_0\\
+		&=\Ad{K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger W_{gh}W_h^\dagger W_g^\dagger W_gW_hW_{gh}^\dagger}\circ\pi_0\\
+		&=\Ad{K_g\Ad{W_g}\left(K_h\Ad{W_hW_{gh}^\dagger}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
 			R(g,h)}\circ\pi_0.
 	\end{align}
 	Using lemma \ref{lem:AdjointOverConeIsInCone} we get that
 	\begin{align}
-		&(K_g^L\otimes K_g^R)\Ad{W_g}\left((K_h^L\otimes K_h^R)\Ad{W_h}\left((K_{gh}^L\otimes K_{gh}^R)^{-1}\right)\right)\\
-		&=K_g^L\Ad{W_g}\left(K_h^L\Ad{W_h}\left((K_{gh}^L)^{-1}\right)\right)\otimes K_g^R\Ad{W_g}\left(K_h^R\Ad{W_h}\left((K_{gh}^R)^{-1}\right)\right)
+		&(K_g^L\otimes K_g^R)\Ad{W_g}\left((K_h^L\otimes K_h^R)\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^L\otimes K_{gh}^R)^{-1}\right)\right)\\
+		&=K_g^L\Ad{W_g}\left(K_h^L\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^L)^\dagger\right)\right)\otimes K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)
 	\end{align}
 	concluding the proof.
+\end{proof}
+\begin{lemma}
+	The function $C$ as defined in lemma \ref{lem:Definition2Cochain} is a 2-cochain.
+\end{lemma}
+\begin{proof}
+	content...
 \end{proof}
 \section{Things we have to prove}
 
