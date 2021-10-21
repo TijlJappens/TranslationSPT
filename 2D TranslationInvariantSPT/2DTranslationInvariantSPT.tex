@@ -170,6 +170,23 @@ We now have to define one more object
 	\end{equation}
 	proving the result. Inserting substitution \eqref{eq:SubstitutionForProofCochain} into \eqref{eq:defintion3CochainProof2Cochain} gives
 	\begin{align}
+		&u_R(g,h)u_R(gh,k)u_R(g,hk)^\dagger\Ad{W_g}\left(u_R(h,k)^\dagger\right)\\
+		\rightarrow&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_
+		R(g,h)\\
+		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)u_
+		R(gh,k)\\
+		&u_R(g,hk)^\dagger \Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)(K^R_g)^\dagger\\
+		&\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right).
+	\end{align}
+	Using the fact that $W_gW_hW_{gh}^\dagger=u_L\otimes u_R(g,h)$ one now gets
+	\begin{align}
+		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger u_L(g,h)^\dagger\\
+		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right) W_{gh}W_kW_{ghk}^\dagger u_L(gh,k)^\dagger\\
+		&W_{ghk}W_{hk}^\dagger W_{g}^\dagger u_L(g,hk) \Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)(K^R_g)^\dagger\\
+		&\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right).
+	\end{align}
+	\clearpage
+	\begin{align}
 		&u_R(g,hk)^\dagger \Ad{W_g}(u_R(h,k)^\dagger)u_R(g,h)u_R(gh,k)\\
 		\rightarrow& u_R(g,hk)^\dagger \Ad{W_g}\left(\Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^\dagger\right)(K^R_g)^\dagger\\ &\Ad{K_gW_g}\left(u_R(h,k)^\dagger\Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}(K^R_{hk})(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)\\
 		&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_R(g,h)\\
@@ -179,7 +196,9 @@ We now have to define one more object
 	\begin{align}
 		&u_R(gh,k)u_R(g,hk)^\dagger\\
 		\rightarrow&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)u_R(gh,k)\\
-		&u_R(g,hk)^\dagger \Ad{W_g}\left(\Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^\dagger\right)(K^R_g)^\dagger
+		&u_R(g,hk)^\dagger \Ad{W_g}\left(\Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^\dagger\right)(K^R_g)^\dagger\\
+		=&K_{gh}^RW_{gh} K^R_kW_kW_{ghk}^\dagger(K^R_{ghk})^\dagger W_{ghk}W_k^\dagger W_{gh}^\dagger u_R(gh,k)\\
+		&u_R(g,hk)^\dagger W_gW_{hk}W_{ghk}^\dagger K^R_{ghk}W_{ghk}W_{hk}^\dagger(K^R_{hk})^\dagger W_g^\dagger(K^R_g)^\dagger
 	\end{align}
 	on the other hand we have
 	\begin{align}
