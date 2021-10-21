@@ -151,7 +151,30 @@ We now have to define one more object
 	The function $C$ as defined in lemma \ref{lem:Definition2Cochain} is a 2-cochain.
 \end{lemma}
 \begin{proof}
-	content...
+	Take lemma 2.4 from \cite{ogata2021h3gmathbb} there it is stated that there exists a 3-cochain $C'$ such that
+	\begin{equation}\label{eq:defintion3CochainProof2Cochain}
+		u_R(g,h)u_R(gh,k)u_R(g,hk)^\dagger\Ad{W_g}(u_R(h,k)^\dagger)=C'(g,h,k)\mathbbm{1}.
+	\end{equation}
+	It is clear that this 3-cochain is invariant under the substitution
+	\begin{align}
+		W_g&\rightarrow v^\dagger W_g v&u_R(g,h)&\rightarrow v^\dagger u_R(g,h)v.
+	\end{align}
+	If we now prove that it is also invariant under the substitution
+	\begin{align}\label{eq:SubstitutionForProofCochain}
+		W_g&\rightarrow K_g W_g&u_R(g,h)&\rightarrow K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_
+		R(g,h)
+	\end{align}
+	we have proved our result because using equation \eqref{eq:Definition2Cochain} we then get that
+	\begin{equation}
+		C'(g,h,k)=C(h,k)C(gh,k)^{-1}C(g,hk)C(g,h)^{-1}C'(g,h,k)
+	\end{equation}
+	proving the result. Inserting substitution \eqref{eq:SubstitutionForProofCochain} into \eqref{eq:defintion3CochainProof2Cochain} gives
+	\begin{align}
+		&u_R(g,hk)^\dagger \Ad{W_g}(u_R(h,k)^\dagger)u_R(g,h)u_R(gh,k)\\
+		\rightarrow& u_R(g,hk)^\dagger \Ad{W_g}\left(\Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^\dagger\right)(K^R_g)^\dagger\\ &\Ad{K_gW_g}\left(u_R(h,k)^\dagger\Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}(K^R_{hk})(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)\\
+		&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_R(g,h)\\
+		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)u_R(gh,k)
+	\end{align}
 \end{proof}
 \section{Things we have to prove}
 
