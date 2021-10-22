@@ -226,7 +226,16 @@ Our translation index is now defined as
 	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.
 \end{definition}
 \begin{proof}
-	content...
+	Clearly the construction is invariant under the choice of GNS triple. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
+	\begin{align}
+		u_L(g,h)&\rightarrow \alpha(g)\alpha(g)\alpha(gh)^{-1}\beta(g,h)^{-1} u_L(g,h)&u_R(g,h)&\rightarrow \beta(g,h)u_R(g,h)\\
+		W_g&\rightarrow\alpha(g)W_g&v&\rightarrow \gamma v.
+	\end{align}
+	Under the transformation
+	\begin{align}
+		K_g^L&\rightarrow \delta(g)^{-1}K_g^L&K_g^R&\rightarrow \delta(g)K_g^R
+	\end{align}
+	we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
 \end{proof}
 \section{The index is independent on the choices we made}
 \section{Things we have to prove}
