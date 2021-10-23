@@ -341,9 +341,20 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
 		u_{R,2}(g,h)&\defeq \delta_g^R W_g\delta_h^R W_g^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
-		K^R_{g,2}&\defeq v^\dagger (\delta_g^R)^\dagger v K_{g,1}^R \delta_g^R
+		K^R_{g,2}&\defeq v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger
 	\end{align}
-	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. We will now show that the index is invariant under this substitution. {\color{red}This I still have to do.}
+	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. We will now show that the index is invariant under this substitution. On the one hand we have
+	\begin{align}
+		v^\dagger u_{R,2}(g,h)v=v^\dagger\delta_g^R W_g\delta_h^R W_g^\dagger vv^\dagger u_{R,1}(g,h)vv^\dagger (\delta_{gh}^R)^\dagger v
+	\end{align}
+	on the other hand we have
+	\begin{align}
+		&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger W_{gh,2}W_{h,2}^\dagger W_{g,2}^\dagger u_{R,2}(g,h)\\
+		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger u_{L,2}(g,h)^\dagger\\
+		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger u_{L,2}(g,h)^\dagger (K_{gh,2}^R)^\dagger\\
+		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}\stkout{W_{h,2}W_{gh,2}^\dagger W_{gh,2}W_{h,2}^\dagger} W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger
+	\end{align}
+	 {\color{red}This I still have to do.}
 \end{proof}
 \section{Index is invariant under locally generated automorphisms}
 
