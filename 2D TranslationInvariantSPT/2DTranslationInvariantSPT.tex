@@ -244,7 +244,7 @@ Our translation index is now defined as
 \begin{definition}
 	Take $C$ to be the 2-cochain defined \ref{lem:Definition2Cochain} then we define the index as
 	\begin{equation}
-	\textrm{Index}(\theta,\eta_g,\alpha_0,\Theta,\omega_0)\defeq\expval{C}\in H^2(G,\TT)
+	\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{C}\in H^2(G,\TT)
 	\end{equation}
 	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.
 \end{definition}
@@ -263,17 +263,20 @@ Our translation index is now defined as
 \section{The index is independent on the choices we made}
 In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
-	The index is independent of the choice of $\alpha_0$ and $\Theta$.
-\end{lemma}
-\begin{proof}
 	Take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
 	\begin{align}
 		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
 	\end{align}
 	and satisfying
 	\begin{equation}
-		\omega_0\circ\alpha_1=\omega_0\circ\alpha_2=\omega.
+		\omega_0\circ\alpha_1=\omega_0\circ\alpha_2=\omega
 	\end{equation}
+	then
+	\begin{equation}
+		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_0)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_0).
+	\end{equation}
+\end{lemma}
+\begin{proof}
 	Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{w}\in\UU(\HH_0)$ such that
 	\begin{equation}
 		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{u}}\circ\pi_0.
@@ -297,6 +300,23 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 		\Ad{wK^R_{g,1}w^\dagger}\circ\pi_0=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
 	\end{equation}
 	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof.
+\end{proof}
+Now we show that the index is independent on the choice of $\eta_g$.
+\begin{lemma}
+	Take $\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{21},V_{22}\in\UU(\AA)$ satisfying
+	\begin{equation}
+		\tilde{\beta}_g=\Ad{V_{21}}\circ\eta_{g,1}\circ\beta^U_g=\Ad{V_{22}}\circ\eta_{g,2}\circ\beta^U_g
+	\end{equation}
+	then
+	\begin{equation}
+		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_{g,1},\alpha_{0},\Theta,\omega,\omega_0)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_{g,2},\alpha_{0},\Theta,\omega,\omega_0).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Take $\Delta_L\in\UU(\AA_L)$ and $\Delta_R\in\UU(\AA_L)$ to be such that
+	\begin{equation}
+		\Delta_L\otimes\Delta_R = \eta_{g,1}\circ(\eta_{g,2})^{-1}=\Ad{V_{21}^\dagger V_{22}}.
+	\end{equation}
 \end{proof}
 \section{Things we have to prove}
 
