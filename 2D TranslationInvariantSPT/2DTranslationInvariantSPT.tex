@@ -82,7 +82,7 @@ Take $\omega\in\PP(\AA)$ to be such that
 	\end{align}
 	where $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$.
 \end{enumerate}
-Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega)$ a GNS triple of $\omega_0$. Now use lemma 2.1 from Yoshiko Ogata \cite{ogata2021h3gmathbb} to define the objects $W_g$ and $u_\sigma(g,h)$ they will be the starting point for our definition. Now take $\tau\in\Aut{\AA}$ to be the automorphism that vertically translates every element of the $C^*$ algebra by one site upwards. We now define the translation action on the GNS space of $\omega_0$:
+Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$. Now use lemma 2.1 from Yoshiko Ogata \cite{ogata2021h3gmathbb} to define the objects $W_g$ and $u_\sigma(g,h)$ they will be the starting point for our definition. Now take $\tau\in\Aut{\AA}$ to be the automorphism that vertically translates every element of the $C^*$ algebra by one site upwards. We now define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{enumerate}
@@ -260,7 +260,7 @@ Our translation index is now defined as
 	\end{align}
 	we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
 \end{proof}
-\section{The index is independent on the choices we made}
+\section{The index is independent of the choices we made}
 In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
 	Take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
@@ -301,31 +301,51 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	\end{equation}
 	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof.
 \end{proof}
-Now we show that the index is independent on the choice of $\eta_g$.
+We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}
-	Take $\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
+	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
+	\begin{align}
+		\tilde{\beta}_{g,1}&=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g&\tilde{\beta}_{g,2}&=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
+	\end{align}
+	and
 	\begin{equation}
-		\tilde{\beta}_g=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
+		\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega
 	\end{equation}
 	then
 	\begin{equation}
-		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_{g,1},\alpha_{0},\Theta,\omega,\omega_0)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_{g,2},\alpha_{0},\Theta,\omega,\omega_0).
+		\textrm{Index}(\theta,\tilde{\beta}_{g,1},\eta_{g,1},\alpha_{0},\Theta,\omega,\omega_0)=\textrm{Index}(\theta,\tilde{\beta}_{g,2},\eta_{g,2},\alpha_{0},\Theta,\omega,\omega_0).
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Take $\Delta_{g}^L\in\UU(\AA_L)$ and $\Delta_g^R\in\UU(\AA_L)$ to be such that
+	Take 
 	\begin{equation}
-		\Delta_g^L\otimes\Delta_g^R = \eta_{g,1}\circ(\eta_{g,2})^{-1}=\Ad{V_{21}^\dagger V_{22}}.
+		\alpha=\Ad{V_1}\circ\alpha_{0}\circ\Theta
 	\end{equation}
-	Take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be the operators belonging to the first choice. Define
+	the usual decomposition. Since
+	\begin{equation}
+		\omega_0\circ\alpha\circ\tilde{\beta}_{g,1}\circ(\tilde{\beta}_{g,2})^{-1}=\omega_0\circ\alpha
+	\end{equation}
+	there exist $\tilde{\delta}_g\in\UU(\HH_0)$ such that
+	\begin{equation}
+		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\alpha=\pi_0\circ\alpha\circ\tilde{\beta}_{g,2}(\tilde{\beta}_{g,1})^{-1}.
+	\end{equation}
+	After a few calculations {\color{red}I still have to write these out} one gets that
+	\begin{equation}
+		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
+	\end{equation}
+	Since the last equation is split we can take $\delta_g^L\in\UU(\HH_L)$ and $\delta_g^R\in\UU(\HH_R)$ such that
+	\begin{equation}
+		\delta_g^L\otimes\delta_g^R=\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
+	\end{equation}
+	Take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be the operators belonging to the first choice (with arbitrary phases). Define
 	\begin{align}
-		W_{g,2}&\defeq \pi_0\circ\alpha_0(\Delta)W_{g,1}\\
-		u_{R,2}(g,h)&\defeq\pi_0\circ\alpha_0(\Delta_g^R\cdot \eta_g^R\circ\beta_g^{RU}(\Delta^R_h))u_{R,1}(g,h)\pi_0\circ\alpha_0(\Delta^R_{gh})^\dagger\\
-		K^R_{g,2}&\defeq v^\dagger \pi_0\circ\alpha_0(\Delta^R_g)^\dagger v\cdot K^R_{g,1}\cdot\pi_0\circ\alpha_0(\Delta^R_g)
+		W_{g,2}&\defeq\delta_g W_{g,1}\\
+		u_{R,2}(g,h)&\defeq \delta_g^R W_g\delta_h^R W_g^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
+		K^R_{g,2}&\defeq v^\dagger (\delta_g^R)^\dagger v K_{g,1}^R \delta_g^R
 	\end{align}
-	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. We will now show that the index is invariant under this substitution. {\color{red}this I still have to do}
+	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. We will now show that the index is invariant under this substitution. {\color{red}This I still have to do.}
 \end{proof}
-\section{Things we have to prove}
+\section{Index is invariant under locally generated automorphisms}
 
 \bibliography{TSPT}
 \bibliographystyle{plain}
