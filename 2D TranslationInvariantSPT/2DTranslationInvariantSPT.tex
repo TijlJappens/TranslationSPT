@@ -258,6 +258,33 @@ Our translation index is now defined as
 	we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
 \end{proof}
 \section{The index is independent on the choices we made}
+In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
+\begin{lemma}
+	The index is independent of the choice of $\alpha_0$ and $\Theta$.
+\end{lemma}
+\begin{proof}
+	Take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
+	\begin{align}
+		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
+	\end{align}
+	and satisfying
+	\begin{equation}
+		\omega_0\circ\alpha_1=\omega_0\circ\alpha_2=\omega.
+	\end{equation}
+	Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{u}\in\UU(\HH_0)$ such that
+	\begin{equation}
+		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{u}}\circ\pi_0.
+	\end{equation}
+	Now define $u\in\UU(\HH_0)$ to be
+	\begin{equation}
+		u\defeq \pi_0(V_{11})\tilde{u} \pi_0(V_{11}^\dagger)
+	\end{equation}
+	then
+	\begin{equation}
+		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{u}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
+	\end{equation}
+	Now take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be such that
+\end{proof}
 \section{Things we have to prove}
 
 \bibliography{TSPT}
