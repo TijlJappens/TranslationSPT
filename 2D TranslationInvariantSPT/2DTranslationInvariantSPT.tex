@@ -90,6 +90,9 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega)$ a GNS triple of 
 		\item $\pi_0(V_1)v\pi_0(V_1^\dagger)\Omega_0=\Omega_0.$
 	\end{enumerate}
 \end{lemma}
+\begin{proof}
+	This is very straightforward.
+\end{proof}
 \section{Definition of the index}
 We now have to define one more object
 \begin{lemma}
@@ -271,19 +274,29 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	\begin{equation}
 		\omega_0\circ\alpha_1=\omega_0\circ\alpha_2=\omega.
 	\end{equation}
-	Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{u}\in\UU(\HH_0)$ such that
+	Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{w}\in\UU(\HH_0)$ such that
 	\begin{equation}
 		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{u}}\circ\pi_0.
 	\end{equation}
-	Now define $u\in\UU(\HH_0)$ to be
+	Now define $w\in\UU(\HH_0)$ to be
 	\begin{equation}
-		u\defeq \pi_0(V_{11})\tilde{u} \pi_0(V_{11}^\dagger)
+		w\defeq \pi_0(V_{11})\tilde{w} \pi_0(V_{11}^\dagger)
 	\end{equation}
 	then
 	\begin{equation}
-		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{u}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
+		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{w}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
 	\end{equation}
-	Now take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be such that
+	Now take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be the operators belonging to the first choice (with arbitrary phases). 
+	We have (see \cite{ogata2021h3gmathbb} lemma 2.11)
+	\begin{align}
+		\Ad{wW_{g,1}w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\Theta_2\circ\eta_g\circ\beta_g^U\circ\Theta_2^{-1}\circ\alpha_{02}^{-1},\\
+		\Ad{wu_{R,1}(g,h)w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\eta_g^R\circ\beta_g^{RU}\eta_h^R\beta_{h}^{RU}(\beta_{gh}^{RU})^{-1}(\eta_{gh}^R)^{-1}\circ\alpha_{02}^{-1}
+	\end{align}
+	and through similar arguments we get
+	\begin{equation}
+		\Ad{wK^R_{g,1}w^\dagger}\circ\pi_0=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
+	\end{equation}
+	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof.
 \end{proof}
 \section{Things we have to prove}
 
