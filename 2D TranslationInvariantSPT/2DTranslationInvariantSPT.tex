@@ -266,21 +266,21 @@ Our translation index is now defined as
 \section{The index is independent of the choices we made}
 In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
-	Take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
+	Take $\omega_{01},\omega_{02}\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
 	\begin{align}
 		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
 	\end{align}
 	and satisfying
 	\begin{equation}
-		\omega_0\circ\alpha_1=\omega_0\circ\alpha_2=\omega
+		\omega_{01}\circ\alpha_1=\omega_{02}\circ\alpha_2=\omega
 	\end{equation}
 	then
 	\begin{equation}
-		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_0)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_0).
+		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{w}\in\UU(\HH_0)$ such that
+	We will first prove the result in the case that $\omega_0=\omega_{01}=\omega_{02}$ and then generalise this result. Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{w}\in\UU(\HH_0)$ such that
 	\begin{equation}
 		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{u}}\circ\pi_0.
 	\end{equation}
@@ -302,7 +302,11 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	\begin{equation}
 		\Ad{wK^R_{g,1}w^\dagger}\circ\pi_0=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
 	\end{equation}
-	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof.
+	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof when $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma_R$. We now have
+	\begin{equation}
+		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
+	\end{equation}
+	concluding the proof.
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}
@@ -377,7 +381,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{align}
 	concluding the proof.
 \end{proof}
-Due to all these considerations we will write the index as $\textrm{index}(\omega,\omega_0)$ from here on onward.
+Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
 \section{Index is invariant under locally generated automorphisms}
 
 \bibliography{TSPT}
