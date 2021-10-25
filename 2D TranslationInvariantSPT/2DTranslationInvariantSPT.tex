@@ -65,7 +65,7 @@
 \numberwithin{equation}{section}
 \begin{document}
 \section{Setup and definitions}
-Take $\omega\in\PP(\AA)$ to be such that $\forall \theta\in[0,\pi/2]:$
+Take $\omega\in\PP(\AA)$ to be such that $\forall \theta\in]0,\pi/2[:$
 \begin{enumerate}
 	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ such that
 	\begin{align}
@@ -383,7 +383,28 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{proof}
 Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
 \section{Index is invariant under locally generated automorphisms}
-
+To make this section work it seems we need a slightly stronger condition then what we needed to define the index. We will now require that $\omega\in\PP(\AA)$ be such that $\forall\theta_1,\theta_2: 0<\theta_1<\theta_2<\pi/2$ we have that:
+\begin{enumerate}
+	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ such that
+	\begin{align}
+	\omega&=\omega_0\circ\alpha&\alpha&=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta
+	\end{align}
+	where $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$, $\alpha_L\in\Aut{\AA_L}$, $\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\omega_0\in\PP(\AA)$ satisfies the split property.
+	\item there exists a map
+	\begin{equation}
+	\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
+	\end{equation}
+	satisfying
+	\begin{align}
+	\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_2}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
+	\end{align}
+	where $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_{\theta_1}}}$.
+\end{enumerate}
+Take $H:I\subset \ZZ^2\mapsto H(I)\in\AA_I\subset\AA_{\text{loc}}$ to be an interaction such that
+\begin{align}
+\beta_g(H(I))&=H(I)&\tau(H(I))&=H(I')
+\end{align}
+where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ to be the locally generated automorphism generated from this interaction.
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
