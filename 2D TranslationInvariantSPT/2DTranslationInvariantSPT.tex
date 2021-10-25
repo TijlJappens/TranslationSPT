@@ -402,9 +402,35 @@ To make this section work it seems we need a slightly stronger condition then wh
 \end{enumerate}
 Take $H:I\subset \ZZ^2\mapsto H(I)\in\AA_I\subset\AA_{\text{loc}}$ to be an interaction such that
 \begin{align}
-\beta_g(H(I))&=H(I)&\tau(H(I))&=H(I') 
+\beta_g(H(I))&=H(I)&\tau(H(I))&=H(I')
 \end{align}
-where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ to be the locally generated automorphism generated from this interaction.
+where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ to be the locally generated automorphism generated from this interaction. We will first need a lemma of the form
+\begin{lemma}
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all
+	\begin{enumerate}
+		\item $\Theta_1\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and a $\Theta_2\in\Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$ such that
+		\begin{equation}
+		\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}(s)\circ\Theta_1\circ\gamma_H(s)=\Ad{a_1}\circ\Theta_2.
+		\end{equation}
+		\item $\eta_{g,1}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cup\AA_{L/R}}$ there exists an $a_2\in\UU(\AA)$ and some $\eta_{g,2}^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cup\AA_{L/R}}$ such that
+		\begin{equation}
+		\gamma_H^{-1}(s)\circ\eta_{g,1}^L\otimes\eta_{g,1}^R\circ\gamma_H(s)=\Ad{a_2}\circ \eta_{g,2}^L\otimes\eta_{g,2}^R.
+		\end{equation}
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	This looks like it has a standard Lieb-Robinson type argument.
+\end{proof}
+Another lemma that will be necessary:
+\begin{lemma}
+	Take $\theta\in]0,\pi/2[$ then there exists an $a\in\UU(\AA)$ and some $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
+	\begin{equation}
+	\gamma_H^{-1}(s)\circ\beta_g^U\circ\gamma_H\circ(\beta_g^U)^{-1}=\Ad{a}\circ\eta^L_g\otimes\eta^R_g.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	This also looks like it has a standard Lieb-Robinson type argument.
+\end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
