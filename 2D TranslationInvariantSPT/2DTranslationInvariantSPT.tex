@@ -65,14 +65,17 @@
 \numberwithin{equation}{section}
 \begin{document}
 \section{Setup and definitions}
-Take $\omega\in\PP(\AA)$ to be such that $\forall \theta\in]0,\pi/2[:$
+Take $\omega\in\PP(\AA)$ to be such that
 \begin{enumerate}
-	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ such that
+	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ satisfying
 	\begin{align}
-		\omega&=\omega_0\circ\alpha&\alpha&=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta
+		\omega=\omega_0\circ\alpha
 	\end{align}
-	where $\Theta\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$\footnote{By this I mean it is supported in the complement of the union of the horizontally oriented cone through the origin with angle $\theta$ and the cone that is shifted one site upwards (through site $(0,1)$)}, $\alpha_L\in\Aut{\AA_L}$, $\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\omega_0\in\PP(\AA)$ satisfies the split property.
-	\item there exists a map
+	 such that $\forall \theta\in]0,\pi/2[:\exists \Theta\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$\footnote{By this I mean it is supported in the complement of the union of the horizontally oriented cone through the origin with angle $\theta$ and the cone that is shifted one site upwards (through site $(0,1)$)}, $\alpha_L\in\Aut{\AA_L}$, $\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\omega_0\in\PP(\AA)$ a product state such that
+	 \begin{equation}
+	 \alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+	 \end{equation}
+	\item $\forall \theta\in]0,\pi/2[$ there exists a map
 	\begin{equation}
 		\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
 	\end{equation}
@@ -405,7 +408,7 @@ Take $H:I\subset \ZZ^2\mapsto H(I)\in\AA_I\subset\AA_{\text{loc}}$ to be an inte
 \beta_g(H(I))&=H(I)&\tau(H(I))&=H(I')
 \end{align}
 where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ to be the locally generated automorphism generated from this interaction. We will first need a lemma of the form
-\begin{lemma}
+\begin{lemma}\label{lem:TwoAngleLemma}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all
 	\begin{enumerate}
 		\item $\Theta_1\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and a $\Theta_2\in\Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$ such that
@@ -422,7 +425,7 @@ where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ 
 	This looks like it has a standard Lieb-Robinson type argument.
 \end{proof}
 Another lemma that will be necessary:
-\begin{lemma}
+\begin{lemma}\label{lem:GroupActionInCone}
 	Take $\theta\in]0,\pi/2[$ then there exists an $a\in\UU(\AA)$ and some $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
 	\begin{equation}
 	\gamma_H^{-1}(s)\circ\beta_g^U\circ\gamma_H\circ(\beta_g^U)^{-1}=\Ad{a}\circ\eta^L_g\otimes\eta^R_g.
@@ -430,6 +433,12 @@ Another lemma that will be necessary:
 \end{lemma}
 \begin{proof}
 	This also looks like it has a standard Lieb-Robinson type argument.
+\end{proof}
+\begin{theorem}
+	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma_H(s))$
+\end{theorem}
+\begin{proof}
+	Take Combining lemma \ref{lem:TwoAngleLemma} part 2 with lemma \ref{lem:GroupActionInCone} we get that there exist some $\hat{\eta}^{L/R}_g\in\Aut{\AA}$
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
