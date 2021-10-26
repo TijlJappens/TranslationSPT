@@ -51,6 +51,7 @@
 
 \newcommand{\Ad}[1]{\textrm{Ad}\left(#1\right)}
 \newcommand{\Aut}[1]{\textrm{Aut}\left(#1\right)}
+\newcommand{\QAut}[1]{\textrm{QAut}\left(#1\right)}
 
 \newcommand{\qe}{\underset{\text{q.e.}}{\sim}}
 
@@ -65,16 +66,19 @@
 \numberwithin{equation}{section}
 \begin{document}
 \section{Setup and definitions}
-Take $\omega\in\PP(\AA)$ to be such that
+The following class of automorphisms will be used to define the class of states considered in this paper.
+\begin{definition}
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{(\AA_{C_\theta} \cup \tau(\AA_{C_\theta}))^c}$ such that
+	\begin{equation}
+	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+	\end{equation}
+\end{definition}
+We will use this class of automorphisms to define the states for which we can define the index. Take $\omega\in\PP(\AA)$ to be such that
 \begin{enumerate}
-	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ satisfying
+	\item  there exists an automorphism $\alpha\in\QAut{\AA}$ satisfying
 	\begin{align}
-		\omega=\omega_0\circ\alpha
+		\omega=\omega_0\circ\alpha.
 	\end{align}
-	 such that $\forall \theta\in]0,\pi/2[:\exists \Theta\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$\footnote{By this I mean it is supported in the complement of the union of the horizontally oriented cone through the origin with angle $\theta$ and the cone that is shifted one site upwards (through site $(0,1)$)}, $\alpha_L\in\Aut{\AA_L}$, $\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\omega_0\in\PP(\AA)$ a product state such that
-	 \begin{equation}
-	 \alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
-	 \end{equation}
 	\item $\forall \theta\in]0,\pi/2[$ there exists a map
 	\begin{equation}
 		\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
@@ -384,25 +388,14 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{align}
 	concluding the proof.
 \end{proof}
+\begin{lemma}
+	The index is independent of the choice of angle $\theta$.
+\end{lemma}
+\begin{proof}
+	After what we've shown so far this proof is trivial.
+\end{proof}
 Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
 \section{Index is invariant under locally generated automorphisms}
-To make this section work it seems we need a slightly stronger condition then what we needed to define the index. We will now require that $\omega\in\PP(\AA)$ be such that $\forall\theta_1,\theta_2: 0<\theta_1<\theta_2<\pi/2$ we have that:
-\begin{enumerate}
-	\item  there exists an automorphism $\alpha\in\Aut{\AA}$ such that
-	\begin{align}
-	\omega&=\omega_0\circ\alpha&\alpha&=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta
-	\end{align}
-	where $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$, $\alpha_L\in\Aut{\AA_L}$, $\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\omega_0\in\PP(\AA)$ satisfies the split property.
-	\item there exists a map
-	\begin{equation}
-	\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
-	\end{equation}
-	satisfying
-	\begin{align}
-	\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_2}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
-	\end{align}
-	where $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_{\theta_1}}}$.
-\end{enumerate}
 Take $H:I\subset \ZZ^2\mapsto H(I)\in\AA_I\subset\AA_{\text{loc}}$ to be an interaction such that
 \begin{align}
 \beta_g(H(I))&=H(I)&\tau(H(I))&=H(I')
@@ -438,7 +431,10 @@ Another lemma that will be necessary:
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma_H(s))$
 \end{theorem}
 \begin{proof}
-	Take Combining lemma \ref{lem:TwoAngleLemma} part 2 with lemma \ref{lem:GroupActionInCone} we get that there exist some $\hat{\eta}^{L/R}_g\in\Aut{\AA}$
+	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\left(\AA_{C_{\theta_3}} \cup \tau(\AA_{C_{\theta_3}})\right)^c}$ such that
+	\begin{equation}
+	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+	\end{equation}  Combining lemma \ref{lem:TwoAngleLemma} part 2 with lemma \ref{lem:GroupActionInCone} we get that there exist some $\hat{\eta}^{L/R}_g\in\Aut{\AA}$
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
