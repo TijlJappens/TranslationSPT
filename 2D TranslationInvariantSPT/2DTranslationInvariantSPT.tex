@@ -89,7 +89,19 @@ We will use this class of automorphisms to define the states for which we can de
 	\end{align}
 	where $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$.
 \end{enumerate}
-Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$. Now use lemma 2.1 from Yoshiko Ogata \cite{ogata2021h3gmathbb} to define the objects $W_g$ and $u_\sigma(g,h)$ they will be the starting point for our definition. Now take $\tau\in\Aut{\AA}$ to be the automorphism that vertically translates every element of the $C^*$ algebra by one site upwards. We now define the translation action on the GNS space of $\omega_0$:
+Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$. Following Yoshiko Ogata \cite{ogata2021h3gmathbb} we now define objects using the following lemma:
+\begin{lemma}\label{lem:Definition_W_And_u}
+	There unitaries $W_g\in\UU(\HH_0)$ and $u_{\sigma}(g,h)\in\UU(\HH_{\sigma})$ for all $g,h\in G$ and for all $\sigma\in\{L,R\}$ satisfying
+	\begin{align}
+		\Ad{W_g}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		\Ad{u_\sigma(g,h)}\circ\pi_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma R}\circ\eta_h^{\sigma U}\circ(\beta_g^{\sigma R})^{-1}\circ(\eta^\sigma_{gh})^{-1}\circ\alpha_\sigma\\
+		u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	See \cite{ogata2021h3gmathbb}.
+\end{proof}
+These objects will be the starting point for our definition. Now take $\tau\in\Aut{\AA}$ to be the automorphism that vertically translates every element of the $C^*$ algebra by one site upwards. We now define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{enumerate}
@@ -102,7 +114,7 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 \end{proof}
 \section{Definition of the index}
 We now have to define one more object
-\begin{lemma}
+\begin{lemma}\label{lem:Definition_K}
 	There exist $K_g^L\in\UU(\HH_L)$ and $K_g^R\in\UU(\HH_R)$ such that
 	\begin{equation}
 		v^\dagger W_g v W_g^\dagger=K_g^L\otimes K_g^R=K_g
@@ -228,7 +240,10 @@ We now have to define one more object
 		\nonumber
 		&W_{gh}W_h^\dagger W_g^\dagger u_R(g,h) u_R(gh,k)u_R(g,hk)^\dagger\Ad{W_g}\left(u_R(h,k)^\dagger\right)\\
 		\nonumber
-		&\Ad{W_g}\left(\Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger\\
+		&\Ad{W_g}\left(\Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger
+	\end{align}
+	Filling in the equation for the 3-cochain (equation \eqref{eq:defintion3CochainProof2Cochain}) now gives
+	\begin{align}
 		=&C'(g,h,k)K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger \\
 		\nonumber
 		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)\\
@@ -400,17 +415,17 @@ Take $H:I\subset \ZZ^2\mapsto H(I)\in\AA_I\subset\AA_{\text{loc}}$ to be an inte
 \begin{align}
 \beta_g(H(I))&=H(I)&\tau(H(I))&=H(I')
 \end{align}
-where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ to be the locally generated automorphism generated from this interaction. We will first need a lemma of the form
+where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ to be the locally generated automorphism generated from this interaction. We will denote by $\gamma_H\defeq \gamma_H(1)$. We will first need a lemma of the form
 \begin{lemma}\label{lem:TwoAngleLemma}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all
 	\begin{enumerate}
 		\item $\Theta_1\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and a $\Theta_2\in\Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$ such that
 		\begin{equation}
-		\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}(s)\circ\Theta_1\circ\gamma_H(s)=\Ad{a_1}\circ\Theta_2.
+		\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}\circ\Theta_1\circ\gamma_H=\Ad{a_1}\circ\Theta_2.
 		\end{equation}
 		\item $\eta_{g,1}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cup\AA_{L/R}}$ there exists an $a_2\in\UU(\AA)$ and some $\eta_{g,2}^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cup\AA_{L/R}}$ such that
 		\begin{equation}
-		\gamma_H^{-1}(s)\circ\eta_{g,1}^L\otimes\eta_{g,1}^R\circ\gamma_H(s)=\Ad{a_2}\circ \eta_{g,2}^L\otimes\eta_{g,2}^R.
+		\gamma_H^{-1}\circ\eta_{g,1}^L\otimes\eta_{g,1}^R\circ\gamma_H=\Ad{a_2}\circ \eta_{g,2}^L\otimes\eta_{g,2}^R.
 		\end{equation}
 	\end{enumerate}
 \end{lemma}
@@ -421,20 +436,33 @@ Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
 	Take $\theta\in]0,\pi/2[$ then there exists an $a\in\UU(\AA)$ and some $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
 	\begin{equation}
-	\gamma_H^{-1}(s)\circ\beta_g^U\circ\gamma_H\circ(\beta_g^U)^{-1}=\Ad{a}\circ\eta^L_g\otimes\eta^R_g.
+	\gamma_H^{-1}\circ\beta_g^U\circ\gamma_H\circ(\beta_g^U)^{-1}=\Ad{a}\circ\eta^L_g\otimes\eta^R_g.
 	\end{equation}
 \end{lemma}
 \begin{proof}
 	This also looks like it has a standard Lieb-Robinson type argument.
 \end{proof}
 \begin{theorem}
-	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma_H(s))$
+	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma_H)$
 \end{theorem}
 \begin{proof}
 	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\left(\AA_{C_{\theta_3}} \cup \tau(\AA_{C_{\theta_3}})\right)^c}$ such that
 	\begin{equation}
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
-	\end{equation}  Combining lemma \ref{lem:TwoAngleLemma} part 2 with lemma \ref{lem:GroupActionInCone} we get that there exist some $\hat{\eta}^{L/R}_g\in\Aut{\AA}$
+	\end{equation}
+	Take $\tilde{\beta}_g$ such that $\omega\circ\tilde{\beta}_g=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ satisfying
+	\begin{equation}
+		\tilde{\beta}_g=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
+	\end{equation}
+	Take $W_g,u_{L/R}(g,h)$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma_H$ satisfies $\omega\circ\gamma_H=\omega_0\circ\alpha\circ\gamma_H$. We also have that $\alpha\circ\gamma_H\in\QAut{\AA}$. To show this notice that
+	\begin{equation}
+		\alpha\circ\gamma_H=\Ad{V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}\circ\Theta\circ\gamma_H.
+	\end{equation}
+	Because of lemma \ref{lem:TwoAngleLemma} there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and a $\tilde V_1\in\UU(\AA)$ such that
+	\begin{equation}
+		\alpha\circ\gamma_H=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta.
+	\end{equation}
+	Combining lemma \ref{lem:TwoAngleLemma} part 2 with lemma \ref{lem:GroupActionInCone} we get that there exist some $\hat{\eta}^{L/R}_g\in\Aut{\AA}$
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
