@@ -304,7 +304,7 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 \begin{proof}
 	We will first prove the result in the case that $\omega_0=\omega_{01}=\omega_{02}$ and then generalise this result. Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{w}\in\UU(\HH_0)$ such that
 	\begin{equation}
-		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{u}}\circ\pi_0.
+		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{w}}\circ\pi_0.
 	\end{equation}
 	Now define $w\in\UU(\HH_0)$ to be
 	\begin{equation}
@@ -321,10 +321,11 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 		\Ad{wu_{R,1}(g,h)w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\eta_g^R\circ\beta_g^{RU}\eta_h^R\beta_{h}^{RU}(\beta_{gh}^{RU})^{-1}(\eta_{gh}^R)^{-1}\circ\alpha_{02}^{-1}
 	\end{align}
 	and through similar arguments we get
-	\begin{equation}
-		\Ad{wK^R_{g,1}w^\dagger}\circ\pi_0=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
-	\end{equation}
-	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof when $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma_R$. We now have
+	\begin{align}
+		\Ad{wvw^\dagger}\circ\pi_0&=\pi_0\circ\alpha_{02}\circ\Theta_2\circ\tau\circ\Theta_2^{-1}\circ\alpha_{02}^{-1}\\
+		\Ad{wK^R_{g,1}w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
+	\end{align}
+	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice (with our new translation operator). Since our index is invariant under this substitution this concludes the proof when $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
 	\begin{equation}
 		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
 	\end{equation}
@@ -364,7 +365,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{equation}
 	Since the last equation is split we can take $\delta_g^L\in\UU(\HH_L)$ and $\delta_g^R\in\UU(\HH_R)$ such that
 	\begin{equation}
-		\delta_g^L\otimes\delta_g^R=\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
+		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
 	\end{equation}
 	Take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be the operators belonging to the first choice (with arbitrary phases). Define
 	\begin{align}
@@ -423,7 +424,7 @@ where $I'$ is just $I$ shifted upwards. Take $\gamma_H:\RR\rightarrow\Aut{\AA}$ 
 		\begin{equation}
 		\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}\circ\Theta_1\circ\gamma_H=\Ad{a_1}\circ\Theta_2.
 		\end{equation}
-		\item $\eta_{g,1}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cup\AA_{L/R}}$ there exists an $a_2\in\UU(\AA)$ and some $\eta_{g,2}^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cup\AA_{L/R}}$ such that
+		\item $\eta_{g,1}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ there exists an $a_2\in\UU(\AA)$ and some $\eta_{g,2}^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cap\AA_{L/R}}$ such that
 		\begin{equation}
 		\gamma_H^{-1}\circ\eta_{g,1}^L\otimes\eta_{g,1}^R\circ\gamma_H=\Ad{a_2}\circ \eta_{g,2}^L\otimes\eta_{g,2}^R.
 		\end{equation}
@@ -442,6 +443,10 @@ Another lemma that will be necessary:
 \begin{proof}
 	This also looks like it has a standard Lieb-Robinson type argument.
 \end{proof}
+Finally before we can start the proof we also need:
+\begin{lemma}
+	Take $\theta\in]0,\pi/2[$ and 
+\end{lemma}
 \begin{theorem}
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma_H)$
 \end{theorem}
@@ -450,9 +455,9 @@ Another lemma that will be necessary:
 	\begin{equation}
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
-	Take $\tilde{\beta}_g$ such that $\omega\circ\tilde{\beta}_g=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ satisfying
+	Take $\tilde{\beta}_g$ such that $\omega\circ\tilde{\beta}_{g,1}=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ satisfying
 	\begin{equation}
-		\tilde{\beta}_g=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
+		\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
 	\end{equation}
 	Take $W_g,u_{L/R}(g,h)$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma_H$ satisfies $\omega\circ\gamma_H=\omega_0\circ\alpha\circ\gamma_H$. We also have that $\alpha\circ\gamma_H\in\QAut{\AA}$. To show this notice that
 	\begin{equation}
@@ -462,7 +467,18 @@ Another lemma that will be necessary:
 	\begin{equation}
 		\alpha\circ\gamma_H=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta.
 	\end{equation}
-	Combining lemma \ref{lem:TwoAngleLemma} part 2 with lemma \ref{lem:GroupActionInCone} we get that there exist some $\hat{\eta}^{L/R}_g\in\Aut{\AA}$
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}_H\beta_{g,1}\gamma_H$ then this indeed satisfies that $\omega\circ\gamma_H\circ\tilde{\beta}_{g,2}=\omega\circ\gamma_H$. Furthermore we also have that there exists a $\tilde V_{2,g}\in\UU(\AA)$ and some $\tilde{\eta}_g^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cap\AA_{L/R}}$ such that
+	\begin{equation}
+	\gamma_{H}^{-1}\tilde{\beta}_g\gamma_H=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U.
+	\end{equation}
+	Since
+	\begin{equation}
+	\omega_0=\omega_0\circ\alpha\circ\gamma\circ\tilde{\beta}_{g,2}\circ\tilde{\beta}_{g,1}^{-1}\circ\alpha^{-1}
+	\end{equation}
+	we have that
+	\begin{equation}
+	\omega_0\qe\omega_0\circ \alpha_0\circ\gamma_L\otimes\gamma_R\circ\tilde{\Theta}\circ\tilde{\eta}_g^L\otimes \tilde{\eta}_g^R\otimes\circ(\eta_g^L\otimes\eta_g^R)^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{equation}
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
