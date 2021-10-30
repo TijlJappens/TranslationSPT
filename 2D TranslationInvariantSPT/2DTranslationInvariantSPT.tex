@@ -332,7 +332,7 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	concluding the proof.
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
-\begin{lemma}
+\begin{lemma}\label{lem:InvarianceUnderChoiceBeta}
 	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
 	\begin{align}
 		\tilde{\beta}_{g,1}&=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g&\tilde{\beta}_{g,2}&=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
@@ -463,22 +463,40 @@ Finally before we can start the proof we also need:
 	\begin{equation}
 		\alpha\circ\gamma_H=\Ad{V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}\circ\Theta\circ\gamma_H.
 	\end{equation}
-	Because of lemma \ref{lem:TwoAngleLemma} there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and a $\tilde V_1\in\UU(\AA)$ such that
-	\begin{equation}
-		\alpha\circ\gamma_H=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta.
-	\end{equation}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}_H\beta_{g,1}\gamma_H$ then this indeed satisfies that $\omega\circ\gamma_H\circ\tilde{\beta}_{g,2}=\omega\circ\gamma_H$. Furthermore we also have that there exists a $\tilde V_{2,g}\in\UU(\AA)$ and some $\tilde{\eta}_g^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cap\AA_{L/R}}$ such that
-	\begin{equation}
-	\gamma_{H}^{-1}\tilde{\beta}_g\gamma_H=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U.
-	\end{equation}
-	Since
-	\begin{equation}
-	\omega_0=\omega_0\circ\alpha\circ\gamma\circ\tilde{\beta}_{g,2}\circ\tilde{\beta}_{g,1}^{-1}\circ\alpha^{-1}
-	\end{equation}
-	we have that
-	\begin{equation}
-	\omega_0\qe\omega_0\circ \alpha_0\circ\gamma_L\otimes\gamma_R\circ\tilde{\Theta}\circ\tilde{\eta}_g^L\otimes \tilde{\eta}_g^R\otimes\circ(\eta_g^L\otimes\eta_g^R)^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}.
-	\end{equation}
+	Because of lemma \ref{lem:TwoAngleLemma} there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	\begin{align}
+		\alpha\circ\gamma_H&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta\\
+		(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma_H.
+	\end{align}
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}_H\beta_{g,1}\gamma_H$ then this indeed satisfies that $\omega\circ\gamma_H\circ\tilde{\beta}_{g,2}=\omega\circ\gamma_H$. Furthermore we also have that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_g^{L/R}\in\Aut{\AA_{C_{\theta_2}}\cap\AA_{L/R}}$ such that
+	\begin{align}
+	\gamma_{H}^{-1}\tilde{\beta}_g\gamma_H&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
+	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{H_{\sigma}}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{H_\sigma}\circ(\beta_g^{\sigma U})^{-1}.
+	\end{align}
+	Take $\phi:\UU(\HH)\rightarrow \UU(\HH)$ such that
+	\begin{enumerate}
+		\item for any $x_g\in\UU(\HH)$ satisfying that there exists a $\xi_g\in\Aut{\AA_{C_{\theta_1}}}$ such that
+		\begin{equation}
+			\Ad{x_g}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\xi_g\circ\beta_g^U\circ\alpha_0^{-1}\circ\Theta^{-1}
+		\end{equation}
+		we have that
+		\begin{equation}
+			\Ad{\phi(x_g)}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_H\circ(\gamma_{H_L}\otimes\gamma_{H_R})^{-1}\circ\xi_g\circ\beta_g^U\circ(\gamma_{H_L}\otimes\gamma_{H_R})\circ\gamma_H^{-1}\circ\alpha_0^{-1}\circ\Theta^{-1}.
+		\end{equation}
+		\item for any $A\in\UU(\AA_\sigma)$ we have
+		\begin{equation}
+			\phi(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_H\circ\gamma_{H_\sigma}^{-1}(A).
+		\end{equation}
+		\item $\pi(v)=v.$
+		\item $\phi(a)\phi(b)=\phi(ab).$
+	\end{enumerate}
+	The following operators now belong to $\omega\circ\gamma_H:$
+	\begin{align}
+		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger=\pi_0(A_1)\phi(v)\pi_0(A_1)^\dagger\\
+		\tilde{W}_g&=\pi_0(A_1)\phi\left(\delta^L_g\otimes\delta^R_g W_g\right)\pi_0(A_1^\dagger)\\
+		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger
+	\end{align}
+	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{H_\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. The proof that it is invariant under the transformation with de $\delta^\sigma_g$ is less straightforward. This proof should be analogous to the proof of lemma \ref{lem:InvarianceUnderChoiceBeta} with one clear difference. The tensor product in the proof is not taken over $\BB(\HH_L)\otimes\BB(\HH_R)$ like in the previous proof but in stead it is over $\pi_0\circ\alpha_0\circ\Theta(\AA_L)''\otimes \pi_0\circ\alpha_0\circ\Theta(\AA_R)''\subset\BB(\HH)$. The actual calculations however should be the same.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
