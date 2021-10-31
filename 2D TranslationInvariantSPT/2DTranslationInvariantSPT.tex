@@ -331,6 +331,52 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	\end{equation}
 	concluding the proof.
 \end{proof}
+Going forward we need the following lemma:
+\begin{lemma}\label{lem:TransformationUnderDelta}
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual and take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms. Take $\delta^\sigma_g$ such that there exists $A_\sigma\in\UU(\AA_{\sigma})$ and $\xi_\sigma\in\Aut{\AA_\sigma\cap \AA_{C_\theta}}$ satisfying
+	\begin{equation}
+		\Ad{\delta^\sigma_g}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A_\sigma}\circ\xi_\sigma\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{equation}
+	Define
+	\begin{align}
+		W_{g,2}&\defeq\delta_g W_{g,1}\\
+		u_{R,2}(g,h)&\defeq \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
+		K^R_{g,2}&\defeq v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger
+	\end{align}
+	then the index of $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ is equal to the index of $v,W_{g,2},u_{\sigma,2}(g,h)$ and $K_{g,2}^\sigma$.
+\end{lemma}
+\begin{proof}
+	We have
+	\begin{align}
+		&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger W_{gh,2}W_{h,2}^\dagger W_{g,2}^\dagger u_{R,2}(g,h)\\
+		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger u_{L,2}(g,h)^\dagger\\
+		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger u_{L,2}(g,h)^\dagger (K_{gh,2}^R)^\dagger\\
+		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}\stkout{W_{h,2}W_{gh,2}^\dagger W_{gh,2}W_{h,2}^\dagger} W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger.
+	\end{align}
+	Filling this in the definition of the 2-cochain gives
+	\begin{align}
+		C_2(g,h)&=K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger v^\dagger u_{R,2}(g,h)^\dagger v\\
+		&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g\\
+		\nonumber
+		&\qquad \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)\stkout{(\delta_{gh}^R)^\dagger \delta_{gh}^R} (K_{gh,1}^R)^\dagger v^\dagger \stkout{(\delta_{gh}^R)^\dagger v  v^\dagger \delta^R_{gh}} u_{R,1}(g,h)^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
+		\nonumber
+		&\qquad \delta_g^R W_{g,1}\delta_h^R \left((K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger K_{g,1}^R W_{g,1}K_{h,1}^R\right) W_{g,1}^\dagger u_{R,1}(g,h) (K_{gh,1}^R)^\dagger v^\dagger u_{R,1}(g,h)^\dagger v\\
+		\nonumber
+		&\qquad v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
+		\nonumber
+		&\qquad \delta_g^R W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R \stkout{\delta_g^L} W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \stkout{(\delta_g^L)^\dagger}\\
+		\nonumber
+		&\qquad  W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^\stkout{R} W_{g,1}v^\dagger \delta_h^R v \stkout{K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger} W_{g,1}^\dagger (K_{g,1}^\stkout{R})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1} W_{g,1}v^\dagger \delta_h^R v W_{g,1}^\dagger (K_{g,1})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)v^\dagger \delta_g^R W_{g,1} \delta_h^R W_{g,1}^\dagger  W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)
+	\end{align}
+	concluding the proof.
+\end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBeta}
 	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
@@ -373,36 +419,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 		u_{R,2}(g,h)&\defeq \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
 		K^R_{g,2}&\defeq v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger
 	\end{align}
-	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. We will now show that the index is invariant under this substitution. We have
-	\begin{align}
-		&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger W_{gh,2}W_{h,2}^\dagger W_{g,2}^\dagger u_{R,2}(g,h)\\
-		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger u_{L,2}(g,h)^\dagger\\
-		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger u_{L,2}(g,h)^\dagger (K_{gh,2}^R)^\dagger\\
-		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}\stkout{W_{h,2}W_{gh,2}^\dagger W_{gh,2}W_{h,2}^\dagger} W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger.
-	\end{align}
-	Filling this in the definition of the 2-cochain gives
-	\begin{align}
-		C_2(g,h)&=K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger v^\dagger u_{R,2}(g,h)^\dagger v\\
-		&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g\\
-		\nonumber
-		&\qquad \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)\stkout{(\delta_{gh}^R)^\dagger \delta_{gh}^R} (K_{gh,1}^R)^\dagger v^\dagger \stkout{(\delta_{gh}^R)^\dagger v  v^\dagger \delta^R_{gh}} u_{R,1}(g,h)^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
-		\nonumber
-		&\qquad \delta_g^R W_{g,1}\delta_h^R \left((K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger K_{g,1}^R W_{g,1}K_{h,1}^R\right) W_{g,1}^\dagger u_{R,1}(g,h) (K_{gh,1}^R)^\dagger v^\dagger u_{R,1}(g,h)^\dagger v\\
-		\nonumber
-		&\qquad v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
-		\nonumber
-		&\qquad \delta_g^R W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R \stkout{\delta_g^L} W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \stkout{(\delta_g^L)^\dagger}\\
-		\nonumber
-		&\qquad  W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^\stkout{R} W_{g,1}v^\dagger \delta_h^R v \stkout{K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger} W_{g,1}^\dagger (K_{g,1}^\stkout{R})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1} W_{g,1}v^\dagger \delta_h^R v W_{g,1}^\dagger (K_{g,1})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R W_{g,1} \delta_h^R W_{g,1}^\dagger  W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)
-	\end{align}
-	concluding the proof.
+	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. Now using lemma \ref{lem:TransformationUnderDelta} concludes the proof.
 \end{proof}
 \begin{lemma}
 	The index is independent of the choice of angle $\theta$.
@@ -497,7 +514,7 @@ Another lemma that will be necessary:
 		\tilde{W}_g&=\pi_0(A_1)\phi\left(\delta^L_g\otimes\delta^R_g W_g\right)\pi_0(A_1^\dagger)\\
 		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger
 	\end{align}
-	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{H_\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. The proof that it is invariant under the transformation with de $\delta^\sigma_g$ is less straightforward. This proof should be analogous to the proof of lemma \ref{lem:InvarianceUnderChoiceBeta} with one clear difference. The tensor product in the proof is not taken over $\BB(\HH_L)\otimes\BB(\HH_R)$ like in the previous proof\footnote{there the $\delta^\sigma_g$ was in $\pi_0\circ\alpha_0\circ\Theta(\AA_{C_\theta})''=\pi_0\circ\alpha_0(\AA_{C_\theta})''\subset \HH_\sigma$} but in stead it is over $\pi_0\circ\alpha_0\circ\Theta(\AA_L)''\otimes \pi_0\circ\alpha_0\circ\Theta(\AA_R)''{\color{red}=?\BB(\HH)}$. The actual calculations however should be the same.
+	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{H_\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
