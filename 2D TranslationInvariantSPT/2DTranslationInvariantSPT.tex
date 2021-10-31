@@ -125,25 +125,31 @@ We now have to define one more object
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	The only nontrivial part (that is not just some straightforward calculation) is showing that indeed
+	\begin{equation}
+		\omega_0\circ\alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_0^{-1}\qe \omega_0.
+	\end{equation}
+	{\color{red}This I still have to do.}
 \end{proof}
 \begin{lemma}\label{lem:AdjointOverConeIsInCone}
-	Take $\gamma^{L/R}\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{L/R}}$ and take $\Gamma^{L/R}$ to be such that
+	Take $\gamma^{\sigma}\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{\sigma}}$ and take $\Gamma^{\sigma}$ (for all $\sigma\in\{L,R\}$) to be such that
 	\begin{equation}
-		\pi_{L/R}\circ\alpha_{L/R}\circ\gamma^{L/R}\circ\alpha_{L/R}^{-1}= \Ad{\Gamma^{L/R}}\circ\pi_{L/R}
+		\pi_{\sigma}\circ\alpha_{\sigma}\circ\gamma^{\sigma}\circ\alpha_{\sigma}^{-1}= \Ad{\Gamma^{\sigma}}\circ\pi_{\sigma}
 	\end{equation}
 	then
 	\begin{equation}
 		\Ad{W_g}(\Gamma_{L}\otimes\Gamma_{R})=\Ad{W_g}(\Gamma_L)\otimes\Ad{W_g}(\Gamma_{R}).
 	\end{equation}
-	Moreover there exist $\tilde\gamma^{L/R}_g\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{L/R}}$ such that
+	Moreover there exist $\tilde\gamma^{\sigma}_g\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{\sigma}}$ such that
 	\begin{equation}
-		\pi_{L/R}\circ\alpha_{L/R}\circ\tilde\gamma^{L/R}_g\circ\alpha_{L/R}^{-1}= \Ad{\Ad{W_g}(\Gamma^{L/R})}\circ\pi_{L/R}.
+		\pi_{\sigma}\circ\alpha_{\sigma}\circ\tilde\gamma^{\sigma}_g\circ\alpha_{\sigma}^{-1}= \Ad{\Ad{W_g}(\Gamma^{\sigma})}\circ\pi_{\sigma}.
 	\end{equation}
+	If more generally we take $\Gamma^\sigma\in\pi_0\circ\alpha_0\circ\Theta(\AA_\sigma)''$ then $\Ad{W_g}(\Gamma^\sigma)\in\pi_0\circ\alpha_0\circ\Theta(\AA_\sigma)''$ $\forall g\in G.$
 \end{lemma}
 \begin{proof}
 	content...
 \end{proof}
+
 \begin{lemma}\label{lem:Definition2Cochain}
 	There exists a $C:G^2\rightarrow U(1)$ such that 
 	\begin{equation}\label{eq:Definition2Cochain}
@@ -216,7 +222,7 @@ We now have to define one more object
 		\nonumber
 		&\:\stkout{K^R_g}\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger.
 	\end{align}
-	We will now use the fact that the $u_L$ commutes with everything that has support only on the right to get
+	We will now use the fact that the $u_L$ commutes with everything that has support only on the right. Combining this with lemma \ref{lem:AdjointOverConeIsInCone} gives
 	\begin{align}
 		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger u_L(g,h)^\dagger\\
 		\nonumber
