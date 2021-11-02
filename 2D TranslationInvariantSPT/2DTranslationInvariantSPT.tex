@@ -104,10 +104,9 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 These objects will be the starting point for our definition. Now take $\tau\in\Aut{\AA}$ to be the automorphism that vertically translates every element of the $C^*$ algebra by one site upwards. We now define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}
 	There exists a unique $v\in\UU(\HH_0)$ such that
-	\begin{enumerate}
-		\item $\Ad{v}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\tau\circ\Theta^{-1}\circ\alpha_0^{-1}.$
-		\item $\pi_0(V_1)v\pi_0(V_1^\dagger)\Omega_0=\Omega_0.$
-	\end{enumerate}
+	\begin{align}
+	\Ad{v}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)v\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
+	\end{align}
 \end{lemma}
 \begin{proof}
 	This is very straightforward.
@@ -294,7 +293,7 @@ Our translation index is now defined as
 \section{The index is independent of the choices we made}
 In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
-	Take $\omega_{01},\omega_{02}\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
+	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
 	\begin{align}
 		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
 	\end{align}
@@ -454,7 +453,7 @@ We will first need a lemma of the form
 		\item $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ there exist $a_2\in\UU(\AA),a_3\in\UU(\AA_R)$ such that
 		\begin{align}
 		\gamma^{-1}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma&=\Ad{a_2}\circ(\gamma_{C_\theta\cup L}^{-1}\circ \eta_{g,2}^L \circ\gamma_{C_\theta\cup L})\otimes(\gamma_{C_\theta\cup R}^{-1}\circ\eta_{g,2}^R\circ\gamma_{C_\theta\cup R})\\
-		\gamma_\sigma^{-1}\eta_g^\sigma\gamma_\sigma&=
+		\gamma_\sigma^{-1}\eta_g^\sigma\gamma_\sigma&=\Ad{a_3}\circ \gamma_{C_\theta\cup \sigma}^{-1}\circ \eta_{g,2}^\sigma \circ\gamma_{C_\theta\cup \sigma}
 		\end{align}
 	\end{enumerate}
 \end{lemma}
@@ -463,9 +462,9 @@ We will first need a lemma of the form
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
-	Take $\theta\in]0,\pi/2[$ then there exists an $a\in\UU(\AA)$ and some $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
+	Take $\theta\in]0,\pi/2[$ then there exists an $a\in\UU(\AA)$ and some $\xi_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
 	\begin{equation}
-	\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a}\circ\eta^L_g\otimes\eta^R_g.
+	\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a}\circ\xi^L_g\otimes\xi^R_g.
 	\end{equation}
 \end{lemma}
 \begin{proof}
@@ -497,30 +496,54 @@ Another lemma that will be necessary:
 	\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{H_\sigma}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
-	Take $\phi:\UU(\HH)\rightarrow \UU(\HH)$ such that
-	\begin{enumerate}
-		\item for any $x_g\in\UU(\HH)$ satisfying that there exists a $\xi_g\in\Aut{\AA_{C_{\theta_1}}}$ such that
-		\begin{equation}
-			\Ad{x_g}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\xi_g\circ\beta_g^U\circ\alpha_0^{-1}\circ\Theta^{-1}
-		\end{equation}
-		we have that
-		\begin{equation}
-			\Ad{\phi(x_g)}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ(\gamma_{H_L}\otimes\gamma_{H_R})^{-1}\circ\xi_g\circ\beta_g^U\circ(\gamma_{H_L}\otimes\gamma_{H_R})\circ\gamma^{-1}\circ\alpha_0^{-1}\circ\Theta^{-1}.
-		\end{equation}
-		\item for any $A\in\UU(\AA)$ we have
-		\begin{equation}
-			\phi(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{L}^{-1}\otimes\gamma_R^{-1}(A).
-		\end{equation}
-		\item $\phi(v)=v.$
-		\item $\phi(a)\phi(b)=\phi(ab).$
-	\end{enumerate}
+	Take
+	\begin{equation}
+	\phi_1:\pi_0\circ\alpha_0\circ\Theta(\AA_R)'' \rightarrow \pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_R^{-1}(\AA_R)''
+	\end{equation}
+	the (I hope unique) iso{\color{red}?}morphism such that for any $x\in\pi_0\circ\alpha_0\circ\Theta(\AA_R)''$ satisfying that there exists a $\xi\in\Aut{\AA_R}$ such that
+	\begin{equation}
+	\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi
+	\end{equation}
+	we have that
+	\begin{equation}
+		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{R}^{-1}\circ\xi\circ\gamma_{R}\circ\gamma^{-1}.
+	\end{equation}
+	Take (similarly)
+	\begin{equation}
+	\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
+	\end{equation}
+	satisfying
+	\begin{equation}
+	\Ad{\phi_2(W_g)}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ(\gamma_L^{-1}\otimes\gamma_R^{-1})\circ\eta_g\circ\beta_g^U\circ(\gamma_L\otimes\gamma_R)\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}
+	\end{equation}
+	with some arbitrary $G-$dependent phase. {\color{red}Of the following I am not sure this is probably related to the uniqueness question above.} We have
+	\begin{align}
+	\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
+	\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
+	\end{align}
 	The following operators now belong to $\omega\circ\gamma:$
 	\begin{align}
-		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger=\pi_0(A_1)\phi(v)\pi_0(A_1)^\dagger\\
-		\tilde{W}_g&=\pi_0(A_1)\phi\left(\delta^L_g\otimes\delta^R_g W_g\right)\pi_0(A_1^\dagger)\\
-		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger
+		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
+		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
+		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger
 	\end{align}
 	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{H_\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
+\end{proof}
+\appendix
+\section{General statements about GNS representations}
+For this section take $\omega\in\PP(\AA)$ and $(\HH,\pi,\Omega)$ a GNS triple for $\omega$. We will prove some general properties for this GNS triple.
+\begin{lemma}
+	Take $x\in\pi(\AA_I)''$ and $y\in\pi(\AA_J)''$ for $I,J\subset\ZZ$ nonoverlapping then
+	\begin{equation}
+	[x,y]=0.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Take $(X_n)_{n\in\NN}$ a sequence in $\AA_I$ converging to $x$ and $(Y_n)_{n\in\NN}$ a sequence in $\AA_J$ converging to $y$ both in weak operator topology. Take $A,B\in\AA$ arbitrary then
+	\begin{equation}
+	\bra{\Omega}\pi(A)^\dagger [x,y]\pi(B)\ket{\Omega}=\lim_{m\rightarrow\infty}\lim_{n\rightarrow \infty}\bra{\Omega}\pi(A)^\dagger [X_n,Y_m]\pi(B)\ket{\Omega}=0
+	\end{equation}
+	concluding the proof.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
