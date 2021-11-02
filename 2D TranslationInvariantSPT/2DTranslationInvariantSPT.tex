@@ -197,7 +197,7 @@ We now have to define one more object
 	\end{align}
 	we have proved our result because using equation \eqref{eq:Definition2Cochain} we then get that
 	\begin{equation}
-		C'(g,h,k)=C(h,k)C(gh,k)^{-1}C(g,hk)C(g,h)^{-1}C'(g,h,k)
+		\stkout{C'(g,h,k)}=C(h,k)C(gh,k)^{-1}C(g,hk)C(g,h)^{-1}\stkout{C'(g,h,k)}
 	\end{equation}
 	proving the result. Inserting substitution \eqref{eq:SubstitutionForProofCochain} into \eqref{eq:defintion3CochainProof2Cochain} gives
 	\begin{align}
@@ -507,11 +507,11 @@ Another lemma that will be necessary:
 		\begin{equation}
 			\Ad{\phi(x_g)}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ(\gamma_{H_L}\otimes\gamma_{H_R})^{-1}\circ\xi_g\circ\beta_g^U\circ(\gamma_{H_L}\otimes\gamma_{H_R})\circ\gamma^{-1}\circ\alpha_0^{-1}\circ\Theta^{-1}.
 		\end{equation}
-		\item for any $A\in\UU(\AA_\sigma)$ we have
+		\item for any $A\in\UU(\AA)$ we have
 		\begin{equation}
-			\phi(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{H_\sigma}^{-1}(A).
+			\phi(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{L}^{-1}\otimes\gamma_R^{-1}(A).
 		\end{equation}
-		\item $\pi(v)=v.$
+		\item $\phi(v)=v.$
 		\item $\phi(a)\phi(b)=\phi(ab).$
 	\end{enumerate}
 	The following operators now belong to $\omega\circ\gamma:$
