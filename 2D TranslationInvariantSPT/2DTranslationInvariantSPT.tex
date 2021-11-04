@@ -336,13 +336,23 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	\end{equation}
 	concluding the proof.
 \end{proof}
-Going forward we need the following lemma:
-\begin{lemma}\label{lem:TransformationUnderDelta}
-	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual and take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms. Take $\delta^\sigma_g$ such that there exists $A_\sigma\in\UU(\AA_{\sigma})$ and $\xi_\sigma\in\Aut{\AA_\sigma\cap \AA_{C_\theta}}$ satisfying
+We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that is includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the cone automorphisms:
+\begin{definition}
+	Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is inner after cone on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\Theta)$) if there exists an $A\in\AA_R$ and some $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
 	\begin{equation}
-		\Ad{\delta^\sigma_g}\circ\pi_0=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A_\sigma}\circ\xi_\sigma\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\Ad{u}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi.
 	\end{equation}
-	Define
+	$\textrm{IAC}_R$ is a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$. If we define similarly $\textrm{IAC}_R$ we get that
+	\begin{align}\label{eq:CommutantProperty}
+	\textrm{IAC}_R(\alpha_0,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\Theta)'&\textrm{IAC}_L(\alpha_0,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\Theta)'.
+	\end{align}
+\end{definition}
+\begin{proof}
+	content...
+\end{proof}
+We now show that the index is invariant under some transformation parametrised by the group $\textrm{IAC}_R$:
+\begin{lemma}\label{lem:TransformationUnderDelta}
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_R(\alpha_0,\Theta)$. Define
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
 		u_{R,2}(g,h)&\defeq \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
@@ -361,18 +371,27 @@ Going forward we need the following lemma:
 	Filling this in the definition of the 2-cochain gives
 	\begin{align}
 		C_2(g,h)&=K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger v^\dagger u_{R,2}(g,h)^\dagger v\\
-		&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g\\
-		\nonumber
-		&\qquad \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)\stkout{(\delta_{gh}^R)^\dagger \delta_{gh}^R} (K_{gh,1}^R)^\dagger v^\dagger \stkout{(\delta_{gh}^R)^\dagger v  v^\dagger \delta^R_{gh}} u_{R,1}(g,h)^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
 		&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
+		\nonumber
+		&\qquad \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)\stkout{(\delta_{gh}^R)^\dagger \delta_{gh}^R} (K_{gh,1}^R)^\dagger v^\dagger \stkout{(\delta_{gh}^R)^\dagger v  v^\dagger \delta^R_{gh}} u_{R,1}(g,h)^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v.
+	\end{align}
+	We now insert $(K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger K_{g,1}^R W_{g,1}K_{h,1}^R=\mathbbm{1}:$
+	\begin{align}	
+		C_2(g,h)&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
 		\nonumber
 		&\qquad \delta_g^R W_{g,1}\delta_h^R \left((K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger K_{g,1}^R W_{g,1}K_{h,1}^R\right) W_{g,1}^\dagger u_{R,1}(g,h) (K_{gh,1}^R)^\dagger v^\dagger u_{R,1}(g,h)^\dagger v\\
 		\nonumber
-		&\qquad v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
+		&\qquad v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v.
+	\end{align}
+	Filling in the old index now gives:
+	\begin{align}
+		C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
 		\nonumber
-		&\qquad \delta_g^R W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R \stkout{\delta_g^L} W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \stkout{(\delta_g^L)^\dagger}\\
+		&\qquad \delta_g^R W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v
+	\end{align}
+	Using equation \eqref{eq:CommutantProperty} we now get:
+	\begin{align}
+		C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R \stkout{\delta_g^L} W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \stkout{(\delta_g^L)^\dagger}\\
 		\nonumber
 		&\qquad  W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
 		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^\stkout{R} W_{g,1}v^\dagger \delta_h^R v \stkout{K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger} W_{g,1}^\dagger (K_{g,1}^\stkout{R})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
@@ -498,15 +517,15 @@ Another lemma that will be necessary:
 	\end{align}
 	Take
 	\begin{equation}
-	\phi_1:\pi_0\circ\alpha_0\circ\Theta(\AA_R)'' \rightarrow \pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_R^{-1}(\AA_R)''
+	\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1})
 	\end{equation}
-	the (I hope unique) iso{\color{red}?}morphism such that for any $x\in\pi_0\circ\alpha_0\circ\Theta(\AA_R)''$ satisfying that there exists a $\xi\in\Aut{\AA_R}$ such that
+	the (I hope unique) group morphism such that for any $x\in\textrm{IAC}_R(\alpha_0,\Theta)$ satisfying that there exists a $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ and an $A\in\AA_R$ such that
 	\begin{equation}
-	\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi
+	\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi
 	\end{equation}
 	we have that
 	\begin{equation}
-		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{R}^{-1}\circ\xi\circ\gamma_{R}\circ\gamma^{-1}.
+		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{R}^{-1}\circ\Ad{A}\circ\xi\circ\gamma_{R}\circ\gamma^{-1}.
 	\end{equation}
 	Take (similarly)
 	\begin{equation}
@@ -539,7 +558,7 @@ For this section take $\omega\in\PP(\AA)$ and $(\HH,\pi,\Omega)$ a GNS triple fo
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	{\color{red}I don't explicitly use this in my proofs but it would certainly be a nice to have as it would make make things easier...}
 \end{proof}
 \begin{lemma}
 	Take $x\in\pi(\AA_I)''$ and $y\in\pi(\AA_J)''$ for $I,J\subset\ZZ$ nonoverlapping then
