@@ -130,6 +130,20 @@ We now have to define one more object
 	\end{equation}
 	{\color{red}This I still have to do.}
 \end{proof}
+Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
+\begin{definition}
+	Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is inner after cone on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\Theta)$) if there exists an $A\in\AA_R$ and some $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_R}$ such that
+	\begin{equation}
+		\Ad{u}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi.
+	\end{equation}
+	$\textrm{IAC}_R$ is a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$. If we define similarly $\textrm{IAC}_R$ we get that
+	\begin{align}\label{eq:CommutantProperty}
+		\textrm{IAC}_R(\alpha_0,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\Theta)'&\textrm{IAC}_L(\alpha_0,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\Theta)'.
+	\end{align}
+\end{definition}
+\begin{proof}
+	content...
+\end{proof}
 \begin{lemma}\label{lem:AdjointOverConeIsInCone}
 	Take $\gamma^{\sigma}\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{\sigma}}$ and take $\Gamma^{\sigma}$ (for all $\sigma\in\{L,R\}$) to be such that
 	\begin{equation}
@@ -143,7 +157,7 @@ We now have to define one more object
 	\begin{equation}
 		\pi_{\sigma}\circ\alpha_{\sigma}\circ\tilde\gamma^{\sigma}_g\circ\alpha_{\sigma}^{-1}= \Ad{\Ad{W_g}(\Gamma^{\sigma})}\circ\pi_{\sigma}.
 	\end{equation}
-	If more generally we take $\Gamma^\sigma\in\pi_0\circ\alpha_0\circ\Theta(\AA_\sigma)''$ then $\Ad{W_g}(\Gamma^\sigma)\in\pi_0\circ\alpha_0\circ\Theta(\AA_\sigma)''$ $\forall g\in G.$
+	If more generally we take $\Gamma^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Gamma^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ $\forall g\in G$.
 \end{lemma}
 \begin{proof}
 	content...
@@ -336,20 +350,6 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 	\end{equation}
 	concluding the proof.
 \end{proof}
-We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that is includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the cone automorphisms:
-\begin{definition}
-	Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is inner after cone on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\Theta)$) if there exists an $A\in\AA_R$ and some $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
-	\begin{equation}
-	\Ad{u}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi.
-	\end{equation}
-	$\textrm{IAC}_R$ is a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$. If we define similarly $\textrm{IAC}_R$ we get that
-	\begin{align}\label{eq:CommutantProperty}
-	\textrm{IAC}_R(\alpha_0,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\Theta)'&\textrm{IAC}_L(\alpha_0,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\Theta)'.
-	\end{align}
-\end{definition}
-\begin{proof}
-	content...
-\end{proof}
 We now show that the index is invariant under some transformation parametrised by the group $\textrm{IAC}_R$:
 \begin{lemma}\label{lem:TransformationUnderDelta}
 	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_R(\alpha_0,\Theta)$. Define
@@ -489,6 +489,31 @@ Another lemma that will be necessary:
 \begin{proof}
 	This also looks like it has a standard Lieb-Robinson type argument.
 \end{proof}
+\begin{lemma}\label{lem:DefinitionOfGroupMorphism}
+	Take $B_n\subset\ZZ^2$ the ball of radius $n$. Define
+	\begin{equation}
+		u_{\text{split},n}\defeq \pi_0\circ\alpha_0\circ\Theta\left(\mathcal{T}\exp(-i\int_0^1 \sum_{I\subset B_n} H_{L}(I))\otimes\mathcal{T}\exp(-i\int_0^1 \sum_{I\subset B_n} H_{R}(I))\right)
+	\end{equation}
+	and similarly
+	\begin{equation}
+		u_{n}\defeq \pi_0\circ\alpha_0\circ\Theta \left(\mathcal{T}\exp(-i\int_0^1 \sum_{I\subset B_n} H(I))\right).
+	\end{equation}
+	Take
+	\begin{equation}
+		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1}):x\mapsto\lim_{n\rightarrow\infty}u_nu_{\text{split},n}^{\dagger}xu_{\text{split},n}u_n^{\dagger}
+	\end{equation}
+	where the limit is defined in norm topology then this $\phi_1$ is well defined (the limit exists) and is a group homomorphism. Furthermore for our $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ and our $A\in\AA_R$ satisfying that
+	\begin{equation}
+		\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi
+	\end{equation}
+	we have that
+	\begin{equation}
+		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{R}^{-1}\circ\Ad{A}\circ\xi\circ\gamma_{R}\circ\gamma^{-1}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \begin{theorem}
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma)$
 \end{theorem}
@@ -519,15 +544,7 @@ Another lemma that will be necessary:
 	\begin{equation}
 	\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1})
 	\end{equation}
-	the (I hope unique) group morphism such that for any $x\in\textrm{IAC}_R(\alpha_0,\Theta)$ satisfying that there exists a $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ and an $A\in\AA_R$ such that
-	\begin{equation}
-	\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi
-	\end{equation}
-	we have that
-	\begin{equation}
-		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{R}^{-1}\circ\Ad{A}\circ\xi\circ\gamma_{R}\circ\gamma^{-1}.
-	\end{equation}
-	Take (similarly)
+	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Define (similarly)
 	\begin{equation}
 	\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
 	\end{equation}
