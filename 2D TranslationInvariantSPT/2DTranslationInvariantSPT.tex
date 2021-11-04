@@ -565,31 +565,6 @@ Another lemma that will be necessary:
 	\end{align}
 	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{H_\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
 \end{proof}
-\appendix
-\section{General statements about GNS representations}
-For this section take $\omega\in\PP(\AA)$ and $(\HH,\pi,\Omega)$ a GNS triple for $\omega$. We will prove some general properties for this GNS triple.
-\begin{lemma}
-	Take $I\subset\ZZ$ and take $\xi\in\Aut{\AA_I}$ such that $\omega\circ\xi\qe \omega$ then there exists an $x\in\UU(\pi(\AA_I)'')$ such that
-	\begin{equation}
-		\pi\circ\xi=\Ad{x}\circ\pi.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	{\color{red}I don't explicitly use this in my proofs but it would certainly be a nice to have as it would make make things easier...}
-\end{proof}
-\begin{lemma}
-	Take $x\in\pi(\AA_I)''$ and $y\in\pi(\AA_J)''$ for $I,J\subset\ZZ$ nonoverlapping then
-	\begin{equation}
-	[x,y]=0.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	Take $(X_n)_{n\in\NN}$ a sequence in $\AA_I$ converging to $x$ and $(Y_n)_{n\in\NN}$ a sequence in $\AA_J$ converging to $y$ both in weak operator topology. Take $A,B\in\AA$ arbitrary then
-	\begin{equation}
-	\bra{\Omega}\pi(A)^\dagger [x,y]\pi(B)\ket{\Omega}=\lim_{m\rightarrow\infty}\lim_{n\rightarrow \infty}\bra{\Omega}\pi(A)^\dagger [X_n,Y_m]\pi(B)\ket{\Omega}=0
-	\end{equation}
-	concluding the proof.
-\end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
