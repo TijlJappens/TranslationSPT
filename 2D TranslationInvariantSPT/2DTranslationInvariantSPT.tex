@@ -490,29 +490,82 @@ Another lemma that will be necessary:
 	This also looks like it has a standard Lieb-Robinson type argument.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
-	Take $B_n\subset\ZZ^2$ the ball of radius $n$. Define
+	There exists a group homomorphism
 	\begin{equation}
-		u_{\text{split},n}\defeq \pi_0\circ\alpha_0\circ\Theta\left(\mathcal{T}\exp(-i\int_0^1 \sum_{I\subset B_n} H_{L}(I))\otimes\mathcal{T}\exp(-i\int_0^1 \sum_{I\subset B_n} H_{R}(I))\right)
+		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1}):x\mapsto \phi_1(x)
 	\end{equation}
-	and similarly
-	\begin{equation}
-		u_{n}\defeq \pi_0\circ\alpha_0\circ\Theta \left(\mathcal{T}\exp(-i\int_0^1 \sum_{I\subset B_n} H(I))\right).
-	\end{equation}
-	Take
-	\begin{equation}
-		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1}):x\mapsto\lim_{n\rightarrow\infty}u_nu_{\text{split},n}^{\dagger}xu_{\text{split},n}u_n^{\dagger}
-	\end{equation}
-	where the limit is defined in norm topology then this $\phi_1$ is well defined (the limit exists) and is a group homomorphism. Furthermore for our $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ and our $A\in\AA_R$ satisfying that
+	satisfying that for any $A\in\AA_R$ and $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi
 	\end{equation}
-	we have that
-	\begin{equation}
-		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_{R}^{-1}\circ\Ad{A}\circ\xi\circ\gamma_{R}\circ\gamma^{-1}.
+	we get that
+	\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphism}
+		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\Ad{A}\circ\xi.
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	Take $x\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{IAC}_R(\alpha_0,\Theta)$ such that
+	\begin{equation}
+	x=\pi_0\circ\alpha_0\circ\Theta(A)y
+	\end{equation}
+	where $y$ is such that there exists a $\xi\in\Aut{\AA_{C_\theta}\cap \AA_R}$ such that
+	\begin{equation}
+	\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
+	\end{equation}
+	Using lemma \ref{lem:TwoAngleLemma} part 1 for $\theta_2=\pi/2$ we get that there exists a $\Theta_2$ acting on the same subspace as $\Theta$ satisfying that there exists an $a\in\AA$ such that
+	\begin{equation}\label{eq:ConePropertyLemmaDefinitionOfGroupMorphism}
+		\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{a}\circ\Theta_2.
+	\end{equation}
+	We now define
+	\begin{equation}
+		\phi_1(x)\defeq \pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger.
+	\end{equation}
+	We now have to prove three things:
+	\begin{enumerate}
+		\item It satisfies equation \eqref{eq:ConditionDefinitionOfGroupMorphism}.
+		\item This map is well defined (independent of our choices).
+		\item This is a group homomorphism.
+	\end{enumerate}
+	To show the first item just observe that
+	\begin{align}
+		&\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\\
+		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\\
+		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}.
+	\end{align}
+	Now we insert $\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\gamma_L\otimes\gamma_R\circ\gamma^{-1}=\text{Id}:$
+	\begin{align}
+		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ(\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\gamma_L\otimes\gamma_R\circ\gamma^{-1})\\
+		\nonumber
+		&\quad\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\Ad{A}\circ\gamma_L\otimes\gamma_R\circ\gamma^{-1}\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\Ad{A}\circ\Theta_2\circ\xi\circ\Theta_2^{-1}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\Ad{A}\circ\xi
+	\end{align}
+	concluding the proof of the first item. To show the second item notice that since $\pi_0\circ\alpha_0\circ\Theta$ is irreducible the solution (if it exists which we just showed) of equation \eqref{eq:ConditionDefinitionOfGroupMorphism} is unique up to a phase. This means that to show that our map is independent of the choices we only need to show that we can't obtain another phase by picking a different representative. This should be obvious. To then show the last item take $x_1,x_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\AA_R,y_1,y_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
+	\begin{align}
+		x_i&=\pi_0\circ\alpha_0\circ\Theta(A_i)y_i&\Ad{y_i}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_i.
+	\end{align}
+	On the one hand we have
+	\begin{align}
+		x_1x_2&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_2\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_1^{\dagger}y_1y_2\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_1\xi_1(A_2))y_1y_2
+	\end{align}
+	giving
+	\begin{equation}
+		\phi_1(x_1x_2)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_1\xi_1(A_2))\tilde{a}y_1y_2\pi_0\circ\tilde{a}^\dagger.
+	\end{equation}
+	where $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. Filling this in gives
+	\begin{align}
+		&\phi_1(x_1x_2)\phi_1(x_2)^\dagger\phi_1(x_1)^\dagger\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_1\xi_1(A_2))\tilde{a}y_1\stkout{y_2}\tilde{a}^\dagger \stkout{\tilde{a}y_2\tilde{a}^\dagger}\\
+		\nonumber
+		&\quad\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_2)\tilde{a}y_1\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_1).
+	\end{align}
+	Using equation \eqref{eq:ConePropertyLemmaDefinitionOfGroupMorphism} now yields:
+	\begin{align}
+		content...
+	\end{align}
 \end{proof}
 \begin{theorem}
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma)$
@@ -520,7 +573,7 @@ Another lemma that will be necessary:
 \begin{proof}
 	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\left(\AA_{C_{\theta_3}} \cup \tau(\AA_{C_{\theta_3}})\right)^c}$ such that
 	\begin{equation}
-	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 	Take $\tilde{\beta}_g$ such that $\omega\circ\tilde{\beta}_{g,1}=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ satisfying
 	\begin{equation}
@@ -537,25 +590,25 @@ Another lemma that will be necessary:
 	\end{align}
 	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}_H\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemma} part 2 and lemma \ref{lem:GroupActionInCone} there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
-	\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
+		\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{H_\sigma}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
 	Take
 	\begin{equation}
-	\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1})
+		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1})
 	\end{equation}
 	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Define (similarly)
 	\begin{equation}
-	\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
+		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
 	\end{equation}
 	satisfying
 	\begin{equation}
-	\Ad{\phi_2(W_g)}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ(\gamma_L^{-1}\otimes\gamma_R^{-1})\circ\eta_g\circ\beta_g^U\circ(\gamma_L\otimes\gamma_R)\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}
+		\Ad{\phi_2(W_g)}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ(\gamma_L^{-1}\otimes\gamma_R^{-1})\circ\eta_g\circ\beta_g^U\circ(\gamma_L\otimes\gamma_R)\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}
 	\end{equation}
 	with some arbitrary $G-$dependent phase. {\color{red}Of the following I am not sure this is probably related to the uniqueness question above.} We have
 	\begin{align}
-	\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
-	\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
+		\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
+		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
 	\end{align}
 	The following operators now belong to $\omega\circ\gamma:$
 	\begin{align}
