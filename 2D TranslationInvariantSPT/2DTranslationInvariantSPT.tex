@@ -465,9 +465,9 @@ We will first need a lemma of the form
 \begin{lemma}\label{lem:TwoAngleLemma}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all
 	\begin{enumerate}
-		\item $\Theta_1\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and a $\Theta_2\in\Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$ such that
+		\item $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$
 		\begin{equation}
-		\gamma_{L}^{-1}\otimes\gamma_{L}^{-1}\circ\Theta_1\circ\gamma=\Ad{a_1}\circ\Theta_2.
+		\gamma^{-1}\circ\Theta\circ\gamma=\Ad{a_1}\circ\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}^{-1}\Theta\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}.
 		\end{equation}
 		\item $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ there exist $a_2\in\UU(\AA),a_3\in\UU(\AA_R)$ such that
 		\begin{align}
@@ -481,10 +481,17 @@ We will first need a lemma of the form
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
-	Take $\theta\in]0,\pi/2[$ then there exists an $a\in\UU(\AA)$ and some $\xi_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
-	\begin{equation}
-	\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a}\circ\xi^L_g\otimes\xi^R_g.
-	\end{equation}
+	Take $\theta\in]0,\pi/2[$ then
+	\begin{enumerate}
+		\item there exists an $a\in\UU(\AA)$ and some $\xi_{g}^{L/R}\in\Aut{\AA_{C_{\theta}}\cup\AA_{L/R}}$ such that
+		\begin{equation}
+			\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a}\circ\xi^L_g\otimes\xi^R_g.
+		\end{equation}
+		\item there exists a $b\in\UU(\AA)$ and a $\Phi\in\Aut{\AA_{(C_\theta\cup\tau(\AA_{C_\theta}))^c}}$ such that
+		\begin{equation}
+			\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\gamma=\Ad{b}\circ\Phi.
+		\end{equation}
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
 	This also looks like it has a standard Lieb-Robinson type argument.
@@ -512,7 +519,7 @@ Another lemma that will be necessary:
 	\begin{equation}
 	\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
 	\end{equation}
-	Using lemma \ref{lem:TwoAngleLemma} part 1 for $\theta_2=\pi/2$ we get that there exists a $\Theta_2$ acting on the same subspace as $\Theta$ satisfying that there exists an $a\in\AA$ such that
+	Using lemma \ref{lem:GroupActionInCone} part 2 we get that there exists a $\Theta_2$ acting on the same subspace as $\Theta$ satisfying that there exists an $a\in\AA$ such that
 	\begin{equation}\label{eq:ConePropertyLemmaDefinitionOfGroupMorphism}
 		\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{a}\circ\Theta_2.
 	\end{equation}
@@ -558,14 +565,27 @@ Another lemma that will be necessary:
 	where $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. Filling this in gives
 	\begin{align}
 		&\phi_1(x_1x_2)\phi_1(x_2)^\dagger\phi_1(x_1)^\dagger\\
+		\label{eq:HomeomorphismCondition}
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_1\xi_1(A_2))\tilde{a}y_1\stkout{y_2}\tilde{a}^\dagger \stkout{\tilde{a}y_2\tilde{a}^\dagger}\\
 		\nonumber
 		&\quad\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_2)\tilde{a}y_1\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_1).
 	\end{align}
+	Writing out a part of this gives:
+	\begin{align}
+		&\Ad{\tilde{a}y_1\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_2)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}(A_2).
+	\end{align}
 	Using equation \eqref{eq:ConePropertyLemmaDefinitionOfGroupMorphism} now yields:
 	\begin{align}
-		content...
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Theta_2(A_2)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Theta_2\circ\xi(A_2)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\xi(A_2).
 	\end{align}
+	Inserting this in equation \eqref{eq:HomeomorphismCondition} shows that
+	\begin{equation}
+		\phi_1(x_1x_2)\phi_1(x_1)^\dagger\phi_1(x_2)^\dagger=\mathbbm{1}
+	\end{equation}
+	concluding the proof.
 \end{proof}
 \begin{theorem}
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma)$
@@ -581,17 +601,17 @@ Another lemma that will be necessary:
 	\end{equation}
 	Take $W_g,u_{L/R}(g,h),v$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma$ satisfies $\omega\circ\gamma=\omega_0\circ\alpha\circ\gamma$. We also have that $\alpha\circ\gamma\in\QAut{\AA}$. To show this notice that
 	\begin{equation}
-		\alpha\circ\gamma=\Ad{V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\gamma_{H_L}^{-1}\otimes\gamma_{H_R}^{-1}\circ\Theta\circ\gamma.
+		\alpha\circ\gamma=\Ad{V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\gamma_{L}^{-1}\otimes\gamma_{R}^{-1}\circ\Theta\circ\gamma.
 	\end{equation}
 	Because of lemma \ref{lem:TwoAngleLemma} part 1 there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
-		\alpha\circ\gamma&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta\\
-		(\alpha_L\circ\gamma_{H_L}\otimes\alpha_R\circ\gamma_{H_R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma.
+		\alpha\circ\gamma&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta\\
+		(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}_H\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemma} part 2 and lemma \ref{lem:GroupActionInCone} there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemma} part 2 and lemma \ref{lem:GroupActionInCone} there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
 		\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
-	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{H_\sigma}\circ(\beta_g^{\sigma U})^{-1}.
+	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{\sigma}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
 	Take
 	\begin{equation}
@@ -616,7 +636,7 @@ Another lemma that will be necessary:
 		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
 		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger
 	\end{align}
-	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{H_\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
+	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
