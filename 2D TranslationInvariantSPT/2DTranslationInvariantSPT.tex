@@ -587,6 +587,30 @@ Another lemma that will be necessary:
 	\end{equation}
 	concluding the proof.
 \end{proof}
+\begin{lemma}\label{lem:DefinitionOfWgMap}
+	There exists a map
+	\begin{equation}
+		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
+	\end{equation}
+	satisfying
+	\begin{equation}
+		\Ad{\phi_2(W_g)}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ(\gamma_L^{-1}\otimes\gamma_R^{-1})\circ\eta_g\circ\beta_g^U\circ(\gamma_L\otimes\gamma_R)\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{equation}
+	It is unique up to a $G$-dependent phase.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\textrm{IAC}_R(\alpha_0,\Theta)$ we have that
+		\begin{align}
+			\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
+			\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
+	\end{align}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \begin{theorem}
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma)$
 \end{theorem}
@@ -617,20 +641,11 @@ Another lemma that will be necessary:
 	\begin{equation}
 		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1})
 	\end{equation}
-	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Define (similarly)
+	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Take similarly
 	\begin{equation}
 		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
 	\end{equation}
-	satisfying
-	\begin{equation}
-		\Ad{\phi_2(W_g)}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ(\gamma_L^{-1}\otimes\gamma_R^{-1})\circ\eta_g\circ\beta_g^U\circ(\gamma_L\otimes\gamma_R)\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}
-	\end{equation}
-	with some arbitrary $G-$dependent phase. {\color{red}Of the following I am not sure this is probably related to the uniqueness question above.} We have
-	\begin{align}
-		\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
-		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
-	\end{align}
-	The following operators now belong to $\omega\circ\gamma:$
+	the map defined in \ref{lem:DefinitionOfWgMap} with arbitrary phase. The following operators now belong to $\omega\circ\gamma:$
 	\begin{align}
 		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
 		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
