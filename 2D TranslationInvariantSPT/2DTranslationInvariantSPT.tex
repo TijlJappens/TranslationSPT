@@ -483,16 +483,25 @@ We will first need a lemma of the form
 	\end{equation}
 	and take similarly
 	\begin{equation}
-		w_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s \sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I)).
+		v_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s \sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I)).
 	\end{equation}
 	We claim that there exists an $a_1\in\UU(\AA)$ such that
 	\begin{equation}
-		\lim_{n\rightarrow\infty}\norm{u_n^\dagger\Theta(u_n w_n^\dagger)w_n-a_1}=0.
+		\lim_{n\rightarrow\infty}\norm{u_n^\dagger\Theta(u_n v_n^\dagger)v_n-a_1}=0.
 	\end{equation}
-	Clearly by construction this $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaEquation1}. We will show that this sequence is a Cauchy sequence. Take $n_0$ then $n,m>n_0$ we have that
+	Clearly by construction this $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaEquation1}. We will show that this sequence is a Cauchy sequence. To do this, define the operator
 	\begin{equation}
-		\text{{\color{red}This I still have to do.}}
+		w_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s \sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I)).
 	\end{equation}
+	This has the property that $\Theta(w_n)=w_n$. Take $n_0$ then for any $n>m>n_0$ we have that
+	\begin{align}
+		&\norm{u_n^\dagger\Theta(u_nv_n^\dagger)v_n-u_m^\dagger\Theta(u_mv_m^\dagger)v_m}\\
+		&=\norm{u_n^\dagger\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger u_n-u_m^\dagger\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger u_m}\\
+		&=\norm{\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger -u_n u_m^\dagger\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger u_mu_n^\dagger}\\
+		&\leq \norm{\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger-\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger}\\
+		&\quad +\norm{[\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger,u_mu_n^\dagger]}.
+	\end{align}
+	{\color{red}To be continued...}
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
