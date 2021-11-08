@@ -479,27 +479,34 @@ We will first need a lemma of the form
 \begin{proof}
 	We will only prove the first item as the second one is completely analogous. $\forall n\in\NN,$ take $B_n\subset\ZZ$ to be the ball with radius $n$, take
 	\begin{equation}
-		u_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s \sum_{I\subset B_n}H(s,I))
+		u_n(t_1;t_2)\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s \sum_{I\subset B_n}H(s,I))
 	\end{equation}
 	and take similarly
 	\begin{equation}
-		v_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s \sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I)).
+		v_n(t_1;t_2)\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s \sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I)).
 	\end{equation}
-	We claim that there exists an $a_1\in\UU(\AA)$ such that
+	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that there exists an $a_1\in\UU(\AA)$ such that
 	\begin{equation}
-		\lim_{n\rightarrow\infty}\norm{u_n^\dagger\Theta(u_n v_n^\dagger)v_n-a_1}=0.
+		\lim_{n\rightarrow\infty}\norm{\Theta(u_n v_n^\dagger)v_nu_n^\dagger-\gamma(a_1)}=0.
 	\end{equation}
 	Clearly by construction this $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaEquation1}. We will show that this sequence is a Cauchy sequence. To do this, define the operator
 	\begin{equation}
-		w_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s \sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I)).
+		w_n(t_1;t_2)\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s \sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I)).
 	\end{equation}
-	This has the property that $\Theta(w_n)=w_n$. Take $n_0$ then for any $n>m>n_0$ we have that
+	This has the property that $\Theta(w_n)=w_n$. Take $n_0$ then for any $n,m>n_0$ we have that
 	\begin{align}
-		&\norm{u_n^\dagger\Theta(u_nv_n^\dagger)v_n-u_m^\dagger\Theta(u_mv_m^\dagger)v_m}\\
-		&=\norm{u_n^\dagger\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger u_n-u_m^\dagger\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger u_m}\\
-		&=\norm{\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger -u_n u_m^\dagger\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger u_mu_n^\dagger}\\
-		&\leq \norm{\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger-\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger}\\
-		&\quad +\norm{[\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger,u_mu_n^\dagger]}.
+		\Delta&\defeq\Theta(u_nv_n^\dagger)v_nu_n^\dagger-\Theta(u_mv_m^\dagger)v_mu_m^\dagger\\
+		&=\Theta(u_nv_n^\dagger w_n^\dagger)w_nv_nu_n^\dagger -\Theta(u_mv_m^\dagger w_m^\dagger)w_mv_mu_m^\dagger.
+	\end{align}
+	Define $\tilde{u}_n$ and $\tilde{H}_n$ as
+	\begin{align}
+		\tilde{u}_n(t_1;t_2)&\defeq \Theta(u_n(t_1;t_2)v_n(t_1;t_2)^\dagger w_n(t_1;t_2)^\dagger)w_n(t_1;t_2)v_n(t_1;t_2)u_n(t_1;t_2)^\dagger\\
+		i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
+	\end{align}
+	and similarly for $m$. By the fundamental theorem of calculus we have that
+	\begin{align}
+		\Delta&=-\int_0^1\d s\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
+		&=i\int_0^1\d s \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
 	\end{align}
 	{\color{red}To be continued...}
 \end{proof}
