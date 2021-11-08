@@ -518,7 +518,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$. 
 	\end{equation}
 	and similarly for $m$ and $n_0$. We have
 	\begin{align}
-		&\tilde{H}_n(s)\tilde{u}_n(0;s)=\frac{\d}{\d s}\tilde{u}_n\\
+		&\tilde{H}_n(s)\tilde{u}_n(0;s)=i\frac{\d}{\d s}\tilde{u}_n\\
 		&=\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger \partial H_n(s) u_n(0;s)\\
 		\nonumber
 		&\quad-\Theta(u_n(0;s)^\dagger \partial H_n(s) v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger u_n(0;s)\\
@@ -536,7 +536,13 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$. 
 	\nonumber
 	&-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)w_m(0;s))w_m(0;s)^\dagger v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))+\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right).
 	\end{align}
-	{\color{red}This again sounds very reasonable.}
+	To bound this, observe that again by the fundamental theorem of calculus
+	\begin{align}
+		&\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\\
+		&=\int_0^s\d l\frac{\d}{\d l}\Ad{u_n(0;l)^{\dagger}u_m(s-l;s)^{\dagger}}(\partial H_{n_0/2}(s))\\
+		&=i\int_0^s\d l\Ad{u_n(0;l)^{\dagger}(H_n-H_m)u_m(s-l;s)^{\dagger}}(\partial H_{n_0/2}(s))
+	\end{align}
+	{\color{red}This looks like it can be bounded by a Lieb-Robinson bound.}
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
