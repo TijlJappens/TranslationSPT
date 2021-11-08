@@ -510,17 +510,29 @@ We will first need a lemma of the form
 	\end{align}
 	Now define
 	\begin{equation}
-	\partial H_n(s)\defeq H_n(s)-H_{n,\theta_1}(s)-H_{n,\theta_1^c}(s)
+		\partial H_n(s)\defeq H_n(s)-H_{n,\theta_1}(s)-H_{n,\theta_1^c}(s)
 	\end{equation}
 	and similarly for $m$ and $n_0$. We have
 	\begin{align}
-	&\tilde{H}_n(s)\tilde{u}_n(0;s)=\frac{\d}{\d s}\tilde{u}_n\\
-	&=\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger \partial H_n(s) u_n(0;s)\\
-	\nonumber
-	&\quad-\Theta(u_n(0;s)^\dagger \partial H_n(s) v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger u_n(0;s)\\
-	&=\left(\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_n(s))-\Ad{\Theta(u_n(0;s)^\dagger)\partial H_n(s)}\right)\tilde{u}_n(0;s).
+		&\tilde{H}_n(s)\tilde{u}_n(0;s)=\frac{\d}{\d s}\tilde{u}_n\\
+		&=\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger \partial H_n(s) u_n(0;s)\\
+		\nonumber
+		&\quad-\Theta(u_n(0;s)^\dagger \partial H_n(s) v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger u_n(0;s)\\
+		&=\left(\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_n(s))-\Ad{\Theta(u_n(0;s)^\dagger)\partial H_n(s)}\right)\tilde{u}_n(0;s).
 	\end{align}
-	{\color{red}To be continued...}
+	First we will find a bound on
+	\begin{align}
+		&w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0}(s))v_n(0;s)w_n(0;s)\\
+		\nonumber
+		&\quad-\Theta\left(w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0}(s))v_n(0;s)w_n(0;s)\right).
+	\end{align}
+	{\color{red}Seems doable but I'm not fully sure how to do this. }What is left to bound is now
+	\begin{align}
+	&\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_{n_0}(s))-\Ad{\Theta(u_n(0;s)^\dagger)\partial H_{n_0}(s)}\\
+	\nonumber
+	&\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)w_m(0;s))w_m(0;s)^\dagger v_m(0;s)^\dagger}(\partial H_{n_0}(s))-\Ad{\Theta(u_m(0;s)^\dagger)\partial H_{n_0}(s)}.
+	\end{align}
+	{\color{red}This only seems to be small when $m,n\gg n_0$. Maybe I should replace $n_0$ by something like $n_0/2$?}
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
