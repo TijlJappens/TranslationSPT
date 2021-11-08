@@ -540,9 +540,9 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$. 
 	\begin{align}
 		&\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\\
 		&=\int_0^s\d l\frac{\d}{\d l}\Ad{u_n(0;l)^{\dagger}u_m(s-l;s)^{\dagger}}(\partial H_{n_0/2}(s))\\
-		&=i\int_0^s\d l\Ad{u_n(0;l)^{\dagger}(H_n-H_m)u_m(s-l;s)^{\dagger}}(\partial H_{n_0/2}(s))
+		&=i\int_0^s\d l\left(u_n(0;l)^{\dagger}[H_n-H_m,u_m(s-l;s)^{\dagger}\partial H_{n_0/2}(s)u_m(s-l;s)]u_n(0;l)\right)
 	\end{align}
-	{\color{red}This looks like it can be bounded by a Lieb-Robinson bound.}
+	{\color{red}This looks like it can be bounded by a Lieb-Robinson bound. I need to figure out which one exactly. I also still need to figure out what to do with the other two therms, probably something similar.}
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
