@@ -611,7 +611,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 		\alpha\circ\gamma&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemma} part 2 and lemma \ref{lem:GroupActionInCone} there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemma} part 2 and lemma \ref{lem:GroupActionInCone} part 1 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
 		\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{\sigma}\circ(\beta_g^{\sigma U})^{-1}.
@@ -652,7 +652,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 \begin{proof}
 	We will only prove the first item as the second one is completely analogous. Take $C_\theta'=(C_\theta\cup\tau(C_\theta))^c.$ $\forall n\in\NN,$ take $B_n\subset\ZZ$ to be the ball with radius $n$, take
 	\begin{align}
-	u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
+		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
 	\end{align}
 	and take similarly
 	\begin{align}
@@ -660,93 +660,93 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 	\end{align}
 	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that there exists an $a_1\in\UU(\AA)$ such that
 	\begin{equation}
-	\lim_{n\rightarrow\infty}\norm{\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\gamma(a_1)}=0.
+		\lim_{n\rightarrow\infty}\norm{\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\gamma(a_1)}=0.
 	\end{equation}
 	Clearly by construction this $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaEquation1}. We will show that this sequence is a Cauchy sequence. To do this, define the operator
 	\begin{align}
-	w_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1}(s))&H_{n,\theta_1}(s)&=\sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I).
+		w_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1}(s))&H_{n,\theta_1}(s)&=\sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I).
 	\end{align}
 	This has the property that $\Theta(w_n)=w_n$. Take $n_0$ then for any $n,m>n_0$ we have that
 	\begin{align}
-	\Delta&\defeq\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\\
-	&=\Theta(u_n^\dagger v_n w_n)w_n^\dagger v_n^\dagger u_n -\Theta(u_m^\dagger v_m w_m)w_m^\dagger v_m^\dagger u_m.
+		\Delta&\defeq\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\\
+		&=\Theta(u_n^\dagger v_n w_n)w_n^\dagger v_n^\dagger u_n -\Theta(u_m^\dagger v_m w_m)w_m^\dagger v_m^\dagger u_m.
 	\end{align}
 	Define $\tilde{u}_n$ and $\tilde{H}_n$ as
 	\begin{align}
-	\tilde{u}_n(t_1;t_2)&\defeq \Theta\left(u_n(t_1;t_2)^\dagger v_n(t_1;t_2) w_n(t_1;t_2)\right)w_n(t_1;t_2)^\dagger v_n(t_1;t_2)^\dagger u_n(t_1;t_2)\\
-	i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
+		\tilde{u}_n(t_1;t_2)&\defeq \Theta\left(u_n(t_1;t_2)^\dagger v_n(t_1;t_2) w_n(t_1;t_2)\right)w_n(t_1;t_2)^\dagger v_n(t_1;t_2)^\dagger u_n(t_1;t_2)\\
+		i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
 	\end{align}
 	and similarly for $m$. By the fundamental theorem of calculus we have that
 	\begin{align}
-	\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
+		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
 	&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
 	\end{align}
 	Now define
 	\begin{equation}
-	\partial H_n(s)\defeq H_n(s)-H_{n,\theta_1}(s)-H_{n,\theta_1^c}(s)
+		\partial H_n(s)\defeq H_n(s)-H_{n,\theta_1}(s)-H_{n,\theta_1^c}(s)
 	\end{equation}
 	and similarly for $m$ and $n_0$. We have
 	\begin{align}
-	&\tilde{H}_n(s)\tilde{u}_n(0;s)=i\frac{\d}{\d s}\tilde{u}_n\\
-	&=\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger \partial H_n(s) u_n(0;s)\\
-	\nonumber
-	&\quad-\Theta(u_n(0;s)^\dagger \partial H_n(s) v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger u_n(0;s)\\
-	&=\left(\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_n(s))-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_n(s))\right)\right)\tilde{u}_n(0;s).
+		&\tilde{H}_n(s)\tilde{u}_n(0;s)=i\frac{\d}{\d s}\tilde{u}_n\\
+		&=\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger \partial H_n(s) u_n(0;s)\\
+		\nonumber
+		&\quad-\Theta(u_n(0;s)^\dagger \partial H_n(s) v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger u_n(0;s)\\
+		&=\left(\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_n(s))-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_n(s))\right)\right)\tilde{u}_n(0;s).
 	\end{align}
 	First we will find a bound on
 	\begin{align}
-	&w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\\
+		&w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\\
 	\nonumber
-	&\quad-\Theta\left(w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\right)
+		&\quad-\Theta\left(w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\right)
 	\end{align}
 	and similarly on the same expression with $n$ replaced by $m$. To do this, define
 	\begin{align}
-	x_n&\defeq w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\\
-	\delta_n&\defeq x_n-\Tr_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}x_n
+		x_n&\defeq w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\\
+		\delta_n&\defeq x_n-\Tr_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}x_n
 	\end{align}
 	then
 	\begin{align}
-	\norm{x_n-\Theta(x_n)}&=\norm{\delta_n-\Theta(\delta_n)}\leq 2\norm{\delta_n}\\
-	&=2\norm{\int_{\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\d u (x_n-u^\dagger x_n u)}\\
-	&\leq \int_{\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\d u \norm{x_n-u^\dagger x_n u}\\
-	&\leq \sup_{u\in\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\norm{[u,x_n]}\leq \varepsilon_{n_0,1}.
+		\norm{x_n-\Theta(x_n)}&=\norm{\delta_n-\Theta(\delta_n)}\leq 2\norm{\delta_n}\\
+		&=2\norm{\int_{\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\d u (x_n-u^\dagger x_n u)}\\
+		&\leq \int_{\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\d u \norm{x_n-u^\dagger x_n u}\\
+		&\leq \sup_{u\in\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\norm{[u,x_n]}\leq \varepsilon_{n_0,1}.
 	\end{align}
 	Where the bound can be found explicitly using Lieb-Robinson. {\color{red}I still have to do this explicitly. }What is left to bound is now
 	\begin{align}
-	&\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
-	\nonumber
-	&-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)w_m(0;s))w_m(0;s)^\dagger v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))+\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
-	&=\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
-	\nonumber
-	&\qquad \Ad{\tilde{u}_n(0;s)u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{\tilde{u}_m(0;s)u_m(0;s)^\dagger}(\partial H_{n_0/2}(s)).
+		&\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
+		\nonumber
+		&-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)w_m(0;s))w_m(0;s)^\dagger v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))+\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
+		&=\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
+		\nonumber
+		&\qquad \Ad{\tilde{u}_n(0;s)u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{\tilde{u}_m(0;s)u_m(0;s)^\dagger}(\partial H_{n_0/2}(s)).
 	\end{align}
 	To bound the first part, observe that again by the fundamental theorem of calculus
 	\begin{align}
-	&\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\\
-	&=\int_0^s\d l\frac{\d}{\d l}\Ad{u_n(0;l)^{\dagger}u_m(l;s)^{\dagger}}(\partial H_{n_0/2}(s))\\
-	&=i\int_0^s\d l\: u_n(0;l)^{\dagger}[H_n-H_m,u_m(l;s)^{\dagger}\partial H_{n_0/2}(s)u_m(l;s)]u_n(0;l)
+		&\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\\
+		&=\int_0^s\d l\frac{\d}{\d l}\Ad{u_n(0;l)^{\dagger}u_m(l;s)^{\dagger}}(\partial H_{n_0/2}(s))\\
+		&=i\int_0^s\d l\: u_n(0;l)^{\dagger}[H_n-H_m,u_m(l;s)^{\dagger}\partial H_{n_0/2}(s)u_m(l;s)]u_n(0;l)
 	\end{align}
 	This can be bounded by Lieb-Robinson. {\color{red}I need to figure out which one exactly.} We will now bound the last two therms:
 	\begin{align}
-	\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)) v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)) v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))
+		\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)) v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)) v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))
 	\end{align}
 	This bound is similar but requires three steps:
 	\paragraph{step 1:}We find a bound
 	\begin{equation}
-	\norm{\left(\Ad{v_n(0;s)^\dagger}-\Ad{v_m(0;s)^\dagger}\right)(\partial H_{n_0/2})}\leq \varepsilon_{n_0,2}
+		\norm{\left(\Ad{v_n(0;s)^\dagger}-\Ad{v_m(0;s)^\dagger}\right)(\partial H_{n_0/2})}\leq \varepsilon_{n_0,2}
 	\end{equation}
 	using the technique used to bound the first two therms.
 	\paragraph{step 2:}Observe that
 	\begin{align}
-	&\norm{\left(\Ad{\Theta(v_n(0;s)) v_n(0;s)^\dagger}-\Ad{\Theta(v_m(0;s)) v_m(0;s)^\dagger}\right)(\partial H_{n_0/2}(s))}\\
-	&\leq \varepsilon_{n_0,2}+\norm{\left(\Ad{\Theta(v_n(0;s)) }-\Ad{\Theta(v_m(0;s)) }\right)\left(\Ad{v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)}\\
-	&\leq \varepsilon_{n_0,2}+\varepsilon_{n_0,3}
+		&\norm{\left(\Ad{\Theta(v_n(0;s)) v_n(0;s)^\dagger}-\Ad{\Theta(v_m(0;s)) v_m(0;s)^\dagger}\right)(\partial H_{n_0/2}(s))}\\
+		&\leq \varepsilon_{n_0,2}+\norm{\left(\Ad{\Theta(v_n(0;s)) }-\Ad{\Theta(v_m(0;s)) }\right)\left(\Ad{v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)}\\
+		&\leq \varepsilon_{n_0,2}+\varepsilon_{n_0,3}
 	\end{align}
 	where $\varepsilon_{n_0,3}$ can now be found using again the same technique.
 	\paragraph{step 3:}We iterate this one last step and find an $\varepsilon_{n_0,4}.$
 	We now get that
 	\begin{equation}
-	\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\leq \varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}.
+		\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\leq \varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}.
 	\end{equation}
 	Since for each $\varepsilon>0$ we can find an $n_0$ such that $\varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}<\varepsilon$ the row is indeed a Cauchy row. As the metric is complete this implies that the row converges and hence the result follows.
 \end{proof}
@@ -754,28 +754,43 @@ Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
 	Take $\theta\in]0,\pi/2[$ then
 	\begin{enumerate}
-		\item there exists an $a\in\UU(\AA)$ such that
+		\item there exists an $(a_g)_{g\in G}\in\UU(\AA)$ such that
 		\begin{equation}
-		\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a}\circ\xi^L_g\otimes\xi^R_g
+			\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a_g}\circ\xi^L_g\otimes\xi^R_g
 		\end{equation}
 		where  $\xi_{g}^{\sigma}\in\Aut{\AA_{C_{\theta}}\cup\AA_{\sigma}}$ is defined as
 		\begin{equation}
-		\xi_{g}^{\sigma}\defeq \gamma_{C_\theta\cap\sigma}^{-1}\beta_g^U\circ\gamma_{C_\theta\cap\sigma}\circ(\beta_g^U)^{-1}.
+			\xi_{g}^{\sigma}\defeq \gamma_{C_\theta\cap\sigma}^{-1}\beta_g^U\circ\gamma_{C_\theta\cap\sigma}\circ(\beta_g^U)^{-1}.
 		\end{equation}
 		\item there exists a $b\in\UU(\AA)$ such that
 		\begin{equation}
-		\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{b}\circ\Phi
+			\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{b}\circ\Phi
 		\end{equation}
 		where $\Phi\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ is defined as
 		\begin{align}
-		\Phi&\defeq\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap U}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap D}\\
-		\nonumber
-		&\quad\circ (\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap L\cap U}^{-1}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap R\cap U}^{-1})\otimes (\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap L\cap D}^{-1}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap R\cap D}^{-1}).
+			\Phi&\defeq\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap U}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap D}\\
+			\nonumber
+			&\quad\circ (\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap L\cap U}^{-1}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap R\cap U}^{-1})\otimes (\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap L\cap D}^{-1}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap R\cap D}^{-1}).
 		\end{align}
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	This also looks like it has a standard Lieb-Robinson type argument.
+	We will first prove the first item.  $\forall n\in\NN,$ take $B_n\subset\ZZ$ to be the ball with radius $n$, take
+	\begin{align}
+		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
+	\end{align}
+	and for $\sigma\in\{L,R\}$ take
+	\begin{align}
+		u_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\sigma}(s))&H_{n,\sigma}(s)&=\sum_{I\subset B_n}H_\sigma(s,I).
+	\end{align}
+	Also define
+	\begin{align}
+		v_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma}(s))&H_{n,\theta,\sigma}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma}(s,I).
+	\end{align}
+	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that for any $g\in G$ there exists an $a_g\in\UU(\AA)$ such that
+	\begin{equation}
+		\lim_{n\rightarrow\infty}\norm{\beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\gamma(a_g)}=0.
+	\end{equation}
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
