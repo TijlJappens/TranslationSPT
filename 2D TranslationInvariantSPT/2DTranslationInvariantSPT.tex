@@ -640,12 +640,12 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 	\begin{enumerate}
 		\item $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$
 		\begin{equation}\label{eq:TwoAngleLemmaEquation1}
-		\gamma^{-1}\circ\Theta\circ\gamma=\Ad{a_1}\circ\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}^{-1}\Theta\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}.
+			\gamma^{-1}\circ\Theta\circ\gamma=\Ad{a_1}\circ\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}^{-1}\Theta\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}.
 		\end{equation}
 		\item $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ such that
 		\begin{align}
-		\gamma^{-1}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma&=\Ad{a_2}\circ(\gamma_{C_\theta\cup L}^{-1}\circ \eta_{g}^L \circ\gamma_{C_\theta\cup L})\otimes(\gamma_{C_\theta\cup R}^{-1}\circ\eta_{g}^R\circ\gamma_{C_\theta\cup R})\\
-		\gamma_\sigma^{-1}\eta_g^\sigma\gamma_\sigma&=\Ad{a_3}\circ \gamma_{C_\theta\cup \sigma}^{-1}\circ \eta_{g}^\sigma \circ\gamma_{C_\theta\cup \sigma}
+			\gamma^{-1}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma&=\Ad{a_2}\circ(\gamma_{C_\theta\cup L}^{-1}\circ \eta_{g}^L \circ\gamma_{C_\theta\cup L})\otimes(\gamma_{C_\theta\cup R}^{-1}\circ\eta_{g}^R\circ\gamma_{C_\theta\cup R})\\
+			\gamma_\sigma^{-1}\eta_g^\sigma\gamma_\sigma&=\Ad{a_3}\circ \gamma_{C_\theta\cup \sigma}^{-1}\circ \eta_{g}^\sigma \circ\gamma_{C_\theta\cup \sigma}
 		\end{align}
 	\end{enumerate}
 \end{lemma}
@@ -679,7 +679,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 	and similarly for $m$. By the fundamental theorem of calculus we have that
 	\begin{align}
 		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
-	&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
+		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
 	\end{align}
 	Now define
 	\begin{equation}
@@ -746,16 +746,16 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 	\paragraph{step 3:}We iterate this one last step and find an $\varepsilon_{n_0,4}.$
 	We now get that
 	\begin{equation}
-		\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\leq \varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}.
+		\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\leq 2\varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}.
 	\end{equation}
-	Since for each $\varepsilon>0$ we can find an $n_0$ such that $\varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}<\varepsilon$ the row is indeed a Cauchy row. As the metric is complete this implies that the row converges and hence the result follows.
+	Since for each $\varepsilon>0$ we can find an $n_0$ such that $2\varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}<\varepsilon$ the row is indeed a Cauchy row. As the metric is complete this implies that the row converges and hence the result follows.
 \end{proof}
 Another lemma that will be necessary:
 \begin{lemma}\label{lem:GroupActionInCone}
 	Take $\theta\in]0,\pi/2[$ then
 	\begin{enumerate}
 		\item there exists an $(a_g)_{g\in G}\in\UU(\AA)$ such that
-		\begin{equation}
+		\begin{equation}\label{eq:GroupActionInConeLemmaEquation1}
 			\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a_g}\circ\xi^L_g\otimes\xi^R_g
 		\end{equation}
 		where  $\xi_{g}^{\sigma}\in\Aut{\AA_{C_{\theta}}\cup\AA_{\sigma}}$ is defined as
@@ -763,7 +763,7 @@ Another lemma that will be necessary:
 			\xi_{g}^{\sigma}\defeq \gamma_{C_\theta\cap\sigma}^{-1}\beta_g^U\circ\gamma_{C_\theta\cap\sigma}\circ(\beta_g^U)^{-1}.
 		\end{equation}
 		\item there exists a $b\in\UU(\AA)$ such that
-		\begin{equation}
+		\begin{equation}\label{eq:GroupActionInConeLemmaEquation2}
 			\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{b}\circ\Phi
 		\end{equation}
 		where $\Phi\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ is defined as
@@ -781,15 +781,47 @@ Another lemma that will be necessary:
 	\end{align}
 	and for $\sigma\in\{L,R\}$ take
 	\begin{align}
-		u_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\sigma}(s))&H_{n,\sigma}(s)&=\sum_{I\subset B_n}H_\sigma(s,I).
-	\end{align}
-	Also define
-	\begin{align}
 		v_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma}(s))&H_{n,\theta,\sigma}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma}(s,I).
 	\end{align}
 	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that for any $g\in G$ there exists an $a_g\in\UU(\AA)$ such that
 	\begin{equation}
 		\lim_{n\rightarrow\infty}\norm{\beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\gamma(a_g)}=0.
+	\end{equation}
+	By construction this satisfies equation \eqref{eq:GroupActionInConeLemmaEquation1}. We will show that this sequence is a Cauchy sequence. To do this, $\forall\rho\in\{U,D\}$ define the operators
+	\begin{align}
+		u_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\rho}(s))&H_{n,\rho}(s)&=\sum_{I\subset B_n}H_\rho(s,I)\\
+		v_{n,\sigma,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma,\rho}(s))&H_{n,\theta,\sigma,\rho}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma\cap\rho}(s,I).
+	\end{align}
+	To prove that the sequence is a Cauchy sequence we need to find a bound on
+	\begin{equation}
+		\Delta\defeq \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}.
+	\end{equation}
+	Define $\tilde{u}_n(t_1;t_2)$ and $\tilde{H}_n(s)$ through:
+	\begin{align}
+		\tilde{u}_n(t_1;t_2)&\defeq \beta_g^U\left(u_n(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)\otimes v_{n,R}(t_1;t_2)\right)v_{n,L}(t_1;t_2)^\dagger\otimes v_{n,R}(t_1;t_2)^\dagger u_{n}(t_1;t_2)\\
+		i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
+	\end{align}
+	and similarly for $m$. By the fundamental theorem of calculus we have that
+	\begin{align}
+		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
+		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
+	\end{align}
+	Now define
+	\begin{align}
+		\partial H_n(s)&\defeq H_n(s)-H_{n,\theta,L}(s)-H_{n,\theta,R}(s)\\
+		\partial H_{n,\rho}(s)&\defeq H_{n,\rho}(s)-H_{n,\theta,L,\rho}(s)-H_{n,\theta,R,\rho}(s)\\
+		\partial^2H_n(s)&\defeq\partial H_n(s)-\partial H_{n,U}(s)-\partial H_{n,D}(s).
+	\end{align}
+	and similarly for $m$ and $n_0$. We have
+	\begin{align}
+		i\frac{\d}{\d s}\tilde{u}_n(s)&=i\frac{\d}{\d s}\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger u_{n}(s)\\
+		&=-\beta_g^U\left(u_n(s)^\dagger \partial H_n(s) v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger u_{n}(s)\\
+		\nonumber
+		&\qquad +\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger \partial H_n(s) u_{n}(s)
+	\end{align}
+	giving
+	\begin{equation}
+		\tilde{H}_n(s)=\Ad{\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}\left(\partial H_n(s)\right)-\beta_g^U\left(\Ad{u_n(s)^\dagger}(\partial H_n(s))\right).
 	\end{equation}
 \end{proof}
 \bibliography{TSPT}
