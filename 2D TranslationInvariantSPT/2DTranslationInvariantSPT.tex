@@ -662,7 +662,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 	\begin{equation}
 		\lim_{n\rightarrow\infty}\norm{\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\gamma(a_1)}=0.
 	\end{equation}
-	Clearly by construction this $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaEquation1}. We will show that this sequence is a Cauchy sequence. To do this, define the operator
+	Clearly by construction this $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaEquation1}. {\color{red}This still requires an argument.} We will show that this sequence is a Cauchy sequence. To do this, define the operator
 	\begin{align}
 		w_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1}(s))&H_{n,\theta_1}(s)&=\sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I).
 	\end{align}
@@ -823,6 +823,19 @@ Another lemma that will be necessary:
 	\begin{equation}
 		\tilde{H}_n(s)=\Ad{\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}\left(\partial H_n(s)\right)-\beta_g^U\left(\Ad{u_n(s)^\dagger}(\partial H_n(s))\right).
 	\end{equation}
+	First we will find a bound on
+	\begin{equation}
+		\Ad{v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}(\partial H_n(s)-\partial H_{n_0/2})-\beta_g^U\left(\Ad{v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}(\partial H_n(s)-\partial H_{n_0/2})\right).
+	\end{equation}
+	{\color{red}This seems doable. I will work this out later on. }I now have to find a bound on
+	\begin{align}
+		&\Ad{\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}\left(\partial H_{n_0/2}(s)\right)\\
+		\nonumber
+		&\qquad-\Ad{\beta_g^U\left(u_m(s)^\dagger v_{m,L}(s) v_{m,R}(s)\right)v_{m,L}(s)^\dagger v_{m,R}(s)^\dagger}\left(\partial H_{n_0/2}(s)\right)\\
+		\nonumber
+		&\qquad -\beta_g^U\left(\Ad{u_n(s)^\dagger}(\partial H_{n_0/2}(s))\right)+\beta_g^U\left(\Ad{u_m(s)^\dagger}(\partial H_{n_0/2}(s))\right).
+	\end{align}
+	{\color{red}This bound is in complete analogy with the previous lemma.}
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
