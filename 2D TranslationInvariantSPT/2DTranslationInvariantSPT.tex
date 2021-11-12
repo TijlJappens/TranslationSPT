@@ -124,11 +124,12 @@ We now have to define one more object
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	The only nontrivial part (that is not just some straightforward calculation) is showing that indeed
-	\begin{equation}
-		\omega_0\circ\alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_0^{-1}\qe \omega_0.
-	\end{equation}
-	{\color{red}This I still have to do.}
+	By some straightforward calculation we have that
+	\begin{align}
+		\Ad{K_g}\circ\pi_0&=\Ad{v^\dagger W_g v W_g^\dagger}\circ\pi_0\\
+		&=\bigotimes_{\sigma=L,R}\pi_\sigma\circ\alpha_\sigma\circ\tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_\sigma^{-1}.
+	\end{align}
+	From this and the irreducibility of $\pi_\sigma$, we see that $\Ad{K_g}$ gives rise to a *-isomorphism on $\BB(\HH_\sigma).$ By the Wigner theorem this is implemented by some unitary $K_g^\sigma$ on $\HH_\sigma$. Again by the irreducibility of $\pi_\sigma$ this unitary is unique up to a $G-$dependent phase.
 \end{proof}
 Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
@@ -706,7 +707,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  	\nonumber
  	&\qquad -\beta_g^U\left(\Ad{u_n(s)^\dagger}(\partial H_{n_0/2}(s))+\Ad{u_m(s)^\dagger}(\partial H_{n_0/2}(s))\right).
  	\end{align}
- 	{\color{red}This bound is in complete analogy with the previous lemma.}
+ 	{\color{red}This bound is in complete analogy with what we did in lemma \ref{lem:TwoAngleLemmaPart1}.}
  \end{proof}
  \begin{lemma}\label{lem:AutomorphismAfterSplittingIsInCone}
  	Take $\theta\in]0,\pi/2[$ then there exists a $b\in\UU(\AA)$ such that
