@@ -659,7 +659,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  	\begin{equation}
  	\lim_{n\rightarrow\infty}\norm{\beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\gamma(a_g)}=0.
  	\end{equation}
- 	By construction this satisfies equation \eqref{eq:GroupActionInConeLemmaEquation1}. We will show that this sequence is a Cauchy sequence. To do this, $\forall\rho\in\{U,D\}$ define the operators
+ 	To show that this $a_g$ indeed satisfies equation \eqref{eq:GroupActionInConeLemmaEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will show that this sequence is a Cauchy sequence. To do this, $\forall\rho\in\{U,D\}$ define the operators
  	\begin{align}
  	u_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\rho}(s))&H_{n,\rho}(s)&=\sum_{I\subset B_n}H_\rho(s,I)\\
  	v_{n,\sigma,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma,\rho}(s))&H_{n,\theta,\sigma,\rho}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma\cap\rho}(s,I).
