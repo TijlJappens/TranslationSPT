@@ -668,17 +668,20 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  	\Delta&\defeq \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}\\
  	&= \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}w_{n,U}\otimes w_{n,D}\right)w_{n,D}^\dagger w_{n,U}^\dagger v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}
  	\end{align}
- 	that only depends on $n_0$ and vanishes as $n_0\rightarrow\infty.$ Define $\tilde{u}_n(t_1;t_2)$ and $\tilde{H}_n(s)$ through:
+ 	that only depends on $n_0$ and vanishes as $n_0\rightarrow\infty.$ Define $\tilde{u}_n(t_1;t_2)$ through:
  	\begin{align}
- 	\tilde{u}_n(t_1;t_2)&\defeq \beta_g^U\left(u_n(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)\otimes v_{n,R}(t_1;t_2)w_{n,U}(t_1;t_2)\otimes w_{n,D}(t_1;t_2)\right)\\
- 	\nonumber
- 	&\quad w_{n,D}(t_1;t_2)^\dagger w_{n,U}(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)^\dagger\otimes v_{n,R}(t_1;t_2)^\dagger u_{n}(t_1;t_2)\\
- 	i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
+ 		\tilde{u}_n(t_1;t_2)&\defeq \beta_g^U\left(u_n(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)\otimes v_{n,R}(t_1;t_2)w_{n,U}(t_1;t_2)\otimes w_{n,D}(t_1;t_2)\right)\\
+ 		\nonumber
+ 		&\quad w_{n,D}(t_1;t_2)^\dagger w_{n,U}(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)^\dagger\otimes v_{n,R}(t_1;t_2)^\dagger u_{n}(t_1;t_2)
  	\end{align}
+ 	and $\tilde{H}_n(s)$ through:
+ 	\begin{equation}
+ 		i\frac{\d}{\d s}\tilde{u}_n(0;s)=\tilde{H}_n(s)\tilde{u}_n(0;s)
+ 	\end{equation}
  	and similarly for $m$. By the fundamental theorem of calculus we have that
  	\begin{align}
- 	\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
- 	&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
+ 		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
+ 		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
  	\end{align}
  	Now define
  	\begin{equation}
@@ -742,10 +745,51 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  	\begin{equation}
 	 	\lim_{n\rightarrow\infty}\norm{u_n^\dagger u_{n,L}\otimes u_{n,R} \bigotimes_{\rho}v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger v_{n,\rho}-b}=0.
  	\end{equation}
- 	To show that this $b$ indeed satisfies equation \eqref{eq:AutomorphismAfterSplittingIsInConeEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will prove the convergence by showing that this sequence is a Cauchy sequence. To do this we need to find a bound on
+ 	To show that this $b$ indeed satisfies equation \eqref{eq:AutomorphismAfterSplittingIsInConeEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will prove the convergence by showing that this sequence is a Cauchy sequence. To prove that the sequence is a Cauchy sequence we need to take $0<n_0<n<m$ arbitrary and we need to find a bound on
+ 	\begin{align}
+ 		\Delta&\defeq u_n^\dagger u_{n,L}\otimes u_{n,R} \bigotimes_{\rho}v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger v_{n,\rho}-u_m^\dagger u_{m,L}\otimes u_{m,R} \bigotimes_{\rho}v_{m,\rho,L}^\dagger\otimes v_{m,\rho,R}^\dagger v_{m,\rho}
+ 	\end{align}
+ 	that only depends on $n_0$ and vanishes as $n_0\rightarrow\infty$. Define $\tilde{u}_n(t_1;t_2)$ through:
+ 	\begin{align}
+ 		\tilde{u}_n(t_1;t_2)\defeq u_n(t_1;t_2)^\dagger u_{n,L}(t_1;t_2)u_{n,R}(t_1;t_2)\bigotimes_{\rho}v_{n,\rho,L}(t_1;t_2)^\dagger\otimes v_{n,\rho,R}(t_1;t_2)^\dagger v_{n,\rho}(t_1;t_2)
+ 	\end{align}
+ 	and $\tilde{H}_n(s)$ through:
  	\begin{equation}
-	 	content...
+	 	i\frac{\d}{\d s}\tilde{u}_n(0;s)=\tilde{H}_n(s)\tilde{u}_n(0;s)
  	\end{equation}
+ 	and similarly for $m$. By the fundamental theorem of calculus we have that
+ 	\begin{align}
+ 		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
+ 		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
+ 	\end{align}
+ 	Now define
+ 	\begin{align}
+	 	\partial H_n(s)&\defeq H_n(s)- H_{n,L}(s)-H_{n,R}(s)\\
+	 	\partial H_{n,\theta}(s)&\defeq \sum_\rho H_{n,\theta,\rho}(s)-\sum_{\rho,\sigma}H_{n,\theta,\rho,\sigma}(s).
+ 	\end{align}
+ 	We have that
+ 	\begin{align}
+	 	i\frac{\d}{\d s}\tilde{u}_n(0;s)=&-u_n(0;s)^\dagger\partial H_n(s)u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s) v_{n,\rho}(0;s)\\
+	 	\nonumber
+	 	&\quad + u_n(0;s)^\dagger u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s) \partial H_{n,\theta}(s) v_{n,\rho}(0;s).
+ 	\end{align}
+ 	This gives
+ 	\begin{align}
+	 	\tilde{H}_n(s)=& \Ad{u_n(0;s)^\dagger u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}\left(\partial H_{n,\theta}(s)\right) - \Ad{u_n(0;s)^\dagger}(\partial H_n(s)).
+ 	\end{align}
+ 	We will first find a bound on
+ 	\begin{equation}
+ 	\Ad{u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}(\partial H_{n_0/2,\theta}(s)-\partial H_{n,\theta}(s))-(\partial H_{n_0/2}(s)-\partial H_{n}(s)).
+ 	\end{equation}
+ 	We split this problem in two, the first one is a bound on
+ 	\begin{equation}
+	 	\norm{\partial H_{n_0/2,\theta}(s)-\partial H_{n,\theta}(s)-\partial H_{n_0/2}(s)+\partial H_{n}(s)}
+ 	\end{equation}
+ 	the second one is a bound on
+ 	\begin{equation}
+ 	\norm{\Ad{u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}(\partial H_{n_0/2}(s)-\partial H_{n}(s))-(\partial H_{n_0/2}(s)-\partial H_{n}(s))}.
+ 	\end{equation}
+ 	{\color{red}This I still have to do.}
  \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$
@@ -760,7 +804,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
 	\end{align}
 	and take similarly
 	\begin{align}
-	v_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1^c}(s) )&H_{n,\theta_1^c}(s)&=\sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I).
+		v_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1^c}(s) )&H_{n,\theta_1^c}(s)&=\sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I).
 	\end{align}
 	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that there exists an $a_1\in\UU(\AA)$ such that
 	\begin{equation}
