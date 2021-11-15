@@ -649,28 +649,30 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  \begin{proof}
  	We will first prove the first item.  $\forall n\in\NN,$ take $B_n\subset\ZZ$ to be the ball with radius $n$, take
  	\begin{align}
- 	u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
+ 		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
  	\end{align}
  	and for $\sigma\in\{L,R\}$ take
  	\begin{align}
- 	v_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma}(s))&H_{n,\theta,\sigma}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma}(s,I).
+ 		v_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma}(s))&H_{n,\theta,\sigma}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma}(s,I).
  	\end{align}
  	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that for any $g\in G$ there exists an $a_g\in\UU(\AA)$ such that
  	\begin{equation}
- 	\lim_{n\rightarrow\infty}\norm{\beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\gamma(a_g)}=0.
+ 		\lim_{n\rightarrow\infty}\norm{\beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\gamma(a_g)}=0.
  	\end{equation}
  	To show that this $a_g$ indeed satisfies equation \eqref{eq:GroupActionInConeLemmaEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will show that this sequence is a Cauchy sequence. To do this, $\forall\rho\in\{U,D\}$ define the operators
  	\begin{align}
- 	u_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\rho}(s))&H_{n,\rho}(s)&=\sum_{I\subset B_n}H_\rho(s,I)\\
- 	v_{n,\sigma,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma,\rho}(s))&H_{n,\theta,\sigma,\rho}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma\cap\rho}(s,I).
+ 		w_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta^c,\rho}(s))&H_{n,\theta^c,\rho}(s)&=\sum_{I\subset B_n}H_{C_\theta^c\cap\rho}(s,I)
  	\end{align}
- 	To prove that the sequence is a Cauchy sequence we need to find a bound on
- 	\begin{equation}
- 	\Delta\defeq \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}.
- 	\end{equation}
- 	Define $\tilde{u}_n(t_1;t_2)$ and $\tilde{H}_n(s)$ through:
+ 	To prove that the sequence is a Cauchy sequence we need to take $0<n_0<n<m$ arbitrary and we need to find a bound on
  	\begin{align}
- 	\tilde{u}_n(t_1;t_2)&\defeq \beta_g^U\left(u_n(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)\otimes v_{n,R}(t_1;t_2)\right)v_{n,L}(t_1;t_2)^\dagger\otimes v_{n,R}(t_1;t_2)^\dagger u_{n}(t_1;t_2)\\
+ 	\Delta&\defeq \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}\\
+ 	&= \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}w_{n,U}\otimes w_{n,D}\right)w_{n,D}^\dagger w_{n,U}^\dagger v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}
+ 	\end{align}
+ 	that only depends on $n_0$ and vanishes as $n_0\rightarrow\infty.$ Define $\tilde{u}_n(t_1;t_2)$ and $\tilde{H}_n(s)$ through:
+ 	\begin{align}
+ 	\tilde{u}_n(t_1;t_2)&\defeq \beta_g^U\left(u_n(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)\otimes v_{n,R}(t_1;t_2)w_{n,U}(t_1;t_2)\otimes w_{n,D}(t_1;t_2)\right)\\
+ 	\nonumber
+ 	&\quad w_{n,D}(t_1;t_2)^\dagger w_{n,U}(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)^\dagger\otimes v_{n,R}(t_1;t_2)^\dagger u_{n}(t_1;t_2)\\
  	i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
  	\end{align}
  	and similarly for $m$. By the fundamental theorem of calculus we have that
@@ -679,11 +681,9 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  	&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
  	\end{align}
  	Now define
- 	\begin{align}
- 	\partial H_n(s)&\defeq H_n(s)-H_{n,\theta,L}(s)-H_{n,\theta,R}(s)\\
- 	\partial H_{n,\rho}(s)&\defeq H_{n,\rho}(s)-H_{n,\theta,L,\rho}(s)-H_{n,\theta,R,\rho}(s)\\
- 	\partial^2H_n(s)&\defeq\partial H_n(s)-\partial H_{n,U}(s)-\partial H_{n,D}(s).
- 	\end{align}
+ 	\begin{equation}
+ 	\partial H_n(s)\defeq H_n(s)-H_{n,\theta,L}(s)-H_{n,\theta,R}(s)-H_{n,\theta^c,U}(s)-H_{n,\theta^c,D}(s)
+ 	\end{equation}
  	and similarly for $m$ and $n_0$. We have
  	\begin{align}
  	i\frac{\d}{\d s}\tilde{u}_n(s)&=i\frac{\d}{\d s}\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger u_{n}(s)\\
@@ -711,7 +711,7 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  \end{proof}
  \begin{lemma}\label{lem:AutomorphismAfterSplittingIsInCone}
  	Take $\theta\in]0,\pi/2[$ then there exists a $b\in\UU(\AA)$ such that
- 	\begin{equation}\label{eq:GroupActionInConeLemmaEquation2}
+ 	\begin{equation}\label{eq:AutomorphismAfterSplittingIsInConeEquation1}
  	\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{b}\circ\Phi
  	\end{equation}
  	where $\Phi\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ is defined as
@@ -722,7 +722,30 @@ We will assume that for all $t$, $H(t,\cdot)$ has an $f$-norm smaller than $1$.
  	\end{align}
  \end{lemma}
  \begin{proof}
- 	content...
+ 	take $B_n\subset\ZZ$ to be the ball with radius $n$, take
+ 	\begin{align}
+ 		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
+ 	\end{align}
+ 	and $\forall \sigma\in\{L,R\}$, take
+ 	\begin{align}
+	 	u_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\sigma}(s))&H_{n,\sigma}(s)&=\sum_{I\subset B_n}H_\sigma(s,I).
+ 	\end{align}
+ 	Additionally $\forall\sigma\in\{L,R\},\rho\in\{U,D\}$ define
+ 	\begin{align}
+ 		v_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\rho}(s))&H_{n,\theta,\rho}(s)&=\sum_{I\subset B_n}H_{(C_\theta\cup\tau(C_\theta))^c\cap \rho}(s,I)
+ 	\end{align}
+ 	and
+ 	\begin{align}
+ 		v_{n,\rho,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\rho,\sigma}(s))&H_{n,\theta,\rho,\sigma}(s)&=\sum_{I\subset B_n}H_{(C_\theta\cup\tau(C_\theta))^c\cap \rho\cap\sigma}(s,I).
+ 	\end{align}
+ 	In what follows we will prove that there exists a $b\in\UU(\AA)$ such that
+ 	\begin{equation}
+	 	\lim_{n\rightarrow\infty}\norm{u_n^\dagger u_{n,L}\otimes u_{n,R} \bigotimes_{\rho}v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger v_{n,\rho}-b}=0.
+ 	\end{equation}
+ 	To show that this $b$ indeed satisfies equation \eqref{eq:AutomorphismAfterSplittingIsInConeEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will prove the convergence by showing that this sequence is a Cauchy sequence. To do this we need to find a bound on
+ 	\begin{equation}
+	 	content...
+ 	\end{equation}
  \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$
