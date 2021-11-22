@@ -133,13 +133,13 @@ We now have to define one more object
 \end{proof}
 Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
-	Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is inner after cone on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\Theta)$) if there exists an $A\in\AA_R$ and some $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_R}$ such that
+	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))^c}$. Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is inner after cone on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and some $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_R}$ such that
 	\begin{equation}
 		\Ad{u}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi.
 	\end{equation}
 	$\textrm{IAC}_R$ is a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$. If we define similarly $\textrm{IAC}_R$ we get that
 	\begin{align}\label{eq:CommutantProperty}
-		\textrm{IAC}_R(\alpha_0,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\Theta)'&\textrm{IAC}_L(\alpha_0,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\Theta)'.
+		\textrm{IAC}_R(\alpha_0,\theta,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\theta,\Theta)'&\textrm{IAC}_L(\alpha_0,\theta,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\theta,\Theta)'.
 	\end{align}
 \end{definition}
 \begin{proof}
@@ -646,13 +646,24 @@ The goal of this section is now to show that the index we constructed is invaria
  \begin{align}
  	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
  \end{align}
- where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. Now we will define some classes of automorphisms:
+ where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms:
  \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$ such that $\alpha\circ\beta_g=\beta_g\circ\alpha$ for any $g\in G.$ We say that $\alpha\in\textrm{GSQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}}\cap\AA_\sigma}$, $\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_2,\theta_3]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{C_{[\theta_3,\pi/2]}}\cap\AA_\rho}$, $\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{2.8},\theta_{3.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ that all commute with $\beta_g^U$ such that
+ 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}}\cap\AA_\sigma}$, $\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_2,\theta_3]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{C_{[\theta_3,\pi/2]}}\cap\AA_\rho}$, $\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{2.8},\theta_{3.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ such that
  	\begin{equation}
- 		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,]}
+ 		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
+ 	\end{equation}
+ 	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}(\AA)$.
+ \end{definition}
+ \begin{definition}
+ 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
+ 	\begin{equation}
+ 		\alpha=\Ad{a}\circ\alpha_L\otimes\alpha_R.
  	\end{equation}
  \end{definition}
+We will need one additional class of automorphisms:
+\begin{definition}
+	content...
+\end{definition}
  \begin{lemma}\label{lem:GroupActionInCone}
  	Take $\theta\in]0,\pi/2[$ then there exists an $(a_g)_{g\in G}\in\UU(\AA)$ such that
  	\begin{equation}\label{eq:GroupActionInConeLemmaEquation1}
@@ -664,70 +675,6 @@ The goal of this section is now to show that the index we constructed is invaria
  	\end{equation}
  \end{lemma}
  \begin{proof}
- 	We will first prove the first item.  $\forall n\in\NN,$ take $B_n\subset\ZZ$ to be the ball with radius $n$, take
- 	\begin{align}
- 		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
- 	\end{align}
- 	and for $\sigma\in\{L,R\}$ take
- 	\begin{align}
- 		v_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\sigma}(s))&H_{n,\theta,\sigma}(s)&=\sum_{I\subset B_n}H_{C_\theta\cap\sigma}(s,I).
- 	\end{align}
- 	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that for any $g\in G$ there exists an $a_g\in\UU(\AA)$ such that
- 	\begin{equation}
- 		\lim_{n\rightarrow\infty}\norm{\beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\gamma(a_g)}=0.
- 	\end{equation}
- 	To show that this $a_g$ indeed satisfies equation \eqref{eq:GroupActionInConeLemmaEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will show that this sequence is a Cauchy sequence. To do this, $\forall\rho\in\{U,D\}$ define the operators
- 	\begin{align}
- 		w_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta^c,\rho}(s))&H_{n,\theta^c,\rho}(s)&=\sum_{I\subset B_n}H_{C_\theta^c\cap\rho}(s,I)
- 	\end{align}
- 	To prove that the sequence is a Cauchy sequence we need to take $0<n_0<n<m$ arbitrary and we need to find a bound on
- 	\begin{align}
- 	\Delta&\defeq \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}\right)v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}\\
- 	&= \beta_g^U\left(u_n^\dagger v_{n,L}\otimes v_{n,R}w_{n,U}\otimes w_{n,D}\right)w_{n,D}^\dagger w_{n,U}^\dagger v_{n,L}^\dagger\otimes v_{n,R}^\dagger u_{n}-\beta_g^U\left(u_m^\dagger v_{m,L}\otimes v_{m,R}\right)v_{m,L}^\dagger\otimes v_{m,R}^\dagger u_{m}
- 	\end{align}
- 	that only depends on $n_0$ and vanishes as $n_0\rightarrow\infty.$ Define $\tilde{u}_n(t_1;t_2)$ through:
- 	\begin{align}
- 		\tilde{u}_n(t_1;t_2)&\defeq \beta_g^U\left(u_n(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)\otimes v_{n,R}(t_1;t_2)w_{n,U}(t_1;t_2)\otimes w_{n,D}(t_1;t_2)\right)\\
- 		\nonumber
- 		&\quad w_{n,D}(t_1;t_2)^\dagger w_{n,U}(t_1;t_2)^\dagger v_{n,L}(t_1;t_2)^\dagger\otimes v_{n,R}(t_1;t_2)^\dagger u_{n}(t_1;t_2)
- 	\end{align}
- 	and $\tilde{H}_n(s)$ through:
- 	\begin{equation}
- 		i\frac{\d}{\d s}\tilde{u}_n(0;s)=\tilde{H}_n(s)\tilde{u}_n(0;s)
- 	\end{equation}
- 	and similarly for $m$. By the fundamental theorem of calculus we have that
- 	\begin{align}
- 		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
- 		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
- 	\end{align}
- 	Now define
- 	\begin{equation}
- 	\partial H_n(s)\defeq H_n(s)-H_{n,\theta,L}(s)-H_{n,\theta,R}(s)-H_{n,\theta^c,U}(s)-H_{n,\theta^c,D}(s)
- 	\end{equation}
- 	and similarly for $m$ and $n_0$. We have
- 	\begin{align}
- 	i\frac{\d}{\d s}\tilde{u}_n(s)&=i\frac{\d}{\d s}\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger u_{n}(s)\\
- 	&=-\beta_g^U\left(u_n(s)^\dagger \partial H_n(s) v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger u_{n}(s)\\
- 	\nonumber
- 	&\qquad +\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger \partial H_n(s) u_{n}(s)
- 	\end{align}
- 	giving
- 	\begin{equation}
- 	\tilde{H}_n(s)=\Ad{\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}\left(\partial H_n(s)\right)-\beta_g^U\left(\Ad{u_n(s)^\dagger}(\partial H_n(s))\right).
- 	\end{equation}
- 	First we will find a bound on
- 	\begin{equation}
- 	\Ad{v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}(\partial H_n(s)-\partial H_{n_0/2})-\beta_g^U\left(\Ad{v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}(\partial H_n(s)-\partial H_{n_0/2})\right).
- 	\end{equation}
- 	In lemma \ref{lem:Bound1} part 1 it is proved that this bound exists, is independent of $n$ and that its limit for $n_0\rightarrow\infty$ vanishes. I now have to find a bound on
- 	\begin{align}
- 	&\Ad{\beta_g^U\left(u_n(s)^\dagger v_{n,L}(s) v_{n,R}(s)\right)v_{n,L}(s)^\dagger v_{n,R}(s)^\dagger}\left(\partial H_{n_0/2}(s)\right)\\
- 	\nonumber
- 	&\qquad-\Ad{\beta_g^U\left(u_m(s)^\dagger v_{m,L}(s) v_{m,R}(s)\right)v_{m,L}(s)^\dagger v_{m,R}(s)^\dagger}\left(\partial H_{n_0/2}(s)\right)\\
- 	\nonumber
- 	&\qquad -\beta_g^U\left(\Ad{u_n(s)^\dagger}(\partial H_{n_0/2}(s))+\Ad{u_m(s)^\dagger}(\partial H_{n_0/2}(s))\right).
- 	\end{align}
- 	{\color{red}This bound is in complete analogy with what we did at the end of the proof in lemma \ref{lem:TwoAngleLemmaPart1}.}
  \end{proof}
  \begin{lemma}\label{lem:AutomorphismAfterSplittingIsInCone}
  	Take $\theta\in]0,\pi/2[$ then there exists a $b\in\UU(\AA)$ such that
@@ -742,81 +689,6 @@ The goal of this section is now to show that the index we constructed is invaria
  	\end{align}
  \end{lemma}
  \begin{proof}
- 	take $B_n\subset\ZZ$ to be the ball with radius $n$, take
- 	\begin{align}
- 		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
- 	\end{align}
- 	and $\forall \sigma\in\{L,R\}$, take
- 	\begin{align}
-	 	u_{n,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\sigma}(s))&H_{n,\sigma}(s)&=\sum_{I\subset B_n}H_\sigma(s,I).
- 	\end{align}
- 	Additionally $\forall\sigma\in\{L,R\},\rho\in\{U,D\}$ define
- 	\begin{align}
- 		v_{n,\rho}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\rho}(s))&H_{n,\theta,\rho}(s)&=\sum_{I\subset B_n}H_{(C_\theta\cup\tau(C_\theta))^c\cap \rho}(s,I)
- 	\end{align}
- 	and
- 	\begin{align}
- 		v_{n,\rho,\sigma}(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta,\rho,\sigma}(s))&H_{n,\theta,\rho,\sigma}(s)&=\sum_{I\subset B_n}H_{(C_\theta\cup\tau(C_\theta))^c\cap \rho\cap\sigma}(s,I).
- 	\end{align}
- 	In what follows we will prove that there exists a $b\in\UU(\AA)$ such that
- 	\begin{equation}
-	 	\lim_{n\rightarrow\infty}\norm{u_n^\dagger u_{n,L}\otimes u_{n,R} \bigotimes_{\rho}v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger v_{n,\rho}-b}=0.
- 	\end{equation}
- 	To show that this $b$ indeed satisfies equation \eqref{eq:AutomorphismAfterSplittingIsInConeEquation1} we invoke lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous}. We will prove the convergence by showing that this sequence is a Cauchy sequence. To prove that the sequence is a Cauchy sequence we need to take $0<n_0<n<m$ arbitrary and we need to find a bound on
- 	\begin{align}
- 		\Delta&\defeq u_n^\dagger u_{n,L}\otimes u_{n,R} \bigotimes_{\rho}v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger v_{n,\rho}-u_m^\dagger u_{m,L}\otimes u_{m,R} \bigotimes_{\rho}v_{m,\rho,L}^\dagger\otimes v_{m,\rho,R}^\dagger v_{m,\rho}
- 	\end{align}
- 	that only depends on $n_0$ and vanishes as $n_0\rightarrow\infty$. Define $\tilde{u}_n(t_1;t_2)$ through:
- 	\begin{align}
- 		\tilde{u}_n(t_1;t_2)\defeq u_n(t_1;t_2)^\dagger u_{n,L}(t_1;t_2)u_{n,R}(t_1;t_2)\bigotimes_{\rho}v_{n,\rho,L}(t_1;t_2)^\dagger\otimes v_{n,\rho,R}(t_1;t_2)^\dagger v_{n,\rho}(t_1;t_2)
- 	\end{align}
- 	and $\tilde{H}_n(s)$ through:
- 	\begin{equation}
-	 	i\frac{\d}{\d s}\tilde{u}_n(0;s)=\tilde{H}_n(s)\tilde{u}_n(0;s)
- 	\end{equation}
- 	and similarly for $m$. By the fundamental theorem of calculus we have that
- 	\begin{align}
- 		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
- 		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
- 	\end{align}
- 	Now define
- 	\begin{align}
-	 	\partial H_n(s)&\defeq H_n(s)- H_{n,L}(s)-H_{n,R}(s)\\
-	 	\partial H_{n,\theta}(s)&\defeq \sum_\rho H_{n,\theta,\rho}(s)-\sum_{\rho,\sigma}H_{n,\theta,\rho,\sigma}(s).
- 	\end{align}
- 	We have that
- 	\begin{align}
-	 	i\frac{\d}{\d s}\tilde{u}_n(0;s)=&-u_n(0;s)^\dagger\partial H_n(s)u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s) v_{n,\rho}(0;s)\\
-	 	\nonumber
-	 	&\quad + u_n(0;s)^\dagger u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s) \partial H_{n,\theta}(s) v_{n,\rho}(0;s).
- 	\end{align}
- 	This gives
- 	\begin{align}
-	 	\tilde{H}_n(s)=& \Ad{u_n(0;s)^\dagger u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}\left(\partial H_{n,\theta}(s)\right) - \Ad{u_n(0;s)^\dagger}(\partial H_n(s)).
- 	\end{align}
- 	We will first find a bound on
- 	\begin{equation}
- 	\Ad{u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}(\partial H_{n_0/2,\theta}(s)-\partial H_{n,\theta}(s))-(\partial H_{n_0/2}(s)-\partial H_{n}(s)).
- 	\end{equation}
- 	We split this problem in two, the first one is a bound on
- 	\begin{equation}
-	 	\norm{\partial H_{n_0/2,\theta}(s)-\partial H_{n,\theta}(s)-\partial H_{n_0/2}(s)+\partial H_{n}(s)}
- 	\end{equation}
- 	{\color{red}This I still have to do }the second one is a bound on the norm of
- 	\begin{align}
- 	&\Ad{u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}(\partial H_{n_0/2}(s)-\partial H_{n}(s))-(\partial H_{n_0/2}(s)-\partial H_{n}(s))\\
- 	&=i\int_0^s\d \lambda i\frac{\d}{\d\lambda}\left(\Ad{u_{n,L}\otimes u_{n,R}(\lambda;s)\bigotimes_\rho v_{n,\rho,L}\otimes v_{n,\rho,R}(s;\lambda)}(\partial H_{n_0/2}(s)-\partial H_{n}(s))\right)\\
- 	&=i\int_0^s \d\lambda u_{n,L}\otimes u_{n,R}(\lambda;s)\left[-\sum_\sigma H_{n,\sigma}(\lambda)+\sum_{\rho,\sigma} H_{n,\theta,\sigma,\rho},\right.\\
- 	\nonumber
- 	&\qquad\left.\Ad{\bigotimes_\rho v_{n,\rho,L}\otimes v_{n,\rho,R}(s;\lambda)}(\partial H_{n_0/2}(s)-\partial H_{n}(s))\right]u_{n,L}\otimes u_{n,R}(s;\lambda).
- 	\end{align}
- 	This is done in lemma \ref{lem:Bound2}. What is now left to bound is
- 	\begin{align}
- 		\nonumber
-	 	\Ad{u_n(0;s)^\dagger u_{n,L}\otimes u_{n,R}(0;s) \bigotimes_\rho v_{n,\rho,L}^\dagger\otimes v_{n,\rho,R}^\dagger(0;s)}\left(\partial H_{n_0/2,\theta}(s)\right) - \Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\\
-	 	-\Ad{u_m(0;s)^\dagger u_{m,L}\otimes u_{m,R}(0;s) \bigotimes_\rho v_{m,\rho,L}^\dagger\otimes v_{m,\rho,R}^\dagger(0;s)}\left(\partial H_{n_0/2,\theta}(s)\right) + \Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s)).
- 	\end{align}
- 	{\color{red}This proof is again completely analogous to the end of the proof of \ref{lem:TwoAngleLemmaPart1}. When refering to lemma \ref{lem:Bound3} we have to take $\theta=\pi/2$.}
  \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$
@@ -825,105 +697,6 @@ The goal of this section is now to show that the index we constructed is invaria
 		\end{equation}
 \end{lemma}
 \begin{proof}
-	Take $C_\theta'=(C_\theta\cup\tau(C_\theta))^c.$ $\forall n\in\NN,$ take $B_n\subset\ZZ$ to be the ball with radius $n$, take
-	\begin{align}
-		u_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_n(s))&H_n(s)&=\sum_{I\subset B_n}H(s,I)
-	\end{align}
-	and take similarly
-	\begin{align}
-		v_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1^c}(s) )&H_{n,\theta_1^c}(s)&=\sum_{I\subset B_n}H_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}(s,I).
-	\end{align}
-	When we don't explicitly write the times we mean $t_1=0$ and $t_2=1$. We claim that there exists an $a_1\in\UU(\AA)$ such that
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\norm{\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\gamma(a_1)}=0.
-	\end{equation}
-	To see that $a_1$ satisfies equation \eqref{eq:TwoAngleLemmaPart1Equation1} notice that by construction in strong topology $\lim_{n\rightarrow\infty}\Ad{u_n^\dagger}=\gamma$ and $\lim_{n\rightarrow\infty}\Ad{v_n^\dagger}=\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}$. Using lemma \ref{lem:AddingAutomorphismsIsContinuous} and \ref{lem:AdjointIsContinuous} the result now follows. We will show that this sequence is a Cauchy sequence (because the norm topology is complete this is enough). To do this, define the operator
-	\begin{align}
-		w_n(t_1;t_2)&\defeq \mathcal{T}\exp(-i\int_{t_1}^{t_2} \d s H_{n,\theta_1}(s))&H_{n,\theta_1}(s)&=\sum_{I\subset B_n}H_{C_{\theta_1}\cup \tau(C_{\theta_1})}(s,I).
-	\end{align}
-	This has the property that $\Theta(w_n)=w_n$. Take $n_0$ then for any $n,m>n_0$ we have that
-	\begin{align}
-		\Delta&\defeq\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\\
-		&=\Theta(u_n^\dagger v_n w_n)w_n^\dagger v_n^\dagger u_n -\Theta(u_m^\dagger v_m w_m)w_m^\dagger v_m^\dagger u_m.
-	\end{align}
-	Define $\tilde{u}_n$ and $\tilde{H}_n$ as
-	\begin{align}
-		\tilde{u}_n(t_1;t_2)&\defeq \Theta\left(u_n(t_1;t_2)^\dagger v_n(t_1;t_2) w_n(t_1;t_2)\right)w_n(t_1;t_2)^\dagger v_n(t_1;t_2)^\dagger u_n(t_1;t_2)\\
-		i\frac{\d}{\d s}\tilde{u}_n(0;s)&=\tilde{H}_n(s)\tilde{u}_n(0;s)
-	\end{align}
-	and similarly for $m$. By the fundamental theorem of calculus we have that
-	\begin{align}
-		\Delta&=-\int_0^1\d s\:\frac{\d}{\d s}\left(\tilde{u}_n(s;1)\tilde{u}_m(0;s)\right)\\
-		&=i\int_0^1\d s \: \tilde{u}_n(s;1)\left(\tilde{H}_m(s)-\tilde{H}_n(s)\right)\tilde{u}_m(0;s).
-	\end{align}
-	Now define
-	\begin{equation}
-		\partial H_n(s)\defeq H_n(s)-H_{n,\theta_1}(s)-H_{n,\theta_1^c}(s)
-	\end{equation}
-	and similarly for $m$ and $n_0$. We have
-	\begin{align}
-		&\tilde{H}_n(s)\tilde{u}_n(0;s)=i\frac{\d}{\d s}\tilde{u}_n\\
-		&=\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger \partial H_n(s) u_n(0;s)\\
-		\nonumber
-		&\quad-\Theta(u_n(0;s)^\dagger \partial H_n(s) v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger u_n(0;s)\\
-		&=\left(\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_n(s))-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_n(s))\right)\right)\tilde{u}_n(0;s).
-	\end{align}
-	First we will find a bound on
-	\begin{align}
-		&w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\\
-	\nonumber
-		&\quad-\Theta\left(w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\right)
-	\end{align}
-	and similarly on the same expression with $n$ replaced by $m$. To do this, define
-	\begin{align}
-		x_n&\defeq w_n(0;s)^\dagger v_n(0;s)^\dagger(\partial H_n(s)-\partial H_{n_0/2}(s))v_n(0;s)w_n(0;s)\\
-		\delta_n&\defeq x_n-\Tr_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}x_n
-	\end{align}
-	then
-	\begin{align}
-		\norm{x_n-\Theta(x_n)}&=\norm{\delta_n-\Theta(\delta_n)}\leq 2\norm{\delta_n}\\
-		&=2\norm{\int_{\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\d u (x_n-u^\dagger x_n u)}\\
-		&\leq \int_{\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\d u \norm{x_n-u^\dagger x_n u}\\
-		&\leq \sup_{u\in\UU(\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c})}\norm{[u,x_n]}\leq \varepsilon_{n_0,1}.
-	\end{align}
-	In lemma \ref{lem:Bound1} part 2 we showed that this bound exists, is independent of $n$ and vanishes in the limit $n_0\rightarrow\infty.$ What is left to bound is now
-	\begin{align}
-		&\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)w_n(0;s))w_n(0;s)^\dagger v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
-		\nonumber
-		&-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)w_m(0;s))w_m(0;s)^\dagger v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))+\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
-		&=\Theta\left(\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)-\Theta\left(\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)\\
-		\nonumber
-		&\qquad \Ad{\tilde{u}_n(0;s)u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{\tilde{u}_m(0;s)u_m(0;s)^\dagger}(\partial H_{n_0/2}(s)).
-	\end{align}
-	To bound the first part, observe that again by the fundamental theorem of calculus
-	\begin{align}
-		&\Ad{u_m(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{u_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\\
-		&=\int_0^s\d l\frac{\d}{\d l}\Ad{u_n(0;l)^{\dagger}u_m(l;s)^{\dagger}}(\partial H_{n_0/2}(s))\\
-		&=i\int_0^s\d l\: u_n(0;l)^{\dagger}[H_n-H_m,u_m(l;s)^{\dagger}\partial H_{n_0/2}(s)u_m(l;s)]u_n(0;l)
-	\end{align}
-	This bound was done in lemma \ref{lem:Bound3}. We will now bound the last two therms:
-	\begin{align}
-		\Ad{\Theta(u_n(0;s)^\dagger v_n(0;s)) v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))-\Ad{\Theta(u_m(0;s)^\dagger v_m(0;s)) v_m(0;s)^\dagger}(\partial H_{n_0/2}(s))
-	\end{align}
-	This bound is similar but requires three steps:
-	\paragraph{step 1:}We find a bound
-	\begin{equation}
-		\norm{\left(\Ad{v_n(0;s)^\dagger}-\Ad{v_m(0;s)^\dagger}\right)(\partial H_{n_0/2})}\leq \varepsilon_{n_0,2}
-	\end{equation}
-	using the technique used to bound the first two therms.
-	\paragraph{step 2:}Observe that
-	\begin{align}
-		&\norm{\left(\Ad{\Theta(v_n(0;s)) v_n(0;s)^\dagger}-\Ad{\Theta(v_m(0;s)) v_m(0;s)^\dagger}\right)(\partial H_{n_0/2}(s))}\\
-		&\leq \varepsilon_{n_0,2}+\norm{\left(\Ad{\Theta(v_n(0;s)) }-\Ad{\Theta(v_m(0;s)) }\right)\left(\Ad{v_n(0;s)^\dagger}(\partial H_{n_0/2}(s))\right)}\\
-		&\leq \varepsilon_{n_0,2}+\varepsilon_{n_0,3}
-	\end{align}
-	where $\varepsilon_{n_0,3}$ can now be found using again the same technique.
-	\paragraph{step 3:}We iterate this one last step and find an $\varepsilon_{n_0,4}.$
-	We now get that
-	\begin{equation}
-		\Theta(u_n^\dagger v_n)v_n^\dagger u_n-\Theta(u_m^\dagger v_m)v_m^\dagger u_m\leq 2\varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}.
-	\end{equation}
-	Since for each $\varepsilon>0$ we can find an $n_0$ such that $2\varepsilon_{n_0,1}+\varepsilon_{n_0,2}+\varepsilon_{n_0,3}+\varepsilon_{n_0,4}<\varepsilon$ the row is indeed a Cauchy row. As the metric is complete this implies that the row converges and hence the result follows.
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ such that
@@ -933,35 +706,6 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{align}
 \end{lemma}
 \begin{proof}
-	The proof that there exists an $a_3$ satisfying this is completely analogous to the proof of lemma \ref{lem:TwoAngleLemmaPart1}. The proof that there exists an $a_2$ satisfying this then follows using lemma \ref{lem:AutomorphismAfterSplittingIsInCone}.
-\end{proof}
-\begin{lemma}\label{lem:AddingAutomorphismsIsContinuous}
-	Endow $\Aut{\AA}$ with strong topology then the map
-	\begin{equation}
-		F:\Aut{\AA}\times\Aut{\AA}\rightarrow\Aut{\AA}:(\xi_1,\xi_2)\mapsto \xi_1\circ\xi_2
-	\end{equation}
-	is continuous.
-\end{lemma}
-\begin{proof}
-	Take $(\xi_{1,n})_{n\in\NN}$, $(\xi_{2,n})_{n\in\NN}$, $\xi_1$ and $\xi_2$ (all in $\Aut{\AA}$) satisfying
-	\begin{align}
-		\lim_{n\rightarrow\infty}\xi_{n,1}&=\xi_1&\lim_{n\rightarrow\infty}\xi_{n,2}&=\xi_2.
-	\end{align}
-	We have to show that
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\xi_{n,1}\circ\xi_{n,2}=\xi_1\circ\xi_2.
-	\end{equation}
-	This is equivalent to saying that $\forall a\in\AA:$
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\norm{\xi_{n,1}\circ\xi_{n,2}(a)-\xi_1\circ\xi_2(a)}=0.
-	\end{equation}
-	Using the triangle inequality we obtain:
-	\begin{align}
-		&\norm{\xi_{n,1}\circ\xi_{n,2}(a)-\xi_1\circ\xi_2(a)}\\
-		&\leq \norm{\xi_{1,n}\left(\xi_{2,n}(a)-\xi_{2}(a)\right)}+\norm{(\xi_1-\xi_{1,n})(\xi_2(a))}\\
-		&=\norm{\xi_{2,n}(a)-\xi_{2}(a)}+\norm{\xi_1(b)-\xi_{1,n}(b)}
-	\end{align}
-	where $b=\xi_2(a).$ Since both converge to $0$ the result follows.
 \end{proof}
 \begin{lemma}\label{lem:AdjointIsContinuous}
 	Endow $\AA$ with norm topology and $\Aut{\AA}$ with strong topology then the map
@@ -973,72 +717,7 @@ The goal of this section is now to show that the index we constructed is invaria
 \begin{proof}
 	content...
 \end{proof}
-\section{Bounds we will need}
-In this section we fix a $0<\phi<1$ and define a monotonically decreasing positive function
-\begin{equation}
-	f:\RR_+\rightarrow \RR_+:r\mapsto \frac{\exp(-r^{\phi})}{(1+r)^{4}}
-\end{equation}
-For any $r\in\RR_+$ take $B_r\subset\ZZ$ to be the sphere of radius $r$. For any $0<r_0<r$, take $B_{r/r_0}=B_{r}/B_{r_0}$. For any $0<\theta<\pi_0$ define $I_{\theta}\subset \ZZ^2$ as
-\begin{equation}
-	I_{\theta}=\{(x,y)\in\ZZ|\exists r\in\RR_+:\norm{(x-\cos(\theta)r,y-\sin(\theta)r)}\leq 1\}.
-\end{equation}
-In the the remainder of the section for any interaction $H:I\subset\ZZ\mapsto H(I)\in \AA_I$ we will say that it is $f-$local if $\norm{H}_f\leq 1$ and we will say that it is $G-$invariant if for any $I\subset \ZZ^{2}$ we have that $\beta_g(H(I))=H(I).$
-\begin{lemma}\label{lem:Bound1}
-	Take $0<\theta<\pi/2$. Take $H$ to be an arbitrary $t-$dependent $f-$local $G-$invariant interaction. Take $\gamma_t$ to be the automorphism generated by $H$ up to time $t$. Furthermore, for any $0<n$ take $\Phi_{n}$ to be an $f-$local $G-$invariant interaction such that if $I\cap (I_\theta\cap B_{n}^c)=\emptyset$ then $\Phi_{n}(I)=0$. The following two statements are now true:
-	\begin{enumerate}
-		\item There exists an $\varepsilon_{1}(n,t)>0$ such that
-		\begin{equation}
-			\norm{\sum_{I\subset \ZZ^2}\left(\gamma_t(\Phi_{n}(I))-\beta_g^U(\gamma_t(\Phi_{n}(I)))\right)}\leq \varepsilon_{1}(n,t).
-		\end{equation}
-		\item Take $\theta_2\in]\theta_1,\pi/2[$ then there exists an $\varepsilon_{2}(n,t)>0$ such that for any $u\in\UU(\AA_{C_{\theta_2}^c})$ we have that
-		\begin{equation}
-			\norm{\sum_{I\subset \ZZ^2}[u,\gamma_t(\Phi_n(I))]}\leq \varepsilon_2(n_1,t).
-		\end{equation}
-	\end{enumerate}
-	For any $t>0$ we have that
-	\begin{align}
-		\lim_{n\rightarrow\infty}\varepsilon_{1}(n,t)=\lim_{n\rightarrow\infty}\varepsilon_{2}(n,t)=0.
-	\end{align}
-\end{lemma}
-\begin{proof}
-	content...
-\end{proof}
-\begin{lemma}\label{lem:Bound2}
-	Take $0<\theta<\pi/2$. Take $H$ to be an arbitrary $t-$dependent $f$-local interaction. Take $\gamma_t$ to be the automorphism generated by $H$ up to time $t$. Take $\Phi_{n}$ (for every $0<n$) and $\Psi$ $f-$local interactions such that:
-	\begin{enumerate}
-		\item if $I\cap (I_{\pi/2}\cap B_{n}^c)=\emptyset$ then $\Phi_{n}(I)=0.$
-		\item if $I\cap C_{\theta}=\emptyset$ then $\Psi(I)=0.$
-	\end{enumerate}
-	There now exists an $\varepsilon(n_1,t)$ such that
-	\begin{equation}
-		\norm{\sum_{I,J\subset\ZZ^2}[\Psi(I),\gamma_t(\Phi_{n}(J))]}\leq\varepsilon(n,t).
-	\end{equation}
-	For any $t>0$ we have that
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\varepsilon(n,t)=0.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	content...
-\end{proof}
-\begin{lemma}\label{lem:Bound3}
-	Take $0<\theta<\pi/2$. Take $H$ to be an arbitrary $t-$dependent $f$-local interaction. Take $\gamma_t$ to be the automorphism generated by $H$ up to time $t$. For any $0<n$ take $\Phi_{n/2}$ and $\Psi_{n}$ to be $f-$local interactions such that
-	\begin{enumerate}
-		\item if $I\cap (I_\theta\cap B_{n/2})=\emptyset$ then $\Phi_{n/2}(I)=0.$
-		\item if $I\cap B_{n}^c=\emptyset$ then $\Psi_{n}(I)=0.$
-	\end{enumerate}
-	There now exists an $\varepsilon(n,t)$ such that
-	\begin{equation}
-		\norm{\sum_{I,J\subset\ZZ^2}[\Psi_{n}(I),\gamma_t(\Phi_{n/2}(J))]}\leq \varepsilon(n,t).
-	\end{equation}
-	For any $t>0$ we have that
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\varepsilon(n_0,t)=0.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	content...
-\end{proof}
+
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
