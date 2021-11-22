@@ -501,7 +501,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\begin{equation}
 	\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
 	\end{equation}
-	Using lemma \ref{lem:AutomorphismAfterSplittingIsInCone} we get that there exists a $\Theta_2$ acting on the same subspace as $\Theta$ satisfying that there exists an $a\in\AA$ such that
+	Using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 we get that there exists a $\Theta_2$ acting on the same subspace as $\Theta$ satisfying that there exists an $a\in\AA$ such that
 	\begin{equation}\label{eq:ConePropertyLemmaDefinitionOfGroupMorphism}
 		\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{a}\circ\Theta_2.
 	\end{equation}
@@ -581,11 +581,11 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	It is unique up to a $G$-dependent phase.
 \end{lemma}
 \begin{proof}
-	Take the $b\in\UU(\AA)$ and $\Phi$ defined in lemma \ref{lem:AutomorphismAfterSplittingIsInCone}. We will define
+	Take the $b\in\UU(\AA)$ and $\Phi$ defined in lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. We will define
 	\begin{equation}
 		\phi_2(W_g)\defeq \pi_0\circ\alpha_0\circ\Theta(b)W_g\pi_0\circ\alpha_0\circ\Theta(b)^\dagger.
 	\end{equation}
-	To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using lemma \ref{lem:AutomorphismAfterSplittingIsInCone} we obtain:
+	To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 we obtain:
 	\begin{align}
 		\Ad{\phi_2(W_g)}\circ\pi_0&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{b}\circ\eta_g\circ\beta_g^U\circ\Ad{b^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
 		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\Phi^{-1}\circ\eta_g\circ\beta_g^U\circ\Phi\circ\gamma_L\otimes\gamma_R\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}.
@@ -618,12 +618,12 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\begin{equation}
 		\alpha\circ\gamma=\Ad{V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\gamma_{L}^{-1}\otimes\gamma_{R}^{-1}\circ\Theta\circ\gamma.
 	\end{equation}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:AutomorphismAfterSplittingIsInCone} there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemmaPart2} and lemma \ref{lem:GroupActionInCone} there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemmaPart2} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
 		\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{\sigma}\circ(\beta_g^{\sigma U})^{-1}.
@@ -672,39 +672,23 @@ We will need one additional class of automorphisms:
 	\end{equation}
 \end{definition}
 Now we will state some properties of locally generated automorphisms:
-\begin{lemma}
-	Take $H$
+\begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms}
+	Take $H$ a $G-$invariant interaction such that there exists a $0<\phi<1$ satisfying $\norm{H}_{f_\phi}\leq 1$. The following statements now hold (for any $s,t\in\RR$):
+	\begin{enumerate}
+		\item $\gamma^H_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$.
+		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{VAut}(\AA)$.
+		\item $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GSQAut}(\AA)$.
+		\item $\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}\in\textrm{HAut}(\AA)$.
+	\end{enumerate}
 \end{lemma}
- \begin{lemma}\label{lem:GroupActionInCone}
- 	Take $\theta\in]0,\pi/2[$ then there exists an $(a_g)_{g\in G}\in\UU(\AA)$ such that
- 	\begin{equation}\label{eq:GroupActionInConeLemmaEquation1}
- 	\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}=\Ad{a_g}\circ\xi^L_g\otimes\xi^R_g
- 	\end{equation}
- 	where  $\xi_{g}^{\sigma}\in\Aut{\AA_{C_{\theta}}\cup\AA_{\sigma}}$ is defined as
- 	\begin{equation}
- 	\xi_{g}^{\sigma}\defeq \gamma_{C_\theta\cap\sigma}^{-1}\beta_g^U\circ\gamma_{C_\theta\cap\sigma}\circ(\beta_g^U)^{-1}.
- 	\end{equation}
- \end{lemma}
- \begin{proof}
- \end{proof}
- \begin{lemma}\label{lem:AutomorphismAfterSplittingIsInCone}
- 	Take $\theta\in]0,\pi/2[$ then there exists a $b\in\UU(\AA)$ such that
- 	\begin{equation}\label{eq:AutomorphismAfterSplittingIsInConeEquation1}
- 	\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}=\Ad{b}\circ\Phi
- 	\end{equation}
- 	where $\Phi\in\Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ is defined as
- 	\begin{align}
- 	\Phi&\defeq\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap U}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap D}\\
- 	\nonumber
- 	&\quad\circ (\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap L\cap U}^{-1}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap R\cap U}^{-1})\otimes (\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap L\cap D}^{-1}\otimes\gamma_{(C_\theta\cup\tau(C_\theta))^c\cap R\cap D}^{-1}).
- 	\end{align}
- \end{lemma}
- \begin{proof}
- \end{proof}
+\begin{proof}
+	content...
+\end{proof}
+From these three statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and an $\tilde{\Theta}\in \Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$
 		\begin{equation}\label{eq:TwoAngleLemmaPart1Equation1}
-			\gamma^{-1}\circ\Theta\circ\gamma=\Ad{a_1}\circ\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}^{-1}\Theta\gamma_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}.
+			\gamma^{-1}\circ\Theta\circ\gamma=\Ad{a_1}\circ\tilde{\Theta}.
 		\end{equation}
 \end{lemma}
 \begin{proof}
