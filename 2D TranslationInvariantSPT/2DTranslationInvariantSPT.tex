@@ -678,7 +678,7 @@ Now we will state some properties of locally generated automorphisms:
 		\item $\gamma^H_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$.
 		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{VAut}(\AA)$.
 		\item $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GSQAut}(\AA)$.
-		\item $\gamma^{-1}\circ\beta_g^U\circ\gamma\circ(\beta_g^U)^{-1}\in\textrm{HAut}(\AA)$.
+		\item $\gamma^{H}_{t;s}\circ\beta_g^U\circ\gamma^{H}_{s;t}\circ(\beta_g^U)^{-1}\in\textrm{HAut}(\AA)$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -686,7 +686,7 @@ Now we will state some properties of locally generated automorphisms:
 \end{proof}
 From these three statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and an $\tilde{\Theta}\in \Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$
 		\begin{equation}\label{eq:TwoAngleLemmaPart1Equation1}
 			\gamma^{-1}\circ\Theta\circ\gamma=\Ad{a_1}\circ\tilde{\Theta}.
 		\end{equation}
@@ -694,13 +694,41 @@ From these three statements we can prove the following results:
 \begin{proof}
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ such that
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$) there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ and some $\tilde{\eta}_{\sigma}\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
 	\begin{align}
-	\gamma^{-1}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma&=\Ad{a_2}\circ(\gamma_{C_\theta\cup L}^{-1}\circ \eta_{g}^L \circ\gamma_{C_\theta\cup L})\otimes(\gamma_{C_\theta\cup R}^{-1}\circ\eta_{g}^R\circ\gamma_{C_\theta\cup R})\\
-	\gamma_\sigma^{-1}\eta_g^\sigma\gamma_\sigma&=\Ad{a_3}\circ \gamma_{C_\theta\cup \sigma}^{-1}\circ \eta_{g}^\sigma \circ\gamma_{C_\theta\cup \sigma}
+		\gamma^{-1}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
+		\gamma_\sigma^{-1}\eta_g^\sigma\gamma_\sigma&=\Ad{a_3}\circ \tilde\eta_{g}^\sigma.
 	\end{align}
 \end{lemma}
 \begin{proof}
+\end{proof}
+\begin{lemma}\label{lem:AddingAutomorphismsIsContinuous}
+	Endow $\Aut{\AA}$ with strong topology then the map
+	\begin{equation}
+		F:\Aut{\AA}\times\Aut{\AA}\rightarrow\Aut{\AA}:(\xi_1,\xi_2)\mapsto \xi_1\circ\xi_2
+	\end{equation}
+	is continuous.
+\end{lemma}
+\begin{proof}
+	Take $(\xi_{1,n})_{n\in\NN}$, $(\xi_{2,n})_{n\in\NN}$, $\xi_1$ and $\xi_2$ (all in $\Aut{\AA}$) satisfying
+	\begin{align}
+		\lim_{n\rightarrow\infty}\xi_{n,1}&=\xi_1&\lim_{n\rightarrow\infty}\xi_{n,2}&=\xi_2.
+	\end{align}
+	We have to show that
+	\begin{equation}
+		\lim_{n\rightarrow\infty}\xi_{n,1}\circ\xi_{n,2}=\xi_1\circ\xi_2.
+	\end{equation}
+	This is equivalent to saying that $\forall a\in\AA:$
+	\begin{equation}
+		\lim_{n\rightarrow\infty}\norm{\xi_{n,1}\circ\xi_{n,2}(a)-\xi_1\circ\xi_2(a)}=0.
+	\end{equation}
+	Using the triangle inequality we obtain:
+	\begin{align}
+		&\norm{\xi_{n,1}\circ\xi_{n,2}(a)-\xi_1\circ\xi_2(a)}\\
+		&\leq \norm{\xi_{1,n}\left(\xi_{2,n}(a)-\xi_{2}(a)\right)}+\norm{(\xi_1-\xi_{1,n})(\xi_2(a))}\\
+		&=\norm{\xi_{2,n}(a)-\xi_{2}(a)}+\norm{\xi_1(b)-\xi_{1,n}(b)}
+	\end{align}
+	where $b=\xi_2(a).$ Since both converge to $0$ the result follows.
 \end{proof}
 \begin{lemma}\label{lem:AdjointIsContinuous}
 	Endow $\AA$ with norm topology and $\Aut{\AA}$ with strong topology then the map
