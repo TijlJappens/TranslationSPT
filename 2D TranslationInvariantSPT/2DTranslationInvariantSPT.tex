@@ -495,6 +495,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphism}
 		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\xi.
 	\end{equation}
+	This group morphism is unique {\color{red}At least I think so, it might be only unique up to a phase but I'm not sure.}
 \end{lemma}
 \begin{proof}
 	Take $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ such that
@@ -596,7 +597,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\end{align}
 	Since $\Phi$ commutes with both the $\eta_g$ and with the $\beta_g^U$ the result follows.
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{lem:phi1phi2matchingCondition}
 	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ we have that
 	\begin{align}
 		\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
@@ -604,7 +605,46 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\end{align}
 \end{lemma}
 \begin{proof}
-	content...
+	Take $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ such that
+	\begin{equation}
+		x=\pi_0\circ\alpha_0\circ\Theta(A)y
+	\end{equation}
+	where $y$ is such that there exists a $\xi\in\Aut{\AA_{C_\theta}\cap \AA_R}$ such that
+	\begin{equation}
+		\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
+	\end{equation}
+	Take $a$ and $\Phi$ as given in equation \eqref{eq:DefinitionOfGroupMorphismHAutEquation} and take $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. We now get
+	\begin{align}
+		W_g x W_g^\dagger&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A) W_gyW_g^\dagger\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U(A) W_gyW_g^\dagger.
+	\end{align}
+	Since $W_g uW_g^\dagger$ satisfies that there exists an $\tilde{\xi}\in\Aut{\AA_{C_\theta}\cap \AA_R}$ such that
+	\begin{equation}
+		\Ad{W_gyW_g^\dagger}\circ \pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\tilde\xi
+	\end{equation}
+	(one can just take $\tilde\xi=\eta_g\circ\beta_g^U\circ\xi\circ\beta_{g^{-1}}^U\circ\eta_g^{-1}$) we get that
+	\begin{equation}
+		\phi_1(W_gxW_g^{\dagger})=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U(A)\tilde{a}W_gyW_g^\dagger\tilde{a}^\dagger.
+	\end{equation}
+	Filling this in gives
+	\begin{align}
+		&\phi_1(W_gxW_g^\dagger)\phi_2(W_g)^\dagger\phi_1(x)^\dagger\phi_2(W_g)^\dagger\\
+		\label{eq:phi1phi2matchingConditionEquation}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U(A)\tilde{a}W_g\stkout{yW_g^\dagger\tilde{a}^\dagger}\\
+		\nonumber
+		&\quad\stkout{\tilde{a}W_g\tilde{a}^\dagger\tilde{a}y}\tilde{a}^\dagger\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)^\dagger\tilde{a}W_g^\dagger\tilde{a}^\dagger.
+	\end{align}
+	To prove that this is the identity observe that
+	\begin{align}
+		&\Ad{\tilde{a}W_g\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ \gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\\
+		&=\Ad{\tilde{a}W_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a^\dagger}\circ \gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\\
+		&=\Ad{\tilde{a}W_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Phi(A)\\
+		&=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\circ\Phi(A)\\
+		&=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Phi\circ\eta_g\circ\beta_g^U(A)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Phi\circ\eta_g\circ\beta_g^U(A)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ \gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0} \circ\eta_g\circ\beta_g^U(A).
+	\end{align}
+	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof.
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma)$
