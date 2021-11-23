@@ -479,9 +479,13 @@ For any interaction with such a bounded $f_\phi$ norm we will use $\gamma^H_{s;t
 \end{equation}
 with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed here that this automorphism indeed exists.} The goal of this section is now to show that the index we constructed is invariant under such locally generated automorphisms (see theorem \ref{thrm:IndexInvariantUnderLGA}).
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
-	There exists a group homomorphism
+	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\AA_{C_\theta^c}\cap\AA_{D}}$ such that there exists some $a\in\AA$ satisfying that
 	\begin{equation}
-		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1}):x\mapsto \phi_1(x)
+		\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}=\Ad{a}\circ \Phi^U_{s;t}\otimes\Phi^D_{s;t}.
+	\end{equation}
+	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. There now exists a group homomorphism
+	\begin{equation}
+		\phi_1:\textrm{IAC}_R(\alpha_0,\theta,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}):x\mapsto \phi_1(x)
 	\end{equation}
 	satisfying that for any $A\in\AA_R$ and $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
 	\begin{equation}
@@ -493,7 +497,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Take $x\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{IAC}_R(\alpha_0,\Theta)$ such that
+	Take $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ such that
 	\begin{equation}
 	x=\pi_0\circ\alpha_0\circ\Theta(A)y
 	\end{equation}
@@ -581,22 +585,26 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	It is unique up to a $G$-dependent phase.
 \end{lemma}
 \begin{proof}
-	Take the $b\in\UU(\AA)$ and $\Phi$ defined in lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. We will define
+	Take the $a\in\UU(\AA)$, $\Phi^U_{0;1}$ and $\Phi^D_{0;1}$ defined such that
 	\begin{equation}
-		\phi_2(W_g)\defeq \pi_0\circ\alpha_0\circ\Theta(b)W_g\pi_0\circ\alpha_0\circ\Theta(b)^\dagger.
+		\gamma^H_{0;1}\otimes\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}=\Ad{a}\circ\Phi^U_{0;1}\otimes\Phi^D_{0;1}.
+	\end{equation}
+	This exists because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. We will define
+	\begin{equation}
+		\phi_2(W_g)\defeq \pi_0\circ\alpha_0\circ\Theta(a)W_g\pi_0\circ\alpha_0\circ\Theta(a)^\dagger.
 	\end{equation}
 	To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 we obtain:
 	\begin{align}
-		\Ad{\phi_2(W_g)}\circ\pi_0&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{b}\circ\eta_g\circ\beta_g^U\circ\Ad{b^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
-		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma\circ\gamma_L^{-1}\otimes\gamma_R^{-1}\circ\Phi^{-1}\circ\eta_g\circ\beta_g^U\circ\Phi\circ\gamma_L\otimes\gamma_R\circ\gamma^{-1}\circ\Theta^{-1}\circ\alpha_0^{-1}.
+		\Ad{\phi_2(W_g)}\circ\pi_0&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{a}\circ\eta_g\circ\beta_g^U\circ\Ad{a^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}\circ\Phi_{0;1}^{-1}\circ\eta_g\circ\beta_g^U\circ\Phi_{0;1}\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
 	\end{align}
 	Since $\Phi$ commutes with both the $\eta_g$ and with the $\beta_g^U$ the result follows.
 \end{proof}
 \begin{lemma}
-	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\textrm{IAC}_R(\alpha_0,\Theta)$ we have that
-		\begin{align}
-			\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
-			\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
+	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ we have that
+	\begin{align}
+		\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
+		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
 	\end{align}
 \end{lemma}
 \begin{proof}
@@ -670,13 +678,14 @@ We will need one additional class of automorphisms:
 	\begin{equation}
 		\alpha=\Ad{a}\circ\alpha_U\otimes\alpha_D.
 	\end{equation}
+	If furthermore $\alpha_U\circ\beta_g^U=\beta_g^U\circ\alpha_U$ we say that $\alpha\in\textrm{GVAut}(\AA)$.
 \end{definition}
 Now we will state some properties of locally generated automorphisms:
 \begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms}
 	Take $H$ a $G-$invariant interaction such that there exists a $0<\phi<1$ satisfying $\norm{H}_{f_\phi}\leq 1$. The following statements now hold (for any $s,t\in\RR$):
 	\begin{enumerate}
 		\item $\gamma^H_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$.
-		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{VAut}(\AA)$.
+		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{GVAut}(\AA)$.
 		\item $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GSQAut}(\AA)$.
 		\item $\gamma^{H}_{t;s}\circ\beta_g^U\circ\gamma^{H}_{s;t}\circ(\beta_g^U)^{-1}\in\textrm{HAut}(\AA)$.
 	\end{enumerate}
@@ -684,7 +693,7 @@ Now we will state some properties of locally generated automorphisms:
 \begin{proof}
 	content...
 \end{proof}
-From these three statements we can prove the following results:
+From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$
 		\begin{equation}\label{eq:TwoAngleLemmaPart1Equation1}
