@@ -349,16 +349,29 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 \end{proof}
 We now show that the index is invariant under some transformation parametrised by the group $\textrm{IAC}_R$:
 \begin{lemma}\label{lem:TransformationUnderDelta}
-	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ (for all $\sigma\in\{L,R\}$). Define
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_\sigma(\alpha_0,\theta,\Theta)$ (for all $\sigma\in\{L,R\}$). Define
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
-		u_{R,2}(g,h)&\defeq \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
-		K^R_{g,2}&\defeq v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger
+		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
+		K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger
 	\end{align}
 	then the index of $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ is equal to the index of $v,W_{g,2},u_{\sigma,2}(g,h)$ and $K_{g,2}^\sigma$.
 \end{lemma}
 \begin{proof}
-	We have
+	First we will prove that we still have that
+	\begin{equation}\label{eq:TransformationUnderDeltaProofNewUIsSplit}
+		u_{L,2}(g,h)u_{R,2}(g,h)=W_{gh,2}W_{h,2}^\dagger W_{g,2}^\dagger.
+	\end{equation}
+	To do this first insert the definition to obtain
+	\begin{align}
+		u_{L,2}(g,h)u_{R,2}(g,h)=\delta_g^L W_{g,1}\delta_h^L W_{g,1}^\dagger u_{L,1}(g,h)(\delta_{gh}^L)^\dagger \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger.
+	\end{align}
+	Since by lemma \ref{lem:AdjointOverConeIsInCone}, $\delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ we get because of equation \eqref{eq:CommutantProperty} that
+	\begin{align}
+		&=\delta_g^L W_{g,1}\delta_h^L W_{g,1}^\dagger \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{L,1}(g,h)(\delta_{gh}^L)^\dagger  u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
+		&=\delta_g^L \delta_g^R W_{g,1}\delta_h^L \stkout{ W_{g,1}^\dagger W_{g,1}}\delta_h^R W_{g,1}^\dagger u_{L,1}(g,h)  u_{R,1}(g,h)(\delta_{gh}^L)^\dagger(\delta_{gh}^R)^\dagger
+	\end{align}
+	concluding the proof of equation \eqref{eq:TransformationUnderDeltaProofNewUIsSplit}. Using this we obtain:
 	\begin{align}
 		&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger W_{gh,2}W_{h,2}^\dagger W_{g,2}^\dagger u_{R,2}(g,h)\\
 		=&K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{h,2}W_{gh,2}^\dagger(K_{gh,2}^R)^\dagger u_{L,2}(g,h)^\dagger\\
