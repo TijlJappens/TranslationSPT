@@ -774,7 +774,7 @@ Now we will state some properties of locally generated automorphisms:
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	content...
+	Part 3 follows from Theorem 5.2 in \cite{ogata2021h3gmathbb}, part 1 is done in Proposition 5.5 in \cite{ogata2021h3gmathbb} and part 4 follows trivially from Part 1. We therefore only have to comment on part 3. {\color{red}To be continued...}
 \end{proof}
 From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
@@ -784,9 +784,19 @@ From these four statements we can prove the following results:
 		\end{equation}
 \end{lemma}
 \begin{proof}
+	We have that
+	\begin{equation}
+		\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}=\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\circ\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}.
+	\end{equation}
+	Using that $\gamma^{H}_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$ we get that there exists some $a\in\AA$ and $\eta\in\Aut{\AA_{C_\theta}}$ such that
+	\begin{align}
+		\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}&=\Ad{a}\circ \gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\eta_{s;t}^{-1}\circ\Theta\circ\eta_{s;t}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\\
+		&=\Ad{a}\circ \gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\Theta\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}.
+	\end{align}
+	Since by \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 3 $\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\in\textrm{GSQAut}(\AA)$ the result follows. {\color{red}Do I have to explain this further?}
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$) and $s,t\in\RR$ there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ and some $\tilde{\eta}_{\sigma}\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
 	\begin{align}
 		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
 		\gamma^{H_\sigma}_{t;s}\eta_g^\sigma\gamma^{H_\sigma}_{s;t}&=\Ad{a_3}\circ \tilde\eta_{g}^\sigma.
