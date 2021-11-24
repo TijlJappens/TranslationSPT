@@ -131,11 +131,19 @@ We now have to define one more object
 	\end{align}
 	From this and the irreducibility of $\pi_\sigma$, we see that $\Ad{K_g}$ gives rise to a *-isomorphism on $\BB(\HH_\sigma).$ By the Wigner theorem this is implemented by some unitary $K_g^\sigma$ on $\HH_\sigma$. Again by the irreducibility of $\pi_\sigma$ this unitary is unique up to a $G-$dependent phase.
 \end{proof}
-Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
+Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))^c}$. Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is inner after cone on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and some $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_R}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_\sigma\in\Aut{\AA_{\sigma}}$. Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is a cone operator on the right/left (or in short $u\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$ for $\sigma\in\{L,R\}$) if there exists a $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_\sigma}$ such that
 	\begin{equation}
-		\Ad{u}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi.
+		\Ad{u}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
+	\end{equation}
+	the $\textrm{Cone}_\sigma(\alpha_0,\theta)$ are both subgroups of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$.
+\end{definition}
+Notice that both $u_\sigma(g,h)$ and $K_g^\sigma$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
+\begin{definition}
+	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))^c}$. Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is an inner after cone operator on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and a $v\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
+	\begin{equation}
+		u=\pi_0\circ\alpha_0\circ\Theta(A)v.
 	\end{equation}
 	$\textrm{IAC}_R$ is a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$. If we define similarly $\textrm{IAC}_L$ we get that
 	\begin{align}\label{eq:CommutantProperty}
@@ -146,19 +154,7 @@ Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS spac
 	content...
 \end{proof}
 \begin{lemma}\label{lem:AdjointOverConeIsInCone}
-	Take $\gamma^{\sigma}\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{\sigma}}$ and take $\Gamma^{\sigma}$ (for all $\sigma\in\{L,R\}$) to be such that
-	\begin{equation}
-		\pi_{\sigma}\circ\alpha_{\sigma}\circ\gamma^{\sigma}\circ\alpha_{\sigma}^{-1}= \Ad{\Gamma^{\sigma}}\circ\pi_{\sigma}
-	\end{equation}
-	then
-	\begin{equation}
-		\Ad{W_g}(\Gamma_{L}\otimes\Gamma_{R})=\Ad{W_g}(\Gamma_L)\otimes\Ad{W_g}(\Gamma_{R}).
-	\end{equation}
-	Moreover there exist $\tilde\gamma^{\sigma}_g\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_{\sigma}}$ such that
-	\begin{equation}
-		\pi_{\sigma}\circ\alpha_{\sigma}\circ\tilde\gamma^{\sigma}_g\circ\alpha_{\sigma}^{-1}= \Ad{\Ad{W_g}(\Gamma^{\sigma})}\circ\pi_{\sigma}.
-	\end{equation}
-	If more generally we take $\Gamma^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Gamma^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ $\forall g\in G$.
+	Take $\Gamma^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Gamma^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$.	If more generally we take $\Gamma^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Gamma^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ $\forall g\in G$.
 \end{lemma}
 \begin{proof}
 	content...
@@ -353,7 +349,7 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 \end{proof}
 We now show that the index is invariant under some transformation parametrised by the group $\textrm{IAC}_R$:
 \begin{lemma}\label{lem:TransformationUnderDelta}
-	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_R(\alpha_0,\Theta)$. Define
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ (for all $\sigma\in\{L,R\}$). Define
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
 		u_{R,2}(g,h)&\defeq \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
@@ -483,22 +479,28 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquation}
 		\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}=\Ad{a}\circ \Phi^U_{s;t}\otimes\Phi^D_{s;t}.
 	\end{equation}
-	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. There now exists a group homomorphism
-	\begin{equation}
-		\phi_1:\textrm{IAC}_R(\alpha_0,\theta,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}):x\mapsto \phi_1(x)
-	\end{equation}
-	satisfying that for any $A\in\AA_R$ and $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
-	\begin{equation}
-		\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{A}\circ\xi
-	\end{equation}
-	we get that
-	\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphism}
-		\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\xi.
-	\end{equation}
-	This group morphism is unique {\color{red}At least I think so, it might be only unique up to a phase but I'm not sure.}
+	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. Define the map
+	\begin{align}
+		\phi_1&:\textrm{IAC}_R(\alpha_0,\theta,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})\\
+		\nonumber
+		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger
+	\end{align}
+	where $A\in\AA_R$ and $y\in\textrm{Cone}_R(\alpha_0,\theta)$. This map satisfies that
+	\begin{enumerate}
+		\item  for any $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
+		\begin{equation}
+			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
+		\end{equation}
+		we get that
+		\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphism}
+			\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\xi.
+		\end{equation}
+		\item it is well defined (independent of the choice of $A$ and $y$).
+		\item it is a group homomorphism.
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	Take $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ such that
+	Take $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\AA_R$ and $y\in\textrm{Cone}_R(\alpha_0,\theta,\Theta)$ such that
 	\begin{equation}
 	x=\pi_0\circ\alpha_0\circ\Theta(A)y
 	\end{equation}
@@ -531,7 +533,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\Theta_2\circ\xi\circ\Theta_2^{-1}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\xi
 	\end{align}
-	concluding the proof of the first item. To show the second item notice that since $\pi_0\circ\alpha_0\circ\Theta$ is irreducible the solution (if it exists which we just showed) of equation \eqref{eq:ConditionDefinitionOfGroupMorphism} is unique up to a phase. This means that to show that our map is independent of the choices we only need to show that we can't obtain another phase by picking a different representative. {\color{red}This should be obvious but what argument do I need here?} To then show the last item take $x_1,x_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\AA_R,y_1,y_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
+	concluding the proof of the first item. To show the second item notice that since $\pi_0\circ\alpha_0\circ\Theta$ is irreducible the solution (if it exists which we just showed) of equation \eqref{eq:ConditionDefinitionOfGroupMorphism} is unique up to a phase. This means that to show that our map is independent of the choices we only need to show that we can't obtain another phase by picking a different representative. {\color{red}This should be obvious but what argument do I need here?} To then show the last item take $x_1,x_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\AA_R,y_1,y_2\in \textrm{Cone}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
 	\begin{align}
 		x_i&=\pi_0\circ\alpha_0\circ\Theta(A_i)y_i&\Ad{y_i}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_i.
 	\end{align}
@@ -647,7 +649,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof.
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
-	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma)$
+	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma^H_{0;1})$
 \end{theorem}
 \begin{proof}
 	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\left(\AA_{C_{\theta_3}} \cup \tau(\AA_{C_{\theta_3}})\right)^c}$ such that
@@ -658,16 +660,17 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\begin{equation}
 		\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
 	\end{equation}
-	Take $W_g,u_{L/R}(g,h),v$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma$ satisfies $\omega\circ\gamma=\omega_0\circ\alpha\circ\gamma$. We also have that $\alpha\circ\gamma\in\QAut{\AA}$. To show this notice that
-	\begin{equation}
-		\alpha\circ\gamma=\Ad{V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\gamma_{L}^{-1}\otimes\gamma_{R}^{-1}\circ\Theta\circ\gamma.
-	\end{equation}
+	Take $W_g,u_{L/R}(g,h),v$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma\in\QAut{\AA}$. To show this notice that
+	\begin{align}
+		\alpha\circ\gamma&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
+		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
+	\end{align}
 	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemmaPart2} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\tilde\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemmaPart2} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
 		\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{\sigma}\circ(\beta_g^{\sigma U})^{-1}.
