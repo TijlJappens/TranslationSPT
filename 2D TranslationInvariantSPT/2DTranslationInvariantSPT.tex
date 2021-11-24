@@ -99,7 +99,7 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 	\end{align}
 \end{lemma}
 \begin{proof}
-	See \cite{ogata2021h3gmathbb}.
+	See \cite{ogata2021h3gmathbb}, lemma 2.1.
 \end{proof}
 These objects will be the starting point for our definition. Now take $\tau\in\Aut{\AA}$ to be the automorphism that vertically translates every element of the $C^*$ algebra by one site upwards. We now define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}
@@ -349,7 +349,7 @@ In this section we will show that the index is only dependent on $\omega$ and $\
 \end{proof}
 We now show that the index is invariant under some transformation parametrised by the group $\textrm{IAC}_R$:
 \begin{lemma}\label{lem:TransformationUnderDelta}
-	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_\sigma(\alpha_0,\theta,\Theta)$ (for all $\sigma\in\{L,R\}$). Define
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_\sigma(\alpha_0,\theta,\Theta)$ (for all $\sigma\in\{L,R\}$ and all $g\in G$). Define
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
 		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
@@ -443,7 +443,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\begin{equation}
 		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
 	\end{equation}
-	Since the last equation is split we can take $\delta_g^L\in\UU(\HH_L)$ and $\delta_g^R\in\UU(\HH_R)$ such that
+	Since the last equation is split we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
 	\end{equation}
@@ -680,29 +680,60 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\end{align}
 	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
-		\alpha\circ\gamma&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta\\
-		(\alpha_L\circ\gamma_{L}\otimes\alpha_R\circ\gamma_{R})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma.
+		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
+		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{-1}\tilde\beta_{g,1}\gamma$ then this indeed satisfies that $\omega\circ\gamma\circ\tilde{\beta}_{g,2}=\omega\circ\gamma$. Define $\tilde\eta_g^\sigma\defeq\gamma_{C_{\theta_2}\cap\sigma}^{-1}\eta_g^\sigma\gamma_{C_{\theta_2}\cap\sigma}$ then by lemma \ref{lem:TwoAngleLemmaPart2} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\tilde\beta_{g,1}\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart2}. Because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
-		\gamma^{-1}\tilde{\beta}_g\gamma&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
-	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma_{\sigma}^{-1}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma_{\sigma}\circ(\beta_g^{\sigma U})^{-1}.
+		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
+		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
+		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}
+		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_L}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_R}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
-	Take
+	Take $\Phi$ like in equation \eqref{eq:DefinitionOfGroupMorphismHAutEquation} and define
 	\begin{equation}
-		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \gamma \circ \gamma_L^{-1}\otimes\gamma_R^{-1})
+		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \Phi)
 	\end{equation}
 	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Take similarly
 	\begin{equation}
 		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
 	\end{equation}
-	the map defined in \ref{lem:DefinitionOfWgMap} with arbitrary phase. The following operators now belong to $\omega\circ\gamma:$
+	the map defined in \ref{lem:DefinitionOfWgMap} with arbitrary phase. The following operators now belong to $\omega\circ\gamma^{H}_{0;1}:$
 	\begin{align}
+		\label{eq:IndexInvariantUnderLGANewOperator1}
 		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
+		\label{eq:IndexInvariantUnderLGANewOperator2}
 		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
-		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger
+		\label{eq:IndexInvariantUnderLGANewOperator3}
+		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
+		\label{eq:IndexInvariantUnderLGANewOperator4}
+		\tilde{K}_g^L\otimes \tilde{K}_g^R&=\tilde{v}^\dagger \tilde{W}_g\tilde{v}\tilde{W}_g^\dagger
 	\end{align}
-	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{\sigma}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ should be rather clear. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
+	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
+	\begin{equation}
+		\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi
+	\end{equation}
+	we get that
+	\begin{equation}\label{eq:IndexInvariantUnderLGA_A1_Transformation}
+		\Ad{\pi_0(A_1)x\pi_0(A_1^\dagger)}\circ\pi_0\circ\alpha_0\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\tilde{\Theta}=\pi_0\circ\alpha_0\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\tilde{\Theta}\circ\gamma^H_{1;0}\circ\xi\circ\gamma^H_{0;1}.
+	\end{equation}
+	This already proves that
+	\begin{align}
+		\Ad{\pi_0(A_1)v\pi_0(A_1^\dagger)}\circ\pi_0\circ\alpha_0\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\tilde{\Theta}&=\pi_0\circ\alpha_0\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\tilde{\Theta}\circ\gamma^H_{1;0}\circ\tau\circ\gamma^H_{0;1}\\
+		&=\pi_0\circ\alpha_0\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\tilde{\Theta}\circ\tau.
+	\end{align}
+	To show the second one we get that
+	\begin{align}
+		&\Ad{\phi_1(\delta_g)\phi_2(W_g)}\circ\pi_0\circ\alpha_0\circ\Theta\\
+		&=\Ad{\phi_1(\delta_g)}\circ\pi_0\circ\alpha_0\circ\Theta\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{\gamma^{H_L}_{0;1}(A_{2,g}^L)\otimes\gamma^{H_R}_{0;1}(A_{2,g}^R)}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\Ad{A_{2,g}^L\otimes A_{2,g}^R}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}.
+	\end{align}
+	Using equation \eqref{eq:IndexInvariantUnderLGAEtaTildeDefiniton2} on this we obtain
+	\begin{equation}
+		=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
+	\end{equation}
+	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. {\color{red}I need to do the same for $\tilde u_R(g,h)$.}
 \end{proof}
 \appendix
 \section{Properties of locally generated automorphisms:}
