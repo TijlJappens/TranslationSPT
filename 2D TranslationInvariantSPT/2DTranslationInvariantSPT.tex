@@ -71,11 +71,14 @@ In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let
 \begin{equation}
 	C_\theta\defeq \{(x,y)\in\ZZ^2|\tan(\theta)\leq\frac{y}{x}\}
 \end{equation}
-be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume.
+be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In what follows we will sometimes need to widen our cone vertically by one site we therefore define $W$ such that
+\begin{equation}
+	W(\AA_{C_\theta})\defeq\AA_{C_\theta}\cup\tau(\AA_{C_\theta})\cup\tau^{-1}(\AA_{C_\theta}).
+\end{equation}
 \subsection{Disentangle by $\textrm{QAut}(\AA)$}
 Similarly what was done in \cite{ogata2021h3gmathbb} we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
-	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{(\AA_{C_\theta} \cup \tau(\AA_{C_\theta}))^c}$ such that
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{W(\AA_{C_\theta})^c}$\footnote{Note that our definition of $\textrm{QAut}(\AA)$ is slightly different from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
 	\begin{equation}
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
@@ -121,7 +124,7 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 \subsection{Cone operators}
  We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$ and $\alpha_\sigma\in\Aut{\AA_{\sigma}}$. Take $x\in\UU(\HH_{R/L})\otimes\mathbbm{1}_{\HH_{L/R}}$ then we say that $x$ is a cone operator on the right/left (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$ for $\sigma\in\{L,R\}$) if there exists a $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_\sigma}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_\sigma\in\Aut{\AA_{\sigma}}$. Take $x\in\UU(\HH_{R/L})\otimes\mathbbm{1}_{\HH_{L/R}}$ then we say that $x$ is a cone operator on the right/left (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$ for $\sigma\in\{L,R\}$) if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
@@ -138,7 +141,7 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 \end{proof}
 We will also define the a generalisation of this. We will define a subgroup of $\UU(\HH_0)$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))^c}$. Take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on the right (or in short $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and a $y\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
+	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{W(\AA_{C_\theta})^c}$. Take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on the right (or in short $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and a $y\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
 	\end{equation}
@@ -204,7 +207,7 @@ These objects will be the starting point for our definition. Clearly the $u_\sig
 	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$).	If more generally we take $\Xi^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$.
 \end{lemma}
 \begin{proof}
-	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\mathbbm{1}_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ such that
+	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\mathbbm{1}_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{\tilde\Xi^\sigma}\circ\pi_\sigma\circ\alpha_\sigma=\pi_\sigma\circ\alpha_\sigma\circ \xi_\sigma.
 	\end{equation}
@@ -835,7 +838,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
  \end{align}
  where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms:
  \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}}\cap\AA_\sigma}$, $\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_2,\theta_3]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{C_{[\theta_3,\pi/2]}}\cap\AA_\rho}$, $\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$, $\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{2.8},\theta_{3.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ such that
+ 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}}\cap\AA_\sigma},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}}\cap\AA_{\rho}\cap\AA_{\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_2,\theta_3]}}\cap\AA_{\rho}\cap\AA_{\sigma}},$\\$\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{C_{[\theta_3,\pi/2]}}\cap\AA_\rho},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in$\\$\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{2.8},\theta_{3.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ such that
  	\begin{equation}
  		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
  	\end{equation}
