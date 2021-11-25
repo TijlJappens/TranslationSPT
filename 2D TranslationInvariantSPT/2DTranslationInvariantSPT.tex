@@ -54,6 +54,7 @@
 \newcommand{\QAut}[1]{\textrm{QAut}\left(#1\right)}
 
 \newcommand{\qe}{\underset{\text{q.e.}}{\sim}}
+\newcommand{\ue}{\underset{\text{u.e.}}{\sim}}
 
 \newcommand{\Mod}[1]{\mathrm{mod} #1}
 
@@ -73,7 +74,7 @@ The following class of automorphisms will be used to define the class of states 
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 \end{definition}
-We will use this class of automorphisms to define the states for which we can define the index. Take $\omega\in\PP(\AA)$ to be such that
+We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. We will use this class of automorphisms to define the states for which we can define the index. Take $\omega\in\PP(\AA)$ to be such that
 \begin{enumerate}
 	\item  there exists an automorphism $\alpha\in\QAut{\AA}$ satisfying
 	\begin{align}
@@ -109,7 +110,19 @@ These objects will be the starting point for our definition. Now take $\tau\in\A
 	\end{align}
 \end{lemma}
 \begin{proof}
-	This is very straightforward.
+	Since $\omega\circ\tau=\omega$ we get by uniqueness of the GNS triple that
+	\begin{equation}
+		(\HH_0,\pi_0\circ\alpha\circ\tau,\Omega_0)\ue (\HH_0,\pi_0\circ\alpha,\Omega_0).
+	\end{equation}
+	This shows that there exists a $\tilde{v}\in\UU(\HH_0)$ satisfying
+	\begin{align}
+		\Ad{\tilde{v}}\circ\pi_0\circ\alpha&=\pi_0\circ\alpha\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
+	\end{align}
+	Since $\alpha=\Ad{V_1}\circ\alpha_0\circ\Theta$ we get that
+	\begin{align}
+		\Ad{\pi_0(V_1^\dagger)\tilde{v}\pi_0(V_1)}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
+	\end{align}
+	Choosing $v=\pi_0(V_1^\dagger)\tilde{v}\pi_0(V_1)$  concludes the proof.
 \end{proof}
 \section{Definition of the index}
 We now have to define one more object
@@ -127,37 +140,85 @@ We now have to define one more object
 	By some straightforward calculation we have that
 	\begin{align}
 		\Ad{K_g}\circ\pi_0&=\Ad{v^\dagger W_g v W_g^\dagger}\circ\pi_0\\
-		&=\bigotimes_{\sigma=L,R}\pi_\sigma\circ\alpha_\sigma\circ\tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_\sigma^{-1}.
+		&=\bigotimes_{\sigma=L,R}\pi_\sigma\circ\alpha_\sigma\circ\tau^{-1}\circ \eta_g^\sigma\circ\beta_g^{\sigma U}\circ\tau\circ(\beta_g^{\sigma U})^{-1}\circ(\eta_g^{\sigma})^{-1}\circ\alpha_\sigma^{-1}.
 	\end{align}
 	From this and the irreducibility of $\pi_\sigma$, we see that $\Ad{K_g}$ gives rise to a *-isomorphism on $\BB(\HH_\sigma).$ By the Wigner theorem this is implemented by some unitary $K_g^\sigma$ on $\HH_\sigma$. Again by the irreducibility of $\pi_\sigma$ this unitary is unique up to a $G-$dependent phase.
 \end{proof}
-Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes the representations of cone automorphisms:
+Notice that $u_\sigma(g,h)$ and $K^\sigma_g$ are representations in the GNS space of automorphisms that have support in the widened cones. We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$ and $\alpha_\sigma\in\Aut{\AA_{\sigma}}$. Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is a cone operator on the right/left (or in short $u\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$ for $\sigma\in\{L,R\}$) if there exists a $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_\sigma}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_\sigma\in\Aut{\AA_{\sigma}}$. Take $u\in\UU(\HH_{R/L})\otimes\mathbbm{1}_{\HH_{L/R}}$ then we say that $u$ is a cone operator on the right/left (or in short $u\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$ for $\sigma\in\{L,R\}$) if there exists a $\xi\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{u}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
-	the $\textrm{Cone}_\sigma(\alpha_0,\theta)$ are both subgroups of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$.
+	$\textrm{Cone}_\sigma(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\mathbbm{1}_{\sigma^c}$. We have that
+	\begin{align}\label{eq:CommutantPropertyCones}
+		\textrm{Cone}_R(\alpha_0,\theta)&\subseteq\textrm{Cone}_L(\alpha_0,\theta)'&\textrm{Cone}_L(\alpha_0,\theta)&\subseteq\textrm{Cone}_R(\alpha_0,\theta)'.
+	\end{align}
 \end{definition}
-Notice that both $u_\sigma(g,h)$ and $K_g^\sigma$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. We now define a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
+\begin{proof}
+	The proof of equation \eqref{eq:CommutantPropertyCones} just follows from the fact that we defined $\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
+	\begin{align}
+		\textrm{Cone}_L(\alpha_0,\theta)&\subseteq \UU(\HH_L)\otimes\mathbbm{1}_{\HH_R}&\textrm{Cone}_R(\alpha_0,\theta)&\subseteq \mathbbm{1}_{\HH_L} \otimes \UU(\HH_R).
+	\end{align}
+\end{proof}
+Notice that both $u_\sigma(g,h)$ and $K_g^\sigma$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. We now define a subgroup of $\UU(\HH_0)$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
 	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{(\AA_{C_\theta}\cup\tau(\AA_{C_\theta}))^c}$. Take $u\in\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$ then we say that $u$ is an inner after cone operator on the right (or in short $u\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and a $v\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		u=\pi_0\circ\alpha_0\circ\Theta(A)v.
 	\end{equation}
-	$\textrm{IAC}_R$ is a subgroup of $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA)'')$. If we define similarly $\textrm{IAC}_L$ we get that
+	$\textrm{IAC}_R$ is a subgroup of $\UU(\HH_0)$. If we define similarly $\textrm{IAC}_L$ we get that
 	\begin{align}\label{eq:CommutantProperty}
 		\textrm{IAC}_R(\alpha_0,\theta,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\theta,\Theta)'&\textrm{IAC}_L(\alpha_0,\theta,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\theta,\Theta)'.
 	\end{align}
 \end{definition}
 \begin{proof}
-	content...
+	Take $u_L\in\textrm{IAC}_L(\alpha_0,\theta,\Theta)$ and $u_R\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A_\sigma\in\AA_\sigma$ and $v_\sigma\in\textrm{IAC}_\sigma(\alpha_0,\theta,\Theta)$ (for $\sigma\in\{L,R\}$) such that $u_\sigma=\pi_0\circ\alpha_0\circ\Theta(A_\sigma)v_\sigma$. We then get
+	\begin{align}
+		&[u_L,u_R]=u_Lu_R-u_Ru_L\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\pi_0\circ\alpha_0\circ\Theta(A_R)v_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_L)\Ad{v_L}\circ\pi_0\circ\alpha_0\circ\Theta(A_R)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L.
+	\end{align}
+	If we now take $\xi_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ such that $\Ad{v_\sigma}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi_\sigma$ we get that
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta(A_L)\pi_0\circ\alpha_0\circ\Theta\circ\xi_L(A_R)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_L)\pi_0\circ\alpha_0\circ\Theta(A_R)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_R)\pi_0\circ\alpha_0\circ\Theta(A_L)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L.
+	\end{align}
+	Using property \eqref{eq:CommutantPropertyCones} we now get that
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta(A_R)\pi_0\circ\alpha_0\circ\Theta(A_L)v_Rv_L-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta\circ\xi_R^{-1}(A_L)v_L-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
+		&=0
+	\end{align}
+	concluding the proof.
 \end{proof}
 \begin{lemma}\label{lem:AdjointOverConeIsInCone}
-	Take $\Gamma^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Gamma^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$.	If more generally we take $\Gamma^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Gamma^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ $\forall g\in G$.
+	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$).	If more generally we take $\Xi^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$.
 \end{lemma}
 \begin{proof}
-	content...
+	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\mathbbm{1}_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ such that
+	\begin{equation}
+		\Ad{\tilde\Xi^\sigma}\circ\pi_\sigma\circ\alpha_\sigma=\pi_\sigma\circ\alpha_\sigma\circ \xi_\sigma.
+	\end{equation}
+	We have that
+	\begin{equation}
+		\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\zeta_{g,R}
+	\end{equation}
+	where
+	\begin{equation}
+		\zeta_{g,\sigma}\defeq \eta_g\circ\beta_g^{U}\circ\xi_\sigma\circ(\beta_g^{U})^{-1}\circ\eta_g^{-1}.
+	\end{equation}
+	Since $\zeta_{g,\sigma}\in\Aut{\AA_{C_\theta}\cap\AA_{\sigma}}$ we get that
+	\begin{equation}
+		\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0=\pi_L\circ\alpha_L\otimes\pi_R\circ\alpha_R\circ\zeta_{g,R}.
+	\end{equation}
+	This together with the irreducibility of $\pi_R$ proves that $\Ad{\Ad{W_g}(\Xi^R)}$ gives rise to a $*$-isomorphism on $\BB(\HH_R)$. By the Wigner theorem this can be implemented by some unitary say $Z_{g,R}\in\UU(\HH_R)$. We now only have to show that $\Ad{W_g}(\Xi^R)=\mathbbm{1}_{\HH_L}\otimes Z_{g,R}$. This follows (up to a phase) from the irreducibility of $\pi_0$. To show the second result we only need to observe that for any $A\in\AA_R$ we get that
+	\begin{align}
+		\Ad{W_g}\left(\pi_0\circ\alpha_0\circ\Theta(A)\Xi_R\right)&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A)\Ad{W_g}(\Xi_R)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_R(A)\Ad{W_g}(\Xi_R).
+	\end{align}
+	By the previous result, this is clearly in $\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ concluding the proof.
 \end{proof}
 
 \begin{lemma}\label{lem:Definition2Cochain}
@@ -171,15 +232,15 @@ Notice that both $u_\sigma(g,h)$ and $K_g^\sigma$ are elements of $\textrm{Cone}
 \begin{proof}
 	Since the GNS representation is irreducible this is equivalent to showing that the left and righthandside of equation \eqref{eq:Definition2Cochain} have the same adjoint action on the GNS representation. We first prove the result for the full tensor product:
 	\begin{align}
-		&\Ad{v^\dagger u_L(g,h)v\otimes v^\dagger u_R(g,h) v}\circ\pi_0\\
-		&=\Ad{v^\dagger (u_L(g,h)\otimes u_R(g,h)) v}\circ\pi_0\\
-		&=\Ad{v^\dagger W_g W_h W_{gh}^{-1}v}\circ\pi_0\\
-		&=\Ad{K_gW_g v^\dagger W_h W_{gh}^{-1}v}\circ\pi_0\\
-		&=\Ad{K_gW_g K_h W_h v^\dagger W_{gh}^{-1}v}\circ\pi_0\\
-		&=\Ad{K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger }\circ\pi_0\\
-		&=\Ad{K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger W_{gh}W_h^\dagger W_g^\dagger W_gW_hW_{gh}^\dagger}\circ\pi_0\\
-		&=\Ad{K_g\Ad{W_g}\left(K_h\Ad{W_hW_{gh}^\dagger}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
-			R(g,h)}\circ\pi_0.
+		&v^\dagger u_L(g,h)v v^\dagger u_R(g,h) v\\
+		&=v^\dagger (u_L(g,h)\otimes u_R(g,h)) v\\
+		&=v^\dagger W_g W_h W_{gh}^{-1}v\\
+		&=K_gW_g v^\dagger W_h W_{gh}^{-1}v\\
+		&=K_gW_g K_h W_h v^\dagger W_{gh}^{-1}v\\
+		&=K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger\\
+		&=K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger W_{gh}W_h^\dagger W_g^\dagger W_gW_hW_{gh}^\dagger\\
+		&=K_g\Ad{W_g}\left(K_h\Ad{W_hW_{gh}^\dagger}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
+			R(g,h).
 	\end{align}
 	Using lemma \ref{lem:AdjointOverConeIsInCone} we get that
 	\begin{align}
@@ -414,7 +475,7 @@ We now show that the index is invariant under some transformation parametrised b
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBeta}
 	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
-	\begin{align}
+	\begin{align}\label{eq:InvarianceUnderChoiceBetaTwoBetas}
 		\tilde{\beta}_{g,1}&=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g&\tilde{\beta}_{g,2}&=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
 	\end{align}
 	and
@@ -428,7 +489,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{lemma}
 \begin{proof}
 	Take 
-	\begin{equation}
+	\begin{equation}\label{eq:InvarianceUnderChoiceBetaAlphaDecomposition}
 		\alpha=\Ad{V_1}\circ\alpha_{0}\circ\Theta
 	\end{equation}
 	the usual decomposition. Since
@@ -439,11 +500,15 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\begin{equation}
 		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\alpha=\pi_0\circ\alpha\circ\tilde{\beta}_{g,2}(\tilde{\beta}_{g,1})^{-1}.
 	\end{equation}
-	After a few calculations {\color{red}I still have to write these out} one gets that
+	Inserting equation \eqref{eq:InvarianceUnderChoiceBetaTwoBetas} and \eqref{eq:InvarianceUnderChoiceBetaAlphaDecomposition} in this gives
+	\begin{equation}
+		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\Ad{V_1}\circ\alpha_0\circ\Theta=\pi_0\circ\Ad{V_1}\circ\alpha_0\circ\Theta\circ\Ad{V_{g,21}}\circ\eta_{g,1}\circ\eta_{g,2}^{-1}\circ\Ad{V_{g,22}^\dagger}.
+	\end{equation}
+	Putting the $V$'s to the other side gives:
 	\begin{equation}
 		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
 	\end{equation}
-	Since the last equation is split we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
+	Since the last equation is split we have again by the irreducibility of $\pi_\sigma$ and the Wigner theorem that we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
 	\end{equation}
