@@ -879,7 +879,15 @@ Now we will state some properties of locally generated automorphisms:
 		\mathcal{C}_0&\defeq \left\{C_{[0,\theta_1],\sigma},C_{]\theta_1,\theta_2],\sigma,\rho},C_{]\theta_2,\theta_3],\sigma,\rho}\cup\tau^{\rho}(C_{]\theta_2,\theta_3],\sigma,\rho}),\tau^\rho(C_{]\theta_3,\pi/2],\rho})|\sigma=\{L,R\},\rho=\{U,D\}\right\}\\
 		\mathcal{C}_1&\defeq\{C_{[\theta_{0.8},\theta_{1.2}]\cap\sigma\cap\tau},C_{[\theta_{1.8},\theta_{2.2}]\cap\sigma\cap\tau},\tau^\rho(C_{[\theta_{2.8},\theta_{3.2}]\cap\sigma\cap\rho})|\sigma=\{L,R\},\rho=\{U,D\}\}.
 	\end{align}
-	Take the $\Psi$ from this proof to be our $H$ and take $\Psi^{(1)}$ to be $H-H_{\mathcal{C}_0}$ with our new definition of $\mathcal{C}_0$. Now define $\Xi^{(s)}(Z,t)$ completely analogous. We now want so show that for every $t$, $\sum_{Z\subset\ZZ^2}(\Xi^{(s)}(Z,t)-\Xi^{(s)}|_{\mathcal{C}_1}(Z,t))$ is bounded. Following the arguments in equation (5.22) to (5.24) in \cite{ogata2021h3gmathbb} we still get that
+	Take the $\Psi$ from this proof to be our $H$, take $\Psi^{(0)}$ to be $\sum_{C\in\mathcal{C}_0}H_{C}$ (with our new definition of $\mathcal{C}_0$) and take $\Psi^{(1)}\defeq \Psi-\Psi^{(0)}$. Now define $\Xi^{(s)}(Z,t)$ through
+	\begin{equation}\label{eq:PropertiesLocallyGeneratedAutomorphismsProofDefinitionXi}
+		\Xi^{(s)}(Z,t)\defeq\sum_{m=0}^\infty \sum_{\substack{X\subset Z,\\X(m)=Z}}\Delta_{X(m)}(\gamma^\Psi_{s;t}(\Psi^{(1)}(X;t)))
+	\end{equation}
+	with these new definitions of $\Psi^{(0)}$ and $\Psi^{(1)}$. We now want so show that for every $t$,
+	\begin{equation}
+		\sum_{Z\subset\ZZ^2}\left(\Xi^{(s)}(Z,t)-\sum_{C\in\mathcal{C}_1}\mathbbm{1}_{Z\subset C}\Xi^{(s)}(Z,t)\right)
+	\end{equation}
+	is bounded. Following the arguments in equation (5.22) to (5.24) in \cite{ogata2021h3gmathbb} we still get that
 	\begin{equation}
 		\sum_{\substack{Z\subset\ZZ^2,\\\nexists C\in\mathcal{C}_1:Z\subset C}}\sup_{t\in[0,1]}\norm{\Xi^{(1)}(Z,t)}\leq \frac{8}{C_F}(e^{2I_F(\Psi)}-1)\sum_{\substack{C_1,C_2\in\mathcal{C}_0,\\ C_1\neq C_2}}M(C_1,C_2)
 	\end{equation}
@@ -887,7 +895,7 @@ Now we will state some properties of locally generated automorphisms:
 	\begin{equation}
 		M(C_1,C_2)\defeq \sum_{m\geq 0}\sum_{\substack{X:\\\forall C\in\mathcal{C}_1,X\cap((C^c)(m))\neq\emptyset,\\C\cap C_1\neq\emptyset,X\cap C_2\neq\emptyset}}\left(\sup_{t\in[0,1]}(\norm{\Psi^{(1)}(X;t)})\abs{X}G_F(m)\right)
 	\end{equation}
-	is now defined using the new $\mathcal{C}_1$. To bound these $M(C_1,C_2)$ we will (just like in \cite{ogata2021h3gmathbb}) differentiate between two cases. That is, the case where $C_1$ and $C_1$ are adjacent\footnote{We say that $C_1$ and $C_2$ are adjacent if and only if $\#(C_1(1)\cap C_2(1))=\infty$.} and the case where they are. We begin with the latter. In this case we still have in complete analogy with the proof in \cite{ogata2021h3gmathbb} that
+	is now defined using the new $\mathcal{C}_1$. To bound these $M(C_1,C_2)$ we will (just like in \cite{ogata2021h3gmathbb}) differentiate between two cases. That is, the case where $C_1$ and $C_2$ are adjacent\footnote{We say that $C_1$ and $C_2$ are adjacent if and only if $\#(C_1(1)\cap C_2(1))=\infty$.} and the case where they are not. We begin with the latter. In this case we still have in complete analogy with the proof in \cite{ogata2021h3gmathbb} that
 	\begin{equation}
 		M(C_1,C_2)\leq b_0(C_1,C_2) \defeq \norm{\Psi_1}_F\sum_{\substack{x\in C_1\\y\in C_2}}F(d(x,y))\sum_{m=0}^\infty G_F(m)<\infty.
 	\end{equation}
@@ -903,32 +911,20 @@ Now we will state some properties of locally generated automorphisms:
 	\begin{equation}
 		(\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s})^{-1}=\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\in\textrm{GVAut}(\AA).
 	\end{equation}
-	The proof of this starts analogously to the proof of item 1 and 3. We have for any $A\in\AA$ that
-	\begin{align}
-		&\frac{\d}{\d t}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}(A)\\
-		&=i\sum_{I\subset\ZZ^2}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}([\partial H(t,I),\gamma^H_{t;s}(A)])
-	\end{align}
-	where $\partial H(t,I)=H(t,I)-H_D(t,I)-H_U(t,I)$. Working this out further gives
-	\begin{align}
-		&=i\sum_{I\subset\ZZ^2}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\left([\gamma^H_{s;t}(\partial H(t,I)),A]\right).
-	\end{align}
-	Clearly $I\mapsto \gamma^H_{s;t}(\partial H(t,I))$ is not strictly speaking an interaction. However there is a $G$-invariant interaction with bounded $f_\phi$ norm that leads to the same locally generated automorphism. This can be defined by
+	The proof of this starts analogously to the proof of item 1 and 3. We take $\Psi=H$, $\Psi^{(0)}=H_{\tau(C_\theta^c\cap U)}+H_{\tau^{-1}(C_\theta^c\cap D)}$ and $\Psi^{(1)}=\Psi-\Psi^{(0)}$. Define $\Xi^{(s)}(Z;t)$ again through equation \eqref{eq:PropertiesLocallyGeneratedAutomorphismsProofDefinitionXi}. In analogy to what was done in equation (5.54) in \cite{ogata2021h3gmathbb} we obtain
 	\begin{equation}
-		\Xi^{(s)}(t,Z)\defeq \sum_{m\geq 0}\sum_{\substack{X\subset Z,\\X(m)=Z}}\Delta_{X(m)}\left(\gamma^H_{s;t}(\partial H(t,I))\right)
+		\sum_{\substack{Z:Z\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }Z\nsubseteq \tau^{-1}(C_\theta^c\cap D)}}\sup_{t\in[0,1]}\norm{\Xi^{(1)}(Z,t)}\leq \frac{8}{C_F}(e^{2I_F(\Psi)}-1)\sum_{m=0}^\infty\sum_{\substack{Z:Z(m)\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }Z(m)\nsubseteq \tau^{-1}(C_\theta^c\cap D)}} \sup_{t\in[0,1]}\norm{\Psi^{(1)}(X;t)}\abs{X}G_F(m).
 	\end{equation}
-	where for any $X\subset\ZZ^2$ we mean by $X(m)\subset\ZZ^2$ the set of points that are at most at distance $m$ from some point in $X$ and we mean by
-	\begin{equation}
-		\Delta_{X(m)}\defeq\left\{\begin{matrix}
-			\Pi_X&\text{if }m=0\\
-			\Pi_{X(m)}-\Pi_{X(m-1)}&\text{otherwise.}
-		\end{matrix}\right.
-	\end{equation}
-	Here the $\Pi_X$ is defined as the operator that traces away all the degrees of freedom that are not situated in the region $X$. This interaction is clearly still $G-$invariant and we do have
-	\begin{align}
-		&\frac{\d}{\d t}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}(A)\\
-		&=i\sum_{I\subset\ZZ^2}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\left([\Xi^{(s)}(t,I),A]\right)
-	\end{align}
-	and hence the interaction does generate our locally generated automorphism.
+	If $X$ in the last line has a non-zero contribution, then at least one of the following occurs:
+	\begin{enumerate}
+		\item $X\cap (W(C_\theta)\cap L)\neq\emptyset$ and $X\cap R\neq\emptyset$.
+		\item $X\cap (W(C_\theta)\cap R)\neq\emptyset$ and $X\cap L\neq\emptyset$.
+		\item $X\subset W(C_\theta)^c$ and
+		\begin{enumerate}
+			\item $X\subset U,X\subset D$.
+			\item $X\subset U,X\subset L,X\subset R$
+		\end{enumerate}
+	\end{enumerate}
 \end{proof}
 From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
