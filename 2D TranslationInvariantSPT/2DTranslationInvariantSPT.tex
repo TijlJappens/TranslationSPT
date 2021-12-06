@@ -69,7 +69,7 @@
 \section{Setup and definitions}
 In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let
 \begin{equation}
-	C_\theta\defeq \{(x,y)\in\ZZ^2|\tan(\theta)\leq\frac{y}{x}\}
+	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
 be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In what follows we will sometimes need to widen our cone vertically by one site we therefore define $W$ such that
 \begin{equation}
@@ -85,7 +85,7 @@ Similarly what was done in \cite{ogata2021h3gmathbb} we will define an index on 
 \end{definition}
 We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. Take $\omega\in\PP(\AA)$ to be such that
 \begin{enumerate}
-	\item  there exists an automorphism $\alpha\in\QAut{\AA}$ satisfying
+	\item  there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
 	\begin{align}
 		\omega=\omega_0\circ\alpha.
 	\end{align}
@@ -395,7 +395,7 @@ Our translation index is now defined as
 \section{The index is independent of the choices we made}
 In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
-	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{(C_\theta\cup \tau(C_\theta))^c}}$ to be such that
+	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
 	\begin{align}
 		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
 	\end{align}
@@ -579,9 +579,13 @@ Following \cite{ogata2021h3gmathbb} we will assume that there exists a $0<\phi<1
 \end{equation}
 For any interaction with such a bounded $f_\phi$ norm we will use $\gamma^H_{s;t}$ to denote the automorphism satisfying that for any $a\in\AA$, $\gamma^H_{t;s}(a)$ is the solution to the differential equation
 \begin{equation}
-	\frac{\d}{\d s}\gamma^H_{t;s}(a)=-i\sum_{I\subset \ZZ^2}\gamma^H_{t;s}([H(s,I),a])
+	\frac{\d}{\d s}\gamma^H_{t;s}(a)=i\sum_{I\subset \ZZ^2}\gamma^H_{t;s}([H(s,I),a])
 \end{equation}
-with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed here that this automorphism indeed exists.} The goal of this section is now to show that the index we constructed is invariant under such locally generated automorphisms (see theorem \ref{thrm:IndexInvariantUnderLGA}).
+with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed here that this automorphism indeed exists.} If our interaction satisfies that $\sup_t\sum_{I\subset\ZZ^2}H(I,t)\in\AA$ then we have an identity
+\begin{align}
+	\gamma^H_{s;t}&=\Ad{u^H_{t;s}}&u^H_{t;s}&\defeq \mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset \ZZ^2}H(s',I)).
+\end{align}
+The goal of this section is now to show that the index we constructed is invariant under such locally generated automorphisms (see theorem \ref{thrm:IndexInvariantUnderLGA}).
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\AA_{C_\theta^c}\cap\AA_{D}}$ such that there exists some $a\in\AA$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquation}
@@ -828,7 +832,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
 	\begin{equation}
 		=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
 	\end{equation}
-	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. {\color{red}I need to do the same for $\tilde u_R(g,h)$.}
+	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. {\color{red}I need to do the same for $\tilde u_R(g,h)$.}
 \end{proof}
 \appendix
 \section{Properties of locally generated automorphisms:}
@@ -838,12 +842,13 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
  \end{align}
  where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms:
  \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}}\cap\AA_\sigma},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}}\cap\AA_{\rho}\cap\AA_{\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_2,\theta_3]}}\cap\AA_{\rho}\cap\AA_{\sigma}},$\\$\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{C_{[\theta_3,\pi/2]}}\cap\AA_\rho},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in$\\$\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{2.8},\theta_{3.2}]}}\cap\AA_{\rho}\cap\AA_{\sigma}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ such that
+ 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)\cup\tau^{\rho}(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\tau^\rho(\AA_{C_{[\theta_3,\pi/2]}\cap\rho})},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
  	\begin{equation}
  		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
  	\end{equation}
  	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}(\AA)$.
  \end{definition}
+ As a remark, notice that this definition is not exactly identical to de definition given in \cite{ogata2021h3gmathbb} due to the translation operators.
  \begin{definition}
  	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
  	\begin{equation}
@@ -852,7 +857,7 @@ with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed 
  \end{definition}
 We will need one additional class of automorphisms:
 \begin{definition}
-	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{VAut}(\AA)$ if and only if there exists some $a\in\AA$, $\alpha_U\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and an $\alpha_D\in\Aut{\AA_{C_\theta^c}\cap\AA_{D}}$ such that
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{VAut}(\AA)$ if and only if there exists some $a\in\AA$, $\alpha_U\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and an $\alpha_D\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that
 	\begin{equation}
 		\alpha=\Ad{a}\circ\alpha_U\otimes\alpha_D.
 	\end{equation}
@@ -869,11 +874,65 @@ Now we will state some properties of locally generated automorphisms:
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	Part 3 follows from Theorem 5.2 in \cite{ogata2021h3gmathbb}, part 1 is done in Proposition 5.5 in \cite{ogata2021h3gmathbb} and part 4 follows trivially from Part 1. We therefore only have to comment on part 3. {\color{red}To be continued...}
+	Part 1 is done in Proposition 5.5 in \cite{ogata2021h3gmathbb} and part 4 follows trivially from Part 1. Except for the translation operators in my definition of the $\textrm{SQAut}(\AA)$, part 3 follows from Theorem 5.2 in \cite{ogata2021h3gmathbb}. To show part 3 we therefore have to show that Theorem 5.2 in \cite{ogata2021h3gmathbb} still holds if we replace $\mathcal{C}_0$ and $\mathcal{C}_1$ in the proof by
+	\begin{align}
+		\mathcal{C}_0&\defeq \left\{C_{[0,\theta_1],\sigma},C_{]\theta_1,\theta_2],\sigma,\rho},C_{]\theta_2,\theta_3],\sigma,\rho}\cup\tau^{\rho}(C_{]\theta_2,\theta_3],\sigma,\rho}),\tau^\rho(C_{]\theta_3,\pi/2],\rho})|\sigma=\{L,R\},\rho=\{U,D\}\right\}\\
+		\mathcal{C}_1&\defeq\{C_{[\theta_{0.8},\theta_{1.2}]\cap\sigma\cap\tau},C_{[\theta_{1.8},\theta_{2.2}]\cap\sigma\cap\tau},\tau^\rho(C_{[\theta_{2.8},\theta_{3.2}]\cap\sigma\cap\rho})|\sigma=\{L,R\},\rho=\{U,D\}\}.
+	\end{align}
+	Take the $\Psi$ from this proof to be our $H$ and take $\Psi^{(1)}$ to be $H-H_{\mathcal{C}_0}$ with our new definition of $\mathcal{C}_0$. Now define $\Xi^{(s)}(Z,t)$ completely analogous. We now want so show that for every $t$, $\sum_{Z\subset\ZZ^2}(\Xi^{(s)}(Z,t)-\Xi^{(s)}|_{\mathcal{C}_1}(Z,t))$ is bounded. Following the arguments in equation (5.22) to (5.24) in \cite{ogata2021h3gmathbb} we still get that
+	\begin{equation}
+		\sum_{\substack{Z\subset\ZZ^2,\\\nexists C\in\mathcal{C}_1:Z\subset C}}\sup_{t\in[0,1]}\norm{\Xi^{(1)}(Z,t)}\leq \frac{8}{C_F}(e^{2I_F(\Psi)}-1)\sum_{\substack{C_1,C_2\in\mathcal{C}_0,\\ C_1\neq C_2}}M(C_1,C_2)
+	\end{equation}
+	where
+	\begin{equation}
+		M(C_1,C_2)\defeq \sum_{m\geq 0}\sum_{\substack{X:\\\forall C\in\mathcal{C}_1,X\cap((C^c)(m))\neq\emptyset,\\C\cap C_1\neq\emptyset,X\cap C_2\neq\emptyset}}\left(\sup_{t\in[0,1]}(\norm{\Psi^{(1)}(X;t)})\abs{X}G_F(m)\right)
+	\end{equation}
+	is now defined using the new $\mathcal{C}_1$. To bound these $M(C_1,C_2)$ we will (just like in \cite{ogata2021h3gmathbb}) differentiate between two cases. That is, the case where $C_1$ and $C_1$ are adjacent\footnote{We say that $C_1$ and $C_2$ are adjacent if and only if $\#(C_1(1)\cap C_2(1))=\infty$.} and the case where they are. We begin with the latter. In this case we still have in complete analogy with the proof in \cite{ogata2021h3gmathbb} that
+	\begin{equation}
+		M(C_1,C_2)\leq b_0(C_1,C_2) \defeq \norm{\Psi_1}_F\sum_{\substack{x\in C_1\\y\in C_2}}F(d(x,y))\sum_{m=0}^\infty G_F(m)<\infty.
+	\end{equation}
+	What is now left to show is the case where $C_1$ and $C_2$ are adjacent. Take $\tilde{C}\in\mathcal{C}_1$ such that $C_1\cap\tilde{C}\neq\emptyset$ and $C_2\cap\tilde{C}\neq\emptyset$. Take $L_1=\partial\tilde{C}/C_2$\footnote{Here $\partial \tilde{C}$ means the boundary of $\tilde C$.} and $L_2=\partial\tilde{C}/C_1$. By following the same reasoning that led to equation (5.36) in \cite{ogata2021h3gmathbb} we get that
+	\begin{align}
+		M(C_1,C_2)\leq b_0(C_1,C_2/\tilde{C})+b_0(C_1/\tilde{C},C_2)+b_0(\tilde{C}\cap C_2,(C_1\cup C_2)^c)+b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)
+	\end{align}
+	where
+	\begin{equation}
+		b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)\defeq \norm{\Psi_1}_F\sum_{m=0}^{\infty}G_F(m)\left(\sum_{\substack{x\in C_2\cap\tilde{C},\\y\in L_1(m)}}+\sum_{\substack{x\in C_1\cap\tilde{C},\\y\in L_2(m)}}\right)F(d(x,y))<\infty.
+	\end{equation}
+	\footnote{Here $\Psi_1$ is defined through $\Psi_1(X)=\abs{X}^1 \Psi(X)$.} Since the remainder of the proof can remain unchanged from \cite{ogata2021h3gmathbb}, this concludes the proof of item 3. We now only need to comment on item 2. We must show that
+	\begin{equation}
+		(\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s})^{-1}=\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\in\textrm{GVAut}(\AA).
+	\end{equation}
+	The proof of this starts analogously to the proof of item 1 and 3. We have for any $A\in\AA$ that
+	\begin{align}
+		&\frac{\d}{\d t}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}(A)\\
+		&=i\sum_{I\subset\ZZ^2}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}([\partial H(t,I),\gamma^H_{t;s}(A)])
+	\end{align}
+	where $\partial H(t,I)=H(t,I)-H_D(t,I)-H_U(t,I)$. Working this out further gives
+	\begin{align}
+		&=i\sum_{I\subset\ZZ^2}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\left([\gamma^H_{s;t}(\partial H(t,I)),A]\right).
+	\end{align}
+	Clearly $I\mapsto \gamma^H_{s;t}(\partial H(t,I))$ is not strictly speaking an interaction. However there is a $G$-invariant interaction with bounded $f_\phi$ norm that leads to the same locally generated automorphism. This can be defined by
+	\begin{equation}
+		\Xi^{(s)}(t,Z)\defeq \sum_{m\geq 0}\sum_{\substack{X\subset Z,\\X(m)=Z}}\Delta_{X(m)}\left(\gamma^H_{s;t}(\partial H(t,I))\right)
+	\end{equation}
+	where for any $X\subset\ZZ^2$ we mean by $X(m)\subset\ZZ^2$ the set of points that are at most at distance $m$ from some point in $X$ and we mean by
+	\begin{equation}
+		\Delta_{X(m)}\defeq\left\{\begin{matrix}
+			\Pi_X&\text{if }m=0\\
+			\Pi_{X(m)}-\Pi_{X(m-1)}&\text{otherwise.}
+		\end{matrix}\right.
+	\end{equation}
+	Here the $\Pi_X$ is defined as the operator that traces away all the degrees of freedom that are not situated in the region $X$. This interaction is clearly still $G-$invariant and we do have
+	\begin{align}
+		&\frac{\d}{\d t}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}(A)\\
+		&=i\sum_{I\subset\ZZ^2}\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\left([\Xi^{(s)}(t,I),A]\right)
+	\end{align}
+	and hence the interaction does generate our locally generated automorphism.
 \end{proof}
 From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{(C_{\theta_2}\cup \tau(C_{\theta_2}))^c}}$ and $s,t\in\RR$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{(C_{\theta_1}\cup \tau(C_{\theta_1}))^c}}$ such that
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and $s,t\in\RR$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{W(C_{\theta_1})^c}}$ such that
 		\begin{equation}\label{eq:TwoAngleLemmaPart1Equation1}
 			\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}=\Ad{a_1}\circ\tilde{\Theta}.
 		\end{equation}
