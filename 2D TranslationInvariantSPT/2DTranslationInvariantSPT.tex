@@ -63,15 +63,21 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{assumption}[theorem]{Assumption}
 
 \numberwithin{equation}{section}
 \begin{document}
 \section{Setup and definitions}
 In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let
+\begin{align}
+	L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x>0\right.\right\}\\
+	U&\defeq \left\{(x,y)\in\ZZ^2\left|y>0\right.\right\},&D&\defeq \left\{(x,y)\in\ZZ^2\left|y<0\right.\right\}
+\end{align}
+be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In what follows we will sometimes need to widen our cone vertically by one site we therefore define $W$ such that
+be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site for this purpose we define $W$ such that
 \begin{equation}
 	W(\AA_{C_\theta})\defeq\AA_{C_\theta}\cup\tau(\AA_{C_\theta})\cup\tau^{-1}(\AA_{C_\theta}).
 \end{equation}
@@ -83,24 +89,28 @@ Similarly what was done in \cite{ogata2021h3gmathbb} we will define an index on 
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 \end{definition}
-We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. Take $\omega\in\PP(\AA)$ to be such that
-\begin{enumerate}
-	\item  there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
-	\begin{align}
-		\omega=\omega_0\circ\alpha.
-	\end{align}
-	\item $\forall \theta\in]0,\pi/2[$ there exists a map
-	\begin{equation}
-		\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
-	\end{equation}
-	satisfying
-	\begin{align}
-		\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_2}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
-	\end{align}
-	where $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$.
-\end{enumerate}
-Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$. In this paper we will deal with states that are translation invariant ($\omega\circ\tau=\omega$) and can be disentangled by a Q-automorphism. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
-\begin{lemma}
+We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper we will consider states that satisfy the following property:
+\begin{assumption}
+	Take $\omega\in\PP(\AA)$ to be
+	\begin{enumerate}
+		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
+		\begin{align}
+			\omega=\omega_0\circ\alpha.
+		\end{align}
+		\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map
+		\begin{equation}
+			\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
+		\end{equation}
+		satisfying
+		\begin{align}
+			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_2}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
+		\end{align}
+		for some $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$.
+		\item translation invariant ($\omega\circ\tau=\omega$).
+	\end{enumerate}
+\end{assumption}
+Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+\begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
 		\Ad{v}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)v\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
@@ -230,7 +240,7 @@ These objects will be the starting point for our definition. Clearly the $u_\sig
 	\end{align}
 	By the previous result, this is clearly in $\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ concluding the proof.
 \end{proof}
-We now have to define one more object
+We now have to define one more object (remember that $v$ was defined in lemma \ref{lem:Definition_v}):
 \begin{lemma}\label{lem:Definition_K}
 	There exist $K_g^L\in\UU(\HH_L)$ and $K_g^R\in\UU(\HH_R)$ such that
 	\begin{equation}
@@ -848,6 +858,11 @@ The goal of this section is now to show that the index we constructed is invaria
  	\end{equation}
  	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}(\AA)$.
  \end{definition}
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{AlphaFirstDecomposition.png}
+	\includegraphics[width=0.5\textwidth]{AlphaSecondDecomposition.png}
+	\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ-automorphism acting on the upper half plane.}
+\end{figure}
  As a remark, notice that this definition is not exactly identical to de definition given in \cite{ogata2021h3gmathbb} due to the translation operators.
  \begin{definition}
  	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
@@ -893,20 +908,22 @@ Now we will state some properties of locally generated automorphisms:
 	\end{equation}
 	where
 	\begin{equation}
-		M(C_1,C_2)\defeq \sum_{m\geq 0}\sum_{\substack{X:\\\forall C\in\mathcal{C}_1,X\cap((C^c)(m))\neq\emptyset,\\C\cap C_1\neq\emptyset,X\cap C_2\neq\emptyset}}\left(\sup_{t\in[0,1]}(\norm{\Psi^{(1)}(X;t)})\abs{X}G_F(m)\right)
+		M(C_1,C_2)\defeq \sum_{m\geq 0}\sum_{\substack{X:\\\forall C\in\mathcal{C}_1,X\cap((C^c)(m))\neq\emptyset,\\X\cap C_1\neq\emptyset,X\cap C_2\neq\emptyset}}\left(\sup_{t\in[0,1]}(\norm{\Psi^{(1)}(X;t)})\abs{X}G_F(m)\right)
 	\end{equation}
 	is now defined using the new $\mathcal{C}_1$. To bound these $M(C_1,C_2)$ we will (just like in \cite{ogata2021h3gmathbb}) differentiate between two cases. That is, the case where $C_1$ and $C_2$ are adjacent\footnote{We say that $C_1$ and $C_2$ are adjacent if and only if $\#(C_1(1)\cap C_2(1))=\infty$.} and the case where they are not. We begin with the latter. In this case we still have in complete analogy with the proof in \cite{ogata2021h3gmathbb} that
-	\begin{equation}
-		M(C_1,C_2)\leq b_0(C_1,C_2) \defeq \norm{\Psi_1}_F\sum_{\substack{x\in C_1\\y\in C_2}}F(d(x,y))\sum_{m=0}^\infty G_F(m)<\infty.
-	\end{equation}
+	\begin{align}
+		M(C_1,C_2)\leq b_0(C_1,C_2) &\defeq \sum_{m\geq 0}\sum_{\substack{X:X\cap C_1\neq\emptyset,\\X\cap C_2\neq\emptyset}}\left(\sup_{t\in[0,1]}(\norm{\Psi^{(1)}(X;t)})\abs{X}G_F(m)\right)\\
+		&\leq \norm{\Psi_1}_F\sum_{\substack{x\in C_1\\y\in C_2}}F(d(x,y))\sum_{m=0}^\infty G_F(m)<\infty.
+	\end{align}
 	What is now left to show is the case where $C_1$ and $C_2$ are adjacent. Take $\tilde{C}\in\mathcal{C}_1$ such that $C_1\cap\tilde{C}\neq\emptyset$ and $C_2\cap\tilde{C}\neq\emptyset$. Take $L_1=\partial\tilde{C}/C_2$\footnote{Here $\partial \tilde{C}$ means the boundary of $\tilde C$.} and $L_2=\partial\tilde{C}/C_1$. By following the same reasoning that led to equation (5.36) in \cite{ogata2021h3gmathbb} we get that
 	\begin{align}
 		M(C_1,C_2)\leq b_0(C_1,C_2/\tilde{C})+b_0(C_1/\tilde{C},C_2)+b_0(\tilde{C}\cap C_2,(C_1\cup C_2)^c)+b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)
 	\end{align}
 	where
-	\begin{equation}
-		b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)\defeq \norm{\Psi_1}_F\sum_{m=0}^{\infty}G_F(m)\left(\sum_{\substack{x\in C_2\cap\tilde{C},\\y\in L_1(m)}}+\sum_{\substack{x\in C_1\cap\tilde{C},\\y\in L_2(m)}}\right)F(d(x,y))<\infty.
-	\end{equation}
+	\begin{align}
+		b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)&\defeq\sum_{m=0}^\infty \sum_{\substack{X\subset \tilde{C}:\\ X\cap C_1\cap\tilde{C}\neq\emptyset\\X\cap C_2\cap\tilde{C}\neq\emptyset\\ X\cap (\tilde{C}^c(m))\neq\emptyset}}\sup_{t\in[0,1]}\norm{\Psi(X;t)}\abs{X}G_F(m)\\
+		&\leq \norm{\Psi_1}_F\sum_{m=0}^{\infty}G_F(m)\left(\sum_{\substack{x\in C_2\cap\tilde{C},\\y\in L_1(m)}}+\sum_{\substack{x\in C_1\cap\tilde{C},\\y\in L_2(m)}}\right)F(d(x,y))<\infty.
+	\end{align}
 	\footnote{Here $\Psi_1$ is defined through $\Psi_1(X)=\abs{X}^1 \Psi(X)$.} Since the remainder of the proof can remain unchanged from \cite{ogata2021h3gmathbb}, this concludes the proof of item 3. We now only need to comment on item 2. We must show that
 	\begin{equation}
 		(\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s})^{-1}=\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\in\textrm{GVAut}(\AA).
@@ -921,10 +938,21 @@ Now we will state some properties of locally generated automorphisms:
 		\item $X\cap (W(C_\theta)\cap R)\neq\emptyset$ and $X\cap L\neq\emptyset$.
 		\item $X\subset W(C_\theta)^c$ and
 		\begin{enumerate}
-			\item $X\subset U,X\subset D$.
-			\item $X\subset U,X\subset L,X\subset R$
+			\item $X\subset U,X\subset D$, or
+			\item $X\subset U,X\subset L,X\subset R$ and $X(m)\cap (\tau^{-1}(C_\theta^c\cap D))^c\neq \emptyset$, or
+			\item $X\subset D,X\subset L,X\subset R$ and $X(m)\cap (\tau(C_\theta^c\cap U))^c\neq \emptyset$.
 		\end{enumerate}
 	\end{enumerate}
+	This shows that we have a bound
+	\begin{align}
+		&\sum_{\substack{Z:Z\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }Z\nsubseteq \tau^{-1}(C_\theta^c\cap D)}}\sup_{t\in[0,1]}\norm{\Xi^{(1)}(Z,t)}\\
+		\nonumber
+		&\leq \frac{8}{C_F}(e^{2I_F(\Psi)}-1)(b_0(W(C_\theta)\cap L,R)+b_0(L,W(C_\theta)\cap R)+b_0(W(C_\theta)^c\cap U,W(C_\theta)^c\cap D)\\
+		\nonumber
+		&\qquad+b_1(W(C_\theta)^c\cap U\cap L,W(C_\theta)^c\cap U\cap L,L\cap\partial(W(C_\theta)^c\cap U),R\cap\partial(W(C_\theta)^c\cap U))\\
+		&\qquad b_1(W(C_\theta)^c\cap D\cap L,W(C_\theta)^c\cap D\cap R,L\cap\partial(W(C_\theta)^c\cap D),R\cap\partial(W(C_\theta)^c\cap D)))<\infty.
+	\end{align}
+	This concludes the proof.
 \end{proof}
 From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
