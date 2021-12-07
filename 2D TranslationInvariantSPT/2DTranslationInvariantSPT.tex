@@ -77,12 +77,12 @@ be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site for this purpose we define $W$ such that
+be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
 	W(\AA_{C_\theta})\defeq\AA_{C_\theta}\cup\tau(\AA_{C_\theta})\cup\tau^{-1}(\AA_{C_\theta}).
 \end{equation}
 \subsection{Disentangle by $\textrm{QAut}(\AA)$}
-Similarly what was done in \cite{ogata2021h3gmathbb} we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
+Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{W(\AA_{C_\theta})^c}$\footnote{Note that our definition of $\textrm{QAut}(\AA)$ is slightly different from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
 	\begin{equation}
@@ -109,7 +109,7 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		\item translation invariant ($\omega\circ\tau=\omega$).
 	\end{enumerate}
 \end{assumption}
-Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -134,11 +134,11 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 \subsection{Cone operators}
  We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$ and $\alpha_\sigma\in\Aut{\AA_{\sigma}}$. Take $x\in\UU(\HH_{R/L})\otimes\mathbbm{1}_{\HH_{L/R}}$ then we say that $x$ is a cone operator on the right/left (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$ for $\sigma\in\{L,R\}$) if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\mathbbm{1}_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
-	$\textrm{Cone}_\sigma(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\mathbbm{1}_{\sigma^c}$. We have that
+	$\textrm{Cone}_\sigma(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\mathbbm{1}_{\ZZ^2/\sigma}$. We have that
 	\begin{align}\label{eq:CommutantPropertyCones}
 		\textrm{Cone}_R(\alpha_0,\theta)&\subseteq\textrm{Cone}_L(\alpha_0,\theta)'&\textrm{Cone}_L(\alpha_0,\theta)&\subseteq\textrm{Cone}_R(\alpha_0,\theta)'.
 	\end{align}
@@ -151,11 +151,11 @@ Take $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple o
 \end{proof}
 We will also define the a generalisation of this. We will define a subgroup of $\UU(\HH_0)$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$, $\alpha_\sigma\in\Aut{\AA_{\sigma}}$ and $\Theta\in\Aut{W(\AA_{C_\theta})^c}$. Take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on the right (or in short $x\in \textrm{IAC}_R(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_R$ and a $y\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
+	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{W(\AA_{C_\theta})^c}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\sigma$ (or in short $x\in \textrm{IAC}_\sigma(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_\sigma$ and a $y\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
 	\begin{equation}
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
 	\end{equation}
-	$\textrm{IAC}_R$ is a subgroup of $\UU(\HH_0)$. If we define similarly $\textrm{IAC}_L$ we get that
+	$\textrm{IAC}_\sigma$ is a subgroup of $\UU(\HH_0)$. We get that
 	\begin{align}\label{eq:CommutantProperty}
 		\textrm{IAC}_R(\alpha_0,\theta,\Theta)&\subseteq\textrm{IAC}_L(\alpha_0,\theta,\Theta)'&\textrm{IAC}_L(\alpha_0,\theta,\Theta)&\subseteq\textrm{IAC}_R(\alpha_0,\theta,\Theta)'.
 	\end{align}
@@ -205,7 +205,7 @@ Following Yoshiko Ogata \cite{ogata2021h3gmathbb} we now define objects using th
 	There unitaries $W_g\in\UU(\HH_0)$ and $u_{\sigma}(g,h)\in\UU(\HH_{\sigma})$ for all $g,h\in G$ and for all $\sigma\in\{L,R\}$ satisfying
 	\begin{align}
 		\Ad{W_g}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\circ\Theta^{-1}\circ\alpha_0^{-1}\\
-		\Ad{u_\sigma(g,h)}\circ\pi_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma R}\circ\eta_h^{\sigma U}\circ(\beta_g^{\sigma R})^{-1}\circ(\eta^\sigma_{gh})^{-1}\circ\alpha_\sigma\\
+		\Ad{u_\sigma(g,h)}\circ\pi_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\eta_h^{\sigma}\circ(\beta_g^{\sigma U})^{-1}\circ(\eta^\sigma_{gh})^{-1}\circ\alpha_\sigma^{-1}\\
 		u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}.
 	\end{align}
 \end{lemma}
@@ -564,7 +564,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	The index is independent of the choice of angle $\theta$.
 \end{lemma}
 \begin{proof}
-	After what we've shown so far this proof is trivial.
+	Take $0<\theta_1<\theta_2<\pi/2$. Take $\alpha\in \textrm{QAut}(\AA)$ and (for all $\sigma\in\{L,R\}$) take $\eta_{g,1}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta_{g,2}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ to be operators belonging to $\tilde{\beta}_{g,1}$ and $\tilde{\beta}_{g,2}$ leaving $\omega$ invariant. Since $\Aut{\AA_L\cap\AA_{C_{\theta_1}}}\subset \Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ the result now follows from lemma \ref{lem:InvarianceUnderChoiceBeta}.
 \end{proof}
 Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
 \section{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
@@ -655,7 +655,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\Theta_2\circ\xi\circ\Theta_2^{-1}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{A}\circ\xi
 	\end{align}
-	concluding the proof of the first item. To show the second item notice that since $\pi_0\circ\alpha_0\circ\Theta$ is irreducible the solution (if it exists which we just showed) of equation \eqref{eq:ConditionDefinitionOfGroupMorphism} is unique up to a phase. This means that to show that our map is independent of the choices we only need to show that we can't obtain another phase by picking a different representative. {\color{red}This should be obvious but what argument do I need here?} To then show the last item take $x_1,x_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\AA_R,y_1,y_2\in \textrm{Cone}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
+	concluding the proof of the first item. To show the second item notice that since $\pi_0\circ\alpha_0\circ\Theta$ is irreducible the solution (if it exists which we just showed) of equation \eqref{eq:ConditionDefinitionOfGroupMorphism} is unique up to a phase. This means that to show that our map is independent of the choices we only need to show that we can't obtain another phase by picking a different representative. This is clearly the case. To then show the last item take $x_1,x_2\in \textrm{IAC}_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\AA_R,y_1,y_2\in \textrm{Cone}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
 	\begin{align}
 		x_i&=\pi_0\circ\alpha_0\circ\Theta(A_i)y_i&\Ad{y_i}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_i.
 	\end{align}
@@ -834,7 +834,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	To show the second one we get that
 	\begin{align}
 		&\Ad{\phi_1(\delta_g)\phi_2(W_g)}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\Ad{\phi_1(\delta_g)}\circ\pi_0\circ\alpha_0\circ\Theta\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}\\
+		&=\Ad{\phi_1(\delta_g)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Ad{\gamma^{H_L}_{0;1}(A_{2,g}^L)\otimes\gamma^{H_R}_{0;1}(A_{2,g}^R)}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\Ad{A_{2,g}^L\otimes A_{2,g}^R}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_L}_{0;1}\otimes\gamma^{H_R}_{0;1}\circ\gamma^H_{1;0}.
 	\end{align}
