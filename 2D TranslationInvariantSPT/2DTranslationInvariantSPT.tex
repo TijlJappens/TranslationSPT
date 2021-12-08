@@ -31,7 +31,7 @@
 \let\originalright\right
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
-\title{1D SPT classification with translation symmetry}
+\title{An $H^2(G,\TT)\oplus H^3(G,\TT)$-valued index for SPT states with translation symmetry in two dimensional quantum spin systems}
 \author{Tijl Jappens}
 \date{\today}
 
@@ -67,8 +67,26 @@
 
 \numberwithin{equation}{section}
 \begin{document}
+\maketitle	
+\begin{abstract}
+	content...
+\end{abstract}
+\section{Introduction}
+The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a group $G$ with an on site group action $\beta_g$ (see the next section for more information). One possible definition\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
+\begin{enumerate}
+	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
+	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
+\end{enumerate}
+One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) are equivalent if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th Borel group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
+\\\\
+The goal of this paper is to look at the 2d case with the equivalence class as presented here but only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about such states. Obviously since such states are also 2d spt states there exists an injective map from the space of translation invariant spt states 
+\clearpage
 \section{Setup and definitions}
-In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let
+In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+\begin{equation}
+	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
+\end{equation}
+for any $g\in G$, $I\subset\Gamma$ finite and $A\in\AA_I$. Let
 \begin{align}
 	L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x>0\right.\right\}\\
 	U&\defeq \left\{(x,y)\in\ZZ^2\left|y>0\right.\right\},&D&\defeq \left\{(x,y)\in\ZZ^2\left|y<0\right.\right\}
@@ -77,7 +95,7 @@ be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
+be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
 	W(\AA_{C_\theta})\defeq\AA_{C_\theta}\cup\tau(\AA_{C_\theta})\cup\tau^{-1}(\AA_{C_\theta}).
 \end{equation}
@@ -591,13 +609,13 @@ For any interaction with such a bounded $f_\phi$ norm we will use $\gamma^H_{s;t
 \begin{equation}
 	\frac{\d}{\d s}\gamma^H_{t;s}(a)=i\sum_{I\subset \ZZ^2}\gamma^H_{t;s}([H(s,I),a])
 \end{equation}
-with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed here that this automorphism indeed exists.} If our interaction satisfies that $\sup_t\sum_{I\subset\ZZ^2}H(I,t)\in\AA$ then we have an identity
+with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed here that this automorphism indeed exists.} If our interaction is bounded (meaning that $\sup_t\norm{\sum_{I\subset\ZZ^2}H(I,t)}<\infty$) then we have an identity
 \begin{align}
 	\gamma^H_{s;t}&=\Ad{u^H_{t;s}}&u^H_{t;s}&\defeq \mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset \ZZ^2}H(s',I)).
 \end{align}
 The goal of this section is now to show that the index we constructed is invariant under such locally generated automorphisms (see theorem \ref{thrm:IndexInvariantUnderLGA}).
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
-	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\AA_{C_\theta^c}\cap\AA_{D}}$ such that there exists some $a\in\AA$ satisfying that
+	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that there exists some $a\in\AA$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquation}
 		\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}=\Ad{a}\circ \Phi^U_{s;t}\otimes\Phi^D_{s;t}.
 	\end{equation}
@@ -774,7 +792,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma^H_{0;1})$
 \end{theorem}
 \begin{proof}
-	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\left(\AA_{C_{\theta_3}} \cup \tau(\AA_{C_{\theta_3}})\right)^c}$ such that
+	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{W\left(\AA_{C_{\theta_3}}\right)^c}$ such that
 	\begin{equation}
 		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
@@ -787,7 +805,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		\alpha\circ\gamma&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
 		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{C_{\theta_2}}\cup\tau(\AA_{C_{\theta_2}})}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{W(\AA_{C_{\theta_2}})^c}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
@@ -842,7 +860,11 @@ The goal of this section is now to show that the index we constructed is invaria
 	\begin{equation}
 		=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
 	\end{equation}
-	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. {\color{red}I need to do the same for $\tilde u_R(g,h)$.}
+	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Similarly for $u_\sigma(g,h)$ we get
+	\begin{align}
+		&\Ad{\phi_1(\delta_g^\sigma W_g\delta_h^\sigma W_g^\dagger u_\sigma(g,h))}\circ\pi_0\circ\alpha_0\circ\Theta\\
+		&=
+	\end{align}
 \end{proof}
 \appendix
 \section{Properties of locally generated automorphisms:}
@@ -974,13 +996,21 @@ From these four statements we can prove the following results:
 	Since by \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 3 $\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\in\textrm{GSQAut}(\AA)$ the result follows. {\color{red}Do I have to explain this further?}
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_2,\in\UU(\AA),a_3\in\UU(\AA_R)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
 	\begin{align}
+		\label{eq:TwoAngleLemmaPart2Equation1}
 		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
-		\gamma^{H_\sigma}_{t;s}\eta_g^\sigma\gamma^{H_\sigma}_{s;t}&=\Ad{a_3}\circ \tilde\eta_{g}^\sigma.
+		\label{eq:TwoAngleLemmaPart2Equation2}
+		\gamma^{H_\sigma}_{t;s}\eta_g^\sigma\gamma^{H_\sigma}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma.
 	\end{align}
 \end{lemma}
 \begin{proof}
+	First we show that equation \eqref{eq:TwoAngleLemmaPart2Equation2} implies equation \eqref{eq:TwoAngleLemmaPart2Equation1}. This is because using equation \eqref{eq:TwoAngleLemmaPart2Equation1} we get that
+	\begin{align}
+		\gamma^H_{t;s}\circ\eta_g\circ\gamma^{H}_{s;t}&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\eta_g\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}\\
+		&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\Ad{a_{3,L}\otimes a_{3,R}}\circ\tilde{\eta}_g\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}.
+	\end{align}
+	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}(\AA)$ the implication follows.
 \end{proof}
 \begin{lemma}\label{lem:AddingAutomorphismsIsContinuous}
 	Endow $\Aut{\AA}$ with strong topology then the map
