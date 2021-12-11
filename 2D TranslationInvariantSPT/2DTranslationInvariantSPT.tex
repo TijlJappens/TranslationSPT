@@ -92,7 +92,7 @@ Clearly this implies that
 \begin{equation}
 	\{\text{2d translation invariant spt classification}\}\simeq \{\text{1d spt classification}\}\oplus \{\text{2d spt classification}\}.
 \end{equation}
-The main goal of this paper is now to find an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant spt states that is consistent with the conjecture. By being consistent with the conjecture it is meant that if $\textrm{Index}_1$ is the one dimensional spt index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any spt $\omega$.\\\\
+The main goal of this paper is now to find an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant spt states that is consistent with the conjecture. By being consistent with the conjecture it is meant that if $\textrm{Index}_1$ is the one dimensional spt index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d spt $\omega$.\\\\
 The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on all our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index.
 \section{Setup and definitions}
 In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
@@ -540,8 +540,11 @@ We now show that the index is invariant under some transformation parametrised b
 		\nonumber
 		&\qquad  W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
 		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^\stkout{R} W_{g,1}v^\dagger \delta_h^R v \stkout{K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger} W_{g,1}^\dagger (K_{g,1}^\stkout{R})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1} W_{g,1}v^\dagger \delta_h^R v W_{g,1}^\dagger (K_{g,1})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
-		&=C_1(g,h)v^\dagger \delta_g^R W_{g,1} \delta_h^R W_{g,1}^\dagger  W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1} W_{g,1}v^\dagger \delta_h^R v W_{g,1}^\dagger (K_{g,1})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v.
+	\end{align}
+	Using the fact that by definition $K_{g,1}W_{g,1}=v^\dagger W_{g,1}v$ we obtain
+	\begin{align}
+		C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R W_{g,1} \delta_h^R W_{g,1}^\dagger  W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
 		&=C_1(g,h)
 	\end{align}
 	concluding the proof.
@@ -609,17 +612,46 @@ Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spat
 In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra. Take $\phi\in\PP(\BB)$ such that
 \begin{enumerate}
 	\item $\phi\circ\beta_g=\phi$.
-	\item there exist automorphisms $\alpha_L\in\Aut{\BB_L}$ and $\alpha_R\in\Aut{\BB_R}$ and operators $b\in\BB$ such that
+	\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and operators $b\in\BB$ such that
 	\begin{equation}
-		\phi_0=\phi\circ\Ad{b}\circ\alpha_L\otimes\alpha_R
+		\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
 	\end{equation}
 	is a product state.
 \end{enumerate}
-For any $j\in\ZZ$ take $L_j$ to be $\{(x,y)\in\ZZ^2|y=j\}$. Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
+\begin{lemma}
+	This $\phi$ satisfies the split property.
+\end{lemma}
+\begin{proof}
+	Take $(\HH_L\otimes\HH_R,\pi_L\otimes\pi_R,\Omega_L\otimes\Omega_R)$ a GNS triple of $\phi_0$. By construction $(\HH_L\otimes\HH_R,\pi_L\circ\tilde\alpha_L\otimes\pi_R\circ\tilde\alpha_R,\pi_L\otimes\pi_R(b^\dagger)\Omega_L\otimes\Omega_R)$ is a GNS triple of $\phi$. This concludes the proof that $\phi$ satisfies the split property.
+\end{proof}
+By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d spt index. For any $j\in\ZZ$ and $n\in\NN$ take
+\begin{align}
+	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j,n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}.
+\end{align}
+Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
 \begin{equation}
 	\omega(A)=\sum_{j\in\ZZ}\phi(\Pi_{L_j}(A)).
 \end{equation}
-(Here $\Pi$ is the conditional expectation value.) We have that $\omega\in\PP(\AA)$ and that $\omega$ satisfies assumption \ref{assumption}. Moreover $\textrm{Index}(\omega)=\textrm{Index}_1(\phi)$ {\color{red}to be continued.}
+(Here $\Pi$ is the conditional expectation value.) We have that:
+\begin{lemma}
+	$\omega\in\PP(\AA)$ and $\omega$ satisfies assumption \ref{assumption}.
+\end{lemma}
+\begin{proof}
+	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\textrm{QAut}(\AA)$ that disentangles $\omega$. We define $\alpha$ such that for any $A\in\AA$
+	\begin{equation}
+		\alpha(A)=\sum_{j\in\ZZ}\Ad{b}\circ\tilde{\alpha}_L\otimes\tilde{\alpha}_R(\Pi_{L_j}(A)).
+	\end{equation}
+	We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ to be
+	\begin{equation}
+		\Theta=\bigotimes_{j\in\ZZ}\Ad{\Pi_{L_{j,n(j)}}(b)}_{(\cdot,j)}
+	\end{equation}
+	where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Take $\alpha_\sigma\in\Aut{\AA_\sigma}$ to be
+	\begin{equation}
+		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma)_{(\cdot,j)}.
+	\end{equation}
+	There now exists an..{\color{red}to be continued}
+\end{proof}
+This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_1(\phi)$. {\color{red}to be continued.}
 \section{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
 Take $H:(t\in\RR, I\subset \ZZ^2)\mapsto H(t,I)\in\AA_I\subset\AA_{\text{loc}}$ to be a one parameter family of interactions such that
 \begin{align}
