@@ -1079,45 +1079,6 @@ From these four statements we can prove the following results:
 	\end{align}
 	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}(\AA)$ the implication follows.
 \end{proof}
-\begin{lemma}\label{lem:AddingAutomorphismsIsContinuous}
-	Endow $\Aut{\AA}$ with strong topology then the map
-	\begin{equation}
-		F:\Aut{\AA}\times\Aut{\AA}\rightarrow\Aut{\AA}:(\xi_1,\xi_2)\mapsto \xi_1\circ\xi_2
-	\end{equation}
-	is continuous.
-\end{lemma}
-\begin{proof}
-	Take $(\xi_{1,n})_{n\in\NN}$, $(\xi_{2,n})_{n\in\NN}$, $\xi_1$ and $\xi_2$ (all in $\Aut{\AA}$) satisfying
-	\begin{align}
-		\lim_{n\rightarrow\infty}\xi_{n,1}&=\xi_1&\lim_{n\rightarrow\infty}\xi_{n,2}&=\xi_2.
-	\end{align}
-	We have to show that
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\xi_{n,1}\circ\xi_{n,2}=\xi_1\circ\xi_2.
-	\end{equation}
-	This is equivalent to saying that $\forall a\in\AA:$
-	\begin{equation}
-		\lim_{n\rightarrow\infty}\norm{\xi_{n,1}\circ\xi_{n,2}(a)-\xi_1\circ\xi_2(a)}=0.
-	\end{equation}
-	Using the triangle inequality we obtain:
-	\begin{align}
-		&\norm{\xi_{n,1}\circ\xi_{n,2}(a)-\xi_1\circ\xi_2(a)}\\
-		&\leq \norm{\xi_{1,n}\left(\xi_{2,n}(a)-\xi_{2}(a)\right)}+\norm{(\xi_1-\xi_{1,n})(\xi_2(a))}\\
-		&=\norm{\xi_{2,n}(a)-\xi_{2}(a)}+\norm{\xi_1(b)-\xi_{1,n}(b)}
-	\end{align}
-	where $b=\xi_2(a).$ Since both converge to $0$ the result follows.
-\end{proof}
-\begin{lemma}\label{lem:AdjointIsContinuous}
-	Endow $\AA$ with norm topology and $\Aut{\AA}$ with strong topology then the map
-	\begin{equation}
-		\text{Ad}:\AA\rightarrow \Aut{\AA}:a\mapsto \Ad{a}= a\cdot a^\dagger
-	\end{equation}
-	is continuous.
-\end{lemma}
-\begin{proof}
-	content...
-\end{proof}
-
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
