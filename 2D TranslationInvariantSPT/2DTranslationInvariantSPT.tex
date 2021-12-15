@@ -78,7 +78,7 @@ The notion of symmetry protected topological phases of matter was introduced by 
 	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
 	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
 \end{enumerate}
-One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) are equivalent if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th Borel group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
+One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th Borel group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
 \\\\
 The goal of this paper is to look at the 2d case with the equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states such states see for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
 \begin{conjecture}\label{conj}
@@ -101,8 +101,8 @@ In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let $G$ 
 \end{equation}
 for any $g\in G$, $I\subset\Gamma$ finite and $A\in\AA_I$. Let
 \begin{align}
-	L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x>0\right.\right\}\\
-	U&\defeq \left\{(x,y)\in\ZZ^2\left|y>0\right.\right\},&D&\defeq \left\{(x,y)\in\ZZ^2\left|y<0\right.\right\}
+	L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x\geq 0\right.\right\}\\
+	U&\defeq \left\{(x,y)\in\ZZ^2\left|y\geq 0\right.\right\},&D&\defeq \left\{(x,y)\in\ZZ^2\left|y<0\right.\right\}
 \end{align}
 be the left, right, upper and lower half planes respectively and let
 \begin{equation}
@@ -110,12 +110,12 @@ be the left, right, upper and lower half planes respectively and let
 \end{equation}
 be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
-	W(\AA_{C_\theta})\defeq\AA_{C_\theta}\cup\tau(\AA_{C_\theta})\cup\tau^{-1}(\AA_{C_\theta}).
+	W(C_\theta)\defeq C_\theta\cup\tau(C_\theta)\cup\tau^{-1}(C_\theta).
 \end{equation}
 \subsection{Disentangle by $\textrm{QAut}(\AA)$}
 Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
-	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{W(\AA_{C_\theta})^c}$\footnote{Note that our definition of $\textrm{QAut}(\AA)$ is slightly different from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$\footnote{Note that our definition of $\textrm{QAut}(\AA)$ is slightly different from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
 	\begin{equation}
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
@@ -134,7 +134,7 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		\end{equation}
 		satisfying
 		\begin{align}
-			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_2}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
+			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
 		\end{align}
 		for some $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$.
 		\item translation invariant ($\omega\circ\tau=\omega$).
@@ -195,7 +195,7 @@ We will also define the a generalisation of this. We will define a subgroup of $
 	\end{align}
 \end{definition}
 \begin{proof}
-	Take $u_L\in\textrm{IAC}_L(\alpha_0,\theta,\Theta)$ and $u_R\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A_\sigma\in\AA_\sigma$ and $v_\sigma\in\textrm{IAC}_\sigma(\alpha_0,\theta,\Theta)$ (for $\sigma\in\{L,R\}$) such that $u_\sigma=\pi_0\circ\alpha_0\circ\Theta(A_\sigma)v_\sigma$. We then get
+	Take $u_L\in\textrm{IAC}_L(\alpha_0,\theta,\Theta)$ and $u_R\in\textrm{IAC}_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A_\sigma\in\AA_\sigma$ and $v_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for $\sigma\in\{L,R\}$) such that $u_\sigma=\pi_0\circ\alpha_0\circ\Theta(A_\sigma)v_\sigma$. We then get
 	\begin{align}
 		&[u_L,u_R]=u_Lu_R-u_Ru_L\\
 		&=\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\pi_0\circ\alpha_0\circ\Theta(A_R)v_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
@@ -641,7 +641,11 @@ Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
 	\begin{equation}
 		\alpha(A)=\sum_{j\in\ZZ}\Ad{b}\circ\tilde{\alpha}_L\otimes\tilde{\alpha}_R(\Pi_{L_j}(A)).
 	\end{equation}
-	We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ to be
+	This Automorphism indeed disentangles since
+	\begin{equation}
+		\omega_0\defeq \omega\circ\alpha=\sum_{j\in\ZZ}\phi_0(\Pi_{L_j}(\cdot))
+	\end{equation}
+	is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ to be
 	\begin{equation}
 		\Theta=\bigotimes_{j\in\ZZ}\Ad{\Pi_{L_{j,n(j)}}(b)}_{(\cdot,j)}
 	\end{equation}
@@ -649,9 +653,51 @@ Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
 	\begin{equation}
 		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma)_{(\cdot,j)}.
 	\end{equation}
-	There now exists an..{\color{red}to be continued}
+	Now define
+	\begin{equation}
+		V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}(\Pi_{L_{j}}(b)\Pi_{L_{j,n(j)}}(b)^{-1})_{(\cdot,j)}.
+	\end{equation}
+	We will now show that the limit
+	\begin{equation}
+		V_1\defeq\lim_{m\rightarrow\infty}V_{1,m}
+	\end{equation}
+	exists (is an element of $\AA$). {\color{red}To be continued...}
 \end{proof}
-This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_1(\phi)$. {\color{red}to be continued.}
+This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_1(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
+\begin{equation}
+	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_j|j\in\ZZ\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_j|j\in\ZZ\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_j|j\in\ZZ\}}}\Omega_{\rho,\sigma}\right)
+\end{equation}
+where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
+\begin{remark}
+	We clearly have (by construction) that (for any $j\in\ZZ$)
+	\begin{equation}
+		\pi_{L_j,L}\circ\alpha_L|_{L_j}\otimes \pi_{L_j,R}\circ\alpha_R|_{L_j}
+	\end{equation}
+	is a gns triple of $\phi$. This implies that if we take any $k_{j}^R(g)$ such that
+	\begin{equation}
+		\Ad{k_{j}^R(g)}\circ\pi_{L_j,R}\circ\alpha_R|_{L_j}=\pi_{L_j,R}\circ\alpha_R|_{L_j}\circ\beta_{g}^{L_j\cap R}
+	\end{equation}
+	then there exists a 2 cochain $C$ satisfying that
+	\begin{equation}
+		k_{j}^R(g)k_{j}^R(h)k_{j}^R(gh)^{-1}=C(g,h)\mathbbm{1}_{\HH_0}.
+	\end{equation}
+\end{remark}
+Take $\tilde{W}_g$ to be the unique operator such that
+\begin{align}
+	\Ad{\tilde W_g}\circ\pi_0&=\pi_0\circ\alpha\circ\beta_g^U\circ \alpha^{-1}&\tilde{W}_g\Omega_0&=\Omega_0.
+\end{align}
+Clearly this $\tilde{W}_g$ is a (linear) representation of the group. Now define $W_g=V_1^{\dagger}\tilde{W}_g V_1$. This operator is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\mathbbm{1}_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\mathbbm{1}_{\bigotimes_{\rho\in\{L_j|j\in\ZZ\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to define $K^\sigma_g\in\UU(\HH_\sigma)$. We do this as follows, take $k^\sigma_g\in\UU(\HH_{L_0,\sigma})$ to be such that
+\begin{equation}
+	\Ad{k^\sigma_g}\circ\pi_{L_0,\sigma}=\circ\pi_{L_0,\sigma}\circ\beta_g^{\sigma\cap L_0}.
+\end{equation}
+This operator is unique up to a $G$-dependent phase. Take $K^\sigma_g\defeq k^\sigma_g\bigotimes_{j\in\ZZ/\{0\}}\mathbbm{1}_{\HH_{L_j,\sigma}}$ then this operator indeed satisfies what was written in lemma \ref{lem:Definition_K}. We now only need to prove one more thing in order to be able to calculate the index. We need
+\begin{equation}
+	[K^\sigma_g\otimes\mathbbm{1}_{\HH_{\ZZ^2/\sigma}},v^\dagger W_g v]=0.
+\end{equation}
+Clearly the adjoint action of this commutator on the gns representation vanishes (this is because the two automorphisms commute) we therefore only have to show that this gives zero when applied to the cyclic vector. To show this, notice that by construction there exists a $w_g\in\UU(\otimes_{j>0}\HH_{L_j,L}\otimes\HH_{L_j,L})$ such that $v^\dagger W_g v=\mathbbm{1}_{\otimes_{j\leq 0}\HH_{L_j}}\otimes w_g$. We now get
+\begin{equation}
+	content...
+\end{equation}
 \section{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
 Take $H:(t\in\RR, I\subset \ZZ^2)\mapsto H(t,I)\in\AA_I\subset\AA_{\text{loc}}$ to be a one parameter family of interactions such that
 \begin{align}
