@@ -27,6 +27,7 @@
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\e}{\mathlarger{e}}
 \newcommand{\defeq}{\vcentcolon=}
+
 \let\originalleft\left
 \let\originalright\right
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
@@ -47,7 +48,7 @@
 \newcommand{\LL}{\mathcal L}
 \newcommand{\RR}{\mathbb R}
 \newcommand{\NN}{\mathbb{N}}
-\newcommand{\one}{\mathbbm{1}}
+\newcommand{\id}{\mathbbm{1}}
 
 \newcommand{\Ad}[1]{\textrm{Ad}\left(#1\right)}
 \newcommand{\Aut}[1]{\textrm{Aut}\left(#1\right)}
@@ -168,11 +169,11 @@ In what follows, fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)
 \subsection{Cone operators}
  We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\mathbbm{1}_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
-	$\textrm{Cone}_\sigma(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\mathbbm{1}_{\ZZ^2/\sigma}$. We have that
+	$\textrm{Cone}_\sigma(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\id_{\ZZ^2/\sigma}$. We have that
 	\begin{align}\label{eq:CommutantPropertyCones}
 		\textrm{Cone}_R(\alpha_0,\theta)&\subseteq\textrm{Cone}_L(\alpha_0,\theta)'&\textrm{Cone}_L(\alpha_0,\theta)&\subseteq\textrm{Cone}_R(\alpha_0,\theta)'.
 	\end{align}
@@ -180,7 +181,7 @@ In what follows, fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)
 \begin{proof}
 	The proof of equation \eqref{eq:CommutantPropertyCones} just follows from the fact that we defined $\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
 	\begin{align}
-		\textrm{Cone}_L(\alpha_0,\theta)&\subseteq \UU(\HH_L)\otimes\mathbbm{1}_{\HH_R}&\textrm{Cone}_R(\alpha_0,\theta)&\subseteq \mathbbm{1}_{\HH_L} \otimes \UU(\HH_R).
+		\textrm{Cone}_L(\alpha_0,\theta)&\subseteq \UU(\HH_L)\otimes\id_{\HH_R}&\textrm{Cone}_R(\alpha_0,\theta)&\subseteq \id_{\HH_L} \otimes \UU(\HH_R).
 	\end{align}
 \end{proof}
 We will also define the a generalisation of this. We will define a subgroup of $\UU(\HH_0)$ that includes both the group $\UU(\pi_0\circ\alpha_0\circ\Theta(\AA_R))$ and the representations of cone automorphisms:
@@ -230,7 +231,7 @@ The following lemma shows that if a unitary on the GNS space of $\omega_0$ has a
 \begin{proof}
 	Clearly we have that for all $a\in\AA_R$
 	\begin{equation}
-		\Ad{x}(\mathbbm{1}_{\HH_L}\otimes \pi_R\circ\alpha_R(A))=\mathbbm{1}_{\HH_L}\otimes \pi_R\circ\alpha_R\circ\xi_R(A).
+		\Ad{x}(\id_{\HH_L}\otimes \pi_R\circ\alpha_R(A))=\id_{\HH_L}\otimes \pi_R\circ\alpha_R\circ\xi_R(A).
 	\end{equation}
 	Because $\pi_R$ is irreducible this means that $\Ad{u}$ gives rise to a $*-$isomorphism on $\BB(\HH_R)$. By the Wigner theorem such a $*-$isomorphism must be represented by a unitary. The irreducibly of $\pi_R$ then proves that this unitary is in fact unique. Doing the same thing on the left concludes the proof.
 \end{proof}
@@ -251,7 +252,7 @@ These objects will be the starting point for our definition. Clearly the $u_\sig
 	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$).	If more generally we take $\Xi^\sigma\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\textrm{IAC}_\sigma(\alpha_0,\Theta)$.
 \end{lemma}
 \begin{proof}
-	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\mathbbm{1}_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
+	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\id_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{\tilde\Xi^\sigma}\circ\pi_\sigma\circ\alpha_\sigma=\pi_\sigma\circ\alpha_\sigma\circ \xi_\sigma.
 	\end{equation}
@@ -267,7 +268,7 @@ These objects will be the starting point for our definition. Clearly the $u_\sig
 	\begin{equation}
 		\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0=\pi_L\circ\alpha_L\otimes\pi_R\circ\alpha_R\circ\zeta_{g,R}.
 	\end{equation}
-	This together with the irreducibility of $\pi_R$ proves that $\Ad{\Ad{W_g}(\Xi^R)}$ gives rise to a $*$-isomorphism on $\BB(\HH_R)$. By the Wigner theorem this can be implemented by some unitary say $Z_{g,R}\in\UU(\HH_R)$. We now only have to show that $\Ad{W_g}(\Xi^R)=\mathbbm{1}_{\HH_L}\otimes Z_{g,R}$. This follows (up to a phase) from the irreducibility of $\pi_0$. To show the second result we only need to observe that for any $A\in\AA_R$ we get that
+	This together with the irreducibility of $\pi_R$ proves that $\Ad{\Ad{W_g}(\Xi^R)}$ gives rise to a $*$-isomorphism on $\BB(\HH_R)$. By the Wigner theorem this can be implemented by some unitary say $Z_{g,R}\in\UU(\HH_R)$. We now only have to show that $\Ad{W_g}(\Xi^R)=\id_{\HH_L}\otimes Z_{g,R}$. This follows (up to a phase) from the irreducibility of $\pi_0$. To show the second result we only need to observe that for any $A\in\AA_R$ we get that
 	\begin{align}
 		\Ad{W_g}\left(\pi_0\circ\alpha_0\circ\Theta(A)\Xi_R\right)&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A)\Ad{W_g}(\Xi_R)\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_R(A)\Ad{W_g}(\Xi_R).
@@ -329,7 +330,7 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 \begin{proof}
 	Take lemma 2.4 from \cite{ogata2021h3gmathbb} there it is stated that there exists a 3-cochain $C'$ such that
 	\begin{equation}\label{eq:defintion3CochainProof2Cochain}
-		u_R(g,h)u_R(gh,k)u_R(g,hk)^\dagger\Ad{W_g}(u_R(h,k)^\dagger)=C'(g,h,k)\mathbbm{1}.
+		u_R(g,h)u_R(gh,k)u_R(g,hk)^\dagger\Ad{W_g}(u_R(h,k)^\dagger)=C'(g,h,k)\id.
 	\end{equation}
 	It is clear that this 3-cochain is invariant under the substitution
 	\begin{align}
@@ -412,7 +413,7 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 	&W_{gh}W_kW_{hk}^\dagger W_{hk}W_{ghk}^\dagger K^R_{ghk} W_{ghk}W_{hk}^\dagger(K^R_{hk})^{\dagger} W_{hk}W_k^\dagger W_{gh}^\dagger\\
 	\nonumber
 	&W_{gh}W_h^\dagger W_g^\dagger W_gW_h W_kW_{hk}^\dagger K_{hk}^RW_{hk}W_k^\dagger(K^R_k)^\dagger W_h^\dagger (K^R_h)^\dagger W_g^\dagger (K^R_g)^\dagger\\
-	=&\mathbbm{1}C'(g,h,k)
+	=&\id C'(g,h,k)
 	\end{align}
 	concluding the proof.
 \end{proof}
@@ -520,7 +521,7 @@ We now show that the index is invariant under some transformation parametrised b
 		\nonumber
 		&\qquad \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)\stkout{(\delta_{gh}^R)^\dagger \delta_{gh}^R} (K_{gh,1}^R)^\dagger v^\dagger \stkout{(\delta_{gh}^R)^\dagger v  v^\dagger \delta^R_{gh}} u_{R,1}(g,h)^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v.
 	\end{align}
-	We now insert $(K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger K_{g,1}^R W_{g,1}K_{h,1}^R=\mathbbm{1}:$
+	We now insert $(K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger K_{g,1}^R W_{g,1}K_{h,1}^R=\id:$
 	\begin{align}	
 		C_2(g,h)&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
 		\nonumber
@@ -607,7 +608,7 @@ Due to all these considerations we will write the index as $\textrm{index}(\omeg
 \section{Example (consistency with conjecture \ref{conj})}
 Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spatial dimension such that
 \begin{equation}
-	\AA=\overline{\bigoplus_{j\in\ZZ}(\BB_{\text{loc}})_j}.
+	\AA=\overline{\textrm{span}\left\{\left.\bigotimes_{j\in J}(\BB_{\text{loc}})_j\right|J\subset \ZZ\:\text{finite}\right\}}.
 \end{equation}
 In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra. Take $\phi\in\PP(\BB)$ such that
 \begin{enumerate}
@@ -626,15 +627,16 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 \end{proof}
 By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d spt index. For any $j\in\ZZ$ and $n\in\NN$ take
 \begin{align}
-	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j,n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}.
+	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j,n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
+	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
 \end{align}
-Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
+Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA_{L_i}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
 \begin{equation}
-	\omega(A)=\sum_{j\in\ZZ}\phi(\Pi_{L_j}(A)).
+	\omega(A\otimes B)=\phi(A)\phi(B).
 \end{equation}
-(Here $\Pi$ is the conditional expectation value.) We have that:
+We have that:
 \begin{lemma}
-	$\omega\in\PP(\AA)$ and $\omega$ satisfies assumption \ref{assumption}.
+	$\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
 	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\textrm{QAut}(\AA)$ that disentangles $\omega$. We define $\alpha$ such that for any $A\in\AA$
@@ -643,9 +645,13 @@ Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
 	\end{equation}
 	This Automorphism indeed disentangles since
 	\begin{equation}
-		\omega_0\defeq \omega\circ\alpha=\sum_{j\in\ZZ}\phi_0(\Pi_{L_j}(\cdot))
+		\omega_0\defeq \omega\circ\alpha
 	\end{equation}
-	is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ to be
+	satisfies that for any $A\in\AA_{L_{i}}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
+	\begin{equation}
+		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B)
+	\end{equation}
+	so that it is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ to be
 	\begin{equation}
 		\Theta=\bigotimes_{j\in\ZZ}\Ad{\Pi_{L_{j,n(j)}}(b)}_{(\cdot,j)}
 	\end{equation}
@@ -663,41 +669,64 @@ Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA$:
 	\end{equation}
 	exists (is an element of $\AA$). {\color{red}To be continued...}
 \end{proof}
-This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_1(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
+This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
-	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_j|j\in\ZZ\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_j|j\in\ZZ\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_j|j\in\ZZ\}}}\Omega_{\rho,\sigma}\right)
+	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>0},L_0,L_{<0}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>0},L_0,L_{<0}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>0},L_0,L_{<0}\}}}\Omega_{\rho,\sigma}\right)
 \end{equation}
 where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
-\begin{remark}
-	We clearly have (by construction) that (for any $j\in\ZZ$)
+\begin{remark}\label{rem:GNS_One_Dimensional}
+	We clearly have (by construction) that
 	\begin{equation}
-		\pi_{L_j,L}\circ\alpha_L|_{L_j}\otimes \pi_{L_j,R}\circ\alpha_R|_{L_j}
+		\pi_{L_0,L}\circ\alpha_L|_{L_0}\otimes \pi_{L_0,R}\circ\alpha_R|_{L_0}
 	\end{equation}
-	is a gns triple of $\phi$. This implies that if we take any $k_{j}^R(g)$ such that
+	is a gns triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_0,R}$ such that
 	\begin{equation}
-		\Ad{k_{j}^R(g)}\circ\pi_{L_j,R}\circ\alpha_R|_{L_j}=\pi_{L_j,R}\circ\alpha_R|_{L_j}\circ\beta_{g}^{L_j\cap R}
+		\Ad{k^R(g)}\circ\pi_{L_0,R}\circ\alpha_R|_{L_0}=\pi_{L_0,R}\circ\alpha_R|_{L_0}\circ\beta_{g}^{L_0\cap R}
 	\end{equation}
 	then there exists a 2 cochain $C$ satisfying that
 	\begin{equation}
-		k_{j}^R(g)k_{j}^R(h)k_{j}^R(gh)^{-1}=C(g,h)\mathbbm{1}_{\HH_0}.
+		k^R(g)k^R(h)k^R(gh)^{-1}=C(g,h)\id_{\HH_{L_0,R}}
 	\end{equation}
+	and that the equivalence class this cochain is in, is given by $\textrm{index}_{1d}(\phi)$.
 \end{remark}
-Take $\tilde{W}_g$ to be the unique operator such that
+Let $\tilde k:G\rightarrow \UU(\HH_{L_0})$ be the unique operator that satisfies
 \begin{align}
-	\Ad{\tilde W_g}\circ\pi_0&=\pi_0\circ\alpha\circ\beta_g^U\circ \alpha^{-1}&\tilde{W}_g\Omega_0&=\Omega_0.
+	\Ad{\tilde{k}_g}\circ\pi_{L_0}&=\pi_{L_0}\circ \circ\alpha|_{L_{0}}\circ\beta_g^{L_0}\circ \alpha^{-1}|_{L_{0}}&\tilde k_g\Omega_{L_0}&=\Omega_{L_0}.
 \end{align}
-Clearly this $\tilde{W}_g$ is a (linear) representation of the group. Now define $W_g=V_1^{\dagger}\tilde{W}_g V_1$. This operator is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\mathbbm{1}_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\mathbbm{1}_{\bigotimes_{\rho\in\{L_j|j\in\ZZ\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to define $K^\sigma_g\in\UU(\HH_\sigma)$. We do this as follows, take $k^\sigma_g\in\UU(\HH_{L_0,\sigma})$ to be such that
+Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>0},L}\otimes\HH_{L_{>0},R})$ be the unique operator such that
+\begin{align}
+	\Ad{\tilde w_{g}}\circ\pi_{L_{>0}}&=\pi_{L_{>0}}\circ\alpha|_{L_{>0}}\circ\beta_g^{\tau^{i}(U)}\circ \alpha^{-1}|_{L_{>0}}&\tilde w_{g}\Omega_{L_{>0}}&=\Omega_{L_{>0}}.
+\end{align}
+Clearly both functions are (linear) representation of the group. Now define
 \begin{equation}
-	\Ad{k^\sigma_g}\circ\pi_{L_0,\sigma}=\circ\pi_{L_0,\sigma}\circ\beta_g^{\sigma\cap L_0}.
+	W_g=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1).
 \end{equation}
-This operator is unique up to a $G$-dependent phase. Take $K^\sigma_g\defeq k^\sigma_g\bigotimes_{j\in\ZZ/\{0\}}\mathbbm{1}_{\HH_{L_j,\sigma}}$ then this operator indeed satisfies what was written in lemma \ref{lem:Definition_K}. We now only need to prove one more thing in order to be able to calculate the index. We need
+This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\id_{\bigotimes_{\rho\in\{L_{>0},L_0,L_{<0}\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
+\begin{align}
+	K_g&=v^\dagger W_g v W_g^\dagger\\
+	&=v^\dagger \pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1) v W_g^\dagger\\
+	&=\pi_{\HH_0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<0}}}) \tilde v \pi_{\HH_0}(V_1) W_g^\dagger\\
+	&=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_0}}\otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1) W_g^\dagger\\
+	&=\pi_{\HH_0}(V_1)^{\dagger}(\id_{H_{L_{>0}}}\otimes \tilde k_g^\dagger \otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1)\\
+	&=\id_{H_{L_{>0}}}\otimes \pi_{\HH_{L_0}}(b)^\dagger \tilde k_g^\dagger \pi_{\HH_{L_0}}(b) \otimes\id_{\HH_{L_{<0}}} .
+\end{align}
+Now there exists a $k^L:G\rightarrow \UU(\HH_{L_0,L})$ and a $k^R:G\rightarrow \UU(\HH_{L_0,R})$ such that
 \begin{equation}
-	[K^\sigma_g\otimes\mathbbm{1}_{\HH_{\ZZ^2/\sigma}},v^\dagger W_g v]=0.
+	k^L_g\otimes k^R_g=\pi_{\HH_{L_0}}(b)^\dagger \tilde k_g \pi_{\HH_{L_0}}(b)
 \end{equation}
-Clearly the adjoint action of this commutator on the gns representation vanishes (this is because the two automorphisms commute) we therefore only have to show that this gives zero when applied to the cyclic vector. To show this, notice that by construction there exists a $w_g\in\UU(\otimes_{j>0}\HH_{L_j,L}\otimes\HH_{L_j,L})$ such that $v^\dagger W_g v=\mathbbm{1}_{\otimes_{j\leq 0}\HH_{L_j}}\otimes w_g$. We now get
+and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=(k^\sigma_g)^\dagger\otimes\id_{\HH_{L>0,\sigma}}\otimes\id_{\HH_{L<0,\sigma}}$. Notice that we have (by construction) that
 \begin{equation}
-	content...
+	[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},v^\dagger W_g v]=0.
 \end{equation}
+We now get (using this equation and the fact that $W_g$ is a representation)
+\begin{align}
+	&K_g^R W_g K_h^R W_h W_{gh}^\dagger (K_{gh}^R)^\dagger \stkout{W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}\\
+	&=(K_g^L)^\dagger K_gW_g (K^L_h)^\dagger K_hW_h W_{gh}^\dagger K_{gh}^\dagger K_{gh}^L\\
+	&=(K_g^L)^\dagger v^\dagger W_gv (K^L_h)^\dagger v^\dagger W_h W_{gh}^\dagger v K_{gh}^L\\
+	&=(K_g^L)^\dagger   (K^L_h)^\dagger \stkout{v^\dagger W_g W_h W_{gh}^\dagger v} K_{gh}^L\\
+	&=k_g^L k_h^L (k_{gh}^L)^\dagger\otimes \id_{\HH_{L>0,\sigma}}\otimes\id_{\HH_{L<0,\sigma}}
+\end{align}
+and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)^{-1}$.
 \section{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
 Take $H:(t\in\RR, I\subset \ZZ^2)\mapsto H(t,I)\in\AA_I\subset\AA_{\text{loc}}$ to be a one parameter family of interactions such that
 \begin{align}
@@ -821,7 +850,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{align}
 	Inserting this in equation \eqref{eq:HomeomorphismCondition} shows that
 	\begin{equation}
-		\phi_1(x_1x_2)\phi_1(x_1)^\dagger\phi_1(x_2)^\dagger=\mathbbm{1}
+		\phi_1(x_1x_2)\phi_1(x_1)^\dagger\phi_1(x_2)^\dagger=\id
 	\end{equation}
 	concluding the proof.
 \end{proof}
@@ -979,6 +1008,33 @@ The goal of this section is now to show that the index we constructed is invaria
 		&=
 	\end{align}
 \end{proof}
+\section{Translation invariance in two directions}
+In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$. We now let our state $\omega$ satisfy:
+\begin{assumption}\label{assumption:2Translations}
+	Take $\omega\in\PP(\AA)$ to be
+	\begin{enumerate}
+		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
+		\begin{align}
+			\omega=\omega_0\circ\alpha.
+		\end{align}
+		\item {\color{red}The other QAutomorphism.}
+		\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map
+		\begin{equation}
+			\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
+		\end{equation}
+		satisfying
+		\begin{align}
+			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g&\nu^{-1}\circ\eta_g^R\circ\nu&=\Ad{B_g}\circ\eta_g^R
+		\end{align}
+		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$, $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$ and $B_g\in\UU(\AA)$.
+		\item {\color{red}Second $\tilde{\beta}_g$.}
+		\item translation invariant in both directions
+		\begin{align}
+			\omega\circ\tau&=\omega&\omega\circ\nu&=\omega.
+		\end{align}
+	\end{enumerate}
+\end{assumption}
+
 \appendix
 \section{Properties of locally generated automorphisms:}
  Take $H$ and $\gamma$ as defined in section \ref{sec:IndexInvariantUnderLGA}. We will now show some properties of this locally generated automorphism $\gamma$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
@@ -1035,7 +1091,7 @@ Now we will state some properties of locally generated automorphisms:
 	\end{equation}
 	with these new definitions of $\Psi^{(0)}$ and $\Psi^{(1)}$. We now want so show that for every $t$,
 	\begin{equation}
-		\sum_{Z\subset\ZZ^2}\left(\Xi^{(s)}(Z,t)-\sum_{C\in\mathcal{C}_1}\mathbbm{1}_{Z\subset C}\Xi^{(s)}(Z,t)\right)
+		\sum_{Z\subset\ZZ^2}\left(\Xi^{(s)}(Z,t)-\sum_{C\in\mathcal{C}_1}\id_{Z\subset C}\Xi^{(s)}(Z,t)\right)
 	\end{equation}
 	is bounded. Following the arguments in equation (5.22) to (5.24) in \cite{ogata2021h3gmathbb} we still get that
 	\begin{equation}
