@@ -1007,6 +1007,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		&\Ad{\phi_1(\delta_g^\sigma W_g\delta_h^\sigma W_g^\dagger u_\sigma(g,h))}\circ\pi_0\circ\alpha_0\circ\Theta\\
 		&=
 	\end{align}
+	{\color{red}To be continued...}
 \end{proof}
 \section{Translation invariance in two directions}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$. We now let our state $\omega$ satisfy:
@@ -1017,24 +1018,123 @@ In this section we discuss translation invariance not just in the vertical direc
 		\begin{align}
 			\omega=\omega_0\circ\alpha.
 		\end{align}
-		\item {\color{red}The other QAutomorphism.}
+		\item such that there exists an automorphism $\tilde\alpha$ satisfying that $\mu\circ\tilde\alpha\circ\mu^{-1}\in\QAut{\AA}$ and that $\omega=\omega_0\circ\tilde\alpha$.
 		\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map
 		\begin{equation}
 			\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
 		\end{equation}
 		satisfying
 		\begin{align}
-			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g&\nu^{-1}\circ\eta_g^R\circ\nu&=\Ad{B_g}\circ\eta_g^R
+			\label{eq:2TranslationsCondition3part1}
+			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g&\\
+			\label{eq:2TranslationsCondition3part2}
+			\nu^{-1}\circ\eta_g^L\circ\nu&=\Ad{B_g^L}\circ\eta_g^L&\nu^{-1}\circ\eta_g^R\circ\nu&=\Ad{B_g^R}\circ\eta_g^R
 		\end{align}
-		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$, $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$ and $B_g\in\UU(\AA)$.
-		\item {\color{red}Second $\tilde{\beta}_g$.}
+		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\nu^{-1}(\AA_L\cap\AA_{C_\theta})}$, $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$, $B_g^L\in\UU(\AA_R)$ and $B_g^R\in\UU(\AA_L)$.
+		\item such that there exists a $\theta'\in]0,\pi/2[$ for which there exists a map
+		\begin{equation}
+			\tilde{\beta}':G\rightarrow\Aut{\AA}:g\mapsto \tilde{\beta}'_g
+		\end{equation}
+		satisfying
 		\item translation invariant in both directions
 		\begin{align}
 			\omega\circ\tau&=\omega&\omega\circ\nu&=\omega.
 		\end{align}
 	\end{enumerate}
 \end{assumption}
-
+First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before (the $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$). What is more we can define their vertical analogues. For instance we define the horizontal translation operator:
+\begin{lemma}\label{lem:Definition_w}
+	There exists a unique $w\in\UU(\HH_0)$ such that
+	\begin{align}
+		\Ad{w}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)w\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
+	\end{align}
+\end{lemma}
+\begin{lemma}
+	There exists an $\alpha:G\rightarrow U(1)$ satisfying
+	\begin{equation}
+		v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
+	\end{equation}
+	where
+	\begin{align}
+		b_g^R&\defeq \pi_0\circ\alpha_0\circ\Theta(B_g^R)&h_g&\defeq\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g)).
+	\end{align}
+\end{lemma}
+\begin{proof}
+	We have that
+	\begin{align}
+		&\Ad{w^\dagger K_g^R w}\circ\pi_0\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}
+	\end{align}
+	where $L_j=\{(x,y)\in\ZZ^2|y=j\}$. Using the second part of equation \eqref{eq:2TranslationsCondition3part2} we now get
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\Ad{B_g^R}\circ\eta_g^R\circ\nu^{-1}\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu\circ(\eta_g^R)^{-1}\circ\Ad{(B_g^R)^\dagger} \circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{align}
+	Now we will use the fact that $\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ\nu=\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}$ to obtain
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\Ad{B_g^R}\circ\eta_g^R\circ\tau\circ\Ad{U_{(-1,-1)(g)}}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\Ad{(B_g^R)^\dagger} \circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\Ad{v^\dagger b_g^R v h_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\Ad{(B_g^R)^\dagger}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\Ad{v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger}\circ\pi_0.
+	\end{align}
+	By the irreducibility of $\pi_0$ this implies that there indeed exists such an $\alpha$.
+\end{proof}
+\begin{lemma}\label{lem:W_g_And_h_g_Commute}
+	For all $g,h\in G$ we have that
+	\begin{equation}
+		[h_g,W_h]=0.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	The $\alpha$ defined previously is a $U(1)$-representation.
+\end{lemma}
+\begin{proof}
+	Take the definition of the 2-cochain (lemma \ref{lem:Definition2Cochain})
+	\begin{equation}\label{eq:Definition2Cochain2TranslationSection}
+		K_g^RW_gK_h^RW_hW_{gh}^\dagger(K_{gh}^R)^\dagger W_{gh}W_{h}^\dagger W_g^\dagger u_R(g,h)=C(g,h)v^\dagger u_R(g,h)v.
+	\end{equation}
+	Clearly this equation is invariant under the substitution
+	\begin{align}
+		K_g^R&\mapsto w^\dagger K_g^R w&W_g&\mapsto w^\dagger W_g w&u_R(g,h)&\mapsto w^\dagger u_R(g,h)w.
+	\end{align}
+	If we now also show that it is invariant under the substitution
+	\begin{align}
+		K_g^R&\mapsto v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger&W_g&\mapsto w^\dagger W_g w&u_R(g,h)&\mapsto w^\dagger u_R(g,h)w
+	\end{align}
+	the we have proven the result. Now define $b_g^L=\pi_0\circ\alpha_0\circ\Theta(B_g^L)$. We have by construction {\color{red}I need to explain this further} that
+	\begin{align}
+		\Ad{b_g^Lb_g^RW_g}\circ\pi_0&=\Ad{w^\dagger W_g w}\circ\pi_0\\
+		\Ad{b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}\circ\pi_0&=\Ad{w^\dagger u_R(g,h) w}\circ\pi_0.
+	\end{align}
+	This shows that there exists a $\beta:G\rightarrow U(1)$ and a $\gamma:G\times G\rightarrow U(1)$ such that
+	\begin{align}
+		w^\dagger W_g w&=\beta(g)b_g^Lb_g^RW_g&w^\dagger u_R(g,h) w&=\gamma(g,h)b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h).
+	\end{align}
+	Since the equation is clearly invariant under the substitution with these two phases all that is left to do is show that equation \eqref{eq:Definition2Cochain2TranslationSection} is invariant under the substitution:
+	\begin{align}
+		K_g^R&\mapsto v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger=v^\dagger b_g^R v K_g^R (b_g^R)^\dagger h_g&W_g&\mapsto b_g^Lb_g^RW_g
+	\end{align}
+	\begin{equation}
+		u_R(g,h)\mapsto b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h).
+	\end{equation}
+	{\color{red}In order to prove this lemma we seem to be needing an additional assumption namely that $[B_g^L,U_{(-1,-1)}(h)]=0$ for all $g,h\in G$.}\\
+	To show this first notice that by using the fact that $h_g\in\textrm{IAC}_R(\theta,\alpha_0,\Theta)'$ and lemma \ref{lem:W_g_And_h_g_Commute} we get that
+	\begin{align}
+		&K_g^R W_g K_h^R W_ hW_{gh}^\dagger(K_{gh}^R)^\dagger\\
+		&\mapsto v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger b_g^Lb_g^RW_g v^\dagger b_h^R v h_h K_h^R (b_h^R)^\dagger b_h^Lb_h^RW_h W_{gh}^\dagger (b_{gh}^Lb_{gh}^R)^\dagger (v^\dagger b_{gh}^R v h_{gh} K_{gh}^R (b_{gh}^R)^\dagger)^\dagger\\
+		&=h_gh_hh_{gh}^\dagger v^\dagger b_g^R v  K_g^R (b_g^R)^\dagger b_g^Lb_g^RW_g v^\dagger b_h^R v  K_h^R (b_h^R)^\dagger b_h^Lb_h^RW_h W_{gh}^\dagger (b_{gh}^Lb_{gh}^R)^\dagger (v^\dagger b_{gh}^R v  K_{gh}^R (b_{gh}^R)^\dagger)^\dagger
+	\end{align}
+	(all the $h-$operators can be put in front). Since $h_g$ is an honest representation we get that the $h-$operators cancel out. This leaves us with checking that equation \eqref{eq:Definition2Cochain2TranslationSection} is invariant under
+	\begin{align}
+		K_g^R&\mapsto v^\dagger b_g^R v K_g^R (b_g^R)^\dagger&W_g&\mapsto b_g^Lb_g^RW_g
+	\end{align}
+	\begin{equation}
+		u_R(g,h)\mapsto b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)
+	\end{equation}
+	which is proven in lemma \ref{lem:TransformationUnderDelta}. This concludes the proof.
+\end{proof}
 \appendix
 \section{Properties of locally generated automorphisms:}
  Take $H$ and $\gamma$ as defined in section \ref{sec:IndexInvariantUnderLGA}. We will now show some properties of this locally generated automorphism $\gamma$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
