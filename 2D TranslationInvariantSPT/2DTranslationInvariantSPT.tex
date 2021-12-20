@@ -74,7 +74,7 @@
 	content...
 \end{abstract}
 \section{Introduction}
-The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a group $G$ with an on site group action $\beta_g$ (see the next section for more information). One possible definition\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
+The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible definition\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} one way to do this is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
 \begin{enumerate}
 	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
 	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
@@ -93,8 +93,22 @@ Clearly this implies that
 \begin{equation}
 	\{\text{2d translation invariant spt classification}\}\simeq \{\text{1d spt classification}\}\oplus \{\text{2d spt classification}\}.
 \end{equation}
+Since a 1d spt state carries an $H^2(G\TT)$ valued index and a 2d spt state carries an $H^3(G,\TT)$ valued index this means that a 2d spt states with a translation index should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index.\\\\
 The main goal of this paper is now to find an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant spt states that is consistent with the conjecture. By being consistent with the conjecture it is meant that if $\textrm{Index}_1$ is the one dimensional spt index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d spt $\omega$.\\\\
-The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on all our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index.
+If there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For this there is also a conjecture:
+\begin{conjecture}
+	Let $g$ be the inclusion map from the space of 2d spt states that are translation invariant in both $x$ and $y$ directions to the more general set of 2d spt states with translation invariance in the $x$ direction only. Let $f$ be the map that takes a 1d translation invariant spt state and outputs a 2d spt state that is translation invariant in both $x$ and $y$ directions by taking the tensor product in the $y$ direction. The sequence
+	\begin{equation}
+		0\rightarrow\left\{\begin{matrix}\text{1d translation invariant}\\ \text{spt states}\end{matrix}\right\}\stackrel{f}{\rightarrow}\left\{\begin{matrix}\text{2d spt states with two}\\ \text{translation symmetries}\end{matrix}\right\}\stackrel{g}{\rightarrow}\left\{\begin{matrix}\text{2d spt states translation}\\ \text{invariant in $x$ direction}\end{matrix}\right\}\rightarrow 0
+	\end{equation}
+	induces a sequence on the equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
+\end{conjecture}
+1d spt states are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index ({\color{red}reference?}). From this and the conjecture, we expect there to be an
+\begin{equation}\label{eq:2TranslationsIntroduction}
+	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
+\end{equation}
+valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
+The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on all our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
 \section{Setup and definitions}
 In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
@@ -1009,8 +1023,8 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{align}
 	{\color{red}To be continued...}
 \end{proof}
-\section{Translation invariance in two directions}
-In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$. We now let our state $\omega$ satisfy:
+\section{Translation invariance in two directions}\label{sec:TwoDirectionTraslationInvariance}
+In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy:
 \begin{assumption}\label{assumption:2Translations}
 	Take $\omega\in\PP(\AA)$ to be
 	\begin{enumerate}
@@ -1078,15 +1092,17 @@ First notice that since this assumption is strictly stronger then the assumption
 	\end{align}
 	By the irreducibility of $\pi_0$ this implies that there indeed exists such an $\alpha$.
 \end{proof}
+We have that $h_g\in\textrm{IAC}_L(\theta,\alpha_0,\Theta)$. We also have that
 \begin{lemma}\label{lem:W_g_And_h_g_Commute}
 	For all $g,h\in G$ we have that
-	\begin{equation}
-		[h_g,W_h]=0.
-	\end{equation}
+	\begin{align}
+		[h_g,W_h]&=0&[h_g,b_h^L]&=0.
+	\end{align}
 \end{lemma}
 \begin{proof}
 	content...
 \end{proof}
+Using this we can show that:
 \begin{lemma}
 	The $\alpha$ defined previously is a $U(1)$-representation.
 \end{lemma}
@@ -1119,7 +1135,6 @@ First notice that since this assumption is strictly stronger then the assumption
 	\begin{equation}
 		u_R(g,h)\mapsto b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h).
 	\end{equation}
-	{\color{red}In order to prove this lemma we seem to be needing an additional assumption namely that $[B_g^L,U_{(-1,-1)}(h)]=0$ for all $g,h\in G$.}\\
 	To show this first notice that by using the fact that $h_g\in\textrm{IAC}_R(\theta,\alpha_0,\Theta)'$ and lemma \ref{lem:W_g_And_h_g_Commute} we get that
 	\begin{align}
 		&K_g^R W_g K_h^R W_ hW_{gh}^\dagger(K_{gh}^R)^\dagger\\
