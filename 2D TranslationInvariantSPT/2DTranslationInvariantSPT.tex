@@ -18,9 +18,9 @@
 \usepackage{subcaption}
 \usepackage{verbatim}
 \usepackage{url}
+\usepackage{standalone}
 \usepackage{tikz}
-\usetikzlibrary{calc}
-
+\usetikzlibrary{calc,patterns,angles,quotes}
 
 \newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
 \renewcommand{\d}{\text{d}}
@@ -79,9 +79,9 @@ The notion of symmetry protected topological phases of matter was introduced by 
 	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
 	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
 \end{enumerate}
-One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th Borel group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
+One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th Borel group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
 \\\\
-The goal of this paper is to look at the 2d case with the equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states such states see for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
+The goal of this paper is to look at the 2d case with the equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states. See for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
 \begin{conjecture}\label{conj}
 	Let $g$ be the inclusion map from the space of 2d translation invariant spt states to the more general set of 2d spt states. Let $f$ be the map that takes a 1d spt state and outputs a translation invariant 2d spt state by taking the tensor product in the direction of the translation symmetry. The sequence
 	\begin{equation}
@@ -93,9 +93,9 @@ Clearly this implies that
 \begin{equation}
 	\{\text{2d translation invariant spt classification}\}\simeq \{\text{1d spt classification}\}\oplus \{\text{2d spt classification}\}.
 \end{equation}
-Since a 1d spt state carries an $H^2(G\TT)$ valued index and a 2d spt state carries an $H^3(G,\TT)$ valued index this means that a 2d spt states with a translation index should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index.\\\\
+Since a 1d spt state carries an $H^2(G,\TT)$ valued index and a 2d spt state carries an $H^3(G,\TT)$ valued index this means that 2d spt states with a translation symmetry should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index.\\\\
 The main goal of this paper is now to find an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant spt states that is consistent with the conjecture. By being consistent with the conjecture it is meant that if $\textrm{Index}_1$ is the one dimensional spt index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d spt $\omega$.\\\\
-If there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For this there is also a conjecture:
+We will also look at the case where there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For this there is also a conjecture:
 \begin{conjecture}
 	Let $g$ be the inclusion map from the space of 2d spt states that are translation invariant in both $x$ and $y$ directions to the more general set of 2d spt states with translation invariance in the $x$ direction only. Let $f$ be the map that takes a 1d translation invariant spt state and outputs a 2d spt state that is translation invariant in both $x$ and $y$ directions by taking the tensor product in the $y$ direction. The sequence
 	\begin{equation}
@@ -108,9 +108,9 @@ If there is a second translation symmetry (so the system is translation invarian
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on all our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
+The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
 \section{Setup and definitions}
-In what follows let $\AA$ be a 2-dimensional quasi-local $C^*$ algebra. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -123,11 +123,39 @@ be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone. We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. We will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
+be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume (in the case where we have translation invariance in both directions we will obviously require the $C^*$ algebra to be translation invariant in both directions). We will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
 	W(C_\theta)\defeq C_\theta\cup\tau(C_\theta)\cup\tau^{-1}(C_\theta).
 \end{equation}
+\subsection{Interactions and locally generated automorphisms}
+In what follows let $\mathfrak{G}_{\ZZ^2}$ be the set of finite subsets of $\ZZ^2$. An interaction $\Phi$ is a map
+\begin{equation}
+	\Phi: \mathfrak{G}_{\ZZ^2}\rightarrow \AA_{\text{loc}}: I \mapsto \Phi(I)
+\end{equation}
+where $\Phi(I)\in\AA_I$-. We will sometimes require a norm on the space of interactions that indicates how local an interaction acts.Take $F:\NN\rightarrow \RR^+$ any monotonically decreasing positive function then we define an $F$-norm on the space of interactions by:
+\begin{equation}
+	\norm{\Phi}_F\defeq \sup_{x,y\in\ZZ^2}\frac{1}{F(\abs{x-y})}\sum_{Z\in\mathfrak{G}_{\ZZ^2},Z\ni x,y}\norm{\Phi(Z)}.
+\end{equation}
+Following \cite{ogata2021h3gmathbb} we will fix a specific family of monotonically decreasing positive functions by saying that for any $0<\phi<1$ we define
+\begin{equation}
+	F_\phi:r\mapsto \defeq \frac{\exp(-r^\phi)}{(1+r)^4}.
+\end{equation}
+One of the properties of $F$-local interactions is that they can be used to generate automorphisms. Let
+\begin{equation}
+	\Phi:\mathfrak{G}_{\ZZ^2}\times [0,1]\rightarrow \AA_{\text{loc}}:(I,t)\mapsto \Phi(I,t)
+\end{equation}
+be a one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
+\begin{equation}
+	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
+\end{equation}
+with initial condition $\gamma^{\Phi}_{s;s}(A)=A$.
+\section{Statement of the result in therms of short range entanglement}
+We can use these locally generated automorphisms to define the concept of short range entanglement.
+\begin{definition}
+	Take $\omega\in\PP(\AA)$
+\end{definition}
 \subsection{Disentangle by $\textrm{QAut}(\AA)$}
+\input{Figure1}
 Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$\footnote{Note that our definition of $\textrm{QAut}(\AA)$ is slightly different from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
@@ -135,7 +163,7 @@ Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on
 	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 \end{definition}
-We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper we will consider states that satisfy the following property:
+We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper we will consider states that satisfy the following property (see figure \ref{fig:SetupWithQAutomorphism} for the support of the automorphisms):
 \begin{assumption}\label{assumption}
 	Take $\omega\in\PP(\AA)$ to be
 	\begin{enumerate}
@@ -342,7 +370,7 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 	The function $C$ as defined in lemma \ref{lem:Definition2Cochain} is a 2-cochain.
 \end{lemma}
 \begin{proof}
-	Take lemma 2.4 from \cite{ogata2021h3gmathbb} there it is stated that there exists a 3-cochain $C'$ such that
+	Take lemma 2.4 from \cite{ogata2021h3gmathbb}. There it is stated that there exists a 3-cochain $C'$ such that
 	\begin{equation}\label{eq:defintion3CochainProof2Cochain}
 		u_R(g,h)u_R(gh,k)u_R(g,hk)^\dagger\Ad{W_g}(u_R(h,k)^\dagger)=C'(g,h,k)\id.
 	\end{equation}
@@ -433,7 +461,7 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 \end{proof}
 Our translation index is now defined as
 \begin{definition}
-	Take $C$ to be the 2-cochain defined \ref{lem:Definition2Cochain} then we define the index as
+	Take $C$ to be the 2-cochain defined in \ref{lem:Definition2Cochain} then we define the index as
 	\begin{equation}
 	\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{C}\in H^2(G,\TT)
 	\end{equation}
@@ -452,7 +480,7 @@ Our translation index is now defined as
 	we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
 \end{proof}
 \section{The index is independent of the choices we made}
-In this section we will show that the index is only dependent on $\omega$ and $\omega_0$ and not on the choices of our automorphisms. First we show independence of $\alpha$ and its decomposition.
+In this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
 	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
 	\begin{align}
@@ -685,62 +713,60 @@ We have that:
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
-	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>0},L_0,L_{<0}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>0},L_0,L_{<0}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>0},L_0,L_{<0}\}}}\Omega_{\rho,\sigma}\right)
+	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
 \end{equation}
 where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
 \begin{remark}\label{rem:GNS_One_Dimensional}
 	We clearly have (by construction) that
 	\begin{equation}
-		\pi_{L_0,L}\circ\alpha_L|_{L_0}\otimes \pi_{L_0,R}\circ\alpha_R|_{L_0}
+		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
 	\end{equation}
-	is a gns triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_0,R}$ such that
+	is a gns triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
 	\begin{equation}
-		\Ad{k^R(g)}\circ\pi_{L_0,R}\circ\alpha_R|_{L_0}=\pi_{L_0,R}\circ\alpha_R|_{L_0}\circ\beta_{g}^{L_0\cap R}
+		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
 	then there exists a 2 cochain $C$ satisfying that
 	\begin{equation}
-		k^R(g)k^R(h)k^R(gh)^{-1}=C(g,h)\id_{\HH_{L_0,R}}
+		k^R(g)k^R(h)k^R(gh)^{-1}=C(g,h)\id_{\HH_{L_{-1},R}}
 	\end{equation}
 	and that the equivalence class this cochain is in, is given by $\textrm{index}_{1d}(\phi)$.
 \end{remark}
-Let $\tilde k:G\rightarrow \UU(\HH_{L_0})$ be the unique operator that satisfies
+Let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
 \begin{align}
-	\Ad{\tilde{k}_g}\circ\pi_{L_0}&=\pi_{L_0}\circ \circ\alpha|_{L_{0}}\circ\beta_g^{L_0}\circ \alpha^{-1}|_{L_{0}}&\tilde k_g\Omega_{L_0}&=\Omega_{L_0}.
+	\Ad{\tilde{k}_g}\circ\pi_{L_{-1}}&=\pi_{L_{-1}}\circ \circ\alpha|_{L_{-1}}\circ\beta_g^{L_{-1}}\circ \alpha^{-1}|_{L_{-1}}&\tilde k_g\Omega_{L_{-1}}&=\Omega_{L_{-1}}.
 \end{align}
-Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>0},L}\otimes\HH_{L_{>0},R})$ be the unique operator such that
+Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>-1},L}\otimes\HH_{L_{>-1},R})$ be the unique operator such that
 \begin{align}
-	\Ad{\tilde w_{g}}\circ\pi_{L_{>0}}&=\pi_{L_{>0}}\circ\alpha|_{L_{>0}}\circ\beta_g^{\tau^{i}(U)}\circ \alpha^{-1}|_{L_{>0}}&\tilde w_{g}\Omega_{L_{>0}}&=\Omega_{L_{>0}}.
+	\Ad{\tilde w_{g}}\circ\pi_{L_{>-1}}&=\pi_{L_{>-1}}\circ\alpha|_{L_{>-1}}\circ\beta_g^{\tau^{i}(U)}\circ \alpha^{-1}|_{L_{>-1}}&\tilde w_{g}\Omega_{L_{>-1}}&=\Omega_{L_{>-1}}.
 \end{align}
 Clearly both functions are (linear) representation of the group. Now define
 \begin{equation}
-	W_g=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1).
+	W_g=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1).
 \end{equation}
-This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\id_{\bigotimes_{\rho\in\{L_{>0},L_0,L_{<0}\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
+This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\id_{\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
 \begin{align}
 	K_g&=v^\dagger W_g v W_g^\dagger\\
-	&=v^\dagger \pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1) v W_g^\dagger\\
-	&=\pi_{\HH_0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<0}}}) \tilde v \pi_{\HH_0}(V_1) W_g^\dagger\\
-	&=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_0}}\otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1) W_g^\dagger\\
-	&=\pi_{\HH_0}(V_1)^{\dagger}(\id_{H_{L_{>0}}}\otimes \tilde k_g^\dagger \otimes\id_{\HH_{L_{<0}}}) \pi_{\HH_0}(V_1)\\
-	&=\id_{H_{L_{>0}}}\otimes \pi_{\HH_{L_0}}(b)^\dagger \tilde k_g^\dagger \pi_{\HH_{L_0}}(b) \otimes\id_{\HH_{L_{<0}}} .
+	&=v^\dagger \pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1) v W_g^\dagger\\
+	&=\pi_{\HH_0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{\HH_0}(V_1) W_g^\dagger\\
+	&=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1) W_g^\dagger\\
+	&=\pi_{\HH_0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1)\\
+	&=\id_{H_{L_{>-1}}}\otimes \pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b) \otimes\id_{\HH_{L_{<-1}}} .
 \end{align}
-Now there exists a $k^L:G\rightarrow \UU(\HH_{L_0,L})$ and a $k^R:G\rightarrow \UU(\HH_{L_0,R})$ such that
+Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 \begin{equation}
-	k^L_g\otimes k^R_g=\pi_{\HH_{L_0}}(b)^\dagger \tilde k_g \pi_{\HH_{L_0}}(b)
+	k^L_g\otimes k^R_g=\pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b)
 \end{equation}
-and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=(k^\sigma_g)^\dagger\otimes\id_{\HH_{L>0,\sigma}}\otimes\id_{\HH_{L<0,\sigma}}$. Notice that we have (by construction) that
+and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that
 \begin{equation}
-	[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},v^\dagger W_g v]=0.
+	[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},W_g]=0.
 \end{equation}
 We now get (using this equation and the fact that $W_g$ is a representation)
 \begin{align}
 	&K_g^R W_g K_h^R W_h W_{gh}^\dagger (K_{gh}^R)^\dagger \stkout{W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}\\
-	&=(K_g^L)^\dagger K_gW_g (K^L_h)^\dagger K_hW_h W_{gh}^\dagger K_{gh}^\dagger K_{gh}^L\\
-	&=(K_g^L)^\dagger v^\dagger W_gv (K^L_h)^\dagger v^\dagger W_h W_{gh}^\dagger v K_{gh}^L\\
-	&=(K_g^L)^\dagger   (K^L_h)^\dagger \stkout{v^\dagger W_g W_h W_{gh}^\dagger v} K_{gh}^L\\
-	&=k_g^L k_h^L (k_{gh}^L)^\dagger\otimes \id_{\HH_{L>0,\sigma}}\otimes\id_{\HH_{L<0,\sigma}}
+	&=\stkout{W_g W_h W_{gh}^\dagger} K_g^R K_h^R (K_{gh}^R)^\dagger\\
+	&=k_g^R k_h^R (k_{gh}^R)^\dagger\otimes \id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}
 \end{align}
-and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)^{-1}$.
+and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
 \section{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
 Take $H:(t\in\RR, I\subset \ZZ^2)\mapsto H(t,I)\in\AA_I\subset\AA_{\text{loc}}$ to be a one parameter family of interactions such that
 \begin{align}
@@ -1016,12 +1042,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	\begin{equation}
 		=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
 	\end{equation}
-	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Similarly for $u_\sigma(g,h)$ we get
-	\begin{align}
-		&\Ad{\phi_1(\delta_g^\sigma W_g\delta_h^\sigma W_g^\dagger u_\sigma(g,h))}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=
-	\end{align}
-	{\color{red}To be continued...}
+	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
 \section{Translation invariance in two directions}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy:
@@ -1063,7 +1084,7 @@ First notice that since this assumption is strictly stronger then the assumption
 		\Ad{w}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)w\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
 	\end{align}
 \end{lemma}
-\begin{lemma}
+\begin{lemma}\label{lem:DefinitionAlpha}
 	There exists an $\alpha:G\rightarrow U(1)$ satisfying
 	\begin{equation}
 		v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
@@ -1150,6 +1171,43 @@ Using this we can show that:
 	\end{equation}
 	which is proven in lemma \ref{lem:TransformationUnderDelta}. This concludes the proof.
 \end{proof}
+\begin{definition}
+	Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha} then we define the 2 translation index as
+	\begin{equation}
+		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \alpha\in H^1(G,\TT)
+	\end{equation}
+	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,B^L_g$ and $B^R_g$.
+\end{definition}
+\begin{proof}
+	content...
+\end{proof}
+\section{The $H^1(G,\TT)$-valued index is invariant under choices}
+n this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. On this last item we remark:
+\begin{remark}
+	A product state can have a non-trivial $H^1(G,\TT)$ index and the index is not defined relative to $\omega_0$ so in particular
+	\begin{equation}
+		\textrm{Index}_{2\:\text{trans}}(\theta,\beta_g^U,\textrm{Id},\textrm{Id},\textrm{Id},\omega_0,\omega_0)
+	\end{equation}
+	can still be non-trivial. In fact in this case we get $\alpha(g)=\omega_0(U_{(-1,-1)}(g))$.
+\end{remark}
+We will now show independence of $\alpha$ and its decomposition.
+\begin{lemma}
+	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
+	\begin{align}
+		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
+	\end{align}
+	and satisfying
+	\begin{equation}
+		\omega_{01}\circ\alpha_1=\omega_{02}\circ\alpha_2=\omega
+	\end{equation}
+	then
+	\begin{equation}
+		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \appendix
 \section{Properties of locally generated automorphisms:}
  Take $H$ and $\gamma$ as defined in section \ref{sec:IndexInvariantUnderLGA}. We will now show some properties of this locally generated automorphism $\gamma$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
@@ -1186,12 +1244,13 @@ We will need one additional class of automorphisms:
 \end{definition}
 Now we will state some properties of locally generated automorphisms:
 \begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms}
-	Take $H$ a $G-$invariant interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. The following statements now hold (for any $s,t\in\RR$):
+	Take $H$ an interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. The following statements now hold (for any $s,t\in\RR$):
 	\begin{enumerate}
 		\item $\gamma^H_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$.
-		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{GVAut}(\AA)$.
-		\item $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GSQAut}(\AA)$.
+		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{VAut}(\AA)$. If additionally $H$ is a $G$-invariant interaction we even have $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GVQAut}(\AA)$.
+		\item $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{SQAut}(\AA)$. If additionally $H$ is a $G$-invariant interaction we even have $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GSQAut}(\AA)$.
 		\item $\gamma^{H}_{t;s}\circ\beta_g^U\circ\gamma^{H}_{s;t}\circ(\beta_g^U)^{-1}\in\textrm{HAut}(\AA)$.
+		\item $\gamma^{H}_{t;s}\in\textrm{SQAut}(\AA)$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1230,7 +1289,7 @@ Now we will state some properties of locally generated automorphisms:
 		b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)&\defeq\sum_{m=0}^\infty \sum_{\substack{X\subset \tilde{C}:\\ X\cap C_1\cap\tilde{C}\neq\emptyset\\X\cap C_2\cap\tilde{C}\neq\emptyset\\ X\cap (\tilde{C}^c(m))\neq\emptyset}}\sup_{t\in[0,1]}\norm{\Psi(X;t)}\abs{X}G_F(m)\\
 		&\leq \norm{\Psi_1}_F\sum_{m=0}^{\infty}G_F(m)\left(\sum_{\substack{x\in C_2\cap\tilde{C},\\y\in L_1(m)}}+\sum_{\substack{x\in C_1\cap\tilde{C},\\y\in L_2(m)}}\right)F(d(x,y))<\infty.
 	\end{align}
-	\footnote{Here $\Psi_1$ is defined through $\Psi_1(X)=\abs{X}^1 \Psi(X)$.} Since the remainder of the proof can remain unchanged from \cite{ogata2021h3gmathbb}, this concludes the proof of item 3. We now only need to comment on item 2. We must show that
+	\footnote{Here $\Psi_1$ is defined through $\Psi_1(X)=\abs{X}^1 \Psi(X)$.} Since the remainder of the proof can remain unchanged from \cite{ogata2021h3gmathbb}, this concludes the proof of item 3. The proof of item 5 just follows from the fact that for any $\alpha_1\in\textrm{SQAut}(\AA)$ and for any $\alpha_2\in\textrm{HAut}(\AA)$ we have that $\alpha_2\circ\alpha_1\in\textrm{SQAut}(\AA)$. We now only need to comment on item 2. We must show that
 	\begin{equation}
 		(\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s})^{-1}=\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\in\textrm{GVAut}(\AA).
 	\end{equation}
@@ -1260,6 +1319,7 @@ Now we will state some properties of locally generated automorphisms:
 	\end{align}
 	This concludes the proof.
 \end{proof}
+This implies certain things for our locally generated automorphisms.
 From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and $s,t\in\RR$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{W(C_{\theta_1})^c}}$ such that

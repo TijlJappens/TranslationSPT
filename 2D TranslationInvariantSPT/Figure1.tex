@@ -1,0 +1,49 @@
+\documentclass[preview=false]{standalone}
+\begin{document}
+
+\begin{figure}
+	\centering
+	\def\s{0.5}
+	\resizebox{0.4\textwidth}{!}{%
+		\begin{tikzpicture}
+			\fill[fill=blue!30!white] (-4*\s,-4*\s) rectangle (4*\s,4*\s);
+			\draw[draw=black,line width=0.5mm] (0,4*\s) -- (0,-4*\s);
+			
+			\node at (-2*\s,0) {$\alpha_L$};
+			\node at (2*\s,0) {$\alpha_R$};
+		\end{tikzpicture}}
+	$\qquad$
+	\def\s{0.4}
+	\resizebox{0.32\textwidth}{!}{%
+		\begin{tikzpicture}
+			\draw[draw=white,line width=0mm] (1,0) coordinate (a) -- (0,0) coordinate (b) -- (1,1) coordinate (c);
+			
+			\fill[fill=green!30!white] (0,0) -- (-4*\s,-4*\s) -- (-4*\s,4*\s);
+			\fill[fill=green!30!white] (0,0) -- (4*\s,-4*\s) -- (4*\s,4*\s);
+			\fill[fill=red!30!white] (0,1*\s) -- (4*\s,5*\s) -- (-4*\s,5*\s);
+			\fill[fill=red!30!white] (0,-1*\s) -- (4*\s,-5*\s) -- (-4*\s,-5*\s);
+			
+			\draw[draw=black,line width=0.3mm]
+			plot[smooth,samples=2,domain=0:4*\s] (\x,\x+1*\s);
+			\draw[draw=black,line width=0.3mm]
+			plot[smooth,samples=2,domain=-4*\s:0] (\x,-\x+1*\s);
+			\draw[draw=black,line width=0.3mm]
+			plot[smooth,samples=2,domain=0:4*\s] (\x,-\x-1*\s);
+			\draw[draw=black,line width=0.3mm]
+			plot[smooth,samples=2,domain=-4*\s:0] (\x,\x-1*\s);
+			\draw[draw=black,line width=0.3mm]
+			plot[smooth,samples=2,domain=-4*\s:4*\s] (\x,\x);
+			\draw[draw=black,line width=0.3mm]
+			plot[smooth,samples=2,domain=-4*\s:4*\s] (\x,-\x);
+			
+			\draw[draw=black,line width=0.3mm] (0,0) -- (2*\s,0);
+			\pic [draw, ->, "$\theta$", angle eccentricity=1.5, angle radius=\s*1.5cm,line width=0.3mm] {angle=a--b--c};
+			
+			\node at (-3*\s,0) {$\eta^L_g$};
+			\node at (3*\s,0) {$\eta^R_g$};
+			\node at (0,3*\s) {$\Theta$};
+	\end{tikzpicture}}
+	\caption{These figures indicate the support area of the different automorphisms. The angle $\theta$ needs to be smaller then or equal to what was indicated here so that the $\Theta$ and the $\eta_g$ (possibly after widening by one site) commute.}
+	\label{fig:SetupWithQAutomorphism}
+\end{figure}
+\end{document}
