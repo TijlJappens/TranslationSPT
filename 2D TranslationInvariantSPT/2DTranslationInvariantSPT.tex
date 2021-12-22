@@ -110,7 +110,7 @@ We will also look at the case where there is a second translation symmetry (so t
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
 The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
 \section{Setup and definitions}
-In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice (see eg. \cite{ogata2021h3gmathbb} section 1). Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -123,38 +123,74 @@ be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume (in the case where we have translation invariance in both directions we will obviously require the $C^*$ algebra to be translation invariant in both directions). We will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
+be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In the case where we have translation invariance in both directions we will obviously require the $C^*$ algebra to be translation invariant in both directions. In this case we will denote the translation automorphism that translates every element to the right by $\nu$. In this setup we will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
 	W(C_\theta)\defeq C_\theta\cup\tau(C_\theta)\cup\tau^{-1}(C_\theta).
 \end{equation}
+In the later parts of the paper we will also need the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ (clockwise) which we will call $\mu$.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.}
 \subsection{Interactions and locally generated automorphisms}
 In what follows let $\mathfrak{G}_{\ZZ^2}$ be the set of finite subsets of $\ZZ^2$. An interaction $\Phi$ is a map
 \begin{equation}
 	\Phi: \mathfrak{G}_{\ZZ^2}\rightarrow \AA_{\text{loc}}: I \mapsto \Phi(I)
 \end{equation}
-where $\Phi(I)\in\AA_I$-. We will sometimes require a norm on the space of interactions that indicates how local an interaction acts.Take $F:\NN\rightarrow \RR^+$ any monotonically decreasing positive function then we define an $F$-norm on the space of interactions by:
+where $\Phi(I)\in\AA_I$. We will sometimes require a norm on the space of interactions that indicates how local an interaction acts.Take $F:\NN\rightarrow \RR^+$ any monotonically decreasing positive function then we define an $F$-norm on the space of interactions by:
 \begin{equation}
 	\norm{\Phi}_F\defeq \sup_{x,y\in\ZZ^2}\frac{1}{F(\abs{x-y})}\sum_{Z\in\mathfrak{G}_{\ZZ^2},Z\ni x,y}\norm{\Phi(Z)}.
 \end{equation}
 Following \cite{ogata2021h3gmathbb} we will fix a specific family of monotonically decreasing positive functions by saying that for any $0<\phi<1$ we define
 \begin{equation}
-	F_\phi:r\mapsto \defeq \frac{\exp(-r^\phi)}{(1+r)^4}.
+	F_\phi:r\mapsto \frac{\exp(-r^\phi)}{(1+r)^4}.
+\end{equation}
+We will sometimes use the restriction of an interaction. For some $\Gamma\subset\ZZ^2$ we define $\Phi_\Gamma$ by
+\begin{equation}
+	\Phi_\Gamma:\mathfrak{G}_{\ZZ^2}\rightarrow \AA_{\text{loc}}:I\mapsto\left\{\begin{matrix}
+		\Phi(I)&\text{if }I\subset\Gamma\\0&\text{otherwise}.
+	\end{matrix}\right.
 \end{equation}
 One of the properties of $F$-local interactions is that they can be used to generate automorphisms. Let
 \begin{equation}
 	\Phi:\mathfrak{G}_{\ZZ^2}\times [0,1]\rightarrow \AA_{\text{loc}}:(I,t)\mapsto \Phi(I,t)
 \end{equation}
-be a one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
+be a one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will call the set of one parameter families of interactions that satisfy this property $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
 \begin{equation}
 	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
 \end{equation}
-with initial condition $\gamma^{\Phi}_{s;s}(A)=A$.
-\section{Statement of the result in therms of short range entanglement}
+with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
+\section{Results}
+We will present our claim starting from two different assumptions. The first assumption is something related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
+\subsection{Statement of the results in therms of short range entanglement}
 We can use these locally generated automorphisms to define the concept of short range entanglement.
 \begin{definition}
-	Take $\omega\in\PP(\AA)$
+	Take $\omega\in\PP(\AA)$. We say that $\omega$ is a short range entangled state (in short an sre state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
 \end{definition}
-\subsection{Disentangle by $\textrm{QAut}(\AA)$}
+We can now formulate our first result for the case where there is one translation symmetry.
+\begin{theorem}
+	There exists a map
+	\begin{equation}
+		\textrm{Index}:\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
+	\end{equation}
+	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj} by which we mean that
+	\begin{enumerate}
+		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
+		\begin{equation}
+			\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^{\Phi}_{0;1}).
+		\end{equation}
+		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant state then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample}) satisfies
+		\begin{equation}
+			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega).
+		\end{equation}
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	{\color{red}Todo}
+\end{proof}
+Now for the second result I would like to define an index on the space of $G$-invariant sre states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices I can define already. Namely I can take
+\begin{align}
+	\omega&\mapsto \textrm{Index}(\omega)&&\text{and}&\omega\mapsto \textrm{Index}(\omega\circ\mu)
+\end{align}
+where $\mu$ was the rotation automorphism. This will give me the $H^2(G,\TT)\oplus H^2(G,\TT)$ part.
+\subsection{Statement of the result in therms of Q-automorphisms}
+\subsubsection{Disentangle by $\textrm{QAut}(\AA)$}
 \input{Figure1}
 Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
@@ -647,7 +683,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	Take $0<\theta_1<\theta_2<\pi/2$. Take $\alpha\in \textrm{QAut}(\AA)$ and (for all $\sigma\in\{L,R\}$) take $\eta_{g,1}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta_{g,2}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ to be operators belonging to $\tilde{\beta}_{g,1}$ and $\tilde{\beta}_{g,2}$ leaving $\omega$ invariant. Since $\Aut{\AA_L\cap\AA_{C_{\theta_1}}}\subset \Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ the result now follows from lemma \ref{lem:InvarianceUnderChoiceBeta}.
 \end{proof}
 Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
-\section{Example (consistency with conjecture \ref{conj})}
+\section{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
 Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spatial dimension such that
 \begin{equation}
 	\AA=\overline{\textrm{span}\left\{\left.\bigotimes_{j\in J}(\BB_{\text{loc}})_j\right|J\subset \ZZ\:\text{finite}\right\}}.
