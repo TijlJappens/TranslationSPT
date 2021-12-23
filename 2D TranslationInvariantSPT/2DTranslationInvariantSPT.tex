@@ -103,14 +103,14 @@ We will also look at the case where there is a second translation symmetry (so t
 	\end{equation}
 	induces a sequence on the equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
 \end{conjecture}
-1d spt states are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index ({\color{red}reference?}). From this and the conjecture, we expect there to be an
+1d spt states are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and the conjecture, we expect there to be an
 \begin{equation}\label{eq:2TranslationsIntroduction}
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
 The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
 \section{Setup and definitions}
-In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice (see eg. \cite{ogata2021h3gmathbb} section 1). Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice (see eg. \cite{ogata2021h3gmathbb} section 1). Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -188,7 +188,7 @@ Now for the second result I would like to define an index on the space of $G$-in
 \begin{align}
 	\omega&\mapsto \textrm{Index}(\omega)&&\text{and}&\omega\mapsto \textrm{Index}(\omega\circ\mu)
 \end{align}
-where $\mu$ was the rotation automorphism. This will give me the $H^2(G,\TT)\oplus H^2(G,\TT)$ part.
+where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part.
 \subsection{Statement of the result in therms of Q-automorphisms}
 \subsubsection{Disentangle by $\textrm{QAut}(\AA)$}
 \input{Figure1}
@@ -1245,6 +1245,68 @@ We will now show independence of $\alpha$ and its decomposition.
 	content...
 \end{proof}
 \appendix
+\section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
+Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
+\begin{equation}
+	(\HH=\HH_L\otimes\HH_R,\pi=\pi_L\otimes\pi_R,\Omega).
+\end{equation}
+We will write denote space of pure states satisfying the split property by $\mathcal{S}\PP(\AA)$. Now let us additionally ask that $\omega$ is invariant under the group action ($\omega\circ\beta_g=\omega$). The following now holds:
+\begin{lemma}
+	There exists maps $u_\sigma:G\rightarrow \UU(\HH_\sigma)$ (for all $\sigma\in\{L,R\}$) satisfying
+	\begin{align}
+		\Ad{u_\sigma(g)}\circ\pi_\sigma&=\pi_\sigma\circ\beta_g^\sigma&u_L(g)\otimes u_R(g)\Omega&=\Omega.
+	\end{align}
+	They are unique up to a $G$-dependent phase.
+\end{lemma}
+\begin{proof}
+	See \cite{ogata2019classification}.
+\end{proof}
+This can now be used to define the one dimensional spt index:
+\begin{lemma}
+	There exists a 2-cochain $C:G^2\rightarrow U(1)$ that satisfies
+	\begin{align}
+		u_R(g)u_R(h)u_R(gh)^{\dagger}&=C(g,h)\id_{H_R}&u_L(g)u_L(h)u_L(gh)^{\dagger}&=C(g,h)^{-1}\id_{H_L}.
+	\end{align}
+	Its second group cohomology class is independent of the choice of GNS triple or the choice of (a $G$-dependent) phase in $u_R(g)$. This index is invariant under locally generated automorphisms generated by $G$-invariant interactions.
+\end{lemma}
+\begin{proof}
+	Again see \cite{ogata2019classification}.
+\end{proof}
+Now let us assume additionally (on top of the split property and the $G$-invariance) that $\omega$ be translation invariant. To this end, let $\tau$ be the automorphism that translates $\BB$ by one site to the right. We assume that $\omega\circ\tau=\omega$. The following now holds:
+\begin{lemma}
+	There exists a $v\in\UU(\HH)$ such that
+	\begin{align}
+		\Ad{v}\circ\pi&=\pi&v\Omega&=\Omega.
+	\end{align}
+	This $v$ is unique up to a $G$-dependent phase.
+\end{lemma}
+\begin{proof}
+	Since $\omega\circ\tau=\omega$, we get that
+	\begin{equation}
+		(\HH,\pi\circ\tau,\Omega)\ue (\HH,\pi,\Omega).
+	\end{equation}
+	The uniqueness of the GNS triple now implies the existence of this $v$. Its uniqueness follows from the irreducibility of $\pi$.
+\end{proof}
+We can use this to define an additional 1d index for translation invariant states.
+\begin{lemma}
+	There exists a (unique) $\alpha\in\hom(G,U(1))$ satisfying that
+	\begin{equation}
+		\pi(U_{-1}(g)) (\id_{\HH_L}\otimes u_R(g))=\alpha(g)v^\dagger(\id_{\HH_L}\otimes u_R(g)) v.
+	\end{equation}
+	This index is invariant under locally generated automorphisms generated by interactions that are both $G$ and translation invariant.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+All together we constructed a proof of the following theorem:
+\begin{theorem}
+	There exist maps
+	\begin{align}
+		\textrm{Index}_{1d}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\}\rightarrow H^2(G,\TT)\\
+		\textrm{Index}_{1d\text{ trans}}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^1(G,\TT)\cong \hom(G,\TT).
+	\end{align}
+	For any $G-$invariant family of interactions $\Phi\in\BB_{F}([0,1])$, we have that $\textrm{Index}_{1d}(\omega)=\textrm{Index}_{1d}(\omega\circ\gamma^\Phi_{0;1})$. For any $G-$invariant family of interactions $\Phi'\in\BB_{F}([0,1])$ that is also translation invariant, we have that $\textrm{Index}_{1d\text{ trans}}(\omega)=\textrm{Index}_{1d\text{ trans}}(\omega\circ\gamma^{\Phi'}_{0;1})$.
+\end{theorem}
 \section{Properties of locally generated automorphisms:}
  Take $H$ and $\gamma$ as defined in section \ref{sec:IndexInvariantUnderLGA}. We will now show some properties of this locally generated automorphism $\gamma$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
  \begin{align}
