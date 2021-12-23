@@ -96,7 +96,7 @@ Clearly this implies that
 Since a 1d spt state carries an $H^2(G,\TT)$ valued index and a 2d spt state carries an $H^3(G,\TT)$ valued index this means that 2d spt states with a translation symmetry should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index.\\\\
 The main goal of this paper is now to find an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant spt states that is consistent with the conjecture. By being consistent with the conjecture it is meant that if $\textrm{Index}_1$ is the one dimensional spt index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d spt $\omega$.\\\\
 We will also look at the case where there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For this there is also a conjecture:
-\begin{conjecture}
+\begin{conjecture}\label{conj2}
 	Let $g$ be the inclusion map from the space of 2d spt states that are translation invariant in both $x$ and $y$ directions to the more general set of 2d spt states with translation invariance in the $x$ direction only. Let $f$ be the map that takes a 1d translation invariant spt state and outputs a 2d spt state that is translation invariant in both $x$ and $y$ directions by taking the tensor product in the $y$ direction. The sequence
 	\begin{equation}
 		0\rightarrow\left\{\begin{matrix}\text{1d translation invariant}\\ \text{spt states}\end{matrix}\right\}\stackrel{f}{\rightarrow}\left\{\begin{matrix}\text{2d spt states with two}\\ \text{translation symmetries}\end{matrix}\right\}\stackrel{g}{\rightarrow}\left\{\begin{matrix}\text{2d spt states translation}\\ \text{invariant in $x$ direction}\end{matrix}\right\}\rightarrow 0
@@ -108,8 +108,10 @@ We will also look at the case where there is a second translation symmetry (so t
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First we explain the setup, the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
-\section{Setup and definitions}
+The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, and define the concept of locally generated automorphisms. Then in section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). Then in section \ref{sec:Results_2}, we state the result using a the weaker assumption \ref{assumption}.
+\\{\color{red}To be continued...}\\
+the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
+\section{Setup and definitions}\label{sec:Setup}
 In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice (see eg. \cite{ogata2021h3gmathbb} section 1). Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
@@ -158,7 +160,7 @@ be a one parameter family of interactions such that the $F$-norm is uniformly bo
 with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \section{Results}
 We will present our claim starting from two different assumptions. The first assumption is something related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
-\subsection{Statement of the results in therms of short range entanglement}
+\subsection{Statement of the results in therms of short range entanglement}\label{sec:Results_1}
 We can use these locally generated automorphisms to define the concept of short range entanglement.
 \begin{definition}
 	Take $\omega\in\PP(\AA)$. We say that $\omega$ is a short range entangled state (in short an sre state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
@@ -175,7 +177,7 @@ We can now formulate our first result for the case where there is one translatio
 		\begin{equation}
 			\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant state then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample}) satisfies
+		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant state then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
 		\begin{equation}
 			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega).
 		\end{equation}
@@ -184,19 +186,38 @@ We can now formulate our first result for the case where there is one translatio
 \begin{proof}
 	{\color{red}Todo}
 \end{proof}
-Now for the second result I would like to define an index on the space of $G$-invariant sre states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices I can define already. Namely I can take
+Now for the second result I would like to define an index on the space of $G$-invariant sre states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices one can define already. Namely, take
 \begin{align}
 	\omega&\mapsto \textrm{Index}(\omega)&&\text{and}&\omega\mapsto \textrm{Index}(\omega\circ\mu)
 \end{align}
-where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part.
-\subsection{Statement of the result in therms of Q-automorphisms}
-\subsubsection{Disentangle by $\textrm{QAut}(\AA)$}
+where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part. The second result presented in this paper is that we can also define this $H^1(G,\TT)$\footnote{There is a result from group cohomology that $H^1(G,\TT)\cong\hom(G,\TT)$. We will use this identification freely.} index.
+\begin{theorem}
+	There exists a map
+	\begin{equation}
+		\textrm{Index}_{2\text{ trans}}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
+	\end{equation}
+	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2} by which we mean that
+	\begin{enumerate}
+		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
+		\begin{equation}
+			\textrm{Index}_{2\text{ trans}}(\omega)=\textrm{Index}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
+		\end{equation}
+		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction satisfies
+		\begin{equation}
+			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega).
+		\end{equation}
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	{\color{red}Todo...}
+\end{proof}
+\subsection{Statement of the result in therms of Q-automorphisms}\label{sec:Results_2}
 \input{Figure1}
-Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
+Before we can start to prove the results we will first formulate the result starting from a weaker assumption. Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$\footnote{Note that our definition of $\textrm{QAut}(\AA)$ is slightly different from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
 	\begin{equation}
-	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 \end{definition}
 We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper we will consider states that satisfy the following property (see figure \ref{fig:SetupWithQAutomorphism} for the support of the automorphisms):
@@ -219,10 +240,14 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		\item translation invariant ($\omega\circ\tau=\omega$).
 	\end{enumerate}
 \end{assumption}
-\begin{remark}
-	We don't start from the concept of a gapped ground state (see the introduction) but from assumption \ref{assumption} in stead. This assumption is in fact strictly weaker then what was in the introduction. The proof of this is in \cite{ogata2021h3gmathbb}. Look at section 3 for the existence of $\tilde{\beta}_g$ and look at theorem 5.1 for the proof that a path of gapped groundstates of a path of interactions can be generated by the time evolution of another interaction. Combining this with lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} concludes the poof of this fact.
-\end{remark}
-In what follows, fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+\begin{lemma}
+	Take $\omega\in\PP(\AA)$ a short range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\section{The $H^2(G,\TT)$ valued index}
+In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will then show that it is independent of all these choices. fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0$ and $\Theta$ a choice of decomposition for $\alpha$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -373,7 +398,7 @@ We now have to define one more object (remember that $v$ was defined in lemma \r
 	Using lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} concludes the proof that these unitaries exist and are unique up to a $G-$dependent phase.
 \end{proof}
 These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. 
-\section{Definition of the index}
+\subsection{Definition of the index}
 \begin{lemma}\label{lem:Definition2Cochain}
 	There exists a $C:G^2\rightarrow U(1)$ such that 
 	\begin{equation}\label{eq:Definition2Cochain}
@@ -515,7 +540,7 @@ Our translation index is now defined as
 	\end{align}
 	we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
 \end{proof}
-\section{The index is independent of the choices we made}
+\section{The index is independent of the choices we made}\label{sec:IndexIsInvariantUnderChoices}
 In this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
 	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
@@ -708,10 +733,20 @@ By the result of \cite{ogata2019classification} this implies that $\phi$ has a w
 	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j,n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
 	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
 \end{align}
-Define $\omega\in\PP(\AA)$ to be such that for any $A\in\AA_{L_i}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
-\begin{equation}
-	\omega(A\otimes B)=\phi(A)\phi(B).
-\end{equation}
+We will now define the infinite tensor product state.
+\begin{definition}\label{def:InfiniteTensorProductState}
+	Take $\phi\in\PP(\BB)$ arbitrary. There exists a unique state $\omega$ satisfying that for any $i\in\ZZ$ we have that for any $A\in\AA_{L_i}$ and $B\in\AA_{L_i^c}$
+	\begin{equation}
+		\omega(A\otimes B)=\phi(A)\omega(B).
+	\end{equation}
+\end{definition}
+\begin{proof}
+	Clearly this condition gives a construction by induction for $\omega(A)$ for each $A\in\AA_{\text{loc}}$. For general elements we define
+	\begin{equation}
+		\omega(A)\defeq \lim_{n\rightarrow\infty}\omega(A_n)
+	\end{equation}
+	where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$. {\color{red}I need to prove that this is well defined}
+\end{proof}
 We have that:
 \begin{lemma}
 	$\omega$ satisfies assumption \ref{assumption}.
