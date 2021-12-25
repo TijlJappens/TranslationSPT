@@ -315,7 +315,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 		\begin{equation}
 			\textrm{Index}_{2\text{ trans}}(\omega)=\textrm{Index}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item Let $\phi$ be a one dimensional {\color{red}what kind of locality condition is required here?}, $G$-invariant and translation invariant state then the (infinite) tensor product of this state in the vertical direction satisfies
+		\item Take $\phi$ a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
 		\begin{equation}
 			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega).
 		\end{equation}
@@ -812,7 +812,7 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 \begin{proof}
 	Take $(\HH_L\otimes\HH_R,\pi_L\otimes\pi_R,\Omega_L\otimes\Omega_R)$ a GNS triple of $\phi_0$. By construction $(\HH_L\otimes\HH_R,\pi_L\circ\tilde\alpha_L\otimes\pi_R\circ\tilde\alpha_R,\pi_L\otimes\pi_R(b^\dagger)\Omega_L\otimes\Omega_R)$ is a GNS triple of $\phi$. This concludes the proof that $\phi$ satisfies the split property.
 \end{proof}
-By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d spt index. For any $j\in\ZZ$ and $n\in\NN$ take
+By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d spt index (see appendix \ref{sec:OneDimensionalIndices}). For any $j\in\ZZ$ and $n\in\NN$ take
 \begin{align}
 	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j,n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
 	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
@@ -829,7 +829,7 @@ We will now define the infinite tensor product state.
 	\begin{equation}
 		\omega(A)\defeq \lim_{n\rightarrow\infty}\omega(A_n)
 	\end{equation}
-	where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$. {\color{red}I need to prove that this is well defined}
+	where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
 \end{proof}
 We have that:
 \begin{lemma}
@@ -1392,7 +1392,38 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+		Take 
+	\begin{equation}\label{eq:InvarianceUnderChoiceBetaAlphaDecompositionTwoTranslations}
+		\alpha=\Ad{V_1}\circ\alpha_{0}\circ\Theta
+	\end{equation}
+	the usual decomposition. Since
+	\begin{equation}
+		\omega_0\circ\alpha\circ\tilde{\beta}_{g,1}\circ(\tilde{\beta}_{g,2})^{-1}=\omega_0\circ\alpha
+	\end{equation}
+	there exist $\tilde{\delta}_g\in\UU(\HH_0)$ such that
+	\begin{equation}
+		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\alpha=\pi_0\circ\alpha\circ\tilde{\beta}_{g,2}(\tilde{\beta}_{g,1})^{-1}.
+	\end{equation}
+	Inserting equation \eqref{eq:InvarianceUnderChoiceBetaTwoBetasTwoTranslations} and \eqref{eq:InvarianceUnderChoiceBetaAlphaDecompositionTwoTranslations} in this gives
+	\begin{equation}
+		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\Ad{V_1}\circ\alpha_0\circ\Theta=\pi_0\circ\Ad{V_1}\circ\alpha_0\circ\Theta\circ\Ad{V_{g,21}}\circ\eta_{g,1}\circ\eta_{g,2}^{-1}\circ\Ad{V_{g,22}^\dagger}.
+	\end{equation}
+	Putting the $V$'s to the other side gives:
+	\begin{equation}
+		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
+	\end{equation}
+	Since the last equation is split we have again by the irreducibility of $\pi_\sigma$ and the Wigner theorem that we can take $\delta_g^L\in\textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$ such that
+	\begin{equation}
+		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
+	\end{equation}
+	Take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ the operators corresponding to to be the operators belonging to the first choice (with arbitrary phases). Define
+	\begin{align}
+		W_{g,2}&\defeq\delta_g W_{g,1}\\
+		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
+		K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger\\
+		b_{g,2}^\sigma&\defeq w^\dagger\delta^\sigma_g w b_{g,1}^\sigma (\delta^\sigma_g)^\dagger
+	\end{align}
+	then $W_{g,2},u_{R,2}(g,h),K^R_{g,2}$ and $b^R_{g,2}$ are operators belonging to the second choice. Now using lemma \ref{lem:TransformationUnderDeltaTwoTranslations} concludes the proof.
 \end{proof}
 \begin{lemma}
 	The index is independent of the choice of angle $\theta$.
