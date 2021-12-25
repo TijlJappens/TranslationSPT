@@ -5,6 +5,7 @@
 \usepackage[normalem]{ulem}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{thmtools,thm-restate}
 \usepackage{bbm}
 \usepackage{amssymb}
 \usepackage{hyperref}
@@ -74,7 +75,7 @@
 	content...
 \end{abstract}
 \section{Introduction}
-The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible definition\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} one way to do this is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
+The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} way to do this is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
 \begin{enumerate}
 	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
 	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
@@ -108,9 +109,7 @@ We will also look at the case where there is a second translation symmetry (so t
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, and define the concept of locally generated automorphisms. Then in section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). Then in section \ref{sec:Results_2}, we state the result using a the weaker assumption \ref{assumption}.
-\\{\color{red}To be continued...}\\
-the concept of cone operators and using this we define our $H^2(G,\TT)$ valued index (although at this point the index is not only a function of the state but of many more choices). We then show that the index is well defined and does not depend on our choices. We then prove the fact that our index is in fact consistent with conjecture \ref{conj} and that indeed $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$. Finally we show that any equivalent spt states indeed have the same index. Finally in section \ref{sec:TwoDirectionTraslationInvariance} we construct the $H^1(G,\TT)$ valued index that appears when there are two translation symmetries.
+The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, and define the concept of locally generated automorphisms. Then in section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). Then in section \ref{sec:Results_2}, we state the first result using a the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
 \section{Setup and definitions}\label{sec:Setup}
 In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice (see eg. \cite{ogata2021h3gmathbb} section 1). Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
@@ -125,7 +124,7 @@ be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In the case where we have translation invariance in both directions we will obviously require the $C^*$ algebra to be translation invariant in both directions. In this case we will denote the translation automorphism that translates every element to the right by $\nu$. In this setup we will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g=\beta_g\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
+be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In the case where we have translation invariance in both directions we will obviously require the $C^*$ algebra to be translation invariant in both directions. In this case we will denote the translation automorphism that translates every element to the right by $\nu$. In this setup we will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g^\Gamma=\beta_g^{\tau(\Gamma)}\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
 	W(C_\theta)\defeq C_\theta\cup\tau(C_\theta)\cup\tau^{-1}(C_\theta).
 \end{equation}
@@ -159,7 +158,7 @@ be a one parameter family of interactions such that the $F$-norm is uniformly bo
 \end{equation}
 with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \section{Results}
-We will present our claim starting from two different assumptions. The first assumption is something related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
+We will present our claim starting from two different assumptions. The first assumption is related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
 \subsection{Statement of the results in therms of short range entanglement}\label{sec:Results_1}
 We can use these locally generated automorphisms to define the concept of short range entanglement.
 \begin{definition}
@@ -171,7 +170,7 @@ We can now formulate our first result for the case where there is one translatio
 	\begin{equation}
 		\textrm{Index}:\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
 	\end{equation}
-	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj} by which we mean that
+	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj} by which we mean the following:
 	\begin{enumerate}
 		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
@@ -179,8 +178,9 @@ We can now formulate our first result for the case where there is one translatio
 		\end{equation}
 		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant state then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
 		\begin{equation}
-			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega).
+			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega)
 		\end{equation}
+		where $\textrm{Index}_{1d}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -196,15 +196,19 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 	\begin{equation}
 		\textrm{Index}_{2\text{ trans}}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
 	\end{equation}
-	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2} by which we mean that
+	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2} by which we mean the following:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
 			\textrm{Index}_{2\text{ trans}}(\omega)=\textrm{Index}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction satisfies
+		\item Let $\phi$ be a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction satisfies
 		\begin{equation}
-			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega).
+			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega)\footnote{$\textrm{Index}_{1d\text{ trans}}$ is defined in appendix \ref{sec:OneDimensionalIndices}.}.
+		\end{equation}
+		\item Let $\mu$ be the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ degrees then
+		\begin{equation}
+			\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\mu).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -221,8 +225,9 @@ Before we can start to prove the results we will first formulate the result star
 	\end{equation}
 \end{definition}
 We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper we will consider states that satisfy the following property (see figure \ref{fig:SetupWithQAutomorphism} for the support of the automorphisms):
-\begin{assumption}\label{assumption}
-	Take $\omega\in\PP(\AA)$ to be
+
+\begin{restatable}{assumption}{assumptionOne}\label{assumption}
+	Let $\omega\in\PP(\AA)$
 	\begin{enumerate}
 		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
 		\begin{align}
@@ -239,15 +244,90 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		for some $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$.
 		\item translation invariant ($\omega\circ\tau=\omega$).
 	\end{enumerate}
-\end{assumption}
+\end{restatable}
 \begin{lemma}
 	Take $\omega\in\PP(\AA)$ a short range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
 	content...
 \end{proof}
-\section{The $H^2(G,\TT)$ valued index}
-In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will then show that it is independent of all these choices. fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0$ and $\Theta$ a choice of decomposition for $\alpha$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+We now state the result that using this assumption we can define an $H^2(G,\TT)$-index.
+\begin{theorem}
+	There exists a map
+	\begin{equation}
+		\textrm{Index}:\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}\rightarrow H^2(G,\TT)
+	\end{equation}
+	that is well defined (doesn't depend on any of the choices in assumption \ref{assumption}). This map will be consistent with conjecture \ref{conj} by which we mean that
+	\begin{enumerate}
+		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
+		\begin{equation}
+			\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^{\Phi}_{0;1}).
+		\end{equation}
+		\item Take $\phi$ a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
+		\begin{equation}
+			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega).
+		\end{equation}
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	This statement is proven in section \ref{sec:ProofFirstStatement}.
+\end{proof}
+Now we will present the assumption from which we can define the $H^1(G,\TT)$-valued index.
+\begin{restatable}{assumption}{assumptionTwo}\label{assumption:2Translations}
+	Take $\omega\in\PP(\AA)$ to be
+	\begin{enumerate}
+		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
+		\begin{align}
+			\omega=\omega_0\circ\alpha.
+		\end{align}
+		\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map
+		\begin{equation}
+			\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
+		\end{equation}
+		satisfying
+		\begin{align}
+			\label{eq:2TranslationsCondition3part1}
+			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g&\\
+			\label{eq:2TranslationsCondition3part2}
+			\nu^{-1}\circ\eta_g^L\circ\nu&=\Ad{B_g^L}\circ\eta_g^L&\nu^{-1}\circ\eta_g^R\circ\nu&=\Ad{B_g^R}\circ\eta_g^R
+		\end{align}
+		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\nu^{-1}(\AA_L\cap\AA_{C_\theta})}$, $\eta^R_g\in\Aut{\nu(\AA_R\cap\AA_{C_\theta})}$, $B_g^L\in\UU(\AA_L)$ and $B_g^R\in\UU(\AA_R)$.
+		\item translation invariant in both directions
+		\begin{align}
+			\omega\circ\tau&=\omega&\omega\circ\nu&=\omega.
+		\end{align}
+	\end{enumerate}
+\end{restatable}
+\begin{lemma}
+	Let $\omega$ be a short range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{theorem}
+	There exists a map
+	\begin{equation}
+		\textrm{Index}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
+	\end{equation}
+	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2} by which we mean the following:
+	\begin{enumerate}
+		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
+		\begin{equation}
+			\textrm{Index}_{2\text{ trans}}(\omega)=\textrm{Index}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
+		\end{equation}
+		\item Let $\phi$ be a one dimensional {\color{red}what kind of locality condition is required here?}, $G$-invariant and translation invariant state then the (infinite) tensor product of this state in the vertical direction satisfies
+		\begin{equation}
+			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega).
+		\end{equation}
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	{\color{red}Todo...}
+\end{proof}
+\section{The $H^2(G,\TT)$ valued index}\label{sec:ProofFirstStatement}
+In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
+\assumptionOne*
+In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0$ and $\Theta$ a choice of decomposition for $\alpha$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -271,7 +351,7 @@ In what follows, we will first fix certain objects to define the index and then 
 \end{proof}
 \subsection{Cone operators}
  We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
-\begin{definition}
+\begin{definition}\label{def:ConeOperators}
 	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
@@ -540,7 +620,7 @@ Our translation index is now defined as
 	\end{align}
 	we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
 \end{proof}
-\section{The index is independent of the choices we made}\label{sec:IndexIsInvariantUnderChoices}
+\subsection{The index is independent of the choices we made}\label{sec:IndexIsInvariantUnderChoices}
 In this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
 	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
@@ -708,20 +788,24 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	Take $0<\theta_1<\theta_2<\pi/2$. Take $\alpha\in \textrm{QAut}(\AA)$ and (for all $\sigma\in\{L,R\}$) take $\eta_{g,1}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta_{g,2}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ to be operators belonging to $\tilde{\beta}_{g,1}$ and $\tilde{\beta}_{g,2}$ leaving $\omega$ invariant. Since $\Aut{\AA_L\cap\AA_{C_{\theta_1}}}\subset \Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ the result now follows from lemma \ref{lem:InvarianceUnderChoiceBeta}.
 \end{proof}
 Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
-\section{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
+\subsection{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
 Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spatial dimension such that
 \begin{equation}
 	\AA=\overline{\textrm{span}\left\{\left.\bigotimes_{j\in J}(\BB_{\text{loc}})_j\right|J\subset \ZZ\:\text{finite}\right\}}.
 \end{equation}
-In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra. Take $\phi\in\PP(\BB)$ such that
-\begin{enumerate}
-	\item $\phi\circ\beta_g=\phi$.
-	\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and operators $b\in\BB$ such that
-	\begin{equation}
-		\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
-	\end{equation}
-	is a product state.
-\end{enumerate}
+In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra.
+\begin{assumption}\label{assumption1d}
+	Take $\phi\in\PP(\BB)$ such that
+	\begin{enumerate}
+		\item $\phi\circ\beta_g=\phi$.
+		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and operators $b\in\BB$ such that
+		\begin{equation}
+			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
+		\end{equation}
+		is a product state.
+	\end{enumerate}
+\end{assumption}
+
 \begin{lemma}
 	This $\phi$ satisfies the split property.
 \end{lemma}
@@ -838,7 +922,7 @@ We now get (using this equation and the fact that $W_g$ is a representation)
 	&=k_g^R k_h^R (k_{gh}^R)^\dagger\otimes \id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}
 \end{align}
 and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
-\section{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
+\subsection{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
 Take $H:(t\in\RR, I\subset \ZZ^2)\mapsto H(t,I)\in\AA_I\subset\AA_{\text{loc}}$ to be a one parameter family of interactions such that
 \begin{align}
 \beta_g(H(t,I))&=H(t,I)&\tau(H(t,I))&=H(t,I')
@@ -1115,40 +1199,23 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
-\section{Translation invariance in two directions}\label{sec:TwoDirectionTraslationInvariance}
-In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy:
-\begin{assumption}\label{assumption:2Translations}
-	Take $\omega\in\PP(\AA)$ to be
-	\begin{enumerate}
-		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
-		\begin{align}
-			\omega=\omega_0\circ\alpha.
-		\end{align}
-		\item such that there exists an automorphism $\tilde\alpha$ satisfying that $\mu\circ\tilde\alpha\circ\mu^{-1}\in\QAut{\AA}$ and that $\omega=\omega_0\circ\tilde\alpha$.
-		\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map
-		\begin{equation}
-			\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
-		\end{equation}
-		satisfying
-		\begin{align}
-			\label{eq:2TranslationsCondition3part1}
-			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g&\\
-			\label{eq:2TranslationsCondition3part2}
-			\nu^{-1}\circ\eta_g^L\circ\nu&=\Ad{B_g^L}\circ\eta_g^L&\nu^{-1}\circ\eta_g^R\circ\nu&=\Ad{B_g^R}\circ\eta_g^R
-		\end{align}
-		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\nu^{-1}(\AA_L\cap\AA_{C_\theta})}$, $\eta^R_g\in\Aut{\AA_R\cap\AA_{C_\theta}}$, $B_g^L\in\UU(\AA_R)$ and $B_g^R\in\UU(\AA_L)$.
-		\item such that there exists a $\theta'\in]0,\pi/2[$ for which there exists a map
-		\begin{equation}
-			\tilde{\beta}':G\rightarrow\Aut{\AA}:g\mapsto \tilde{\beta}'_g
-		\end{equation}
-		satisfying
-		\item translation invariant in both directions
-		\begin{align}
-			\omega\circ\tau&=\omega&\omega\circ\nu&=\omega.
-		\end{align}
-	\end{enumerate}
-\end{assumption}
-First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before (the $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$). What is more we can define their vertical analogues. For instance we define the horizontal translation operator:
+\section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
+In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
+\assumptionTwo*$\:$\\
+In this section we will be needing a stronger version of the cone operators (from definition \ref{def:ConeOperators}):
+\begin{definition}
+	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\nu^\sigma(\sigma)$\footnote{Where we define $\nu^L\defeq \nu^{-1}$ and $\nu^R\defeq \nu$.} (or in short $x\in\textrm{Cone}_{\tau^\sigma(\sigma)}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\nu^\sigma(\AA_{C_\theta}\cap\AA_\sigma))}$ such that
+	\begin{equation}
+		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
+	\end{equation}
+	$\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\id_{\ZZ^2/\sigma}$.
+\end{definition}
+\subsection{Definition of the index}
+ First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$ and then later on we will show independence of the choice of these objects. Notice that after fixing all these objects that the objects $B_g^L\in\UU(\AA_L)$ and $B_g^R\in\UU(\AA_R)$ of which we assumed their existence are now unique (so we don't explicitly have to show independence from them). For a short hand notation define
+ \begin{align}
+ 	b_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta(B_g^\sigma)= \pi_0\circ\alpha_0(B_g^\sigma).
+ \end{align}
+ Clearly by construction we have that $b_g^L\in\textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)$ whereas $b_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$. In what follows, we will also need the vertical analogue of the $v$. We define the horizontal translation operator:
 \begin{lemma}\label{lem:Definition_w}
 	There exists a unique $w\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -1252,7 +1319,7 @@ Using this we can show that:
 \begin{proof}
 	content...
 \end{proof}
-\section{The $H^1(G,\TT)$-valued index is invariant under choices}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under choices}
 n this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. On this last item we remark:
 \begin{remark}
 	A product state can have a non-trivial $H^1(G,\TT)$ index and the index is not defined relative to $\omega_0$ so in particular
@@ -1279,6 +1346,46 @@ We will now show independence of $\alpha$ and its decomposition.
 \begin{proof}
 	content...
 \end{proof}
+In what follows we will need that the index is invariant under the following transformation:
+\begin{lemma}\label{lem:TransformationUnderDeltaTwoTranslations}
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{Cone}_{\tau^\sigma(\sigma)}(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$ and all $g\in G$). Define
+	\begin{align}
+		W_{g,2}&\defeq\delta_g W_{g,1}\\
+		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
+		K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger\\
+		b_{g,2}^\sigma&\defeq w^\dagger\delta^\sigma_g w b_{g,1}\delta^\sigma_g
+	\end{align}
+	then the index of $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma,h_g$ and $b_{g,2}^\sigma$ is equal to the index of $v,w,W_{g,2},u_{\sigma,2}(g,h),h_g$ and $K_{g,2}^\sigma$.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
+\begin{lemma}\label{lem:InvarianceUnderChoiceBetaTwoTranslations}
+	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
+	\begin{align}\label{eq:InvarianceUnderChoiceBetaTwoBetasTwoTranslations}
+		\tilde{\beta}_{g,1}&=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g&\tilde{\beta}_{g,2}&=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
+	\end{align}
+	and
+	\begin{equation}
+		\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega
+	\end{equation}
+	then
+	\begin{equation}
+		\textrm{Index}_{\text{2 trans}}(\theta,\tilde{\beta}_{g,1},\eta_{g,1},\alpha_{0},\Theta,\omega,\omega_0)=\textrm{Index}_{\text{2 trans}}(\theta,\tilde{\beta}_{g,2},\eta_{g,2},\alpha_{0},\Theta,\omega,\omega_0).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	The index is independent of the choice of angle $\theta$.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\subsection{Example (consistency with conjecture \ref{conj2})}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}
 \appendix
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
