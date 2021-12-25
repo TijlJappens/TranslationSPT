@@ -1362,8 +1362,19 @@ In what follows we will need that the index is invariant under the following tra
 	\begin{align}
 		\alpha_2(g)&\defeq v^\dagger b^R_{g,2}v h_g K^R_{g,2}(b^R_{2,g})^\dagger w^\dagger (K^R_{2,g})^\dagger w\\
 		&=v^\dagger \left(w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger\right) v h_g \left(v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger\right) \left(w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger\right)^\dagger w^\dagger (v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger)^\dagger w\\
-		&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger v h_g v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g^R (b_{1,g}^R)^\dagger w^\dagger (\delta_g^R)^\dagger w w^\dagger \delta_g^R (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w
+		&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger v h_g v^\dagger \delta_g^R v K_{g,1}^R \stkout{(\delta_g^R)^\dagger \delta_g^R} (b_{1,g}^R)^\dagger w^\dagger \stkout{(\delta_g^R)^\dagger w w^\dagger \delta_g^R} (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w.
 	\end{align}
+	If we now insert $vv^\dagger,$ we obtain
+	\begin{align}
+		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R v\stkout{v^\dagger (\delta^R_g)^\dagger v} h_g \stkout{v^\dagger \delta_g^R v} K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w.
+	\end{align}
+	Again after inserting $vv^\dagger$ and $ww^\dagger$ we now get
+	\begin{align}
+		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w v v^\dagger b_{g,1}^R v h_g K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger ww^\dagger v^\dagger (\delta_g^R)^\dagger v  w\\
+		&=\stkout{v^\dagger w^\dagger\delta^R_g w v} \alpha_1(g) \stkout{w^\dagger v^\dagger (\delta_g^R)^\dagger v  w}\\
+		&=\alpha_1(g)
+	\end{align}
+	concluding the proof.
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBetaTwoTranslations}
