@@ -156,7 +156,11 @@ be a one parameter family of interactions such that the $F$-norm is uniformly bo
 \begin{equation}
 	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
 \end{equation}
-with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
+with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. This satisfies the condition that if $\sup_t\norm{\sum_{I\subset\ZZ^2}\Phi(I,t)}<\infty$ that then
+\begin{align}
+	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset\ZZ^2}\Phi(s',t)).
+\end{align}
+Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \section{Results}
 We will present our claim starting from two different assumptions. The first assumption is related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
 \subsection{Statement of the results in therms of short range entanglement}\label{sec:Results_1}
@@ -923,34 +927,7 @@ We now get (using this equation and the fact that $W_g$ is a representation)
 \end{align}
 and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
 \subsection{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
-Take $H:(t\in\RR, I\subset \ZZ^2)\mapsto H(t,I)\in\AA_I\subset\AA_{\text{loc}}$ to be a one parameter family of interactions such that
-\begin{align}
-\beta_g(H(t,I))&=H(t,I)&\tau(H(t,I))&=H(t,I')
-\end{align}
-where $I'$ is just $I$ shifted upwards. For any $I\subset\ZZ^2$ define the interaction $H_I$ as
-\begin{equation}
-	H_I:(t\in\RR,J\subset\ZZ)\mapsto\left\{\begin{matrix}H(t,J)&\text{if }J\subset I\\0&\text{otherwise.}\end{matrix}\right.
-\end{equation}
-The following norm will measure the locality of an interaction:
-\begin{definition}
-For any monotonically decreasing positive function $f:\NN\rightarrow\RR^+$ we define an $f$-norm on the space of interactions by
-\begin{equation}
-	\norm{H}_f=\sup_{x,y\in\ZZ^2}\frac{1}{F(\textrm{dist}(x_1-x_2))}\sum_{Z\subset\ZZ^2,\:x,y\in Z}\norm{H(Z)}.
-\end{equation}
-\end{definition}
-Following \cite{ogata2021h3gmathbb} we will assume that there exists a $0<\phi<1$ such that $\sup_t \norm{H(t,\cdot)}_{f_\phi}\leq 1$ where $f_\phi$ is defined as
-\begin{equation}
-	f_\phi:\NN\rightarrow\RR^+:r\mapsto \frac{\exp(-r^\phi)}{(1+r)^4}.
-\end{equation}
-For any interaction with such a bounded $f_\phi$ norm we will use $\gamma^H_{s;t}$ to denote the automorphism satisfying that for any $a\in\AA$, $\gamma^H_{t;s}(a)$ is the solution to the differential equation
-\begin{equation}
-	\frac{\d}{\d s}\gamma^H_{t;s}(a)=i\sum_{I\subset \ZZ^2}\gamma^H_{t;s}([H(s,I),a])
-\end{equation}
-with initial condition $\gamma^H_{t;t}(a)=a$. {\color{red}A reference is needed here that this automorphism indeed exists.} If our interaction is bounded (meaning that $\sup_t\norm{\sum_{I\subset\ZZ^2}H(I,t)}<\infty$) then we have an identity
-\begin{align}
-	\gamma^H_{s;t}&=\Ad{u^H_{t;s}}&u^H_{t;s}&\defeq \mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset \ZZ^2}H(s',I)).
-\end{align}
-The goal of this section is now to show that the index we constructed is invariant under such locally generated automorphisms (see theorem \ref{thrm:IndexInvariantUnderLGA}).
+The goal of this section is now to show that the index we constructed is invariant under locally generated automorphisms (the final proof of this statement is under theorem \ref{thrm:IndexInvariantUnderLGA}).
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that there exists some $a\in\AA$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquation}
@@ -958,13 +935,13 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. Define the map
 	\begin{align}
-		\phi_1&:\textrm{IAC}_R(\alpha_0,\theta,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})\\
+		\phi_1&:\textrm{IAC}_R(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
 		\nonumber
 		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger
 	\end{align}
 	where $A\in\AA_R$ and $y\in\textrm{Cone}_R(\alpha_0,\theta)$. This map satisfies that
 	\begin{enumerate}
-		\item  for any $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
+		\item  for (the unique) $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
 		\begin{equation}
 			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
 		\end{equation}
@@ -974,6 +951,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		\end{equation}
 		\item it is well defined (independent of the choice of $A$ and $y$).
 		\item it is a group homomorphism.
+		\item $\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1156,7 +1134,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{align}
 	Take $\Phi$ like in equation \eqref{eq:DefinitionOfGroupMorphismHAutEquation} and define
 	\begin{equation}
-		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \textrm{IAC}_R(\alpha_0,\Theta\circ \Phi)
+		\phi_1:\textrm{IAC}_R(\alpha_0,\Theta) \rightarrow \UU(\HH)
 	\end{equation}
 	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Take similarly
 	\begin{equation}
@@ -1433,6 +1411,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{proof}
 \subsection{Example (consistency with conjecture \ref{conj2})}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}
+The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA}. {\color{red}Or at least I hope...}
 \appendix
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
