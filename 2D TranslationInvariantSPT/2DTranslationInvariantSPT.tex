@@ -931,7 +931,7 @@ The goal of this section is now to show that the index we constructed is invaria
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that there exists some $a\in\AA$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquation}
-		\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}=\Ad{a}\circ \Phi^U_{s;t}\otimes\Phi^D_{s;t}.
+		\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}=\Ad{a}\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}.
 	\end{equation}
 	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. Define the map
 	\begin{align}
@@ -1130,7 +1130,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
 		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}
-		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_L}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_R}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
+		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
 	Take $\Phi$ like in equation \eqref{eq:DefinitionOfGroupMorphismHAutEquation} and define
 	\begin{equation}
