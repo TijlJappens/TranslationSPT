@@ -291,11 +291,9 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 		satisfying
 		\begin{align}
 			\label{eq:2TranslationsCondition3part1}
-			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g&\\
-			\label{eq:2TranslationsCondition3part2}
-			\nu^{-1}\circ\eta_g^L\circ\nu&=\Ad{B_g^L}\circ\eta_g^L&\nu^{-1}\circ\eta_g^R\circ\nu&=\Ad{B_g^R}\circ\eta_g^R
+			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
 		\end{align}
-		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\nu^{-1}(\AA_L\cap\AA_{C_\theta})}$, $\eta^R_g\in\Aut{\nu(\AA_R\cap\AA_{C_\theta})}$, $B_g^L\in\UU(\AA_L)$ and $B_g^R\in\UU(\AA_R)$.
+		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\nu^{-1}(\AA_L\cap\AA_{C_\theta})}$ and  $\eta^R_g\in\Aut{\nu(\AA_R\cap\AA_{C_\theta})}$.
 		\item translation invariant in both directions
 		\begin{align}
 			\omega\circ\tau&=\omega&\omega\circ\nu&=\omega.
@@ -1188,27 +1186,47 @@ In this section we will be needing a stronger version of the cone operators (fro
 	\end{equation}
 	$\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\id_{\ZZ^2/\sigma}$.
 \end{definition}
+Similarly as before we will also need the generalisation of this definition:
+\begin{definition}
+	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{W(\AA_{C_\theta})^c}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\nu^\sigma(\sigma)$ (or in short $x\in \textrm{IAC}_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta)$) if there exists an $A\in\AA_{\nu^\sigma(\sigma)}$ and a $y\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ such that
+	\begin{equation}
+		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
+	\end{equation}
+\end{definition}
 \subsection{Definition of the index}
- First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$ and then later on we will show independence of the choice of these objects. Notice that after fixing all these objects that the objects $B_g^L\in\UU(\AA_L)$ and $B_g^R\in\UU(\AA_R)$ of which we assumed their existence are now unique (so we don't explicitly have to show independence from them). For a short hand notation define
- \begin{align}
- 	b_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta(B_g^\sigma)= \pi_0\circ\alpha_0(B_g^\sigma).
- \end{align}
- Clearly by construction we have that $b_g^L\in\textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)$ whereas $b_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$. In what follows, we will also need the vertical analogue of the $v$. We define the horizontal translation operator:
+ First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$ and then later on we will show independence of the choice of these objects.In what follows, we will need the vertical analogue of the $v$. We define the horizontal translation operator:
 \begin{lemma}\label{lem:Definition_w}
 	There exists a unique $w\in\UU(\HH_0)$ such that
 	\begin{align}
 		\Ad{w}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)w\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
 	\end{align}
 \end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+ We can use these objects to define $b^\sigma_g$:
+\begin{lemma}
+	There exist a $b_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and a $b_g^R\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$ (both unique up to an exchange of a $G-$dependent phase) satisfying that
+	\begin{equation}
+		w^\dagger W_g w W_g^\dagger=b_g^L\otimes b_g^R.
+	\end{equation}
+	It will satisfy
+	\begin{equation}\label{eq:automorphismBelongingTo_b}
+		\Ad{b_g^\sigma\otimes\id_{H_{\ZZ^2/\sigma}}}\circ\pi_0=\pi_0\circ\alpha_0\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_0.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \begin{lemma}\label{lem:DefinitionAlpha}
 	There exists an $\alpha:G\rightarrow U(1)$ satisfying
 	\begin{equation}
 		v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
 	\end{equation}
 	where
-	\begin{align}
-		b_g^R&\defeq \pi_0\circ\alpha_0\circ\Theta(B_g^R)&h_g&\defeq\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g)).
-	\end{align}
+	\begin{equation}
+		h_g\defeq\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g)).
+	\end{equation}
 \end{lemma}
 \begin{proof}
 	We have that
@@ -1217,15 +1235,24 @@ In this section we will be needing a stronger version of the cone operators (fro
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}
 	\end{align}
-	where $L_j=\{(x,y)\in\ZZ^2|y=j\}$. Using the second part of equation \eqref{eq:2TranslationsCondition3part2} we now get
+	where $L_j=\{(x,y)\in\ZZ^2|y=j\}$. Using equation \eqref{eq:automorphismBelongingTo_b} we now get
 	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\Ad{B_g^R}\circ\eta_g^R\circ\nu^{-1}\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu\circ(\eta_g^R)^{-1}\circ\Ad{(B_g^R)^\dagger} \circ\Theta^{-1}\circ\alpha_0^{-1}.
+		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}.
 	\end{align}
 	Now we will use the fact that $\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ\nu=\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}$ to obtain
 	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\Ad{B_g^R}\circ\eta_g^R\circ\tau\circ\Ad{U_{(-1,-1)(g)}}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\Ad{(B_g^R)^\dagger} \circ\Theta^{-1}\circ\alpha_0^{-1}\\
-		&=\Ad{v^\dagger b_g^R v h_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\Ad{(B_g^R)^\dagger}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
-		&=\Ad{v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger}\circ\pi_0.
+		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{U_{(-1,-1)}(g)}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{align}
+	Now using again that $\tau\circ\beta_g^{R,L_{-1}}=\beta_{g}^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}$ we get:
+	\begin{align}
+		&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\beta_{g}^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\Ad{v^\dagger b_g^R vh_gK_g^R}\circ\pi_0\circ\alpha_0\circ\Theta\circ\eta_g^R\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{align}
+	After again using \eqref{eq:automorphismBelongingTo_b} we obtain:
+	\begin{align}
+		=\Ad{v^\dagger b_g^R vh_gK_g^R(b_g^R)^\dagger}\circ\pi_0.
 	\end{align}
 	By the irreducibility of $\pi_0$ this implies that there indeed exists such an $\alpha$.
 \end{proof}
@@ -1256,7 +1283,7 @@ Using this we can show that:
 	\begin{align}
 		K_g^R&\mapsto v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger&W_g&\mapsto w^\dagger W_g w&u_R(g,h)&\mapsto w^\dagger u_R(g,h)w
 	\end{align}
-	the we have proven the result. Now define $b_g^L=\pi_0\circ\alpha_0\circ\Theta(B_g^L)$. We have by construction {\color{red}I need to explain this further} that
+	the we have proven the result. We have by construction {\color{red}I need to explain this further} that
 	\begin{align}
 		\Ad{b_g^Lb_g^RW_g}\circ\pi_0&=\Ad{w^\dagger W_g w}\circ\pi_0\\
 		\Ad{b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}\circ\pi_0&=\Ad{w^\dagger u_R(g,h) w}\circ\pi_0.
@@ -1292,7 +1319,7 @@ Using this we can show that:
 	\begin{equation}
 		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \alpha\in H^1(G,\TT)
 	\end{equation}
-	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,B^L_g$ and $B^R_g$.
+	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.
 \end{definition}
 \begin{proof}
 	content...
@@ -1326,14 +1353,14 @@ We will now show independence of $\alpha$ and its decomposition.
 \end{proof}
 In what follows we will need that the index is invariant under the following transformation:
 \begin{lemma}\label{lem:TransformationUnderDeltaTwoTranslations}
-	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{Cone}_{\tau^\sigma(\sigma)}(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$ and all $g\in G$). Define
+	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ the operators corresponding to these automorphisms and take $\delta^\sigma_g\in\textrm{IAC}_{\nu^\sigma(\sigma)}(\alpha_0,\Theta,\theta)$ (for all $\sigma\in\{L,R\}$ and all $g\in G$). Define
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
 		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
 		K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger\\
 		b_{g,2}^\sigma&\defeq w^\dagger\delta^\sigma_g w b_{g,1}^\sigma (\delta^\sigma_g)^\dagger
 	\end{align}
-	then the index of $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma,h_g$ and $b_{g,2}^\sigma$ is equal to the index of $v,w,W_{g,2},u_{\sigma,2}(g,h),h_g$ and $K_{g,2}^\sigma$.
+	then the index of $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma,h_g$ and $b_{g,1}^\sigma$ is equal to the index of $v,w,W_{g,2},u_{\sigma,2}(g,h),h_g,K_{g,2}^\sigma$ and $b_{g,2}^\sigma$.
 \end{lemma}
 \begin{proof}
 	We define the index in function of the new variables:
@@ -1411,7 +1438,36 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{proof}
 \subsection{Example (consistency with conjecture \ref{conj2})}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}
-The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA}. {\color{red}Or at least I hope...}
+The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA}. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
+\begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
+	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that there exists some $a\in\AA$ satisfying that
+	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations}
+		\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}=\Ad{a}\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}.
+	\end{equation}
+	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof). Define the map
+	\begin{align}
+		\tilde\phi_1&:\textrm{IAC}_{\nu(R)}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
+		\nonumber
+		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \tilde\phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger
+	\end{align}
+	where $A\in\AA_{\nu(R)}$ and $y\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$. This map satisfies that
+	\begin{enumerate}
+		\item  for (the unique) $\xi\in\Aut{\nu(\AA_{C_\theta}\cap\AA_R)}$ such that
+		\begin{equation}
+			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
+		\end{equation}
+		we get that
+		\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphismTwoTranslations}
+			\Ad{\tilde\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}\circ\Ad{A}\circ\xi.
+		\end{equation}
+		\item it is well defined (independent of the choice of $A$ and $y$).
+		\item it is a group homomorphism.
+		\item $\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\tilde\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \appendix
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
