@@ -1147,7 +1147,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		\label{eq:IndexInvariantUnderLGANewOperator3}
 		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
 		\label{eq:IndexInvariantUnderLGANewOperator4}
-		\tilde{K}_g^L\otimes \tilde{K}_g^R&=\tilde{v}^\dagger \tilde{W}_g\tilde{v}\tilde{W}_g^\dagger
+		\tilde{K}_g^\sigma&=\pi_0(A_1)v^\dagger \delta_g^\sigma v K_g^\sigma \delta_g^\sigma \pi_0(A_1)^\dagger
 	\end{align}
 	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
 	\begin{equation}
@@ -1446,11 +1446,11 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{equation}
 	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof). Define the map
 	\begin{align}
-		\tilde\phi_1&:\textrm{IAC}_{\nu(R)}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
+		\phi_1&:\textrm{IAC}_{R}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
 		\nonumber
-		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \tilde\phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger
+		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu(R)}}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger
 	\end{align}
-	where $A\in\AA_{\nu(R)}$ and $y\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$. This map satisfies that
+	where $A\in\AA_{R}$ and $y\in\textrm{Cone}_{R}(\alpha_0,\theta)$. This map satisfies that
 	\begin{enumerate}
 		\item  for (the unique) $\xi\in\Aut{\nu(\AA_{C_\theta}\cap\AA_R)}$ such that
 		\begin{equation}
@@ -1458,12 +1458,38 @@ The goal of this section is to show that the index we constructed is invariant u
 		\end{equation}
 		we get that
 		\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphismTwoTranslations}
-			\Ad{\tilde\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}\circ\Ad{A}\circ\xi.
+			\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0}\circ\Ad{A}\circ\xi.
 		\end{equation}
 		\item it is well defined (independent of the choice of $A$ and $y$).
 		\item it is a group homomorphism.
-		\item $\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\tilde\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+		\item $\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\textrm{IAC}_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
 	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}\label{lem:DefinitionOfWgMapTwoTranslations}
+	There exists a map
+	\begin{equation}
+		\phi_2:\{w^{-p}W_gw^p|g\in G,p\in\{0,1\}\}\rightarrow \UU(\HH)
+	\end{equation}
+	satisfying
+	\begin{align}\label{eq:lemDefinitionOfWgMapConditionTwoTranslations}
+		&\Ad{\phi_2(w^{-p}W_gw^p)}\circ\pi_0\\
+		\nonumber
+		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ(\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0})\circ\nu^{-p}\circ\eta_g\circ\nu^p\circ\beta_g^U\circ(\gamma^{H_{\nu^{-1}(L)}}_{0;1}\otimes\gamma^{H_{\nu(R)}}_{0;1})\circ\gamma^{H}_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
+	\end{align}
+	It is unique up to a $G$ and $p$-dependent phase.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	There exists an $\epsilon^L_g\in\textrm{IAC}_L(\alpha_0,\theta)$ and an $\epsilon^R_g\in\textrm{IAC}_R(\alpha_0,\theta)$ satisfying
+	\begin{align}
+		w^\dagger \phi_2(W_g)w &= \phi_1(\epsilon_g^L\otimes\epsilon_g^R)\phi_2(w^\dagger W_g w)\\
+		w^\dagger \phi_1(K_g^\sigma)w&=v^\dagger\phi_1(\epsilon_g^\sigma)v\phi_1(w^\dagger K_g^\sigma w)\phi_1(\epsilon_g^\sigma)^\dagger.
+	\end{align}
 \end{lemma}
 \begin{proof}
 	content...
