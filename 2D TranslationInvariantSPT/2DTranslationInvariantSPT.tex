@@ -1467,7 +1467,7 @@ where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma
 	\begin{equation}
 		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
 	\end{equation}
-	is a gns triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
+	is a gns representation of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
 	\begin{equation}
 		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
@@ -1477,10 +1477,33 @@ where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma
 	\end{equation}
 	then there exists a $U(1)$ representation $\alpha$ satisfying that
 	\begin{equation}
-		(\pi_{L_{-1},L}(U_{(-1,-1)}(g))\otimes \id_{\HH_{L_{-1},R}}) (\id_{\HH_{L_{-1},L}}\otimes k^R(g))=\alpha(g) w_{L_{-1}}(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}^\dagger
+		(\pi_{L_{-1},L}(U_{(-1,-1)}(g))\otimes \id_{\HH_{L_{-1},R}}) (\id_{\HH_{L_{-1},L}}\otimes k^R(g))=\alpha(g) w_{L_{-1}}^\dagger(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}
 	\end{equation}
 	and that it is given by $\textrm{index}_{\text{1d trans}}(\phi)$.
 \end{remark}
+Just like in section \ref{sec:OneTranslationDirectionExample}, let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
+\begin{align}
+	\Ad{\tilde{k}_g}\circ\pi_{L_{-1}}&=\pi_{L_{-1}}\circ \circ\alpha|_{L_{-1}}\circ\beta_g^{L_{-1}}\circ \alpha^{-1}|_{L_{-1}}&\tilde k_g\Omega_{L_{-1}}&=\Omega_{L_{-1}}.
+\end{align}
+We can take
+\begin{equation}
+	K_g=\id_{H_{L_{>-1}}}\otimes \pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b) \otimes\id_{\HH_{L_{<-1}}} =\id_{H_{L_{>-1}}}\otimes (k_g^L\otimes k_g^R) \otimes\id_{\HH_{L_{<-1}}}.
+\end{equation}
+Similarly we can take $w_\rho\in\HH_\rho$ (where $\rho\in\{L_{>-1},L_{-1},L_{<-1}\}$) satisfying
+\begin{equation}
+	\Ad{w_\rho}\circ\pi_\rho\circ\alpha_{0}|_\rho\circ\Theta|_\rho=\pi_\rho\circ\alpha_{0}|_\rho\circ\Theta|_\rho\circ\nu
+\end{equation}
+and then we get that $w=w_{L_{>-1}}\otimes w_{L_{-1}}\otimes w_{L_{<-1}}$. Since $\eta_g=\textrm{Id}_{\AA}$ we can simply take $b_g^\sigma=\id_{\HH_\sigma}$. We now have that
+\begin{equation}
+	\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)})\id_{\HH_L}\otimes K_g^R=\id_{\HH_{L_{>-1}}}\otimes(\pi_{L_{-1},L}\circ\tilde\alpha_L(U_{(-1,-1)})\otimes k^R(g))\otimes\id_{\HH_{L_{>-1}}}.
+\end{equation}
+By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we get that
+\begin{align}
+	&=\id_{H_{L_{>-1}}}\otimes\alpha(g) w_{L_{-1}}(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}^\dagger\otimes \id_{H_{L_{<-1}}}\\
+	&=\alpha(g)w^\dagger (\id_{H_{L_{>-1}}}\otimes \id_{\HH_{L_{-1},L}}\otimes k^R(g)\otimes \id_{H_{L_{<-1}}}) w\\
+	&=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
+\end{align}
+showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}
 The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA}. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
