@@ -808,8 +808,7 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 		is a product state.
 	\end{enumerate}
 \end{assumption}
-
-\begin{lemma}
+\begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
 	This $\phi$ satisfies the split property.
 \end{lemma}
 \begin{proof}
@@ -836,7 +835,7 @@ We will now define the infinite tensor product state.
 \end{proof}
 We have that:
 \begin{lemma}
-	$\omega$ satisfies assumption \ref{assumption}.
+	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
 	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\textrm{QAut}(\AA)$ that disentangles $\omega$. We define $\alpha$ such that for any $A\in\AA$
@@ -1437,7 +1436,51 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \begin{proof}
 	content...
 \end{proof}
-\subsection{Example (consistency with conjecture \ref{conj2})}
+\subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
+This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. We still define $\AA$ as the closure of the tensor product of the $\BB$. In this case however we will require that our one dimensional state (and our $C^*$ algebra $\BB$) is translation invariant. Let's call the translation automorphism on $\BB$ also $\tau$ then we will need:
+\begin{assumption}\label{assumption1dWithTranslation}
+	Take $\phi\in\PP(\BB)$ such that
+	\begin{enumerate}
+		\item $\phi\circ\beta_g=\phi$.
+		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and operators $b\in\BB$ such that
+		\begin{equation}
+			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
+		\end{equation}
+		is a product state.
+		\item $\phi\circ\tau=\phi$.
+	\end{enumerate}
+\end{assumption}
+Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$ valued index for it (see appendix \ref{sec:OneDimensionalIndices}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
+\begin{lemma}
+	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega$ satisfies assumption \ref{assumption:2Translations}.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+This shows that $\omega$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
+\begin{equation}
+	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
+\end{equation}
+where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
+\begin{remark}\label{rem:GNS_One_DimensionalTwoTranslations}
+	We clearly have (by construction) that
+	\begin{equation}
+		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
+	\end{equation}
+	is a gns triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
+	\begin{equation}
+		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
+	\end{equation}
+	and $w_{L_{-1}}$ to be such that
+	\begin{equation}
+		\Ad{w_{L_{-1}}}\circ\pi_{L_{-1},L}\otimes \pi_{L_{-1},R}=\pi_{L_{-1},L}\otimes \pi_{L_{-1},R}\circ\nu
+	\end{equation}
+	then there exists a $U(1)$ representation $\alpha$ satisfying that
+	\begin{equation}
+		(\pi_{L_{-1},L}(U_{(-1,-1)}(g))\otimes \id_{\HH_{L_{-1},R}}) (\id_{\HH_{L_{-1},L}}\otimes k^R(g))=\alpha(g) w_{L_{-1}}(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}^\dagger
+	\end{equation}
+	and that it is given by $\textrm{index}_{\text{1d trans}}(\phi)$.
+\end{remark}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}
 The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA}. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
@@ -1608,26 +1651,26 @@ This can now be used to define the one dimensional spt index:
 \begin{proof}
 	Again see \cite{ogata2019classification}.
 \end{proof}
-Now let us assume additionally (on top of the split property and the $G$-invariance) that $\omega$ be translation invariant. To this end, let $\tau$ be the automorphism that translates $\BB$ by one site to the right. We assume that $\omega\circ\tau=\omega$. The following now holds:
+Now let us assume additionally (on top of the split property and the $G$-invariance) that $\omega$ be translation invariant. To this end, let $\nu$ be the automorphism that translates $\BB$ by one site to the right. We assume that $\omega\circ\nu=\omega$. The following now holds:
 \begin{lemma}
-	There exists a $v\in\UU(\HH)$ such that
+	There exists a $w\in\UU(\HH)$ such that
 	\begin{align}
-		\Ad{v}\circ\pi&=\pi&v\Omega&=\Omega.
+		\Ad{w}\circ\pi&=\pi&w\Omega&=\Omega.
 	\end{align}
-	This $v$ is unique up to a $G$-dependent phase.
+	This $w$ is unique up to a $G$-dependent phase.
 \end{lemma}
 \begin{proof}
-	Since $\omega\circ\tau=\omega$, we get that
+	Since $\omega\circ\nu=\omega$, we get that
 	\begin{equation}
-		(\HH,\pi\circ\tau,\Omega)\ue (\HH,\pi,\Omega).
+		(\HH,\pi\circ\nu,\Omega)\ue (\HH,\pi,\Omega).
 	\end{equation}
-	The uniqueness of the GNS triple now implies the existence of this $v$. Its uniqueness follows from the irreducibility of $\pi$.
+	The uniqueness of the GNS triple now implies the existence of this $w$. Its uniqueness follows from the irreducibility of $\pi$.
 \end{proof}
 We can use this to define an additional 1d index for translation invariant states.
 \begin{lemma}
 	There exists a (unique) $\alpha\in\hom(G,U(1))$ satisfying that
 	\begin{equation}
-		\pi(U_{-1}(g)) (\id_{\HH_L}\otimes u_R(g))=\alpha(g)v^\dagger(\id_{\HH_L}\otimes u_R(g)) v.
+		\pi(U_{-1}(g)) (\id_{\HH_L}\otimes u_R(g))=\alpha(g)w^\dagger(\id_{\HH_L}\otimes u_R(g)) w.
 	\end{equation}
 	This index is invariant under locally generated automorphisms generated by interactions that are both $G$ and translation invariant.
 \end{lemma}
@@ -1639,7 +1682,7 @@ All together we constructed a proof of the following theorem:
 	There exist maps
 	\begin{align}
 		\textrm{Index}_{1d}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\}\rightarrow H^2(G,\TT)\\
-		\textrm{Index}_{1d\text{ trans}}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^1(G,\TT)\cong \hom(G,\TT).
+		\textrm{Index}_{1d\text{ trans}}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\text{ and }\omega\circ\nu=\omega\}\rightarrow H^1(G,\TT)\cong \hom(G,\TT).
 	\end{align}
 	For any $G-$invariant family of interactions $\Phi\in\BB_{F}([0,1])$, we have that $\textrm{Index}_{1d}(\omega)=\textrm{Index}_{1d}(\omega\circ\gamma^\Phi_{0;1})$. For any $G-$invariant family of interactions $\Phi'\in\BB_{F}([0,1])$ that is also translation invariant, we have that $\textrm{Index}_{1d\text{ trans}}(\omega)=\textrm{Index}_{1d\text{ trans}}(\omega\circ\gamma^{\Phi'}_{0;1})$.
 \end{theorem}
