@@ -110,13 +110,9 @@ We will also look at the case where there is a second translation symmetry (so t
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, and define the concept of locally generated automorphisms. Then in section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). Then in section \ref{sec:Results_2}, we state the first result using a the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
+The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, and define the concept of locally generated automorphisms. Then in section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). Then in section \ref{sec:Results_2}, we state the first result using an even weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
 \section{Setup and definitions}\label{sec:Setup}
-In what follows let $\AA$ be a quasi-local $C^*$ algebra defined on a two dimensional square lattice (see eg. \cite{ogata2021h3gmathbb} section 1). Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
-\begin{equation}
-	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
-\end{equation}
-for any $g\in G$, $I\subset\Gamma$ finite and $A\in\AA_I$. Let
+In this paper we will be working in the two dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
 \begin{align}
 	L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x\geq 0\right.\right\}\\
 	U&\defeq \left\{(x,y)\in\ZZ^2\left|y\geq 0\right.\right\},&D&\defeq \left\{(x,y)\in\ZZ^2\left|y<0\right.\right\}
@@ -125,13 +121,36 @@ be the left, right, upper and lower half planes respectively and let
 \begin{equation}
 	C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 \end{equation}
-be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the automorphism that moves every element of $\AA$ one site upward. Of course this is only an automorphism if the $C^*$ algebra is translation invariant in the vertical direction which we will assume. In the case where we have translation invariance in both directions we will obviously require the $C^*$ algebra to be translation invariant in both directions. In this case we will denote the translation automorphism that translates every element to the right by $\nu$. In this setup we will also assume that the group action acts in a translation invariant way ($\tau\circ\beta_g^\Gamma=\beta_g^{\tau(\Gamma)}\circ\tau$). We will sometimes also denote $\tau(Z)$ for some $Z\subset\ZZ^2$ to also denote the set that has been moved up by one site without using a different symbol for it. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
+be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism}). We will use $\tau$ to denote the bijection that moves every element of $\ZZ^2$ one site upward. Similarly we let $\nu$ denote the bijection that translates every element of $\ZZ^2$ by one site to the right. In what follows we will sometimes need to widen our cone vertically by one site. For this purpose we define $W$ such that
 \begin{equation}
 	W(C_\theta)\defeq C_\theta\cup\tau(C_\theta)\cup\tau^{-1}(C_\theta).
 \end{equation}
-In the later parts of the paper we will also need the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ (clockwise) which we will call $\mu$.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.}
+In the later part we will also need to rotate our lattice by $90^\circ$ so call $\mu$ the bijection on $\ZZ^2$ that does precisely this.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.}
+\subsection{Quasi local $C^*$ algebra}\label{sec:QuasiLocalC*Algebra}
+The setup in this paper will be very similar to the setup in \cite{ogata2021h3gmathbb} and is just the standard setup for defining quantum spin systems. For the rest of this paper take $d\in\NN_+$ arbitrary. This number will be called the on site dimension\footnote{In principle in the case were there is only one translation we can let $d$ be $x$-dependent but for simplicity let us take $d$ constant over the lattice.}. For each $z\in\ZZ^2$, let $\AA_{\{z\}}$ be an isomorphic copy of $\BB(\CC^d)$ (the bounded operators on $\CC^d$). In what follows let $\mathfrak{G}_{\ZZ^2}$ be the set of finite subsets of $\ZZ^2$. For any $\Lambda\in\mathfrak{G}_{\ZZ^2}$, we set $\AA_\Lambda=\bigotimes_{z\in\Lambda}\AA_{\{z\}}$. We define the local algebra as $\AA_{\text{loc}}=\bigcup_{\Lambda\in \mathfrak{G}_{\ZZ^2}}\AA_{\Lambda}$ and define the quasi local $C^*$ algebra as the norm closure of the local algebra ($\AA=\overline{\AA_{\text{loc}}}$). Similarly for any (possibly infinite) subset $\Gamma\subset\ZZ^2$ we set $\AA_{\text{loc},\Gamma}=\bigcup_{\Lambda\in \mathfrak{G}_{\Gamma}}\AA_{\Lambda}$ and $\AA_\Gamma=\overline{\AA_{\text{loc},\Gamma}}$.\\\\
+We will need to define some automorphisms on this algebra using the bijections defined previously. To this end define the isomorphisms
+\begin{align}
+	\tau&:\AA_\Gamma\rightarrow\AA_{\tau(\Gamma)}&\nu&:\AA_\Gamma\rightarrow\AA_{\nu(\Gamma)}&\mu&:\AA_\Gamma\rightarrow\AA_{\mu(\Gamma)}
+\end{align}
+to be the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$. We will need to define one additional set of automorphisms. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+\begin{equation}
+	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
+\end{equation}
+for any $g\in G$, $I\subset\Gamma$ finite and $A\in\AA_I$. Throughout our paper when we are discussing translation invariance in the vertical direction we will ask that the group action is translation invariant in the vertical direction ($\tau\circ\beta_g^\Gamma=\beta_g^{\tau(\Gamma)}\circ\tau$). If we also have translation invariance in the horizontal direction we will also ask that the group action be translation invariant in that direction as well ($\nu\circ\beta_g^\Gamma=\beta_g^{\nu(\Gamma)}\circ\nu$).\\\\
+Clearly by construction there is a tensor product operation on this $C^*$ algebra in the sense that for any $\Gamma_1,\Gamma_2\subset\ZZ^2$ satisfying that $\Gamma_1\cap\Gamma_2=\emptyset$ we can define a bilinear, surjective map
+\begin{equation}
+	\otimes:\AA_{\Gamma_1}\times\AA_{\Gamma_2}\rightarrow \AA_{\Gamma_1\cup\Gamma_2}.
+\end{equation}
+There is however a second tensor product operation on this $C^*$ algebra that we will use which we will call the stacking operation. It is such that for any $\Gamma\subset\ZZ^2$ we define the bilinear, surjective map
+\begin{equation}
+	\otimes_{\text{stack}}:\AA_{\Gamma}\times\AA_{\Gamma}\rightarrow \AA^2_{\Gamma}
+\end{equation}
+where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on site algebra $\BB(\CC^d)\otimes\BB(\CC^d)\simeq \BB(\CC^{d\times d})$. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will also need to define the stacking of the group operator by which we mean
+\begin{equation}
+	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{arg1}
+\end{equation}
 \subsection{Interactions and locally generated automorphisms}
-In what follows let $\mathfrak{G}_{\ZZ^2}$ be the set of finite subsets of $\ZZ^2$. An interaction $\Phi$ is a map
+An interaction $\Phi$ is a map
 \begin{equation}
 	\Phi: \mathfrak{G}_{\ZZ^2}\rightarrow \AA_{\text{loc}}: I \mapsto \Phi(I)
 \end{equation}
@@ -171,25 +190,37 @@ We can use these locally generated automorphisms to define the concept of short 
 \end{definition}
 We can now formulate our first result for the case where there is one translation symmetry.
 \begin{theorem}
-	There exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
-		\textrm{Index}:\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
+		\textrm{Index}^{\AA,U(g)}:\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj}. By this we mean that:
 	\begin{enumerate}
 		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
-			\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^{\Phi}_{0;1}).
+			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
 		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant state then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}), $\omega$ satisfies
 		\begin{equation}
-			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega)
+			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega)
 		\end{equation}
 		where $\textrm{Index}_{1d}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
 	\end{enumerate}
+	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
+	\begin{equation}
+		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
+	\end{equation}
 \end{theorem}
 \begin{proof}
-	{\color{red}Todo}
+	Take
+	\begin{equation}
+		\omega\in \{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
+	\end{equation}
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms. We now have to show that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. To do this, let $\gamma^{\Phi''}_{0;1}$ be the disentangler for $\phi$ and define the $\alpha_\sigma$ from assumption \ref{assumption1d} through: $\alpha_\sigma=\gamma^{\Phi''_\sigma}_{0;1}$. We now only have to show that there exists a $B\in\BB$ satisfying that
+	\begin{equation}
+		\Ad{B}=\gamma^{\Phi''}_{0;1}\circ\gamma^{\Phi_L''+\Phi_R''}_{1;0}.
+	\end{equation}
+	{\color{red}This seems very straightforward, I should find a good reference for this.} This proves that $\phi$ satisfies assumption \ref{assumption1d} and therefore we can use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof.
 \end{proof}
 Now for the second result I would like to define an index on the space of $G$-invariant sre states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices one can define already. Namely, take
 \begin{align}
@@ -197,29 +228,34 @@ Now for the second result I would like to define an index on the space of $G$-in
 \end{align}
 where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part. The second result presented in this paper is that we can also define this $H^1(G,\TT)$\footnote{There is a result from group cohomology that $H^1(G,\TT)\cong\hom(G,\TT)$. We will use this identification freely.} index.
 \begin{theorem}
-	There exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
-		\textrm{Index}_{2\text{ trans}}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
+		\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2}. By this we mean that:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
-			\textrm{Index}_{2\text{ trans}}(\omega)=\textrm{Index}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
+			\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item Let $\phi$ be a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction satisfies
+		\item Let $\phi$ be a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction, $\omega$ satisfies
 		\begin{equation}
-			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega)\footnote{$\textrm{Index}_{1d\text{ trans}}$ is defined in appendix \ref{sec:OneDimensionalIndices}.}.
+			\textrm{Index}_{1d\text{ trans}}^{\AA_{\text{1d}},U(g)}(\phi)=\text{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega)\footnote{$\textrm{Index}_{1d\text{ trans}}^{\AA,U(g)}$ is defined in appendix \ref{sec:OneDimensionalIndices}.}.
 		\end{equation}
 		\item Let $\mu$ be the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ degrees then
 		\begin{equation}
-			\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\mu).
+			\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega\circ\mu).
 		\end{equation}
 	\end{enumerate}
+	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
+	\begin{equation}
+		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+	\end{equation}
 \end{theorem}
 \begin{proof}
 	{\color{red}Todo...}
 \end{proof}
+Except when we need it explicit we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
 \subsection{Statement of the result in therms of Q-automorphisms}\label{sec:Results_2}
 \input{Figure1}
 Before we can start to prove the results we will first formulate the result starting from a weaker assumption. Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
@@ -230,9 +266,8 @@ Before we can start to prove the results we will first formulate the result star
 	\end{equation}
 \end{definition}
 We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper we will consider states that satisfy the following property (see figure \ref{fig:SetupWithQAutomorphism} for the support of the automorphisms):
-
 \begin{restatable}{assumption}{assumptionOne}\label{assumption}
-	Let $\omega\in\PP(\AA)$
+	Let $\omega\in\PP(\AA)$ be
 	\begin{enumerate}
 		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
 		\begin{align}
@@ -250,29 +285,33 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		\item translation invariant ($\omega\circ\tau=\omega$).
 	\end{enumerate}
 \end{restatable}
-\begin{lemma}
+\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_OneTranslation}
 	Take $\omega\in\PP(\AA)$ a short range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
-	content...
+	 Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we indeed have that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3 concluding the proof that assumption \ref{assumption} is satisfied.
 \end{proof}
 We now state the result that using this assumption we can define an $H^2(G,\TT)$-index.
-\begin{theorem}
-	There exists a map
+\begin{theorem}\label{thrm:ExistenceFirstIndex}
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
-		\textrm{Index}:\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}\rightarrow H^2(G,\TT)
+		\textrm{Index}^{\AA,U(g)}:\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}\rightarrow H^2(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on any of the choices in assumption \ref{assumption}). This map will be consistent with conjecture \ref{conj} by which we mean that
 	\begin{enumerate}
 		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
-			\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^{\Phi}_{0;1}).
+			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
 		\item Take $\phi$ a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
 		\begin{equation}
-			\textrm{Index}_{1d}(\phi)=\textrm{Index}(\omega).
+			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega).
 		\end{equation}
 	\end{enumerate}
+	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
+	\begin{equation}
+		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
+	\end{equation}
 \end{theorem}
 \begin{proof}
 	This statement is proven in section \ref{sec:ProofFirstStatement}.
@@ -301,28 +340,32 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 		\end{align}
 	\end{enumerate}
 \end{restatable}
-\begin{lemma}
+\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_TwoTranslations}
 	Let $\omega$ be a short range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
 \end{lemma}
 \begin{proof}
-	content...
+	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}.
 \end{proof}
 \begin{theorem}
-	There exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
-		\textrm{Index}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
+		\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2} by which we mean the following:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
-			\textrm{Index}_{2\text{ trans}}(\omega)=\textrm{Index}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
+			\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega)=\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item Take $\phi$ a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
+		\item Take $\phi$ a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) which we now call $\omega$ satisfies
 		\begin{equation}
-			\textrm{Index}_{1d\text{ trans}}(\phi)=\text{Index}_{2\text{ trans}}(\omega).
+			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d\text{ trans}}(\phi)=\text{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega).
 		\end{equation}
 	\end{enumerate}
+	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
+	\begin{equation}
+		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+	\end{equation}
 \end{theorem}
 \begin{proof}
 	{\color{red}Todo...}
@@ -1175,6 +1218,34 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
+\subsection{Stacking in the $H^2(G,\TT)$-valued index}
+Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
+\begin{equation}
+	\omega_1,\omega_2\in\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
+\end{equation}
+be two states. The goal of this section is to prove that
+\begin{equation}
+	\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
+\end{equation}
+Let $\omega_{0i}$ and $\gamma_{0;1}^{\Phi_i}$ (for all $i\in\{1,2\}$) be product states and disentanglers satisfying that
+\begin{equation}
+	\omega_i=\omega_{0i}\circ\gamma_{0;1}^{\Phi_i}.
+\end{equation}
+Let
+\begin{equation}
+	(\HH_{0i},\pi_{0i},\Omega_{0i})
+\end{equation}
+be GNS triples for the $\omega_{0i}$. Clearly
+\begin{equation}
+	(\HH_{01}\otimes\HH_{02},\pi_{02}\otimes\pi_{02},\Omega_{01}\otimes\Omega_{02})
+\end{equation}
+is a GNS triple for $\omega_{01}\otimes_{\text{stack}}\omega_{02}$. The following lemma now holds:
+\begin{lemma}
+	Let $W_{g,i},u^\sigma_i(g,h),K_{g,i}^\sigma$ and $v_{i}$ be operators belonging to $\omega_i$ then $W_{g,1}\otimes W_{g,2},u^\sigma_1(g,h)\otimes u^\sigma_2(g,h),K_{g,1}^\sigma\otimes K_{g,2}^\sigma$ and $v_{1}\otimes v_{2}$ are operators belonging to $\omega_1\otimes_{\text{stack}}\omega_2$.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
 \assumptionTwo*$\:$\\
@@ -1646,6 +1717,7 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{align}
 	First we will show that this transformation indeed leaves the index invariant then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. The fact that the index is invariant under the $\phi_1(\delta_g)$ part follows from lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously) can be shown using equation \eqref{eq:TransformationOfKUnderEpsilon}. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. {\color{red}this I still have to do...}
 \end{proof}
+\subsection{Stacking in the $H^1(G,\TT)$-valued index}
 \appendix
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
@@ -1780,7 +1852,7 @@ Now we will state some properties of locally generated automorphisms:
 		M(C_1,C_2)\leq b_0(C_1,C_2) &\defeq \sum_{m\geq 0}\sum_{\substack{X:X\cap C_1\neq\emptyset,\\X\cap C_2\neq\emptyset}}\left(\sup_{t\in[0,1]}(\norm{\Psi^{(1)}(X;t)})\abs{X}G_F(m)\right)\\
 		&\leq \norm{\Psi_1}_F\sum_{\substack{x\in C_1\\y\in C_2}}F(d(x,y))\sum_{m=0}^\infty G_F(m)<\infty.
 	\end{align}
-	What is now left to show is the case where $C_1$ and $C_2$ are adjacent. Take $\tilde{C}\in\mathcal{C}_1$ such that $C_1\cap\tilde{C}\neq\emptyset$ and $C_2\cap\tilde{C}\neq\emptyset$. Take $L_1=\partial\tilde{C}/C_2$\footnote{Here $\partial \tilde{C}$ means the boundary of $\tilde C$.} and $L_2=\partial\tilde{C}/C_1$. By following the same reasoning that led to equation (5.36) in \cite{ogata2021h3gmathbb} we get that
+	\footnote{Here $\Psi_1$ is defined through $\Psi_1(X)=\abs{X}^1 \Psi(X)$.} What is now left to show is the case where $C_1$ and $C_2$ are adjacent. Take $\tilde{C}\in\mathcal{C}_1$ such that $C_1\cap\tilde{C}\neq\emptyset$ and $C_2\cap\tilde{C}\neq\emptyset$. Take $L_1=\partial\tilde{C}/C_2$\footnote{Here $\partial \tilde{C}$ means the boundary of $\tilde C$.} and $L_2=\partial\tilde{C}/C_1$. By following the same reasoning that led to equation (5.36) in \cite{ogata2021h3gmathbb} we get that
 	\begin{align}
 		M(C_1,C_2)\leq b_0(C_1,C_2/\tilde{C})+b_0(C_1/\tilde{C},C_2)+b_0(\tilde{C}\cap C_2,(C_1\cup C_2)^c)+b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)
 	\end{align}
@@ -1789,7 +1861,7 @@ Now we will state some properties of locally generated automorphisms:
 		b_1(C_1\cap\tilde{C},C_2\cap\tilde{C},L_1,L_2)&\defeq\sum_{m=0}^\infty \sum_{\substack{X\subset \tilde{C}:\\ X\cap C_1\cap\tilde{C}\neq\emptyset\\X\cap C_2\cap\tilde{C}\neq\emptyset\\ X\cap (\tilde{C}^c(m))\neq\emptyset}}\sup_{t\in[0,1]}\norm{\Psi(X;t)}\abs{X}G_F(m)\\
 		&\leq \norm{\Psi_1}_F\sum_{m=0}^{\infty}G_F(m)\left(\sum_{\substack{x\in C_2\cap\tilde{C},\\y\in L_1(m)}}+\sum_{\substack{x\in C_1\cap\tilde{C},\\y\in L_2(m)}}\right)F(d(x,y))<\infty.
 	\end{align}
-	\footnote{Here $\Psi_1$ is defined through $\Psi_1(X)=\abs{X}^1 \Psi(X)$.} Since the remainder of the proof can remain unchanged from \cite{ogata2021h3gmathbb}, this concludes the proof of item 3. The proof of item 5 just follows from the fact that for any $\alpha_1\in\textrm{SQAut}(\AA)$ and for any $\alpha_2\in\textrm{HAut}(\AA)$ we have that $\alpha_2\circ\alpha_1\in\textrm{SQAut}(\AA)$. We now only need to comment on item 2. We must show that
+	Since the remainder of the proof can remain unchanged from \cite{ogata2021h3gmathbb}, this concludes the proof of item 3. The proof of item 5 just follows from the fact that for any $\alpha_1\in\textrm{SQAut}(\AA)$ and for any $\alpha_2\in\textrm{HAut}(\AA)$ we have that $\alpha_2\circ\alpha_1\in\textrm{SQAut}(\AA)$. We now only need to comment on item 2. We must show that
 	\begin{equation}
 		(\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s})^{-1}=\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^H_{t;s}\in\textrm{GVAut}(\AA).
 	\end{equation}
