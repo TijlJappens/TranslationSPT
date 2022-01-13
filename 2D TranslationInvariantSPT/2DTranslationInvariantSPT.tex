@@ -34,7 +34,7 @@
 \let\originalright\right
 \renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
 \renewcommand{\right}{\aftergroup\egroup\originalright}
-\title{A $H^2(G,\TT)\oplus H^3(G,\TT)$-valued index for SPT states with translation symmetry in two dimensional quantum spin systems}
+\title{SPT indices emerging from translation invariance in two dimensional quantum spin systems}
 \author{Tijl Jappens}
 \date{\today}
 
@@ -147,7 +147,7 @@ There is however a second tensor product operation on this $C^*$ algebra that we
 \end{equation}
 where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on site algebra $\BB(\CC^d)\otimes\BB(\CC^d)\simeq \BB(\CC^{d\times d})$. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will also need to define the stacking of the group operator by which we mean
 \begin{equation}
-	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{arg1}
+	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{U(g)\otimes U(g)_z}
 \end{equation}
 \subsection{Interactions and locally generated automorphisms}
 An interaction $\Phi$ is a map
@@ -877,7 +877,7 @@ We will now define the infinite tensor product state.
 	where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
 \end{proof}
 We have that:
-\begin{lemma}
+\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^2Index}
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
@@ -1218,13 +1218,13 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
-\subsection{Stacking in the $H^2(G,\TT)$-valued index}
+\subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
 \begin{equation}
-	\omega_1,\omega_2\in\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
+	\omega_1,\omega_2\in\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}
 \end{equation}
 be two states. The goal of this section is to prove that
-\begin{equation}
+\begin{equation}\label{eq:IndexMorphismUnderStacking}
 	\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
 \end{equation}
 Let $\omega_{0i}$ and $\gamma_{0;1}^{\Phi_i}$ (for all $i\in\{1,2\}$) be product states and disentanglers satisfying that
@@ -1246,6 +1246,15 @@ is a GNS triple for $\omega_{01}\otimes_{\text{stack}}\omega_{02}$. The followin
 \begin{proof}
 	content...
 \end{proof}
+We are now ready to provide a proof of equation \ref{eq:IndexMorphismUnderStacking}. We have
+\begin{align}
+	&C(g,h)\\
+	\nonumber
+	&=(K_{g,1}^R\otimes K_{g,2}^R)\Ad{W_{g,1}\otimes W_{g,2}}\left((K_{h,1}^R\otimes K_{h,2}^R)\Ad{(W_{h,1}\otimes W_{h,2})(W_{gh,1}\otimes W_{gh,2})^\dagger}\left((K_{gh,1}^R\otimes K_{gh,2}^R)^\dagger\right)\right)\\
+	&(u^R_1(g,h)\otimes u^R_2(g,h))v^\dagger (u^R_1(g,h)\otimes u^R_2(g,h))^\dagger v\\
+	&=C_1(g,h)C_2(g,h)
+\end{align}
+concluding the proof.
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates every element of the $C^*$ algebra to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
 \assumptionTwo*$\:$\\
@@ -1273,7 +1282,7 @@ Similarly as before we will also need the generalisation of this definition:
 	\end{align}
 \end{lemma}
 \begin{proof}
-	content...
+	Analogous to the proof of \ref{lem:Definition_v}.
 \end{proof}
  We can use these objects to define $b^\sigma_g$:
 \begin{lemma}
@@ -1287,7 +1296,11 @@ Similarly as before we will also need the generalisation of this definition:
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	It is easy enough to show that
+	\begin{equation}
+		\Ad{w^\dagger W_g w W_g^\dagger}\circ\pi_0=\pi_0\circ (\alpha_L\circ\nu^{-1}\circ\eta_g^L\circ\nu\circ(\eta_g^L)^{-1}\circ\alpha_L)\otimes(\alpha_R\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_R).
+	\end{equation}
+	By the same argument we used to define $K_g^L$ and $K_g^R$ the result now follows.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionAlpha}
 	There exists an $\alpha:G\rightarrow U(1)$ satisfying
@@ -1335,7 +1348,12 @@ We have that $h_g\in\IAC_L(\theta,\alpha_0,\Theta)$. We also have that
 	\end{align}
 \end{lemma}
 \begin{proof}
-	content...
+	We have that
+	\begin{align}
+		\Ad{W_h}(h_g)&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_h\circ\beta_h^U(U_{(-1,-1)}(g))\\
+		&=\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g))=h_g
+	\end{align}
+	concluding the proof of the first item. The second proof is analogous.
 \end{proof}
 Using this we can show that:
 \begin{lemma}
@@ -1526,7 +1544,7 @@ Since this state satisfies the split property (see lemma \ref{lem:phiExampleCons
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega$ satisfies assumption \ref{assumption:2Translations}.
 \end{lemma}
 \begin{proof}
-	content...
+	The proof of this lemma is analogous to the proof of lemma \ref{lem:TensorProductStateHasWellDefinedH^2Index}.
 \end{proof}
 This shows that $\omega$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -1717,7 +1735,16 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{align}
 	First we will show that this transformation indeed leaves the index invariant then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. The fact that the index is invariant under the $\phi_1(\delta_g)$ part follows from lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously) can be shown using equation \eqref{eq:TransformationOfKUnderEpsilon}. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. {\color{red}this I still have to do...}
 \end{proof}
-\subsection{Stacking in the $H^1(G,\TT)$-valued index}
+\subsection{Stacking in the $H^1(G,\TT)$-valued index}\label{sec:StackingTwoTranslations}
+Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
+\begin{equation}
+	\omega_1,\omega_2\in\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}
+\end{equation}
+be two states. The goal of this section is to prove that
+\begin{equation}\label{eq:IndexMorphismUnderStackingTwoTranslations}
+	\textrm{Index}^{\AA^2,U(g)\otimes U(g)}_{\text{2 trans}}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}_{\text{2 trans}}(\omega_1)\textrm{Index}^{\AA,U(g)}_{\text{2 trans}}(\omega_2).
+\end{equation}
+The proof of this is completely analogous to what was in section \ref{sec:StackingOneTranslation}.
 \appendix
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
