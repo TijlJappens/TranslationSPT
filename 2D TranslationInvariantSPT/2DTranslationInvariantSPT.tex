@@ -351,7 +351,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	\begin{equation}
 		\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
 	\end{equation}
-	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2} by which we mean the following:
+	that is well defined (doesn't depend on any of the choices made in assumption \ref{assumption:2Translations}). This map will be consistent with conjecture \ref{conj2} by which we mean the following:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
@@ -368,7 +368,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	{\color{red}Todo...}
+	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
 \end{proof}
 \section{The $H^2(G,\TT)$ valued index}\label{sec:ProofFirstStatement}
 In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
@@ -1304,7 +1304,7 @@ Similarly as before we will also need the generalisation of this definition:
 \end{proof}
 \begin{lemma}\label{lem:DefinitionAlpha}
 	There exists an $\alpha:G\rightarrow U(1)$ satisfying
-	\begin{equation}
+	\begin{equation}\label{eq:DefinitionOfTheH_1Index}
 		v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
 	\end{equation}
 	where
@@ -1412,6 +1412,27 @@ Using this we can show that:
 \end{definition}
 \begin{proof}
 	content...
+\end{proof}
+One can also define this index starting from operators acting on the left. As the following lemma shows this makes no difference:
+\begin{lemma}
+	Define $\tilde{\alpha}(g)$ such that
+	\begin{equation}\label{eq:DefinitionOfTheH_1IndexAlternative}
+		v^\dagger b_g^L v h_g^\dagger K_g^L (b_g^L)^\dagger=\tilde{\alpha}(g)w^\dagger K_g^L w
+	\end{equation}
+	then $\alpha(g)\tilde{\alpha}(g)=1$.
+\end{lemma}
+\begin{proof}
+	By multiplying the left hand side of equation \eqref{eq:DefinitionOfTheH_1IndexAlternative} with the left hand side of equation \eqref{eq:DefinitionOfTheH_1Index} we obtain
+	\begin{align}
+		v^\dagger b_g v K_g b_g^\dagger&=v^\dagger b_g v v^\dagger W_g v W_g^\dagger b_g^\dagger\\
+		&=w^\dagger v^\dagger W_g v W_g^\dagger w\\
+		&=w^\dagger K_g w
+	\end{align}
+	whereas by multiplying the right hand sides we obtain
+	\begin{equation}
+		=\alpha(g)\tilde{\alpha}(g)w^\dagger K_g w.
+	\end{equation}
+	These two results can only be consistent if the lemma holds.
 \end{proof}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under choices}
 n this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. On this last item we remark:
@@ -1734,6 +1755,109 @@ The goal of this section is to show that the index we constructed is invariant u
 		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)\pi_0(A_1)^\dagger.
 	\end{align}
 	First we will show that this transformation indeed leaves the index invariant then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. The fact that the index is invariant under the $\phi_1(\delta_g)$ part follows from lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously) can be shown using equation \eqref{eq:TransformationOfKUnderEpsilon}. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. {\color{red}this I still have to do...}
+\end{proof}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under rotations by $90^\circ$}
+Take
+\begin{equation}
+	\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
+\end{equation}
+arbitrary and let $\mu$ be the automorphism that rotates the $C^*$ algebra by $90^\circ$. This section will be dedicated to proving that
+\begin{equation}
+	\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega\circ\mu).
+\end{equation}
+In what follows, let $\omega_0$ bet the product state and let $\gamma^\Phi_{0;1}$ be the disentangler such that
+\begin{equation}
+	\omega=\omega_0\circ\gamma^\Phi_{0;1}.
+\end{equation}
+Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{C_\theta\cap\sigma}}$ and $\tilde{\eta}^\rho_g\in\Aut{\AA_{\mu(C_\theta)\cap\rho}}$ be such that the automorphisms
+\begin{align}
+	\tilde{\beta}_{g,1}&=\Ad{A_{g,1}}\circ\eta_g^L\otimes\eta_g^R\circ\beta_g^U&\tilde{\beta}_{g,2}&=\Ad{A_{g,2}}\circ\tilde\eta_g^U\otimes\tilde\eta_g^D\circ\beta_g^R
+\end{align}
+satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. Let $(\HH_0,\pi_0,\Omega_0)$ be a GNS triple for $\omega_0$. The following now holds:
+\begin{lemma}
+	There exists an $X_g\in\UU(\HH_0)$ and an $A_g\in\UU(\AA)$ ($\forall g\in G$) satisfying that
+	\begin{align}
+		\Ad{X_g}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\tilde{\eta}^U_g\circ\eta^R_g\circ\beta_g^{RU}&\pi_0(A_g)X_g\Omega_0&=\Omega_0.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	Let $v,w,K_g^R$ and $b_g^R$ be such that
+	\begin{align}
+		\Ad{v}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\tau\\
+		\Ad{w}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\nu\\
+		\Ad{K_g^R}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{RU}\\
+		\Ad{b_g^R}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}
+	\end{align}
+	then
+	\begin{equation}\label{eq:H^1IndexRotationInvariantHorizontalIndex}
+		v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
+	\end{equation}
+	holds. Moreover $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. If one now defines $\tilde{b}_g^R$ and $\tilde{K}_g^U$ such that
+	\begin{align}
+		\label{eq:H^1IndexRotationInvariantFirstDefinition}
+		\tilde{b}_g^UK_g^R X_g&=v^\dagger X_g v\\
+		\label{eq:H^1IndexRotationInvariantSecondDefinition}
+		b_g^R\tilde{K}_g^UX_g&=w^\dagger X_g w
+	\end{align}
+	then
+	\begin{equation}\label{eq:H^1IndexRotationInvariantVerticalIndex}
+		w^\dagger \tilde b_g^U wh_g \tilde K_g^U (\tilde b_g^U)^\dagger=\tilde\alpha(g)v^\dagger \tilde K_g^U v
+	\end{equation}
+	holds. Moreover $\tilde\alpha=\textrm{Index}_{\text{2 trans}}(\omega\circ\mu)$.
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	The following equalities hold
+	\begin{align}
+		\label{eq:H^1IndexRotationInvariantCommutator1}
+		[h_g v^\dagger b_g^R v,w^\dagger \tilde{b}_g^U w]&=0\\
+		\label{eq:H^1IndexRotationInvariantCommutator2}
+		[h_g, v^\dagger b_g^R v]&=0\\
+		\label{eq:H^1IndexRotationInvariantCommutator3}
+		[h_g w^\dagger \tilde{b}_g^U w,K_g^R]&=0\\
+		\label{eq:H^1IndexRotationInvariantCommutator4}
+		[K_g^R,v^\dagger \tilde{K}_g^U v\tilde{b}_g^U]&=0
+	\end{align}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\begin{lemma}
+	$\tilde{\alpha}(g)=\alpha(g)$.
+\end{lemma}
+\begin{proof}
+	We will work out the expression
+	\begin{equation}\label{eq:H^1IndexRotationInvariantExpression}
+		h_g v^\dagger b_g^R v w^\dagger\tilde{b}_g^U w K_g^R\tilde{K}_g^U X_g
+	\end{equation}
+	in two different ways. On the one hand we will use \eqref{eq:H^1IndexRotationInvariantCommutator1} to get
+	\begin{equation}
+		\eqref{eq:H^1IndexRotationInvariantExpression}= w^\dagger\tilde{b}_g^U w h_g v^\dagger b_g^R v K_g^R\tilde{K}_g^U X_g.
+	\end{equation}
+	Now using equation \eqref{eq:H^1IndexRotationInvariantHorizontalIndex} we get
+	\begin{align}
+		\eqref{eq:H^1IndexRotationInvariantExpression}&=\alpha(g)w^\dagger\tilde{b}_g^U w w^\dagger K_g^R w b_g^R\tilde{K}_g^U X_g\\
+		&=\alpha(g)w^\dagger\tilde{b}_g^U  K_g^R X_g w\\
+		&=\alpha(g)w^\dagger v^\dagger X_g v w
+	\end{align}
+	where we've used equation \eqref{eq:H^1IndexRotationInvariantSecondDefinition} in the first equality and \eqref{eq:H^1IndexRotationInvariantFirstDefinition} in the second equality. On the other hand, starting with equation \eqref{eq:H^1IndexRotationInvariantCommutator2} and \eqref{eq:H^1IndexRotationInvariantCommutator3} gives
+	\begin{align}
+		\eqref{eq:H^1IndexRotationInvariantExpression}&= v^\dagger b_g^R v h_g w^\dagger\tilde{b}_g^U w K_g^R\tilde{K}_g^U X_g\\
+		&=v^\dagger b_g^R v K_g^R h_g w^\dagger\tilde{b}_g^U w \tilde{K}_g^U X_g.
+	\end{align}
+	Now using equation \eqref{eq:H^1IndexRotationInvariantVerticalIndex} we get
+	\begin{align}
+		\eqref{eq:H^1IndexRotationInvariantExpression}&=\tilde{\alpha}(g)v^\dagger b_g^R v K_g^R v^\dagger \tilde{K}_g^U v \tilde{b}_g^U X_g\\
+		&=\tilde{\alpha}(g)v^\dagger b_g^R v v^\dagger \tilde{K}_g^U v \tilde{b}_g^U K_g^R X_g\\
+		&=\tilde{\alpha}(g)v^\dagger b_g^R \stkout{v v^\dagger} \tilde{K}_g^U \stkout{v v^\dagger} X_g v\\
+		&=\tilde{\alpha}(g) v^\dagger w^\dagger X_g w v
+	\end{align}
+	where we've used equation \eqref{eq:H^1IndexRotationInvariantCommutator4} in the first equality, equation \eqref{eq:H^1IndexRotationInvariantFirstDefinition} in the second equality and equation \eqref{eq:H^1IndexRotationInvariantSecondDefinition} in the last equality. These two results can only be consistent if $\alpha(g)=\tilde{\alpha}(g)$ for all $g\in G$.
 \end{proof}
 \subsection{Stacking in the $H^1(G,\TT)$-valued index}\label{sec:StackingTwoTranslations}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
