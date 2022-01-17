@@ -149,7 +149,7 @@ where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on
 \begin{equation}
 	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{U(g)\otimes U(g)_z}
 \end{equation}
-\subsection{Interactions and locally generated automorphisms}
+\subsection{Interactions and locally generated automorphisms}\label{sec:Interactions}
 An interaction $\Phi$ is a map
 \begin{equation}
 	\Phi: \mathfrak{G}_{\ZZ^2}\rightarrow \AA_{\text{loc}}: I \mapsto \Phi(I)
@@ -216,11 +216,7 @@ We can now formulate our first result for the case where there is one translatio
 	\begin{equation}
 		\omega\in \{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
 	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms. We now have to show that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. To do this, let $\gamma^{\Phi''}_{0;1}$ be the disentangler for $\phi$ and define the $\alpha_\sigma$ from assumption \ref{assumption1d} through: $\alpha_\sigma=\gamma^{\Phi''_\sigma}_{0;1}$. We now only have to show that there exists a $B\in\BB$ satisfying that
-	\begin{equation}
-		\Ad{B}=\gamma^{\Phi''}_{0;1}\circ\gamma^{\Phi_L''+\Phi_R''}_{1;0}.
-	\end{equation}
-	{\color{red}This seems very straightforward, I should find a good reference for this.} This proves that $\phi$ satisfies assumption \ref{assumption1d} and therefore we can use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof.
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. We can now use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof.
 \end{proof}
 Now for the second result I would like to define an index on the space of $G$-invariant sre states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices one can define already. Namely, take
 \begin{align}
@@ -255,7 +251,7 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 \begin{proof}
 	{\color{red}Todo...}
 \end{proof}
-Except when we need it explicit we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
+Except when we need it explicitly we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
 \subsection{Statement of the result in therms of Q-automorphisms}\label{sec:Results_2}
 \input{Figure1}
 Before we can start to prove the results we will first formulate the result starting from a weaker assumption. Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
@@ -655,7 +651,7 @@ Our translation index is now defined as
 	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.
 \end{definition}
 \begin{proof}
-	Clearly the construction is invariant under the choice of GNS triple. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
+	Clearly the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
 	\begin{align}
 		u_L(g,h)&\rightarrow \alpha(g)\alpha(g)\alpha(gh)^{-1}\beta(g,h)^{-1} u_L(g,h)&u_R(g,h)&\rightarrow \beta(g,h)u_R(g,h)\\
 		W_g&\rightarrow\alpha(g)W_g&v&\rightarrow \gamma v.
@@ -683,30 +679,30 @@ In this section we will show that the index is only dependent on $\omega$ and no
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	We will first prove the result in the case that $\omega_0=\omega_{01}=\omega_{02}$ and then generalise this result. Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{w}\in\UU(\HH_0)$ such that
+	We will first prove the result in the case that $\omega_0=\omega_{01}=\omega_{02}$ and then generalise this result. Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{x}\in\UU(\HH_0)$ such that
 	\begin{equation}
-		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{w}}\circ\pi_0.
+		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{x}}\circ\pi_0.
 	\end{equation}
-	Now define $w\in\UU(\HH_0)$ to be
+	Now define $x\in\UU(\HH_0)$ to be
 	\begin{equation}
-		w\defeq \pi_0(V_{11})\tilde{w} \pi_0(V_{11}^\dagger)
+		x\defeq \pi_0(V_{11})\tilde{x} \pi_0(V_{11}^\dagger)
 	\end{equation}
 	then
 	\begin{equation}
-		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{w}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
+		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{x}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
 	\end{equation}
 	Now take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be the operators belonging to the first choice (with arbitrary phases). 
 	We have (see \cite{ogata2021h3gmathbb} lemma 2.11)
 	\begin{align}
-		\Ad{wW_{g,1}w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\Theta_2\circ\eta_g\circ\beta_g^U\circ\Theta_2^{-1}\circ\alpha_{02}^{-1},\\
-		\Ad{wu_{R,1}(g,h)w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\eta_g^R\circ\beta_g^{RU}\eta_h^R\beta_{h}^{RU}(\beta_{gh}^{RU})^{-1}(\eta_{gh}^R)^{-1}\circ\alpha_{02}^{-1}
+		\Ad{xW_{g,1}x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\Theta_2\circ\eta_g\circ\beta_g^U\circ\Theta_2^{-1}\circ\alpha_{02}^{-1},\\
+		\Ad{xu_{R,1}(g,h)x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\eta_g^R\circ\beta_g^{RU}\eta_h^R\beta_{h}^{RU}(\beta_{gh}^{RU})^{-1}(\eta_{gh}^R)^{-1}\circ\alpha_{02}^{-1}
 	\end{align}
 	and through similar arguments we get
 	\begin{align}
-		\Ad{wvw^\dagger}\circ\pi_0&=\pi_0\circ\alpha_{02}\circ\Theta_2\circ\tau\circ\Theta_2^{-1}\circ\alpha_{02}^{-1}\\
-		\Ad{wK^R_{g,1}w^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
+		\Ad{xvx^\dagger}\circ\pi_0&=\pi_0\circ\alpha_{02}\circ\Theta_2\circ\tau\circ\Theta_2^{-1}\circ\alpha_{02}^{-1}\\
+		\Ad{xK^R_{g,1}x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}.
 	\end{align}
-	This shows that $wW_{g,1}w^\dagger,wu_{R,1}(g,h)w^\dagger$ and $wK^R_{g,1}w^\dagger$ are operators belonging to the second choice (with our new translation operator). Since our index is invariant under this substitution this concludes the proof when $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
+	This shows that $xW_{g,1}x^\dagger,xu_{R,1}(g,h)x^\dagger$ and $xK^R_{g,1}x^\dagger$ are operators belonging to the second choice (with our new translation operator). Since our index is invariant under this substitution this concludes the proof when $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
 	\begin{equation}
 		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
 	\end{equation}
@@ -851,6 +847,13 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 		is a product state.
 	\end{enumerate}
 \end{assumption}
+All $G-$invariant sre states satisfy this assumption:
+\begin{lemma}\label{lem:SRE_Implies_Assumption_1d}
+	Suppose $\phi\in\PP(\AA)$ is such that there exists a $\Phi\in \BB_{F_\varphi}([0,1])$ (a one parameter family of interactions) for some $0<\varphi<1$, such that $\phi_0=\phi\circ\gamma^\Phi_{0;1}$ for some product state $\phi_0$ then $\phi$ satisfies assumption \ref{assumption1d}.
+\end{lemma}
+\begin{proof}
+	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
+\end{proof}
 \begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
 	This $\phi$ satisfies the split property.
 \end{lemma}
@@ -1411,7 +1414,7 @@ Using this we can show that:
 	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.
 \end{definition}
 \begin{proof}
-	content...
+	Clearly the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. The proof that it is independent of the choice of phases is just as trivial.
 \end{proof}
 One can also define this index starting from operators acting on the left. As the following lemma shows this makes no difference:
 \begin{lemma}
@@ -1459,7 +1462,23 @@ We will now show independence of $\alpha$ and its decomposition.
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	We will first prove the result in the case that $\omega_0=\omega_{01}=\omega_{02}$ and then generalise this result. Since $\omega_0\circ\alpha_2\circ\alpha_1^{-1}=\omega_0$ there exists a $\tilde{x}\in\UU(\HH_0)$ such that
+	\begin{equation}
+		\pi_0\circ\alpha_2\circ\alpha_1^{-1}=\Ad{\tilde{x}}\circ\pi_0.
+	\end{equation}
+	Now define $x\in\UU(\HH_0)$ to be
+	\begin{equation}
+		x\defeq \pi_0(V_{11})\tilde{x} \pi_0(V_{11}^\dagger)
+	\end{equation}
+	then
+	\begin{equation}
+		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{x}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
+	\end{equation}
+	Let $v,w,K_g^\sigma$ and $b_g^\sigma$ be operators belonging to the first choice then by construction $xvx^\dagger,xwx^\dagger,xK_g^\sigma x^\dagger$ and $xb_g^\sigma x^\dagger$ are operators belonging to the second choice. Since the index is invariant under this substitution this concludes the proof in the case that $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
+	\begin{equation}
+		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
+	\end{equation}
+	concluding the proof.
 \end{proof}
 In what follows we will need that the index is invariant under the following transformation:
 \begin{lemma}\label{lem:TransformationUnderDeltaTwoTranslations}
@@ -1544,7 +1563,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	The index is independent of the choice of angle $\theta$.
 \end{lemma}
 \begin{proof}
-	content...
+	After what was done so far this result is trivial.
 \end{proof}
 \subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
 This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. We still define $\AA$ as the closure of the tensor product of the $\BB$. In this case however we will require that our one dimensional state (and our $C^*$ algebra $\BB$) is translation invariant. Let's call the translation automorphism on $\BB$ also $\tau$ then we will need:
@@ -1933,7 +1952,19 @@ All together we constructed a proof of the following theorem:
 	For any $G-$invariant family of interactions $\Phi\in\BB_{F}([0,1])$, we have that $\textrm{Index}_{1d}(\omega)=\textrm{Index}_{1d}(\omega\circ\gamma^\Phi_{0;1})$. For any $G-$invariant family of interactions $\Phi'\in\BB_{F}([0,1])$ that is also translation invariant, we have that $\textrm{Index}_{1d\text{ trans}}(\omega)=\textrm{Index}_{1d\text{ trans}}(\omega\circ\gamma^{\Phi'}_{0;1})$.
 \end{theorem}
 \section{Properties of locally generated automorphisms:}
- Take $H$ and $\gamma$ as defined in section \ref{sec:IndexInvariantUnderLGA}. We will now show some properties of this locally generated automorphism $\gamma$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
+\subsection{In 1d}
+In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
+\begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms1d}
+	Take $\Phi\in\BB_{F}([0,1])$ with $F$ any monotomically decreasing positive function decaying faster then any polynomial then there exists an $a\in\AA$ satisfying
+	\begin{equation}
+		\Ad{A}=\gamma^{\Phi_L+\Phi_R}_{1;0}\circ\gamma^\Phi_{0;1}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+\subsection{In 2d}
+ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
  \begin{align}
  	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
  \end{align}
