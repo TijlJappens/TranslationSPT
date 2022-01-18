@@ -1662,7 +1662,7 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	content...
+	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfGroupMorphism}.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMapTwoTranslations}
 	There exists a map
@@ -1678,7 +1678,7 @@ The goal of this section is to show that the index we constructed is invariant u
 	It is unique up to a $G$ and $p$-dependent phase.
 \end{lemma}
 \begin{proof}
-	content...
+	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfWgMap}.
 \end{proof}
 \begin{lemma}
 	There exists an $\epsilon^L_g\in\IAC_L(\alpha_0,\theta)$ and an $\epsilon^R_g\in\IAC_R(\alpha_0,\theta)$ satisfying
@@ -1790,17 +1790,29 @@ In what follows, let $\omega_0$ bet the product state and let $\gamma^\Phi_{0;1}
 \end{equation}
 Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{C_\theta\cap\sigma}}$ and $\tilde{\eta}^\rho_g\in\Aut{\AA_{\mu(C_\theta)\cap\rho}}$ be such that the automorphisms
 \begin{align}
-	\tilde{\beta}_{g,1}&=\Ad{A_{g,1}}\circ\eta_g^L\otimes\eta_g^R\circ\beta_g^U&\tilde{\beta}_{g,2}&=\Ad{A_{g,2}}\circ\tilde\eta_g^U\otimes\tilde\eta_g^D\circ\beta_g^R
+	\tilde{\beta}_{g,1}&=\Ad{A_{g,1}}\circ\eta_g^L\otimes\eta_g^R\circ\beta_g^U&\tilde{\beta}_{g,2}&=\Ad{A_{g,2}}\circ\eta_{2,g}^U\otimes\eta_{2,g}^D\circ\beta_g^L
 \end{align}
 satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. Let $(\HH_0,\pi_0,\Omega_0)$ be a GNS triple for $\omega_0$. The following now holds:
 \begin{lemma}
 	There exists an $X_g\in\UU(\HH_0)$ and an $A_g\in\UU(\AA)$ ($\forall g\in G$) satisfying that
 	\begin{align}
-		\Ad{X_g}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\tilde{\eta}^U_g\circ\eta^R_g\circ\beta_g^{RU}&\pi_0(A_g)X_g\Omega_0&=\Omega_0.
+		\Ad{X_g}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\tilde{\eta}^U_g\circ\eta^R_g\circ\beta_g^{RU}&\pi_0(A_g)X_g\Omega_0&=\Omega_0
 	\end{align}
+	where $\tilde{\eta}_g=\beta_g^U\circ\eta_{2,g^{-1}}\circ(\beta_g^U)^{-1}$.
 \end{lemma}
 \begin{proof}
-	content...
+	Let $W_g$ and $\tilde W_g$ be such that
+	\begin{align}
+		\Ad{W_g}\circ\pi_0\circ\gamma^\Phi_{0;1}& =\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_g\circ\beta_g^U
+		&\Ad{\tilde W_g} \circ\pi_0\circ\gamma^\Phi_{0;1}& =\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_{2,g}\circ\beta_g^L
+	\end{align}
+	then
+	\begin{align}
+		\Ad{W_g\tilde{W}_{g^{-1}}}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_g\circ\beta_g^U\circ\eta_{2,g^{-1}}\circ(\beta_g^L)^{-1}\\
+		&=\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_g\circ\tilde{\eta}_g\circ\beta_g^{RU}\circ(\beta_g^{LD})^{-1}\\
+		&=\Ad{X_gY_g}\circ \pi_0\circ\gamma^\Phi_{0;1}
+	\end{align}
+	where $X_g$ and $Y_g$ are defined by {\color{red}I need to explain this further}.
 \end{proof}
 \begin{lemma}
 	Let $v,w,K_g^R$ and $b_g^R$ be such that
