@@ -73,15 +73,15 @@
 \begin{document}
 \maketitle	
 \begin{abstract}
-	content...
+	We consider SPT-phases with on-site $G$ (where $G$ is a topological group) symmetry for two-dimensional quantum spin systems. We then impose translation invariance in one direction and observe that on top of the $H^3(G,\TT)$-valued index constructed in \cite{ogata2021h3gmathbb} an additional $H^2(G,\TT)$-valued index emerges. We also show that if we impose translation invariance in two directions, on top of the expected $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)$ valued index an additional $H^1(G,\TT)$-valued index emerges.
 \end{abstract}
 \section{Introduction}
-The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} way to do this is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
+The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a topological group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} way to do this is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
 \begin{enumerate}
 	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
 	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
 \end{enumerate}
-One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th Borel group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
+One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$. This is equivalent to the singular cohomology with coefficients in $\TT$ of the classifying space $BG$ of $G$.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
 \\\\
 The goal of this paper is to look at the 2d case with the equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states. See for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
 \begin{conjecture}\label{conj}
@@ -132,7 +132,7 @@ We will need to define some automorphisms on this algebra using the bijections d
 \begin{align}
 	\tau&:\AA_\Gamma\rightarrow\AA_{\tau(\Gamma)}&\nu&:\AA_\Gamma\rightarrow\AA_{\nu(\Gamma)}&\mu&:\AA_\Gamma\rightarrow\AA_{\mu(\Gamma)}
 \end{align}
-to be the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$. We will need to define one additional set of automorphisms. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+to be the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$. We will need to define one additional set of automorphisms. Let $G$ be a topological group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -145,7 +145,7 @@ There is however a second tensor product operation on this $C^*$ algebra that we
 \begin{equation}
 	\otimes_{\text{stack}}:\AA_{\Gamma}\times\AA_{\Gamma}\rightarrow \AA^2_{\Gamma}
 \end{equation}
-where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on site algebra $\BB(\CC^d)\otimes\BB(\CC^d)\simeq \BB(\CC^{d\times d})$. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will also need to define the stacking of the group operator by which we mean
+where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on site algebra $\BB(\CC^d)\otimes\BB(\CC^d)\simeq \BB(\CC^{d\times d})$. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will also need to define the stacking of the group action by which we mean
 \begin{equation}
 	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{U(g)\otimes U(g)_z}
 \end{equation}
@@ -249,7 +249,11 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 	\end{equation}
 \end{theorem}
 \begin{proof}
-	{\color{red}Todo...}
+	Take
+	\begin{equation}
+		\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
+	\end{equation}
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof.
 \end{proof}
 Except when we need it explicitly we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
 \subsection{Statement of the result in therms of Q-automorphisms}\label{sec:Results_2}
@@ -342,7 +346,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 \begin{proof}
 	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}.
 \end{proof}
-\begin{theorem}
+\begin{theorem}\label{thrm:ExistenceSecondIndex}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
 		\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
@@ -1240,14 +1244,14 @@ Let
 \end{equation}
 be GNS triples for the $\omega_{0i}$. Clearly
 \begin{equation}
-	(\HH_{01}\otimes\HH_{02},\pi_{02}\otimes\pi_{02},\Omega_{01}\otimes\Omega_{02})
+	(\HH_{01}\otimes\HH_{02},\pi_{01}\otimes\pi_{02},\Omega_{01}\otimes\Omega_{02})
 \end{equation}
 is a GNS triple for $\omega_{01}\otimes_{\text{stack}}\omega_{02}$. The following lemma now holds:
 \begin{lemma}
 	Let $W_{g,i},u^\sigma_i(g,h),K_{g,i}^\sigma$ and $v_{i}$ be operators belonging to $\omega_i$ then $W_{g,1}\otimes W_{g,2},u^\sigma_1(g,h)\otimes u^\sigma_2(g,h),K_{g,1}^\sigma\otimes K_{g,2}^\sigma$ and $v_{1}\otimes v_{2}$ are operators belonging to $\omega_1\otimes_{\text{stack}}\omega_2$.
 \end{lemma}
 \begin{proof}
-	content...
+	To show this we simply have to apply the adjoint action of these operators on $\pi_{01}\otimes\pi_{02}$ and see that these are indeed implementations of the right automorphisms. This is so by construction.
 \end{proof}
 We are now ready to provide a proof of equation \ref{eq:IndexMorphismUnderStacking}. We have
 \begin{align}
@@ -1375,7 +1379,7 @@ Using this we can show that:
 	\begin{align}
 		K_g^R&\mapsto v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger&W_g&\mapsto w^\dagger W_g w&u_R(g,h)&\mapsto w^\dagger u_R(g,h)w
 	\end{align}
-	the we have proven the result. We have by construction {\color{red}I need to explain this further} that
+	then we have proven the result. We have by construction that
 	\begin{align}
 		\Ad{b_g^Lb_g^RW_g}\circ\pi_0&=\Ad{w^\dagger W_g w}\circ\pi_0\\
 		\Ad{b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}\circ\pi_0&=\Ad{w^\dagger u_R(g,h) w}\circ\pi_0.
@@ -1726,7 +1730,11 @@ The goal of this section is to show that the index we constructed is invariant u
 		\Ad{\epsilon_g^\sigma}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\Ad{a_\sigma}\circ\eta_g^\sigma\circ\beta_g^{U\sigma}\circ\Ad{ a_\sigma^\dagger}\circ(\beta_g^{U\sigma})^{-1}\circ(\eta_g^\sigma)^{-1}\circ\nu\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\Ad{a_\sigma\:\eta_g^\sigma\circ\beta_g^{U\sigma}(a_\sigma^\dagger)}\circ\nu.
 	\end{align}
-	This result is trivial concluding the proof. {\color{red}I still have to prove the second part of this lemma...}
+	This can be done by simply taking
+	\begin{equation}
+		\epsilon_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}(a_\sigma\:\eta_g^\sigma\circ\beta_g^{U\sigma}(a_\sigma^\dagger)).
+	\end{equation}
+	{\color{red}I still need to prove the second result.}
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
@@ -2139,7 +2147,7 @@ From these four statements we can prove the following results:
 		\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}&=\Ad{a}\circ \gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\eta_{s;t}^{-1}\circ\Theta\circ\eta_{s;t}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\\
 		&=\Ad{a}\circ \gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\Theta\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}.
 	\end{align}
-	Since by \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 3 $\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\in\textrm{GSQAut}(\AA)$ the result follows. {\color{red}Do I have to explain this further?}
+	Since by \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 3 $\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\in\textrm{GSQAut}(\AA)$ the result follows.
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2}
 	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
