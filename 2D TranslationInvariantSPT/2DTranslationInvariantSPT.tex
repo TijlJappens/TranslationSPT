@@ -888,9 +888,9 @@ We have that:
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
-	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\textrm{QAut}(\AA)$ that disentangles $\omega$. We define $\alpha$ such that for any $A\in\AA$
+	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\textrm{QAut}(\AA)$ that disentangles $\omega$. We define $\alpha$ recursively such that for any $A_{1}\in\AA_{L_j}$ and $A_{2}\in\AA_{\ZZ^2/L_j}$ (for some $j$) we have that
 	\begin{equation}
-		\alpha(A)=\sum_{j\in\ZZ}\Ad{b}\circ\tilde{\alpha}_L\otimes\tilde{\alpha}_R(\Pi_{L_j}(A)).
+		\alpha(A_1\otimes A_2)=\Ad{b}\circ\tilde{\alpha}_L\otimes\tilde{\alpha}_R(A_1)\alpha(A_2).
 	\end{equation}
 	This Automorphism indeed disentangles since
 	\begin{equation}
@@ -900,23 +900,36 @@ We have that:
 	\begin{equation}
 		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B)
 	\end{equation}
-	so that it is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ to be
+	so that it is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, let $b_j$ be a sequence converging to $b$ such that $b_j\in\UU(\BB_{[-n(j),n(j)]})$ where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
 	\begin{equation}
-		\Theta=\bigotimes_{j\in\ZZ}\Ad{\Pi_{L_{j,n(j)}}(b)}_{(\cdot,j)}
+		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_j}_{(\cdot,j)}
 	\end{equation}
-	where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Take $\alpha_\sigma\in\Aut{\AA_\sigma}$ to be
+	Let $\alpha_\sigma\in\Aut{\AA_\sigma}$ be
 	\begin{equation}
 		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma)_{(\cdot,j)}.
 	\end{equation}
 	Now define
 	\begin{equation}
-		V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}(\Pi_{L_{j}}(b)\Pi_{L_{j,n(j)}}(b)^{-1})_{(\cdot,j)}.
+		V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}(bb_j^\dagger)_{(\cdot,j)}.
 	\end{equation}
 	We will now show that the limit
 	\begin{equation}
 		V_1\defeq\lim_{m\rightarrow\infty}V_{1,m}
 	\end{equation}
-	exists (is an element of $\AA$). {\color{red}To be continued...}
+	exists (is an element of $\AA$). Since $B\in\BB$ (and therefore can be written as a converging series of local operators) we have that for any $n_0>0$ we can take an $\epsilon_{n_0}$ such that
+	\begin{equation}
+		\norm{b-b_j}\leq\epsilon_{n_0}
+	\end{equation}
+	for all $j$ such that $\abs{j}\geq n_0$ and such that $\lim_{n_0\rightarrow\infty}\epsilon_{n_0}=0$. We will now show that our row is a cauchy row. Let $n_0$ be such that $\epsilon_{n_0}<1/2$. For any $n,m\geq n_0$ we have that
+	\begin{align}
+		\norm{V_{1,n}-V_{1,m}}&\leq \norm{V_{1,n}-V_{1,n_0}}+\norm{V_{1,m}-V_{1,n_0}}\\
+		&\leq \norm{(V_{1,n}-V_{1,n_0})V_{1,n_0}^\dagger}+\norm{(V_{1,m}-V_{1,n_0})V_{1,n_0}^\dagger}\\
+		&=\norm{V_{1,n}V_{1,n_0}^\dagger-\id}+\norm{V_{1,m}V_{1,n_0}^\dagger-\id}\\
+		&\leq \prod_{j=n_0}^{n}2\norm{b-b_j}+\prod_{j=n_0}^{m}2\norm{b-b_j}\\
+		&\leq (2\epsilon_{n_0})^{n-n_0}+(2\epsilon_{n_0})^{m-n_0}\\
+		&\leq 4\epsilon_{n_0}.
+	\end{align}
+	This proves that the row is a cauchy row and hence the convergence follows.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -1223,7 +1236,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	\begin{equation}
 		=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
 	\end{equation}
-	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
+	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
@@ -1693,37 +1706,37 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{align}
 \end{lemma}
 \begin{proof}
-	We have that
+	In this proof we will define (for notational simplicity) $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. We have that
 	\begin{align}
 		&\Ad{w^\dagger \phi_2(W_g)w\phi_2(w^\dagger W_g w)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{H_{\text{split}}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\\
 		\nonumber
-		&\quad \circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\nu^{-1}\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\gamma^H_{1;0}.
+		&\quad \circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}.
 	\end{align}
 	Using on this the fact that
 	\begin{align}
-		\nu^{-1}\circ\gamma^H_{0;1}&=\gamma^H_{0;1}\circ\nu^{-1}=\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu^{-1}\\
-		&=\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\nu^{-1}\circ\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu^{-1}
+		\nu^{-1}\circ\gamma^H_{0;1}&=\gamma^H_{0;1}\circ\nu^{-1}=\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\\
+		&=\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}
 	\end{align}
 	gives us
 	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\nu^{-1}\circ\left(\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\right)\circ\eta_g\circ\beta_g^U\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\left(\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}\right)\circ\eta_g\circ\beta_g^U\\
 		\nonumber
-		&\quad \circ\left(\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\nu^{-1}\right)\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\gamma^H_{1;0}\\
+		&\quad \circ\left(\gamma^{H_{\text{split}}}_{0;1}\circ\nu\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\right)\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\\
 		\label{eq:ExistenceOfEpsilonProofEquationOne}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\nu^{-1}\circ\left(\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\right)\circ\eta_g\circ\beta_g^U\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\left(\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}\right)\circ\eta_g\circ\beta_g^U\\
 		\nonumber
-		&\quad \circ\left(\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\right)^{-1}\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\gamma^H_{1;0}.
+		&\quad \circ\left(\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}\right)^{-1}\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}.
 	\end{align}
-	Because of lemma {\color{red}reference is needed here} there exist $a_L\in\UU(\AA_{\nu^{-1}(L)}),a_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{\nu^{-1}(L),\nu(R)\}$ satisfying that
+	Because of the translation invariance of the interaction, there exist $a_L\in\UU(\AA_{\nu^{-1}(L)}),a_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{\nu^{-1}(L),\nu(R)\}$ satisfying that
 	\begin{equation}
-		\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}=\Ad{a_L}\otimes\Ad{a_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{\nu^{-1}(L),\nu(R)\}}}\Phi^{\mu\nu}
+		\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}=\Ad{a_L}\otimes\Ad{a_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{\nu^{-1}(L),\nu(R)\}}}\Phi^{\mu\nu}
 	\end{equation}
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$. Filling this in equation \eqref{eq:ExistenceOfEpsilonProofEquationOne} gives
 	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{1;0}\circ\nu^{-1}\circ\Ad{a_L\otimes a_R}\circ\eta_g\circ\beta_g^U\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{a_L\otimes a_R}\circ\eta_g\circ\beta_g^U\\
 		\nonumber
-		&\quad \circ\Ad{a_L^\dagger\otimes a_R^\dagger}\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\nu^{-1}(L)}+H_{\nu(R)}}_{0;1}\circ\gamma^H_{1;0}.
+		&\quad \circ\Ad{a_L^\dagger\otimes a_R^\dagger}\circ(\beta_g^U)^{-1}\circ\eta_g^{-1}\circ\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}.
 	\end{align}
 	This shows that the proof just boils down to showing that there exist $\epsilon_g^\sigma\in\IAC_\sigma(\alpha_0,\Theta,\theta)$ satisfying
 	\begin{align}
@@ -1734,6 +1747,25 @@ The goal of this section is to show that the index we constructed is invariant u
 	\begin{equation}
 		\epsilon_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}(a_\sigma\:\eta_g^\sigma\circ\beta_g^{U\sigma}(a_\sigma^\dagger)).
 	\end{equation}
+	This concludes the proof of the first result. The proof of the second result will be done in two steps. First we will prove that there exists a $\beta:G\rightarrow U(1)$ such that
+	\begin{equation}
+		\beta(g) w^\dagger \phi_1(K_g^\sigma)w =v^\dagger \phi_1(\epsilon_g^\sigma)v\phi_1(w^\dagger K_g^\sigma w)\phi_1(\epsilon_g^\sigma)=\phi_1(v^\dagger\epsilon_g^\sigma v\: w^\dagger K_g^\sigma w\:\epsilon_g^\sigma).
+	\end{equation}
+	To do this we only have to show that
+	\begin{equation}
+		\Ad{w^\dagger \phi_1(K_g^\sigma)w}\circ\pi_0\circ\alpha_0\circ\Theta=\Ad{\phi_1(v^\dagger\epsilon_g^\sigma v\: w^\dagger K_g^\sigma w\:\epsilon_g^\sigma)}\circ\pi_0\circ\alpha_0\circ\Theta.
+	\end{equation}
+	We will first write out the left hand side, this gives:
+	\begin{align}
+		&\Ad{w^\dagger \phi_1(K_g^\sigma)w}\circ\pi_0\circ\alpha_0\circ\Theta\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\\
+		\nonumber
+		&\qquad\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ(\gamma_{0;1}^H\circ\gamma_{1;0}^{H_{\text{split}}}\circ\gamma_{0;1}^{H_{\text{split}}}\circ\stkout{\gamma_{1;0}^H})\circ\nu^{-1}\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\\
+		\nonumber
+		&\qquad\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\circ(\stkout{\gamma_{0;1}^H}\circ\gamma_{1;0}^{H_{\text{split}}}\circ\gamma_{0;1}^{H_{\text{split}}}\circ\gamma_{1;0}^H).
+	\end{align}
+	
 	{\color{red}I still need to prove the second result.}
 \end{proof}
 \begin{theorem}
@@ -1748,9 +1780,9 @@ The goal of this section is to show that the index we constructed is invariant u
 	\begin{equation}
 		\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
 	\end{equation}
-	Take $W_g,v,w,K_g^{L/R}$ and $b_g^{L/R}$ operators belonging to these automorphisms. Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma\in\QAut{\AA}$. To show this notice that
+	Take $W_g,v,w,K_g^{L/R}$ and $b_g^{L/R}$ operators belonging to these automorphisms. Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma^H_{0;1}\in\QAut{\AA}$. To show this notice that
 	\begin{align}
-		\alpha\circ\gamma&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
+		\alpha\circ\gamma^H_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
 		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
 	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{W(\AA_{C_{\theta_2}})^c}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
@@ -2013,11 +2045,21 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 \begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms1d}
 	Take $\Phi\in\BB_{F}([0,1])$ with $F$ any monotomically decreasing positive function decaying faster then any polynomial then there exists an $a\in\AA$ satisfying
 	\begin{equation}
-		\Ad{A}=\gamma^{\Phi_L+\Phi_R}_{1;0}\circ\gamma^\Phi_{0;1}.
+		\Ad{A}=\gamma^{\Phi_L+\Phi_R}_{0;1}\circ\gamma^\Phi_{1;0}.
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	We have for any $B\in\AA$ that
+	\begin{align}
+		\gamma^{\Phi_L+\Phi_R}_{0;1}\circ\gamma^\Phi_{1;0}(B)&=\int_{0}^{1}\d t\frac{\d}{\d t}\left(\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^\Phi_{t;0}(B)\right)\\
+		&=-i\int_{0}^{1}\d t\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi_L+\Phi_R}_{0;t}([\Phi_L(I)+\Phi_R(I)-\Phi(I),\gamma^{\Phi}_{t;0}(B)])\\
+		&=-i\int_{0}^{1}\d t\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^{\Phi}_{t;0}([\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I)),B]).
+	\end{align}
+	Since this sum converges we can simply take
+	\begin{equation}
+		A\defeq\mathcal{T}\exp(-i\int_{0}^{1}\d t \sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I)))
+	\end{equation}
+	concluding the proof.
 \end{proof}
 \subsection{In 2d}
  In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of \cite{ogata2021h3gmathbb}. We will use the notation
