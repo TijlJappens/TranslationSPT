@@ -1713,7 +1713,7 @@ In the rest of this section we will define (for notational simplicity) $H_{\text
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
 \end{lemma}
 \begin{proof}
-	content...
+	This follows from \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2.
 \end{proof}
 \begin{lemma}
 	Define
@@ -1721,16 +1721,54 @@ In the rest of this section we will define (for notational simplicity) $H_{\text
 		a_L&\defeq \pi_0\circ\alpha_0\circ\Theta(A_L)&a_R&\defeq \pi_0\circ\alpha_0\circ\Theta(A_R)
 	\end{align}
 	then for any $K\in\text{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ we get that
-	\begin{equation}
+	\begin{equation}\label{eq:TranslationOutOfPhi_K}
 		w^\dagger \phi_1(K)w=\phi_1(w^\dagger \: a_L\otimes a_R \: K \: a_L^\dagger\otimes a_R^\dagger \: w).
 	\end{equation}
 	Similarly we have that
-	\begin{equation}
+	\begin{equation}\label{eq:TranslationOutOfPhi_W}
 		w^\dagger \phi_2(W_g)w=\phi_1(w^\dagger \: a_L\otimes a_R \: w)\phi_2(w^\dagger W_g w)\phi_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w).
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	We will only show the first equality as the second one is completely analogous. We need to show that
+	\begin{align}
+		\phi_1(K)&=\Ad{w\phi_1(w^\dagger a_L\otimes a_R w)}(\phi_1(w^\dagger K w))\\
+		&=\Ad{w\phi_1(w^\dagger a_L\otimes a_R w)}(cw^\dagger K wc^\dagger)\\
+		&=\Ad{w\phi_1(w^\dagger a_L\otimes a_R w)}(cw^\dagger c^\dagger \phi_1(K) c^\dagger wc^\dagger)\\
+		&=\Ad{w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w cw^\dagger c^\dagger)}(\phi_1(K)).
+	\end{align}
+	To do this, we first find an $A\in\AA$ such that
+	\begin{equation}
+		\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w cw^\dagger c^\dagger)
+	\end{equation}
+	and then we will prove that $A\in\AA_{C_\theta^c}$. It should be clear that the result follows from this\footnote{This is most easily seen from\begin{equation}
+			\Ad{\phi_1(K)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=\phi_1(\Ad{K}(\pi_0\circ\alpha_0\circ\Theta(A)))=\phi_1(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A).
+	\end{equation}}. Finding this $A$ can be done using
+	\begin{align}
+		&w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w cw^\dagger c^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger)).
+	\end{align}
+	This shows that we can take
+	\begin{equation}
+		A\defeq \gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger).
+	\end{equation}
+	Now we only have to show that indeed $A\in\AA_{C_\theta^c}$. To do this, take $X\in\AA_{C_\theta}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then indeed we need that $A\in\AA_{C_\theta}'=\AA_{C_\theta^c}$. To show this, observe that
+	\begin{align}
+		\Ad{A}(X)&=\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\Ad{A_L\otimes A_R}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\nu^{-1}}\circ\stkout{\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}}\\
+		&\nonumber
+		\qquad\circ\gamma^H_{1;0}\circ\stkout{\nu}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(X).
+	\end{align}
+	Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we obtain
+	\begin{equation}
+		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(X).
+	\end{equation}
+	Now using equation \eqref{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations} we get
+	\begin{equation}
+		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ(\Phi^U\otimes\Phi^D)^{-1}\circ\nu^{-1}\circ\Phi^U\otimes\Phi^D(X)=X
+	\end{equation}
+	concluding the proof.
 \end{proof}
 \begin{lemma}
 	Define $\epsilon^L_g\in\IAC_L(\alpha_0,\theta)$ and $\epsilon^R_g\in\IAC_R(\alpha_0,\theta)$ through
@@ -1745,7 +1783,42 @@ In the rest of this section we will define (for notational simplicity) $H_{\text
 	\end{align}
 \end{lemma}
 \begin{proof}
-	content...
+	By equation \eqref{eq:TranslationOutOfPhi_W} we get that
+	\begin{align}
+		w^\dagger\phi_2(W_g)w&=\phi_1(w^\dagger \: a_L\otimes a_R \: w)\phi_2(w^\dagger W_g w)\phi_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w)\\
+		&=\phi_1(w^\dagger \: a_L\otimes a_R \: w)\Ad{\phi_2(w^\dagger W_g w)}(\phi_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w))\phi_2(w^\dagger W_g w)\\
+		&=\phi_1(w^\dagger \: a_L\otimes a_R \:\Ad{W_g}(a_L^\dagger\otimes a_R^\dagger)w)\phi_2(w^\dagger W_g w)\\
+		&=\phi_1(w^\dagger a_L\Ad{W_g}(a_L^\dagger)\otimes a_R \Ad{W_g}( a_R^\dagger)w)\phi_2(w^\dagger W_g w).
+	\end{align}
+	Since
+	\begin{equation}
+		a_\sigma\Ad{W_g}(a_\sigma^\dagger)=\pi_0\circ\alpha_0\circ\Theta(A_\sigma\eta_g^\sigma\circ\beta_g^{\sigma U}(A_\sigma^\dagger))
+	\end{equation}
+	the first result follows. For the second result we start by using equation \eqref{eq:TranslationOutOfPhi_K} which gives us
+	\begin{align}
+		w^\dagger \phi_1(K_g^\sigma)w&=\phi_1(w^\dagger a_L\otimes a_R K_g^\sigma a_L^\dagger\otimes a_R^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma K_g^\sigma a_\sigma^\dagger w).
+	\end{align}
+	Inserting $v^\dagger W_g va_\sigma^\dagger a_\sigma v^\dagger W_g^\dagger v=\id$ in this gives us
+	\begin{align}
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger a_\sigma) K_g^\sigma a_\sigma^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{(K_g^\stkout{\sigma})^\dagger v^\dagger W_g v}(a_\sigma) a_\sigma^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{W_g}(a_\sigma) a_\sigma^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger))\phi_1(K_g^\sigma)\phi_1(\epsilon_g^\sigma)^\dagger.
+	\end{align}
+	The only thing we now have to prove is that
+	\begin{equation}\label{eq:5.126}
+		a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)=v^\dagger a_\sigma \Ad{W_g}(a_\sigma^\dagger)v
+	\end{equation}
+	since inserting this, concludes the proof. To do this notice that we can rewrite equation \eqref{eq:5.126} as
+	\begin{equation}
+		\Ad{v^\dagger W_g v}(v^\dagger a_\sigma^\dagger v a_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma.
+	\end{equation}
+	We will prove this equality in two steps. First we will find an $A\in\AA$ such that
+	\begin{equation}
+		\pi_0\circ\alpha_0\circ\Theta(A)=v^\dagger a_\sigma^\dagger v a_\sigma
+	\end{equation}
+	then we will show that $A\in\AA_{W(C_\theta)^c}$ and that $\beta_g^{\tau(U)}(A)=A$. {\color{red}todo...}
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
@@ -2116,7 +2189,7 @@ Now we will state some properties of locally generated automorphisms:
 	Take $H$ an interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. The following statements now hold (for any $s,t\in\RR$):
 	\begin{enumerate}
 		\item $\gamma^H_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$.
-		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{VAut}(\AA)$. If additionally $H$ is a $G$-invariant interaction we even have $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GVQAut}(\AA)$.
+		\item $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{VAut}(\AA)$. If additionally $H$ is a $G$-invariant interaction we even have $\gamma^H_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\in\textrm{GVQAut}(\AA)$.
 		\item $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{SQAut}(\AA)$. If additionally $H$ is a $G$-invariant interaction we even have $\gamma^{H_U}_{s;t}\otimes\gamma^{H_D}_{s;t}\in\textrm{GSQAut}(\AA)$.
 		\item $\gamma^{H}_{t;s}\circ\beta_g^U\circ\gamma^{H}_{s;t}\circ(\beta_g^U)^{-1}\in\textrm{HAut}(\AA)$.
 		\item $\gamma^{H}_{t;s}\in\textrm{SQAut}(\AA)$.
