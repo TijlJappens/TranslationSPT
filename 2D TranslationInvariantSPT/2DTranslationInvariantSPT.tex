@@ -1210,7 +1210,7 @@ The goal of this section is now to show that the index we constructed is invaria
 		\label{eq:IndexInvariantUnderLGANewOperator3}
 		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
 		\label{eq:IndexInvariantUnderLGANewOperator4}
-		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma \delta_g^\sigma) \pi_0(A_1)^\dagger
+		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger
 	\end{align}
 	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
 	\begin{equation}
@@ -1312,7 +1312,7 @@ Similarly as before we will also need the generalisation of this definition:
 	\end{equation}
 	It will satisfy
 	\begin{equation}\label{eq:automorphismBelongingTo_b}
-		\Ad{b_g^\sigma\otimes\id_{H_{\ZZ^2/\sigma}}}\circ\pi_0=\pi_0\circ\alpha_0\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_0.
+		\Ad{b_g^\sigma\otimes\id_{H_{\ZZ^2/\sigma}}}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}.
 	\end{equation}
 \end{lemma}
 \begin{proof}
@@ -1789,10 +1789,48 @@ In the rest of this section we will define (for notational simplicity) $H_{\text
 		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
 		\tilde{w}&=\pi_0(A_1)w\pi_0(A_1)^\dagger\\
 		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
-		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma \delta_g^\sigma) \pi_0(A_1)^\dagger\\
-		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)\pi_0(A_1)^\dagger.
+		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger\\
+		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)^\dagger\pi_0(A_1)^\dagger.
 	\end{align}
-	First we will show that this transformation indeed leaves the index invariant then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. The fact that the index is invariant under the $\phi_1(\delta_g)$ part follows from lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously) can be shown using equation \eqref{eq:TransformationOfKUnderEpsilon}. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. {\color{red}this I still have to do...}
+	First we will show that this transformation indeed leaves the index invariant, then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. The fact that the index is invariant under the $\phi_1(\delta_g)$ part follows from lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously) can be shown using equation \eqref{eq:TransformationOfKUnderEpsilon}. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. To show this, observe that we have
+	\begin{align}
+		&\Ad{\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\stkout{\nu\circ\nu^{-1}}\circ\eta_g^R\circ\nu\\
+		\nonumber
+		&\qquad\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\eta_g^R\circ\beta_g^{RU}\circ\nu\\
+		\nonumber
+		&\qquad\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\\
+		\nonumber
+		&\qquad\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}\\
+		\nonumber
+		&\qquad \circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\nu\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\\
+		\nonumber
+		&\qquad \circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{\nu^{-1}\circ\nu}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+	\end{align}
+	This leads us to
+	\begin{align}
+		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\Theta\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\Ad{A_{2,g}^R}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{H_\text{split}}_{0;1}\circ\nu\\
+		\nonumber
+		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\stkout{\beta_g^{RU}}\circ\nu\\
+		\nonumber
+		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{(\beta_g^{\nu^{-1}(RU)})^{-1}}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\nu\\
+		\nonumber
+		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+	\end{align}
+	This will give us
+	\begin{align}
+		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)\phi_1(\delta_g^R)^\dagger}\circ\pi_0\circ\Theta\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\Ad{(A_{2,g}^R)^\dagger}\circ\gamma^{H}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\stkout{\beta_g^{\nu(RU)}}\circ\nu\circ\stkout{(\beta_g^{RU})^{-1}}\circ(\tilde\eta_g^R)^{-1}\circ\circ\gamma^{H}_{1;0}.
+	\end{align}
+	The role that the $A_1$ will play is analogous to the proof of \ref{thrm:IndexInvariantUnderLGA}, concluding the proof.
 \end{proof}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under rotations by $90^\circ$}
 Take
