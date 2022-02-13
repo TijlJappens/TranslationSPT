@@ -1924,18 +1924,29 @@ arbitrary and let $\mu$ be the automorphism that rotates the $C^*$ algebra by $9
 \begin{equation}
 	\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega\circ\mu).
 \end{equation}
-In what follows, let $\omega_0$ bet the product state and let $\gamma^\Phi_{0;1}$ be the disentangler such that
+In what follows, let $\omega_0$ be the product state and let $\gamma^\Phi_{0;1}$ be the disentangler such that
 \begin{equation}
 	\omega=\omega_0\circ\gamma^\Phi_{0;1}.
 \end{equation}
-Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{C_\theta\cap\sigma}}$ and $\tilde{\eta}^\rho_g\in\Aut{\AA_{\mu(C_\theta)\cap\rho}}$ be such that the automorphisms
+\input{Figure2}
+Sometimes we will need a specific decomposition of this locally generated Automorphism:
+\begin{lemma}\label{lem:DecompositionOfLGAInCross}
+	Let $\{1,2,3,4\}$ be regions indicated in figure \ref{fig:IndexInvariantUnderRotationDecomposition} without the red and let $\AA_{\text{red}}$ be the part of the $C^*$ algebra that has support in the red regions of figure \ref{fig:IndexInvariantUnderRotationDecomposition}. There exists a $B\in\UU(\AA)$ and a $\Theta\in\Aut{\AA_{\text{red}}}$ be such that $\beta^{\mu\nu}_g\circ\Theta=\Theta\circ\beta^{\mu\nu}_g$ (for all $\mu\in\{U,D\}$ and $\nu\in\{L,R\}$) satisfying
+	\begin{equation}
+		\gamma^\Phi_{0;1}=\Ad{B}\circ\gamma^{\sum_i\Phi_i}_{0;1}\circ\Theta.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
+Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{C_\theta\cap\sigma}}$ and $\eta^\rho_{2,g}\in\Aut{\AA_{\mu(C_\theta)\cap\rho}}$ be such that the automorphisms
 \begin{align}
 	\tilde{\beta}_{g,1}&=\Ad{A_{g,1}}\circ\eta_g^L\otimes\eta_g^R\circ\beta_g^U&\tilde{\beta}_{g,2}&=\Ad{A_{g,2}}\circ\eta_{2,g}^U\otimes\eta_{2,g}^D\circ\beta_g^L
 \end{align}
-satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. Let $(\HH_0,\pi_0,\Omega_0)$ be a GNS triple for $\omega_0$. The following now holds:
-\begin{lemma}
+satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. Let $(\HH_0=\bigotimes_i\HH_{0,i},\pi_0=\bigotimes_{i=1}^4\pi_{0,i},\bigotimes_i\Omega_{0,i})$ be a GNS triple for $\omega_0$ (see the caption of figure \ref{fig:IndexInvariantUnderRotationDecomposition}). The following now holds:
+\begin{lemma}\label{lem:DefinitionX_gLemma}
 	There exists an $X_g\in\UU(\HH_0)$ and an $A_g\in\UU(\AA)$ ($\forall g\in G$) satisfying that
-	\begin{align}
+	\begin{align}\label{eq:DefinitionX_gLemma}
 		\Ad{X_g}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\tilde{\eta}^U_g\circ\eta^R_g\circ\beta_g^{RU}&\pi_0(A_g)X_g\Omega_0&=\Omega_0
 	\end{align}
 	where $\tilde{\eta}_g=\beta_g^U\circ\eta_{2,g^{-1}}\circ(\beta_g^U)^{-1}$.
@@ -1949,10 +1960,21 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	then
 	\begin{align}
 		\Ad{W_g\tilde{W}_{g^{-1}}}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_g\circ\beta_g^U\circ\eta_{2,g^{-1}}\circ(\beta_g^L)^{-1}\\
-		&=\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_g\circ\tilde{\eta}_g\circ\beta_g^{RU}\circ(\beta_g^{LD})^{-1}\\
-		&=\Ad{X_gY_g}\circ \pi_0\circ\gamma^\Phi_{0;1}
+		&=\pi_0\circ\gamma^\Phi_{0;1}\circ\eta_g\circ\tilde{\eta}_g\circ\beta_g^{RU}\circ(\beta_g^{LD})^{-1}.
 	\end{align}
-	where $X_g$ and $Y_g$ are defined by {\color{red}I need to explain this further}.
+	Now we use lemma \ref{lem:DecompositionOfLGAInCross} and obtain
+	\begin{align}
+		\Ad{W_g\tilde{W}_{g^{-1}}}\circ\pi_0\circ\Ad{B}\circ\gamma^{\sum_i\Phi_i}_{0;1}\circ\stkout{\Theta}&=\pi_0\circ\Ad{B}\circ\gamma^{\sum_i\Phi_i}_{0;1}\circ\stkout{\Theta}\circ\eta_g\circ\tilde{\eta}_g\circ\beta_g^{RU}\circ(\beta_g^{LD})^{-1}\\
+		\Ad{\pi_0(B^\dagger)W_g\tilde{W}_{g^{-1}}\pi_0(B)}\circ\pi_0\circ\gamma^{\sum_i\Phi_i}_{0;1}&=\pi_0\circ\gamma^{\sum_i\Phi_i}_{0;1}\circ\eta_g\circ\tilde{\eta}_g\circ\beta_g^{RU}\circ(\beta_g^{LD})^{-1}\\
+		\Ad{\pi_0(B^\dagger)W_g\tilde{W}_{g^{-1}}\pi_0(B)}\circ\pi_0&=\left(\pi_{0,1}\otimes\pi_{0,2}\circ\gamma^{\Phi_1+\Phi_2}_{0;1}\circ\eta_g^R\circ\tilde{\eta}_g^U\circ\beta_g^{RU}\circ\gamma^{\Phi_1+\Phi_2}_{1;0}\right)\\
+		\nonumber
+		&\qquad\otimes \left(\pi_{0,3}\otimes\pi_{0,4}\circ\gamma^{\Phi_3+\Phi_4}_{0;1}\circ\eta_g^L\circ\tilde{\eta}_g^D\circ(\beta_g^{LD})^{-1}\circ\gamma^{\Phi_3+\Phi_4}_{1;0}\right).
+	\end{align}
+	Now let $\tilde{X}_g\in\UU(\HH_{0,1}\otimes\HH_{0,2})$ and $\tilde{Y}_g\in\UU(\HH_{0,3}\otimes\HH_{0,4})$ be such that
+	\begin{equation}
+		\tilde{X}_g\otimes\tilde{Y}=\pi_0(B^\dagger)W_g\tilde{W}_{g^{-1}}\pi_0(B)
+	\end{equation}
+	then $X_g=\pi_0(B)(\tilde{X}_g\otimes\id)\pi_0(B^\dagger)$ satisfies equation \eqref{eq:DefinitionX_gLemma} concluding the proof.
 \end{proof}
 \begin{lemma}
 	Let $v,w,K_g^R$ and $b_g^R$ be such that
@@ -1997,7 +2019,6 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\end{equation}
 	and similarly for $\tilde{b}_g^U$ and therefore these operators also belong to $\omega\circ\mu$. This together with the independence of the choice of $\tilde{\eta}_g$ proves the second result.
 \end{proof}
-\input{Figure2}
 \begin{lemma}
 	The following equalities hold
 	\begin{align}
@@ -2018,7 +2039,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\end{equation}
 	This shows that we can effectively ignore $h_g$. To show the last part decompose $\pi_0$ as $\gamma^\Phi_{0;1}$ as
 	\begin{align}
-		\gamma^\Phi_{0;1}&=(\text{inner})\circ\bigotimes_{i=1}^4\gamma^{\Phi_i}_{0;1}\circ\Theta&\pi_0&=\bigotimes_{i=1}^4\pi_{0,i}
+		\gamma^\Phi_{0;1}&=\Ad{B}\circ\bigotimes_{i=1}^4\gamma^{\Phi_i}_{0;1}\circ\Theta&\pi_0&=\bigotimes_{i=1}^4\pi_{0,i}
 	\end{align}
 	where the $\pi_{0,i}$ are irreducible representations in $\AA_i$ where the areas $i$ are indicated in figure \ref{fig:IndexInvariantUnderRotationDecomposition} and the $\Theta$ have support in the areas shaded red. This shows that up to some inner automorphisms the operators with an $R$ on top act on different parts of the decomposition of $\pi_0$ then the operators with an $L$ on top do. Using this the proof follows.
 \end{proof}
@@ -2166,7 +2187,7 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
  \begin{align}
  	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
  \end{align}
- where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms:
+ where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut}):
  \begin{definition}
  	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)\cup\tau^{\rho}(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\tau^\rho(\AA_{C_{[\theta_3,\pi/2]}\cap\rho})},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
  	\begin{equation}
@@ -2178,6 +2199,7 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	\includegraphics[width=0.5\textwidth]{AlphaFirstDecomposition.png}
 	\includegraphics[width=0.5\textwidth]{AlphaSecondDecomposition.png}
 	\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ-automorphism acting on the upper half plane.}
+	\label{fig:SetupSQAut}
 \end{figure}
  As a remark, notice that this definition is not exactly identical to de definition given in \cite{ogata2021h3gmathbb} due to the translation operators.
  \begin{definition}
