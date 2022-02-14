@@ -183,7 +183,7 @@ with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. This satisfies the condition 
 \end{align}
 Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \subsection{(Borel) Group cohomology groups}\label{sec:GroupCohomology}
-In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the trivial group action\footnote{So in particular when we write $g_1 C(g_2,\cdots,g_n)$ for any $C\in C^{n-1}(G,M)$ we will sometimes identify it simply with $C(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. Now define the coboundary homomorphisms
+In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. Now define the coboundary homomorphisms
 \begin{equation}
 	\d^{n+1}:C^n(G,M)\mapsto C^{n+1}(G,M)
 \end{equation}
@@ -311,24 +311,24 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 \begin{proof}
 	 Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we indeed have that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3 concluding the proof that assumption \ref{assumption} is satisfied.
 \end{proof}
-We now state the result that using this assumption we can define an $H^2(G,\TT)$-index.
+We now state the result that using this assumption we can define an $H^2(G,\TT)$-valued index.
 \begin{theorem}\label{thrm:ExistenceFirstIndex}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
 		\textrm{Index}^{\AA,U(g)}:\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}\rightarrow H^2(G,\TT)
 	\end{equation}
-	that is well defined (doesn't depend on any of the choices in assumption \ref{assumption}). This map will be consistent with conjecture \ref{conj} by which we mean that
+	that is well defined (doesn't depend on any of the choices in assumption \ref{assumption}). This map will be consistent with conjecture \ref{conj} by which we mean that:
 	\begin{enumerate}
 		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
 			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item Take $\phi$ a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
+		\item For $\phi$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
 		\begin{equation}
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega).
 		\end{equation}
 	\end{enumerate}
-	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
+	Furthermore, this index is a group homomorphism under the stacking operator. By this we mean that
 	\begin{equation}
 		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
 	\end{equation}
@@ -338,7 +338,7 @@ We now state the result that using this assumption we can define an $H^2(G,\TT)$
 \end{proof}
 Now we will present the assumption from which we can define the $H^1(G,\TT)$-valued index.
 \begin{restatable}{assumption}{assumptionTwo}\label{assumption:2Translations}
-	Take $\omega\in\PP(\AA)$ to be
+	Let $\omega\in\PP(\AA)$ be
 	\begin{enumerate}
 		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
 		\begin{align}
@@ -377,7 +377,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 		\begin{equation}
 			\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega)=\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item Take $\phi$ a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d} then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) which we now call $\omega$ satisfies
+		\item For $\phi$, any a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d}, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) which we now call $\omega$ satisfies
 		\begin{equation}
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d\text{ trans}}(\phi)=\text{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega).
 		\end{equation}
