@@ -68,6 +68,7 @@
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
 
 \numberwithin{equation}{section}
 \begin{document}
@@ -2086,6 +2087,43 @@ be two states. The goal of this section is to prove that
 \end{equation}
 The proof of this is completely analogous to what was in section \ref{sec:StackingOneTranslation}.
 \appendix
+\section{Representations and states}
+In this section we summarize all the results we need from \cite{bratteli1979operator}.
+\begin{theorem}
+	Let $\omega$ be a state on a $C^*$-algebra $\AA$. It follows that there exists a cyclic representation $(\HH_\omega,\pi_\omega,\Omega_\omega)$ of $\AA$ such that
+	\[\omega(A)=\bra{\Omega_\omega}\ket{\pi_\omega(A)\Omega_\omega}\]
+	for all $A\in\AA$. Moreover, the representation is unique up to unitary equivalence.
+\end{theorem}
+\begin{proof}
+	Theorem 2.3.16 in \cite{bratteli1979operator}.
+\end{proof}
+We will call this cyclic representation a GNS triple for $\omega$.
+\begin{corollary}
+	Let $\omega$ be a state over the $C^*$-algebra $\AA$ and $\tau$ a *-automorphism of $\AA$ which leaves $\omega$ invariant, i.e.,
+	\[\omega\circ\tau=\omega.\]
+	It follows that there exists a uniquely determined unitary operator $U_\omega$, on the space of the cyclic representation $(\HH_\omega,\pi_\omega,\Omega_\omega)$ constructed from $\omega$, such that
+	\[U_\omega \pi_\omega(A)U_\omega^\dagger=\pi_\omega\circ\tau(A) \]
+	for all $A\in\AA$, and
+	\[U_\omega\Omega_\omega=\Omega_\omega. \]
+	If furthermore, $\omega$ is pure then $U_\omega$ is not only unique as a unitary on the cyclic representation but (up to a phase) it will also be unique as a unitary operator in $\HH_\omega$.
+\end{corollary}
+\begin{proof}
+	The proof of this corollary is a combination of Corollary 2.3.17 and Theorem 2.3.19 from \cite{bratteli1979operator}.
+\end{proof}
+The following lemma does not come from Bratteli Robinson but in stead follows from Wigner's theorem:
+\begin{lemma}
+	Let $\AA$ and $\BB$ be arbitrary $C^*$-algebras. Let $(\HH_\AA,\pi_\AA)$ and $(\HH_\BB,\pi_\BB)$ be arbitrary irreducible $*$ representations on $\AA$ and $\BB$ respectively. Let $U\in\UU(\HH_\AA\otimes\HH_\BB)$ be such that there exists an $\alpha_\AA\in\Aut{\AA}$ and an $\alpha_\BB\in\Aut{\BB}$ satisfying
+	\begin{equation}
+		\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\pi_\AA\circ\alpha_\AA\otimes\pi_\BB\circ\alpha_\BB
+	\end{equation}
+	then there exists a $U_\AA\in\UU(\HH_\AA)$ and a $U_\BB\in\UU(\HH_\BB)$ such that
+	\begin{equation}
+		U=U_\AA\otimes U_\BB.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content...
+\end{proof}
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
 \begin{equation}
