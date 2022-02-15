@@ -77,12 +77,12 @@
 	We consider SPT-phases with on-site $G$ (where $G$ is any group) symmetry for two-dimensional quantum spin systems. We then impose translation invariance in one direction and observe that on top of the $H^3(G,\TT)$-valued index constructed in \cite{ogata2021h3gmathbb} an additional $H^2(G,\TT)$-valued index emerges. We also show that if we impose translation invariance in two directions, on top of the expected $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)$ valued index an additional $H^1(G,\TT)$-valued index emerges.
 \end{abstract}
 \section{Introduction}
-The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a topological group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} way to do this is to say that a state $\omega_1$ is now an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
+The notion of symmetry protected topological phases of matter was introduced by Gu and Wen \cite{Chen_2013}. One possible setup in which one can define spt phases is in quantum spin systems (defined in the next section). To define spt phases one needs to fix a topological group $G$ with an on site group action $\beta_g$ (see the next section for more information). Then one needs to impose a restriction on the space of states. One possible\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states.} way to do this is to say that a state $\omega_1$ is an spt state for a symmetry group $G$ if there exists a $G$-invariant, bounded interaction $\Phi_1$ (defined in section 1 in \cite{ogata2021h3gmathbb}) such that
 \begin{enumerate}
 	\item $\omega_1$ is the unique gapped groundstate of $\Phi_1$.
 	\item there is a path\footnote{for the precise definitions of what these paths of interactions must satisfy we refer to section 1 in \cite{ogata2021h3gmathbb}} of interactions with a uniform lower bound on the gap (but not necessarily $G$-invariant) that connects $\Phi_1$ to a trivial interaction (one whose unique gapped groundstate is a product state).
 \end{enumerate}
-One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension the simplest examples of non trivial spt states are so called matrix product states \cite{schuch2011MatrixProduct}. Later on and more generally it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a ring under addition). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
+One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension the simplest examples of non trivial spt states are so called matrix product states (\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}). Later on and more generally it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a ring under addition). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
 \\\\
 The goal of this paper is to look at the 2d case with the equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states. See for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
 \begin{conjecture}\label{conj}
@@ -106,12 +106,12 @@ We will also look at the case where there is a second translation symmetry (so t
 	\end{equation}
 	induces a sequence on the equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
 \end{conjecture}
-1d spt states are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and the conjecture, we expect there to be an
+Translation invariant spt states in one spatial dimension are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and both conjectures, we expect there to be an
 \begin{equation}\label{eq:2TranslationsIntroduction}
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, and define the concept of locally generated automorphisms. Then in section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). Then in section \ref{sec:Results_2}, we state the first result using an even weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
+The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). In section \ref{sec:Results_2}, we state the first result using an even weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
 \section{Setup and definitions}\label{sec:Setup}
 In this paper we will be working in the two dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
 \begin{align}
@@ -126,14 +126,14 @@ be the horizontal cone (the green area on figure \ref{fig:SetupWithQAutomorphism
 \begin{equation}
 	W(C_\theta)\defeq C_\theta\cup\tau(C_\theta)\cup\tau^{-1}(C_\theta).
 \end{equation}
-In the later part we will also need to rotate our lattice by $90^\circ$ so call $\mu$ the bijection on $\ZZ^2$ that does precisely this.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.}
+In the later part we will also need to rotate our lattice by $90^\circ$ (clockwise) so call $\mu$ the bijection on $\ZZ^2$ that does precisely this.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.}
 \subsection{Quasi local $C^*$ algebra}\label{sec:QuasiLocalC*Algebra}
 The setup in this paper will be very similar to the setup in \cite{ogata2021h3gmathbb} and is just the standard setup for defining quantum spin systems. For the rest of this paper take $d\in\NN_+$ arbitrary. This number will be called the on site dimension\footnote{In principle in the case were there is only one translation we can let $d$ be $x$-dependent but for simplicity let us take $d$ constant over the lattice.}. For each $z\in\ZZ^2$, let $\AA_{\{z\}}$ be an isomorphic copy of $\BB(\CC^d)$ (the bounded operators on $\CC^d$). In what follows let $\mathfrak{G}_{\ZZ^2}$ be the set of finite subsets of $\ZZ^2$. For any $\Lambda\in\mathfrak{G}_{\ZZ^2}$, we set $\AA_\Lambda=\bigotimes_{z\in\Lambda}\AA_{\{z\}}$. We define the local algebra as $\AA_{\text{loc}}=\bigcup_{\Lambda\in \mathfrak{G}_{\ZZ^2}}\AA_{\Lambda}$ and define the quasi local $C^*$ algebra as the norm closure of the local algebra ($\AA=\overline{\AA_{\text{loc}}}$). Similarly for any (possibly infinite) subset $\Gamma\subset\ZZ^2$ we set $\AA_{\text{loc},\Gamma}=\bigcup_{\Lambda\in \mathfrak{G}_{\Gamma}}\AA_{\Lambda}$ and $\AA_\Gamma=\overline{\AA_{\text{loc},\Gamma}}$.\\\\
 We will need to define some automorphisms on this algebra using the bijections defined previously. To this end define the isomorphisms
 \begin{align}
 	\tau&:\AA_\Gamma\rightarrow\AA_{\tau(\Gamma)}&\nu&:\AA_\Gamma\rightarrow\AA_{\nu(\Gamma)}&\mu&:\AA_\Gamma\rightarrow\AA_{\mu(\Gamma)}
 \end{align}
-to be the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$. We will need to define one additional set of automorphisms. Let $G$ be a topological group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+as the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$ (because $d$ is a constant throughout the lattice). We will need to define one additional set of automorphisms. Let $G$ be a topological group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -161,7 +161,7 @@ where $\Phi(I)\in\AA_I$. We will sometimes require a norm on the space of intera
 \end{equation}
 Following \cite{ogata2021h3gmathbb} we will fix a specific family of monotonically decreasing positive functions by saying that for any $0<\phi<1$ we define
 \begin{equation}
-	F_\phi:r\mapsto \frac{\exp(-r^\phi)}{(1+r)^4}.
+	F_\phi:\RR^+\rightarrow\RR^+:r\mapsto \frac{\exp(-r^\phi)}{(1+r)^4}.
 \end{equation}
 We will sometimes use the restriction of an interaction. For some $\Gamma\subset\ZZ^2$ we define $\Phi_\Gamma$ by
 \begin{equation}
@@ -173,24 +173,26 @@ One of the properties of $F$-local interactions is that they can be used to gene
 \begin{equation}
 	\Phi:\mathfrak{G}_{\ZZ^2}\times [0,1]\rightarrow \AA_{\text{loc}}:(I,t)\mapsto \Phi(I,t)
 \end{equation}
-be a one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will call the set of one parameter families of interactions that satisfy this property $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
+be a one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will denote the set of one parameter families of interactions that satisfy this property by $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
 \begin{equation}
 	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
 \end{equation}
-with initial condition $\gamma^{\Phi}_{s;s}(A)=A$. This satisfies the condition that if $\sup_t\norm{\sum_{I\subset\ZZ^2}\Phi(I,t)}<\infty$ that then
+with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automorphism is proven in \cite{nachtergaele2010liebrobinson}). This satisfies the condition that if $\sup_t\norm{\sum_{I\subset\ZZ^2}\Phi(I,t)}<\infty$ that then
 \begin{align}
 	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset\ZZ^2}\Phi(s',t)).
 \end{align}
 Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \subsection{(Borel) Group cohomology groups}\label{sec:GroupCohomology}
-In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. Now define the coboundary homomorphisms
+In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the addition and the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. Now define the coboundary homomorphisms
 \begin{equation}
 	\d^{n+1}:C^n(G,M)\mapsto C^{n+1}(G,M)
 \end{equation}
 such that
-\begin{equation}
-	(\d^{n+1}\phi)(g_1,\cdots,g_{n+1})=g_1\phi(g_2,\cdots,g_{n+1})+\sum_{i=1}^n (-1)^i \phi(g_1,\cdots,g_{i-1},g_{i}g_{i+1},\cdots,g_{n+1})+(-1)^{n+1}\phi(g_1,\cdots,g_n).
-\end{equation}
+\begin{align}
+	\nonumber
+	&(\d^{n+1}\phi)(g_1,\cdots,g_{n+1})\\
+	&=g_1\phi(g_2,\cdots,g_{n+1})+\sum_{i=1}^n (-1)^i \phi(g_1,\cdots,g_{i-1},g_{i}g_{i+1},\cdots,g_{n+1})+(-1)^{n+1}\phi(g_1,\cdots,g_n).
+\end{align}
 Since $\d^{n+1}\circ\d^{n}=0$ this defines a cochain complex and we can define its cohomology as
 \begin{equation}
 	H^n(G,M)=Z^n(G,M)/B^n(G,M)
@@ -1953,7 +1955,7 @@ Sometimes we will need a specific decomposition of this locally generated Automo
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	content...
+	Completely analogous to the proof of (for example) \ref{lem:PropertiesLocallyGeneratedAutomorphisms}.
 \end{proof}
 Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{C_\theta\cap\sigma}}$ and $\eta^\rho_{2,g}\in\Aut{\AA_{\mu(C_\theta)\cap\rho}}$ be such that the automorphisms
 \begin{align}
