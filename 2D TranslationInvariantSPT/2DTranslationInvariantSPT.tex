@@ -72,7 +72,7 @@
 
 \numberwithin{equation}{section}
 \begin{document}
-\maketitle	
+\maketitle 
 \begin{abstract}
 	We consider SPT-phases with on-site $G$ (where $G$ is any group) symmetry for two-dimensional quantum spin systems. We then impose translation invariance in one direction and observe that on top of the $H^3(G,\TT)$-valued index constructed in \cite{ogata2021h3gmathbb} an additional $H^2(G,\TT)$-valued index emerges. We also show that if we impose translation invariance in two directions, on top of the expected $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)$ valued index an additional $H^1(G,\TT)$-valued index emerges.
 \end{abstract}
@@ -183,7 +183,7 @@ with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automor
 \end{align}
 Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \subsection{(Borel) Group cohomology groups}\label{sec:GroupCohomology}
-In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the addition and the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. Now define the coboundary homomorphisms
+In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the addition and the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. We will use additive notation on this space and denote the group operator by $+$ and the inverse of an element of the group $\phi$ by $-\phi$. Now define the coboundary homomorphisms
 \begin{equation}
 	\d^{n+1}:C^n(G,M)\mapsto C^{n+1}(G,M)
 \end{equation}
@@ -203,6 +203,7 @@ where
 	0&\text{if }n=0\\\textrm{im}(\d^n)&\text{if }n\geq 1
 	\end{matrix}\right. .
 \end{align}
+In what follows we will denote the group action on $H^n(G,M)$ also in the same additive notation that we used for $C^n(G,M)$. This notation makes sense because of the property that for any $\phi_1,\phi_2\in Z^n(G,M)$ we have that $\expval{\phi_1+\phi_2}_{H^n(G,M)}=\expval{\phi_1}_{H^n(G,M)}+\expval{\phi_2}_{H^n(G,M)}$.
 \section{Results}
 We will present our claim starting from two different assumptions. The first assumption is related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
 \subsection{Statement of the results in therms of short range entanglement}\label{sec:Results_1}
@@ -222,7 +223,7 @@ We can now formulate our first result for the case where there is one translatio
 		\begin{equation}
 			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item Take $\phi$ a one dimensional short ranged entangled $G$-invariant state then the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}), $\omega$ satisfies
+		\item For $\phi$, any one dimensional short ranged entangled $G$-invariant state, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}), $\omega$ satisfies
 		\begin{equation}
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega)
 		\end{equation}
@@ -230,7 +231,7 @@ We can now formulate our first result for the case where there is one translatio
 	\end{enumerate}
 	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
 	\begin{equation}
-		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
+		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
 	\end{equation}
 \end{theorem}
 \begin{proof}
@@ -267,7 +268,7 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 	\end{enumerate}
 	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
 	\begin{equation}
-		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
 	\end{equation}
 \end{theorem}
 \begin{proof}
@@ -321,18 +322,18 @@ We now state the result that using this assumption we can define an $H^2(G,\TT)$
 	\end{equation}
 	that is well defined (doesn't depend on any of the choices in assumption \ref{assumption}). This map will be consistent with conjecture \ref{conj} by which we mean that:
 	\begin{enumerate}
-		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
+		\item For any $G$ invariant and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
 			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item For $\phi$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
+		\item For $\phi\in\PP(\AA_\text{1d})$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
 		\begin{equation}
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega).
 		\end{equation}
 	\end{enumerate}
 	Furthermore, this index is a group homomorphism under the stacking operator. By this we mean that
 	\begin{equation}
-		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
+		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
 	\end{equation}
 \end{theorem}
 \begin{proof}
@@ -386,13 +387,13 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	\end{enumerate}
 	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
 	\begin{equation}
-		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
 	\end{equation}
 \end{theorem}
 \begin{proof}
 	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
 \end{proof}
-\section{The $H^2(G,\TT)$ valued index}\label{sec:ProofFirstStatement}
+\section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
 In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
 \assumptionOne*
 In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. Fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple (see theorem \ref{thrm:ExistenceGNS}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0$ and $\Theta$ a choice of decomposition for $\alpha$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
@@ -666,9 +667,9 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 \end{proof}
 Our translation index is now defined as
 \begin{definition}
-	Take $C$ to be the 2-cochain defined in \ref{lem:Definition2Cochain} then we define the index as
+	Take $C:G^2\rightarrow U(1)$ to be the 2-cochain defined in \ref{lem:Definition2Cochain}. Take $\phi:G^2\rightarrow\TT$ such that $C(g,h)=\exp(i\phi(g,h))$ then we define the index as
 	\begin{equation}
-	\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{C}\in H^2(G,\TT)
+	\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{\phi}\in H^2(G,\TT)
 	\end{equation}
 	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.
 \end{definition}
@@ -967,7 +968,7 @@ where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma
 	\begin{equation}
 		k^R(g)k^R(h)k^R(gh)^{-1}=C(g,h)\id_{\HH_{L_{-1},R}}
 	\end{equation}
-	and that the equivalence class this cochain is in, is given by $\textrm{index}_{1d}(\phi)$.
+	and that the equivalence class this cochain is in, is given by $\textrm{Index}_{1d}(\phi)$.
 \end{remark}
 Let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
 \begin{align}
@@ -1442,9 +1443,9 @@ Using this we can show that:
 	which is proven in lemma \ref{lem:TransformationUnderDelta}. This concludes the proof.
 \end{proof}
 \begin{definition}
-	Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha} then we define the 2 translation index as
+	Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha}. Take $\phi\in\hom(G,\TT)$ such that $\alpha(g)=\exp(i\phi(g))$. We define the 2 translation index as
 	\begin{equation}
-		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \alpha\in H^1(G,\TT)
+		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \phi\in H^1(G,\TT)
 	\end{equation}
 	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.
 \end{definition}
@@ -1510,9 +1511,10 @@ We will now show independence of $\alpha$ and its decomposition.
 		\pi_0\circ\alpha_{02}\circ\Theta_2=\Ad{x}\circ\pi_0\circ\alpha_{01}\circ\Theta_1.
 	\end{equation}
 	Let $v,w,K_g^\sigma$ and $b_g^\sigma$ be operators belonging to the first choice then by construction $xvx^\dagger,xwx^\dagger,xK_g^\sigma x^\dagger$ and $xb_g^\sigma x^\dagger$ are operators belonging to the second choice. Since the index is invariant under this substitution this concludes the proof in the case that $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
-	\begin{equation}
-		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
-	\end{equation}
+	\begin{align}
+		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})&=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)\\
+		&=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
+	\end{align}
 	concluding the proof.
 \end{proof}
 In what follows we will need that the index is invariant under the following transformation:
