@@ -84,13 +84,21 @@ The notion of symmetry protected topological phases of matter was introduced by 
 \end{enumerate}
 One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension the simplest examples of non trivial spt states are so called matrix product states \cite{schuch2011MatrixProduct}. Later on and more generally it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a ring under addition). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
 \\\\
-The goal of this paper is to look at the 2d case with the equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states. See for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
+We've already touched the concept of stacking in saying that it was required in the proof that the $H^2(G,\TT)$ index is complete. Stacking however plays also another role, it allows us to define an (abelian) group structure. This construction goes as follows. First we say that two spt states, $\omega_1$ and $\omega_2$ are stably equivalent if and only if there exist trivial\footnote{Trivial means that the ground state is a product state and that it transforms under the on site group action trivially.} spts, $\psi_1$ and $\psi_2$ such that $\omega_1\otimes_{\text{stack}}\phi_1$\footnote{The $\otimes_\text{stack}$ operation is defined in section \ref{sec:QuasiLocalC*Algebra}.} is equivalent to $\omega_2\otimes_{\text{stack}}\phi_2$. There is now a conjecture about the space of spt states under stable equivalence that says that the stacking operator induces a group structure:
+\begin{conjecture}
+	Let $*$ be the map
+	\begin{equation}
+		*:\{\text{stable spt classification}\}^2\rightarrow \{\text{stable spt classification}\}:(\expval{\omega_1}_\sim,\expval{\omega_2}_\sim)\mapsto \expval{\omega_1\otimes_\text{stack}\omega_2}_\sim.
+	\end{equation}
+	Then $*$ is well defined (independent of the choice of representative) and $\{\text{stable spt classification}\}$ together with the $*$ operation forms an abelian group.
+\end{conjecture}
+The goal of this paper is to look at the 2d case with the (stable) equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states. See for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
 \begin{conjecture}\label{conj}
 	Let $g$ be the inclusion map from the space of 2d translation invariant spt states to the more general set of 2d spt states. Let $f$ be the map that takes a 1d spt state and outputs a translation invariant 2d spt state by taking the tensor product in the direction of the translation symmetry. The sequence
 	\begin{equation}
 		0\rightarrow\{\text{1d spt states}\}\stackrel{f}{\rightarrow}\{\text{2d translation invariant spt states}\}\stackrel{g}{\rightarrow}\{\text{2d spt states}\}\rightarrow 0
 	\end{equation}
-	induces a sequence on the equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
+	induces a sequence (of group morphisms) on the stable equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
 \end{conjecture}
 Clearly this implies that
 \begin{equation}
@@ -104,7 +112,7 @@ We will also look at the case where there is a second translation symmetry (so t
 	\begin{equation}
 		0\rightarrow\left\{\begin{matrix}\text{1d translation invariant}\\ \text{spt states}\end{matrix}\right\}\stackrel{f}{\rightarrow}\left\{\begin{matrix}\text{2d spt states with two}\\ \text{translation symmetries}\end{matrix}\right\}\stackrel{g}{\rightarrow}\left\{\begin{matrix}\text{2d spt states translation}\\ \text{invariant in $x$ direction}\end{matrix}\right\}\rightarrow 0
 	\end{equation}
-	induces a sequence on the equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
+	induces a sequence (of group morphisms) on the stable equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
 \end{conjecture}
 1d spt states are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and the conjecture, we expect there to be an
 \begin{equation}\label{eq:2TranslationsIntroduction}
