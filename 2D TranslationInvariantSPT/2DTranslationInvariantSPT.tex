@@ -778,8 +778,10 @@ We now show that the index is invariant under some transformation parametrised b
 	\end{align}
 	Since by lemma \ref{lem:AdjointOverConeIsInCone}, $\delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger\in\IAC_R(\alpha_0,\theta,\Theta)$ we get because of equation \eqref{eq:CommutantProperty} that
 	\begin{align}
-		&=\delta_g^L W_{g,1}\delta_h^L W_{g,1}^\dagger \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{L,1}(g,h)(\delta_{gh}^L)^\dagger  u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
-		&=\delta_g^L \delta_g^R W_{g,1}\delta_h^L \stkout{ W_{g,1}^\dagger W_{g,1}}\delta_h^R W_{g,1}^\dagger u_{L,1}(g,h)  u_{R,1}(g,h)(\delta_{gh}^L)^\dagger(\delta_{gh}^R)^\dagger
+		&=\delta_g^L W_{g,1}\delta_h^L W_{g,1}^\dagger \underline{\delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger} u_{L,1}(g,h)(\delta_{gh}^L)^\dagger  u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
+		&=\delta_g^L \delta_g^R W_{g,1}\delta_h^L \stkout{ W_{g,1}^\dagger W_{g,1}}\delta_h^R W_{g,1}^\dagger u_{L,1}(g,h)  u_{R,1}(g,h)\underline{(\delta_{gh}^L)^\dagger}(\delta_{gh}^R)^\dagger\\
+		&=\delta_g W_{g,1}\delta_h \stkout{W_{g,1}^\dagger W_{g,1}} W_{h,1} W_{gh,1}^\dagger(\delta_{gh})^\dagger\\
+		&=W_{g,2}W_{h,2}W_{gh,2}^\dagger
 	\end{align}
 	concluding the proof of equation \eqref{eq:TransformationUnderDeltaProofNewUIsSplit}. Using this we obtain:
 	\begin{align}
@@ -805,9 +807,9 @@ We now show that the index is invariant under some transformation parametrised b
 	\end{align}
 	Filling in the old index now gives:
 	\begin{align}
-		C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
+		C_2(g,h)&=\underline{C_1(g,h)}v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
 		\nonumber
-		&\qquad \delta_g^R W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v
+		&\qquad \delta_g^R W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger \underline{\id} v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v
 	\end{align}
 	Using equation \eqref{eq:CommutantProperty} we now get:
 	\begin{align}
@@ -819,7 +821,7 @@ We now show that the index is invariant under some transformation parametrised b
 	\end{align}
 	Using the fact that by definition $K_{g,1}W_{g,1}=v^\dagger W_{g,1}v$ we obtain
 	\begin{align}
-		C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R W_{g,1} \delta_h^R W_{g,1}^\dagger  W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+		C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R \underline{W_{g,1}} \delta_h^R \underline{W_{g,1}^\dagger} W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
 		&=C_1(g,h)
 	\end{align}
 	concluding the proof.
@@ -860,7 +862,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\begin{equation}
 		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
 	\end{equation}
-	Since the last equation is split we have again by the irreducibility of $\pi_\sigma$ and the Wigner theorem that we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
+	Since the last equation is split we have by lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} that we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
 	\end{equation}
@@ -870,7 +872,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 		u_{R,2}(g,h)&\defeq \delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
 		K^R_{g,2}&\defeq v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger
 	\end{align}
-	then $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. Now using lemma \ref{lem:TransformationUnderDelta} concludes the proof.
+	then by construction $W_{g,2},u_{R,2}(g,h)$ and $K^R_{g,2}$ are operators belonging to the second choice. Now using lemma \ref{lem:TransformationUnderDelta} concludes the proof.
 \end{proof}
 \begin{lemma}
 	The index is independent of the choice of angle $\theta$.
@@ -878,7 +880,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \begin{proof}
 	Take $0<\theta_1<\theta_2<\pi/2$. Take $\alpha\in \textrm{QAut}(\AA)$ and (for all $\sigma\in\{L,R\}$) take $\eta_{g,1}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta_{g,2}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ to be operators belonging to $\tilde{\beta}_{g,1}$ and $\tilde{\beta}_{g,2}$ leaving $\omega$ invariant. Since $\Aut{\AA_L\cap\AA_{C_{\theta_1}}}\subset \Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ the result now follows from lemma \ref{lem:InvarianceUnderChoiceBeta}.
 \end{proof}
-Due to all these considerations we will write the index as $\textrm{index}(\omega)$ from here on onward.
+Due to all these considerations we will write the index as $\textrm{Index}(\omega)$ from here on onward.
 \subsection{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
 Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spatial dimension such that
 \begin{equation}
