@@ -85,7 +85,7 @@ The notion of symmetry protected topological phases of matter was introduced by 
 One then defines an equivalence class on these spt states by saying that $\omega_1$ (a unique gapped groundstate of $\Phi_1$) is equivalent to $\omega_2$ (a unique gapped groundstate of $\Phi_2$) if there exists a $G$-invariant path of interactions (with a uniform lower bound on the gap) connecting $\Phi_1$ and $\Phi_2$. The space of equivalence classes of spt states is then called the spt classification. In one spacial dimension the simplest examples of non trivial spt states are so called matrix product states (\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}). Later on and more generally it was shown by Yoshiko Ogata \cite{ogata2019classification} that any state satisfying the split property (this includes both gapped groundstates of local Hamiltonians and invertible states) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a ring under addition). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is invariant under this equivalence class. Later on Anton Kapustin, Bowen Yang and Nikita Sopenko \cite{kapustin2021classification} then showed that this classification problem is complete (the index is injective) if one looks at invertible states under stable equivalence. In two spatial dimensions more recently Yoshiko Ogata \cite{ogata2021h3gmathbb} proved there is an $H^3(G,\TT)$-valued index this time belonging to the classification problem as presented here that is protected under this equivalence class.
 \\\\
 We've already touched the concept of stacking in saying that it was required in the proof that the $H^2(G,\TT)$ index is complete. Stacking however plays also another role, it allows us to define an (abelian) group structure. This construction goes as follows. First we say that two spt states, $\omega_1$ and $\omega_2$ are stably equivalent if and only if there exist trivial\footnote{Trivial means that the ground state is a product state and that it transforms under the on site group action trivially.} spts, $\psi_1$ and $\psi_2$ such that $\omega_1\otimes_{\text{stack}}\phi_1$\footnote{The $\otimes_\text{stack}$ operation is defined in section \ref{sec:QuasiLocalC*Algebra}.} is equivalent to $\omega_2\otimes_{\text{stack}}\phi_2$. There is now a conjecture about the space of spt states under stable equivalence that says that the stacking operator induces a group structure:
-\begin{conjecture}
+\begin{conjecture}\label{conj:StableEquivGroupStructure}
 	Let $*$ be the map
 	\begin{equation}
 		*:\{\text{stable spt classification}\}^2\rightarrow \{\text{stable spt classification}\}:(\expval{\omega_1}_\sim,\expval{\omega_2}_\sim)\mapsto \expval{\omega_1\otimes_\text{stack}\omega_2}_\sim.
@@ -94,7 +94,7 @@ We've already touched the concept of stacking in saying that it was required in 
 \end{conjecture}
 The goal of this paper is to look at the 2d case with the (stable) equivalence class as presented here but with one notable difference. We will only consider states and interactions that have a translation symmetry in one direction. There is a long standing conjecture about the spt classification of such states. See for instance \cite{xiong2019classification} section 3.1.5.1 where they present this conjecture in a very general way. It goes as follows:
 \begin{conjecture}\label{conj}
-	Let $g$ be the inclusion map from the space of 2d translation invariant spt states to the more general set of 2d spt states. Let $f$ be the map that takes a 1d spt state and outputs a translation invariant 2d spt state by taking the tensor product in the direction of the translation symmetry. The sequence
+	The space of translation invariant spts under stable equivalence\footnote{In the stable equivalence class for translation invariant states we ask that the path connecting two states is not only G-invariant but also translation invariant.} also satisfies conjecture \ref{conj:StableEquivGroupStructure}. Let $g$ be the inclusion map from the space of 2d translation invariant spt states to the more general set of 2d spt states. Let $f$ be the map that takes a 1d spt state and outputs a translation invariant 2d spt state by taking the tensor product in the direction of the translation symmetry. The sequence
 	\begin{equation}
 		0\rightarrow\{\text{1d spt states}\}\stackrel{f}{\rightarrow}\{\text{2d translation invariant spt states}\}\stackrel{g}{\rightarrow}\{\text{2d spt states}\}\rightarrow 0
 	\end{equation}
@@ -104,11 +104,11 @@ Clearly this implies that
 \begin{equation}
 	\{\text{2d translation invariant spt classification}\}\simeq \{\text{1d spt classification}\}\oplus \{\text{2d spt classification}\}.
 \end{equation}
-Since a 1d spt state carries an $H^2(G,\TT)$ valued index and a 2d spt state carries an $H^3(G,\TT)$ valued index this means that 2d spt states with a translation symmetry should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index.\\\\
+Since a 1d spt state carries an $H^2(G,\TT)$ valued index and a 2d spt state carries an $H^3(G,\TT)$ valued index, this means that 2d spt states with a translation symmetry should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index.\\\\
 The main goal of this paper is now to find an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant spt states that is consistent with the conjecture. By being consistent with the conjecture it is meant that if $\textrm{Index}_1$ is the one dimensional spt index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d spt $\omega$.\\\\
 We will also look at the case where there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For this there is also a conjecture:
 \begin{conjecture}\label{conj2}
-	Let $g$ be the inclusion map from the space of 2d spt states that are translation invariant in both $x$ and $y$ directions to the more general set of 2d spt states with translation invariance in the $x$ direction only. Let $f$ be the map that takes a 1d translation invariant spt state and outputs a 2d spt state that is translation invariant in both $x$ and $y$ directions by taking the tensor product in the $y$ direction. The sequence
+	The space of spts, translation invariant in two directions under stable equivalence also satisfies conjecture \ref{conj:StableEquivGroupStructure}. Let $g$ be the inclusion map from the space of 2d spt states that are translation invariant in both $x$ and $y$ directions to the more general set of 2d spt states with translation invariance in the $x$ direction only. Let $f$ be the map that takes a 1d translation invariant spt state and outputs a 2d spt state that is translation invariant in both $x$ and $y$ directions by taking the tensor product in the $y$ direction. The sequence
 	\begin{equation}
 		0\rightarrow\left\{\begin{matrix}\text{1d translation invariant}\\ \text{spt states}\end{matrix}\right\}\stackrel{f}{\rightarrow}\left\{\begin{matrix}\text{2d spt states with two}\\ \text{translation symmetries}\end{matrix}\right\}\stackrel{g}{\rightarrow}\left\{\begin{matrix}\text{2d spt states translation}\\ \text{invariant in $x$ direction}\end{matrix}\right\}\rightarrow 0
 	\end{equation}
@@ -119,7 +119,23 @@ Translation invariant spt states in one spatial dimension are known to carry an 
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the $C^*$ algebra by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). In section \ref{sec:Results_2}, we state the first result using an even weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
+The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for states that are short range entangled (this is condition is strictly weaker then the one we talked about before). In section \ref{sec:Results_2}, we state the first result using an even weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.\\\\
+Before we start a final remark:
+\begin{remark}
+	The groups in which these indices take values can be concisely written out. Using that\footnote{This can be seen by noticing that the classifying space for $B\ZZ=S^1$ and by then calculating the singular cohomology of $S^1$. See \url{https://topospaces.subwiki.org/wiki/Circle} section algebraic topology cohomology groups and replacing $R$ by $\TT$.}
+	\begin{align}
+		H^0(\ZZ,\TT)&\cong \TT& H^1(\ZZ,\TT)&\cong \TT& H^2(\ZZ,\TT)&\cong 0&H^3(\ZZ,\TT)&\cong 0
+	\end{align}
+	and inserting this into the Kuneth formula for $\ZZ\times G$ gives
+	\begin{align}
+		H^2(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^2 H^i(\ZZ,\TT)\otimes H^{2-i}(G,\TT)\cong H^2(G,\TT)\oplus H^1(G,\TT)\\
+		H^3(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT).
+	\end{align}
+	This result can in turn be used to work out the Kuneth formula for $\ZZ^2\times G$
+	\begin{equation}
+		H^3(\ZZ^2\times G,\TT)\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(\ZZ\times G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT).
+	\end{equation}
+\end{remark}
 \section{Setup and definitions}\label{sec:Setup}
 In this paper we will be working in the two dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
 \begin{align}
@@ -141,7 +157,7 @@ We will need to define some automorphisms on this algebra using the bijections d
 \begin{align}
 	\tau&:\AA_\Gamma\rightarrow\AA_{\tau(\Gamma)}&\nu&:\AA_\Gamma\rightarrow\AA_{\nu(\Gamma)}&\mu&:\AA_\Gamma\rightarrow\AA_{\mu(\Gamma)}
 \end{align}
-as the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$ (because $d$ is a constant throughout the lattice). We will need to define one additional set of automorphisms. Let $G$ be a topological group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Take $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+as the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$ (because $d$ is a constant throughout the lattice). We will need to define one additional set of automorphisms. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Let $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -158,6 +174,7 @@ where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on
 \begin{equation}
 	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{U(g)\otimes U(g)_z}
 \end{equation}
+for any $\Lambda\in\mathfrak{G}_{\ZZ^2}$.
 \subsection{Interactions and locally generated automorphisms}\label{sec:Interactions}
 An interaction $\Phi$ is a map
 \begin{equation}
@@ -181,7 +198,7 @@ One of the properties of $F$-local interactions is that they can be used to gene
 \begin{equation}
 	\Phi:\mathfrak{G}_{\ZZ^2}\times [0,1]\rightarrow \AA_{\text{loc}}:(I,t)\mapsto \Phi(I,t)
 \end{equation}
-be a one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will denote the set of one parameter families of interactions that satisfy this property by $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
+be a norm continuous\footnote{By which we mean that $\Phi(I,\cdot)$ is norm continuous for each $I\in\mathfrak{G}_{\ZZ^2}$.} one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will denote the set of one parameter families of interactions that satisfy this property by $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
 \begin{equation}
 	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
 \end{equation}
@@ -225,7 +242,7 @@ We can now formulate our first result for the case where there is one translatio
 	\begin{equation}
 		\textrm{Index}^{\AA,U(g)}:\{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
 	\end{equation}
-	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj}. By this we mean that:
+	that is well defined (doesn't depend on the product state or the choice of disentangler). This map will be consistent with conjecture \ref{conj}. By this we mean that:
 	\begin{enumerate}
 		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
@@ -236,18 +253,18 @@ We can now formulate our first result for the case where there is one translatio
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega)
 		\end{equation}
 		where $\textrm{Index}_{1d}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
+		\item This index is a group homomorphism under the stacking operator by which we mean that
+		\begin{equation}
+			\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
+		\end{equation}
 	\end{enumerate}
-	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
-	\begin{equation}
-		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
-	\end{equation}
 \end{theorem}
 \begin{proof}
 	Take
 	\begin{equation}
 		\omega\in \{\omega\in\PP(\AA)|\omega\text{ is an sre state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
 	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. We can now use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof.
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms and satisfies item 3. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. We can now use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof of item 2. This concludes the proof of the theorem.
 \end{proof}
 Now for the second result I would like to define an index on the space of $G$-invariant sre states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices one can define already. Namely, take
 \begin{align}
@@ -259,7 +276,7 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 	\begin{equation}
 		\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
 	\end{equation}
-	that is well defined (doesn't depend on $\omega_0$ or the choice of disentangler). This map will be consistent with conjecture \ref{conj2}. By this we mean that:
+	that is well defined (doesn't depend on the product state or the choice of disentangler). This map will be consistent with conjecture \ref{conj2}. By this we mean that:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
@@ -267,24 +284,25 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 		\end{equation}
 		\item Let $\phi$ be a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction, $\omega$ satisfies
 		\begin{equation}
-			\textrm{Index}_{1d\text{ trans}}^{\AA_{\text{1d}},U(g)}(\phi)=\text{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega)\footnote{$\textrm{Index}_{1d\text{ trans}}^{\AA,U(g)}$ is defined in appendix \ref{sec:OneDimensionalIndices}.}.
+			\textrm{Index}_{1d\text{ trans}}^{\AA_{\text{1d}},U(g)}(\phi)=\text{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega)
 		\end{equation}
+		where $\textrm{Index}_{1d\text{ trans}}^{\AA,U(g)}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
 		\item Let $\mu$ be the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ degrees then
 		\begin{equation}
 			\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega\circ\mu).
 		\end{equation}
+		\item This index is a group homomorphism under the stacking operator by which we mean that
+		\begin{equation}
+			\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+		\end{equation}
 	\end{enumerate}
-	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
-	\begin{equation}
-		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
-	\end{equation}
 \end{theorem}
 \begin{proof}
 	Take
 	\begin{equation}
 		\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an sre state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
 	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof.
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms and satisfies item 4. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof of item 2. Item 3 is proven in section \ref{sec:H^1IndexInvariantUnderRotations} concluding the proof of the theorem.
 \end{proof}
 Except when we need it explicitly we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
 \subsection{Statement of the result in therms of Q-automorphisms}\label{sec:Results_2}
@@ -338,11 +356,11 @@ We now state the result that using this assumption we can define an $H^2(G,\TT)$
 		\begin{equation}
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega).
 		\end{equation}
+		\item This index is a group homomorphism under the stacking operator. By this we mean that
+		\begin{equation}
+			\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
+		\end{equation}
 	\end{enumerate}
-	Furthermore, this index is a group homomorphism under the stacking operator. By this we mean that
-	\begin{equation}
-		\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
-	\end{equation}
 \end{theorem}
 \begin{proof}
 	This statement is proven in section \ref{sec:ProofFirstStatement}.
@@ -392,11 +410,11 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 		\begin{equation}
 			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d\text{ trans}}(\phi)=\text{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega).
 		\end{equation}
+		\item This index is a group homomorphism under the stacking operator by which we mean that
+		\begin{equation}
+			\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+		\end{equation}
 	\end{enumerate}
-	Furthermore, this index is a group homomorphism under the stacking operator by which we mean that
-	\begin{equation}
-		\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
-	\end{equation}
 \end{theorem}
 \begin{proof}
 	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
@@ -1678,7 +1696,7 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 	&=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
 \end{align}
 showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$.
-\subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H^1IndexInvariantUnderRotations}
 The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA}. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{(\tau(\AA_{C_\theta})\cup\AA_{C_\theta})^c}$. Take $\Phi^U_{s;t}\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and $\Phi^D_{s;t}\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that there exists some $a\in\AA$ satisfying that
