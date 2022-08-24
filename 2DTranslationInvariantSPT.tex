@@ -120,10 +120,11 @@ Translation invariant SPT states in one spatial dimension are known to carry an 
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
 valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the lattice by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.\\\\
-The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for states that are short range entangled (this condition is strictly weaker then the one we talked about before). In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.\\\\
+The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for states that are short range entangled (this condition is strictly weaker then the one we talked about before). In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement.
+\clearpage
 Before we start a final remark:
 \begin{remark}
-As noticed in \cite{}. The groups in which these indices take values can be concisely written out. Using that\footnote{This can be seen by noticing that the classifying space for $B\ZZ=S^1$ and by then calculating the singular cohomology of $S^1$. See \url{https://topospaces.subwiki.org/wiki/Circle} section algebraic topology cohomology groups and replacing $R$ by $\TT$.}
+As noticed in \cite{Chen_2013}. The groups in which these indices take values can be concisely written out. Using that\footnote{This can be seen by noticing that the classifying space for $B\ZZ=S^1$ and by then calculating the singular cohomology of $S^1$. See \url{https://topospaces.subwiki.org/wiki/Circle} section algebraic topology cohomology groups and replacing $R$ by $\TT$.}
 	\begin{align}
 		H^0(\ZZ,\TT)&\cong \TT& H^1(\ZZ,\TT)&\cong \TT& H^2(\ZZ,\TT)&\cong 0&H^3(\ZZ,\TT)&\cong 0
 	\end{align}
@@ -139,6 +140,7 @@ As noticed in \cite{}. The groups in which these indices take values can be conc
 \end{remark}
 \subsection*{Acknowledgements}
 T.J. was supported in part by the FWO under grant G098919N.
+\clearpage
 \section{Setup and definitions}\label{sec:Setup}
 In this paper we will be working in the two dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
 \begin{align}
@@ -160,7 +162,7 @@ We will need to define some automorphisms on this algebra using the bijections d
 \begin{align}
 	\tau&:\AA_\Gamma\rightarrow\AA_{\tau(\Gamma)}&\nu&:\AA_\Gamma\rightarrow\AA_{\nu(\Gamma)}&\mu&:\AA_\Gamma\rightarrow\AA_{\mu(\Gamma)}
 \end{align}
-as the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$ (because $d$ is a constant throughout the lattice). We will need to define one additional set of automorphisms. Let $G$ be a group and let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ^2$) be the on site group action. Let $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
+as the translation upwards, the translation to the right and the right-handed rotation respectively. By construction these isomorphisms are automorphisms if $\Gamma$ is taken to be $\ZZ^2$ (because $d$ is a constant throughout the lattice). We will need to define one additional set of automorphisms. Let $G$ be a group and let $U_i\in\hom(G,\UU(\AA_i))$ (for $i\in\ZZ^2$) be the on site group action. Let $\beta^\Gamma\in\hom(G,\Aut{\AA_\Gamma})$ (for any $\Gamma\subset\ZZ^2$) be such that
 \begin{equation}
 	\beta^\Gamma_g(A)=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
@@ -210,7 +212,6 @@ with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automor
 	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset\ZZ^2}\Phi(s',t)).
 \end{align}
 Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
-\clearpage
 \subsection{(Borel) Group cohomology groups}\label{sec:GroupCohomology}
 In this paper we define the Group cohomology groups using the algebraic approach\footnote{There is also a topological approach that defines (for each topological group) the group cohomology group as the singular cohomology of its classifying space. There are theorems proving equivalence between these two approaches. This is also explained in \cite{benson1991representations}.}. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the addition and the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. We will use additive notation on this space and denote the group operator by $+$ and the inverse of an element of the group $\phi$ by $-\phi$. Now define the coboundary homomorphisms
 \begin{equation}
@@ -240,7 +241,6 @@ We can use these locally generated automorphisms to define the concept of short 
 \begin{definition}\label{def:sre}
 	Take $\omega\in\PP(\AA)$. We say that $\omega$ is a short range entangled state (in short an SRE state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
 \end{definition}
-\clearpage
 We can now formulate our first result for the case where there is one translation symmetry.
 \begin{theorem}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
@@ -974,7 +974,7 @@ We have that:
 	\begin{equation}
 		\norm{b-b_j}\leq\epsilon_{n_0}
 	\end{equation}
-	for all $j$ such that $\abs{j}\geq n_0$ and such that $\lim_{n_0\rightarrow\infty}\epsilon_{n_0}=0$. We will now show that our row is a cauchy row. Let $n_0$ be such that $\epsilon_{n_0}<1/2$. For any $n,m\geq n_0$ we have that
+	for all $j$ such that $\abs{j}\geq n_0$ and such that $\lim_{n_0\rightarrow\infty}\epsilon_{n_0}=0$. We will now show that our row is a Cauchy row. Let $n_0$ be such that $\epsilon_{n_0}<1/2$. For any $n,m\geq n_0$ we have that
 	\begin{align}
 		\norm{V_{1,n}-V_{1,m}}&\leq \norm{V_{1,n}-V_{1,n_0}}+\norm{V_{1,m}-V_{1,n_0}}\\
 		&\leq \norm{(V_{1,n}-V_{1,n_0})V_{1,n_0}^\dagger}+\norm{(V_{1,m}-V_{1,n_0})V_{1,n_0}^\dagger}\\
@@ -983,7 +983,7 @@ We have that:
 		&\leq (2\epsilon_{n_0})^{n-n_0}+(2\epsilon_{n_0})^{m-n_0}\\
 		&\leq 4\epsilon_{n_0}.
 	\end{align}
-	This proves that the row is a cauchy row and hence the convergence follows.
+	This proves that the row is a Cauchy row and hence the convergence follows.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -1160,7 +1160,7 @@ The goal of this section is now to show that the index we constructed is invaria
 \begin{proof}
 	Take $a\in\UU(\AA)$, $\Phi^U_{0;1}$ and $\Phi^D_{0;1}$ such that
 	\begin{equation}\label{eq:proofDefinitionOfWgMapVAut}
-		\gamma^H_{0;1}\otimes\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}=\Ad{a}\circ\Phi^U_{0;1}\otimes\Phi^D_{0;1}.
+		\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}=\Ad{a}\circ\Phi^U_{0;1}\otimes\Phi^D_{0;1}.
 	\end{equation}
 	This exists because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. We will define
 	\begin{equation}
@@ -1223,7 +1223,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof.
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
-	$\textrm{index}(\omega)=\textrm{index}(\omega\circ\gamma^H_{0;1})$
+	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
 \end{theorem}
 \begin{proof}
 	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{W\left(\AA_{C_{\theta_3}}\right)^c}$ such that
@@ -1694,7 +1694,7 @@ where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma
 	\begin{equation}
 		(\pi_{L_{-1},L}(U_{(-1,-1)}(g))\otimes \id_{\HH_{L_{-1},R}}) (\id_{\HH_{L_{-1},L}}\otimes k^R(g))=\alpha(g) w_{L_{-1}}^\dagger(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}
 	\end{equation}
-	and that it is given by $\textrm{index}_{\text{1d trans}}(\phi)$.
+	and that it is given by $\textrm{Index}_{\text{1d trans}}(\phi)$.
 \end{remark}
 Just like in section \ref{sec:OneTranslationDirectionExample}, let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
 \begin{align}
