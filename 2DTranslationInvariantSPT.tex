@@ -276,7 +276,6 @@ Now for the second result I would like to define an index on the space of $G$-in
 	\omega&\mapsto \textrm{Index}(\omega)&&\text{and}&\omega\mapsto \textrm{Index}(\omega\circ\mu)
 \end{align}
 where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part. The second result presented in this paper is that we can also define this $H^1(G,\TT)$\footnote{There is a result from group cohomology that $H^1(G,\TT)\cong\hom(G,\TT)$. We will use this identification freely.} index.
-\clearpage
 \begin{theorem}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
@@ -401,7 +400,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 \begin{proof}
 	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}.
 \end{proof}
-\clearpage
+\include{Figure3}
 \begin{theorem}\label{thrm:ExistenceSecondIndex}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
 	\begin{equation}
@@ -429,7 +428,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 \section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
 In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
 \assumptionOne*
-In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. Fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple (see theorem \ref{thrm:ExistenceGNS}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0$ and $\Theta$ a choice of decomposition for $\alpha$. Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. Fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple (see theorem \ref{thrm:ExistenceGNS}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0$ and $\Theta$ a choice of decomposition for $\alpha$ such that $\Theta$ and $\eta_g$ commute (see figure \ref{fig:SetupWithQAutomorphism}). Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -1024,9 +1023,9 @@ This operator valued function is also a linear representation and satisfies the 
 	&=\pi_{\HH_0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{\HH_0}(V_1) W_g^\dagger\\
 	&=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1) W_g^\dagger\\
 	&=\pi_{\HH_0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1)\\
-	&=\id_{H_{L_{>-1}}}\otimes \pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b) \otimes\id_{\HH_{L_{<-1}}} .
+	&=\id_{H_{L_{>-1}}}\otimes \pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b) \otimes\id_{\HH_{L_{<-1}}}
 \end{align}
-Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
+where $\tilde{v}=\pi_0(V_1)^\dagger v\pi_0(V_1)$. Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 \begin{equation}
 	k^L_g\otimes k^R_g=\pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b)
 \end{equation}
