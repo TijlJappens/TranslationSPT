@@ -1,0 +1,49 @@
+\documentclass[preview=false]{standalone}
+\begin{document}
+
+\begin{figure}
+	\centering
+	\def\s{0.5}
+	\resizebox{0.45\textwidth}{!}{%
+		\begin{tikzpicture}
+			 \draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (\x,0.32*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (\x,0.72*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:4*\s] (\x,1*\s+1.3*\x);
+			 \draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (-\x,0.32*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (-\x,0.72*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:4*\s] (-\x,1*\s+1.3*\x);
+			\draw[draw=black,line width=0.2mm] (0,0) -- (0,\s);
+			\fill[pattern=north west lines, pattern color=blue] (0,0) -- (6*\s,0.32*6*\s) -- (6*\s,0);
+			\fill[pattern=north east lines, pattern color=blue] (0,0) -- (-6*\s,0.32*6*\s) -- (-6*\s,0);
+			\fill[pattern=north west lines, pattern color=red] (0,0) -- (6*\s,0.72*6*\s) -- (6*\s,0.32*6*\s);
+			\fill[pattern=north east lines, pattern color=red] (0,0) -- (-6*\s,0.72*6*\s) -- (-6*\s,0.32*6*\s);
+			\fill[pattern=north west lines, pattern color=green] (0,0) -- (6*\s,0.72*6*\s)  -- (6*\s,\s+1.3*4*\s) -- (4*\s,1*\s+1.3*4*\s) -- (0,1*\s);
+			\fill[pattern=north east lines, pattern color=green] (0,0) -- (-6*\s,0.72*6*\s)  -- (-6*\s,\s+1.3*4*\s) -- (-4*\s,1*\s+1.3*4*\s) -- (0,1*\s);
+		\end{tikzpicture}}
+	$\qquad$
+	\def\s{0.5}
+	\resizebox{0.45\textwidth}{!}{%
+		\begin{tikzpicture}
+			 \draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (\x,0.32*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (\x,0.72*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:4*\s] (\x,1*\s+1.3*\x);
+			 \draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (-\x,0.32*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:6*\s] (-\x,0.72*\x);
+			\draw[draw=black,line width=0.2mm]
+			plot[smooth,samples=2,domain=0:4*\s] (-\x,1*\s+1.3*\x);
+		\end{tikzpicture}}
+	\caption{These figures indicate the support area of the different automorphisms in a particular decomposition of the $\textrm{QAut}$. The angle $\theta$ needs to be smaller then or equal to what was indicated here so that the $\Theta$ and the $\eta_g$ (possibly after widening by one site) commute.}
+	\label{fig:SetupWithQAutomorphism}
+\end{figure}
+\end{document}
