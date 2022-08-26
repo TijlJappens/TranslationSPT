@@ -203,13 +203,13 @@ One of the properties of $F$-local interactions is that they can be used to gene
 \begin{equation}
 	\Phi:\mathfrak{G}_{\ZZ^2}\times [0,1]\rightarrow \AA_{\text{loc}}:(I,t)\mapsto \Phi(I,t)
 \end{equation}
-be a (piecewise) norm continuous\footnote{By which we mean that $\Phi(I,\cdot)$ is norm continuous for each $I\in\mathfrak{G}_{\ZZ^2}$.} one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will denote the set of one parameter families of interactions that satisfy this property by $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
+be a norm continuous\footnote{By which we mean that $\Phi(I,\cdot)$ is norm continuous for each $I\in\mathfrak{G}_{\ZZ^2}$.} one parameter family of interactions such that the $F$-norm is uniformly bounded ($\sup_{t\in[0,1]}\norm{\Phi(\cdot,t)}_F<\infty$). We will denote the set of one parameter families of interactions that satisfy this property by $\BB_{F}([0,1])$. For any $\Phi\in\BB_{F_\phi}([0,1])$, we define the locally generated automorphism $\gamma^{\Phi}_{s;t}$ such that for any $A\in\AA$, $\gamma^{\Phi}_{s;t}(A)$ is given as the solution to the differential equation
 \begin{equation}
 	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
 \end{equation}
-with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automorphism is proven in \cite{nachtergaele2010liebrobinson}). This satisfies the condition that if $\sup_t\norm{\sum_{I\subset\ZZ^2}\Phi(I,t)}<\infty$ that then
+with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automorphism is proven in \cite{nachtergaele2010liebrobinson}). This satisfies the condition that if $\sup_t\norm{\sum_{I\in\mathfrak{B}_{\ZZ^2}}\Phi(I,t)}<\infty$ then
 \begin{align}
-	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\subset\ZZ^2}\Phi(s',t)).
+	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\in\mathfrak{B}_{\ZZ^2}}\Phi(s',t)).
 \end{align}
 Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the lga it generates commutes with the group action (the translation automorphism) as well.
 \subsection{(Borel) Group cohomology groups}\label{sec:GroupCohomology}
@@ -239,28 +239,35 @@ We will present our claim starting from two different assumptions. The first ass
 \subsection{Statement of the results in therms of short range entanglement}\label{sec:Results_1}
 We can use these locally generated automorphisms to define the concept of short range entanglement.
 \begin{definition}\label{def:sre}
-	Take $\omega\in\PP(\AA)$. We say that $\omega$ is a short range entangled state (in short an SRE state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
+	We say that a pure state $\omega\in\PP(\AA)$ is short range entangled (in short an SRE state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
+\end{definition}
+\begin{definition}\label{def:InfiniteTensorProduct}
+Let $L_j=\{(i,j)|i\in\ZZ\}\subset\ZZ^2$ be a horizontal line. Let $\phi\in\PP(\AA_{L_0})$ be an SRE state (over $\ZZ$) that is $G$-invariant under a group action $\beta_g^{L_0}$. Define $\phi_i\in\PP(\AA_{L_i}$ as $\phi_i:=\phi_0\circ\tau^{-i}$. We define the infinite tensor product state $\omega_\phi$ as
+\begin{equation}
+\omega_\phi:=\bigotimes_{j\in\ZZ}\phi_j.
+\end{equation}
+This is a $G$-invariant SRE state over $\ZZ^2$ that is invariant under $\tau$.
 \end{definition}
 We can now formulate our first result for the case where there is one translation symmetry.
 \begin{theorem}
-	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
-		\textrm{Index}^{\AA,U(g)}:\{\omega\in\PP(\AA)|\omega\text{ is an SRE state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
+		\textrm{Index}^{\AA,U}:\{\omega\in\PP(\AA)|\omega\text{ is an SRE state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on the product state or the choice of disentangler). This map will be consistent with conjecture \ref{conj}. By this we mean that:
 	\begin{enumerate}
-		\item For any $G$ and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
+		\item For any $G$-invariant, translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
-			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
+			\textrm{Index}^{\AA,U}(\omega)=\textrm{Index}^{\AA,U}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item For $\phi$, any one dimensional short ranged entangled $G$-invariant state, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}), $\omega$ satisfies
+		\item For $\phi$, any one dimensional short ranged entangled $G$-invariant state, $\omega_\phi$ as defined in \ref{def:InfiniteTensorProduct} satisfies
 		\begin{equation}
-			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega)
+			\textrm{Index}^{\AA_{L_0},U}_{1d}(\phi)=\textrm{Index}^{\AA,U}(\omega_\phi)
 		\end{equation}
 		where $\textrm{Index}_{1d}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
 		\item This index is a group homomorphism under the stacking operator by which we mean that
 		\begin{equation}
-			\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
+			\textrm{Index}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U}(\omega_1)+\textrm{Index}^{\AA,U}(\omega_2).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -277,28 +284,28 @@ Now for the second result I would like to define an index on the space of $G$-in
 \end{align}
 where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part. The second result presented in this paper is that we can also define this $H^1(G,\TT)$\footnote{There is a result from group cohomology that $H^1(G,\TT)\cong\hom(G,\TT)$. We will use this identification freely.} index.
 \begin{theorem}
-	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
-		\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
+		\textrm{Index}_{2\text{ trans}}^{\AA,U}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on the product state or the choice of disentangler). This map will be consistent with conjecture \ref{conj2}. By this we mean that:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
-			\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega\circ\gamma^\Phi_{0;1}).
+			\textrm{Index}_{2\text{ trans}}^{\AA,U}(\omega)=\textrm{Index}_{2\text{ trans}}^{\AA,U}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item Let $\phi$ be a one dimensional short ranged entangled $G$-invariant translation invariant state then the (infinite) tensor product of this state in the vertical direction, $\omega$ satisfies
+		\item Let $\phi$ be a one dimensional short ranged entangled $G$-invariant, translation invariant state then $\omega_\phi$ defined in \ref{def:InfiniteTensorProduct} satisfies
 		\begin{equation}
-			\textrm{Index}_{1d\text{ trans}}^{\AA_{\text{1d}},U(g)}(\phi)=\text{Index}_{2\text{ trans}}^{\AA,U(g)}(\omega)
+			\textrm{Index}_{1d\text{ trans}}^{\AA_{L_0},U}(\phi)=\text{Index}_{2\text{ trans}}^{\AA,U}(\omega_\phi)
 		\end{equation}
-		where $\textrm{Index}_{1d\text{ trans}}^{\AA,U(g)}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
+		where $\textrm{Index}_{1d\text{ trans}}^{\AA,U}$ is defined in appendix \ref{sec:OneDimensionalIndices}.
 		\item Let $\mu$ be the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ degrees then
 		\begin{equation}
-			\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega\circ\mu).
+			\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega\circ\mu).
 		\end{equation}
 		\item This index is a group homomorphism under the stacking operator by which we mean that
 		\begin{equation}
-			\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+			\textrm{Index}_{\text{2 trans}}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega_2).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -347,23 +354,23 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 \end{proof}
 We now state the result that using this assumption we can define an $H^2(G,\TT)$-valued index.
 \begin{theorem}\label{thrm:ExistenceFirstIndex}
-	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
-		\textrm{Index}^{\AA,U(g)}:\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}\rightarrow H^2(G,\TT)
+		\textrm{Index}^{\AA,U}:\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}\rightarrow H^2(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on any of the choices in assumption \ref{assumption}). This map will be consistent with conjecture \ref{conj} by which we mean that:
 	\begin{enumerate}
 		\item For any $G$ invariant and translation invariant family of interactions $\Phi\in\BB_{F_{\phi}}([0,1])$ (for some $0<\phi<1$) we have that
 		\begin{equation}
-			\textrm{Index}^{\AA,U(g)}(\omega)=\textrm{Index}^{\AA,U(g)}(\omega\circ\gamma^{\Phi}_{0;1}).
+			\textrm{Index}^{\AA,U}(\omega)=\textrm{Index}^{\AA,U}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item For $\phi\in\PP(\AA_\text{1d})$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) satisfies
+		\item For $\phi\in\PP(\AA_{L_0})$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the state $\omega_\phi$ as defined in \ref{def:InfiniteTensorProduct} satisfies
 		\begin{equation}
-			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d}(\phi)=\textrm{Index}^{\AA,U(g)}(\omega).
+			\textrm{Index}^{\AA_{\text{1d}},U}_{1d}(\phi)=\textrm{Index}^{\AA,U}(\omega).
 		\end{equation}
 		\item This index is a group homomorphism under the stacking operator. By this we mean that
 		\begin{equation}
-			\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)+\textrm{Index}^{\AA,U(g)}(\omega_2).
+			\textrm{Index}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U}(\omega_1)+\textrm{Index}^{\AA,U}(\omega_2).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -402,23 +409,23 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller.
 \end{proof}
 \begin{theorem}\label{thrm:ExistenceSecondIndex}
-	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U(g)$, there exists a map
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
-		\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
+		\textrm{Index}^{\AA,U}_{2\text{ trans}}:\{\omega\in\PP(\AA)| \omega\text{ satisfies assumption \ref{assumption:2Translations}}\}\rightarrow H^1(G,\TT)
 	\end{equation}
 	that is well defined (doesn't depend on any of the choices made in assumption \ref{assumption:2Translations}). This map will be consistent with conjecture \ref{conj2} by which we mean the following:
 	\begin{enumerate}
 		\item For any $G$ invariant family of interactions that is translation invariant in both directions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
 		\begin{equation}
-			\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega)=\textrm{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
+			\textrm{Index}^{\AA,U}_{2\text{ trans}}(\omega)=\textrm{Index}^{\AA,U}_{2\text{ trans}}(\omega\circ\gamma^\Phi_{0;1}).
 		\end{equation}
-		\item For $\phi$, any a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d}, the (infinite) tensor product of this state in the vertical direction (see section \ref{sec:OneTranslationDirectionExample} definition \ref{def:InfiniteTensorProductState}) which we now call $\omega$ satisfies
+		\item For $\phi\in\PP(\AA_{L_0})$, any a one dimensional $G$-invariant and translation invariant state satisfying assumption \ref{assumption1d}, the state $\omega_\phi$ as defined in \ref{def:InfiniteTensorProduct} satisfies
 		\begin{equation}
-			\textrm{Index}^{\AA_{\text{1d}},U(g)}_{1d\text{ trans}}(\phi)=\text{Index}^{\AA,U(g)}_{2\text{ trans}}(\omega).
+			\textrm{Index}^{\AA_{L_0},U}_{1d\text{ trans}}(\phi)=\text{Index}^{\AA,U}_{2\text{ trans}}(\omega_\phi).
 		\end{equation}
 		\item This index is a group homomorphism under the stacking operator by which we mean that
 		\begin{equation}
-			\textrm{Index}_{\text{2 trans}}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U(g)}(\omega_2).
+			\textrm{Index}_{\text{2 trans}}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega_2).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -695,7 +702,7 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 \end{proof}
 Our translation index is now defined as
 \begin{definition}
-	Take $C:G^2\rightarrow U(1)$ to be the 2-cochain defined in \ref{lem:Definition2Cochain}. Take $\phi:G^2\rightarrow\TT$ such that $C(g,h)=\exp(i\phi(g,h))$ then we define the index as
+	Let $C:G^2\rightarrow U(1)$ be the 2-cochain defined in \ref{lem:Definition2Cochain}. Take $\phi:G^2\rightarrow\TT$ such that $C(g,h)=\exp(i\phi(g,h))$ then we define the index as
 	\begin{equation}
 	\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{\phi}\in H^2(G,\TT)
 	\end{equation}
@@ -1037,7 +1044,7 @@ We now get (using this equation and the fact that $W_g$ is a representation)
 \end{align}
 and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
 \subsection{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
-The goal of this section is now to show that the index we constructed is invariant under locally generated automorphisms (the final proof of this statement is under theorem \ref{thrm:IndexInvariantUnderLGA}).
+The goal of this section is now to show that the index we constructed is invariant under locally generated automorphisms (the final proof of this statement is under theorem \ref{thrm:IndexInvariantUnderLGA}). To this end let $H\in\BB_{F_\phi}([0,1])$ be $G$-invariant, translation invariant (in the vertical direction) one parameter family of interactions.
 \begin{lemma}\label{lem:DefinitionOfGroupMorphism}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. Take $\Phi^U_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$ such that there exists some $a\in\UU(\AA)$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquation}
@@ -1292,13 +1299,13 @@ The goal of this section is now to show that the index we constructed is invaria
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ is an operator belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
-Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
+Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U\in\hom(G,U(\CC^d))$ an on site group action arbitrary. Let
 \begin{equation}
 	\omega_1,\omega_2\in\{\omega\in\PP(\AA)|\omega\text{ satisfies assumption \ref{assumption}}\}
 \end{equation}
 be two states. The goal of this section is to prove that
 \begin{equation}\label{eq:IndexMorphismUnderStacking}
-	\textrm{Index}^{\AA^2,U(g)\otimes U(g)}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}(\omega_1)\textrm{Index}^{\AA,U(g)}(\omega_2).
+	\textrm{Index}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U}(\omega_1)+\textrm{Index}^{\AA,U}(\omega_2).
 \end{equation}
 Let $\omega_{0i}$ and $\gamma_{0;1}^{\Phi_i}$ (for all $i\in\{1,2\}$) be product states and disentanglers satisfying that
 \begin{equation}
@@ -1334,7 +1341,7 @@ In this section we discuss translation invariance not just in the vertical direc
 \assumptionTwo*$\:$\\
 For an overview of the supports see figure \ref{fig:SetupForTwoTranslationsNearProof}. In this section we will be needing a stronger version of the cone operators (from definition \ref{def:ConeOperators}):
 \begin{definition}
-	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\nu^\sigma(\sigma)$\footnote{Where we define $\nu^L\defeq \nu^{-1}$ and $\nu^R\defeq \nu$.} (or in short $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\nu^\sigma(\AA_{C_\theta}\cap\AA_\sigma))}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\nu^\sigma(\sigma)$\footnote{Where we define $\nu^L\defeq \nu^{-1}$ and $\nu^R\defeq \nu$.} (or in short $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{\AA_{W(\nu^\sigma(C_\theta\cap\sigma))}}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
@@ -1342,13 +1349,21 @@ For an overview of the supports see figure \ref{fig:SetupForTwoTranslationsNearP
 \end{definition}
 Similarly as before we will also need the generalisation of this definition:
 \begin{definition}
-	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{W(\AA_{C_\theta})^c}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\nu^\sigma(\sigma)$ (or in short $x\in \IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta)$) if there exists an $A\in\UU(\AA_{\nu^\sigma(\sigma)})$ and a $y\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ such that
+	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\nu^\sigma(\sigma)$ (or in short $x\in \IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta)$) if there exists an $A\in\UU(\AA_{\nu^\sigma(\sigma)})$ and a $y\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ such that
 	\begin{equation}
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
 	\end{equation}
 \end{definition}
 \subsection{Definition of the index}
- First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$ and then later on we will show independence on the choice of these objects. In what follows, we will need the vertical analogue of the $v$. We define the horizontal translation operator:
+ First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v$, $W_g$, $u_\sigma(g,h)$ and $K_g^\sigma$ and then later on we will show independence on the choice of these objects. We remind the reader of some equalities from section \ref{sec:ProofFirstStatement}
+\begin{align}
+		\Ad{v}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\\
+		\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\\
+		\Ad{u_\sigma(g,h)}\circ\pi_\sigma\circ\alpha_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\eta_h^{\sigma}\circ(\beta_g^{\sigma U})^{-1}\circ(\eta^\sigma_{gh})^{-1}\\
+		u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}\\
+		\Ad{K^R_g}\circ\pi_0\circ\alpha_0&=\pi_0\circ \alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}.
+	\end{align}
+In what follows, we will need the vertical analogue of the $v$. We define the horizontal translation operator:
 \begin{lemma}\label{lem:Definition_w}
 	There exists a unique $w\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -1390,22 +1405,28 @@ Similarly as before we will also need the generalisation of this definition:
 	We have that
 	\begin{align}
 		&\Ad{w^\dagger K_g^R w}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\underline{\tau^{-1}}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
-		&=\Ad{\underline{v^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
 	\end{align}
-	where $L_j=\{(x,y)\in\ZZ^2|y=j\}$. Inserting $b^R_g v v^\dagger (b^R_g)^\dagger$ now gives
+	Using the fact that because of translation invariance of the group action we have that $\tau^{-1}\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}$ with $L_j=\{(x,y)\in\ZZ^2|y=j\}$ this leads to
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\underline{\tau^{-1}}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
+		&=\Ad{\underline{v^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
+	\end{align}
+	Inserting $b^R_g v v^\dagger (b^R_g)^\dagger$ now gives
 	\begin{equation}
-		=\Ad{v^\dagger\underline{b^R_g v v^\dagger (b^R_g)^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu
+		=\Ad{v^\dagger\underline{b^R_g v v^\dagger (b^R_g)^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
 	\end{equation}
-	 Using the hermitian conjugate of equation \eqref{eq:automorphismBelongingTo_b} we now get
+	 Using the inverse of equation \eqref{eq:automorphismBelongingTo_b} we now get
 	\begin{align}
 		&=\Ad{v^\dagger b^R_g v }\circ \pi_0\circ\alpha_0\circ\Theta\circ\underline{\tau^{-1}\circ\eta_g^R\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu}\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
 		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
 	\end{align}
 	Now we will use the fact that $\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ\nu=\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}$ to obtain
+	\begin{equation}
+		=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
+	\end{equation}
+	Since (as you can check in figure \ref{fig:SetupForTwoTranslationsNearProof}) $\tau^{-1}(\eta_g^R(\tau(U_{(-1,-1)}(g))))=U_{(-1,-1)}(g)$ this gives
 	\begin{align}
-		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
 		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{U_{(-1,-1)}(g)}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
 		&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
 	\end{align}
@@ -1502,9 +1523,14 @@ Using this we can show that:
 		K_g^R&\mapsto v^\dagger b_g^R v K_g^R (b_g^R)^\dagger&W_g&\mapsto b_g^Lb_g^RW_g
 	\end{align}
 	\begin{equation}
-		u_R(g,h)\mapsto b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)
+		u_R(g,h)\mapsto b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h).
 	\end{equation}
-	which is proven in lemma \ref{lem:TransformationUnderDelta}. This concludes the proof.
+	Using the fact that
+	\begin{align}
+		(b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)&=(b_{gh}^R)^\dagger u_L(g,h)^\dagger=u_L(g,h)^\dagger(b_{gh}^R)^\dagger\\
+		&=W_{gh}W_h^\dagger W_g^\dagger u_R(g,h) (b_{gh}^R)^\dagger
+	\end{align}
+	we see that we can prove that our equation is invariant under the substitution using lemma \ref{lem:TransformationUnderDelta}. This concludes the proof.
 \end{proof}
 \begin{definition}
 	Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha}. Take $\phi\in\hom(G,\TT)$ such that $\alpha(g)=\exp(i\phi(g))$. We define the 2 translation index as
@@ -1647,11 +1673,11 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\begin{equation}
 		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
 	\end{equation}
-	Since the last equation is split we have again by the same argument to prove \ref{lem:UsingIrreducibilityAndWignerTheorem} that we can take $\delta_g^L\in\textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$ such that
+	Since the last equation is split we have again by the same argument used to prove lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} that we can take $\delta_g^L\in\textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$ such that
 	\begin{equation}
 		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
 	\end{equation}
-	Take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ the operators corresponding to to be the operators belonging to the first choice (with arbitrary phases). Define
+	Take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ operators corresponding to the first choice (with arbitrary phases). Define
 	\begin{align}
 		W_{g,2}&\defeq\delta_g W_{g,1}\\
 		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
@@ -1735,7 +1761,7 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 \end{align}
 showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H^1IndexInvariantUnderRotations}
-The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. In the rest of this section we will define (for notational simplicity) $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA} but with some notable differences. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
+The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. To this end let $H\in \BB_{F_\phi}([0,1])$ be a $G$-invariant, translation invariant (in both directions) one parameter family of interactions. In the rest of this section we will define (for notational simplicity) $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA} but with some notable differences. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. Take $\Phi^U_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$ such that there exists some $a\in\AA$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations}
