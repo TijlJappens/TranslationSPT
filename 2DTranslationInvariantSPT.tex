@@ -1052,13 +1052,13 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. Define the map
 	\begin{align}
-		\phi_1&:\IAC_R(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
+		\phi_{1,\sigma}&:\IAC_\sigma(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
 		\nonumber
 		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger
 	\end{align}
-	where $A\in\UU(\AA_R)$ and $y\in\textrm{Cone}_R(\alpha_0,\theta)$. This map satisfies that
+	where $A\in\UU(\AA_\sigma)$ and $y\in\textrm{Cone}_\sigma(\alpha_0,\theta)$. This map satisfies that
 	\begin{enumerate}
-		\item  for (the unique) $\xi\in\Aut{\AA_{C_\theta}\cap\AA_R}$ such that
+		\item  for (the unique) $\xi\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ such that
 		\begin{equation}
 			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
 		\end{equation}
@@ -1068,11 +1068,11 @@ The goal of this section is now to show that the index we constructed is invaria
 		\end{equation}
 		\item it is well defined (independent of the choice of $A$ and $y$).
 		\item it is a group homomorphism.
-		\item $\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\IAC_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+		\item $\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\IAC_\sigma(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\textrm{Cone}_R(\alpha_0,\theta,\Theta)$ such that
+	In this proof we take $\sigma=R$, the proof when $\sigma=L$ is equivalent. Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\textrm{Cone}_R(\alpha_0,\theta,\Theta)$ such that
 	\begin{equation}
 	x=\pi_0\circ\alpha_0\circ\Theta(A)y
 	\end{equation}
@@ -1082,7 +1082,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	Take $a$ and $\Phi=\Phi^U\otimes\Phi^D$ as given in equation \eqref{eq:DefinitionOfGroupMorphismHAutEquation}. We now define
 	\begin{equation}
-		\phi_1(x)\defeq \pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger.
+		\phi_{1,R}(x)\defeq \pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger.
 	\end{equation}
 	We now have to prove three things:
 	\begin{enumerate}
@@ -1092,7 +1092,7 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{enumerate}
 	To show the first item just observe that
 	\begin{align}
-		&\Ad{\phi_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\\
+		&\Ad{\phi_{1,R}(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\\
 		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}\\
 		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}.
 	\end{align}
@@ -1117,11 +1117,11 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{align}
 	giving
 	\begin{equation}
-		\phi_1(x_1x_2)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1y_2\tilde{a}^\dagger.
+		\phi_{1,R}(x_1x_2)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1y_2\tilde{a}^\dagger.
 	\end{equation}
 	where $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. Filling this in gives
 	\begin{align}
-		&\phi_1(x_1x_2)\phi_1(x_2)^\dagger\phi_1(x_1)^\dagger\\
+		&\phi_{1,R}(x_1x_2)\phi_{1,R}(x_2)^\dagger\phi_{1,R}(x_1)^\dagger\\
 		\label{eq:HomeomorphismCondition}
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_R}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1\stkout{y_2\tilde{a}^\dagger \tilde{a}y_2^\dagger}\tilde{a}^\dagger\\
 		\nonumber
@@ -1144,9 +1144,27 @@ The goal of this section is now to show that the index we constructed is invaria
 	\end{equation}
 	Inserting this in equation \eqref{eq:HomeomorphismCondition} shows that
 	\begin{equation}
-		\phi_1(x_1x_2)\phi_1(x_1)^\dagger\phi_1(x_2)^\dagger=\id
+		\phi_{1,R}(x_1x_2)\phi_{1,R}(x_1)^\dagger\phi_{1,R}(x_2)^\dagger=\id
 	\end{equation}
 	concluding the proof.
+\end{proof}
+We now have to extend the above definition to the group
+\begin{equation}
+	\IAC_{L\times R}(\alpha_0,\theta,\Theta)=\{ab=ba|a\in\IAC_{L}(\alpha_0,\theta,\Theta),b\in\IAC_{R}(\alpha_0,\theta,\Theta)\}.
+\end{equation}
+\begin{lemma}
+	Define
+	\begin{equation}
+		\phi_1:\IAC_{L\times R}(\alpha_0,\theta,\Theta)\rightarrow\UU(\HH):ab\mapsto \phi_{1,L}(a)\phi_{1,R}(b)
+	\end{equation}
+	where $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. This is well defined, by which we mean that
+	\begin{equation}
+		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a).
+	\end{equation}
+	This is still a morphism.
+\end{lemma}
+\begin{proof}
+	{\color{red}This I still have to do.}
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	There exists a map
@@ -1769,13 +1787,13 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{equation}
 	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof). Take $c\defeq \pi_0\circ\alpha_0(a)$ and define the map
 	\begin{align}
-		\phi_1&:\IAC_{R}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
+		\phi_{1,\sigma}&:\IAC_{\sigma}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
 		\nonumber
-		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu(R)}}_{1;0}(A)cyc^\dagger
+		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_{1,\sigma}(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\nu(R)}}_{1;0}(A)cyc^\dagger
 	\end{align}
-	where $A\in\AA_{R}$ and $y\in\textrm{Cone}_{R}(\alpha_0,\theta)$. This map satisfies that
+	where $A\in\AA_{\sigma}$ and $y\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$. This map satisfies that
 	\begin{enumerate}
-		\item  for (the unique) $\xi\in\Aut{\AA_{\nu(C_\theta\cap R)}}$ such that
+		\item  for (the unique) $\xi\in\Aut{\AA_{C_\theta\cap \sigma}}$ such that
 		\begin{equation}
 			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
 		\end{equation}
@@ -1787,16 +1805,34 @@ The goal of this section is to show that the index we constructed is invariant u
 		\item it is a group homomorphism.
 		\item in general
 			\begin{equation}
-				\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\IAC_R(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
+				\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\IAC_\sigma(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
 			\end{equation}
-			If on top of this, $x\in\IAC_{\nu(R)}$ then
+			If on top of this, $x\in\IAC_{\nu^\sigma(\sigma)}$ then
 			\begin{equation}
-				\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\IAC_{\nu(R)}(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
+				\pi_0\circ\alpha_0\circ\Theta(a^\dagger)\phi_1(x)\pi_0\circ\alpha_0\circ\Theta(a)\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
 			\end{equation}
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfGroupMorphism}.
+\end{proof}
+We now have to extend the above definition to the group
+\begin{equation}
+	\IAC_{L\times R}(\alpha_0,\theta,\Theta)=\{ab=ba|a\in\IAC_{L}(\alpha_0,\theta,\Theta),b\in\IAC_{R}(\alpha_0,\theta,\Theta)\}.
+\end{equation}
+\begin{lemma}
+	Define
+	\begin{equation}
+		\phi_1:\IAC_{L\times R}(\alpha_0,\theta,\Theta)\rightarrow\UU(\HH):ab\mapsto \phi_{1,L}(a)\phi_{1,R}(b)
+	\end{equation}
+	where $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. This is well defined, by which we mean that
+	\begin{equation}
+		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a).
+	\end{equation}
+	This is still a morphism.
+\end{lemma}
+\begin{proof}
+	{\color{red}This I still have to do.}
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMapTwoTranslations}
 	There exists a map
@@ -1815,10 +1851,12 @@ The goal of this section is to show that the index we constructed is invariant u
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfWgMap}.
 \end{proof}
 \begin{lemma}
-	There exist $A_L\in\UU(\AA_{\nu^{-1}(L)}),A_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$ satisfying that
-	\begin{equation}\label{eq:TranslatingSplittedTimeEvolution}
-		\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}=\Ad{A_L}\otimes\Ad{A_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{\nu^{-1}(L),\nu(R)\}}}\Phi^{\mu\nu}
-	\end{equation}
+	There exist $A_L\in\UU(\AA_{L}),A_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$ satisfying that
+	\begin{align}
+		\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}&=\gamma^{H_L}_{0;1}\otimes\gamma^{H_{\nu\circ\nu(R)}}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\\
+	\label{eq:TranslatingSplittedTimeEvolution}
+	&=\Ad{A_L}\otimes\Ad{A_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{L,\nu(R)\}}}\Phi^{\mu\nu}
+	\end{align}
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
 \end{lemma}
 \begin{proof}
@@ -1923,21 +1961,21 @@ The goal of this section is to show that the index we constructed is invariant u
 	\begin{equation}
 		\Ad{v^\dagger W_g v}(v^\dagger a_\sigma^\dagger v a_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma.
 	\end{equation}
-	We will prove this equality in two steps. First we will find an $A\in\UU(\AA)$ such that
+	We will prove this equality in two steps. First we will find some $B_\sigma\in\UU(\AA)$ such that
 	\begin{equation}
-		\pi_0\circ\alpha_0\circ\Theta(A)=v^\dagger a_\sigma^\dagger v a_\sigma
+		\pi_0\circ\alpha_0\circ\Theta(B_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma
 	\end{equation}
-	then we will show that $A\in\AA_{(W(C_\theta)\cap\sigma)^c}$ and that $\beta_g^{\tau(U)}(A)=A$. To find $A$, we write out
+	then we will show that $B_\sigma\in\AA_{(W(C_\theta)\cap\sigma)^c}$ and that $\beta_g^{\tau(U)}(B_\sigma)=A$. To find $B_\sigma$, we write out
 	\begin{equation}
 		v^\dagger a_\sigma^\dagger v a_\sigma=\pi_0\circ\alpha_0\circ\Theta(\nu^{-1}(A_\sigma^\dagger)A_\sigma)
 	\end{equation}
-	and observe that we can take $A\defeq \nu^{-1}(A_\sigma^\dagger)A_\sigma$. Now we will prove that $A\in\UU(\AA_{W(C_\theta)^c\cap\sigma})=\UU(\AA_{(W(C_\theta)^c\cap\sigma)^c}')$. Take $X\in\AA_{(W(C_\theta)^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
+	and observe that we can take $B_\sigma \defeq \nu^{-1}(A_\sigma^\dagger)A_\sigma$. Now we will prove that $B_\sigma\in\UU(\AA_{W(C_\theta)^c\cap\sigma})=\UU(\AA_{(W(C_\theta)^c\cap\sigma)^c}')$. Take $X\in\AA_{(W(C_\theta)^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
 	\begin{align}
-		\Ad{A}(X)&=\tau^{-1}\circ\Ad{A_\sigma^\dagger}\circ\tau\circ\Ad{A_\sigma}(X)\\
+		\Ad{B_\sigma}(X)&=\tau^{-1}\circ\Ad{A_\sigma^\dagger}\circ\tau\circ\Ad{A_\sigma}(X)\\
 		&=\tau^{-1}\circ\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}(X)\\
 		&=X
 	\end{align}
-	concluding the proof. The fact that $\beta_g^{\tau(U)}(A)=A$ follows from this same equation as well.
+	concluding the proof. The fact that $\beta_g^{\tau(U)}(B_\sigma)=B_\sigma$ follows from this same equation as well.
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
