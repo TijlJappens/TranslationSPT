@@ -133,7 +133,7 @@ As noticed in \cite{Chen_2013}. The groups in which these indices take values ca
 		H^2(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^2 H^i(\ZZ,\TT)\otimes H^{2-i}(G,\TT)\cong H^2(G,\TT)\oplus H^1(G,\TT)\\
 		H^3(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT).
 	\end{align}
-	This result can in turn be used to work out the Kuneth formula for $\ZZ^2\times G$
+	This result can in turn be used to work out the K\"unneth formula for $\ZZ^2\times G$
 	\begin{equation}
 		H^3(\ZZ^2\times G,\TT)\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(\ZZ\times G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT).
 	\end{equation}
@@ -236,7 +236,7 @@ where
 In what follows we will denote the group action on $H^n(G,M)$ also in the same additive notation that we used for $C^n(G,M)$. This notation makes sense because of the property that for any $\phi_1,\phi_2\in Z^n(G,M)$ we have that $\expval{\phi_1+\phi_2}_{H^n(G,M)}=\expval{\phi_1}_{H^n(G,M)}+\expval{\phi_2}_{H^n(G,M)}$.
 \section{Results}
 We will present our claim starting from two different assumptions. The first assumption is related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
-\subsection{Statement of the results in therms of short range entanglement}\label{sec:Results_1}
+\subsection{Statement of the results in terms of short range entanglement}\label{sec:Results_1}
 We can use these locally generated automorphisms to define the concept of short range entanglement.
 \begin{definition}\label{def:sre}
 	We say that a pure state $\omega\in\PP(\AA)$ is short range entangled (in short an SRE state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
@@ -317,7 +317,7 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms and satisfies item 4. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof of item 2. Item 3 is proven in section \ref{sec:H^1IndexInvariantUnderRotations} concluding the proof of the theorem.
 \end{proof}
 Except when we need it explicitly we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
-\subsection{Statement of the result in therms of Q-automorphisms}\label{sec:Results_2}
+\subsection{Statement of the result in terms of Q-automorphisms}\label{sec:Results_2}
 \input{Figures/Figure1}
 Before we can start to prove the results we will first formulate the result starting from a weaker assumption. Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
@@ -443,7 +443,7 @@ In what follows, we will first fix certain objects to define the index and then 
 	\end{align}
 \end{lemma}
 \begin{proof}
-	Since $\omega\circ\tau=\omega$ we get by the uniqueness of the GNS triple (see corollary \ref{cor:ExistenceOfUnitary}) that there exists a unique (up to a phase) $\tilde{v}\in\UU(\HH_0)$ satisfying
+	Since $\omega\circ\tau=\omega$ we get by the uniqueness of the GNS triple (see corollary \ref{cor:ExistenceOfUnitary}) that there exists a unique $\tilde{v}\in\UU(\HH_0)$ satisfying
 	\begin{align}
 		\Ad{\tilde{v}}\circ\pi_0\circ\alpha&=\pi_0\circ\alpha\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
 	\end{align}
@@ -489,7 +489,7 @@ We will also define a generalisation of this. We will define a subgroup of $\UU(
 		&=\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\pi_0\circ\alpha_0\circ\Theta(A_R)v_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
 		&=\pi_0\circ\alpha_0\circ\Theta(A_L)\Ad{v_L}\circ\pi_0\circ\alpha_0\circ\Theta(A_R)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L.
 	\end{align}
-	If we now take $\xi_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ such that $\Ad{v_\sigma}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi_\sigma$ we get that
+	If we now take $\xi_\sigma\in\Aut{\AA_{W(C_\theta)}\cap\AA_\sigma}$ such that $\Ad{v_\sigma}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi_\sigma$ we get that
 	\begin{align}
 		&=\pi_0\circ\alpha_0\circ\Theta(A_L)\pi_0\circ\alpha_0\circ\Theta\circ\xi_L(A_R)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
 		&=\pi_0\circ\alpha_0\circ\Theta(A_L)\pi_0\circ\alpha_0\circ\Theta(A_R)v_Lv_R-\pi_0\circ\alpha_0\circ\Theta(A_R)v_R\pi_0\circ\alpha_0\circ\Theta(A_L)v_L\\
@@ -997,7 +997,7 @@ where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma
 	\begin{equation}
 		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
 	\end{equation}
-	is a GNS triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
+	is a GNS triple of $\phi$. This implies that if we take any $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 	\begin{equation}
 		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
@@ -1339,7 +1339,7 @@ concluding the proof.
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates the lattice to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
 \assumptionTwo*$\:$\\
-For an overview of the supports see figure \ref{fig:SetupForTwoTranslationsNearProof}. In this section we will be needing a stronger version of the cone operators (from definition \ref{def:ConeOperators}):
+For an overview of the supports see figure \ref{fig:SetupForTwoTranslationsNearProof}. In this section we will need a stronger version of the cone operators (from definition \ref{def:ConeOperators}):
 \begin{definition}
 	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\nu^\sigma(\sigma)$\footnote{Where we define $\nu^L\defeq \nu^{-1}$ and $\nu^R\defeq \nu$.} (or in short $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{\AA_{W(\nu^\sigma(C_\theta\cap\sigma))}}$ such that
 	\begin{equation}
@@ -1418,7 +1418,7 @@ In what follows, we will need the vertical analogue of the $v$. We define the ho
 	\end{equation}
 	 Using the inverse of equation \eqref{eq:automorphismBelongingTo_b} we now get
 	\begin{align}
-		&=\Ad{v^\dagger b^R_g v }\circ \pi_0\circ\alpha_0\circ\Theta\circ\underline{\tau^{-1}\circ\eta_g^R\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu}\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
+		&=\Ad{v^\dagger b^R_g v }\circ \pi_0\circ\alpha_0\circ\Theta\circ\underline{\tau^{-1}\circ\eta_g^R\circ\nu^{-1}\circ\stkout{(\eta_g^R)^{-1}\circ\nu}}\circ\stkout{\nu^{-1}\circ\eta_g^R}\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
 		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
 	\end{align}
 	Now we will use the fact that $\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ\nu=\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}$ to obtain
@@ -1449,7 +1449,7 @@ We have that $h_g\in\IAC_L(\theta,\alpha_0,\Theta)$. On top of that we also have
 	\end{align}
 \end{lemma}
 \begin{proof}
-	We have that
+	We have that (see figure \ref{fig:SetupForTwoTranslations})
 	\begin{align}
 		\Ad{W_h}(h_g)&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_h\circ\beta_h^U(U_{(-1,-1)}(g))\\
 		&=\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g))=h_g
@@ -1627,9 +1627,9 @@ In what follows we will need that the index is invariant under the following tra
 	\end{align}
 	If we now insert $vv^\dagger,$ we obtain
 	\begin{align}
-		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R v\stkout{v^\dagger (\delta^R_g)^\dagger v} h_g \stkout{v^\dagger \delta_g^R v} K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w.
+		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R v\stkout{v^\dagger (\delta^R_g)^\dagger v} h_g \stkout{v^\dagger \delta_g^R v} K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w
 	\end{align}
-	Again after inserting $vv^\dagger$ and $ww^\dagger$ we now get
+	where the cancelation is due to the fact that $v^\dagger \delta^R_g v\in\textrm{IAC}_{R}(\alpha_0,\theta,\Theta)$ whereas $h_g\in \textrm{IAC}_{L}(\alpha_0,\theta,\Theta)$. Again after inserting $vv^\dagger$ and $ww^\dagger$ we now get
 	\begin{align}
 		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w \underline{v v^\dagger} b_{g,1}^R v h_g K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger \underline{ww^\dagger} v^\dagger (\delta_g^R)^\dagger v  w\\
 		&=\stkout{v^\dagger w^\dagger\delta^R_g w v} \alpha_1(g) \stkout{w^\dagger v^\dagger (\delta_g^R)^\dagger v  w}\\
@@ -1639,7 +1639,7 @@ In what follows we will need that the index is invariant under the following tra
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBetaTwoTranslations}
-	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_{C_\theta\cap L}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_{C_\theta\cap R}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
+	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,2}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_{C_\theta\cap L}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_{C_\theta\cap R}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
 	\begin{align}\label{eq:InvarianceUnderChoiceBetaTwoBetasTwoTranslations}
 		\tilde{\beta}_{g,1}&=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g&\tilde{\beta}_{g,2}&=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
 	\end{align}
@@ -1961,7 +1961,7 @@ The goal of this section is to show that the index we constructed is invariant u
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\tilde\beta_{g,1}\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart2}. Because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart2}. Because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1TwoTrans}
 		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
@@ -2219,7 +2219,7 @@ We will call this cyclic representation a GNS triple for $\omega$.
 \begin{proof}
 	The proof of this corollary is a combination of Corollary 2.3.17 and Theorem 2.3.19 from \cite{bratteli1979operator}.
 \end{proof}
-The following lemma does not come from Bratteli Robinson but in stead follows from Wigner's theorem:
+The following lemma does not come from Bratteli-Robinson but in stead follows from Wigner's theorem:
 \begin{lemma}\label{lem:SplittingOfUnitary}
 	Let $\AA$ and $\BB$ be arbitrary unital $C^*$-algebras. Let $(\HH_\AA,\pi_\AA)$ and $(\HH_\BB,\pi_\BB)$ be arbitrary irreducible $*$ representations on $\AA$ and $\BB$ respectively. Let $U\in\UU(\HH_\AA\otimes\HH_\BB)$ be such that there exists an $\alpha_\AA\in\Aut{\AA}$ and an $\alpha_\BB\in\Aut{\BB}$ satisfying
 	\begin{equation}
@@ -2231,18 +2231,24 @@ The following lemma does not come from Bratteli Robinson but in stead follows fr
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	Define
-	\[\tau_\AA:\UU(\HH_\AA)\rightarrow\UU(\HH_\AA):u\mapsto \tau_\AA(u)=\lim_{n\rightarrow\infty}\pi_\AA\circ\alpha_\AA(U_n) \]
-\end{proof}
-where $U_n$ is taken such that $\lim_{n\rightarrow\infty}\pi_\AA(U_n)=u$. This sequence exists because $\pi_\AA$ is irreducible and hence $\overline{\pi_\AA(\UU(\AA))}=\UU(\HH_\AA)$. This $\tau_\AA$ is independent of the choice of sequence and it is a $*$-isomorphism. By Wigner's theorem $\tau_\AA$ can be represented by a unitary, hence there exists a $U_\AA$ satisfying that
+From the assumptions we see that $\forall A\in\AA$
 \begin{equation}
-	\tau_\AA=\Ad{U_\AA}.
+	\Ad{U}\circ\pi_\AA\otimes\pi_\BB(A\otimes\id)=\pi_\AA\circ\alpha_\AA(A)\otimes\id\subset \BB(\HH_\AA)\otimes\id.
 \end{equation}
-Doing the same on $\BB$ gives us similarly a $\tau_\BB$ and a $U_\BB$. We now get
+Since $\Ad{U}$ is continuous in the weak operator topology, it follows that we can extend the map
+\begin{equation}
+	\Ad{U}|_{\textrm{Im}(\pi_\AA)}:\textrm{Im}(\pi_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id
+\end{equation}
+to the closure in weak operator topology. By irreducibility $\pi_\AA(\AA)''=\BB(\HH_\AA)$ and therefore we get a map
+\begin{equation}
+	\Ad{U}|_{\BB(\HH_\AA)\otimes\id}:\BB(\HH_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id.
+\end{equation}
+By restriction this gives rise to an automorphism $\tau_\AA:\UU(\HH_\AA)\rightarrow\UU(\HH_\AA)$. By Wigners theorem any automorphism of $\BB(\HH_\AA)$ is inner and therefore there exists a $U_\AA$ such that $\tau_\AA=\Ad{U_\AA}$. Doing the same on $\BB$ gives us similarly a $\tau_\BB$ and a $U_\BB$. We now get
 \begin{equation}
 	\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\tau_\AA\circ\pi_\AA\otimes\tau_\BB\circ\pi_\BB=\Ad{U_\AA\otimes U_\BB}\circ(\pi_\AA\otimes\pi_\BB).
 \end{equation}
 By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelevant phase) we need that $U=U_\AA\otimes U_\BB$ concluding the proof.
+\end{proof}
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
 \begin{equation}
@@ -2425,7 +2431,7 @@ Now we will state some properties of locally generated automorphisms:
 	\end{equation}
 	The proof of this starts analogously to the proof of item 1 and 3. We take $\Psi=H$, $\Psi^{(0)}=H_{\tau(C_\theta^c\cap U)}+H_{\tau^{-1}(C_\theta^c\cap D)}$ and $\Psi^{(1)}=\Psi-\Psi^{(0)}$. Define $\Xi^{(s)}(Z;t)$ again through equation \eqref{eq:PropertiesLocallyGeneratedAutomorphismsProofDefinitionXi}. In analogy to what was done in equation (5.54) in \cite{ogata2021h3gmathbb} we obtain
 	\begin{equation}
-		\sum_{\substack{Z:Z\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }Z\nsubseteq \tau^{-1}(C_\theta^c\cap D)}}\sup_{t\in[0,1]}\norm{\Xi^{(1)}(Z,t)}\leq \frac{8}{C_F}(e^{2I_F(\Psi)}-1)\sum_{m=0}^\infty\sum_{\substack{Z:Z(m)\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }Z(m)\nsubseteq \tau^{-1}(C_\theta^c\cap D)}} \sup_{t\in[0,1]}\norm{\Psi^{(1)}(X;t)}\abs{X}G_F(m).
+		\sum_{\substack{Z:Z\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }Z\nsubseteq \tau^{-1}(C_\theta^c\cap D)}}\sup_{t\in[0,1]}\norm{\Xi^{(1)}(Z,t)}\leq \frac{8}{C_F}(e^{2I_F(\Psi)}-1)\sum_{m=0}^\infty\sum_{\substack{X:X(m)\nsubseteq \tau(C_\theta^c\cap U)\\\text{and }X(m)\nsubseteq \tau^{-1}(C_\theta^c\cap D)}} \sup_{t\in[0,1]}\norm{\Psi^{(1)}(X;t)}\abs{X}G_F(m).
 	\end{equation}
 	If $X$ in the last line has a non-zero contribution, then at least one of the following occurs:
 	\begin{enumerate}
@@ -2484,7 +2490,7 @@ From these four statements we can prove the following results:
 		\gamma^H_{t;s}\circ\eta_g\circ\gamma^{H}_{s;t}&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\eta_g\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}\\
 		&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\Ad{a_{3,L}\otimes a_{3,R}}\circ\tilde{\eta}_g\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}.
 	\end{align}
-	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}(\AA)$ the implication follows.
+	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}(\AA)$ the implication follows. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{SQAut}(\AA)$.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
