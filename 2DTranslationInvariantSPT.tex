@@ -2006,11 +2006,15 @@ We now have to extend the above definition to the group
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2TwoTrans}
 		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
-	Take $\Phi$ satisfying equation \ref{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations} arbitrary and define
+	Take $\Phi$ satisfying equation \ref{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations} arbitrary and define 
+	\begin{equation}
+		\delta_g^\sigma:=\pi_0\circ\alpha_0\circ\Theta\gamma^{H_{\text{split}}}_{0;1}(A_{2,g}^\sigma).
+	\end{equation}1
+	Let
 	\begin{equation}
 		\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)
 	\end{equation}
-	the homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphismTwoTranslations}. Take similarly
+	be the homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphismTwoTranslations}. Take similarly
 	\begin{equation}
 		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
 	\end{equation}
@@ -2020,9 +2024,21 @@ We now have to extend the above definition to the group
 		\tilde{w}&=\pi_0(A_1)w\pi_0(A_1)^\dagger\\
 		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
 		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger\\
-		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)^\dagger\pi_0(A_1)^\dagger.
+		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)^\dagger\pi_0(A_1)^\dagger\\
+		\tilde{h}_g&=\pi_0(A_1)\phi_1(h_g)\pi_0(A_1).
 	\end{align}
-	First we will show that this transformation indeed leaves the index invariant, then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. The fact that the index is invariant under the $\phi_1(\delta_g)$ part follows from lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously) can be shown using equation \eqref{eq:TransformationOfKUnderEpsilon}. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. To show this, observe that we have
+	First we will show that this transformation indeed leaves the index invariant, then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. Let $\alpha\in\hom(G,U(1))$ be the old index and $\tilde{\alpha}\in\hom(G,U(1))$ the new one. We have that
+\begin{align}
+\alpha(g)&=v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w\\
+&=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w)\\
+&=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger)\phi_1( w^\dagger (K_g^R)^\dagger w).
+\end{align}
+Using equation \eqref{eq:TransformationOfKUnderEpsilon} on this gives us
+\begin{align}
+&=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger)\phi_1((\epsilon_g^R)^\dagger)w^\dagger\phi_1(  (K_g^R)^\dagger )wv^\dagger \phi_1(\epsilon_g^R)v\\
+&=\phi_1(v^\dagger \epsilon_g^R b_g^R v h_g K_g^R (b_g^R)^\dagger (\epsilon_g^R)^\dagger)w^\dagger\phi_1(  (K_g^R)^\dagger )w.
+\end{align}
+This shows that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously). The fact that the index is invariant under the $\phi_1(\delta_g)$ part is now completely equivalent to the proof of lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. To show this, observe that we have
 	\begin{align}
 		&\Ad{\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\stkout{\nu\circ\nu^{-1}}\circ\eta_g^R\circ\nu\\
