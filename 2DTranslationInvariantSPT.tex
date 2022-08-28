@@ -1867,7 +1867,7 @@ We now have to extend the above definition to the group
 	\begin{align}
 		a_L&\defeq \pi_0\circ\alpha_0\circ\Theta(A_L)&a_R&\defeq \pi_0\circ\alpha_0\circ\Theta(A_R)
 	\end{align}
-	then for any $K\in\text{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ we get that
+	then for any $K\in\text{Cone}_{\nu(R)}(\alpha_0,\theta)\cup\text{Cone}_{L}(\alpha_0,\theta)$ we get that
 	\begin{equation}\label{eq:TranslationOutOfPhi_K}
 		w^\dagger \phi_1(K)w=\phi_1(w^\dagger \: a_L\otimes a_R \: K \: a_L^\dagger\otimes a_R^\dagger \: w).
 	\end{equation}
@@ -1884,11 +1884,11 @@ We now have to extend the above definition to the group
 		&=\Ad{w\phi_1(w^\dagger a_L\otimes a_R w)}(cw^\dagger c^\dagger \phi_1(K) c^\dagger wc^\dagger)\\
 		&=\Ad{w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w cw^\dagger c^\dagger)}(\phi_1(K)).
 	\end{align}
-	To do this, we first find an $A\in\AA$ such that
+	To do this, we first find an $A\in\UU(\AA)$ such that
 	\begin{equation}
 		\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w cw^\dagger c^\dagger)
 	\end{equation}
-	and then we will prove that $A\in\UU(\AA_{C_\theta^c})$. It should be clear that the result follows from this\footnote{This is most easily seen from\begin{equation}
+	and then we will prove that $A\in\UU(\AA_{W(C_\theta)^c})$. It should be clear that the result follows from this\footnote{This is most easily seen from\begin{equation}
 			\Ad{\phi_1(K)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=\phi_1(\Ad{K}(\pi_0\circ\alpha_0\circ\Theta(A)))=\phi_1(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A).
 	\end{equation}}. Finding this $A$ can be done using
 	\begin{align}
@@ -1901,7 +1901,7 @@ We now have to extend the above definition to the group
 	\begin{equation}
 		A\defeq \gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger).
 	\end{equation}
-	Now we only have to show that indeed $A\in\UU(\AA_{C_\theta^c})$. To do this, take $X\in\AA_{C_\theta}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then indeed we need that $A\in\UU(\AA_{C_\theta}')=\UU(\AA_{C_\theta^c})$. To show this, observe that
+	Now we only have to show that indeed $A\in\UU(\AA_{W(C_\theta)^c})$. To do this, take $X\in\AA_{W(C_\theta)}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then indeed we need that $A\in\UU(\AA_{W(C_\theta)}')=\UU(\AA_{W(C_\theta)^c})$. To show this, observe that
 	\begin{align}
 		\Ad{A}(X)&=\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\Ad{A_L\otimes A_R}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\nu^{-1}}\circ\stkout{\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}}\\
 		&\nonumber
@@ -1999,16 +1999,16 @@ We now have to extend the above definition to the group
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart2}. Because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart2}. Because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ such that
 	\begin{align}
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1TwoTrans}
 		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2TwoTrans}
-		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
+		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_{\nu^{\sigma}(\sigma)}}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_{\nu^{\sigma}(\sigma)}}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
 	Take $\Phi$ satisfying equation \ref{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations} arbitrary and define 
 	\begin{equation}
-		\delta_g^\sigma:=\pi_0\circ\alpha_0\circ\Theta\gamma^{H_{\text{split}}}_{0;1}(A_{2,g}^\sigma).
+		\delta_g^\sigma:=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_{\text{split}}}_{0;1}(A_{2,g}^\sigma).
 	\end{equation}1
 	Let
 	\begin{equation}
@@ -2044,20 +2044,20 @@ This shows that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ par
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\stkout{\nu\circ\nu^{-1}}\circ\eta_g^R\circ\nu\\
 		\nonumber
 		&\qquad\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\eta_g^R\circ\beta_g^{RU}\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\eta_g^R\circ\underline{\beta_g^{RU}}\circ\nu\\
 		\nonumber
-		&\qquad\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&\qquad\circ\underline{(\beta_g^{\nu^{-1}(RU)})^{-1}}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\\
 		\nonumber
 		&\qquad\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\circ\underline{\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}}\\
 		\nonumber
-		&\qquad \circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\nu\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
+		&\qquad \circ\underline{\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\nu}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\\
 		\nonumber
 		&\qquad \circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{\nu^{-1}\circ\nu}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
 	\end{align}
-	This leads us to
+	This leads us to {\color{red}The equations that follow are wrong (especially the second one).}
 	\begin{align}
 		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\Ad{A_{2,g}^R}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{H_\text{split}}_{0;1}\circ\nu\\
