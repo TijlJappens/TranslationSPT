@@ -2057,20 +2057,27 @@ This shows that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ par
 		\nonumber
 		&\qquad \circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{\nu^{-1}\circ\nu}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
 	\end{align}
-	This leads us to {\color{red}The equations that follow are wrong (especially the second one).}
+	On the other hand we have that
+	\begin{equation}
+		\Ad{w^\dagger \phi_1(\delta_g^\sigma)w}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\Ad{A^\sigma_{2,g}}\circ\gamma^H_{1;0}\circ\nu.
+	\end{equation}
+	This leads us to
 	\begin{align}
 		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\Ad{A_{2,g}^R}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{H_\text{split}}_{0;1}\circ\nu\\
 		\nonumber
 		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\stkout{\beta_g^{RU}}\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{RU}\circ\nu\\
 		\nonumber
-		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{(\beta_g^{\nu^{-1}(RU)})^{-1}}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\nu\\
-		\nonumber
-		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
 	\end{align}
-	This will give us
+	Now define $S=\{(0,y)|y\in\ZZ\}$ then
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\stkout{\beta_g^S}\circ\nu\\
+		\nonumber
+		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{(\beta_g^{\nu^{-1}(S)})^{-1}}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+	\end{align}
+	Doing the same thing on the right will give us
 	\begin{align}
 		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)\phi_1(\delta_g^R)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\Ad{(A_{2,g}^R)^\dagger}\circ\gamma^{H}_{1;0}\\
