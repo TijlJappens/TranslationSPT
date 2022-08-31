@@ -723,15 +723,15 @@ Our translation index is now defined as
 \subsection{The index is independent of the choices we made}\label{sec:IndexIsInvariantUnderChoices}
 In this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. First we show independence of $\alpha$ and its decomposition.
 \begin{lemma}
-	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
+	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states and let $\alpha_1,\alpha_2\in\Aut{\AA}$ be such that
+	\begin{equation}
+		\omega_{01}\circ\alpha_1=\omega_{02}\circ\alpha_2=\omega.
+	\end{equation}
+	Let $V_{11},V_{12}\in\UU(\AA)$, $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ be such that
 	\begin{align}
 		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
 	\end{align}
-	and satisfying
-	\begin{equation}
-		\omega_{01}\circ\alpha_1=\omega_{02}\circ\alpha_2=\omega
-	\end{equation}
-	then
+	with $\alpha_{0,i}=\alpha_{L,i}\otimes\alpha_{R,i}$, then
 	\begin{equation}
 		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
 	\end{equation}
@@ -743,7 +743,7 @@ In this section we will show that the index is only dependent on $\omega$ and no
 	\end{equation}
 	Now define $x\in\UU(\HH_0)$ to be
 	\begin{equation}
-		x\defeq \pi_0(V_{11})\tilde{x} \pi_0(V_{11}^\dagger)
+		x\defeq \pi_0(V_{12}^\dagger)\tilde{x} \pi_0(V_{11})
 	\end{equation}
 	then
 	\begin{equation}
@@ -837,7 +837,7 @@ We now show that the index is invariant under some transformation parametrised b
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBeta}
-	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,1}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
+	Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,2}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_L\cap\AA_{C_\theta}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_R\cap\AA_{C_\theta}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
 	\begin{align}\label{eq:InvarianceUnderChoiceBetaTwoBetas}
 		\tilde{\beta}_{g,1}&=\Ad{V_{g,21}}\circ\eta_{g,1}\circ\beta^U_g&\tilde{\beta}_{g,2}&=\Ad{V_{g,22}}\circ\eta_{g,2}\circ\beta^U_g
 	\end{align}
@@ -873,7 +873,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{equation}
 	Since the last equation is split we have by lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} that we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
-		\delta_g^L\otimes\delta_g^R=\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
+		\delta_g^L\otimes\delta_g^R=\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
 	\end{equation}
 	Take $W_{g,1},u_{R,1}(g,h)$ and $K^R_{g,1}$ to be the operators belonging to the first choice (with arbitrary phases). Define
 	\begin{align}
@@ -1592,15 +1592,15 @@ In this section we will show that the index is only dependent on $\omega$ and no
 \end{remark}
 We will now show independence of $\alpha$ and its decomposition.
 \begin{lemma}
-	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states, take $\alpha_1,\alpha_2\in\Aut{\AA}$, take $V_{11},V_{12}\in\UU(\AA)$, take $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and take $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ to be such that
+	Take $\omega_{01},\omega_{02}\in\PP(\AA)$ product states and $\alpha_1,\alpha_2\in\Aut{\AA}$ such that
+	\begin{equation}
+		\omega_{01}\circ\alpha_1=\omega_{02}\circ\alpha_2=\omega.
+	\end{equation}
+	Let $V_{11},V_{12}\in\UU(\AA)$, $\alpha_{L/R,1},\alpha_{L/R,2}\in\Aut{\AA_{L/R}}$ and $\Theta_1,\Theta_2\in \Aut{\AA_{W(C_\theta)^c}}$ be such that
 	\begin{align}
 		\alpha_1&=\Ad{V_{11}}\circ\alpha_{01}\circ\Theta_1&\alpha_2&=\Ad{V_{12}}\circ\alpha_{02}\circ \Theta_2
 	\end{align}
-	and satisfying
-	\begin{equation}
-		\omega_{01}\circ\alpha_1=\omega_{02}\circ\alpha_2=\omega
-	\end{equation}
-	then
+	with $\alpha_{0,i}=\alpha_{L,i}\otimes\alpha_{R,i}$, then
 	\begin{equation}
 		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
 	\end{equation}
@@ -1612,7 +1612,7 @@ We will now show independence of $\alpha$ and its decomposition.
 	\end{equation}
 	Now define $x\in\UU(\HH_0)$ to be
 	\begin{equation}
-		x\defeq \pi_0(V_{11})\tilde{x} \pi_0(V_{11}^\dagger)
+		x\defeq \pi_0(V_{12}^\dagger)\tilde{x} \pi_0(V_{11})
 	\end{equation}
 	then
 	\begin{equation}
