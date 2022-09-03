@@ -651,22 +651,35 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 		\nonumber
 		&\:\stkout{K^R_g}\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger.
 	\end{align}
-	We will now use the fact that the $u_L$ commutes with everything that has support only on the right. Combining this with lemma \ref{lem:AdjointOverConeIsInCone} gives
+	We will now use the fact that the $u_L(g,hk)$ commutes with everything that has support only on the right. Combining this with lemma \ref{lem:AdjointOverConeIsInCone} gives
 	\begin{align}
+		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger u_L(g,h)^\dagger\\
+		\nonumber
+		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right) W_{gh}W_kW_{ghk}^\dagger u_L(gh,k)^\dagger\\
+		\nonumber
+		&W_{ghk}W_{hk}^\dagger W_{g}^\dagger \Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)\underline{u_L(g,hk)}\\
+		\nonumber
+		&\:\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger\\
 		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger u_L(g,h)^\dagger\\
 		\nonumber
 		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right) W_{gh}W_kW_{ghk}^\dagger u_L(gh,k)^\dagger\\
 		\nonumber
 		&\Ad{W_{ghk}W_{hk}^\dagger W_{g}^\dagger}  \left(\Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)\right)\\
 		\nonumber
-		&\underline{u_R(g,hk)^\dagger}\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger\\
+		&\underline{u_R(g,hk)^\dagger}\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger.
+		\end{align}
+		Doing the same with $u_L(gh,k)^\dagger$ now gives
+		\begin{align}
 		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger u_L(g,h)^\dagger\\
 		\nonumber
 		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)  \\
 		\nonumber
 		&\Ad{W_{gh}W_kW_{hk}^\dagger W_{g}^\dagger}  \left(\Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)\right)\\
 		\nonumber
-		&\underline{u_R(gh,k)}u_R(g,hk)^\dagger\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger\\
+		&\underline{u_R(gh,k)}u_R(g,hk)^\dagger\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger.
+		\end{align}
+		When also applying this to $u_L(g,h)^\dagger$ one gets
+		\begin{align}
 		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger (K^R_g)^\dagger\\
 		\nonumber
 		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)\\
@@ -1037,9 +1050,9 @@ where $\tilde{v}=\pi_0(V_1)^\dagger v\pi_0(V_1)$. Now there exists a $k^L:G\righ
 \begin{equation}
 	k^L_g\otimes k^R_g=\pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b)
 \end{equation}
-and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that
+and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that $\forall g,h\in G$
 \begin{equation}
-	[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},W_g]=0.
+	[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},W_h]=0.
 \end{equation}
 We now get (using this equation and the fact that $W_g$ is a representation)
 \begin{align}
