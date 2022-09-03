@@ -867,10 +867,15 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\begin{equation}
 		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\Ad{V_1}\circ\alpha_0\circ\Theta=\pi_0\circ\Ad{V_1}\circ\alpha_0\circ\Theta\circ\Ad{V_{g,21}}\circ\eta_{g,1}\circ\eta_{g,2}^{-1}\circ\Ad{V_{g,22}^\dagger}.
 	\end{equation}
-	Putting the $V$'s to the other side gives:
+	Putting the $V_1$'s to the other side gives:
 	\begin{equation}
-		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
+		\Ad{\pi_0(V_1^\dagger) \tilde{\delta}_g\pi_0(V_1)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{V_{g,21}}\circ\eta_{g,1}\circ\eta_{g,2}^{-1}\circ\Ad{V_{g,22}^\dagger}.
 	\end{equation}
+	Doing the same for the $V_{g,21}$ and $V_{g,22}$ now gives
+	\begin{align}
+		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{V_{g,22}}&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\\
+		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22})}\circ\pi_0&=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
+	\end{align}
 	Since the last equation is split we have by lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} that we can take $\delta_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		\delta_g^L\otimes\delta_g^R=\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22}).
@@ -909,7 +914,7 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 \end{assumption}
 All $G-$invariant SRE states satisfy this assumption:
 \begin{lemma}\label{lem:SRE_Implies_Assumption_1d}
-	Suppose $\phi\in\PP(\AA)$ is such that there exists a $\Phi\in \BB_{F_\varphi}([0,1])$ (a one parameter family of interactions) for some $0<\varphi<1$, such that $\phi_0=\phi\circ\gamma^\Phi_{0;1}$ for some product state $\phi_0$ then $\phi$ satisfies assumption \ref{assumption1d}.
+	Suppose $\phi\in\PP(\AA)$ is such that there exists a $\Phi\in \BB_{F_\varphi}([0,1])$ (a one parameter family of interactions) for some $0<\varphi<1$, such that $\phi_0=\phi\circ\gamma^\Phi_{0;1}$ for some product state $\phi_0$ then if $\phi\circ\beta_g=\phi$, $\phi$ satisfies assumption \ref{assumption1d}.
 \end{lemma}
 \begin{proof}
 	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
@@ -1017,20 +1022,20 @@ Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>-1},L}\otimes\HH_{L_{>-1},R})
 \end{align}
 Clearly both functions are (linear) representation of the group. Now define
 \begin{equation}
-	W_g=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1).
+	W_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1).
 \end{equation}
 This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\id_{\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
 \begin{align}
 	K_g&=v^\dagger W_g v W_g^\dagger\\
-	&=v^\dagger \pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1) v W_g^\dagger\\
-	&=\pi_{\HH_0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{\HH_0}(V_1) W_g^\dagger\\
-	&=\pi_{\HH_0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1) W_g^\dagger\\
-	&=\pi_{\HH_0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{\HH_0}(V_1)\\
-	&=\id_{H_{L_{>-1}}}\otimes \pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b) \otimes\id_{\HH_{L_{<-1}}}
+	&=v^\dagger \pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) v W_g^\dagger\\
+	&=\pi_{0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{0}(V_1) W_g^\dagger\\
+	&=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) W_g^\dagger\\
+	&=\pi_{0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1)\\
+	&=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}}
 \end{align}
 where $\tilde{v}=\pi_0(V_1)^\dagger v\pi_0(V_1)$. Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 \begin{equation}
-	k^L_g\otimes k^R_g=\pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b)
+	k^L_g\otimes k^R_g=\pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b)
 \end{equation}
 and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that
 \begin{equation}
@@ -1689,7 +1694,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{equation}
 	Putting the $V$'s to the other side gives:
 	\begin{equation}
-		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,22}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,21})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
+		\Ad{\pi_0\circ\alpha_0\circ\Theta(V_{g,21}^\dagger)\pi_0(V_1^\dagger)\tilde{\delta}_g\pi_0(V_1)\pi_0\circ\alpha_0\circ\Theta(V_{g,22})}\circ\pi_0=\pi_0\circ\alpha_0\circ\eta_{g,2}\circ(\eta_{g,1})^{-1}\circ\alpha_0^{-1}.
 	\end{equation}
 	Since the last equation is split we have again by the same argument used to prove lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} that we can take $\delta_g^L\in\textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)$ and $\delta_g^R\in\textrm{Cone}_{\nu(R)}(\alpha_0,\theta)$ such that
 	\begin{equation}
@@ -1761,7 +1766,7 @@ Just like in section \ref{sec:OneTranslationDirectionExample}, let $\tilde k:G\r
 \end{align}
 We can take
 \begin{equation}
-	K_g=\id_{H_{L_{>-1}}}\otimes \pi_{\HH_{L_{-1}}}(b)^\dagger \tilde k_g \pi_{\HH_{L_{-1}}}(b) \otimes\id_{\HH_{L_{<-1}}} =\id_{H_{L_{>-1}}}\otimes (k_g^L\otimes k_g^R) \otimes\id_{\HH_{L_{<-1}}}.
+	K_g=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}} =\id_{H_{L_{>-1}}}\otimes (k_g^L\otimes k_g^R) \otimes\id_{\HH_{L_{<-1}}}.
 \end{equation}
 Similarly we can take $w_\rho\in\HH_\rho$ (where $\rho\in\{L_{>-1},L_{-1},L_{<-1}\}$) satisfying
 \begin{equation}
@@ -2144,7 +2149,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\begin{equation}
 		\tilde{X}_g\otimes\tilde{Y}_g=\pi_0(B^\dagger)W_g\tilde{W}_{g^{-1}}\pi_0(B).
 	\end{equation}
-	Define $X_g=\pi_0(B)(\tilde{X}_g\otimes\id)\pi_0(B^\dagger)$. This indeed satisfies equation \eqref{eq:DefinitionX_gLemma} concluding the proof.
+	Define $X_g=\pi_0(B)(\tilde{X}_g\otimes\id)\pi_0(B^\dagger)$. This indeed satisfies the first part of equation \eqref{eq:DefinitionX_gLemma}. {\color{red}I still need to show the second part of this equation.}
 \end{proof}
 \begin{lemma}
 	Let $v,w,K_g^R$ and $b_g^R$ be such that
