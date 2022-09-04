@@ -190,7 +190,7 @@ where $\Phi(I)\in\AA_I$ is hermitian ($\Phi(I)=\Phi(I)^*$). We will sometimes re
 	\norm{\Phi}_F\defeq \sup_{x,y\in\ZZ^2}\frac{1}{F(\abs{x-y})}\sum_{Z\in\mathfrak{G}_{\ZZ^2},Z\ni x,y}\norm{\Phi(Z)}.
 \end{equation}
 Following \cite{ogata2021h3gmathbb} we will fix a specific family of monotonically decreasing positive functions by saying that for any $0<\phi<1$ we define
-\begin{equation}
+\begin{equation}\label{eq:OurFFunction}
 	F_\phi:\RR^+\rightarrow\RR^+:r\mapsto \frac{\exp(-r^\phi)}{(1+r)^4}.
 \end{equation}
 We will sometimes use the restriction of an interaction. For some $\Gamma\subset\ZZ^2$ we define $\Phi_\Gamma$ by
@@ -913,12 +913,18 @@ Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spat
 \begin{equation}
 	\AA=\overline{\textrm{span}\left\{\left.\bigotimes_{j\in J}(\BB_{\text{loc}})_j\right|J\subset \ZZ\:\text{finite}\right\}}.
 \end{equation}
-In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra.
+In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra. We will need one additional restriction on these operators
+\begin{definition}\label{def:SummableOperator}
+	We say that $b\in\UU(\BB)$ is summable if there exists a sequence $b_i\in \UU(\BB_{[-i,i]})$ such that
+	\begin{equation}
+		\lim_{n_0\rightarrow\infty}\sum_{i=n_0}^{\infty}\norm{b-b_i}=0.
+	\end{equation}
+\end{definition}
 \begin{assumption}\label{assumption1d}
 	Take $\phi\in\PP(\BB)$ such that
 	\begin{enumerate}
 		\item $\phi\circ\beta_g=\phi$.
-		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and operators $b\in\UU(\BB)$ such that
+		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and a summable operator $b\in\UU(\BB)$ such that
 		\begin{equation}
 			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
 		\end{equation}
@@ -974,7 +980,7 @@ We have that:
 	\begin{equation}
 		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B)
 	\end{equation}
-	so that it is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, let $b_j$ be a sequence converging to $b$ such that $b_j\in\UU(\BB_{[-n(j),n(j)]})$ where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
+	so that it is clearly a product state. We will now show that $\alpha\in\textrm{QAut}(\AA)$. To do this, let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\BB_{[-n(j),n(j)]})$ where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
 	\begin{equation}
 		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_j}_{(\cdot,j)}
 	\end{equation}
@@ -990,20 +996,25 @@ We have that:
 	\begin{equation}
 		V_1\defeq\lim_{m\rightarrow\infty}V_{1,m}
 	\end{equation}
-	exists (is an element of $\AA$). By construction we have that for any $n_0>0$ we can take an $\epsilon_{n_0}$ such that
+	exists (is an element of $\AA$). By construction we have that for any $\epsilon$ there exists an $n_0>0$ such that
 	\begin{equation}
-		\norm{b-b_j}\leq\epsilon_{n_0}
+		\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}\leq\epsilon
 	\end{equation}
-	for all $j$ such that $\abs{j}\geq n_0$ and such that $\lim_{n_0\rightarrow\infty}\epsilon_{n_0}=0$. We will now show that our row is a Cauchy row. Let $n_0$ be such that $\epsilon_{n_0}<1/2$. For any $n,m\geq n_0$ we have that
+	for all $n>n_0$. We will now show that our row is a Cauchy row. Let $\epsilon<1/2$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
 	\begin{align}
 		\norm{V_{1,n}-V_{1,m}}&\leq \norm{V_{1,n}-V_{1,n_0}}+\norm{V_{1,m}-V_{1,n_0}}\\
-		&\leq \norm{(V_{1,n}-V_{1,n_0})V_{1,n_0}^\dagger}+\norm{(V_{1,m}-V_{1,n_0})V_{1,n_0}^\dagger}\\
-		&=\norm{V_{1,n}V_{1,n_0}^\dagger-\id}+\norm{V_{1,m}V_{1,n_0}^\dagger-\id}\\
-		&\leq \prod_{j=n_0}^{n}2\norm{b-b_j}+\prod_{j=n_0}^{m}2\norm{b-b_j}\\
-		&\leq (2\epsilon_{n_0})^{n-n_0}+(2\epsilon_{n_0})^{m-n_0}\\
-		&\leq 4\epsilon_{n_0}.
+		&=\norm{V_{1,n}V_{1,n_0}^\dagger-\id}+\norm{V_{1,m}V_{1,n_0}^\dagger-\id}.
 	\end{align}
-	{\color{red}Above equations are wrong!} This proves that the row is a Cauchy row and hence the convergence follows.
+	We will find a bound on the first therm as the bound of the second therm is analogous. First notice that we have for any tensor product that
+	\begin{equation}
+		A\otimes B-C\otimes D=(A-C+C)\otimes B-C\otimes D=(A-C)\otimes B+C\otimes (B-D).
+	\end{equation}
+	By using this property recursively we get
+	\begin{align}
+	&\norm{\bigotimes_{i=-n}^{-n_0}(bb_i^\dagger)_i\bigotimes_{i=n_0}^{n}(bb_i^\dagger)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
+	&\leq 2\sum_{i=n_0}^{m}\norm{bb_i^\dagger-\id_{\HH_{L_i}}}<2\epsilon.
+	\end{align}
+	This proves that the row is a Cauchy row and hence the convergence follows.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -2405,10 +2416,11 @@ All together we constructed a proof of the following theorem:
 \section{Properties of locally generated automorphisms: 1d}
 In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 \begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms1d}
-	Take $\Phi\in\BB_{F}([0,1])$ with $F$ any monotomically decreasing positive function decaying faster then any polynomial then there exists an $a\in\AA$ satisfying
+	Take $\Phi\in\BB_{F_\phi}([0,1])$ (with $F_\phi$ as presented in \eqref{eq:OurFFunction}) then there exists an $A\in\UU(\AA)$ satisfying
 	\begin{equation}
 		\Ad{A}=\gamma^{\Phi_L+\Phi_R}_{0;1}\circ\gamma^\Phi_{1;0}.
 	\end{equation}
+	Moreover, this $A$ is summable (see definition \ref{def:SummableOperator}).
 \end{lemma}
 \begin{proof}
 	We have for any $B\in\AA$ that
@@ -2418,10 +2430,18 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 		&=-i\int_{0}^{1}\d t\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^{\Phi}_{t;0}([\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I)),B]).
 	\end{align}
 	Since this sum converges we can simply take
-	\begin{equation}
-		A\defeq\mathcal{T}\exp(-i\int_{0}^{1}\d t \sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I)))
-	\end{equation}
-	concluding the proof.
+	\begin{align}
+		A&\defeq\mathcal{T}\exp(-i\int_{0}^{1}\d t H(t) )&H(t)&\defeq\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I))
+	\end{align}
+	concluding the first part of the proof. For the second part we define $\forall n\in\NN$
+	\begin{align}
+		A_n&\defeq\mathcal{T}\exp(-i\int_{0}^{1}\d t H_n(t))&H_n(t)&\defeq \sum_{I\subset\ZZ\cap[-n,n]}\gamma^{\Phi_{[-n,n]}}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I))
+	\end{align}
+	where $\Phi_{[-n,n]}$ is the restriction of the interaction $\Phi$ to $\ZZ\cap[-n,n]$. We now have to find a bound on
+	\begin{align}
+		&\norm{A_n(0;1)-A(0;1)}\\
+		&=\norm{\int_0^1}
+	\end{align}
 \end{proof}
 \section{Properties of locally generated automorphisms: 2d}
  In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed by \cite{nachtergaele2010liebrobinson}. We will use the notation
