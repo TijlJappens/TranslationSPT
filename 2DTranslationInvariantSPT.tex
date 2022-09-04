@@ -1745,7 +1745,7 @@ This example will be very similar to what was done in section \ref{sec:OneTransl
 	Take $\phi\in\PP(\BB)$ such that
 	\begin{enumerate}
 		\item $\phi\circ\beta_g=\phi$.
-		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and operators $b\in\BB$ such that
+		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and a summable (see definition \ref{def:SummableOperator}) operator $b\in\UU(\BB)$ such that
 		\begin{equation}
 			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
 		\end{equation}
@@ -2425,22 +2425,41 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 \begin{proof}
 	We have for any $B\in\AA$ that
 	\begin{align}
-		\gamma^{\Phi_L+\Phi_R}_{0;1}\circ\gamma^\Phi_{1;0}(B)&=\int_{0}^{1}\d t\frac{\d}{\d t}\left(\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^\Phi_{t;0}(B)\right)\\
-		&=-i\int_{0}^{1}\d t\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi_L+\Phi_R}_{0;t}([\Phi_L(I)+\Phi_R(I)-\Phi(I),\gamma^{\Phi}_{t;0}(B)])\\
-		&=-i\int_{0}^{1}\d t\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^{\Phi}_{t;0}([\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I)),B]).
+		\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^\Phi_{t;0}(B)&=B+\int_{0}^{t}\d s\frac{\d}{\d s}\left(\gamma^{\Phi_L+\Phi_R}_{0;s}\circ\gamma^\Phi_{s;0}(B)\right)\\
+		&=B-i\int_{0}^{t}\d s\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi_L+\Phi_R}_{0;s}([\Phi_L(s,I)+\Phi_R(s,I)-\Phi(s,I),\gamma^{\Phi}_{s;0}(B)])\\
+		\label{eq:EquationShowingBounded_H}
+		&=B-i\int_{0}^{t}\d s\gamma^{\Phi_L+\Phi_R}_{0;s}\circ\gamma^{\Phi}_{s;0}\left(\left[\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;s}(\Phi_L(s,I)+\Phi_R(s,I)-\Phi(s,I)),B\right]\right).
 	\end{align}
-	Since this sum converges we can simply take
+	To simplify notation we will define an interaction
+	\begin{equation}
+		\tilde\Phi(s,I)=\Phi_L(s,I)+\Phi_R(s,I)-\Phi(s,I).
+	\end{equation}
+	Since the sum in equation \eqref{eq:EquationShowingBounded_H} converges we can define
 	\begin{align}
-		A&\defeq\mathcal{T}\exp(-i\int_{0}^{1}\d t H(t) )&H(t)&\defeq\sum_{I\in\mathfrak{G}_\ZZ}\gamma^{\Phi}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I))
+		A(t_1;t_2)&\defeq\mathcal{T}\exp(-i\int_{t_1}^{t_2}\d s H(s) )&H(s)&\defeq\gamma^{\Phi}_{0;s}\left(\sum_{I\in\mathfrak{G}_\ZZ}\tilde\Phi(s,I)\right)
 	\end{align}
-	concluding the first part of the proof. For the second part we define $\forall n\in\NN$
+	and we get that
+	\begin{equation}
+		\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^\Phi_{t;0}(B)=\gamma^H_{0;t}(B)=\Ad{A(0;t)}(B).
+	\end{equation}
+	For the second part we define $\forall n\in\NN$
 	\begin{align}
-		A_n&\defeq\mathcal{T}\exp(-i\int_{0}^{1}\d t H_n(t))&H_n(t)&\defeq \sum_{I\subset\ZZ\cap[-n,n]}\gamma^{\Phi_{[-n,n]}}_{0;t}(\Phi_L(I)+\Phi_R(I)-\Phi(I))
+		A_n(t_1;t_2)&\defeq\mathcal{T}\exp(-i\int_{t_1}^{t_2}\d s H_n(s))&H_n(s)&\defeq \gamma^{\Phi_{[-n,n]}}_{0;s}\left(\sum_{I\subset\ZZ\cap[-n/2,n/2]}\tilde\Phi(s,I)\right)
 	\end{align}
-	where $\Phi_{[-n,n]}$ is the restriction of the interaction $\Phi$ to $\ZZ\cap[-n,n]$. We now have to find a bound on
+	where $\Phi_{[-n,n]}$ is the restriction of the interaction $\Phi$ to $\ZZ\cap[-n,n]$. Define
 	\begin{align}
-		&\norm{A_n(0;1)-A(0;1)}\\
-		&=\norm{\int_0^1}
+		\epsilon(n)&\defeq \sum_{i\in S_n}\norm{\Phi(s,I)}&S_n&\defeq \{I\in\mathfrak{B_\ZZ}|I\cap L\neq \emptyset,I\cap R\neq \emptyset,I\not\subset \ZZ\cap [-n/2,n/2]\}.
+	\end{align}
+	We now get that
+	\begin{equation}
+		\norm{A_n(0;t)-A(0;t)}=\norm{\int_0^t\d s\frac{\d}{\d s}A(s;t)A_n(0;s)}\leq \abs{t}\sup_{s\in[0,t]}\norm{H_n(s)-H(s)}.
+	\end{equation}
+	To bound this last part, notice that
+	\begin{align}
+		&\norm{H_n(t)-H(t)}\\
+		&=\norm{\gamma^{\Phi_{[-n,n]}}_{0;t}\left(\sum_{I\subset\ZZ\cap[-n/2,n/2]}\tilde\Phi(t,I)\right)-\gamma^{\Phi}_{0;t}\left(\sum_{I\in\mathfrak{G}_\ZZ}\tilde\Phi(t,I)\right)}\\
+		&\leq \epsilon(n)+\norm{(\gamma^{\Phi_{[-n,n]}}_{0;t}-\gamma^{\Phi}_{0;t})\left(\sum_{I\subset\ZZ\cap[-n/2,n/2]}\tilde\Phi(t,I)\right)}\\
+		&=
 	\end{align}
 \end{proof}
 \section{Properties of locally generated automorphisms: 2d}
