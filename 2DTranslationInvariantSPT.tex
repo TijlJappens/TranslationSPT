@@ -1883,8 +1883,8 @@ We now have to extend the above definition to the group
 	There exist $A_L\in\UU(\AA_{L}),A_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$ satisfying that
 	\begin{align}
 		\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}&=\gamma^{H_L}_{0;1}\otimes\gamma^{H_{\nu\circ\nu(R)}}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\\
-	\label{eq:TranslatingSplittedTimeEvolution}
-	&=\Ad{A_L}\otimes\Ad{A_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{L,\nu(R)\}}}\Phi^{\mu\nu}
+		\label{eq:TranslatingSplittedTimeEvolution}
+		&=\Ad{A_L}\otimes\Ad{A_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{L,\nu(R)\}}}\Phi^{\mu\nu}
 	\end{align}
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
 \end{lemma}
@@ -2345,7 +2345,7 @@ By restriction this gives rise to an automorphism $\tau_\AA:\UU(\HH_\AA)\rightar
 By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelevant phase) we need that $U=U_\AA\otimes U_\BB$ concluding the proof.
 \end{proof}
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
-Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\AA_i)$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
+Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\UU(\AA_i))$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
 \begin{equation}
 	(\HH=\HH_L\otimes\HH_R,\pi=\pi_L\otimes\pi_R,\Omega).
 \end{equation}
@@ -2407,7 +2407,45 @@ We can use this to define an additional 1d index for translation invariant state
 	\begin{equation}
 		w^\dagger(\id_{\HH_L}\otimes u_R(g)) ww^\dagger(\id_{\HH_L}\otimes u_R(h)) w=C(g,h)w^\dagger(\id_{\HH_L}\otimes u_R(gh)) w.
 	\end{equation}
-	These two equations can only be consistent if $\alpha(g)\alpha(h)=\alpha(gh)$. {\color{red}Still need to show that it is invariant under LGA.}
+	These two equations can only be consistent if $\alpha(g)\alpha(h)=\alpha(gh)$. The proof that this is independent of the choice of GNS triple is straightforward. Now we need to show that this index is invariant under LGA's. To this end let $F$ be a monotomically decreasing positive function decaying faster then any polynomial. Let $\Phi\in\BB_F([0,1])$ be a $G$-invariant, translation invariant interaction. For simplicity of notation let $\Phi_{\text{spllit}}=\Phi_{\nu^{-1}(L)}+\Phi_{\nu(R)}$. Let $A\in\UU(\AA)$ be such that
+	\begin{align}\label{eq:DefinitionSplitting1DAppendix}
+		\gamma^\Phi_{0;1}&=\Ad{A}\circ\gamma^{\Phi_{\text{split}}}_{0;1}&\beta_g(A)&=A.
+	\end{align}
+	By construction $(\HH,\pi\circ\gamma^{\Phi_{\text{split}}}_{0;1},\pi(A^\dagger)\Omega)$ is a GNS triple of $\omega\circ\gamma^\Phi_{0;1}$. Let $\tilde{\omega}\defeq \pi(A^\dagger)w\pi(A)$ then
+	\begin{equation}
+		\tilde{\alpha}(g)\defeq \pi(U_{-1}(g))u_R(g)\tilde{w}^\dagger u_R(g)^\dagger \tilde{w}
+	\end{equation}
+	is the index of $\omega\circ\gamma^\Phi_{0;1}$. Working this out gives
+	\begin{align}
+		\tilde{\alpha}(g)&=\pi(U_{-1}(g))u_R(g)\pi(A^\dagger)w^\dagger\pi(A)u_R(g)^\dagger\pi(A^\dagger)w\pi(A)\\
+		&=\pi(U_{-1}(g))u_R(g)w^\dagger \pi(\nu(A^\dagger)A)u_R(g)^\dagger\pi(A^\dagger\nu(A))w\\
+		&=\pi(U_{-1}(g))u_R(g)w^\dagger u_R(g)^\dagger \pi\circ\beta_g^R(\nu(A^\dagger)A)\pi(A^\dagger\nu(A))w\\
+		&=\alpha(g)\pi\circ\beta_g^R(\nu(A^\dagger)A)\pi(A^\dagger\nu(A)).
+	\end{align}
+	This shows that we conclude the proof if we can show that
+	\begin{equation}
+		\beta_g^R(\nu(A^\dagger)A)=\nu(A^\dagger)A.
+	\end{equation}
+	We will do this proof in two steps. The first step is that we prove that
+	\begin{equation}\label{eq:ProofThat1DTranslationIndexIsInvariantUnderLGAAdjoints}
+		\Ad{\beta_g^R(\nu(A^\dagger)A)}=\Ad{\nu(A^\dagger)A}.
+	\end{equation}
+	We use the first equation of \eqref{eq:DefinitionSplitting1DAppendix} and obtain
+	\begin{align}
+		\Ad{\beta_g^R(\nu(A^\dagger)A)}&=\beta_g^R\circ\Ad{\nu(A^\dagger)A}\circ(\beta_g^R)^{-1}\\
+		&=\beta_g^R\circ\nu\circ\gamma^{\Phi_{\text{split}}}_{0;1}\circ\stkout{\gamma^{\Phi}_{1;0}}\circ\nu^{-1}\circ\stkout{\gamma^{\Phi}_{0;1}}\circ\gamma^{\Phi_{\text{split}}}_{1;0}\circ(\beta_g^R)^{-1}\\
+		&=\stkout{\beta_g^R}\circ\gamma^{\nu(\Phi_{\text{split}})}_{0;1}\circ\gamma^{\Phi_{\text{split}}}_{1;0}\circ\stkout{(\beta_g^R)^{-1}}\\
+		&=\Ad{\nu(A^\dagger)A}.
+	\end{align}
+	This shows that there exists some $\beta:G\rightarrow U(1)$ such that
+	\begin{equation}
+		\beta(g)=\beta_g^R(\nu(A^\dagger)A)(A^\dagger \nu(A)).
+	\end{equation}
+	However because of equation \eqref{eq:ProofThat1DTranslationIndexIsInvariantUnderLGAAdjoints} we get that
+	\begin{equation}
+		\beta(g)=\beta_g^R(\nu(A^\dagger)A)(A^\dagger \nu(A))=(A^\dagger \nu(A))\Ad{A^\dagger \nu(A)}(\beta_g^R(\nu(A^\dagger)A))=(A^\dagger \nu(A))(\beta_g^R(\nu(A^\dagger)A))=\overline{\beta(g)}
+	\end{equation}
+	proving that $\beta(g)=1$ and concluding the proof.
 \end{proof}
 All together we constructed a proof of the following theorem:
 \begin{theorem}
