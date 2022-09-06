@@ -1006,7 +1006,7 @@ We have that:
 	\begin{equation}
 		\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}\leq\epsilon
 	\end{equation}
-	for all $n>n_0$. We will now show that our row is a Cauchy row. Let $\epsilon<1/2$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
+	for all $n>n_0$. We will now show that our row is a Cauchy row. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
 	\begin{align}
 		\norm{V_{1,n}-V_{1,m}}&\leq \norm{V_{1,n}-V_{1,n_0}}+\norm{V_{1,m}-V_{1,n_0}}\\
 		&=\norm{V_{1,n}V_{1,n_0}^\dagger-\id}+\norm{V_{1,m}V_{1,n_0}^\dagger-\id}.
@@ -2486,34 +2486,44 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	\begin{equation}
 		\tilde\Phi(s,I)=\Phi_L(s,I)+\Phi_R(s,I)-\Phi(s,I).
 	\end{equation}
-	Since the sum in equation \eqref{eq:EquationShowingBounded_H} converges we can define
-	\begin{align}
-		A(t_1;t_2)&\defeq\mathcal{T}\exp(-i\int_{t_1}^{t_2}\d s H(s) )&H(s)&\defeq\gamma^{\Phi}_{0;s}\left(\sum_{I\in\mathfrak{G}_\ZZ}\tilde\Phi(s,I)\right)
-	\end{align}
-	and we get that
+	We will in essence have to find a 1D analogue of the proof of Theorem 5.2 of \cite{ogata2021h3gmathbb} with a few exceptions. Most notably we need the summability condition. First let us still define the extensions
 	\begin{equation}
-		\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^\Phi_{t;0}(B)=\gamma^H_{0;t}(B)=\Ad{A(0;t)}(B).
+		X(m)\defeq \{x\in\ZZ|\exists y\in X:\textrm{dist}(x,y)\leq m\}
 	\end{equation}
-	For the second part we define $\forall n\in\NN$
-	\begin{align}
-		A_n(t_1;t_2)&\defeq\mathcal{T}\exp(-i\int_{t_1}^{t_2}\d s H_n(s))&H_n(s)&\defeq \gamma^{\Phi_{[-n,n]}}_{0;s}\left(\sum_{I\subset\ZZ\cap[-n/2,n/2]}\tilde\Phi(s,I)\right)
-	\end{align}
-	where $\Phi_{[-n,n]}$ is the restriction of the interaction $\Phi$ to $\ZZ\cap[-n,n]$. Define
-	\begin{align}
-		\epsilon(n)&\defeq \sum_{i\in S_n}\norm{\Phi(s,I)}&S_n&\defeq \{I\in\mathfrak{B_\ZZ}|I\cap L\neq \emptyset,I\cap R\neq \emptyset,I\not\subset \ZZ\cap [-n/2,n/2]\}.
-	\end{align}
-	We now get that
+	and
 	\begin{equation}
-		\norm{A_n(0;t)-A(0;t)}=\norm{\int_0^t\d s\frac{\d}{\d s}A(s;t)A_n(0;s)}\leq \abs{t}\sup_{s\in[0,t]}\norm{H_n(s)-H(s)}.
+		\Delta_{X(m)}\defeq \Pi_{X(m)}-\Pi_{X(m-1)}
 	\end{equation}
-	To bound this last part, notice that
+	the differences between the conditional expectation values. Define an interaction
+	\begin{equation}
+		\Xi(Z,t)\defeq\sum_{m\geq 0}\sum_{\substack{X\subset Z:\\X(m)=Z}}\Delta_{X(m)}(\gamma^{\tilde{\Phi}}_{0;t}(\tilde{\Phi}(X,t)))
+	\end{equation}
+	then we get by construction that
+	\begin{equation}
+		\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^{\Phi}_{t;0}=\gamma^{\Xi}_{0;t}.
+	\end{equation}
+	Define some sets
 	\begin{align}
-		&\norm{H_n(t)-H(t)}\\
-		&=\norm{\gamma^{\Phi_{[-n,n]}}_{0;t}\left(\sum_{I\subset\ZZ\cap[-n/2,n/2]}\tilde\Phi(t,I)\right)-\gamma^{\Phi}_{0;t}\left(\sum_{I\in\mathfrak{G}_\ZZ}\tilde\Phi(t,I)\right)}\\
-		&\leq \epsilon(n)+\norm{(\gamma^{\Phi_{[-n,n]}}_{0;t}-\gamma^{\Phi}_{0;t})\left(\sum_{I\subset\ZZ\cap[-n/2,n/2]}\tilde\Phi(t,I)\right)}\\
-		&=
+		B_n&\defeq [-n,n]\cap\ZZ&B_{n,L}&\defeq ]-\infty,-n]\cap\ZZ&B_{n,R}&\defeq[n,\infty[\cap\ZZ.
 	\end{align}
-	{\color{red}To be continued...}
+	In what follows we will find a bound on
+	\begin{equation}
+		c_n\defeq \sup_{t\in[0,1]}\norm{\sum_{Z\in\mathfrak{B}_\ZZ}(\Xi(Z,t)-\Xi_{B_n}(Z,t))}=\norm{\sum_{Z\in\mathfrak{B}_\ZZ}\Xi_{B_n^c}(Z,t)}
+	\end{equation}
+	that is summable. Finding this would conclude the proof. In analogy with equation (5.22) of \cite{ogata2021h3gmathbb} we get
+	\begin{align}
+		c_n&\leq \sum_{\substack{Z\in\mathfrak{B}_{\ZZ}:\\Z\cap B_{n,L}\neq\emptyset\\Z\cap B_{n,R}\neq\emptyset}}\sup_{t\in[0,1]}\norm{\Xi(Z,t)}\\
+		&\leq \frac{8}{c_F}(e^{2I_F(\Phi)}-1) \sum_{m\geq 0}\sum_{\substack{X\in\mathfrak{B}_{\ZZ}:\\X(m)\cap B_{n,L}\neq\emptyset\\X(m)\cap B_{n,R}\neq\emptyset}}\sup_{t\in[0,1]}\left(\norm{\tilde{\Phi}(X,t)}\right)\abs{X}G_F(m).
+	\end{align}
+	Now using a trick analogous to what was done in equation (5.27) of \cite{ogata2021h3gmathbb} we get
+	\begin{equation}
+		c_n\leq \norm{\Phi_1}_F\left(\sum_{m\geq 0}G_F(m)\right)\sum_{x\in B_{n,L}}\sum_{y=B_{n,R}}F(d(x,y)).
+	\end{equation}
+	To show that the last bound is summable we only have to observe that
+	\begin{equation}
+		\sum_{n=0}^\infty\sum_{x\in B_{n,L}}\sum_{y=B_{n,R}}F(d(x,y))\leq \sum_{x\in C_1}\sum_{y=C_2}F(d(x,y)).
+	\end{equation}
+	where $C_1$ is the cone one obtains by putting the $B_{n,L}$ on top of each other whereas $C_2$ is the cone one gets by putting the $B_{n,R}$ on top of each other. The proof that the sum over the cones is bounded is done explicitly in \cite{ogata2021h3gmathbb}.
 \end{proof}
 \section{Properties of locally generated automorphisms: 2d}
  In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed by \cite{nachtergaele2010liebrobinson}. We will use the notation
