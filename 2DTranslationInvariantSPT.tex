@@ -175,11 +175,17 @@ There is however a second tensor product operation on this $C^*$ algebra that we
 \begin{equation}
 	\otimes_{\text{stack}}:\AA_{\Gamma}\times\AA_{\Gamma}\rightarrow \AA^2_{\Gamma}
 \end{equation}
-where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on site algebra $\BB(\CC^d)\otimes\BB(\CC^d)\simeq \BB(\CC^{d\times d})$. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will also need to define the stacking of the group action by which we mean
+where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on site algebra $\BB(\CC^d)\otimes\BB(\CC^d)\simeq \BB(\CC^{d\times d})$. We will also need to define the stacking of the group action by which we mean
 \begin{equation}
 	(\beta_g\otimes_{\text{stack}}\beta_g)^\Lambda=\bigotimes_{z\in\Lambda}\Ad{U(g)\otimes U(g)_z}
 \end{equation}
 for any $\Lambda\in\mathfrak{G}_{\ZZ^2}$.
+\subsection{States on $\AA$}
+We say that a linear functional $\omega:\AA\rightarrow \CC$ is a state if it positive and normalized. This means that for any $A\in\AA$, $\omega(A^\dagger A)\geq 0$ and that $\omega(\id)=1$. We denote the set of states on $\AA$ by $\mathcal{S}(\AA)$. In this paper we will work exclusively with states that are pure, in this setting this means that it is extremal in the sense that for any $p\in]0,1[$, the only two other states $\omega_1,\omega_2\in\mathcal{S}(\AA)$ that satisfy
+\begin{equation}
+	\omega=p\omega_1+(1-p)\omega_2
+\end{equation}
+must satisfy $\omega_1=\omega_2=\omega$. The set of pure states on $\AA$ will be called $\PP(\AA)$. In this paper we will often refer to the GNS triple. For its definition, construction and properties we refer to \cite{bratteli1979operator}. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will call a pure state $\phi$ on $\AA_\Gamma$ a product state if for any $\Lambda\subset\Gamma$, $\phi|_{\AA_\Lambda}$ is still pure.
 \subsection{Interactions and locally generated automorphisms}\label{sec:Interactions}
 An interaction $\Phi$ is a map
 \begin{equation}
@@ -199,7 +205,7 @@ We will sometimes use the restriction of an interaction. For some $\Gamma\subset
 		\Phi(I)&\text{if }I\subset\Gamma\\0&\text{otherwise}.
 	\end{matrix}\right.
 \end{equation}
-One of the properties of $F$-local interactions is that they can be used to generate automorphisms. Let
+The set of interactions with this norm (for a fixed $F$) is a Banach space. One of the properties of $F$-local interactions is that they can be used to generate automorphisms. Let
 \begin{equation}
 	\Phi:\mathfrak{G}_{\ZZ^2}\times [0,1]\rightarrow \AA_{\text{loc}}:(I,t)\mapsto \Phi(I,t)
 \end{equation}
@@ -667,19 +673,19 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 		&\Ad{W_{ghk}W_{hk}^\dagger W_{g}^\dagger}  \left(\Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)\right)\\
 		\nonumber
 		&\underline{u_R(g,hk)^\dagger}\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger.
-		\end{align}
-		Doing the same with $u_L(gh,k)^\dagger$ now gives
-		\begin{align}
+	\end{align}
+Doing the same with $u_L(gh,k)^\dagger$ now gives
+	\begin{align}
 		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger u_L(g,h)^\dagger\\
 		\nonumber
 		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)  \\
 		\nonumber
-		&\Ad{W_{gh}W_kW_{hk}^\dagger W_{g}^\dagger}  \left(\Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)\right)\\
+		&\Ad{W_{gh}W_k\stkout{W_{ghk}^\dagger W_{ghk}}W_{hk}^\dagger W_{g}^\dagger}  \left(\Ad{W_g}\left( \Ad{W_{hk}W_{ghk}^\dagger}(K^R_{ghk})(K^R_{hk})^{\dagger} \right)\right)\\
 		\nonumber
 		&\underline{u_R(gh,k)}u_R(g,hk)^\dagger\Ad{W_g}\left(u_R(h,k)^\dagger \Ad{W_h}\left(\Ad{W_kW_{hk}^\dagger}\left(K_{hk}^R\right)(K^R_k)^\dagger\right)(K^R_h)^\dagger\right)(K^R_g)^\dagger.
-		\end{align}
-		When also applying this to $u_L(g,h)^\dagger$ one gets
-		\begin{align}
+	\end{align}
+When also applying this to $u_L(g,h)^\dagger$ one gets
+	\begin{align}
 		=&K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)W_gW_hW_{gh}^\dagger (K^R_g)^\dagger\\
 		\nonumber
 		&K_{gh}^R\Ad{W_{gh}}\left(K_k^R\Ad{W_kW_{ghk}^\dagger}\left((K_{ghk}^R)^\dagger\right)\right)\\
@@ -787,7 +793,7 @@ We now show that the index is invariant under some transformation parametrised b
 		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
 		K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger
 	\end{align}
-	then the index of $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$ is equal to the index of $v,W_{g,2},u_{\sigma,2}(g,h)$ and $K_{g,2}^\sigma$.
+	then equation \eqref{eq:Definition2Cochain}, defining the index of $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$, is still valid when we replace these operators by $v,W_{g,2},u_{\sigma,2}(g,h)$ and $K_{g,2}^\sigma$ respectively. The two cochain also remains unchanged.
 \end{lemma}
 \begin{proof}
 	First we will prove that we still have that
@@ -2038,7 +2044,7 @@ We now have to extend the above definition to the group
 	Take $\Phi$ satisfying equation \ref{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations} arbitrary and define 
 	\begin{equation}
 		\delta_g^\sigma:=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_{\text{split}}}_{0;1}(A_{2,g}^\sigma).
-	\end{equation}1
+	\end{equation}
 	Let
 	\begin{equation}
 		\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)
@@ -2070,21 +2076,24 @@ Using equation \eqref{eq:TransformationOfKUnderEpsilon} on this gives us
 This shows that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously). The fact that the index is invariant under the $\phi_1(\delta_g)$ part is now completely equivalent to the proof of lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. To show this, observe that we have
 	\begin{align}
 		&\Ad{\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\stkout{\nu\circ\nu^{-1}}\circ\eta_g^R\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_R\: \eta_g^R\circ\beta_g^{RU}(A_R^\dagger)}\circ\stkout{\nu\circ\nu^{-1}}\circ\eta_g^R\circ\nu\\
 		\nonumber
 		&\qquad\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma\: \eta_g^R\circ\beta_g^{RU}(A_\sigma^\dagger)}\circ\eta_g^R\circ\underline{\beta_g^{RU}}\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_R\: \eta_g^R\circ\beta_g^{RU}(A_R^\dagger)}\circ\eta_g^R\circ\underline{\beta_g^{RU}}\circ\nu\\
 		\nonumber
 		&\qquad\circ\underline{(\beta_g^{\nu^{-1}(RU)})^{-1}}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_R}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_R^\dagger}\circ\nu\\
 		\nonumber
 		&\qquad\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_\sigma}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_\sigma^\dagger}\circ\nu\circ\underline{\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\underline{\nu^{-1}\circ\nu}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-1}\circ\Ad{A_R}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_R^\dagger}\circ\nu\circ\underline{\gamma^{H_\text{split}}_{0;1}}\\
 		\nonumber
-		&\qquad \circ\underline{\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\nu}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\\
+		&\qquad \circ\underline{\nu^{-1}\circ\nu\circ\gamma^{H_{\text{split}}}_{1;0}}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+	\end{align}
+After using the restriction to $R$ of equation \eqref{eq:TranslatingSplittedTimeEvolution}, this leads to
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\underline{\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{(\otimes_\mu\Phi^{\mu\nu(R)})^{-1}}}\circ\eta_g^R\circ\beta_g^{RU}\circ\underline{\stkout{(\otimes_\mu\Phi^{\mu\nu(R)})}\circ\gamma^{H_\text{split}}_{0;1}}\circ\nu\\
 		\nonumber
-		&\qquad \circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\stkout{\nu^{-1}\circ\nu}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+		&\qquad \circ\gamma^{H_\text{split}}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
 	\end{align}
 	On the other hand we have that
 	\begin{equation}
@@ -2233,7 +2242,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\end{align}
 \end{lemma}
 \begin{proof}
-	All of the above commute as automorphisms on the $C^*$ algebra, we now have to show that the operators in de GNS space commute as well. First we will start by proving the $h_g$ parts of the proof. For any operator $x\in\UU(\HH_0)$ satisfying that there exists a $\xi\in\Aut{\AA}$ such that
+	All of the above commute as automorphisms on the $C^*$ algebra, we now have to show that the operators in the GNS space commute as well. First we will start by proving the $h_g$ parts of the proof. For any operator $x\in\UU(\HH_0)$ satisfying that there exists a $\xi\in\Aut{\AA}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\gamma^{\Phi}_{0;1}=\pi_0\circ\gamma^{\Phi}_{0;1}\circ\xi
 	\end{equation}
