@@ -213,7 +213,7 @@ be a norm continuous\footnote{By which we mean that $\Phi(I,\cdot)$ is norm cont
 \begin{equation}
 	\frac{\d}{\d t}\gamma^{\Phi}_{s;t}(A)=-i\sum_{I\in\mathfrak{G}_{\ZZ^2}}\gamma^{\Phi}_{s;t}([\Phi(I,t),A])
 \end{equation}
-with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automorphism is proven in \cite{nachtergaele2010liebrobinson}). This satisfies the condition that if $\sup_t\norm{\sum_{I\in\mathfrak{B}_{\ZZ^2}}\Phi(I,t)}<\infty$ then
+with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automorphism is proven in \cite{doi:10.1063/1.5095769}). This satisfies the condition that if $\sup_t\norm{\sum_{I\in\mathfrak{B}_{\ZZ^2}}\Phi(I,t)}<\infty$ then
 \begin{align}
 	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\in\mathfrak{B}_{\ZZ^2}}\Phi(s',t)).
 \end{align}
@@ -1006,7 +1006,7 @@ We have that:
 	\begin{equation}
 		\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}\leq\epsilon
 	\end{equation}
-	for all $n>n_0$. We will now show that our row is a Cauchy row. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
+	for all $n>n_0$. We will now show that our sequence is a Cauchy sequence. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
 	\begin{align}
 		\norm{V_{1,n}-V_{1,m}}&\leq \norm{V_{1,n}-V_{1,n_0}}+\norm{V_{1,m}-V_{1,n_0}}\\
 		&=\norm{V_{1,n}V_{1,n_0}^\dagger-\id}+\norm{V_{1,m}V_{1,n_0}^\dagger-\id}.
@@ -1020,7 +1020,7 @@ We have that:
 	&\norm{\bigotimes_{i=-n}^{-n_0}(bb_i^\dagger)_i\bigotimes_{i=n_0}^{n}(bb_i^\dagger)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
 	&\leq 2\sum_{i=n_0}^{m}\norm{bb_i^\dagger-\id_{\HH_{L_i}}}<2\epsilon.
 	\end{align}
-	This proves that the row is a Cauchy row and hence the convergence follows.
+	This proves that the sequence is a Cauchy sequence and hence the convergence follows.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -1051,7 +1051,7 @@ Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>-1},L}\otimes\HH_{L_{>-1},R})
 	\Ad{\tilde w_{g}}\circ\pi_{L_{>-1}}&=\pi_{L_{>-1}}\circ\alpha|_{L_{>-1}}\circ\beta_g^{\tau^{i}(U)}\circ \alpha^{-1}|_{L_{>-1}}&\tilde w_{g}\Omega_{L_{>-1}}&=\Omega_{L_{>-1}}.
 \end{align}
 Clearly both functions are (linear) representation of the group. Now define
-\begin{equation}
+\begin{equation}\label{eq:ChoiceOfW_g_ExampleH2Index}
 	W_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1).
 \end{equation}
 This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\id_{\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
@@ -1059,8 +1059,11 @@ This operator valued function is also a linear representation and satisfies the 
 	K_g&=v^\dagger W_g v W_g^\dagger\\
 	&=v^\dagger \pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) v W_g^\dagger\\
 	&=\pi_{0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{0}(V_1) W_g^\dagger\\
-	&=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) W_g^\dagger\\
-	&=\pi_{0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1)\\
+	&=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) W_g^\dagger.
+\end{align}
+Using the adjoint of equation \eqref{eq:ChoiceOfW_g_ExampleH2Index} this gives
+\begin{align}
+	K_g&=\pi_{0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1)\\
 	&=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}}
 \end{align}
 where $\tilde{v}=\pi_0(V_1)^\dagger v\pi_0(V_1)$. Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
@@ -1746,7 +1749,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	After what was done so far this result is trivial.
 \end{proof}
 \subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
-This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. We still define $\AA$ as the closure of the tensor product of the $\BB$. In this case however we will require that our one dimensional state (and our $C^*$ algebra $\BB$) is translation invariant. Let's call the translation automorphism on $\BB$ also $\nu$ then we will need:
+This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. We still define $\AA$ as the closure of the tensor product of the $\BB$. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\BB$ and that our one dimensional state is invariant under this automorphism. We will need:
 \begin{assumption}\label{assumption1dWithTranslation}
 	Take $\phi\in\PP(\BB)$ such that
 	\begin{enumerate}
@@ -1816,7 +1819,7 @@ showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\te
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H^1IndexInvariantUnderRotations}
 The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. To this end let $H\in \BB_{F_\phi}([0,1])$ be a $G$-invariant, translation invariant (in both directions) one parameter family of interactions. In the rest of this section we will define (for notational simplicity) $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA} but with some notable differences. We first need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
-	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. Take $\Phi^U_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$ such that there exists some $a\in\AA$ satisfying that
+	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. Take $\Phi^U_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$, both commuting with $\beta_g$, such that there exists some $a\in\UU(\AA)$ satisfying that
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations}
 		\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}=\Ad{a}\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}.
 	\end{equation}
@@ -1884,6 +1887,18 @@ We now have to extend the above definition to the group
 \end{lemma}
 \begin{proof}
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfWgMap}.
+\end{proof}
+\begin{lemma}\label{lem:phi1phi2matchingConditionH1ValuedIndex}
+The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\sigma_1}(\alpha_0,\theta,\Theta)$ we have that
+	\begin{align}
+		\phi_1(\Ad{w^{-p} W_g w^{p}}(x))&=\Ad{\phi_2(w^{-p} W_g w^{p})}(\phi_1(x))\\
+		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x))\\
+		\phi_2(\Ad{v}(w^{-p} W_gw^{p}))&=\Ad{v}(\phi_2(w^{-p} W_g w^{p}))
+	\end{align}
+	for any $p\in\{0,1\}$.
+\end{lemma}
+\begin{proof}
+	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingCondition}.
 \end{proof}
 \begin{lemma}
 	There exist $A_L\in\UU(\AA_{L}),A_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$ satisfying that
@@ -1968,14 +1983,18 @@ We now have to extend the above definition to the group
 	By equation \eqref{eq:TranslationOutOfPhi_W} we get that
 	\begin{align}
 		w^\dagger\phi_2(W_g)w&=\phi_1(w^\dagger \: a_L\otimes a_R \: w)\phi_2(w^\dagger W_g w)\phi_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w)\\
-		&=\phi_1(w^\dagger \: a_L\otimes a_R \: w)\Ad{\phi_2(w^\dagger W_g w)}(\phi_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w))\phi_2(w^\dagger W_g w)\\
+		&=\phi_1(w^\dagger \: a_L\otimes a_R \: w)\Ad{\phi_2(w^\dagger W_g w)}(\phi_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w))\phi_2(w^\dagger W_g w).
+	\end{align}
+	Using result 2 and 3 of lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex} on this now gives
+	\begin{align}
 		&=\phi_1(w^\dagger \: a_L\otimes a_R \:\Ad{W_g}(a_L^\dagger\otimes a_R^\dagger)w)\phi_2(w^\dagger W_g w)\\
 		&=\phi_1(w^\dagger a_L\Ad{W_g}(a_L^\dagger)\otimes a_R \Ad{W_g}( a_R^\dagger)w)\phi_2(w^\dagger W_g w).
 	\end{align}
 	Since
-	\begin{equation}
-		a_\sigma\Ad{W_g}(a_\sigma^\dagger)=\pi_0\circ\alpha_0\circ\Theta(A_\sigma\eta_g^\sigma\circ\beta_g^{\sigma U}(A_\sigma^\dagger))
-	\end{equation}
+	\begin{align}
+		a_\sigma\Ad{W_g}(a_\sigma^\dagger)&=\pi_0\circ\alpha_0\circ\Theta(A_\sigma\eta_g^\sigma\circ\beta_g^{\sigma U}(A_\sigma^\dagger))\\
+		w^\dagger a_\sigma\Ad{W_g}(a_\sigma^\dagger)w&=\epsilon_g^\sigma
+	\end{align}
 	the first result follows. For the second result we start by using equation \eqref{eq:TranslationOutOfPhi_K} which gives us
 	\begin{align}
 		w^\dagger \phi_1(K_g^\sigma)w&=\phi_1(w^\dagger a_L\otimes a_R K_g^\sigma a_L^\dagger\otimes a_R^\dagger w)\\
@@ -1983,14 +2002,23 @@ We now have to extend the above definition to the group
 	\end{align}
 	Inserting $v^\dagger W_g va_\sigma^\dagger a_\sigma v^\dagger W_g^\dagger v=\id$ in this gives us
 	\begin{align}
-		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger a_\sigma) K_g^\sigma a_\sigma^\dagger w)\\
-		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{(K_g^\stkout{\sigma})^\dagger v^\dagger W_g v}(a_\sigma) a_\sigma^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma \underline{\Ad{v^\dagger W_g v}(a_\sigma^\dagger a_\sigma)} K_g^\sigma a_\sigma^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{(K_g^\stkout{\sigma})^\dagger v^\dagger W_g v}(a_\sigma) a_\sigma^\dagger w).
+	\end{align}
+	We now use the fact that $K_g W_g=v^\dagger W_g v$ to get
+	\begin{align}
 		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{W_g}(a_\sigma) a_\sigma^\dagger w)\\
-		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger))\phi_1(K_g^\sigma)\phi_1(\epsilon_g^\sigma)^\dagger.
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  (\epsilon_g^\sigma)^\dagger w).
+	\end{align}
+	Inserting $w w^\dagger$ in this and using the second result of lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex} gives
+	\begin{align}
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)\underline{w w^\dagger}K_g^\sigma \underline{w w^\dagger}  (\epsilon_g^\sigma)^\dagger w)\\
+		&=\phi_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)w)\phi_1( w^\dagger K_g^\sigma w ) \phi_1( w^\dagger  (\epsilon_g^\sigma)^\dagger w)\\
+		&=\underline{v^\dagger}\phi_1(\underline{v} w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)w \underline{v^\dagger})\underline{v}\phi_1( w^\dagger K_g^\sigma w ) \phi_1( w^\dagger  (\epsilon_g^\sigma)^\dagger w).
 	\end{align}
 	The only thing we now have to prove is that
 	\begin{equation}\label{eq:5.126}
-		a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)=v^\dagger a_\sigma \Ad{W_g}(a_\sigma^\dagger)v
+		a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)=v^\dagger a_\sigma \Ad{W_g}(a_\sigma^\dagger)v=v^\dagger w \epsilon_g^\sigma w^\dagger v
 	\end{equation}
 	since inserting this, concludes the proof. To do this notice that we can rewrite equation \eqref{eq:5.126} as
 	\begin{equation}
@@ -2250,11 +2278,11 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\begin{equation}
 		\Ad{x}(h_g)=\pi_0\circ\gamma^\Phi_{0;1}\circ\xi(U_{(-1,-1)}(g)).
 	\end{equation}
-	This shows that we can effectively ignore $h_g$. To show the last part decompose $\pi_0$ as $\gamma^\Phi_{0;1}$ as
+	This shows that we can effectively ignore $h_g$. To show the last part decompose $\pi_0$ and $\gamma^\Phi_{0;1}$ as
 	\begin{align}
 		\gamma^\Phi_{0;1}&=\Ad{B}\circ\bigotimes_{i=1}^4\gamma^{\Phi_i}_{0;1}\circ\Theta&\pi_0&=\bigotimes_{i=1}^4\pi_{0,i}
 	\end{align}
-	where the $\pi_{0,i}$ are irreducible representations in $\AA_i$, the areas $i$ are indicated in figure \ref{fig:IndexInvariantUnderRotationDecomposition} and the $\Theta$ have support in the areas shaded red. This shows that up to some inner automorphisms the operators with an $R$ on top act on different parts of the decomposition of $\pi_0$ then the operators with an $L$ on top do. Combining this with lemma \ref{lem:SplittingOfUnitary} concludes the proof.
+	where the $\pi_{0,i}$ are irreducible representations in $\AA_i$, the areas $i$ are indicated in figure \ref{fig:IndexInvariantUnderRotationDecomposition} and the $\Theta$ have support in the areas shaded red. This shows that up to some inner automorphisms the operators with an $R$ on top act on different parts of the decomposition of $\pi_0$ then the operators with a $U$ on top do. Combining this with lemma \ref{lem:SplittingOfUnitary} concludes the proof.
 \end{proof}
 \begin{lemma}
 	$\tilde{\alpha}(g)=\alpha(g)$.
@@ -2314,11 +2342,11 @@ We will call this cyclic representation a GNS triple for $\omega$.
 \begin{corollary}\label{cor:ExistenceOfUnitary}
 	Let $\omega$ be a state over the $C^*$-algebra $\AA$ and $\tau$ a *-automorphism of $\AA$ which leaves $\omega$ invariant, i.e.,
 	\[\omega\circ\tau=\omega.\]
-	It follows that there exists a uniquely determined unitary operator $U_\omega$, on the space of the cyclic representation $(\HH_\omega,\pi_\omega,\Omega_\omega)$ constructed from $\omega$, such that
+	Let $(\HH_\omega,\pi_\omega,\Omega_\omega)$ be a GNS triple for $\omega$. It follows that there exists a uniquely determined unitary operator $U_\omega$, such that
 	\[U_\omega \pi_\omega(A)U_\omega^\dagger=\pi_\omega\circ\tau(A) \]
 	for all $A\in\AA$, and
 	\[U_\omega\Omega_\omega=\Omega_\omega. \]
-	If furthermore, $\omega$ is pure then $U_\omega$ is not only unique as a unitary on the cyclic representation but (up to a phase) it will also be unique as a unitary operator in $\HH_\omega$.
+	If furthermore, $\omega$ is pure then (up to a phase) there even exists a unique $U_\omega$ without requiring the second condition.
 \end{corollary}
 \begin{proof}
 	The proof of this corollary is a combination of Corollary 2.3.17 and Theorem 2.3.19 from \cite{bratteli1979operator}.
@@ -2526,7 +2554,7 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	where $C_1$ is the cone one obtains by putting the $B_{n,L}$ on top of each other whereas $C_2$ is the cone one gets by putting the $B_{n,R}$ on top of each other. The proof that the sum over the cones is bounded is done explicitly in \cite{ogata2021h3gmathbb}.
 \end{proof}
 \section{Properties of locally generated automorphisms: 2d}
- In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed by \cite{nachtergaele2010liebrobinson}. We will use the notation
+ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed in \cite{doi:10.1063/1.5095769}. We will use the notation
  \begin{align}
  	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
  \end{align}
