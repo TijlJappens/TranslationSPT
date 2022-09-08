@@ -1298,9 +1298,29 @@ We now have to extend the above definition to the group
 	Filling this in now gives
 	\begin{align}
 	&\phi_1(vxv^\dagger)v\phi_1(x)^\dagger v^\dagger\\
-	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau(A)\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}(A)^\dagger v^\dagger
+	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau(A)\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}(A)^\dagger v^\dagger.
 	\end{align}
-	{\color{red}To be continued...}
+	First we will show that the $A$'s cancel. We get
+	\begin{align}
+		&\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v\tilde{a}y^\dagger\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}(A^\dagger)\\
+		&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{(\Phi)^{-1}}\circ\xi\circ\stkout{\Phi}(A^\dagger)\\
+		&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger }\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi\circ\underline{\tau^{-1}\circ\tau}(A^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{\Phi^{-1}}\circ\tau\circ\xi\circ\tau^{-1}\circ\stkout{\Phi}\circ\tau\circ\xi\circ\tau^{-1}\circ\tau(A^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{\tau\circ\xi\circ\tau^{-1}\circ\tau\circ\xi\circ\tau^{-1}}\circ\tau(A^\dagger).
+	\end{align}
+	Filling this in shows that the $A$'s cancel. Now, what is left to show is that
+	\begin{equation}
+		\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger=1.
+	\end{equation}
+	We will show this in two steps, first we show that
+	\begin{equation}
+	\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta.
+	\end{equation}
+	This already implies that there exists an $\alpha\in U(1)$ such that
+	\begin{equation}
+	\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger=\alpha.
+	\end{equation}
+	Then finally we show that $\alpha=1$ {\color{red}To be continued...}.
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
 	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
