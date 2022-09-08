@@ -462,7 +462,7 @@ In what follows, we will first fix certain objects to define the index and then 
 \subsection{Cone operators}
  We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
 \begin{definition}\label{def:ConeOperators}
-	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
+	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{\AA_{W(C_\theta)\cap\sigma}}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
@@ -470,6 +470,7 @@ In what follows, we will first fix certain objects to define the index and then 
 	\begin{align}\label{eq:CommutantPropertyCones}
 		\textrm{Cone}_R(\alpha_0,\theta)&\subseteq\textrm{Cone}_L(\alpha_0,\theta)'&\textrm{Cone}_L(\alpha_0,\theta)&\subseteq\textrm{Cone}_R(\alpha_0,\theta)'.
 	\end{align}
+	If additionally $\xi\in\Aut{\AA_{C_\theta\cap\sigma}}$ we will say that $x\in\textrm{Cone}_L^W(\alpha_0,\theta)$.
 \end{definition}
 \begin{proof}
 	The proof of equation \eqref{eq:CommutantPropertyCones} just follows from the fact that we defined $\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
@@ -479,7 +480,7 @@ In what follows, we will first fix certain objects to define the index and then 
 \end{proof}
 We will also define a generalisation of this. We will define a subgroup of $\UU(\HH_0)$ that includes both the group $\pi_0\circ\alpha_0\circ\Theta(\UU(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
-	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{W(\AA_{C_\theta})^c}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\sigma$ (or in short $x\in \IAC_\sigma(\alpha_0,\theta,\Theta)$) if there exists an $A\in\UU(\AA_\sigma)$ and a $y\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
+	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\sigma$ (or in short $x\in \IAC_\sigma(\alpha_0,\theta,\Theta)$) if there exists an $A\in\UU(\AA_\sigma)$ and a $y\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
 	\begin{equation}
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
 	\end{equation}
@@ -487,6 +488,7 @@ We will also define a generalisation of this. We will define a subgroup of $\UU(
 	\begin{align}\label{eq:CommutantProperty}
 		\IAC_R(\alpha_0,\theta,\Theta)&\subseteq\IAC_L(\alpha_0,\theta,\Theta)'&\IAC_L(\alpha_0,\theta,\Theta)&\subseteq\IAC_R(\alpha_0,\theta,\Theta)'.
 	\end{align}
+	If additionally $y\in \textrm{Cone}_L^W(\alpha_0,\theta)$ we will say that $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$.
 \end{definition}
 \begin{proof}
 	Take $u_L\in\IAC_L(\alpha_0,\theta,\Theta)$ and $u_R\in\IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A_\sigma\in\UU(\AA_\sigma)$ and $v_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for $\sigma\in\{L,R\}$) such that $u_\sigma=\pi_0\circ\alpha_0\circ\Theta(A_\sigma)v_\sigma$. We then get
@@ -536,12 +538,12 @@ Following Yoshiko Ogata \cite{ogata2021h3gmathbb} we now define objects using th
 \begin{proof}
 	See \cite{ogata2021h3gmathbb}, lemma 2.1.
 \end{proof}
-These objects will be the starting point for our definition. Clearly the $u_\sigma(g,h)$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. The $W_g$ have the following property:
+These objects will be the starting point for our definition. Clearly the $u_\sigma(g,h)$ are elements of $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$. The $W_g$ have the following property:
 \begin{lemma}\label{lem:AdjointOverConeIsInCone}
-	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$).	If more generally we take $\Xi^\sigma\in\IAC_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\IAC_\sigma(\alpha_0,\Theta)$.
+	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$).	If more generally we take $\Xi^\sigma\in\IAC_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\IAC_\sigma(\alpha_0,\Theta)$. Similarly if $\Xi^{\sigma}\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$.
 \end{lemma}
 \begin{proof}
-	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\id_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{W(\AA_{C_\theta})\cap\AA_\sigma}$ such that
+	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\id_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{\AA_{W(C_\theta)\cap\sigma}}$ such that
 	\begin{equation}
 		\Ad{\tilde\Xi^\sigma}\circ\pi_\sigma\circ\alpha_\sigma=\pi_\sigma\circ\alpha_\sigma\circ \xi_\sigma.
 	\end{equation}
@@ -1233,9 +1235,12 @@ We now have to extend the above definition to the group
 \end{proof}
 \begin{lemma}\label{lem:phi1phi2matchingCondition}
 	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_R(\alpha_0,\theta,\Theta)$ we have that
+	\begin{equation}
+		\phi_1(\Ad{W_g}(x))=\Ad{\phi_2(W_g)}(\phi_1(x)).
+	\end{equation}
+	If additionally $x\in\IAC_R^W(\alpha_0,\theta,\Theta)$ we get that
 	\begin{align}
-		\phi_1(\Ad{W_g}(x))&=\Ad{\phi_2(W_g)}(\phi_1(x))\\
-		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x)).
+		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x))&\phi_1(\Ad{v^\dagger}(x))&=\Ad{v^\dagger}(\phi_1(x)).
 	\end{align}
 \end{lemma}
 \begin{proof}
@@ -1262,7 +1267,7 @@ We now have to extend the above definition to the group
 	\end{equation}
 	Filling this in gives
 	\begin{align}
-		&\phi_1(W_gxW_g^\dagger)\phi_2(W_g)^\dagger\phi_1(x)^\dagger\phi_2(W_g)^\dagger\\
+		&\phi_1(W_gxW_g^\dagger)\phi_2(W_g)\phi_1(x)^\dagger\phi_2(W_g)^\dagger\\
 		\label{eq:phi1phi2matchingConditionEquation}
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\eta_g\circ\beta_g^U(A)\tilde{a}W_g\stkout{yW_g^\dagger\tilde{a}^\dagger}\\
 		\nonumber
@@ -1278,7 +1283,24 @@ We now have to extend the above definition to the group
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Phi\circ\eta_g\circ\beta_g^U(A)\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ \gamma^{H}_{0;1}\circ\gamma^{H_\text{split}}_{1;0} \circ\eta_g\circ\beta_g^U(A).
 	\end{align}
-	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof.
+	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof of the first item. The proof of the second item looks very similar. We now get that (the part with $v$ replaced with $v^\dagger$ and $\tau$ by $\tau^{-1}$ is equivalent)
+	\begin{equation}
+		vxv^\dagger=\pi\circ\alpha_0\circ\Theta\circ\tau(A)vyv^\dagger.
+	\end{equation}
+	When we now take $\tilde\xi=\tau\circ\xi\circ\tau^{-1}$ we still obtain an equation of the form
+	\begin{equation}
+		\Ad{vyv^\dagger}\circ \pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\tilde\xi.
+	\end{equation}
+	This again implies that we can take
+	\begin{equation}
+		\phi_1(vxv^\dagger)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau(A)\tilde{a}vyv^\dagger\tilde{a}^\dagger.
+	\end{equation}
+	Filling this in now gives
+	\begin{align}
+	&\phi_1(vxv^\dagger)v\phi_1(x)^\dagger v^\dagger\\
+	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau(A)\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}(A)^\dagger v^\dagger
+	\end{align}
+	{\color{red}To be continued...}
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
 	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
@@ -1300,6 +1322,7 @@ We now have to extend the above definition to the group
 	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{W(\AA_{C_{\theta_2}})^c}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
+		\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
 		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
 	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\tilde\beta_{g,1}\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart2}. Because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 4 there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
@@ -1328,7 +1351,7 @@ We now have to extend the above definition to the group
 		\label{eq:IndexInvariantUnderLGANewOperator4}
 		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger
 	\end{align}
-	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g}).$ The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
+	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g})$ and $A_1$ was defined in equation \eqref{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi
 	\end{equation}
