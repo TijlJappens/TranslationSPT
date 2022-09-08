@@ -1231,25 +1231,16 @@ We now have to extend the above definition to the group
 	This just follows from the morphism proof of the previous lemma (in fact it is even more obvious in this case).
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
-	There exists a map
+	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismHAutEquation}. Let
 	\begin{equation}
-		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
+		\phi_2:\{v^{-p} W_g v^{p}|g\in G,p\in\{-1,0,1\}\}\rightarrow \UU(\HH):v^{-p} W_g v^{p}\mapsto \tilde{a}v^{-p} W_g v^{p}\tilde{a}^\dagger.
 	\end{equation}
-	satisfying
+	This satisfies
 	\begin{equation}\label{eq:lemDefinitionOfWgMapCondition}
-		\Ad{\phi_2(W_g)}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ(\gamma^{H_\text{split}}_{1;0})\circ\eta_g\circ\beta_g^U\circ(\gamma^{H_\text{split}}_{0;1})\circ\gamma^{H}_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
+		\Ad{\phi_2(v^{-p}W_g v^{p})}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\tau^{-p}\circ\eta_g\circ\beta_g^U\circ\tau\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
 	\end{equation}
-	It is unique up to a $G$-dependent phase.
 \end{lemma}
 \begin{proof}
-	Take $a\in\UU(\AA)$, $\Phi^U_{0;1}$ and $\Phi^D_{0;1}$ such that
-	\begin{equation}\label{eq:proofDefinitionOfWgMapVAut}
-		\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}=\Ad{a}\circ\Phi^U_{0;1}\otimes\Phi^D_{0;1}.
-	\end{equation}
-	This exists because of lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. We will define
-	\begin{equation}
-		\phi_2(W_g)\defeq \pi_0\circ\alpha_0\circ\Theta(a)W_g\pi_0\circ\alpha_0\circ\Theta(a)^\dagger.
-	\end{equation}
 	To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using equation \eqref{eq:proofDefinitionOfWgMapVAut} we obtain:
 	\begin{align}
 		\Ad{\phi_2(W_g)}\circ\pi_0&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{a}\circ\eta_g\circ\beta_g^U\circ\Ad{a^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
@@ -1377,7 +1368,7 @@ We now have to extend the above definition to the group
 	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
 \end{theorem}
 \begin{proof}
-	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{W\left(\AA_{C_{\theta_3}}\right)^c}$ such that
+	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\AA_{W(C_{\theta_3})^c}}$ such that
 	\begin{equation}
 		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
@@ -1390,7 +1381,7 @@ We now have to extend the above definition to the group
 		\alpha\circ\gamma^{H}_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_\text{split}}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
 		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{W(\AA_{C_{\theta_2}})^c}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
 		\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
@@ -1917,7 +1908,7 @@ The goal of this section is to show that the index we constructed is invariant u
 	\begin{equation}\label{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations}
 		\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}=\Ad{a}\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}.
 	\end{equation}
-	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof). Take $c\defeq \pi_0\circ\alpha_0(a)$ and define the map
+	This can be done using lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof). Take $c\defeq \pi_0\circ\alpha_0\circ\Theta(a)$ and define the map
 	\begin{align}
 		\phi_{1,\sigma}&:\IAC_{\sigma}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
 		\nonumber
@@ -1967,29 +1958,30 @@ We now have to extend the above definition to the group
 	Identical to the proof of lemma \ref{lem:extensionOfPhi1Definition}.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMapTwoTranslations}
-	There exists a map
-	\begin{equation}
-		\phi_2:\{w^{-p}W_gw^p|g\in G,p\in\{0,1\}\}\rightarrow \UU(\HH)
-	\end{equation}
-	satisfying
-	\begin{align}\label{eq:lemDefinitionOfWgMapConditionTwoTranslations}
-		&\Ad{\phi_2(w^{-p}W_gw^p)}\circ\pi_0\circ\alpha_0\circ\Theta\\
+	Define again $c$ through equation \eqref{eq:DefinitionOfGroupMorphismHAutEquationTwoTranslations}. Let
+	\begin{align}
+		\phi_2:&\{\Ad{w^{-p}v^{-s}}(W_g)|g\in G,p,s\in\{-1,0,1\}\}\rightarrow \UU(\HH):\\
 		\nonumber
-		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ(\gamma^{H_{\nu^{-1}(L)}}_{1;0}\otimes\gamma^{H_{\nu(R)}}_{1;0})\circ\nu^{-p}\circ\eta_g\circ\nu^p\circ\beta_g^U\circ(\gamma^{H_{\nu^{-1}(L)}}_{0;1}\otimes\gamma^{H_{\nu(R)}}_{0;1})\circ\gamma^{H}_{1;0}.
+		&\Ad{w^{-p}v^{-s}}(W_g) \mapsto \Ad{c w^{-p}v^{-s}}(W_g).
 	\end{align}
-	It is unique up to a $G$ and $p$-dependent phase.
+	This satisfies
+	\begin{align}\label{eq:lemDefinitionOfWgMapConditionTwoTranslations}
+		&\Ad{\phi_2(w^{-p}v^{-s}W_g v^{s} w^p)}\circ\pi_0\circ\alpha_0\circ\Theta\\
+		\nonumber
+		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\nu^{-p}\circ\tau^{-s}\circ\eta_g\circ\beta_g^U\circ\tau^s\circ\nu^p\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^{H}_{1;0}.
+	\end{align}
 \end{lemma}
 \begin{proof}
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfWgMap}.
 \end{proof}
 \begin{lemma}\label{lem:phi1phi2matchingConditionH1ValuedIndex}
-The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\sigma_1}(\alpha_0,\theta,\Theta)$ we have that
+The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\sigma}(\alpha_0,\theta,\Theta)$ we have that
 	\begin{align}
 		\phi_1(\Ad{w^{-p} W_g w^{p}}(x))&=\Ad{\phi_2(w^{-p} W_g w^{p})}(\phi_1(x))\\
 		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x))\\
-		\phi_2(\Ad{v}(w^{-p} W_gw^{p}))&=\Ad{v}(\phi_2(w^{-p} W_g w^{p}))
+		\phi_2(\Ad{v^s}(w^{-p} W_gw^{p}))&=\Ad{v^s}(\phi_2(w^{-p} W_g w^{p}))
 	\end{align}
-	for any $p\in\{0,1\}$.
+	for any $p,s\in\{0,1\}$. For the second equation we need the stronger condition that $x\in\IAC_{\sigma}^W(\alpha_0,\theta,\Theta)$.
 \end{lemma}
 \begin{proof}
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingCondition}.
@@ -2038,7 +2030,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 	\begin{align}
 		&w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w cw^\dagger c^\dagger)\\
 		&=\pi_0\circ\alpha_0\circ\Theta(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\underline{\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\gamma^H_{1;0}}}(\nu\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger)).
 	\end{align}
 	This shows that we can take
@@ -2138,7 +2130,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
 \end{theorem}
 \begin{proof}
-	The start of the proof is identical to the proof of theorem \ref{thrm:IndexInvariantUnderLGA}. Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{W\left(\AA_{C_{\theta_3}}\right)^c}$ such that
+	The start of the proof is identical to the proof of theorem \ref{thrm:IndexInvariantUnderLGA}. Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\AA_{W\left(C_{\theta_3}\right)^c}}$ such that
 	\begin{equation}
 		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
@@ -2151,7 +2143,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 		\alpha\circ\gamma^H_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_\text{split}}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
 		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{W(\AA_{C_{\theta_2}})^c}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
 		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
