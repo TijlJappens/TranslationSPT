@@ -2421,6 +2421,9 @@ be two states. The goal of this section is to prove that
 \end{equation}
 The proof of this is completely analogous to what was in section \ref{sec:StackingOneTranslation}.
 \section{What if $G$ is not discrete}
+\subsection{1d SPT index}
+\subsection{2d SPT index}
+\subsection{The translation indices}
 \label{sec:G_not_discrete}
 \clearpage
 \appendix
@@ -2463,7 +2466,7 @@ From the assumptions we see that $\forall A\in\AA$
 \begin{equation}
 	\Ad{U}\circ\pi_\AA\otimes\pi_\BB(A\otimes\id)=\pi_\AA\circ\alpha_\AA(A)\otimes\id\subset \BB(\HH_\AA)\otimes\id.
 \end{equation}
-Since $\Ad{U}$ is continuous in the weak operator topology, it follows that we can extend the map
+Since $\Ad{U}$ is a continuous map in the weak operator topology, it follows that we can extend the map
 \begin{equation}
 	\Ad{U}|_{\textrm{Im}(\pi_\AA)}:\textrm{Im}(\pi_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id
 \end{equation}
@@ -2476,6 +2479,38 @@ By restriction this gives rise to an automorphism $\tau_\AA:\UU(\HH_\AA)\rightar
 	\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\tau_\AA\circ\pi_\AA\otimes\tau_\BB\circ\pi_\BB=\Ad{U_\AA\otimes U_\BB}\circ(\pi_\AA\otimes\pi_\BB).
 \end{equation}
 By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelevant phase) we need that $U=U_\AA\otimes U_\BB$ concluding the proof.
+\end{proof}
+The following lemma extends this to a parameter family of a locally compact Lie group.
+\begin{lemma}
+	Let $G$ be a locally compact Lie group. In the same setting as lemma \ref{lem:SplittingOfUnitary} let in stead
+	\begin{equation}
+		U:G\rightarrow \UU(\HH_\AA\otimes\HH_\BB)
+	\end{equation}
+	be continuous in the strong operator topology. Assume now that there exist
+	\begin{align}
+		\alpha_\AA&:G\rightarrow\Aut{\AA}&\alpha_\BB&:G\rightarrow\Aut{\BB}
+	\end{align}
+	that are continuous in the strong topology on automorphisms. This implies that for any atlas for $G$ we get that for each patch of that atlas, the $U_\AA:G\rightarrow \UU(\HH_\AA)$ and the $U_\BB:G\rightarrow \UU(\HH_\BB)$ can be made continuous (again in strong operator topology) in that patch.
+\end{lemma}
+\begin{proof}
+	By going through the proof of lemma \ref{lem:SplittingOfUnitary} we still get that $g\mapsto \Ad{U_\AA(g)}$ can be made continuous in the strong topology on automorphisms. The remaining steps of this proof will largely follow those presented in \cite{https://doi.org/10.48550/arxiv.2105.01717} with some important differences. We will first show there exists an atlas and then we extend this to our atlas. More explicitly we will show that for any $0<\epsilon<1$ there exists a $d_\epsilon$ such that for any $g^*\in G$ we can make $g\mapsto U_\AA(g)$ continuous on
+	\begin{equation}
+		\mathcal{O}_{g^*}(d_\epsilon)\defeq \left\{\left.\exp(\sum_{i=1}^D v_i X_i)g^*\right|v\in\RR^D,\norm{v}<d_\epsilon\right\}.
+	\end{equation}
+	Here $X_i$ is the Lie algebra of $G$ at $g^*$ and $D$ is its dimension. To do this fix an arbitrary phase for $U_\AA(g^*)$ and let $\Omega\in\HH_\AA$ be an arbitrary vector. We will show the result in three steps. First we will find a $d_\epsilon$ such that for any $h\in\mathcal{O}_{g^*}(d_\epsilon)$ we get that
+	\begin{equation}\label{eq:LowerBoundProofLemmaA4}
+		1-\epsilon < \abs{\bra{U_\AA(g^*)\Omega}\ket{U_\AA(h)\Omega}}\leq 1.
+	\end{equation}
+	By the assumption of continuity of $g\mapsto \Ad{U_\AA(g)}$ we get that for any $\epsilon>0$ there exists a $d_\epsilon$ such that for any $h\in\mathcal{O}_{g^*}(d_\epsilon)$ we get that
+	\begin{align}
+		\abs{\expval{\Ad{U_\AA(g^*)}(\ket{\Omega}\bra{\Omega})}_{U_\AA(g^*)\Omega}-\expval{\Ad{U_\AA(h)}(\ket{\Omega}\bra{\Omega})}_{U_\AA(g^*)\Omega}}&< \epsilon\\
+		1-\abs{\bra{U_\AA(g^*)\Omega}\ket{U_\AA(h)\Omega}}<\epsilon.
+	\end{align}
+	This clearly implies the lower bound in \ref{eq:LowerBoundProofLemmaA4}. The next step is that we define the phase of $U_\AA(h)$ for all $h\in \mathcal{O}_{g^*}(d_\epsilon)$ such that
+	\begin{equation}
+		g_h\defeq \bra{U_\AA(g^*)\Omega}\ket{U_\AA(h)\Omega}\in\RR.
+	\end{equation}
+	The last step is that we prove that this choice is continuous. For this we can just use the exact same proof as theorem 1 of \cite{https://doi.org/10.48550/arxiv.2105.01717}. We now only have to show that we can sew together our patches to obtain the open sets in our atlas. This we can do using some kind of partition of unity on the phases {\color{red}Do I have to do this explicitly?}.
 \end{proof}
 \section{Translation invariance in one dimension}\label{sec:OneDimensionalIndices}
 Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional lattice. Let $U_i\in\hom(G,\UU(\AA_i))$ (for $i\in\ZZ$) be the on site group action. Let $\beta_g$ be again so that for each finite $I\subset \ZZ$, $\beta_g^I=\Ad{\bigotimes_{i\in I}U_i(g)}$. In this section, we will look at states satisfying the split property. We say that $\omega\in\PP(\BB)$ satisfies the split property iff. it is quasi equivalent to $\omega|_{L}\otimes\omega|_{R}$. This implies that there exists a GNS triple of $\omega$ that is of the form
