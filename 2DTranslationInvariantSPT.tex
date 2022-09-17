@@ -241,7 +241,6 @@ where
 \end{align}
 In what follows we will denote the group action on $H^n(G,M)$ also in the same additive notation that we used for $C^n(G,M)$. This notation makes sense because of the property that for any $\phi_1,\phi_2\in Z^n(G,M)$ we have that $\expval{\phi_1+\phi_2}_{H^n(G,M)}=\expval{\phi_1}_{H^n(G,M)}+\expval{\phi_2}_{H^n(G,M)}$.
 \section{Results}
-\subsection{Statement that other indices can be generalised to any locally compact Lie group}
 We will present our claim starting from two different assumptions. The first assumption is related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
 \subsection{Statement of the results in terms of short range entanglement}\label{sec:Results_1}
 We can use these locally generated automorphisms to define the concept of short range entanglement.
@@ -2424,6 +2423,27 @@ The proof of this is completely analogous to what was in section \ref{sec:Stacki
 Up to now we have constructed, 1-cochains, 2-cochains and 3-cochains. This is fine for when the group is discrete. However, when the group is continuous, one needs to remember that in our definition of group cohomology (see section \ref{sec:GroupCohomology}) we where only allowed to use measurable cochains. In this section we will show that we can find these measurable cochains. To do this, we will let $G$ be an arbitrary locally compact Lie group. We will take an atlas $\mathfrak{A}$ on $G$ and use it to create an atlas $\mathfrak{A}^2$ for $G\times G$ and an atlas $\mathfrak{A}^3$ for $G\times G\times G$. We will then define a cochain for each chart of these atlases and show that the transitions between charts at their overlap are given by a coboundary. This will then imply that no matter what measurable cochain we construct from our atlas (this we can do by putting an ordering on the charts), its cohomology will be invariant on this choice. Then we will show that the cohomology is invariant on the choice of atlas altogether.
 \subsection{1d SPT index}
 \subsection{2d SPT index}
+This section will be committed to showing that if the group action is continuous, we can contstruct a 2-cochain that is measurable. Remember that the definition of the 2-cochain depended on the existence of the $\tilde{\beta}_g$ constructed in section 3 of \cite{ogata2021h3gmathbb}. The existence of this $\tilde{\beta}_g$ depended on the following lemma that was proven in section 3 of \cite{ogata2021h3gmathbb}, namely:
+\begin{lemma}
+	Let $\omega\in\PP(\AA)$ be a $G$-invariant SRE state. Let $\omega_0\in\PP(\AA)$ be a product state and let $\Phi\in\BB_{F_\phi}([0,1])$ be a one parameter family of interactions such that $\omega=\omega_0\circ\gamma^{\Phi}_{0;1}$. Now for all $g\in G$, there exists a unitary $\tilde{v}_g\in\UU(\AA)$ and two automorphisms $\tilde{\eta}_g^L\in\Aut{\AA_{C_\theta\cap L}}$ and $\tilde{\eta}_g^R\in\Aut{\AA_{C_\theta\cap R}}$ such that
+	\begin{equation}\label{eq:DefinitionTildeEta}
+		\omega_0\circ\gamma^{\Phi}_{0;1}\circ\beta_g^U\circ\gamma^{\Phi}_{1;0}=\omega_0\circ\Ad{\tilde{v}_g}\circ\left(\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\right).
+	\end{equation}
+\end{lemma}
+We will extend this result by proving the following lemma:
+\begin{lemma}
+	Let $G$ now be any locally compact Lie group and let $\beta_g$ be a continuous group action. Let $\mathfrak{A}$ be an arbitrary atlas of $G$. For any patch $\Phi_i\in\mathfrak{A}$ we can define three maps,
+	\begin{align}
+		\tilde{\eta}^L&:\Im{\Phi_i}\rightarrow \Aut{\AA_{C_\theta\cap L}},&\tilde{\eta}^R&:\Im{\Phi_i}\rightarrow \Aut{\AA_{C_\theta\cap R}}
+	\end{align}
+	and
+	\begin{equation}
+		\tilde{v}:\Im{\Phi_i}\rightarrow \UU(\AA):g\mapsto\tilde{v}_g
+	\end{equation}
+that satisfy equation \eqref{eq:DefinitionTildeEta}. Furthermore, for any $a\in\AA$, $g\mapsto\Ad{\tilde{v}_g}(a)$, $g\mapsto\tilde{\eta}_g^L(a)$ and $g\mapsto\tilde{\eta}_g^R(a)$ will be continuous in norm.
+\end{lemma}
+\begin{proof}
+\end{proof}
 \subsection{The translation indices}
 \label{sec:G_not_discrete}
 \clearpage
