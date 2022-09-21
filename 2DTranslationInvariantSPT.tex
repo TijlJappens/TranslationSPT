@@ -69,6 +69,7 @@
 \newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{property}[theorem]{Property}
 
 \numberwithin{equation}{section}
 \begin{document}
@@ -2855,7 +2856,7 @@ From these four statements we can prove the following results:
 \end{proof}
 \section{Continuous version of the homogenity of the pure state space of a separable $C^*$-algebra}
 The purpose of this section is to generalize theorem 1.1 of \cite{https://doi.org/10.48550/arxiv.math/0110152} to the following:
-\begin{theorem}
+\begin{theorem}[Continuous homogenity of $\PP(\AA)$]\label{ContinuousHomogenityOfPA}
 Let $G$ be a locally compact Lie group and let $\AA$ be a separable $C^*$-algebra. Let $\omega:G\rightarrow \PP(\AA):g\mapsto \omega_g$ be a map such that:
 \begin{enumerate}
 	\item $g\mapsto \omega_g(a)$ is continuous for all $a\in\AA$.
@@ -2872,13 +2873,77 @@ such that
 \end{enumerate}
 \end{theorem}
 The proof of the original (noncontinuous) theorem used Kadison's transitivity theorem infinitly many times. Before we can prove our new theorem we will therefore require a continuous version of Kadison's transitivity theorem and the usual corollary. We therefore state the following corollary from \cite{Spiegel_2022}:
-\begin{theorem}[Continuous Kadison Transitivity corollary]
+\begin{theorem}[Continuous Kadison Transitivity corollary]\label{thrm:ContinuousKadisonTransitivity}
 	Let $\AA$ be a unital $C^*$-algebra and let $\omega\in\PP(\AA)$ be a pure state. The map
 	\begin{equation}
 		p_\omega:\UU(\AA)\rightarrow\PP_\omega(\AA):U\mapsto\omega(U^\dagger \cdot U)
 	\end{equation}
-	is a locally trivial principal $U_\omega(\AA)$ bundle. Here $\PP_\omega(\AA)$ are the pure states unitarily equivalent to $\omega$ with (dual) norm topology) and $U_\omega(\AA)$ is the isotropy group $\{U\UU(\AA)|p_\omega(U)=\omega\}$.
+	is a locally trivial principal $U_\omega(\AA)$ bundle. Here $\PP_\omega(\AA)$ are the pure states unitarily equivalent to $\omega$ with (dual) norm topology and $U_\omega(\AA)$ is the isotropy group $\{U\in\UU(\AA)|p_\omega(U)=\omega\}$.
 \end{theorem}
+To show how theorem 1.1. of \cite{https://doi.org/10.48550/arxiv.math/0110152} generalizes to theorem \ref{ContinuousHomogenityOfPA} we will first define an alternative to property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}. So to this end, the following is a property of a $C^*$-algebra $\AA$:
+\begin{property}[Alternative to property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]\label{prop:AlternativeToProperty1.2}
+	For any finite subset $\mathcal{F}$ of $\AA$, any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$, there exists a finite subset $\mathcal{G}$ of $\AA$ and $\delta>0$ satisfying: For any locally compact group $G$, we get that for any compact open neighborhood of some $g\in G$, $\mathcal{O}_g$, we get that for any
+	\begin{equation}
+		\phi:\mathcal{O}_g\rightarrow \PP_\omega(\AA):g\mapsto\phi_g
+	\end{equation}
+	continuous in the norm topology such that
+	\begin{equation}
+		\abs{\phi_h(a)-\omega(a)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+	\end{equation}
+	there is a continuous map
+	\begin{equation}
+		u:[0,1]\times\mathcal{O}_g\rightarrow \UU(\AA):(t,h)\mapsto u_{t,h}
+	\end{equation}
+	such that $u_{0,g}=\id$, $\phi_g=\omega\circ\Ad{u_{1,g}}$ and
+	\begin{equation}
+		\norm{\Ad{u_{t,h}}(a)-a}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
+	\end{equation}
+\end{property}
+The first thing we will prove is that this stronger property implies a stronger version of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}. Namely:
+\begin{lemma}[Alternative to lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]
+	Let $\AA$ be a $C^*$-algebra satisfying property \ref{prop:AlternativeToProperty1.2}. For any finite subset $\mathcal{F}$ of $\AA$, any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$, there exist a finite subset $\mathcal{G}$ of $\AA$ and $\delta>0$ satisfying: For any locally compact group $G$, we get that for any compact open neighborhood of some $g\in G$, $\mathcal{O}_g$, we get that for any
+	\begin{equation}
+		\phi:\mathcal{O}_g\rightarrow \PP(\AA):g\mapsto\phi_g
+	\end{equation}
+	continuous in the weak$^*$ topology such that
+	\begin{equation}
+		\abs{\phi_h(a)-\omega(a)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+	\end{equation}
+	then for any finite subset $\mathcal{F}'$ of $\AA$ and $\epsilon'>0$ there is a continuous map
+	\begin{equation}
+		u:[0,1]\times\mathcal{O}_g\rightarrow \UU(\AA):(t,h)\mapsto u_{t,h}
+	\end{equation}
+	such that $u_{0,h}=\id$, and
+	\begin{align}
+		\abs{\phi(a)-\omega\circ\Ad{u_{1,h}}(a)}&<\epsilon',\quad a\in\mathcal{F}'\\
+		\norm{\Ad{u_{t,h}}(a)-a}&<\epsilon',\quad a\in\mathcal{F}.
+	\end{align}
+\end{lemma}
+	\begin{proof}
+		The main difference from the proof of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} is that we now mimic $\phi_g$ by a norm continuous family of vector states through $\pi_\omega$. By the continuous version of Kadison's transitivity (theorem \ref{thrm:ContinuousKadisonTransitivity}), this now gives us a continuous $v:\mathcal{O}_g\rightarrow\UU(\AA)$ such that
+	\begin{equation}
+		\abs{\phi_h(a)-\omega\circ\Ad{v_g}(a)}<\epsilon',\quad a\in\mathcal{F}'\cup\mathcal{G}.
+	\end{equation}
+	Now in stead of applying property 1.2 from \cite{https://doi.org/10.48550/arxiv.math/0110152} we just use property \ref{prop:AlternativeToProperty1.2} to give us the desired $u$.
+	\end{proof}
+	Now we are ready to provide an alternative to theorem 2.1 from \cite{https://doi.org/10.48550/arxiv.math/0110152}, namely:
+	\begin{theorem}[Alternative to theorem 2.1 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]
+		Let $G$ be a locally compact Lie group and let $\AA$ be a separable $C^*$-algebra satisfying property \ref{prop:AlternativeToProperty1.2}. Let $\omega:G\rightarrow \PP(\AA):g\mapsto \omega_g$ be a map such that:
+\begin{enumerate}
+	\item $g\mapsto \omega_g(a)$ is continuous for all $a\in\AA$.
+	\item $\ker\pi_{\omega_g}=\ker\pi_{\omega_h}$ for all $g,h\in G.$
+\end{enumerate}
+It then follows that for every atlas $\mathfrak{A}$ of $G$, we get that for each patch $\Phi_i\in\mathfrak{A}$, there exists a map
+\begin{equation}
+	\alpha_i:\Im\Phi_i\rightarrow \textrm{AInn}_0(\AA):g\mapsto\alpha_{i,g}
+\end{equation}
+such that
+\begin{enumerate}
+	\item $\omega_g\circ\alpha_{i,h}=\omega_{gh}$ for all $g\in G$ and for all $h\in\Im\Phi_i$.
+	\item $g\mapsto\alpha_{i,g}(a)$ is continuous for all $a\in\AA$.
+\end{enumerate}
+	\end{theorem}
+
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
