@@ -2853,6 +2853,32 @@ From these four statements we can prove the following results:
 	\end{align}
 	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}(\AA)$ the implication follows. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{SQAut}(\AA)$.
 \end{proof}
+\section{Continuous version of the homogenity of the pure state space of a separable $C^*$-algebra}
+The purpose of this section is to generalize theorem 1.1 of \cite{https://doi.org/10.48550/arxiv.math/0110152} to the following:
+\begin{theorem}
+Let $G$ be a locally compact Lie group and let $\AA$ be a separable $C^*$-algebra. Let $\omega:G\rightarrow \PP(\AA):g\mapsto \omega_g$ be a map such that:
+\begin{enumerate}
+	\item $g\mapsto \omega_g(a)$ is continuous for all $a\in\AA$.
+	\item $\ker\pi_{\omega_g}=\ker\pi_{\omega_h}$ for all $g,h\in G.$
+\end{enumerate}
+It then follows that for every atlas $\mathfrak{A}$ of $G$, we get that for each patch $\Phi_i\in\mathfrak{A}$, there exists a map
+\begin{equation}
+	\alpha_i:\Im\Phi_i\rightarrow \textrm{AInn}(\AA):g\mapsto\alpha_{i,g}
+\end{equation}
+such that
+\begin{enumerate}
+	\item $\omega_g\circ\alpha_{i,h}=\omega_{gh}$ for all $g\in G$ and for all $h\in\Im\Phi_i$.
+	\item $g\mapsto\alpha_{i,g}(a)$ is continuous for all $a\in\AA$.
+\end{enumerate}
+\end{theorem}
+The proof of the original (noncontinuous) theorem used Kadison's transitivity theorem infinitly many times. Before we can prove our new theorem we will therefore require a continuous version of Kadison's transitivity theorem and the usual corollary. We therefore state the following corollary from \cite{Spiegel_2022}:
+\begin{theorem}[Continuous Kadison Transitivity corollary]
+	Let $\AA$ be a unital $C^*$-algebra and let $\omega\in\PP(\AA)$ be a pure state. The map
+	\begin{equation}
+		p_\omega:\UU(\AA)\rightarrow\PP_\omega(\AA):U\mapsto\omega(U^\dagger \cdot U)
+	\end{equation}
+	is a locally trivial principal $U_\omega(\AA)$ bundle. Here $\PP_\omega(\AA)$ are the pure states unitarily equivalent to $\omega$ with (dual) norm topology) and $U_\omega(\AA)$ is the isotropy group $\{U\UU(\AA)|p_\omega(U)=\omega\}$.
+\end{theorem}
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
