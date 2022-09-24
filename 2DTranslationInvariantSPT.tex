@@ -21,6 +21,7 @@
 \usepackage{url}
 \usepackage{standalone}
 \usepackage{tikz}
+\usepackage{comment}
 \usetikzlibrary{calc,patterns,angles,quotes}
 
 \newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
@@ -2882,68 +2883,105 @@ The proof of the original (noncontinuous) theorem used Kadison's transitivity th
 \end{theorem}
 To show how theorem 1.1. of \cite{https://doi.org/10.48550/arxiv.math/0110152} generalizes to theorem \ref{ContinuousHomogenityOfPA} we will first define an alternative to property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}. So to this end, the following is a property of a $C^*$-algebra $\AA$:
 \begin{property}[Alternative to property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]\label{prop:AlternativeToProperty1.2}
-	For any finite subset $\mathcal{F}$ of $\AA$, any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$, there exists a finite subset $\mathcal{G}$ of $\AA$ and $\delta>0$ satisfying: For any locally compact group $G$, we get that for any compact open neighborhood of some $g\in G$, $\mathcal{O}_g$, we get that for any
+	Take any locally compact group $G$ and any compact open neighborhood of some $g\in G$, $\mathcal{O}_g$. For any finite subset $\mathcal{F}$ of $C(\mathcal{O}_g,\AA)$, any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$, there exists a finite subset $\mathcal{G}$ of $C(\mathcal{O}_g,\AA)$ and $\delta>0$ satisfying: For any
 	\begin{equation}
-		\phi:\mathcal{O}_g\rightarrow \PP_\omega(\AA):g\mapsto\phi_g
+		\phi:\mathcal{O}_g\rightarrow \PP_\omega(\AA):h\mapsto\phi_h
 	\end{equation}
 	continuous in the norm topology such that
 	\begin{equation}
-		\abs{\phi_h(a)-\omega(a)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+		\abs{\phi_h(a_h)-\omega(a_h)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
 	\end{equation}
 	there is a continuous map
 	\begin{equation}
 		u:[0,1]\times\mathcal{O}_g\rightarrow \UU(\AA):(t,h)\mapsto u_{t,h}
 	\end{equation}
-	such that $u_{0,g}=\id$, $\phi_g=\omega\circ\Ad{u_{1,g}}$ and
+	such that $u_{0,h}=\id$, $\phi_h=\omega\circ\Ad{u_{1,h}}$ and
 	\begin{equation}
-		\norm{\Ad{u_{t,h}}(a)-a}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
+		\norm{\Ad{u_{t,h}}(a_h)-a_h}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
 	\end{equation}
 \end{property}
 The first thing we will prove is that this stronger property implies a stronger version of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}. Namely:
 \begin{lemma}[Alternative to lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]
-	Let $\AA$ be a $C^*$-algebra satisfying property \ref{prop:AlternativeToProperty1.2}. For any finite subset $\mathcal{F}$ of $\AA$, any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$, there exist a finite subset $\mathcal{G}$ of $\AA$ and $\delta>0$ satisfying: For any locally compact group $G$, we get that for any compact open neighborhood of some $g\in G$, $\mathcal{O}_g$, we get that for any
+	Let $\AA$ be a $C^*$-algebra satisfying property \ref{prop:AlternativeToProperty1.2}. For any locally compact group $G$, take a compact open neighborhood of some $g\in G$, $\mathcal{O}_g$. Let $\mathcal{F}$ be a finite subset of the continuous maps $C(\mathcal{O}_g,\AA)$ and take any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$. There exist a finite subset $\mathcal{G}$ of $C(\mathcal{O}_g,\AA)$ and $\delta>0$ satisfying: For any
 	\begin{equation}
 		\phi:\mathcal{O}_g\rightarrow \PP(\AA):g\mapsto\phi_g
 	\end{equation}
 	continuous in the weak$^*$ topology such that
 	\begin{equation}
-		\abs{\phi_h(a)-\omega(a)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+		\abs{\phi_h(a_h)-\omega(a_h)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
 	\end{equation}
-	then for any finite subset $\mathcal{F}'$ of $\AA$ and $\epsilon'>0$ there is a continuous map
+	then for any finite subset $\mathcal{F}'$ of $C(\mathcal{O}_g,\AA)$ and $\epsilon'>0$ there is a continuous map
 	\begin{equation}
 		u:[0,1]\times\mathcal{O}_g\rightarrow \UU(\AA):(t,h)\mapsto u_{t,h}
 	\end{equation}
 	such that $u_{0,h}=\id$, and
 	\begin{align}
-		\abs{\phi(a)-\omega\circ\Ad{u_{1,h}}(a)}&<\epsilon',\quad a\in\mathcal{F}'\\
-		\norm{\Ad{u_{t,h}}(a)-a}&<\epsilon',\quad a\in\mathcal{F}.
+		\abs{\phi(a_h)-\omega\circ\Ad{u_{1,h}}(a_h)}&<\epsilon',\quad a\in\mathcal{F}'\\
+		\norm{\Ad{u_{t,h}}(a_h)-a_h}&<\epsilon',\quad a\in\mathcal{F}.
 	\end{align}
 \end{lemma}
-	\begin{proof}
+\begin{proof}
 		The main difference from the proof of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} is that we now mimic $\phi_g$ by a norm continuous family of vector states through $\pi_\omega$. By the continuous version of Kadison's transitivity (theorem \ref{thrm:ContinuousKadisonTransitivity}), this now gives us a continuous $v:\mathcal{O}_g\rightarrow\UU(\AA)$ such that
 	\begin{equation}
 		\abs{\phi_h(a)-\omega\circ\Ad{v_g}(a)}<\epsilon',\quad a\in\mathcal{F}'\cup\mathcal{G}.
 	\end{equation}
 	Now in stead of applying property 1.2 from \cite{https://doi.org/10.48550/arxiv.math/0110152} we just use property \ref{prop:AlternativeToProperty1.2} to give us the desired $u$.
-	\end{proof}
-	Now we are ready to provide an alternative to theorem 2.1 from \cite{https://doi.org/10.48550/arxiv.math/0110152}, namely:
-	\begin{theorem}[Alternative to theorem 2.1 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]
+\end{proof}
+Now we are ready to provide an alternative to theorem 2.1 from \cite{https://doi.org/10.48550/arxiv.math/0110152}, namely:
+\begin{theorem}[Alternative to theorem 2.1 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]
 		Let $G$ be a locally compact Lie group and let $\AA$ be a separable $C^*$-algebra satisfying property \ref{prop:AlternativeToProperty1.2}. Let $\omega:G\rightarrow \PP(\AA):g\mapsto \omega_g$ be a map such that:
-\begin{enumerate}
-	\item $g\mapsto \omega_g(a)$ is continuous for all $a\in\AA$.
-	\item $\ker\pi_{\omega_g}=\ker\pi_{\omega_h}$ for all $g,h\in G.$
-\end{enumerate}
-It then follows that for every atlas $\mathfrak{A}$ of $G$, we get that for each patch $\Phi_i\in\mathfrak{A}$, there exists a map
-\begin{equation}
-	\alpha_i:\Im\Phi_i\rightarrow \textrm{AInn}_0(\AA):g\mapsto\alpha_{i,g}
-\end{equation}
-such that
-\begin{enumerate}
-	\item $\omega_g\circ\alpha_{i,h}=\omega_{gh}$ for all $g\in G$ and for all $h\in\Im\Phi_i$.
-	\item $g\mapsto\alpha_{i,g}(a)$ is continuous for all $a\in\AA$.
-\end{enumerate}
-	\end{theorem}
-
+	\begin{enumerate}
+		\item $g\mapsto \omega_g(a)$ is continuous for all $a\in\AA$.
+		\item $\ker\pi_{\omega_g}=\ker\pi_{\omega_h}$ for all $g,h\in G.$
+	\end{enumerate}
+	It then follows that for every atlas $\mathfrak{A}$ of $G$, we get that for each patch $\Phi_i\in\mathfrak{A}$, there exists a map
+	\begin{equation}
+		\alpha_i:\Im\Phi_i\rightarrow \textrm{AInn}_0(\AA):g\mapsto\alpha_{i,g}
+	\end{equation}
+	such that
+	\begin{enumerate}
+		\item $\omega_g\circ\alpha_{i,h}=\omega_{gh}$ for all $g\in G$ and for all $h\in\Im\Phi_i$.
+		\item $g\mapsto\alpha_{i,g}(a)$ is continuous for all $a\in\AA$.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+\end{proof}
+To prove this alternative to property 1.2, we will first define a strictly weaker property. Namely:
+\begin{property}[Weaker version of property \ref{prop:AlternativeToProperty1.2}]\label{prop:WeakerVersionOfTheAlternativeOf1.2}
+	Take any locally compact group $G$ and any compact open neighborhood of some $g\in G$, $\mathcal{O}_g$. For any finite subset $\mathcal{F}$ of $C(\mathcal{O}_g,\AA)$, any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$ and $\epsilon>0$, there exists a finite subset $\mathcal{G}$ of $C(\mathcal{O}_g,\AA)$ and $\delta>0$ satisfying: For any
+	\begin{equation}
+		\phi:\mathcal{O}_g\rightarrow \PP_\omega(\AA):h\mapsto\phi_h
+	\end{equation}
+	continuous in the norm topology with $\phi_g=\omega$ such that
+	\begin{equation}
+		\abs{\phi_h(a_h)-\phi_g(a_h)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+	\end{equation}
+	there is a continuous map
+	\begin{equation}
+		u:[0,1]\times\mathcal{O}_g\rightarrow \UU(\AA):(t,h)\mapsto u_{t,h}
+	\end{equation}
+	such that $u_{0,h}=\id$, $\phi_h=\phi_g\circ\Ad{u_{1,h}}$ and
+	\begin{equation}
+		\norm{\Ad{u_{t,h}}(a_h)-a_h}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
+	\end{equation}
+\end{property}
+This property will be sufficient to prove the result because of the following lemma:
+\begin{lemma}
+	Let $\AA$ satisfy property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} and property \ref{prop:WeakerVersionOfTheAlternativeOf1.2} then it also satisfies property \ref{prop:AlternativeToProperty1.2}.
+\end{lemma}
+\begin{proof}
+Take $\mathcal{F}$, $\omega$ and $\epsilon$ arbitrary. Let $\mathcal{G}_1$ and $\delta_1$ be the two one gets through property \ref{prop:WeakerVersionOfTheAlternativeOf1.2} with $\epsilon_1<\epsilon/2$ and let $\mathcal{G}_2$ and $\delta_2$ be the two one gets through property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} with $\epsilon_2<\epsilon/2$. {\color{red}To be continued....}
+\end{proof}
+\begin{comment}
+To prove this alternative to property 1.2, we will also require a continuous version of property 1.3 from \cite{https://doi.org/10.48550/arxiv.math/0110152}. Namely:
+\begin{property}[Alternative to property 1.3 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]\label{prop:AlternativeToProperty1.3}
+	For any locally compact group $G$, take a compact open neighborhood of some $g\in G$, $\mathcal{O}_g$. Let $\mathcal{F}$ be a finite subset of the continuous maps $C(\mathcal{O}_g,\AA)$. Let $(\pi,\HH)$ be an irreducible representation of $\AA$. Let $E$ be a continuous map from $\mathcal{O}_g$ to finite-dimensional projectors on $\HH$ and $\epsilon>0$. There exists a continuous
+	\begin{equation}
+		x:\mathcal{O}_g\rightarrow \AA^n:h\mapsto (x_1(h),\ldots,x_n(h))
+	\end{equation}
+	for some $n$ such that $\sum_{i=1}^n \norm{x_i(h) x_i^\dagger(h)}\leq 1$, $\pi(\sum_{i=1}^n x_i(h) x_i^\dagger(h))E_g=E_g$ and $\sup_b\norm{[a_h,\sum_i x_i(h) b x_i(h)^\dagger]}<\epsilon$ for all $a\in\mathcal{F}$ and $h\in\mathcal{O}_g$.
+\end{property}
+\end{comment}
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
