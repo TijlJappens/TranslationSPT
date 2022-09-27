@@ -2889,7 +2889,7 @@ To show how theorem 1.1. of \cite{https://doi.org/10.48550/arxiv.math/0110152} g
 	\end{equation}
 	continuous in the norm topology such that
 	\begin{equation}
-		\abs{\phi_h(a_h)-\omega(a_h)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+		\abs{\phi_h(a_h)-\omega(a_g)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
 	\end{equation}
 	there is a continuous map
 	\begin{equation}
@@ -2897,18 +2897,18 @@ To show how theorem 1.1. of \cite{https://doi.org/10.48550/arxiv.math/0110152} g
 	\end{equation}
 	such that $u_{0,h}=\id$, $\phi_h=\omega\circ\Ad{u_{1,h}}$ and
 	\begin{equation}
-		\norm{\Ad{u_{t,h}}(a_h)-a_h}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
+		\norm{\Ad{u_{t,h}}(a_h)-a_g}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
 	\end{equation}
 \end{property}
 The first thing we will prove is that this stronger property implies a stronger version of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}. Namely:
-\begin{lemma}[Alternative to lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]
+\begin{lemma}[Alternative to lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152}]\label{lem:AlternativeToLem2.2}
 	Let $\AA$ be a $C^*$-algebra satisfying property \ref{prop:AlternativeToProperty1.2}. For any locally compact group $G$, take a compact open neighborhood of some $g\in G$, $\mathcal{O}_g$. Let $\mathcal{F}$ be a finite subset of the continuous maps $C(\mathcal{O}_g,\AA)$ and take any pure state $\omega$ of $\AA$ with $\pi_\omega(\AA)\cap\mathcal{K}(\HH_\omega)=(0)$, and $\epsilon>0$. There exist a finite subset $\mathcal{G}$ of $C(\mathcal{O}_g,\AA)$ and $\delta>0$ satisfying: For any
 	\begin{equation}
 		\phi:\mathcal{O}_g\rightarrow \PP(\AA):g\mapsto\phi_g
 	\end{equation}
 	continuous in the weak$^*$ topology such that
 	\begin{equation}
-		\abs{\phi_h(a_h)-\omega(a_h)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+		\abs{\phi_h(a_h)-\omega(a_g)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
 	\end{equation}
 	then for any finite subset $\mathcal{F}'$ of $C(\mathcal{O}_g,\AA)$ and $\epsilon'>0$ there is a continuous map
 	\begin{equation}
@@ -2916,12 +2916,12 @@ The first thing we will prove is that this stronger property implies a stronger 
 	\end{equation}
 	such that $u_{0,h}=\id$, and
 	\begin{align}
-		\abs{\phi(a_h)-\omega\circ\Ad{u_{1,h}}(a_h)}&<\epsilon',\quad a\in\mathcal{F}'\\
-		\norm{\Ad{u_{t,h}}(a_h)-a_h}&<\epsilon',\quad a\in\mathcal{F}.
+		\abs{\phi_h(a_h)-\omega\circ\Ad{u_{1,h}}(a_h)}&<\epsilon',\quad a\in\mathcal{F}'\\
+		\norm{\Ad{u_{t,h}}(a_h)-a_g}&<\epsilon',\quad a\in\mathcal{F}.
 	\end{align}
 \end{lemma}
 \begin{proof}
-		The main difference from the proof of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} is that we now mimic $\phi_g$ by a norm continuous family of vector states through $\pi_\omega$. By the continuous version of Kadison's transitivity (theorem \ref{thrm:ContinuousKadisonTransitivity}), this now gives us a continuous $v:\mathcal{O}_g\rightarrow\UU(\AA)$ such that
+		The main difference from the proof of lemma 2.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} is that we now mimic $\phi_h$ by a norm continuous family of vector states through $\pi_\omega$. By the continuous version of Kadison's transitivity (theorem \ref{thrm:ContinuousKadisonTransitivity}), this now gives us a continuous $v:\mathcal{O}_g\rightarrow\UU(\AA)$ such that
 	\begin{equation}
 		\abs{\phi_h(a)-\omega\circ\Ad{v_g}(a)}<\epsilon',\quad a\in\mathcal{F}'\cup\mathcal{G}.
 	\end{equation}
@@ -2945,6 +2945,7 @@ Now we are ready to provide an alternative to theorem 2.1 from \cite{https://doi
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
+The proof is very similar to the proof of theorem 2.1 of \cite{https://doi.org/10.48550/arxiv.math/0110152}. We will highlight the differences here. We will still take a dense sequence in $\AA$ called $(x_n)$. We still take $\mathcal{F}_1=\{x_1\}$ and $\epsilon>0$. We will now let the $(\mathcal{G}_1,\delta_1)$ be the $(\mathcal{G},\delta)$ for $(\mathcal{F}_1,\omega,\epsilon/2)$ as in lemma \ref{lem:AlternativeToLem2.2}, still with $\mathcal{F}_1\subset\mathcal{G}_1$. {\color{red}To be continued...}
 \end{proof}
 To prove this alternative to property 1.2, we will first define a strictly weaker property. Namely:
 \begin{property}[Weaker version of property \ref{prop:AlternativeToProperty1.2}]\label{prop:WeakerVersionOfTheAlternativeOf1.2}
@@ -2954,7 +2955,7 @@ To prove this alternative to property 1.2, we will first define a strictly weake
 	\end{equation}
 	continuous in the norm topology with $\phi_g=\omega$ such that
 	\begin{equation}
-		\abs{\phi_h(a_h)-\phi_g(a_h)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
+		\abs{\phi_h(a_h)-\phi_g(a_g)}<\delta,\quad\forall a\in\mathcal{G},\forall h\in\mathcal{O}_g,
 	\end{equation}
 	there is a continuous map
 	\begin{equation}
@@ -2962,7 +2963,7 @@ To prove this alternative to property 1.2, we will first define a strictly weake
 	\end{equation}
 	such that $u_{0,h}=\id$, $\phi_h=\phi_g\circ\Ad{u_{1,h}}$ and
 	\begin{equation}
-		\norm{\Ad{u_{t,h}}(a_h)-a_h}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
+		\norm{\Ad{u_{t,h}}(a_h)-a_g}\leq\epsilon,\quad a\in\mathcal{F}\text{, }t\in[0,1]\text{ and }h\in \mathcal{O}_g.
 	\end{equation}
 \end{property}
 This property will be sufficient to prove the result because of the following lemma:
@@ -2970,7 +2971,29 @@ This property will be sufficient to prove the result because of the following le
 	Let $\AA$ satisfy property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} and property \ref{prop:WeakerVersionOfTheAlternativeOf1.2} then it also satisfies property \ref{prop:AlternativeToProperty1.2}.
 \end{lemma}
 \begin{proof}
-Take $\mathcal{F}$, $\omega$ and $\epsilon$ arbitrary. Let $\mathcal{G}_1$ and $\delta_1$ be the two one gets through property \ref{prop:WeakerVersionOfTheAlternativeOf1.2} with $\epsilon_1<\epsilon/2$ and let $\mathcal{G}_2$ and $\delta_2$ be the two one gets through property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} with $\epsilon_2<\epsilon/2$. {\color{red}To be continued....}
+Take $\mathcal{F}$, $\omega$ and $\epsilon$ arbitrary. Let $\mathcal{G}_1$ and $\delta_1$ be the two one gets through property \ref{prop:WeakerVersionOfTheAlternativeOf1.2} with $\epsilon_1<\epsilon/2$ and let $\mathcal{G}_2$ and $\delta_2$ be the two one gets through property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} with $\epsilon_2<\epsilon/2$. Let $\mathcal{G}\defeq \mathcal{G}_1\cup\mathcal{G}_2$ and let $\delta\defeq\textrm{min}(\delta_1/2,\delta_2)$ then for any $\phi_h$ satisfying
+\begin{equation}
+	\abs{\phi_h(a_h)-\omega(a_g)}\leq \delta
+\end{equation}
+we get that
+\begin{equation}
+	\abs{\phi_g(a_g)-\omega(a_g)}\leq \delta_2
+\end{equation}
+by construction and by the triangle inequality we get that
+\begin{equation}
+	\abs{\phi_h(a_h)-\phi_g(a_g)}\leq \abs{\phi_h(a_h)-\omega(a_g)}+\abs{\phi_g(a_g)-\omega(a_g)}\leq \delta_1.
+\end{equation}
+ Let $(\lambda,h)\mapsto u^1_{\lambda,h}$ be the continuous map coming from property \ref{prop:WeakerVersionOfTheAlternativeOf1.2} (giving the contraction) and let $\lambda\mapsto u^2_\lambda$ be the continuous map coming from property 1.2 of \cite{https://doi.org/10.48550/arxiv.math/0110152} with $\phi=\phi_g$. We then define
+\begin{equation}
+u_{\lambda,h}\defeq\left\{\begin{matrix}u^1_{2\lambda,h}&0\leq\lambda\leq1/2\\ u^2_{2\lambda-1} u^1_{1,h}&1/2\leq\lambda\leq 1.\end{matrix}\right.
+\end{equation}
+Since
+\begin{align}
+	\norm{\Ad{u^2_{2\lambda-1} u^1_{1,h}}(a_h)-a_g}&=\norm{\Ad{u^1_{1,h}}(a_h)-\Ad{(u^2_{2\lambda-1})^\dagger }(a_g)}\\
+	&=\norm{\Ad{u^1_{1,h}}(a_h)-u_g+u_g-\Ad{(u^2_{2\lambda-1})^\dagger }(a_g)}\\
+	&\leq \norm{\Ad{u^1_{1,h}}(a_h)-u_g}+\norm{\Ad{u^2_{2\lambda-1}}(u_g)-a_g}\leq \epsilon_1+\epsilon_2\leq\epsilon
+\end{align}
+the result follows.
 \end{proof}
 \begin{comment}
 To prove this alternative to property 1.2, we will also require a continuous version of property 1.3 from \cite{https://doi.org/10.48550/arxiv.math/0110152}. Namely:
