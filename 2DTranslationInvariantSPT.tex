@@ -2555,6 +2555,7 @@ This means that if we define
 \end{equation}
 that then indeed $C_1(g,h)\overline{C_2(g,h)}=\beta(g)\beta(h)\overline{\beta(gh)}$. Since this $\beta$ is clearly measurable (again because it is continuous almost everywhere) the result follows. The proof that the index is independent on the choice of atlas is analogous, only we take the union of both atlasses and let the $f_1$ and $f_2$ correspond to the minima over the different atlasses (this can also been seen as having two different orderings).
 \end{proof}
+\clearpage
 \subsection{Continuity of the $\tilde{\beta}$ from \cite{ogata2021h3gmathbb}}
 The definition of the 3-cochain in \cite{ogata2021h3gmathbb} depended on the existence of the $\tilde{\beta}_g$ constructed in section 3 of \cite{ogata2021h3gmathbb}. The existence of this $\tilde{\beta}_g$ depended on the following lemma that was proven in section 3 of \cite{ogata2021h3gmathbb}, namely:
 \begin{lemma}
@@ -2564,7 +2565,7 @@ The definition of the 3-cochain in \cite{ogata2021h3gmathbb} depended on the exi
 	\end{equation}
 \end{lemma}
 We will extend this result by proving the following lemma:
-\begin{lemma}
+\begin{lemma}\label{lem:ContinuousEtaTilde}
 	Let $G$ now be any locally compact Lie group and let $\beta_g$ be a continuous group action. Let $\mathfrak{A}$ be an arbitrary atlas of $G$. For any patch $\Phi_i\in\mathfrak{A}$ we can define three maps,
 	\begin{align}
 		\tilde{\eta}^L_i&:\Im(\Phi_i)\rightarrow \Aut{\AA_{C_\theta\cap L}},&\tilde{\eta}^R_i&:\Im(\Phi_i)\rightarrow \Aut{\AA_{C_\theta\cap R}}
@@ -2575,7 +2576,29 @@ We will extend this result by proving the following lemma:
 	\end{equation}
 that satisfy equation \eqref{eq:DefinitionTildeEta}. Furthermore, for any $a\in\AA$, $g\mapsto\Ad{\tilde{v}_{i,g}}(a)$, $g\mapsto\tilde{\eta}_{i,g}^{L}(a)$ and $g\mapsto\tilde{\eta}_{i,g}^R(a)$ will be continuous in norm.
 \end{lemma}
+Before we can prove this lemma we need to find a continuous version of lemma 3.2 of \cite{ogata2021h3gmathbb}:
+\begin{lemma}
+	Let $\AA_L$ and $\AA_R$ be quasi local $C^*$ algebras. Let $\mathcal{O}_g\subset G$ be an open neighbourhood of $g$. Take an arbitrary weakly$^*$-continuous family $\omega:\mathcal{O}_g\rightarrow \PP(\AA_L\otimes\AA_R)$, such that there exist two weakly$^*$-continuous families $\phi_{\AA_L}:\mathcal{O}_g\rightarrow S(\AA_L)$ and $\phi_{\AA_R}:\mathcal{O}_g\rightarrow S(\AA_R)$ such that
+	\begin{equation}
+		\omega(h)\ue \phi_{\AA_L}(h)\otimes\phi_{\AA_R}(h)
+	\end{equation}
+	for all $h\in\mathcal{O}_g$. For any pure states $\psi_{\AA_L}$ and $\psi_{\AA_R}$, there are continuous families
+	\begin{align}
+		\gamma_{\AA_L}&:\mathcal{O}_g\rightarrow \Aut{\AA_L},&\gamma_{\AA_R}&:\mathcal{O}_g\rightarrow \Aut{\AA_R}
+	\end{align}
+	and
+	\begin{equation}
+		u:\mathcal{O}_g\rightarrow \UU(\AA)
+	\end{equation}
+	such that
+	\begin{equation}
+		\omega(h)=\psi_{\AA_L}\circ(\gamma_{\AA_L}(h)\otimes\psi_{\AA_R}\circ\gamma_{\AA_R}(h))\circ\Ad{u(g)}.
+	\end{equation}
+\end{lemma}
 \begin{proof}
+	content
+\end{proof}
+\begin{proof}[Proof of lemma \ref{lem:ContinuousEtaTilde}]
 	{\color{red}Proving this turns out to be pretty difficult. Maybe I will take it as an assumption.}
 \end{proof}
 From this, we can find a continuous version of the $\tilde{\beta}$:
@@ -2596,6 +2619,8 @@ From this, we can find a continuous version of the $\tilde{\beta}$:
 \end{lemma}
 \begin{proof}
 \end{proof}
+
+\clearpage
 \subsection{2d SPT index}
 This section will be committed to showing that if the group action is continuous, we can contstruct a 3-cochain that is measurable and that its borel group cohomology class is a proper index of the state. To do this, we will first take an atlas $\mathfrak{A}$ of the form
 \begin{equation}
