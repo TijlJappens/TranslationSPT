@@ -624,7 +624,7 @@ These $K_g^\sigma$ are also elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$.
 	\end{align}
 	concluding the proof.
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{lem:StatementThatItIsA2Cochain}
 	The function $C$ as defined in lemma \ref{lem:Definition2Cochain} is a 2-cochain.
 \end{lemma}
 \begin{proof}
@@ -1626,7 +1626,7 @@ b_g W_g b_h W_h W_{gh}^\dagger (b_{gh})^\dagger W_{gh}W_h^\dagger W_g^\dagger
  is split one needs to use the new (shifted) support of $\eta_g^\sigma$.
 \end{proof}
 Using this we can show that:
-\begin{lemma}
+\begin{lemma}\label{lem:AlphaIsU1Representation}
 	The $\alpha$ defined previously is a $U(1)$-representation.
 \end{lemma}
 \begin{proof}
@@ -2422,6 +2422,7 @@ be two states. The goal of this section is to prove that
 \end{equation}
 The proof of this is completely analogous to what was in section \ref{sec:StackingOneTranslation}.
 \section{What if $G$ is not discrete}
+\label{sec:G_not_discrete}
 Up to now we have constructed, 1-cochains, 2-cochains and 3-cochains. This is fine for when the group is discrete. However, when the group is continuous, one needs to remember that in our definition of group cohomology (see section \ref{sec:GroupCohomology}) we where only allowed to use measurable cochains. In this section we will show that we can find these measurable cochains. To do this, we will let $G$ be an arbitrary locally compact Lie group with a Lie algebra of dimension $n$. We will take an atlas $\mathfrak{A}$ on $G$ and use it to create an atlas $\mathfrak{A}^2$ for $G\times G$ and an atlas $\mathfrak{A}^3$ for $G\times G\times G$. We will then define a continuous family of cochains for each chart of these atlases and show that the transitions between charts at their overlap are given by a coboundary. This will then imply that no matter what measurable cochain we construct from our atlas (this we can do by putting an ordering on the charts), its cohomology will be invariant on this choice. Then we will show that the cohomology is invariant on the choice of atlas altogether.
 \subsection{1d SPT index}
 Let $\mathcal{B}$ be the quasi local $C^*$ algebra over $\ZZ$ with on site hilbert space $\CC^d$ and take as usual an on site group action $U\in\hom(G,U(\CC^d))$ and the corresponding group action on the algebra $\beta\in\hom(G,\Aut{\BB})$. In this section we will prove that we can define a map
@@ -2442,7 +2443,7 @@ even in the case where the $G$ is not discrete. In what follows let $(\HH=\HH_L\
 \begin{proof}
 	Since any vector in $\HH$ can be written of the form $\pi(a)\Omega$ for some $a\in\AA$ we can just define $u_g$ by letting $u(g)\pi(a)\Omega=\pi\circ\beta_g(a)\Omega$. This is clearly continuous in strong operator topology because $g\mapsto \beta_g(a)$ is continuous in norm. The fact that this is a well defined unitary in the GNS space (meaning that it is independent on the choice of $a$ and and preserves the norm of the vector) all follows from the fact that $\omega\circ\beta_g=\omega$.
 \end{proof}
-Then as usual we show that it can be splitted into a left part and a right part. To this end let us now fix an atlas for $G$ and an atlas for $G\times G$
+Then as usual we show that it can be splitted into a left part and a right part. To this end let us now fix an atlas for $G$ and an atlas for $G\times G$ such that for some set $S$
 \begin{align}
 	\mathfrak{A}&=\{\Phi_i|i\in S\}&\mathfrak{A}^2&=\{\Phi_i\times \Phi_j|i,j\in S\}.
 \end{align}
@@ -2458,12 +2459,12 @@ continuous in strong operator topology such that $u_{L,i}(g)\otimes u_{R,i}(g)=u
 	This lemma follows from lemma \ref{lem:SplittingOfContinuousUnitary}.
 \end{proof}
 Before proceeding, let us define
-\begin{equation}
+\begin{equation}\label{eq:DefinitionPsi_ijk}
 	\Psi_{ijk}\defeq \{(g,h)\in\Im(\Phi_i\times\Phi_j)|gh\in\Im(\Phi_k)\}
 \end{equation}
-endowed with subspace topology {\color{red}(is this the right one?)}. This clearly satisfies that $\bigcup_{k\in S}\Psi_{ijk}=\Im(\Phi_i)\times\Im(\Phi_j)$. We can use this to define a function for each of the $\Psi_{ijk}$:
+endowed with subspace topology. This clearly satisfies that $\bigcup_{k\in S}\Psi_{ijk}=\Im(\Phi_i)\times\Im(\Phi_j)$. We can use this to define a function for each of the $\Psi_{ijk}$:
 \begin{lemma}
-	Take $i,j,k\in S$ arbitrary then there exists a continuous family
+	For all $i,j,k\in S$, there exists a continuous family
 	\begin{equation}
 		C_{i,j,k}:\Psi_{ijk}\rightarrow U(1)
 	\end{equation}
@@ -2490,10 +2491,10 @@ The cochain condition is now replaced by the following lemma:
 	\end{equation}
 \end{proof}
 In what follows we will put an ordering on $S$ and use this to define
-\begin{equation}
+\begin{equation}\label{eq:MinimumOverOrdering}
 	f:G\rightarrow S:g\mapsto \textrm{min}\{i\in S|g\in \Im(\Phi_i)\}.
 \end{equation}
-Now define
+Notice that we can only take this minimum if every $g$ is only contained in a finite amount of patches, this is therefore a place where the locally compactness of the Lie Group enters very explicitly. Now define
 \begin{equation}
 	C:G\times G\rightarrow U(1):(g,h)\mapsto C_{f(g),f(h),f(gh)}(g,h).
 \end{equation}
@@ -2501,7 +2502,7 @@ Now define
 	This $C$ is measurable.
 \end{lemma}
 \begin{proof}
-	{\color{red}How does one do this?}
+	This follows from the fact that $C$ is discontinuous only on a measure 0 set (see Lusin's theorem).
 \end{proof}
 \begin{lemma}
 	For any $g,h,k\in G$ we get that
@@ -2516,15 +2517,46 @@ Now define
 	\end{equation}
 	If one takes $i=f(g)$, $j=f(h)$, $l=f(k)$, $m=f(gh)$, $n=f(hk)$ and $o=f(ghk)$ in lemma \ref{lem:2CochainConditionPatches} then the result follows.
 \end{proof}
-The following theorem essentially tells us that in the continuous case there is still an index.
-\begin{theorem}
+Now we will prove that the index is independent on the choice of atlas and its ordering (see theorem \ref{thrm:H2IndexIsIndependentOnTheChoiceOfAtlas}). To prove this, we will first show the following lemma:
+\begin{lemma}\label{lem:TransitionsOfTwoCochainsAreExact_PatchDependentFormulation}
+	There exist continuous $\beta_{i',j'}:\Im(\Phi_i)\cap \Im(\Phi_j)\rightarrow U(1)$ for all and $i',j'\in S$ such that for all $i,j,l,m,n,o\in S$ we get that
+	\begin{equation}
+		C_{i,j,l}(g,h)\overline{C_{m,n,o}(g,h)}=\beta_{i,m}(g)\beta_{j,n}(h)\overline{\beta_{l,o}(gh)}
+	\end{equation}
+	 for any $(g,h)\in\Psi_{ijl}\cap\Psi_{mno}$.
+\end{lemma}
+\begin{proof}
+By definition we have that
+	\begin{align}
+		\id_{\HH_R}C_{i,j,l}(g,h)&=u_{R,i}(g)u_{R,j}(h)u_{R,l}(gh)^\dagger&\id_{\HH_R}C_{m,n,o}(g,h)&=u_{R,m}(g)u_{R,n}(h)u_{R,o}(gh)^\dagger.
+	\end{align}
+	On the other hand, since $u_{R,l}:\Im(\Phi_l)\rightarrow U(\HH_R)$ is continuous and $u_{R,o}:\Im(\Phi_o)\rightarrow U(\HH_R)$ is continuous, we need that there exists a $\beta_{l,o}:\Im(\Phi_l)\cap \Im(\Phi_o)\rightarrow U(1)$ that is continuous and satisfies
+	\begin{equation}
+		u_{R,l}(gh)^\dagger u_{R,o}(gh)=\id_{\HH_L}\overline{\beta_{l,o}(gh)}
+	\end{equation}
+	for any $gh\in \Im(\Phi_l)\cap \Im(\Phi_o)$ doing the same with $(j,n)$ and with $(i,m)$ concludes the proof.
+\end{proof}
+The following theorem essentially tells us that in the continuous case there is still an $H^2$-valued index.
+\begin{theorem}\label{thrm:H2IndexIsIndependentOnTheChoiceOfAtlas}
 	Let $\expval{\cdot}_{H^2(G,\TT)}$ be the equivalence class presented in section \ref{sec:GroupCohomology} then $\expval{C}_{H^2(G,\TT)}$ is independent on the choice of atlas or its ordering.
 \end{theorem}
 \begin{proof}
-	The only thing we have to prove here is that for any $i,j,l,m,n,o\in S$ the transition from $C_{i,j,l}(g,h)$ to $C_{m,n,o}(g,h)$ on $\Psi_{ijl}\cap\Psi_{mno}$ is given by a continuous coboundary. This will prove that any different choice will result in a change of $C$ by a measurable coboundary. {\color{red}To be continued...}
+We will prove that the index is independent on the choice of ordering first. To this end, let $f_1$ and $f_2$ be two functions of the same form as in equation \eqref{eq:MinimumOverOrdering} but where the minima are taken with respect to different orderings. Let
+\begin{equation}
+	C_1:G\times G\rightarrow U(1):(g,h)\mapsto C_{f_1(g),f_1(h),f_1(gh)}(g,h).
+\end{equation}
+and similarly for $C_2$. We have to show that $(g,h)\mapsto C_1(g,h)\overline{C_2(g,h)}$ is exact. To do this, notice that by lemma \ref{lem:TransitionsOfTwoCochainsAreExact_PatchDependentFormulation} we can construct this $\beta$ for each of the patches of $G\times G$. This shows in particular that
+\begin{equation}
+	C_{f_1(g),f_1(h),f_1(gh)}(g,h)\overline{C_{f_2(g)f_2(h)f_2(gh)}(g,h)}=\beta_{f_1(g),f_2(g)}(g)\beta_{f_1(h),f_2(h)}(h)\overline{\beta_{f_1(gh),f_2(gh)}(gh)}.
+\end{equation}	
+This means that if we define
+\begin{equation}
+	\beta:G\rightarrow U(1):\beta_{f_1(g),f_2(g)}(g)
+\end{equation}
+that then indeed $C_1(g,h)\overline{C_2(g,h)}=\beta(g)\beta(h)\overline{\beta(gh)}$. Since this $\beta$ is clearly measurable (again because it is continuous almost everywhere) the result follows. The proof that the index is independent on the choice of atlas is analogous, only we take the union of both atlasses and let the $f_1$ and $f_2$ correspond to the minima over the different atlasses (this can also been seen as having two different orderings).
 \end{proof}
-\subsection{2d SPT index}
-This section will be committed to showing that if the group action is continuous, we can contstruct a 3-cochain that is measurable. Remember that the definition of the 2-cochain depended on the existence of the $\tilde{\beta}_g$ constructed in section 3 of \cite{ogata2021h3gmathbb}. The existence of this $\tilde{\beta}_g$ depended on the following lemma that was proven in section 3 of \cite{ogata2021h3gmathbb}, namely:
+\subsection{Continuity of the $\tilde{\beta}$ from \cite{ogata2021h3gmathbb}}
+The definition of the 3-cochain in \cite{ogata2021h3gmathbb} depended on the existence of the $\tilde{\beta}_g$ constructed in section 3 of \cite{ogata2021h3gmathbb}. The existence of this $\tilde{\beta}_g$ depended on the following lemma that was proven in section 3 of \cite{ogata2021h3gmathbb}, namely:
 \begin{lemma}
 	Let $\omega\in\PP(\AA)$ be a $G$-invariant SRE state. Let $\omega_0\in\PP(\AA)$ be a product state and let $\Phi\in\BB_{F_\phi}([0,1])$ be a one parameter family of interactions such that $\omega=\omega_0\circ\gamma^{\Phi}_{0;1}$. Now for all $g\in G$, there exists a unitary $\tilde{v}_g\in\UU(\AA)$ and two automorphisms $\tilde{\eta}_g^L\in\Aut{\AA_{C_\theta\cap L}}$ and $\tilde{\eta}_g^R\in\Aut{\AA_{C_\theta\cap R}}$ such that
 	\begin{equation}\label{eq:DefinitionTildeEta}
@@ -2535,18 +2567,302 @@ We will extend this result by proving the following lemma:
 \begin{lemma}
 	Let $G$ now be any locally compact Lie group and let $\beta_g$ be a continuous group action. Let $\mathfrak{A}$ be an arbitrary atlas of $G$. For any patch $\Phi_i\in\mathfrak{A}$ we can define three maps,
 	\begin{align}
-		\tilde{\eta}^L&:\Im{\Phi_i}\rightarrow \Aut{\AA_{C_\theta\cap L}},&\tilde{\eta}^R&:\Im{\Phi_i}\rightarrow \Aut{\AA_{C_\theta\cap R}}
+		\tilde{\eta}^L_i&:\Im(\Phi_i)\rightarrow \Aut{\AA_{C_\theta\cap L}},&\tilde{\eta}^R_i&:\Im(\Phi_i)\rightarrow \Aut{\AA_{C_\theta\cap R}}
 	\end{align}
 	and
 	\begin{equation}
-		\tilde{v}:\Im{\Phi_i}\rightarrow \UU(\AA):g\mapsto\tilde{v}_g
+		\tilde{v}_i:\Im(\Phi_i)\rightarrow \UU(\AA):g\mapsto\tilde{v}_g
 	\end{equation}
-that satisfy equation \eqref{eq:DefinitionTildeEta}. Furthermore, for any $a\in\AA$, $g\mapsto\Ad{\tilde{v}_g}(a)$, $g\mapsto\tilde{\eta}_g^L(a)$ and $g\mapsto\tilde{\eta}_g^R(a)$ will be continuous in norm.
+that satisfy equation \eqref{eq:DefinitionTildeEta}. Furthermore, for any $a\in\AA$, $g\mapsto\Ad{\tilde{v}_{i,g}}(a)$, $g\mapsto\tilde{\eta}_{i,g}^{L}(a)$ and $g\mapsto\tilde{\eta}_{i,g}^R(a)$ will be continuous in norm.
+\end{lemma}
+\begin{proof}
+	{\color{red}Proving this turns out to be pretty difficult. Maybe I will take it as an assumption.}
+\end{proof}
+From this, we can find a continuous version of the $\tilde{\beta}$:
+\begin{lemma}\label{lem:ContinuousBetaTildeLemma}
+	For any patch $\Phi_i\in\mathfrak{A}$ we can define three maps,
+	\begin{align}
+		\eta^L_i&:\Im(\Phi_i)\rightarrow \Aut{\AA_{C_\theta\cap L}},&\eta^R_i&:\Im(\Phi_i)\rightarrow \Aut{\AA_{C_\theta\cap R}}
+	\end{align}
+	and
+	\begin{equation}
+		v_i:\Im(\Phi_i)\rightarrow \UU(\AA):g\mapsto\tilde{v}_g
+	\end{equation}
+	satisfying that
+	\begin{equation}
+		\tilde{\beta}_{i}:\Im(\Phi_i)\rightarrow\Aut{\AA}:g\mapsto \tilde{\beta}_{i,j}=\Ad{v_{i,g}}\circ\eta^L_{i,g}\otimes \eta^R_{i,g}
+	\end{equation}
+ 	leaves $\omega$ invariant ($\omega\circ\tilde{\beta}_{i,g}=\omega$). Furthermore, for any $a\in\AA$, $g\mapsto\Ad{v_{i,g}}(a)$, $g\mapsto\eta_{i,g}^{L}(a)$ and $g\mapsto\eta_{i,g}^R(a)$ will be continuous in norm.
 \end{lemma}
 \begin{proof}
 \end{proof}
-\subsection{The translation indices}
-\label{sec:G_not_discrete}
+\subsection{2d SPT index}
+This section will be committed to showing that if the group action is continuous, we can contstruct a 3-cochain that is measurable and that its borel group cohomology class is a proper index of the state. To do this, we will first take an atlas $\mathfrak{A}$ of the form
+\begin{equation}
+	\mathfrak{A}=\{\Phi_i|i\in S\}
+\end{equation}
+for some set $S$. The first lemma says we can find coninuous $W_g$ for each patch:
+\begin{lemma}
+	For each $i\in S$, there exists a $W_i:\Im(\Phi_i)\rightarrow U(\HH):g\mapsto W_{i,g}$, continuous in strong operator topology satisfying that
+	\begin{equation}
+		\Ad{W_{i,g}}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\eta^L_g\otimes\eta^R_g\circ\beta_g^U.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+\end{proof}
+Similarly as in the case of the $H^2$-index we need to split this in a continuous way:
+\begin{lemma}
+	For each $i,j,k\in S$ there exist maps
+	\begin{align}
+		u_{L,i,j,k}&:\Psi_{ijk}\rightarrow \textrm{Cone}_L(\alpha_0,\theta)&&\text{and}&u_{R,i,j,k}&:\Psi_{ijk}\rightarrow \textrm{Cone}_R(\alpha_0,\theta),
+	\end{align}
+	continuous in strong operator topology, satisfying that for all $(g,h)\in\Psi_{ijk}$ (where $\Psi_{ijk}$ was defined in equation \eqref{eq:DefinitionPsi_ijk}) we get that
+	\begin{equation}
+		W_{i,g}W_{j,h}W_{k,gh}^\dagger=u_{L,i,j,k}(g,h)\otimes u_{R,i,j,k}(g,h).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+\end{proof}
+For any $i,j,k,l,m,n\in S$ define the set
+\begin{equation}
+	\Psi_{ijklmn}\defeq \{(g,h,k)\in\Im(\Phi_i\times\Phi_j\times\Phi_k)|gh\in \Im(\Phi_l),hk\in\Im(\Phi_m)\text{ and }ghk\in\Im(\Phi_{n})\}
+\end{equation}
+again with subspace topology. This satisfies that $\cup_{(l,m,n)\in S^3}\Psi_{ijklmn}=\Im(\Phi_i)\times\Im(\Phi_j)\times \Im(\Phi_k)$. We can use this set to define our 3-cochains:
+\begin{lemma}\label{lem:3CochainPatchDependentDefinition}
+	For any $i,j,k,l,m,n\in S$ there exists a continuous family
+	\begin{equation}
+		C_{i,j,k,l,m,n}:\Psi_{ijklmn}\rightarrow U(1)
+	\end{equation}
+	satisfying that
+	\begin{equation}
+		u_{R,i,j,l}(g,h)u_{R,l,k,n}(gh,k)=C_{i,j,k,l,m,n}(g,h,k)\Ad{W_{g,i}}(u_{R,j,k,m}(h,k))u_{R,i,m,n}(g,hk)
+	\end{equation}
+	for any $(g,h,k)\in \Psi_{ijklmn}$.
+\end{lemma}
+\begin{proof}
+	The proof just follows from the fact that all these operators are continuous (in strong operator topology) on this $\Psi_{ijklmn}$.
+\end{proof}
+The following lemma gives the patch dependent formulation that these $C$'s defined previously are in fact exact:
+\begin{lemma}\label{lem:3CochainIsExactPatchDependentFormulation}
+	For any $i,j,k,l,m,n,o,p,q,r\in S$ we have that
+	\begin{equation}
+		C_{m,k,l,p,o,r}(gh,k,l)C_{i,j,o,m,q,r}(g,h,kl)=C_{j,k,l,n,o,q}(h,k,l)C_{i,n,l,p,q,r}(g,hk,l)C_{i,j,k,m,n,p}(g,h,k)
+	\end{equation}
+	for all $(g,h,k,l)$ in
+	\begin{equation}
+		\left\{(g,h,k,l)\in\Im(\Phi_i\times\Phi_j\times\Phi_k\times\Phi_l)\left|\begin{matrix}
+			gh\in\Im(\Phi_m),hk\in\Im(\Phi_n),kl\in\Im(\Phi_o),\\ghk\in\Im(\Phi_p),hkl\Im(\Phi_q)\text{ and }ghkl\in\Im(\Phi_r)
+		\end{matrix}\right.\right\}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	The proof is still the same as the one of lemma 2.4 of \cite{ogata2021h3gmathbb} only we put indices on these operators and that will give us this equation with indices.
+\end{proof}
+Just as in the $H^2$ case, we will put an ordering on $S$ and use this to define
+\begin{equation}\label{eq:MinimumOverOrderingH3ValuedCase}
+	f:G\rightarrow S:g\mapsto \textrm{min}\{i\in S|g\in \Im(\Phi_i)\}.
+\end{equation}
+Now define
+\begin{equation}
+	C:G\times G\times G\rightarrow U(1):(g,h,k)\mapsto C_{f(g),f(h),f(k),f(gh),f(hk),f(ghk)}(g,h,k).
+\end{equation}
+\begin{lemma}
+	This $C$ is measurable.
+\end{lemma}
+\begin{proof}
+	This follows from the fact that $C$ is discontinuous only on a measure 0 set  (see Lusin's theorem).
+\end{proof}
+\begin{lemma}
+	For any $g,h,k,l\in G$ we get that 
+	\begin{equation}
+		C(gh,k,l)C(g,h,kl)=C(h,k,l)C(g,hk,l)C(g,h,k).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	We need to prove that
+	\begin{align}
+		&C_{f(gh),f(k),f(l),f(ghk),f(kl),f(ghkl)}(gh,k,l)C_{f(g),f(h),f(kl),f(gh),f(hkl),f(ghkl)}(g,h,kl)\\
+		\nonumber
+		&=C_{f(h),f(k),f(l),f(hk),f(kl),f(hkl)}(h,k,l)C_{f(g),f(hk),f(l),f(ghk),f(hkl),f(ghkl)}(g,hk,l)\\
+		\nonumber
+		&\qquad C_{f(g),f(h),f(k),f(gh),f(hk),f(ghk)}(g,h,k)
+	\end{align}
+	Define $i=f(g)$, $j=f(h)$, $k=f(k)$, $l=f(l)$, $m=f(gh)$, $n=f(hk)$, $o=f(kl)$, $p=f(ghk)$, $q=f(hkl)$ and $r=f(ghkl)$ then the result follows from lemma \ref{lem:3CochainIsExactPatchDependentFormulation}.
+\end{proof}
+Now we will prove that the index is independent on the choice of atlas and its ordering(see theorem \ref{thrm:H3IndexIsIndependentOnTheChoiceOfAtlas}). To prove this, we will first show the following lemma:
+\begin{lemma}\label{lem:TransitionsOfThreeCochainsAreExact_PatchDependentFormulation}
+	There exists a continuous $\beta_{i',j',k',l',m',n'}:\Psi_{i'j'k'}\cap\Psi_{l'm'n'}\rightarrow U(1)$ for all $i',j',k',l',m',n'\in S$ such that for all $i_1,i_2,j_1,j_2,k_1,k_2,l_1,l_2,m_1,m_2,n_1,n_2\in S$ we get that
+	\begin{align}
+		&C_{i_1,j_1,k_1,l_1,m_1,n_1}(g,h,k)\overline{C_{i_2,j_2,k_2,l_2,m_2,n_2}(g,h,k)}\\
+		\nonumber
+		&=\beta_{j_1,k_1,m_1,j_2,k_2,m_2}(h,k)\overline{\beta_{l_1,k_1,n_1,l_2,k_2,n_2}(gh,k)}\beta_{i_1,m_1,n_1,i_2,m_2,n_2}(g,hk)\overline{\beta_{i_1,j_1,l_1,i_2,j_2,l_2}(g,h)}.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	We simply define $\beta_{i',j',k',l',m',n'}$ such that
+	\begin{equation}
+		u_{R,i',j',k'}(g,h)u_{R,l',m',n'}(g,h)^\dagger =\beta_{i',j',k',l',m',n'}(g,h)\id_{\HH_R}
+	\end{equation}
+	then the result simply follows from writing out the definition in lemma \ref{lem:3CochainPatchDependentDefinition} and filling this equation in there multiple times.
+\end{proof}
+The following theorem essentially tells us that in the continuous case there is still an $H^3$-valued index.
+\begin{theorem}\label{thrm:H3IndexIsIndependentOnTheChoiceOfAtlas}
+	Let $\expval{\cdot}_{H^3(G,\TT)}$ be the equivalence class presented in section \ref{sec:GroupCohomology} then $\expval{C}_{H^3(G,\TT)}$ is independent on the choice of atlas or its ordering.
+\end{theorem}
+\begin{proof}
+	We will prove that the index is independent on the choice of ordering first. To this end, let $f_1$ and $f_2$ be two functions of the same form as in equation \eqref{eq:MinimumOverOrdering} but where the minima are taken with respect to different orderings. Let
+	\begin{equation}
+		C_1:G\times G\times G\rightarrow U(1):(g,h,k)\mapsto C_{f_1(g),f_1(h),f_1(k),f_1(gh),f_1(hk),f_1(ghk)}(g,h,k).
+	\end{equation}
+	and similarly for $C_2$. We have to show that $(g,h,k)\mapsto C_1(g,h,k)\overline{C_2(g,h,k)}$ is exact. To do this, notice that by lemma \ref{lem:TransitionsOfThreeCochainsAreExact_PatchDependentFormulation} we can construct this $\beta$ for each of the patches of $G\times G\times G$. This shows in particular that
+	\begin{align}
+		&C_{f_1(g),f_1(h),f_1(k),f_1(gh),f_1(hk),f_1(ghk)}(g,h,k)\overline{C_{f_2(g)f_2(h)f_2(k)f_2(gh)f_2(hk)f_2(ghk)}(g,h,k)}\\
+		\nonumber
+		&=\beta_{f_1(h),f_1(k),f_1(hk),f_2(h),f_2(k),f_2(hk)}(h,k)\overline{\beta_{f_1(gh),f_1(k),f_1(ghk),f_2(gh),f_2(k),f_2(ghk)}(gh,k)}\\
+		\nonumber
+		&\beta_{f_1(g),f_1(hk),f_1(ghk),f_2(g),f_2(hk),f_2(ghk)}(g,hk)\overline{\beta_{f_1(g),f_1(h),f_1(gh),f_2(g),f_2(h),f_2(gh)}(g,h)}.
+	\end{align}
+	This means that if we define
+	\begin{equation}
+		\beta:G\times G\rightarrow U(1):(g,h)\mapsto\beta_{f_1(g),f_1(h),f_1(gh),f_2(g),f_2(h),f_2(gh)}(g,h)
+	\end{equation}
+	that then indeed
+	\begin{equation}
+		C_1(g,h,k)\overline{C_2(g,h,k)}=\beta(h,k)\overline{\beta(gh,k)}\beta(g,hk)\overline{\beta(g,h)}.
+	\end{equation}
+	Since this $\beta$ is clearly measurable (again because it is continuous almost everywhere) the result follows. The proof that the index is independent on the choice of atlas is analogous, only we take the union of both atlasses and let the $f_1$ and $f_2$ correspond to the minima over the different atlasses (this can also been seen as having two different orderings).
+\end{proof}
+\subsection{The $H^2$-valued translation index}
+This section is committed to show that if the group action is continuous and there is one translation symmetry (in 2d), we can construct a 2-cochain that is measurable and that its Borel group cohomology class is a proper index for the state. We again take $v$ as defined in section \ref{sec:ProofFirstStatement} (as it doesn't depend on the group we don't need any atlasses to define it). Now we will take again an atlas $\mathfrak{A}$ of the form
+\begin{equation}
+	\mathfrak{A}=\{\Phi_i|i\in S\}
+\end{equation}
+for some set $S$. Take again the $W_{g,i}$ and the $u_{R,i,j,k}(g,h)$ from the previous section. Now we will show that we can let our $K^L$ and our $K^R$ be continuous on each patch.
+\begin{lemma}\label{lem:3CochainOneTranslationPatchDependentDefinition}
+	For each $i'\in S$, there exist maps
+	\begin{align}
+		K^L_{i'}&:\Im(\Phi_i)\rightarrow\textrm{Cone}_L(\alpha_0,\theta):g\mapsto K^L_{i',g}&K^R_{i'}&:\Im(\Phi_i)\rightarrow\textrm{Cone}_R(\alpha_0,\theta):g\mapsto K^R_{i',g},
+	\end{align}
+	continuous in strong operator topology, satisfying that for all $g\in\Im(\Phi_i)$ we get that
+	\begin{equation}
+		v^\dagger W_{g,i}vW_{g,i}^\dagger=K^L_{g,i}\otimes K^R_{g,i}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content
+\end{proof}
+From these, we can define our 3-cochains:
+\begin{lemma}
+	For all $i,j,k\in S$, there exists a continous family
+	\begin{equation}
+		C_{i,j,k}:\Psi_{i,j,k}\rightarrow U(1)
+	\end{equation}
+	satisfying that
+	\begin{equation}
+		K^R_{g,i}\Ad{W_{g,i}}\left(K^R_{h,j}\Ad{W_{h,j}W_{gh,k}^\dagger}((K_{gh,k}^R)^\dagger)\right)u_{R,i,j,k}(g,h)=C_{i,j,k}(g,h)v^\dagger u_{R,i,j,k}(g,h)v
+	\end{equation}
+	for any $(g,h)\in\Psi_{ijk}$.
+\end{lemma}
+\begin{proof}
+	This can be found by redoing the proof of lemma \ref{lem:Definition2Cochain} with indices. Since all the operators are strongly continuous the $C$ will also be continuous.
+\end{proof}
+The cochain condition is now replaced by the following lemma:
+\begin{lemma}\label{lem:2CochainConditionWithTranslationsOnPatches}
+	Take $i,j,l,m,n,o\in S$ then for any $g,h,k\in G$ satisfying that $(g,h)\in\Psi_{ijk}$, $(h,k)\in\Psi_{jln}$, $(gh,k)\in\Psi_{mlo}$ and $(g,hk)\in\Psi_{ino}$, it holds that
+	\begin{equation}
+		C_{i,j,m}(g,h)C_{m,l,o}(gh,k)=C_{j,l,n}(h,k)C_{i,n,o}(g,hk).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	The proof is essentially just redoing the proof of lemma \ref{lem:StatementThatItIsA2Cochain} with indices.
+\end{proof}
+Like in the previous two subsections, we will put an ordering on $S$ and use this to define
+\begin{equation}\label{eq:MinimumOverOrderingOneTranslationCase}
+	f:G\rightarrow S:g\mapsto \textrm{min}\{i\in S|g\in \Im(\Phi_i)\}.
+\end{equation}
+Now define
+\begin{equation}
+	C:G\times G\rightarrow U(1):(g,h)\mapsto C_{f(g),f(h),f(gh)}(g,h).
+\end{equation}
+\begin{lemma}
+This $C$ is measurable.
+\end{lemma}
+\begin{proof}
+This follows from the fact that $C$ is discontinuous only on a measure 0 set (see Lusin's theorem).
+\end{proof}
+\begin{lemma}
+For any $g,h,k\in G$ we get that
+\begin{equation}
+	C(g,h)C(gh,k)=C(h,k)C(g,hk).
+\end{equation}
+\end{lemma}
+\begin{proof}
+We need to prove that
+\begin{equation}
+	C_{f(g),f(h),f(gh)}(g,h)C_{f(gh),f(k),f(ghk)}(gh,k)=C_{f(h),f(k),f(hk)}(h,k)C_{f(g),f(hk),f(ghk)}(g,hk).
+\end{equation}
+If one takes $i=f(g)$, $j=f(h)$, $l=f(k)$, $m=f(gh)$, $n=f(hk)$ and $o=f(ghk)$ in lemma \ref{lem:2CochainConditionWithTranslationsOnPatches} then the result follows.
+\end{proof}
+Now we will prove that the index is independent on the choice of atlas and its ordering (see theorem \ref{thrm:H2IndexIsIndependentOnTheChoiceOfAtlasOneTranslationCase}). To prove this, we will first show the following lemma:
+\begin{lemma}\label{lem:TransitionsOfTwoCochainsAreExactOneTranslationCase_PatchDependentFormulation}
+	There exist continuous $\beta_{i',j'}:\Im(\Phi_i)\cap \Im(\Phi_j)\rightarrow U(1)$ for all and $i',j'\in S$ such that for all $i,j,l,m,n,o\in S$ we get that
+	\begin{equation}
+		C_{i,j,l}(g,h)\overline{C_{m,n,o}(g,h)}=\beta_{i,m}(g)\beta_{j,n}(h)\overline{\beta_{l,o}(gh)}
+	\end{equation}
+	for any $(g,h)\in\Psi_{ijl}\cap\Psi_{mno}$.
+\end{lemma}
+\begin{proof}
+	We simply define $\beta_{i',j'}$ such that
+	\begin{equation}
+		K_{i'}^R(g,h)K_{j'}^R(g,h)^\dagger =\beta_{i',j'}(g,h)\id_{\HH_R}
+	\end{equation}
+	then the result simply follows from writing out the definition in lemma \ref{lem:3CochainOneTranslationPatchDependentDefinition} and filling this equation in there multiple times.
+\end{proof}
+The following theorem essentially tells us that in the continuous case there is still an $H^2$-valued index.
+\begin{theorem}\label{thrm:H2IndexIsIndependentOnTheChoiceOfAtlasOneTranslationCase}
+	Let $\expval{\cdot}_{H^2(G,\TT)}$ be the equivalence class presented in section \ref{sec:GroupCohomology} then $\expval{C}_{H^2(G,\TT)}$ is independent on the choice of atlas or its ordering.
+\end{theorem}
+\begin{proof}
+	The proof is completely analogous to the proof of lemma \ref{thrm:H2IndexIsIndependentOnTheChoiceOfAtlas}, only we use lemma \ref{lem:TransitionsOfTwoCochainsAreExactOneTranslationCase_PatchDependentFormulation} in stead of lemma \ref{lem:TransitionsOfTwoCochainsAreExact_PatchDependentFormulation}.
+\end{proof}
+\subsection{The $H^1$-valued translation index}
+This section is committed to show that if the group action is continuous and there are two translation symmetries (in 2d), we can construct a 1-cochain that is measurable and that its Borel group cohomology class is a proper index for the state. We again take $v$ as defined in section \ref{sec:ProofFirstStatement} and $w$ as defined in section \ref{sec:TwoDirectionTraslationInvariance} (as they don't depend on the group we don't need any atlasses to define them). Now we will take again an atlas $\mathfrak{A}$ of the form
+\begin{equation}
+	\mathfrak{A}=\{\Phi_i|i\in S\}
+\end{equation}
+for some set $S$. Take again the $W_{g,i}$, $u_{R,i,j,k}(g,h)$ and the $K^R_{g,i}$ from the previous two sections. Now we will show that we can let our $b_g^L$ and our $b_g^R$ be continuous on each of the patches:
+\begin{lemma}
+	For all $i\in S$, there exist maps
+	\begin{align}
+		b^L_{i}&:\Im(\Phi_i)\rightarrow \textrm{Cone}_{\nu^{-1}(L)}(\alpha_0,\theta)&b^R_{i}&:\Im(\Phi_i)\rightarrow \textrm{Cone}_{R}(\alpha_0,\theta)
+	\end{align}
+	continuous in strong operator topology, satisfying that for all $g\in\Im(\Phi_i)$ we get that
+	\begin{equation}
+		w^\dagger W_{g,i}wW_{g,i}^\dagger=b_{g,i}^L\otimes b_{g,i}^R.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	content
+\end{proof}
+In this case, the $\alpha:G\rightarrow U(1)$ that we define won't just be measurable, it will be continuos everywhere:
+\begin{lemma}
+	There exists a continuous $\alpha:G\rightarrow U(1)$ satisfying
+	\begin{equation}
+		v^\dagger b_{g,i}^R v h_g K^R_{g,i}(b^R_{g,i})^\dagger=\alpha(g)w^\dagger K^R_{g,i} w
+	\end{equation}
+	for all $i\in S$ and for all $g\in \Im(\Phi_i)$. Here we took
+	\begin{equation}
+		h_g\defeq \pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g)).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	On the one hand, the expression,
+	\begin{equation}
+		v^\dagger b_{g,i}^R v h_g K^R_{g,i}(b^R_{g,i})^\dagger w^\dagger (K^R_{g,i})^\dagger w
+	\end{equation}
+	is continuous in strong operator topology, on the other hand it is independent on the choice of patch. Combining both gives us a globally defined continuous $\alpha$.
+\end{proof}
+The proof that this is a representation is identical to the proof of lemma \ref{lem:AlphaIsU1Representation}. The proof that $\alpha$ is measurable is trivial and so is the proof that this $\alpha$ is independent on the choice of atlas or its ordering.
 \clearpage
 \appendix
 \section{Representations and states}
@@ -2604,15 +2920,15 @@ By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelev
 \end{proof}
 The following lemma extends this to a parameter family of a locally compact Lie group.
 \begin{lemma}\label{lem:SplittingOfContinuousUnitary}
-	Let $G$ be a locally compact Lie group. In the same setting as lemma \ref{lem:SplittingOfUnitary} let in stead
+	Let $G$ be a locally compact Lie group with atlas $\mathfrak{A}$. In the same setting as lemma \ref{lem:SplittingOfUnitary} assume in stead that for each patch $\Phi_i\in\mathfrak{A}$ we have a map 
 	\begin{equation}
-		U:G\rightarrow \UU(\HH_\AA\otimes\HH_\BB)
+		U:\Im(\Phi_i)\rightarrow \UU(\HH_\AA\otimes\HH_\BB),
 	\end{equation}
-	be continuous in the strong operator topology. Assume now that there exist
+	continuous in the strong operator topology. Assume now that there exist (again for each patch)
 	\begin{align}
-		\alpha_\AA&:G\rightarrow\Aut{\AA}&\alpha_\BB&:G\rightarrow\Aut{\BB}
+		\alpha_\AA&:\Im(\Phi_i)\rightarrow\Aut{\AA}&\alpha_\BB&:\Im(\Phi_i)\rightarrow\Aut{\BB}
 	\end{align}
-	that are continuous in the strong topology on automorphisms. This implies that for any atlas for $G$ we get that for each patch of that atlas, the $U_\AA:G\rightarrow \UU(\HH_\AA)$ and the $U_\BB:G\rightarrow \UU(\HH_\BB)$ can be made continuous (again in strong operator topology) in that patch.
+	that are continuous in the strong topology on automorphisms. This implies that the $U_\AA:\Im(\Phi_i)\rightarrow \UU(\HH_\AA)$ and the $U_\BB:\Im(\Phi_i)\rightarrow \UU(\HH_\BB)$ from the previous lemma can be made continuous (again in strong operator topology) in that patch.
 \end{lemma}
 \begin{proof}
 	By going through the proof of lemma \ref{lem:SplittingOfUnitary} we still get that $g\mapsto \Ad{U_\AA(g)}$ can be made continuous in the strong topology on automorphisms. The remaining steps of this proof will largely follow those presented in \cite{https://doi.org/10.48550/arxiv.2105.01717} with some important differences. We will first show there exists an atlas and then we extend this to our atlas. More explicitly we will show that for any $0<\epsilon<1$ there exists a $d_\epsilon$ such that for any $g^*\in G$ we can make $g\mapsto U_\AA(g)$ continuous on
