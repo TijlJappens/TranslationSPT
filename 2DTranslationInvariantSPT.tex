@@ -81,7 +81,7 @@ The notion of symmetry protected topological phases of matter (SPT) was introduc
 \\\\
 One then defines an equivalence relation on these SPT states by saying that $\omega_1$ is equivalent to $\omega_2$ if there exists a $G$-invariant one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ such that $\omega_1\circ\gamma^\Phi_{0;1}=\omega_2$. One can then extend this equivalence to the stronger notion of being stably equivalent. This goes as follows: one defines an operation called stacking that takes two SPT states $\omega_1$ and $\omega_2$ and outputs a third one $\omega_1\otimes_{\text{stack}}\omega_2$. This $\otimes_\text{stack}$ is defined in section \ref{sec:QuasiLocalC*Algebra}. In short it is the tensor product at the level of the on site hilbert space. One then defines another equivalence relation and says that two SPT states, $\omega_1$ and $\omega_2$ are stably equivalent if and only if there exist trivial\footnote{A trivial state is a $G$-invariant product state that transforms trivially under the on site group action (see remark \ref{rem:NontrivialProductState}).} SPTs, $\phi_1$ and $\phi_2$ such that $\omega_1\otimes_{\text{stack}}\phi_1$ is equivalent to $\omega_2\otimes_{\text{stack}}\phi_2$.
 \newpage
-In one spatial dimension so called matrix product states (\cite{Chen_2011},\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}) can be used to construct non trivial SPT states. Later on and more generally it was shown in \cite{ogata2019classification} that any $G$-invariant state satisfying the split property (this includes any SRE state) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a (group) module under addition with trivial group action). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is constant on the (stable) equivalence classes. Later on in \cite{kapustin2021classification} it was then shown that this classification problem is complete (the index, seen as map from the set of stable equivalence classes to $H^2(G,\TT)$ is injective.). In two spatial dimensions, more recently in \cite{ogata2021h3gmathbb}, it was proven there is an $H^3(G,\TT)$-valued index that is constant on the (stable) equivalence classes.
+In one spatial dimension so called matrix product states (\cite{Chen_2011},\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}) can be used to construct non trivial SPT states. Later on and more generally it was shown in \cite{ogata2019classification} that any $G$-invariant state satisfying the split property (this includes any SRE state) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a (group) module under addition with trivial group action). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is constant on the (stable) equivalence classes. Later on in \cite{kapustin2021classification} it was then shown that this classification problem is complete (the index, seen as map from the set of stable equivalence classes to $H^2(G,\TT)$ is injective.). In two spatial dimensions, more recently in \cite{ogata2021h3gmathbb}, it was proven there is an $H^3(G,\TT)$-valued index that is constant on the (stable) equivalence classes\footnote{In \cite{ogata2021h3gmathbb}, there is no mention of the stacking operation but using remark \ref{rem:StackingH3ValuedIndex}, one can clearly extend it to the stable equivalence class.}.
 \\\\
 We've used stacking to define the stable equivalence relation. Stacking however plays a more general role. It widely believed that it allows us to define an (abelian) group structure on the set of stable equivalence classes\footnote{The stacking with a trivial state will then be related to the identity of this group}. Although it is nowhere stated explicitly the author thinks that the literature suggests that the following conjecture is true:
 \begin{conjecture}\label{conj:StableEquivGroupStructure}
@@ -139,7 +139,8 @@ As noticed in \cite{Chen_2013}. The groups in which these indices take values ca
 	\end{equation}
 \end{remark}
 \subsection*{Acknowledgements}
-T.J. was supported in part by the FWO under grant G098919N.
+T.J. was supported in part by the FWO under grant G098919N.\\\\
+We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process.
 \clearpage
 \section{Setup and definitions}\label{sec:Setup}
 In this paper we will be working in the two dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
@@ -442,10 +443,15 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
 \end{proof}
 \section{The assumptions of subsection \ref{sec:Results_1} imply the assumptions of subsection \ref{sec:Results_2}}\label{sec:the-assumptions-of-subsection-refsecresults1-imply-the-assumptions-of-subsection-refsecresults2}
-In this sections we prove the lemma in the previous section that relate the assumptions of \ref{sec:Results_1} to those of \ref{sec:Results_2}. The first thing we show is lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
+In this section we prove all the lemmas in the previous section that relate the assumptions of \ref{sec:Results_1} to those of \ref{sec:Results_2}. The first thing we would like to address is the fact that in our assumption the group is any discrete group whereas for instance in \cite{ogata2021h3gmathbb} the group is asked to be finite. We have two remarks to make on this subject:
+\begin{enumerate}
+	\item The only place where the compactness of the group was used in \cite{ogata2021h3gmathbb} was to prove that for any path of $G$ invariant gapped interactions (with some additional locality properties for which we refer to \cite{ogata2021h3gmathbb}), the path of groundstates can be generated by an LGA that is generated by a $G$ invariant interaction. In fact to do this construction in general one needs a normalised De Haar measure. However, in our paper we don't require such a construction. This is because our equivalence class does not depend on unique gapped groundstates but in stead we call two states equivalent if there is a $G$-invariant LGA connecting them and therefore we avoid this problem.
+	\item Notice that in the construction of the index for non-compact groups remains consistent when the group action is in reality the group action of a finite group after a projection to this finite group. Take for example the $H^1$ index for the (non-compact) group $\ZZ$. Since our on site Hilbert space is finite and our group action is translation invariant in both directions there is just one representation on a finite Hilbert space defining the index. Suppose that that finite representation of $\ZZ$ is of the form that one just projects $\ZZ$ to $\ZZ_n$ and then defines a representation of $\ZZ_n$. One can then see the index simply as an index in $H^1(\ZZ_n,U(1))\cong \ZZ_n$ that is then embedded into $H^1(\ZZ,U(1))\cong U(1)$. It turns out that this construction is consistent with calculating the $H^1(\ZZ,U(1))$ directly. One can make similar remarks on the constructions for the $H^2$ index of the group $\ZZ\times \ZZ$. Namely, let us assume that the group action for column $i$ is formed out of the projection to a $\ZZ_{n_i}\times\ZZ_{m_i}$ action. Let $n$ be such that all $n_i$ are divisors of $n$ and similarly for $m$. Now we can see our index as taking values in $H^2(\ZZ_n\times\ZZ_m,U(1))\cong \ZZ_{\text{gcd}(n,m)}$ which can also be naturally embedded in $H^2(\ZZ\times \ZZ,U(1))\cong U(1)$. It turns out again that this index too is consistent with calculating the $H^2(\ZZ\times \ZZ,U(1))$-valued index directly.
+\end{enumerate}
+Now we will prove lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
 \SREImpliesQDisentanglableOneTranslation*
 \begin{proof}
-	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we indeed have that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3 concluding the proof that assumption \ref{assumption} is satisfied.
+	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we indeed have that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$ (by which we mean the definition of QAut as presented here not, the on in \cite{ogata2021h3gmathbb}). The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
 \end{proof}
 The next lemma we prove is lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we too restate here:
 \SREImpliesQDisentanglableTwoTranslations*
@@ -1490,6 +1496,9 @@ We are now ready to provide a proof of equation \ref{eq:IndexMorphismUnderStacki
 	&=C_1(g,h)C_2(g,h)
 \end{align}
 concluding the proof.
+\begin{remark}\label{rem:StackingH3ValuedIndex}
+	Clearly the same argument can be used to argue that if one shows that the $H^3$-valued index is an invariant of the ordinary LGA equivalence classes (as was done in \cite{ogata2021h3gmathbb}) that then the index is as well an invariant of the stable equivalence classes.
+\end{remark}
 \input{Figures/Figure5}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates the lattice to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
@@ -2658,34 +2667,36 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
  \begin{align}
  	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
  \end{align}
- where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut}):
+ where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$.
+ \subsection{The one translation symmetry}
+ This section will define the classes of automorphisms required in the assumptions and proofs about the $H^2$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut}):
  \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)\cup\tau^{\rho}(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\tau^\rho(\AA_{C_{[\theta_3,\pi/2]}\cap\rho})},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
+ 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_1(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)\cup\tau^{\rho}(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\tau^\rho(\AA_{C_{[\theta_3,\pi/2]}\cap\rho})},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
  	\begin{equation}
  		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
  	\end{equation}
- 	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}(\AA)$.
+ 	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}_1(\AA)$.
  \end{definition}
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{Figures/AlphaFirstDecomposition.png}
 	\includegraphics[width=0.5\textwidth]{Figures/AlphaSecondDecomposition.png}
-	\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ-automorphism acting on the upper half plane.}
+	\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ$_1$-automorphism acting on the upper half plane.}
 	\label{fig:SetupSQAut}
 \end{figure}
  As a remark, notice that this definition is not exactly identical to de definition given in \cite{ogata2021h3gmathbb} due to the translation operators.
  \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
+ 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}_1(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
  	\begin{equation}
  		\alpha=\Ad{a}\circ\alpha_L\otimes\alpha_R.
  	\end{equation}
  \end{definition}
 We will need one additional class of automorphisms:
 \begin{definition}
-	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{VAut}(\AA)$ if and only if there exists some $a\in\AA$, $\alpha_U\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and an $\alpha_D\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{VAut}_1(\AA)$ if and only if there exists some $a\in\AA$, $\alpha_U\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and an $\alpha_D\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that
 	\begin{equation}
 		\alpha=\Ad{a}\circ\alpha_U\otimes\alpha_D.
 	\end{equation}
-	If furthermore $\alpha_U\circ\beta_g^U=\beta_g^U\circ\alpha_U$ we say that $\alpha\in\textrm{GVAut}(\AA)$.
+	If furthermore $\alpha_U\circ\beta_g^U=\beta_g^U\circ\alpha_U$ we say that $\alpha\in\textrm{GVAut}_1(\AA)$.
 \end{definition}
 Now we will state some properties of locally generated automorphisms:
 \begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms}
@@ -2777,7 +2788,7 @@ From these four statements we can prove the following results:
 	\begin{equation}
 		\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}=\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\circ\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}.
 	\end{equation}
-	Using that $\gamma^{H}_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}(\AA)$ we get that there exists some $a\in\AA$ and $\eta\in\Aut{\AA_{C_\theta}}$ such that
+	Using that $\gamma^{H}_{s;t}\circ\gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\in\textrm{HAut}_1(\AA)$ we get that there exists some $a\in\AA$ and $\eta\in\Aut{\AA_{C_\theta}}$ such that
 	\begin{align}
 		\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}&=\Ad{a}\circ \gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\eta_{s;t}^{-1}\circ\Theta\circ\eta_{s;t}\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\\
 		&=\Ad{a}\circ \gamma^{H_D}_{t;s}\otimes\gamma^{H_U}_{t;s}\circ\Theta\circ\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}.
@@ -2799,8 +2810,23 @@ From these four statements we can prove the following results:
 		\gamma^H_{t;s}\circ\eta_g\circ\gamma^{H}_{s;t}&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\eta_g\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}\\
 		&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\Ad{a_{3,L}\otimes a_{3,R}}\circ\tilde{\eta}_g\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}.
 	\end{align}
-	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}(\AA)$ the implication follows. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{SQAut}(\AA)$.
+	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}_1(\AA)$ the implication follows. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{SQAut}_1(\AA)$.
 \end{proof}
+\subsection{The two translation symmetries}
+ This section will define the classes of automorphisms required in the assumptions and proofs about the $H^1$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut2}):
+\begin{definition}
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_2(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)\cup\tau^{\rho}(C_{]\theta_2,\theta_3]}\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\tau^\rho(\AA_{C_{[\theta_3,\pi/2]}\cap\rho})},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
+	\begin{equation}
+		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
+	\end{equation}
+	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}_2(\AA)$.
+\end{definition}
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{Figures/AlphaFirstDecomposition2.png}
+	\includegraphics[width=0.5\textwidth]{Figures/AlphaSecondDecomposition2.png}
+	\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ$_2$-automorphism acting on the upper half plane.}
+	\label{fig:SetupSQAut2}
+\end{figure}
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
