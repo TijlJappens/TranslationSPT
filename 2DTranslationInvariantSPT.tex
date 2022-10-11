@@ -242,7 +242,7 @@ where
 \end{align}
 In what follows we will denote the group action on $H^n(G,M)$ also in the same additive notation that we used for $C^n(G,M)$. This notation makes sense because of the property that for any $\phi_1,\phi_2\in Z^n(G,M)$ we have that $\expval{\phi_1+\phi_2}_{H^n(G,M)}=\expval{\phi_1}_{H^n(G,M)}+\expval{\phi_2}_{H^n(G,M)}$.
 \begin{remark}
-	For any discrete group $G$ there is a standard theorem that says that this algebraic approach to defining group cohomology is equal to the singular cohomology class of the classifying space of $G$ (usually denoted as $BG$). There is a generalisation of this for any group with a De Haar measure. It then holds that this algebraic approach, with the additional restriction that any cochain is a measurable function, is equivalent to the classifying space $BG$ constructed from taking the topology on $G$ as induced from the measure. This definition of group cohomology is called Borel Group cohomology. In for example \cite{Chen_2013}, they argue that this definition of group cohomology is indeed the right approach to defining SPT indices. In a future paper we will show how one can construct a Borel Group cohomology class from SPT states protected by any locally compact Lie group.
+	For any discrete group $G$ there is a standard theorem that says that this algebraic approach to defining group cohomology is equivalent to the singular cohomology of the classifying space of $G$ (usually denoted as $BG$). There is a generalisation of this for any group with a De Haar measure. It then holds that this algebraic approach, with the additional restriction that any cochain is a measurable function, is equivalent to the classifying space $BG$ constructed from taking the topology on $G$ as induced from the measure. This definition of group cohomology is called Borel Group cohomology. In for example \cite{Chen_2013}, they argue that this definition of group cohomology is indeed the right approach to defining SPT indices. In a future paper we will show how one can construct a Borel Group cohomology class from SPT states protected by any locally compact Lie group.
 \end{remark}
 \section{Results}
 We will present our claim starting from two different assumptions. The first assumption is related to short range entanglement whereas the second assumption is more technical but also more general (the first assumption will imply the second assumption).
@@ -259,7 +259,7 @@ Let $L_j=\{(i,j)|i\in\ZZ\}\subset\ZZ^2$ be a horizontal line. Let $\phi\in\PP(\A
 This is a $G$-invariant SRE state over $\ZZ^2$ that is invariant under $\tau$.
 \end{definition}
 We can now formulate our first result for the case where there is one translation symmetry.
-\begin{theorem}
+\begin{theorem}\label{thrm:MainResult1}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
 		\textrm{Index}^{\AA,U}:\{\omega\in\PP(\AA)|\omega\text{ is an SRE state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}\rightarrow H^2(G,\TT)
@@ -282,18 +282,14 @@ We can now formulate our first result for the case where there is one translatio
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
-	Take
-	\begin{equation}
-		\omega\in \{\omega\in\PP(\AA)|\omega\text{ is an SRE state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
-	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms and satisfies item 3. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. We can now use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof of item 2. This concludes the proof of the theorem.
+	See subsection \ref{sec:ProofOfMainResult1}.
 \end{proof}
 Now for the second result I would like to define an index on the space of $G$-invariant SRE states that is translation invariant in both the horizontal and the vertical directions. In the introduction we already stated that the conjecture indicates that this is classified by $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$. The first index is just the index when there are no translations. Clearly there are two other indices one can define already. Namely, take
 \begin{align}
 	\omega&\mapsto \textrm{Index}(\omega)&&\text{and}&\omega\mapsto \textrm{Index}(\omega\circ\mu)
 \end{align}
 where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus H^2(G,\TT)$ part. The second result presented in this paper is that we can also define this $H^1(G,\TT)$\footnote{There is a result from group cohomology that $H^1(G,\TT)\cong\hom(G,\TT)$. We will use this identification freely.} index.
-\begin{theorem}
+\begin{theorem}\label{thrm:MainResult2}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
 		\textrm{Index}_{2\text{ trans}}^{\AA,U}:\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}\rightarrow H^1(G,\TT)
@@ -320,11 +316,7 @@ where $\mu$ was the rotation automorphism. This will give the $H^2(G,\TT)\oplus 
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
-	Take
-	\begin{equation}
-		\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
-	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms and satisfies item 4. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof of item 2. Item 3 is proven in section \ref{sec:H^1IndexInvariantUnderRotations} concluding the proof of the theorem.
+	See subsection \ref{sec:ProofOfMainResult2}.
 \end{proof}
 Except when we need it explicitly we will not write the $\AA,U(g)$ superscript in the indices. This need will only arise when we deal with the proof of the stacking properties.
 \subsection{Statement of the result in terms of Q-automorphisms}\label{sec:Results_2}
@@ -360,7 +352,7 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 	Take $\omega\in\PP(\AA)$ a short range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
 \end{restatable}
 \begin{proof}
-	 See section \ref{sec:the-assumptions-of-subsection-refsecresults1-imply-the-assumptions-of-subsection-refsecresults2}.
+	 See subsection \ref{sec:ProofOfMainResult1}.
 \end{proof}
 We now state the result that using this assumption we can define an $H^2(G,\TT)$-valued index.
 \begin{theorem}\label{thrm:ExistenceFirstIndex}
@@ -442,22 +434,22 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 \begin{proof}
 	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
 \end{proof}
-\section{The assumptions of subsection \ref{sec:Results_1} imply the assumptions of subsection \ref{sec:Results_2}}\label{sec:the-assumptions-of-subsection-refsecresults1-imply-the-assumptions-of-subsection-refsecresults2}
-In this section we prove all the lemmas in the previous section that relate the assumptions of \ref{sec:Results_1} to those of \ref{sec:Results_2}. The first thing we would like to address is the fact that in our assumption the group is any discrete group whereas for instance in \cite{ogata2021h3gmathbb} the group is asked to be finite. We have two remarks to make on this subject:
+\subsection{Some remarks}
+The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all, we would like to remark that for any state $\psi\in \PP(\AA)$, the following two conditions are equivalent
+\begin{enumerate}
+	\item There exists a $\Phi\in\PP_{\text{SL}}$\footnote{This is defined in \cite{ogata2021h3gmathbb} but it essentially means bounded interaction that is connected to a trivial interaction without overlapping therms.} such that $\psi$ is a unique gapped groundstate of $\Phi$.
+	\item $\psi$ is an SRE state.
+\end{enumerate}
+The proof that the first item implies the second item is done in \cite{ogata2021h3gmathbb} whereas the proof that the second item implies the first item is almost trivial. Namely any product state naturally has a trivial interaction corresponding to this product state while the disentangler gives a way to connect the two interactions\footnote{One must then show that this path of derivations can then be discribed by a smooth path of interactions. This can be done using similar tricks as the ones used in equation \eqref{eq:RecastingTheInteraction}.}.\\\\
+However, when we add the group, the story changes considerably. Namely, let
+if one looks at the proof of why these states have an index, one notices that it is shown there that any state that is a unique gapped groundstate of some interaction that can be connected in a trivial interaction (ignoring the group) is an SRE state as described here. Then they start proceed from there, we circumvent this by starting from the SRE assumption. Further more, the way it is shown there that two states that are equivalent have the same index is by showing that they are equivalent in the way described here.
+
+The second thing we would like to address is the fact that in our assumption the group is any discrete group whereas for instance in \cite{ogata2021h3gmathbb} the group is asked to be finite. We have two remarks to make on this subject:
 \begin{enumerate}
 	\item The only place where the compactness of the group was used in \cite{ogata2021h3gmathbb} was to prove that for any path of $G$ invariant gapped interactions (with some additional locality properties for which we refer to \cite{ogata2021h3gmathbb}), the path of groundstates can be generated by an LGA that is generated by a $G$ invariant interaction. In fact to do this construction in general one needs a normalised De Haar measure. However, in our paper we don't require such a construction. This is because our equivalence class does not depend on unique gapped groundstates but in stead we call two states equivalent if there is a $G$-invariant LGA connecting them and therefore we avoid this problem.
-	\item Notice that in the construction of the index for non-compact groups remains consistent when the group action is in reality the group action of a finite group after a projection to this finite group. Take for example the $H^1$ index for the (non-compact) group $\ZZ$. Since our on site Hilbert space is finite and our group action is translation invariant in both directions there is just one representation on a finite Hilbert space defining the index. Suppose that that finite representation of $\ZZ$ is of the form that one just projects $\ZZ$ to $\ZZ_n$ and then defines a representation of $\ZZ_n$. One can then see the index simply as an index in $H^1(\ZZ_n,U(1))\cong \ZZ_n$ that is then embedded into $H^1(\ZZ,U(1))\cong U(1)$. It turns out that this construction is consistent with calculating the $H^1(\ZZ,U(1))$ directly. One can make similar remarks on the constructions for the $H^2$ index of the group $\ZZ\times \ZZ$. Namely, let us assume that the group action for column $i$ is formed out of the projection to a $\ZZ_{n_i}\times\ZZ_{m_i}$ action. Let $n$ be such that all $n_i$ are divisors of $n$ and similarly for $m$. Now we can see our index as taking values in $H^2(\ZZ_n\times\ZZ_m,U(1))\cong \ZZ_{\text{gcd}(n,m)}$ which can also be naturally embedded in $H^2(\ZZ\times \ZZ,U(1))\cong U(1)$. It turns out again that this index too is consistent with calculating the $H^2(\ZZ\times \ZZ,U(1))$-valued index directly.
+	\item Notice that the construction of the index for non-compact groups remains consistent when the group action is in reality the group action of a finite group after a projection to this finite group. Take for example the $H^1$ index for the (non-compact) group $\ZZ$. Since our on site Hilbert space is finite and our group action is translation invariant in both directions there is just one representation on a finite Hilbert space defining the index. Suppose that that finite representation of $\ZZ$ is of the form that one just projects $\ZZ$ to $\ZZ_n$ and then defines a representation of $\ZZ_n$. One can then see the index simply as an index in $H^1(\ZZ_n,U(1))\cong \ZZ_n$ that is then embedded into $H^1(\ZZ,U(1))\cong U(1)$. It turns out that this construction is consistent with calculating the $H^1(\ZZ,U(1))$ directly. One can make similar remarks on the constructions for the $H^2$ index of the group $\ZZ\times \ZZ$. Namely, let us assume that the group action for column $i$ is formed out of the projection to a $\ZZ_{n_i}\times\ZZ_{m_i}$ action. Let $n$ be such that all $n_i$ are divisors of $n$ and similarly for $m$. Now we can see our index as taking values in $H^2(\ZZ_n\times\ZZ_m,U(1))\cong \ZZ_{\text{gcd}(n,m)}$ which can also be naturally embedded in $H^2(\ZZ\times \ZZ,U(1))\cong U(1)$. It turns out again that this index too is consistent with calculating the $H^2(\ZZ\times \ZZ,U(1))$-valued index directly.\footnote{In category theory, this consistency condition here is no more then the fact that the group cohomology group is a contravariant functor.}
 \end{enumerate}
-Now we will prove lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
-\SREImpliesQDisentanglableOneTranslation*
-\begin{proof}
-	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we indeed have that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$ (by which we mean the definition of QAut as presented here not, the on in \cite{ogata2021h3gmathbb}). The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
-\end{proof}
-The next lemma we prove is lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we too restate here:
-\SREImpliesQDisentanglableTwoTranslations*
-\begin{proof}
-	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller.
-\end{proof}
+
 \section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
 In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
 \assumptionOne*
@@ -1499,6 +1491,20 @@ concluding the proof.
 \begin{remark}\label{rem:StackingH3ValuedIndex}
 	Clearly the same argument can be used to argue that if one shows that the $H^3$-valued index is an invariant of the ordinary LGA equivalence classes (as was done in \cite{ogata2021h3gmathbb}) that then the index is as well an invariant of the stable equivalence classes.
 \end{remark}
+\subsection{Proof of theorem \ref{thrm:MainResult1}}\label{sec:ProofOfMainResult1}
+We will first prove lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
+\SREImpliesQDisentanglableOneTranslation*
+\begin{proof}
+	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we indeed have that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$ (by which we mean the definition of QAut as presented here not, the on in \cite{ogata2021h3gmathbb}). The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
+\end{proof}
+Now we are ready to provide the proof
+\begin{proof}[Proof of theorem \ref{thrm:MainResult1}]
+	Take
+	\begin{equation}
+	\omega\in \{\omega\in\PP(\AA)|\omega\text{ is an SRE state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
+	\end{equation}
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is indeed invariant under locally generated automorphisms and satisfies item 3. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. We can now use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof of item 2. This concludes the proof of the theorem.
+\end{proof}
 \input{Figures/Figure5}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates the lattice to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is now a relation between these automorphisms saying that $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
@@ -2435,6 +2441,20 @@ be two states. The goal of this section is to prove that
 	\textrm{Index}^{\AA^2,U(g)\otimes U(g)}_{\text{2 trans}}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}_{\text{2 trans}}(\omega_1)\textrm{Index}^{\AA,U(g)}_{\text{2 trans}}(\omega_2).
 \end{equation}
 The proof of this is completely analogous to what was in section \ref{sec:StackingOneTranslation}.
+\subsection{Proof of theorem \ref{thrm:MainResult2}}\label{sec:ProofOfMainResult2}
+We will first prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we restate here for convenience:
+\SREImpliesQDisentanglableTwoTranslations*
+\begin{proof}
+	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller.
+\end{proof}
+\begin{proof}[Proof of theorem \ref{thrm:MainResult2}]
+	Take
+	\begin{equation}
+	\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
+	\end{equation}
+	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms and satisfies item 4. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof of item 2. Item 3 is proven in section \ref{sec:H^1IndexInvariantUnderRotations} concluding the proof of the theorem.
+\end{proof}
+
 \clearpage
 \appendix
 \section{Representations and states}
@@ -2632,7 +2652,7 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 		\Delta_{X(m)}\defeq \Pi_{X(m)}-\Pi_{X(m-1)}
 	\end{equation}
 	the differences between the conditional expectation values. Define an interaction
-	\begin{equation}
+	\begin{equation}\label{eq:RecastingTheInteraction}
 		\Xi(Z,t)\defeq\sum_{m\geq 0}\sum_{\substack{X\subset Z:\\X(m)=Z}}\Delta_{X(m)}(\gamma^{\tilde{\Phi}}_{0;t}(\tilde{\Phi}(X,t)))
 	\end{equation}
 	then we get by construction that
@@ -2844,7 +2864,7 @@ We will let the definition of vertical automorphism stay the same, namely $\text
 	Completely equivalent to the proof of \ref{lem:PropertiesLocallyGeneratedAutomorphisms}.
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2ForTwoTranlations}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_1}\cap\sigma)}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_1}\cap\sigma)}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{\nu^\sigma(C_{\theta_2}\cap\sigma)}}$ such that
 	\begin{align}
 		\label{eq:TwoAngleLemmaPart2Equation1ForTwoTranlations}
 		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
@@ -2852,6 +2872,9 @@ We will let the definition of vertical automorphism stay the same, namely $\text
 		\gamma^{H_{\nu^{\sigma}(\sigma)}}_{t;s}\eta_g^\sigma\gamma^{H_{\nu^\sigma(\sigma)}}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma.
 	\end{align}
 \end{lemma}
+\begin{proof}
+	Analogous to the proof of \ref{lem:TwoAngleLemmaPart2}.
+\end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
 \end{document}
