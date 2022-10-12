@@ -23,6 +23,10 @@
 \usepackage{tikz}
 \usetikzlibrary{calc,patterns,angles,quotes}
 
+\makeatletter
+\newcommand\Label[1]{&\refstepcounter{equation}(\theequation)\ltx@label{#1}&}
+\makeatother
+
 \newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
 \newcommand{\IAC}{\textrm{IAC}}
 \renewcommand{\d}{\text{d}}
@@ -408,7 +412,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	Let $\omega$ be a short range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
 \end{restatable}
 \begin{proof}
-	See section \ref{sec:the-assumptions-of-subsection-refsecresults1-imply-the-assumptions-of-subsection-refsecresults2}.
+	See subsection \ref{sec:ProofOfMainResult2}.
 \end{proof}
 \begin{theorem}\label{thrm:ExistenceSecondIndex}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
@@ -435,18 +439,21 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
 \end{proof}
 \subsection{Some remarks}
-The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all, we would like to remark that for any state $\psi\in \PP(\AA)$, the following two conditions are equivalent
+The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all the set of states considered is a priori different. Namely, for any state $\psi\in \PP(\AA)$, we define two different conditions
 \begin{enumerate}
-	\item There exists a $\Phi\in\PP_{\text{SL}}$\footnote{This is defined in \cite{ogata2021h3gmathbb} but it essentially means bounded interaction that is connected to a trivial interaction without overlapping therms.} such that $\psi$ is a unique gapped groundstate of $\Phi$.
+	\item There exists a $\Phi\in\PP_{\text{SL}}$\footnote{This is defined in \cite{ogata2021h3gmathbb} but it essentially means bounded interaction that is connected to a trivial (without overlapping therms) interaction.} such that $\psi$ is a unique gapped groundstate of $\Phi$.
 	\item $\psi$ is an SRE state.
 \end{enumerate}
-The proof that the first item implies the second item is done in \cite{ogata2021h3gmathbb} whereas the proof that the second item implies the first item is almost trivial. Namely any product state naturally has a trivial interaction corresponding to this product state while the disentangler gives a way to connect the two interactions\footnote{One must then show that this path of derivations can then be discribed by a smooth path of interactions. This can be done using similar tricks as the ones used in equation \eqref{eq:RecastingTheInteraction}.}.\\\\
-However, when we add the group, the story changes considerably. Namely, let
-if one looks at the proof of why these states have an index, one notices that it is shown there that any state that is a unique gapped groundstate of some interaction that can be connected in a trivial interaction (ignoring the group) is an SRE state as described here. Then they start proceed from there, we circumvent this by starting from the SRE assumption. Further more, the way it is shown there that two states that are equivalent have the same index is by showing that they are equivalent in the way described here.
-
+In \cite{ogata2021h3gmathbb} it is then proven that the first item implies the second item\footnote{Intuitively, it should also be possible to prove the first item from the second item using the same trick used to obtain equation \eqref{eq:PropertiesLocallyGeneratedAutomorphismsProofDefinitionXi} but we won't do this explicitly here.}. However if one looks at the definition of the index there, one could as well have started from the second condition. This is precisely what we did in this paper.\\\\
+When we add the group, the story changes considerably, namely let us define the two different equivalence classes. Namely, let $\psi_1$ and $\psi_2$ be two (pure) $G$-invariant states that are unique gapped groundstates of $\Phi_0$ and $\Phi_1\in\PP_{\text{SL},\beta}$ respectively. The following two conditions define different equivalence classes:
+\begin{enumerate}
+	\item There exists bounded a path of gapped interactions $\lambda\mapsto\tilde\Phi(\lambda)$ (see \cite{ogata2021h3gmathbb} for precise definitions) such that $\psi_1$ and $\psi_2$ are unique gapped groundstates of $\tilde{\Phi}(0)$ and $\tilde{\Phi}(1)$ respectively.
+	\item There exists a $G$-invariant LGA, $\gamma^\Psi_{0;1}$ such that $\psi_1\circ\gamma^H_{0;1}=\psi_2$.
+\end{enumerate}
+A priori those two conditions are not equivalent. However in \cite{ogata2021h3gmathbb} it is proven that, the first equivalence implies the second one (I don't think this implication requires a finite group). The proof that equivalent states have the same index only uses the second condition. This means that one could also have taken the second equivalence condition as the starting point. This is exactly what we do in this paper.\\\\
 The second thing we would like to address is the fact that in our assumption the group is any discrete group whereas for instance in \cite{ogata2021h3gmathbb} the group is asked to be finite. We have two remarks to make on this subject:
 \begin{enumerate}
-	\item The only place where the compactness of the group was used in \cite{ogata2021h3gmathbb} was to prove that for any path of $G$ invariant gapped interactions (with some additional locality properties for which we refer to \cite{ogata2021h3gmathbb}), the path of groundstates can be generated by an LGA that is generated by a $G$ invariant interaction. In fact to do this construction in general one needs a normalised De Haar measure. However, in our paper we don't require such a construction. This is because our equivalence class does not depend on unique gapped groundstates but in stead we call two states equivalent if there is a $G$-invariant LGA connecting them and therefore we avoid this problem.
+	\item There are certainly some additional results that one can prove if the group is finite. For instance proving that any $G$-invariant path of states (generated by any LGA) can be generated by a $G$-invariant LGA is something that can only be done using a normalised De Haar measure on the group. In this setting, this means a finite group.
 	\item Notice that the construction of the index for non-compact groups remains consistent when the group action is in reality the group action of a finite group after a projection to this finite group. Take for example the $H^1$ index for the (non-compact) group $\ZZ$. Since our on site Hilbert space is finite and our group action is translation invariant in both directions there is just one representation on a finite Hilbert space defining the index. Suppose that that finite representation of $\ZZ$ is of the form that one just projects $\ZZ$ to $\ZZ_n$ and then defines a representation of $\ZZ_n$. One can then see the index simply as an index in $H^1(\ZZ_n,U(1))\cong \ZZ_n$ that is then embedded into $H^1(\ZZ,U(1))\cong U(1)$. It turns out that this construction is consistent with calculating the $H^1(\ZZ,U(1))$ directly. One can make similar remarks on the constructions for the $H^2$ index of the group $\ZZ\times \ZZ$. Namely, let us assume that the group action for column $i$ is formed out of the projection to a $\ZZ_{n_i}\times\ZZ_{m_i}$ action. Let $n$ be such that all $n_i$ are divisors of $n$ and similarly for $m$. Now we can see our index as taking values in $H^2(\ZZ_n\times\ZZ_m,U(1))\cong \ZZ_{\text{gcd}(n,m)}$ which can also be naturally embedded in $H^2(\ZZ\times \ZZ,U(1))\cong U(1)$. It turns out again that this index too is consistent with calculating the $H^2(\ZZ\times \ZZ,U(1))$-valued index directly.\footnote{In category theory, this consistency condition here is no more then the fact that the group cohomology group is a contravariant functor.}
 \end{enumerate}
 
@@ -737,9 +744,9 @@ Our translation index is now defined as
 \begin{definition}
 	Let $C:G^2\rightarrow U(1)$ be the 2-cochain defined in \ref{lem:Definition2Cochain}. Take $\phi:G^2\rightarrow\TT$ such that $C(g,h)=\exp(i\phi(g,h))$ then we define the index as
 	\begin{equation}
-	\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{\phi}\in H^2(G,\TT)
+	\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq\expval{\phi}\in H^2(G,\TT)
 	\end{equation}
-	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.
+	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.\footnote{Even though we explicitly wrote down the on site group action $U$, this index is only dependent on $\Ad{U}$.}
 \end{definition}
 \begin{proof}
 	Clearly the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
@@ -766,7 +773,7 @@ In this section we will show that the index is only dependent on $\omega$ and no
 	\end{align}
 	with $\alpha_{0,i}=\alpha_{L,i}\otimes\alpha_{R,i}$, then
 	\begin{equation}
-		\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
+		\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
 	\end{equation}
 \end{lemma}
 \begin{proof}
@@ -927,7 +934,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \begin{proof}
 	Take $0<\theta_1<\theta_2<\pi/2$. Take $\alpha\in \QAut{\AA}$ and (for all $\sigma\in\{L,R\}$) take $\eta_{g,1}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_1}}}$ and $\eta_{g,2}^\sigma\in\Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ to be operators belonging to $\tilde{\beta}_{g,1}$ and $\tilde{\beta}_{g,2}$ leaving $\omega$ invariant. Since $\Aut{\AA_L\cap\AA_{C_{\theta_1}}}\subset \Aut{\AA_L\cap\AA_{C_{\theta_2}}}$ the result now follows from lemma \ref{lem:InvarianceUnderChoiceBeta}.
 \end{proof}
-Due to all these considerations we will write the index as $\textrm{Index}(\omega)$ from here on onward.
+Due to all these considerations we will write the index as $\textrm{Index}^{\AA,U}(\omega)$ from here on onward.
 \subsection{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
 Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spatial dimension such that
 \begin{equation}
@@ -1705,9 +1712,9 @@ Using this we can show that:
 \begin{definition}
 	Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha}. Take $\phi\in\hom(G,\TT)$ such that $\alpha(g)=\exp(i\phi(g))$. We define the 2 translation index as
 	\begin{equation}
-		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \phi\in H^1(G,\TT)
+		\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \phi\in H^1(G,\TT)
 	\end{equation}
-	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.
+	and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.\footnote{It is however explicitly dependent on the on site group action $U$, and not only $\Ad{U}$.}
 \end{definition}
 \begin{proof}
 	Clearly the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. The proof that it is independent of the choice of phases is just as trivial.
@@ -1738,9 +1745,9 @@ In this section we will show that the index is only dependent on $\omega$ and no
 \begin{remark}\label{rem:NontrivialProductState}
 	A product state can have a non-trivial $H^1(G,\TT)$ index and the index is not defined relative to $\omega_0$ so in particular
 	\begin{equation}
-		\textrm{Index}_{2\:\text{trans}}(\theta,\beta_g^U,\textrm{Id},\textrm{Id},\textrm{Id},\omega_0,\omega_0)
+		\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\beta_g^U,\textrm{Id},\textrm{Id},\textrm{Id},\omega_0,\omega_0)
 	\end{equation}
-	can still be non-trivial. In fact in this case we get $\alpha(g)=\omega_0(U_{(-1,-1)}(g))$.
+	can still be non-trivial. In fact in this case we get $\alpha(g)=\omega_0(U_{(-1,-1)}(g))$. To show this, notice that we can take $b_g=\id_{\HH}$ and we can chose $K_g^R$ so that it leaves the cyclic vector of $\omega_0$, $\Omega_0$ invariant. Applying the definition of the index on this cyclic vector then gives us $h_g\Omega_0=\alpha(g)\Omega_0$. This obviously implies that $\bra{\Omega_0}\ket{h_g\Omega_0}=\alpha(g)\bra{\Omega_0}\ket{\Omega_0}$ giving us indeed the advertised equation.
 \end{remark}
 We will now show independence of $\alpha$ and its decomposition.
 \begin{lemma}
@@ -1754,7 +1761,7 @@ We will now show independence of $\alpha$ and its decomposition.
 	\end{align}
 	with $\alpha_{0,i}=\alpha_{L,i}\otimes\alpha_{R,i}$, then
 	\begin{equation}
-		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
+		\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,1},\Theta_1,\omega,\omega_{01})=\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02}).
 	\end{equation}
 \end{lemma}
 \begin{proof}
@@ -1772,8 +1779,8 @@ We will now show independence of $\alpha$ and its decomposition.
 	\end{equation}
 	Let $v,w,K_g^\sigma$ and $b_g^\sigma$ be operators belonging to the first choice then by construction $xvx^\dagger,xwx^\dagger,xK_g^\sigma x^\dagger$ and $xb_g^\sigma x^\dagger$ are operators belonging to the second choice. Since the index is invariant under this substitution this concludes the proof in the case that $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
 	\begin{align}
-		\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})&=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)\\
-		&=\textrm{Index}_{2\:\text{trans}}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
+		\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{02})&=\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_{0,2},\Theta_2,\omega,\omega_{01}\circ\gamma)\\
+		&=\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\gamma\circ\alpha_{0,2},\Theta_2,\omega,\omega_{01})
 	\end{align}
 	concluding the proof.
 \end{proof}
@@ -1862,6 +1869,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \begin{proof}
 	After what was done so far this result is trivial.
 \end{proof}
+Due to all these considerations we will write this index as $\textrm{Index}_{2\text{ trans}}^{\AA,U}(\omega)$ from here on onward.
 \subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
 This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. We still define $\AA$ as the closure of the tensor product of the $\BB$. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\BB$ and that our one dimensional state is invariant under this automorphism. We will need:
 \begin{assumption}\label{assumption1dWithTranslation}
@@ -2373,19 +2381,14 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 \end{proof}
 \begin{lemma}
 	The following equalities hold
-	\begin{align}
-		\label{eq:H^1IndexRotationInvariantCommutator1}
-		[h_g v^\dagger b_g^R v,w^\dagger \tilde{b}_g^U w]&=0\\
-		\label{eq:H^1IndexRotationInvariantCommutator2}
-		[h_g, v^\dagger b_g^R v]&=0\\
-		\label{eq:H^1IndexRotationInvariantCommutator3}
-		[h_g w^\dagger \tilde{b}_g^U w,K_g^R]&=0\\
-		\label{eq:H^1IndexRotationInvariantCommutator4}
-		[K_g^R,v^\dagger \tilde{K}_g^U v\tilde{b}_g^U]&=0
-	\end{align}
+	\begin{align*}
+		[h_g ,w^\dagger \tilde{b}_g^U w]&=0 \Label{eq:H^1IndexRotationInvariantCommutator1}& [w^\dagger \tilde{b}_g^U w,v^\dagger b_g^R v]&=0 \Label{eq:H^1IndexRotationInvariantCommutator4}\\
+		[h_g, v^\dagger b_g^R v]&=0 \Label{eq:H^1IndexRotationInvariantCommutator2}& [K_g^R,\tilde{b}_g^U] &= 0 \Label{eq:H^1IndexRotationInvariantCommutator5}\\
+		[h_g ,K_g^R]&=0 \Label{eq:H^1IndexRotationInvariantCommutator3}& [K_g^R,v^\dagger \tilde{K}^U_g v] &= 0 \Label{eq:H^1IndexRotationInvariantCommutator6}
+	\end{align*}
 \end{lemma}
 \begin{proof}
-	All of the above commute as automorphisms on the $C^*$ algebra, we now have to show that the operators in the GNS space commute as well. First we will start by proving the $h_g$ parts of the proof. For any operator $x\in\UU(\HH_0)$ satisfying that there exists a $\xi\in\Aut{\AA}$ such that
+	All of the above commute as automorphisms on the $C^*$ algebra, we now have to show that the operators in the GNS space commute as well. First we will start by proving equations \eqref{eq:H^1IndexRotationInvariantCommutator1}, \eqref{eq:H^1IndexRotationInvariantCommutator2} and \eqref{eq:H^1IndexRotationInvariantCommutator3}. For any operator $x\in\UU(\HH_0)$ satisfying that there exists a $\xi\in\Aut{\AA}$ such that
 	\begin{equation}
 		\Ad{x}\circ\pi_0\circ\gamma^{\Phi}_{0;1}=\pi_0\circ\gamma^{\Phi}_{0;1}\circ\xi
 	\end{equation}
@@ -2393,7 +2396,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\begin{equation}
 		\Ad{x}(h_g)=\pi_0\circ\gamma^\Phi_{0;1}\circ\xi(U_{(-1,-1)}(g)).
 	\end{equation}
-	This shows that we can effectively ignore $h_g$. To show the last part decompose $\pi_0$ and $\gamma^\Phi_{0;1}$ as
+	This applying this to these equations gives the desired result. To show the last part decompose $\pi_0$ and $\gamma^\Phi_{0;1}$ as
 	\begin{align}
 		\gamma^\Phi_{0;1}&=\Ad{B}\circ\bigotimes_{i=1}^4\gamma^{\Phi_i}_{0;1}\circ\Theta&\pi_0&=\bigotimes_{i=1}^4\pi_{0,i}
 	\end{align}
@@ -2407,9 +2410,9 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\begin{equation}\label{eq:H^1IndexRotationInvariantExpression}
 		h_g v^\dagger b_g^R v w^\dagger\tilde{b}_g^U w K_g^R\tilde{K}_g^U X_g
 	\end{equation}
-	in two different ways. On the one hand we will use \eqref{eq:H^1IndexRotationInvariantCommutator1} to get
+	in two different ways. On the one hand we will use \eqref{eq:H^1IndexRotationInvariantCommutator4} together with equation \eqref{eq:H^1IndexRotationInvariantCommutator1} to get
 	\begin{equation}
-		\eqref{eq:H^1IndexRotationInvariantExpression}= w^\dagger\tilde{b}_g^U w h_g v^\dagger b_g^R v K_g^R\tilde{K}_g^U X_g.
+		\eqref{eq:H^1IndexRotationInvariantExpression}= \underline{w^\dagger\tilde{b}_g^U w h_g v^\dagger b_g^R v} K_g^R\tilde{K}_g^U X_g.
 	\end{equation}
 	Now using equation \eqref{eq:H^1IndexRotationInvariantHorizontalIndex} we get
 	\begin{align}
@@ -2417,19 +2420,19 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 		&=\alpha(g)w^\dagger\tilde{b}_g^U  K_g^R X_g w\\
 		&=\alpha(g)w^\dagger v^\dagger X_g v w
 	\end{align}
-	where we've used equation \eqref{eq:H^1IndexRotationInvariantSecondDefinition} in the first equality and \eqref{eq:H^1IndexRotationInvariantFirstDefinition} in the second equality. On the other hand, starting with equation \eqref{eq:H^1IndexRotationInvariantCommutator2} and \eqref{eq:H^1IndexRotationInvariantCommutator3} gives
+	where we've used equation \eqref{eq:H^1IndexRotationInvariantSecondDefinition} in the first equality and \eqref{eq:H^1IndexRotationInvariantFirstDefinition} in the second equality. On the other hand, starting with equation \eqref{eq:H^1IndexRotationInvariantCommutator2}, \eqref{eq:H^1IndexRotationInvariantCommutator5} and \eqref{eq:H^1IndexRotationInvariantCommutator3} gives
 	\begin{align}
-		\eqref{eq:H^1IndexRotationInvariantExpression}&= v^\dagger b_g^R v h_g w^\dagger\tilde{b}_g^U w K_g^R\tilde{K}_g^U X_g\\
-		&=v^\dagger b_g^R v K_g^R h_g w^\dagger\tilde{b}_g^U w \tilde{K}_g^U X_g.
+		\eqref{eq:H^1IndexRotationInvariantExpression}&= \underline{v^\dagger b_g^R v h_g} w^\dagger\tilde{b}_g^U w K_g^R\tilde{K}_g^U X_g\\
+		&=v^\dagger b_g^R v \underline{K_g^R h_g w^\dagger\tilde{b}_g^U w} \tilde{K}_g^U X_g.
 	\end{align}
 	Now using equation \eqref{eq:H^1IndexRotationInvariantVerticalIndex} we get
 	\begin{align}
 		\eqref{eq:H^1IndexRotationInvariantExpression}&=\tilde{\alpha}(g)v^\dagger b_g^R v K_g^R v^\dagger \tilde{K}_g^U v \tilde{b}_g^U X_g\\
-		&=\tilde{\alpha}(g)v^\dagger b_g^R v v^\dagger \tilde{K}_g^U v \tilde{b}_g^U K_g^R X_g\\
+		&=\tilde{\alpha}(g)v^\dagger b_g^R v \underline{v^\dagger \tilde{K}_g^U v \tilde{b}_g^U K_g^R} X_g\\
 		&=\tilde{\alpha}(g)v^\dagger b_g^R \stkout{v v^\dagger} \tilde{K}_g^U \stkout{v v^\dagger} X_g v\\
 		&=\tilde{\alpha}(g) v^\dagger w^\dagger X_g w v
 	\end{align}
-	where we've used equation \eqref{eq:H^1IndexRotationInvariantCommutator4} in the first equality, equation \eqref{eq:H^1IndexRotationInvariantFirstDefinition} in the second equality and equation \eqref{eq:H^1IndexRotationInvariantSecondDefinition} in the last equality. These two results can only be consistent if $\alpha(g)=\tilde{\alpha}(g)$ for all $g\in G$.
+	where we've used equation \eqref{eq:H^1IndexRotationInvariantCommutator6} and \eqref{eq:H^1IndexRotationInvariantCommutator5} in the first equality, equation \eqref{eq:H^1IndexRotationInvariantFirstDefinition} in the second equality and equation \eqref{eq:H^1IndexRotationInvariantSecondDefinition} in the last equality. These two results can only be consistent if $\alpha(g)=\tilde{\alpha}(g)$ for all $g\in G$.
 \end{proof}
 \subsection{Stacking in the $H^1(G,\TT)$-valued index}\label{sec:StackingTwoTranslations}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U(g)$ an on site group action arbitrary. Let
