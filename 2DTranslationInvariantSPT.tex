@@ -2044,7 +2044,7 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	This follows from the fact that $\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\in \textrm{GVAut}_1(\AA)$ (see lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2).
+	This follows from the fact that because of \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof because of the new definition of $\Hsplit$) $\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\in \textrm{GVAut}_1(\AA)$.
 \end{proof}
 We now need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
@@ -2265,7 +2265,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 		&=\tau^{-1}\circ\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}(X)\\
 		&=X
 	\end{align}
-	concluding the proof. The fact that $\beta_g^{\tau(U)}(B_\sigma)=B_\sigma$ follows from this same equation as well.
+	concluding the proof. The fact that $\Ad{\beta_g^{\tau(U)}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{\tau(U)}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we again have to show that this expression is self ajoint which is a one line calculation.
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
