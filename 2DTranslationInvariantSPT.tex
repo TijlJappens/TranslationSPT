@@ -33,6 +33,7 @@
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\e}{\mathlarger{e}}
 \newcommand{\defeq}{\vcentcolon=}
+\newcommand{\Hsplit}{{H_{\text{split}}}}
 
 \let\originalleft\left
 \let\originalright\right
@@ -2794,33 +2795,33 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	where $C_1$ is the cone one obtains by putting the $B_{n,L}$ on top of each other whereas $C_2$ is the cone one gets by putting the $B_{n,R}$ on top of each other. The proof that the sum over the cones is bounded is done explicitly in \cite{ogata2021h3gmathbb}.
 \end{proof}
 \section{Properties of locally generated automorphisms: 2d}
- In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed in \cite{doi:10.1063/1.5095769}. We will use the notation
- \begin{align}
- 	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
- \end{align}
- where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$.
- \subsection{The one translation symmetry}\label{sec:the-one-translation-symmetry}
- This section will define the classes of automorphisms required in the assumptions and proofs about the $H^2$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut}):
- \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_1(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(W(C_{[0,\theta_3]})/C_{[0,\theta_2]})\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{\tau^\rho(C_{[\theta_3,\pi/2]}\cap\rho)}},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
- 	\begin{equation}
- 		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
- 	\end{equation}
- 	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}_1(\AA)$.
- \end{definition}
+In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed in \cite{doi:10.1063/1.5095769}. We will use the notation
+\begin{align}
+	C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
+\end{align}
+where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$.
+\subsection{The one translation symmetry}\label{sec:the-one-translation-symmetry}
+This section will define the classes of automorphisms required in the assumptions and proofs about the $H^2$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut}):
+\begin{definition}
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_1(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{C_{[0,\theta_1]}\cap\sigma}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(W(C_{[0,\theta_3]})/C_{[0,\theta_2]})\cap\rho\cap\sigma)}},\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{\tau^\rho(C_{[\theta_3,\pi/2]}\cap\rho)}},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma}},\:\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\tau^{\rho}(\AA_{C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma})}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$ and $\tau^D=\tau^{-1}$) such that
+	\begin{equation}
+		\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
+	\end{equation}
+	If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}_1(\AA)$.
+\end{definition}
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{Figures/AlphaFirstDecomposition.png}
 	\includegraphics[width=0.5\textwidth]{Figures/AlphaSecondDecomposition.png}
 	\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ$_1$-automorphism acting on the upper half plane.}
 	\label{fig:SetupSQAut}
 \end{figure}
- As a remark, notice that this definition is not exactly identical to de definition given in \cite{ogata2021h3gmathbb} due to the translation operators.
- \begin{definition}
- 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}_1(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
- 	\begin{equation}
- 		\alpha=\Ad{a}\circ\alpha_L\otimes\alpha_R.
- 	\end{equation}
- \end{definition}
+As a remark, notice that this definition is not exactly identical to de definition given in \cite{ogata2021h3gmathbb} due to the translation operators.
+\begin{definition}
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}_1(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ for each $\sigma\in\{L,R\}$ such that
+	\begin{equation}
+		\alpha=\Ad{a}\circ\alpha_L\otimes\alpha_R.
+	\end{equation}
+\end{definition}
 We will need one additional class of automorphisms:
 \begin{definition}
 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{VAut}_1(\AA)$ if and only if there exists some $a\in\AA$, $\alpha_U\in\Aut{\tau(\AA_{C_\theta^c}\cap\AA_{U})}$ and an $\alpha_D\in\Aut{\tau^{-1}(\AA_{C_\theta^c}\cap\AA_{D})}$ such that
@@ -2909,10 +2910,10 @@ Now we will state some properties of locally generated automorphisms:
 This implies certain things for our locally generated automorphisms.
 From these four statements we can prove the following results:
 \begin{lemma}\label{lem:TwoAngleLemmaPart1}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and $s,t\in\RR$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{W(C_{\theta_1})^c}}$ such that
-		\begin{equation}\label{eq:TwoAngleLemmaPart1Equation1}
-			\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}=\Ad{a_1}\circ\tilde{\Theta}.
-		\end{equation}
+	Take $H$ an interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$ then for all $\Theta\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and $s,t\in\RR$ there exists an $a_1\in\UU(\AA)$ and a $\tilde{\Theta}\in \Aut{\AA_{W(C_{\theta_1})^c}}$ such that
+	\begin{equation}\label{eq:TwoAngleLemmaPart1Equation1}
+		\gamma^{H}_{t;s}\circ\Theta\circ\gamma^{H}_{s;t}=\Ad{a_1}\circ\tilde{\Theta}.
+	\end{equation}
 \end{lemma}
 \begin{proof}
 	We have that
@@ -2927,24 +2928,46 @@ From these four statements we can prove the following results:
 	Since by \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 3 $\gamma^{H_D}_{s;t}\otimes\gamma^{H_U}_{s;t}\in\textrm{GSQAut}_1(\AA)$ the result follows.
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
+	Take $H$ an interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
 	\begin{align}
 		\label{eq:TwoAngleLemmaPart2Equation1}
 		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
 		\label{eq:TwoAngleLemmaPart2Equation2}
-		\gamma^{H_\sigma}_{t;s}\eta_g^\sigma\gamma^{H_\sigma}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma.
+		\gamma^{H_\sigma}_{t;s}\circ\eta_g^\sigma\circ\gamma^{H_\sigma}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma.
 	\end{align}
 \end{lemma}
 \begin{proof}
-	First we show that equation \eqref{eq:TwoAngleLemmaPart2Equation2} implies equation \eqref{eq:TwoAngleLemmaPart2Equation1}. This is because using equation \eqref{eq:TwoAngleLemmaPart2Equation1} we get that
+	In this proof, take $H_{\text{split}}=H_L+H_R$. First we show that equation \eqref{eq:TwoAngleLemmaPart2Equation2} implies equation \eqref{eq:TwoAngleLemmaPart2Equation1}. This is because using equation \eqref{eq:TwoAngleLemmaPart2Equation1} we get that
 	\begin{align}
-		\gamma^H_{t;s}\circ\eta_g\circ\gamma^{H}_{s;t}&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\eta_g\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}\\
-		&=\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\circ\Ad{a_{3,L}\otimes a_{3,R}}\circ\tilde{\eta}_g\circ\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}\circ\gamma^H_{s;t}.
+		\gamma^H_{t;s}\circ\eta_g\circ\gamma^{H}_{s;t}&=\gamma^H_{t;s}\circ\gamma^{H_{\text{split}}}_{s;t}\circ\gamma^{H_{\text{split}}}_{t;s}\circ\eta_g\circ\gamma^{H_{\text{split}}}_{s;t}\circ\gamma^{H_{\text{split}}}_{t;s}\circ\gamma^H_{s;t}\\
+		&=\gamma^H_{t;s}\circ\gamma^{H_{\text{split}}}_{s;t}\circ\Ad{a_{3,L}\otimes a_{3,R}}\circ\tilde{\eta}_g\circ\gamma^{H_{\text{split}}}_{t;s}\circ\gamma^H_{s;t}.
 	\end{align}
-	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_L}_{s;t}\otimes\gamma^{H_R}_{s;t}\in\textrm{GVAut}_1(\AA)$ the implication follows. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{SQAut}_1(\AA)$.
+	If one now uses the fact that $\gamma^H_{t;s}\circ\gamma^{H_{\text{split}}}_{s;t}\in\textrm{GVAut}_1(\AA)$ (see lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} item 2) the implication follows. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{SQAut}_1(\AA_\sigma)$.
+\end{proof}
+Additionally when we add the group action, we get:
+\begin{lemma}\label{lem:TwoAngleLemmaPart3}
+	Take $H$ a $G$-invariant interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{C_{\theta_2}}\cap\AA_{\sigma}}$ such that
+	\begin{align}
+		\label{eq:TwoAngleLemmaPart3Equation1}
+		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\circ\beta_g^U\\
+		\label{eq:TwoAngleLemmaPart3Equation2}
+		\gamma^{H_\sigma}_{t;s}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma\circ\beta_g^{\sigma U}.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	In this proof, take again $H_{\text{split}}=H_L+H_R$. First we show that equation \eqref{eq:TwoAngleLemmaPart3Equation2} implies equation \eqref{eq:TwoAngleLemmaPart3Equation1}. This is because using (the inverse of) equation \eqref{eq:TwoAngleLemmaPart3Equation1} we get that
+	\begin{align}
+		&=\gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\gamma^H_{s;t}\circ\beta_{g^{-1}}^U\circ(\tilde{\eta}_g)^{-1}\\
+		&=(\text{Inner})\circ \gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\gamma^H_{s;t}\circ\gamma^\Hsplit_{t;s}\circ\beta_{g^{-1}}^U\circ(\eta_g)^{-1}\circ\gamma^\Hsplit_{s;t}\circ\underline{\gamma^H_{t;s}\circ\gamma^H_{s;t}}.
+	\end{align}
+	Now using the fact that by lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} item 2, $\gamma^H_{s;t}\circ\gamma^\Hsplit_{t;s}\in\textrm{GVAut}_1(\AA)$ this gives us
+	\begin{align}
+		&=(\text{Inner})\circ\stkout{\gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\beta_{g^{-1}}^U\circ(\eta_g)^{-1}\circ\gamma^H_{s;t}}.
+	\end{align}
+	This concludes the proof that equation \eqref{eq:TwoAngleLemmaPart3Equation2} implies equation \eqref{eq:TwoAngleLemmaPart3Equation1}. Now we only have to prove equation \eqref{eq:TwoAngleLemmaPart3Equation2}. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{GSQAut}_1(\AA_\sigma)$.
 \end{proof}
 \subsection{The two translation symmetries}
- This section will define the classes of automorphisms required in the assumptions and proofs about the $H^1$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut2}):
+This section will define the classes of automorphisms required in the assumptions and proofs about the $H^1$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut2}):
 \begin{definition}\label{def:SQAut2}
 	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_2(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{[0,\theta_1]}\cap\sigma)}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma)}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(W(C_{[0,\theta_3]})/\nu^\sigma(C_{[0,\theta_2]}\cap\sigma))\cap\rho\cap\sigma)}},\\
 	\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{\tau^\rho(C_{[\theta_3,\pi/2]}\cap\rho)}},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma)}},\\
@@ -2985,6 +3008,19 @@ We will let the definition of vertical automorphism stay the same, namely $\text
 \end{lemma}
 \begin{proof}
 	Analogous to the proof of \ref{lem:TwoAngleLemmaPart2}.
+\end{proof}
+Additionally when we add the group action, we get:
+\begin{lemma}\label{lem:TwoAngleLemmaPart3ForTwoTranlations}
+	Take $H$ a $G$-invariant interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{\nu^\sigma(C_{\theta_2}\cap\sigma)}}$ such that
+	\begin{align}
+		\label{eq:TwoAngleLemmaPart3Equation1ForTwoTranlations}
+		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\circ\beta_g^U\\
+		\label{eq:TwoAngleLemmaPart3Equation2ForTwoTranlations}
+		\gamma^{H_\sigma}_{t;s}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma\circ\beta_g^{\sigma U}.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	Analogous to the proof of \ref{lem:TwoAngleLemmaPart3}.
 \end{proof}
 \clearpage
 \bibliography{TSPT}
