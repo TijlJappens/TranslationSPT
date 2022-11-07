@@ -91,7 +91,7 @@ One then defines an equivalence relation on these SPT states by saying that $\om
 \end{enumerate}
 In one spatial dimension so called matrix product states (\cite{Chen_2011},\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}) can be used to construct non trivial SPT states. Later on and more generally it was shown in \cite{ogata2019classification} that any $G$-invariant state satisfying the split property (this includes any SRE state) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a (group) module under addition with trivial group action). Group cohomology is defined in section \ref{sec:GroupCohomology}.} index and that this index is constant on the (stable) equivalence classes. Later on in \cite{kapustin2021classification} it was then shown that this classification problem is complete (the index, seen as map from the set of stable equivalence classes to $H^2(G,\TT)$ is injective.). In two spatial dimensions, more recently in \cite{ogata2021h3gmathbb}, it was proven there is an $H^3(G,\TT)$-valued index that is constant on the (stable) equivalence classes\footnote{In \cite{ogata2021h3gmathbb}, there is no mention of the stacking operation but using remark \ref{rem:StackingH3ValuedIndex} and remark \ref{rem:OnSiteUnitaryTransformationH3ValuedIndex}, one can clearly extend it to the stable equivalence class.}.
 \\\\
-We've used stacking to define the stable equivalence relation. Stacking however plays a more general role. It widely believed that it allows us to define an (abelian) group structure on the set of stable equivalence classes\footnote{The stacking with a trivial state will then be related to the identity of this group}. Although it is nowhere stated explicitly the author thinks that the literature (like for example \cite{kapustin2021classification}) suggests that the following conjecture is true:
+We've used stacking to define the stable equivalence relation. Stacking however plays a more general role. It widely believed that it allows us to define an (abelian) group structure on the set of stable equivalence classes\footnote{The stacking with a trivial state will then be related to the identity of this group}. Although it is nowhere stated explicitly the author thinks that the literature (like for example \cite{kapustin2021classification}) suggests the following conjecture:
 \begin{conjecture}\label{conj:StableEquivGroupStructure}
 	Let $S$ be the set of stable SPT classes for some fixed group and a fixed lattice. Let $*$ be the map
 	\begin{equation}
@@ -99,17 +99,17 @@ We've used stacking to define the stable equivalence relation. Stacking however 
 	\end{equation}
 	Then $*$ is well defined (independent of the choice of representative) and $S$ together with the $*$ operation forms an abelian group.
 \end{conjecture}
-Before proceeding, we have three remarks to make on this conjecture:
+Before proceeding, we make three remarks on this conjecture:
 \begin{enumerate}
-	\item The part that $*$ is well defined and abelian is trivial. Namely by letting $i_V$ be the automorphism that exchanges the two algebras that are being stacked one gets that one can exchange the order of the stacking freely. By using the fact that
+	\item The claim that $*$ is well defined and abelian is trivial. Namely, by letting $i_V$ be the automorphism that exchanges the two algebras that are being stacked, one can exchange the order of the stacking freely. By using
 	\begin{equation}
-		\omega_1\circ\gamma^{\Phi_1}_{0;1}\otimes_\text{stack}\omega_2\circ\gamma^{\Phi_2}_{0;1}=(\omega_1\otimes_{\text{stack}}\omega_2)\circ\gamma^{\Phi_1\otimes\id+\id\otimes\Phi_2}_{0;1}\sim\omega_1\otimes_{\text{stack}}\omega_2
+		\omega_1\circ\gamma^{\Phi_1}_{0;1}\otimes_\text{stack}\omega_2\circ\gamma^{\Phi_2}_{0;1}=(\omega_1\otimes_{\text{stack}}\omega_2)\circ\gamma^{\Phi_1\otimes\id+\id\otimes\Phi_2}_{0;1}\sim\omega_1\otimes_{\text{stack}}\omega_2,
 	\end{equation}
-	one can show that this is a well defined map.
+	one can show that this is a well-defined map.
 	\item A representative of the inverse is sometimes called a $G$-inverse.
-	\item From a category point of view, if one assumes that this conjecture is true (for some subclass of groups that is a category), it is not hard to see that it gives rise to a contravariant functor from this category of groups to the category of abelian groups (say $S[G]$). More specifically, to each group morphism $f:G_1\rightarrow G_2$, one can find a group morphism $\tilde{f}:S[G_2]\rightarrow S[G_1]:\expval{\omega,U}_\sim\mapsto \expval{\omega,U\circ f}_\sim$ and this $\tilde{f}$ will indeed be invariant on the choice of representative (if two states can be connected while preserving the symmetry action $\beta$, they can certainly be connected while preserving the symmetry $\beta\circ f$).
+	\item From a category point of view, if one assumes that this conjecture is true (for some subclass of groups that is a category), it is not hard to see that it gives rise to a contravariant functor from this category of groups to the category of abelian groups (say $S[G]$). More specifically, to each group morphism $f:G_1\rightarrow G_2$, one can find a group morphism $\tilde{f}:S[G_2]\rightarrow S[G_1]:\expval{\omega,U}_\sim\mapsto \expval{\omega,U\circ f}_\sim$ and this $\tilde{f}$ is indeed invariant on the choice of representative (if two states can be connected while preserving the symmetry action $\beta$, they can certainly be connected while preserving the symmetry $\beta\circ f$).
 \end{enumerate}
-In what follows we will call $S$ with the above group structure the stable SPT classification. In this paper we consider the 2D case with the (stable) equivalence relation as presented here but with one notable difference. We will only consider states, interactions and on site symmetries that have a translation symmetry in one direction. There is a conjecture about the SPT classification of such states. See \cite{xiong2019classification} section 3.1.5.1 for a general presentation (which was partially based on \cite{Chen_2013}). It goes as follows:
+In what follows we will call $S$ with the above group structure the stable SPT classification. In this paper we consider the 2D case with the (stable) equivalence relation as presented here but with one notable difference. We will only consider states, interactions and on site symmetries that have a translation symmetry in one direction. There is a conjecture about the SPT classification of such states, see section 3.1.5.1 of \cite{xiong2019classification} for a more general and detailed exposition (which was partially based on \cite{Chen_2013}).
 \begin{conjecture}\label{conj}
 	The set of translation invariant SPTs under stable equivalence\footnote{In the stable equivalence relation for translation invariant states we ask that the on site symmetry is translation invariant and that any path connecting two states and each trivial state is not only G-invariant but also translation invariant.} also satisfies conjecture \ref{conj:StableEquivGroupStructure}. Let $g$ be the inclusion map from the space of 2d translation invariant SPT states to the more general set of 2d SPT states. Let $f$ be the map that takes a 1d SPT state and outputs a translation invariant 2d SPT state by taking the tensor product in the direction of the translation symmetry. The sequence
 	\begin{equation}
@@ -121,11 +121,11 @@ Clearly this implies that
 \begin{equation}
 	\{\text{2d translation invariant SPT classification}\}\simeq \{\text{1d SPT classification}\}\oplus \{\text{2d SPT classification}\}.
 \end{equation}
-Since a 1d SPT state carries an $H^2(G,\TT)$ valued index and a 2d SPT state carries an $H^3(G,\TT)$ valued index, this means that 2d SPT states with a translation symmetry should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index. This is consistent with the result of \cite{Chen_2013} section XII.
+Since a 1d SPT state carries an $H^2(G,\TT)$ valued index and a 2d SPT state carries an $H^3(G,\TT)$ valued index, this means that 2d SPT states with a translation symmetry should carry an $H^2(G,\TT)\oplus H^3(G,\TT)$ valued index. This is consistent with the result of section XII of \cite{Chen_2013}.
 \\\\
-The first result of this paper is that we define an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant SPT states that is consistent with the conjecture. By being consistent with the conjecture it is meant (among other things) that if $\textrm{Index}_1$ is the one dimensional SPT index from \cite{ogata2019classification} that then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d SPT $\omega$. This construction highly relies on the same objects that are present in the construction of the 2d SPT index from \cite{ogata2021h3gmathbb}.
+The first result of this paper is the construction of an $H^2(G,\TT)$ valued index (which we will denote by $\textrm{Index}$) on the space of translation invariant SPT states that is consistent with conjectures \ref{conj:StableEquivGroupStructure} and \ref{conj}. By being consistent with the conjecture it is meant (among other things) that, if $\textrm{Index}_1$ is the one dimensional SPT index from \cite{ogata2019classification}, then $\textrm{Index}(f(\omega))=\textrm{Index}_1(\omega)$ for any 1d SPT $\omega$. This construction highly relies on the objects that are present in the construction of the 2d SPT index in \cite{ogata2021h3gmathbb}.
 \\\\
-We will also look at the case where there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For this there is also a conjecture (see again \cite{xiong2019classification} and \cite{Chen_2013}):
+We also look at the case where there is a second translation symmetry (so the system is translation invariant in both $x$ and $y$ directions). For such systems there is the following conjecture conjecture (see again \cite{xiong2019classification} and \cite{Chen_2013}):
 \begin{conjecture}\label{conj2}
 	The space of SPTs, translation invariant in two directions under stable equivalence also satisfies conjecture \ref{conj:StableEquivGroupStructure}. Let $g$ be the inclusion map from the space of 2d SPT states that are translation invariant in both $x$ and $y$ directions to the more general set of 2d SPT states with translation invariance in the $x$ direction only. Let $f$ be the map that takes a 1d translation invariant SPT state and outputs a 2d SPT state that is translation invariant in both $x$ and $y$ directions by taking the tensor product in the $y$ direction. The sequence
 	\begin{equation}
@@ -133,30 +133,29 @@ We will also look at the case where there is a second translation symmetry (so t
 	\end{equation}
 	induces a sequence (of group morphisms) on the stable equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover this induced sequence is exact and split.
 \end{conjecture}
-Translation invariant SPT states in one spatial dimension are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and both conjectures, we expect there to be an
+Translation invariant SPT states in one spatial dimension are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and the last two conjectures, we expect there is an
 \begin{equation}\label{eq:2TranslationsIntroduction}
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
-valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of one translation symmetry as follows. Let $\mu$ be the automorphism that rotates the lattice by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.
+valued index. The first part of the index is just $\textrm{Index}_{2d}$. The following two parts can be related to the case of a single translation symmetry as follows. Let $\mu$ be the automorphism that rotates the lattice by 90° and let $\textrm{Index}(\omega)$ be the index as constructed before (this is the second part of \ref{eq:2TranslationsIntroduction}). The third part of the index is now given by $\textrm{Index}(\omega\circ\mu)$ (the state rotated by 90°). The last part of the index requires a different construction altogether and can be thought of as being the charge in the Brillouin zone.
 \\\\
-The layout of this paper will be as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for states that are short range entangled (this condition is strictly weaker then the one we talked about before). In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we will prove the statements. Section \ref{sec:ProofFirstStatement} will then provide a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} will provide a proof of the second statement. The results in this paper rely heavily on the methods that where developed in \cite{ogata2021h3gmathbb}.
-\\\\
-Before we start a final remark:
+A final remark:
 \begin{remark}
-As noticed in \cite{Chen_2013}. The groups in which these indices take values can be concisely written out. Using that
+	As noticed in \cite{Chen_2013}. The groups in which these indices take values can be concisely written out. Using that
 	\begin{align}
-		H^0(\ZZ,\TT)&\cong \TT& H^1(\ZZ,\TT)&\cong \TT& H^2(\ZZ,\TT)&\cong 0&H^3(\ZZ,\TT)&\cong 0
+	H^0(\ZZ,\TT)&\cong \TT& H^1(\ZZ,\TT)&\cong \TT& H^2(\ZZ,\TT)&\cong 0&H^3(\ZZ,\TT)&\cong 0
 	\end{align}
 	and inserting this into the K\"unneth formula for $\ZZ\times G$ gives
 	\begin{align}
-		H^2(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^2 H^i(\ZZ,\TT)\otimes H^{2-i}(G,\TT)\cong H^2(G,\TT)\oplus H^1(G,\TT)\\
-		H^3(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT).
+	H^2(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^2 H^i(\ZZ,\TT)\otimes H^{2-i}(G,\TT)\cong H^2(G,\TT)\oplus H^1(G,\TT)\\
+	H^3(\ZZ \times G,\TT)&\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT).
 	\end{align}
 	This result can in turn be used to work out the K\"unneth formula for $\ZZ^2\times G$
 	\begin{equation}
-		H^3(\ZZ^2\times G,\TT)\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(\ZZ\times G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT).
+	H^3(\ZZ^2\times G,\TT)\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(\ZZ\times G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT).
 	\end{equation}
 \end{remark}
+The layout of this paper is as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for SRE states. In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we then prove the statements. Section \ref{sec:ProofFirstStatement} provides a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} provides a proof of the second statement. The results in this paper rely heavily on the methods that where developed in \cite{ogata2021h3gmathbb}.
 \subsection*{Acknowledgements}
 T.J. was supported in part by the FWO under grant G098919N.\\\\
 We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process. For example, we are very grateful for the proposed changes of lemma \ref{lem:SplittingOfUnitary} and the mistake in subsection \ref{sec:OneTranslationDirectionExample} (the previous assumption was too weak).
