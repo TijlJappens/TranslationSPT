@@ -1247,7 +1247,7 @@ Inserting this in equation \eqref{eq:ProofThatphi1IsIndependentOfChoiceOfReprese
 	\begin{align}
 		x_i&=\pi_0\circ\alpha_0\circ\Theta(A_i)y_i&\Ad{y_i}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_i.
 	\end{align}
-	On the one hand we have
+	We have
 	\begin{align}
 		x_1x_2&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_2\\
 		&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_1^{\dagger}y_1y_2\\
@@ -1302,7 +1302,11 @@ We now have to extend the above definition to the group
 	This is still a morphism.
 \end{lemma}
 \begin{proof}
-	This just follows from the morphism proof of the previous lemma (in fact it is even more obvious in this case).
+	First notice that using the previous lemma (equation \eqref{eq:ConditionDefinitionOfGroupMorphism} in particular) one can show that indeed
+	\begin{equation}
+		\Ad{\phi_{1,L}(a)\phi_{1,R}(b)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}=\Ad{\phi_{1,R}(b)\phi_{1,L}(a)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}.
+	\end{equation}
+	This already shows that they commute up to a phase. The proof that this phase is 1, is analogous to the morphism part of the proof of the above lemma. The last part, that this new map is a morphism as wel now follows from the above lemma.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. Let
@@ -2098,7 +2102,7 @@ We now have to extend the above definition to the group
 	Identical to the proof of lemma \ref{lem:extensionOfPhi1Definition}.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMapTwoTranslations}
-	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations}. Let
+	Define again $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$, with $a$ defined through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations}. Let
 	\begin{align}
 		\phi_2:&\{\Ad{w^{-p}v^{-s}}(W_g)|g\in G,p,s\in\{-1,0,1\}\}\rightarrow \UU(\HH):\\
 		\nonumber
@@ -2165,12 +2169,18 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 		\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)
 	\end{equation}
 	and then we will prove that $A\in\UU(\AA_{W(C_\theta)^c})$. It should be clear that the result follows from this\footnote{This is most easily seen from\begin{equation}
-			\Ad{\phi_1(K)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=\phi_1(\Ad{K}(\pi_0\circ\alpha_0\circ\Theta(A)))=\phi_1(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A).
-	\end{equation}}. Finding this $A$ can be done using
+			\Ad{\phi_1(K)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A)=\phi_1(\Ad{K}\circ\pi_0\circ\alpha_0\circ\Theta(A))=\phi_1(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A).
+	\end{equation}}. Finding this $A$ can be done by working out
+	\begin{equation}
+		w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)=\pi_0\circ\alpha_0\circ\Theta\left(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger\right).
+	\end{equation}
+	First we insert $\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}=\text{Id}$ to obtain
+	\begin{equation}
+		=\pi_0\circ\alpha_0\circ\Theta\circ\underline{\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}}\left(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger\right).
+	\end{equation}
+	Using the fact that $H$ is translation invariant allows us to cancel it giving
 	\begin{align}
-		&w\phi_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)\\
-		&=\pi_0\circ\alpha_0\circ\Theta(\nu\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\underline{\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\gamma^H_{1;0}}}(\nu\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(\gamma^{H_\text{split}}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger))\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger)).
 	\end{align}
 	This shows that we can take
@@ -2181,9 +2191,9 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 	\begin{align}
 		\Ad{A}(X)&=\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\Ad{A_L\otimes A_R}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\nu^{-1}}\circ\stkout{\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}}\\
 		&\nonumber
-		\qquad\circ\gamma^H_{1;0}\circ\stkout{\nu}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(X).
+		\qquad\circ\gamma^H_{1;0}\circ\stkout{\nu}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(X)
 	\end{align}
-	Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we obtain
+	where the cancellation is done using the fact that $H$ is translation invariant. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we obtain
 	\begin{equation}
 		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(X).
 	\end{equation}
@@ -2316,7 +2326,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)^\dagger\pi_0(A_1)^\dagger\\
 		\tilde{h}_g&=\pi_0(A_1)\phi_1(h_g)\pi_0(A_1).
 	\end{align}
-	First we will show that this transformation indeed leaves the index invariant, then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. Let $\alpha\in\hom(G,U(1))$ be the old index and $\tilde{\alpha}\in\hom(G,U(1))$ the new one. We have that
+	First we will show that this transformation indeed leaves the index invariant, then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. Let $\alpha\in\hom(G,U(1))$ be the old index and $\tilde{\alpha}\in\hom(G,U(1))$ the new one (of course I can only speak about the new index if these new operators are operators belonging to $\omega\circ\gamma^H_{0;1}$. Let us assume this for now and prove it later.). We have that
 \begin{align}
 \alpha(g)&=v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w\\
 &=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w)\\
