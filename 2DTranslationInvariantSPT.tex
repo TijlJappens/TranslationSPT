@@ -944,9 +944,8 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 \begin{definition}\label{def:SummableOperator}
 	We say that $b\in\UU(\BB)$ is summable if there exists a sequence $b_i\in \UU(\BB_{[-i,i]})$ such that
 	\begin{equation}
-		\sum_{i=n_0}^{\infty}\norm{b-b_i}<\infty
+		\sum_{i=0}^{\infty}\norm{b-b_i}<\infty.
 	\end{equation}
-	for all $n_0\in\NN$.
 \end{definition}
 \begin{assumption}\label{assumption1d}
 	Take $\phi\in\PP(\BB)$ such that
@@ -996,33 +995,33 @@ We have that:
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
-	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that disentangles $\omega$. We define $\alpha$ recursively such that for any $A_{1}\in\AA_{L_j}$ and $A_{2}\in\AA_{\ZZ^2/L_j}$ (for some $j$) we have that
+	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ recursively such that for any $A_{1}\in\AA_{L_j}$ and $A_{2}\in\AA_{\ZZ^2/L_j}$ (for some $j$) we have that
 	\begin{equation}
-		\alpha(A_1\otimes A_2)=\Ad{b}\circ\tilde{\alpha}_L\otimes\tilde{\alpha}_R(A_1)\alpha(A_2).
+		\alpha(A_1\otimes A_2)=\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}(A_1)\alpha(A_2).
 	\end{equation}
-	This Automorphism indeed disentangles since
+	This Automorphism indeed satisfies that
 	\begin{equation}
-		\omega_0\defeq \omega\circ\alpha
+		\omega_0\defeq \omega\circ\alpha^{-1}
 	\end{equation}
 	satisfies that for any $A\in\AA_{L_{i}}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
 	\begin{equation}
 		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B)
 	\end{equation}
-	so that it is clearly a product state. We will now show that $\alpha\in\QAut{\AA}$. To do this, let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\BB_{[-n(j),n(j)]})$ where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Take $0<\theta<\pi/2$ and define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
+	so that it is clearly a product state. We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\BB_{[-n(j),n(j)]})$ where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
 	\begin{equation}
-		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_j}_{(\cdot,j)}.
+		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_\abs{j}^\dagger}_{(\cdot,j)}.
 	\end{equation}
 	Let $\alpha_\sigma\in\Aut{\AA_\sigma}$ be
 	\begin{equation}
-		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma)_{(\cdot,j)}.
+		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma^{-1})_{(\cdot,j)}.
 	\end{equation}
 	Now define
 	\begin{equation}
-		V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}(bb_j^\dagger)_{(\cdot,j)}.
+		\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}(b^\dagger b_\abs{j})_{(\cdot,j)}.
 	\end{equation}
 	We will now show that the limit
 	\begin{equation}
-		V_1\defeq\lim_{m\rightarrow\infty}V_{1,m}
+		\tilde V_1\defeq\lim_{m\rightarrow\infty}\tilde V_{1,m}
 	\end{equation}
 	exists (is an element of $\AA$). By construction we have that for any $\epsilon$ there exists an $n_0>0$ such that
 	\begin{equation}
@@ -1030,8 +1029,8 @@ We have that:
 	\end{equation}
 	for all $n>n_0$. We will now show that our sequence is a Cauchy sequence. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
 	\begin{align}
-		\norm{V_{1,n}-V_{1,m}}&\leq \norm{V_{1,n}-V_{1,n_0}}+\norm{V_{1,m}-V_{1,n_0}}\\
-		&=\norm{V_{1,n}V_{1,n_0}^\dagger-\id}+\norm{V_{1,m}V_{1,n_0}^\dagger-\id}.
+		\norm{\tilde{V}_{1,n}-\tilde{V}_{1,m}}&\leq \norm{\tilde{V}_{1,n}-\tilde{V}_{1,n_0}}+\norm{\tilde{V}_{1,m}-\tilde{V}_{1,n_0}}\\
+		&=\norm{\tilde{V}_{1,n}\tilde{V}_{1,n_0}^\dagger-\id}+\norm{\tilde{V}_{1,m}\tilde{V}_{1,n_0}^\dagger-\id}.
 	\end{align}
 	We will find a bound on the first therm as the bound of the second therm is analogous. First notice that we have for any tensor product that
 	\begin{equation}
@@ -1039,10 +1038,17 @@ We have that:
 	\end{equation}
 	By using this property recursively we get
 	\begin{align}
-	&\norm{\bigotimes_{i=-n}^{-n_0}(bb_i^\dagger)_i\bigotimes_{i=n_0}^{n}(bb_i^\dagger)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
-	&\leq 2\sum_{i=n_0}^{n}\norm{bb_i^\dagger-\id_{\HH_{L_i}}}<2\epsilon.
+	&\norm{\bigotimes_{i=-n}^{-n_0}(b^\dagger b_\abs{i})_i\bigotimes_{i=n_0}^{n}(b^\dagger b_i)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
+	&\leq 2\sum_{i=n_0}^{n}\norm{b^\dagger b_i-\id_{\HH_{L_i}}}<2\epsilon.
 	\end{align}
-	This proves that the sequence is a Cauchy sequence and hence the convergence follows.
+	This proves that the sequence is a Cauchy sequence and hence the convergence follows. To conclude the proof, we merely have to define $V_1\defeq \alpha_0(\tilde{V}_1)$. We then get
+	\begin{align}
+		\Ad{V_1}\circ \alpha_0\circ \Theta&= \alpha_0\circ\Ad{\tilde V_1}\circ \Theta\\
+		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger b_\abs{j}}\circ \Ad{b_\abs{j}^\dagger}_{(\cdot,j)}\\
+		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger}_{(\cdot,j)}\\
+		&=\alpha
+	\end{align}
+	concluding the proof.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
