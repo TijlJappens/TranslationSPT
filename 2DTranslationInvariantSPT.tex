@@ -2078,16 +2078,24 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingCondition}.
 \end{proof}
 \begin{lemma}
-	There exist $A_L\in\UU(\AA_{L}),A_R\in\UU(\AA_{\nu(R)})$ and $\Phi^{\mu\nu}\in\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}$ where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$ satisfying that
+	There exist maps
 	\begin{align}
-		\nu\circ\gamma^{H_{\text{split}}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{1;0}&=\gamma^{H_L}_{0;1}\otimes\gamma^{H_{\nu\circ\nu(R)}}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\\
+		A_L&:[0,1]\rightarrow \UU(\AA_L):\lambda\mapsto A_{L}(\lambda)&A_R&:[0,1]\rightarrow \UU(\AA_R):\lambda\mapsto A_{R}(\lambda)
+	\end{align}
+	both continuous in norm topology and
+	\begin{align}
+		\Phi^{\mu\nu}:[0,1]\rightarrow\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}:\lambda\mapsto \Phi^{\mu\nu}(\lambda)
+	\end{align}
+	where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$, all four continuous in weak$^*$ topology, satisfying that
+	\begin{align}
+		\nu\circ\gamma^{H_{\text{split}}}_{0;\lambda}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{\lambda;0}&=\gamma^{H_L}_{0;\lambda}\otimes\gamma^{H_{\nu\circ\nu(R)}}_{0;\lambda}\circ\gamma^{H_{\text{split}}}_{\lambda;0}\\
 		\label{eq:TranslatingSplittedTimeEvolution}
-		&=\Ad{A_L}\otimes\Ad{A_R}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{L,\nu(R)\}}}\Phi^{\mu\nu}
+		&=\Ad{A_L(\lambda)}\otimes\Ad{A_R(\lambda)}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{L,\nu(R)\}}}\Phi^{\mu\nu}(\lambda)
 	\end{align}
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
 \end{lemma}
 \begin{proof}
-	This follows from \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2.
+	This lemma is proven in \ref{lem:SplittedAutomorphismAfterTranslatedIsVertical}.
 \end{proof}
 \begin{lemma}
 	Define
@@ -2744,15 +2752,27 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	\begin{equation}
 		\gamma^{\Phi_L+\Phi_R}_{0;t}\circ\gamma^{\Phi}_{t;0}=\gamma^{\Xi}_{0;t}.
 	\end{equation}
-	Define some sets
+	We will now define
+	\begin{equation}
+		A_\lambda\defeq \mathcal{T}\exp(-i\int_0^\lambda \d s\: \sum_{Z\in\mathfrak{B}_{\ZZ}}\Xi(Z,s)).
+	\end{equation}
+	By construction if this exists it is continuous in $\lambda$. To show that it exists and is summable, define some sets
 	\begin{align}
-		B_n&\defeq [-n,n]\cap\ZZ&B_{n,L}&\defeq ]-\infty,-n]\cap\ZZ&B_{n,R}&\defeq[n,\infty[\cap\ZZ.
+		B_n&\defeq [-n,n]\cap\ZZ&B_{n,L}&\defeq ]-\infty,-n]\cap\ZZ&B_{n,R}&\defeq[n,\infty[\cap\ZZ
 	\end{align}
+	and let
+	\begin{equation}
+		A_n\defeq \mathcal{T}\exp(-i\int_0^1 \d s\: \sum_{Z\in\mathfrak{B}_{\ZZ}}\Xi_{B_n}(Z,s)).
+	\end{equation}
 	In what follows we will find a bound on
 	\begin{equation}
 		c_n\defeq \sup_{t\in[0,1]}\norm{\sum_{Z\in\mathfrak{B}_\ZZ}(\Xi(Z,t)-\Xi_{B_n}(Z,t))}
 	\end{equation}
-	that is summable. Finding this would conclude the proof. In analogy with equation (5.22) of \cite{ogata2021h3gmathbb} we get
+	that is summable. Finding this would conclude the proof because
+	\begin{equation}
+		\sum_n\norm{A-A_n}=\sum_n\norm{\int_0^1\d s\: \frac{\d}{\d s}A_{n}(s)^\dagger A(s)}\leq \sum_n \sup_{t\in[0,1]}\norm{\sum_{Z\in\mathfrak{B}_\ZZ}(\Xi(Z,t)-\Xi_{B_n}(Z,t))}=\sum_n c_n.
+	\end{equation}
+	In analogy with equation (5.22) of \cite{ogata2021h3gmathbb} we get
 	\begin{align}
 		\label{eq:c_n_Bound1D}
 		c_n&\leq \sum_{\substack{Z\in\mathfrak{B}_{\ZZ}:\\Z\cap B_{n,L}\neq\emptyset\\\text{or}\\Z\cap B_{n,R}\neq\emptyset}}\sup_{t\in[0,1]}\norm{\Xi(Z,t)}\\
@@ -2766,7 +2786,7 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	\begin{equation}
 		\sum_{n=0}^\infty\sum_{x\in B_{n,L}}\sum_{y=B_{0,R}}F(d(x,y))\leq \sum_{x\in C_1}\sum_{y=C_2}F(d(x,y)).
 	\end{equation}
-	where $C_1$ is the cone one obtains by putting the $B_{n,L}$ on top of each other whereas $C_2$ is the right half plane of $\ZZ^2$. The proof that the sum over the cones is bounded is done explicitly in \cite{ogata2021h3gmathbb}. To show that operator obtained is continuous in $\lambda$ one only has to observe that $\Xi_{B_n}$ is bounded for each $n$ and that the limit of an absolutely converging series of continuous objects is continuous.
+	where $C_1$ is the cone one obtains by putting the $B_{n,L}$ on top of each other whereas $C_2$ is the right half plane of $\ZZ^2$. The proof that the sum over the cones is bounded is done explicitly in \cite{ogata2021h3gmathbb}.
 \end{proof}
 \section{Properties of locally generated automorphisms: 2d}
 In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yosiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed in \cite{doi:10.1063/1.5095769}. We will use the notation
@@ -2972,12 +2992,12 @@ We will let the definition of vertical automorphism stay the same, namely $\text
 	Completely equivalent to the proof of \ref{lem:PropertiesLocallyGeneratedAutomorphisms}.
 \end{proof}
 \begin{lemma}\label{lem:TwoAngleLemmaPart2ForTwoTranlations}
-	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_1}\cap\sigma)}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{\nu^\sigma(C_{\theta_2}\cap\sigma)}}$ such that
+	Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_1}\cap\sigma)}}$ (where $\sigma\in\{L,R\}$ and $g\in G$), there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{\nu^\sigma(C_{\theta_2}\cap\sigma)}}$ such that
 	\begin{align}
 		\label{eq:TwoAngleLemmaPart2Equation1ForTwoTranlations}
-		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
+		\gamma^{H}_{1;0}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\gamma^{H}_{0;1}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\\
 		\label{eq:TwoAngleLemmaPart2Equation2ForTwoTranlations}
-		\gamma^{H_{\nu^{\sigma}(\sigma)}}_{t;s}\eta_g^\sigma\gamma^{H_{\nu^\sigma(\sigma)}}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma.
+		\gamma^{H_{\nu^{\sigma}(\sigma)}}_{1;0}\eta_g^\sigma\gamma^{H_{\nu^\sigma(\sigma)}}_{0;1}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma.
 	\end{align}
 \end{lemma}
 \begin{proof}
@@ -2985,16 +3005,36 @@ We will let the definition of vertical automorphism stay the same, namely $\text
 \end{proof}
 Additionally when we add the group action, we get:
 \begin{lemma}\label{lem:TwoAngleLemmaPart3ForTwoTranlations}
-	Take $H$ a $G$-invariant interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$) and $s,t\in\RR$ there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{\nu^\sigma(C_{\theta_2}\cap\sigma)}}$ such that
+	Take $H$ a $G$-invariant interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. Take $\theta_1$ and $\theta_2$ such that $0<\theta_1<\theta_2<\pi/2$. Then for all $\eta_{g}^{\sigma}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{\sigma}}$ (where $\sigma\in\{L,R\}$ and $g\in G$), there exist $a_{2},\in\UU(\AA),a_{3,\sigma}\in\UU(\AA_\sigma)$ and some $\tilde{\eta}_{\sigma}^g\in \Aut{\AA_{\nu^\sigma(C_{\theta_2}\cap\sigma)}}$ such that
 	\begin{align}
 		\label{eq:TwoAngleLemmaPart3Equation1ForTwoTranlations}
-		\gamma^{H}_{t;s}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U\circ\gamma^{H}_{s;t}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\circ\beta_g^U\\
+		\gamma^{H}_{1;0}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U\circ\gamma^{H}_{0;1}&=\Ad{a_2}\circ(\tilde\eta_{g}^L \otimes\tilde\eta_{g}^R)\circ\beta_g^U\\
 		\label{eq:TwoAngleLemmaPart3Equation2ForTwoTranlations}
-		\gamma^{H_\sigma}_{t;s}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{s;t}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma\circ\beta_g^{\sigma U}.
+		\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}&=\Ad{a_{3,\sigma}}\circ \tilde\eta_{g}^\sigma\circ\beta_g^{\sigma U}.
 	\end{align}
 \end{lemma}
 \begin{proof}
 	Analogous to the proof of \ref{lem:TwoAngleLemmaPart3}.
+\end{proof}
+\begin{lemma}\label{lem:SplittedAutomorphismAfterTranslatedIsVertical}
+	There exist maps
+	\begin{align}
+		A_L&:[0,1]\rightarrow \UU(\AA_L):\lambda\mapsto A_{L}(\lambda)&A_R&:[0,1]\rightarrow \UU(\AA_R):\lambda\mapsto A_{R}(\lambda)
+	\end{align}
+	both continuous in norm topology and
+	\begin{align}
+		\Phi^{\mu\nu}:[0,1]\rightarrow\Aut{\AA_{W(C_\theta)^c\cap\mu\cap\nu}}:\lambda\mapsto \Phi^{\mu\nu}(\lambda)
+	\end{align}
+	where $\mu\in\{U,D\}$ and $\nu\in\{L,\nu(R)\}$, all four continuous in weak$^*$ topology, satisfying that
+	\begin{align}
+		\nu\circ\gamma^{H_{\text{split}}}_{0;\lambda}\circ\nu^{-1}\circ\gamma^{H_{\text{split}}}_{\lambda;0}&=\gamma^{H_L}_{0;\lambda}\otimes\gamma^{H_{\nu\circ\nu(R)}}_{0;\lambda}\circ\gamma^{H_{\text{split}}}_{\lambda;0}\\
+		\label{eq:TranslatingSplittedTimeEvolutionAppendix}
+		&=\Ad{A_L(\lambda)}\otimes\Ad{A_R(\lambda)}\circ\bigotimes_{\substack{\mu\in\{U,D\},\\\nu\in\{L,\nu(R)\}}}\Phi^{\mu\nu}(\lambda)
+	\end{align}
+	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
+\end{lemma}
+\begin{proof}
+	This follows from \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. {\color{red}To be continued...}
 \end{proof}
 \clearpage
 \bibliography{TSPT}
