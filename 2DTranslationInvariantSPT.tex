@@ -3016,6 +3016,7 @@ Additionally when we add the group action, we get:
 \begin{proof}
 	Analogous to the proof of \ref{lem:TwoAngleLemmaPart3}.
 \end{proof}
+In what follows, let $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. We will need the following lemma:
 \begin{lemma}\label{lem:SplittedAutomorphismAfterTranslatedIsVertical}
 	There exist maps
 	\begin{align}
@@ -3034,7 +3035,23 @@ Additionally when we add the group action, we get:
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
 \end{lemma}
 \begin{proof}
-	This follows from \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2. {\color{red}To be continued...}
+	The proof of this is very similar to all the other proofs in this section. We will go over the highlights. We want to define an $A_L(\lambda)$ and a $\Phi^{U,L}\otimes\Phi^{D,L}$ satisfying
+	\begin{equation}
+		\Ad{A_L(\lambda)}\circ\Phi^{U,L}\otimes\Phi^{D,L}(\lambda)=\gamma^{H_L}_{0;\lambda}\circ\gamma^{H_{\nu^{-1}(L)}}_{\lambda;0}
+	\end{equation}
+	and similarly for the right side. We will only work out this side as the other calculation is analogous. We do this in two steps. First we find an interaction $\Xi$ satisfying
+	\begin{equation}
+		\gamma^\Xi_{0;\lambda}=\gamma^{H_L}_{0;\lambda}\circ\gamma^{H_{\nu^{-1}(L)}}_{\lambda;0}.
+	\end{equation}
+	We can do this by taking the usual
+	\begin{equation}
+		\Xi(Z,t)\defeq \sum_{m=0}^{\infty}\sum_{\substack{X\subset Z\\X(m)=Z}}\Delta_{X(m)}(\gamma^{H_{\nu^{-1}(L)}}_{0;t}(\tilde{H}(X,t)))
+	\end{equation}
+	where $\tilde{H}\defeq H_L-H_{\nu^{-1}(L)}$. We can now define
+	\begin{equation}
+		\Phi^{\mu L}(\lambda)\defeq\gamma^{\Xi_{W(C_\theta)^c\cap\mu\cap L}}_{0;\lambda}.
+	\end{equation}
+	{\color{red}To be continued...}
 \end{proof}
 \clearpage
 \bibliography{TSPT}
