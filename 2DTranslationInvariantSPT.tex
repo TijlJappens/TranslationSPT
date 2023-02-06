@@ -2077,7 +2077,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 \begin{proof}
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingCondition}.
 \end{proof}
-\begin{lemma}
+\begin{lemma}\label{lem:TranslatingSplittedTimeEvolution}
 	There exist maps
 	\begin{align}
 		A_L&:[0,1]\rightarrow \UU(\AA_L):\lambda\mapsto A_{L}(\lambda)&A_R&:[0,1]\rightarrow \UU(\AA_R):\lambda\mapsto A_{R}(\lambda)
@@ -2097,6 +2097,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 \begin{proof}
 	This lemma is proven in \ref{lem:SplittedAutomorphismAfterTranslatedIsVertical}.
 \end{proof}
+In what follows, let $A_L\defeq A_L(1)$ and $A_R\defeq A_R(1)$. Furthermore, define $a_L\defeq \pi_0\circ\alpha_0\circ\Theta(A_L)$ and $a_R\defeq \pi_0\circ\alpha_0\circ\Theta(A_R)$. We will now show some properties for these operators. The first one is that they can be used to exchange $w$ and $\phi_1/\phi_2$:
 \begin{lemma}
 	Define
 	\begin{align}
@@ -2158,6 +2159,30 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 	\end{equation}
 	concluding the proof.
 \end{proof}
+The second property is that the following lemma holds:
+\begin{lemma}\label{lem:EqualityTwoTranslationsUsingConnectedPath}
+	For all $\sigma\in\{L,R\}$, the following equality holds:
+	\begin{equation}
+		\Ad{W_g}(a_\sigma^\dagger v a_\sigma v^\dagger)=a_\sigma^\dagger v a_\sigma v^\dagger.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	We will prove this equality in two steps. First we will find some $B_\sigma\in\UU(\AA)$ such that
+	\begin{equation}
+		\pi_0\circ\alpha_0\circ\Theta(B_\sigma)=a_\sigma^\dagger v a_\sigma v^\dagger 
+	\end{equation}
+	then we will show that $B_\sigma\in\AA_{(W(C_\theta)\cap\sigma)^c}$ (his already proves invariance under $\eta_g$) and that $\beta_g^{U}(B_\sigma)=B_\sigma$ (concluding the proof of being invariant under $\eta_g\circ\beta_g^U$). To find $B_\sigma$, we write out                                                                                                                                                                                                              
+	\begin{equation}
+		a_\sigma^\dagger v a_\sigma v^\dagger=\pi_0\circ\alpha_0\circ\Theta(A_\sigma^\dagger\tau(A_\sigma))
+	\end{equation}
+	and observe that we can take $B_\sigma \defeq A_\sigma^\dagger\tau(A_\sigma)$. Now we will prove that $B_\sigma\in\UU(\AA_{W(C_\theta)^c\cap\sigma})=\UU(\AA_{(W(C_\theta)^c\cap\sigma)^c}')$. Take $X\in\AA_{(W(C_\theta)^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
+	\begin{align}
+		\Ad{B_\sigma}(X)&=\tau^{-1}\circ\Ad{A_\sigma^\dagger}\circ\tau\circ\Ad{A_\sigma}(X)\\
+		&=\tau^{-1}\circ\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}(X)\\
+		&=X
+	\end{align}
+	concluding the proof. The fact that $\Ad{\beta_g^{\tau(U)}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{\tau(U)}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we have to use two things. First of all $\alpha$ has to be a $U(1)$-representation. Second of all, because we can make this construction for every $\lambda$ (I mean the $\lambda$ from lemma \ref{lem:TranslatingSplittedTimeEvolution}) we need that $\alpha$ must be connected to the trivial $U(1)$-representation. However, because our group is finite we can use lemma \ref{lem:FiniteGroupsHaveDiscreteU(1)Representations} to conclude that this implies that $\alpha$ is trivial an hence the result follows.
+\end{proof}
 \begin{lemma}
 	Define $\epsilon^L_g\in\IAC_L(\alpha_0,\theta)$ and $\epsilon^R_g\in\IAC_R(\alpha_0,\theta)$ through
 	\begin{align}
@@ -2215,21 +2240,7 @@ The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{\si
 	\begin{equation}
 		\Ad{v^\dagger W_g v}(v^\dagger a_\sigma^\dagger v a_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma.
 	\end{equation}
-	We will prove this equality in two steps. First we will find some $B_\sigma\in\UU(\AA)$ such that
-	\begin{equation}
-		\pi_0\circ\alpha_0\circ\Theta(B_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma
-	\end{equation}
-	then we will show that $B_\sigma\in\AA_{(W(C_\theta)\cap\sigma)^c}$ and that $\beta_g^{\tau(U)}(B_\sigma)=B_\sigma$. To find $B_\sigma$, we write out                                                                                                                                                                                                              
-	\begin{equation}
-		v^\dagger a_\sigma^\dagger v a_\sigma=\pi_0\circ\alpha_0\circ\Theta(\nu^{-1}(A_\sigma^\dagger)A_\sigma)
-	\end{equation}
-	and observe that we can take $B_\sigma \defeq \nu^{-1}(A_\sigma^\dagger)A_\sigma$. Now we will prove that $B_\sigma\in\UU(\AA_{W(C_\theta)^c\cap\sigma})=\UU(\AA_{(W(C_\theta)^c\cap\sigma)^c}')$. Take $X\in\AA_{(W(C_\theta)^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
-	\begin{align}
-		\Ad{B_\sigma}(X)&=\tau^{-1}\circ\Ad{A_\sigma^\dagger}\circ\tau\circ\Ad{A_\sigma}(X)\\
-		&=\tau^{-1}\circ\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}(X)\\
-		&=X
-	\end{align}
-	concluding the proof. The fact that $\Ad{\beta_g^{\tau(U)}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{\tau(U)}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we again have to show that this expression is self ajoint which is a one line calculation.
+	This equality is proven in lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}.
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
@@ -3051,7 +3062,23 @@ In what follows, let $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. We wil
 	\begin{equation}
 		\Phi^{\mu L}(\lambda)\defeq\gamma^{\Xi_{W(C_\theta)^c\cap\mu\cap L}}_{0;\lambda}.
 	\end{equation}
-	{\color{red}To be continued...}
+	This means that we can satisfy \ref{eq:TranslatingSplittedTimeEvolutionAppendix} if
+	\begin{align}
+		\Ad{A_L}&=\gamma^{\Xi}_{0;\lambda}\circ\gamma^{\Xi'}_{\lambda;0}&\Xi'&\defeq \Xi_{W(C_\theta)^c\cap U\cap L}+\Xi_{W(C_\theta)^c\cap D\cap L}.
+	\end{align}
+	Using the same argument as before, this can be realised when we have
+	\begin{equation}
+		\Ad{A_L(\lambda)}=\gamma^{\tilde\Xi}_{0;\lambda}
+	\end{equation}
+	where
+	\begin{equation}
+		\tilde\Xi(Z,t)\defeq \sum_{m=0}^{\infty}\sum_{\substack{X\subset Z\\X(m)=Z}}\Delta_{X(m)}(\gamma^{\Xi'}_{0;t}(\Xi(X,t)-\Xi'(X,t))).
+	\end{equation}
+	The last part of the proof is to show that $\norm{\sum_{Z\in\mathfrak{B}_{\ZZ^2}}\tilde\Xi(Z,t)}<\infty$ which can be done using similar techniques as before. This means that we can simply define
+	\begin{equation}
+		A_L(\lambda)\defeq\mathcal{T}\exp(-i\int_0^\lambda \d s\: \sum_{Z\in \mathfrak{B}_{\ZZ^2}}\tilde{\Xi}(Z,s))
+	\end{equation}
+	and this is by construction bounded and continuous in $\lambda$.
 \end{proof}
 \clearpage
 \bibliography{TSPT}
