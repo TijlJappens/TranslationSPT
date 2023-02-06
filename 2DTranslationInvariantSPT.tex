@@ -2175,13 +2175,13 @@ The second property is that the following lemma holds:
 	\begin{equation}
 		a_\sigma^\dagger v a_\sigma v^\dagger=\pi_0\circ\alpha_0\circ\Theta(A_\sigma^\dagger\tau(A_\sigma))
 	\end{equation}
-	and observe that we can take $B_\sigma \defeq A_\sigma^\dagger\tau(A_\sigma)$. Now we will prove that $B_\sigma\in\UU(\AA_{W(C_\theta)^c\cap\sigma})=\UU(\AA_{(W(C_\theta)^c\cap\sigma)^c}')$. Take $X\in\AA_{(W(C_\theta)^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
+	and observe that we can take $B_\sigma \defeq A_\sigma^\dagger\tau(A_\sigma)$. Now we will prove that $B_\sigma\in\UU(\AA_{C_\theta^c\cap\sigma})=\UU(\AA_{(C_\theta^c\cap\sigma)^c}')$. Take $X\in\AA_{(C_\theta^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
 	\begin{align}
-		\Ad{B_\sigma}(X)&=\tau^{-1}\circ\Ad{A_\sigma^\dagger}\circ\tau\circ\Ad{A_\sigma}(X)\\
-		&=\tau^{-1}\circ\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}(X)\\
+		\Ad{B_L\otimes B_R}(X)&=\Ad{A_L^\dagger\otimes A_R^\dagger}\circ\tau\circ\Ad{A_L\otimes A_R}\circ\tau^{-1}(X)\\
+		&=\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\tau^{-1}(X)\\
 		&=X
 	\end{align}
-	concluding the proof. The fact that $\Ad{\beta_g^{\tau(U)}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{\tau(U)}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we have to use two things. First of all $\alpha$ has to be a $U(1)$-representation. Second of all, because we can make this construction for every $\lambda$ (I mean the $\lambda$ from lemma \ref{lem:TranslatingSplittedTimeEvolution}) we need that $\alpha$ must be connected to the trivial $U(1)$-representation. However, because our group is finite we can use lemma \ref{lem:FiniteGroupsHaveDiscreteU(1)Representations} to conclude that this implies that $\alpha$ is trivial an hence the result follows.
+	concluding the proof. The fact that $\Ad{\beta_g^{U}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{U}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we have to use two things. First, we use the fact that $\alpha$ has to be a $U(1)$-representation. Secondly, because we can make this construction for every $\lambda$ (I mean the $\lambda$ from lemma \ref{lem:TranslatingSplittedTimeEvolution}) we need that $\alpha$ must be connected to the trivial $U(1)$-representation through a continuous path. However, because our group is finite we can use lemma \ref{lem:FiniteGroupsHaveDiscreteU(1)Representations} to conclude that $\alpha$ is trivial an hence the result follows.
 \end{proof}
 \begin{lemma}
 	Define $\epsilon^L_g\in\IAC_L(\alpha_0,\theta)$ and $\epsilon^R_g\in\IAC_R(\alpha_0,\theta)$ through
