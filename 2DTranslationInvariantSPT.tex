@@ -408,7 +408,7 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 \subsection{Some remarks}
 The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all the set of states considered is a priori different. Namely, for any state $\psi\in \PP(\AA)$, we define two different conditions
 \begin{enumerate}
-	\item There exists a $\Phi\in\PP_{\text{SL}}$\footnote{This is defined in \cite{ogata2021h3gmathbb} but it essentially means bounded interaction that is connected to a trivial (without overlapping therms) interaction.} such that $\psi$ is the unique gapped groundstate of $\Phi$.
+	\item There exists a $\Phi\in\PP_{\text{SL}}$\footnote{This is defined in \cite{ogata2021h3gmathbb} but it essentially means bounded interaction that is connected to a trivial (without overlapping terms) interaction.} such that $\psi$ is the unique gapped groundstate of $\Phi$.
 	\item $\psi$ is an SRE state.
 \end{enumerate}
 However in theorem 5.1 of \cite{ogata2021h3gmathbb} it is proven that the first item implies the second item. If one then looks at the definition of the index there, one could as well have started from the second condition. This is precisely what we did in this paper. As a side note, one should also be able to prove that the second item implies the first item by using theorem D.5 of \cite{ogata2021h3gmathbb} with $\mathcal{K}_t$ the disentangler and $\Phi$ a gapped interaction that has the product state as its groundstate. However, we won't work this out explicitly in this paper.\\\\
@@ -491,6 +491,9 @@ We will also define a generalisation of this. We will define a subgroup of $\UU(
 	\end{align}
 	concluding the proof.
 \end{proof}
+\begin{remark}
+	The main reason for the introduction of the $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ and $\IAC^W_\sigma(\alpha_0,\theta,\Theta)$ subgroups is that they are still (inner after) cone operators when translated. More specifically, let $x\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then both $vxv^\dagger$ and $v^\dagger x v$ are elements of $x\in\textrm{Cone}_\sigma(\alpha_0,\theta)$. The analogous statement is also true for the $\IAC$ operators.
+\end{remark}
 The following lemma shows that if a unitary on the GNS space of $\omega_0$ has an adjoint action that is the product of cones then it is a product of cone operators:
 \begin{lemma}\label{lem:UsingIrreducibilityAndWignerTheorem}
 	Take $x\in\UU(\HH_0)$ such that there exist $\xi_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ (for $\sigma\in\{L,R\}$) satisfying
@@ -1131,7 +1134,7 @@ We will then use this property to define a morphism:
 	\begin{equation}
 	x=\pi_0\circ\alpha_0\circ\Theta(A)y
 	\end{equation}
-	and take $\xi\in\Aut{\AA_{C_\theta}\cap \AA_R}$ the automorphism such that
+	and take $\xi\in\Aut{\AA_{W(C_\theta)}\cap \AA_R}$ the automorphism such that
 	\begin{equation}
 	\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
 	\end{equation}
@@ -1171,7 +1174,7 @@ By construction, this implies that
 \begin{equation}\label{eq:ProofThatphi1IsIndependentOfChoiceOfRepresentative}
 	\pi_0\circ\alpha_0\circ\Theta(A_2^\dagger A_1)=y_2 y_1^\dagger.
 \end{equation}
-This implies that $\Ad{A_2^\dagger A_2}\in\Aut{\AA_{W(C_\theta)\cap R}}$ and hence we require that $A_2^\dagger A_1\in\UU(\AA_{W(C_\theta)^c}')=\UU(\AA_{W(C_\theta)})$ (this last equality follows from section 3 of \cite{NaScWe_2013}). By using this equation combined with lemma \ref{lem:PropertyTilde_a} we get that
+This implies that $\Ad{A_2^\dagger A_2}\in\Aut{\AA_{W(C_\theta)\cap R}}$ and hence we require that $A_2^\dagger A_1\in\UU(\AA_{(W(C_\theta)\cap R)^c}')=\UU(\AA_{W(C_\theta)\cap R})$ (this last equality follows from section 3 of \cite{NaScWe_2013}). By using this equation combined with lemma \ref{lem:PropertyTilde_a} we get that
 \begin{align}
 	\Ad{\tilde{a}}(y_2y_1^\dagger)&=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta(A_2^\dagger A_1)\\
 	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}(A_2^\dagger A_1).
@@ -1221,7 +1224,11 @@ To then show the third item take $x_1,x_2\in \IAC_R(\alpha_0,\Theta)$ arbitrary.
 	\begin{equation}
 		\phi_{1,R}(x_1x_2)\phi_{1,R}(x_1)^\dagger\phi_{1,R}(x_2)^\dagger=\id
 	\end{equation}
-	concluding the proof.
+	concluding the proof of the third item. To show the last two items one only has to work out
+	\begin{equation}
+		\Ad{\tilde{a}^\dagger \phi_1(x)\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta
+	\end{equation}
+	in both situations. Doing this concludes the proof.
 \end{proof}
 We now have to extend the above definition to the group
 \begin{equation}
@@ -1243,7 +1250,7 @@ We now have to extend the above definition to the group
 	\begin{equation}
 		\Ad{\phi_{1,L}(a)\phi_{1,R}(b)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}=\Ad{\phi_{1,R}(b)\phi_{1,L}(a)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}.
 	\end{equation}
-	This already shows that they commute up to a phase. The proof that this phase is 1, is analogous to the morphism part of the proof of the above lemma. The last part, that this new map is a morphism as wel now follows from the above lemma.
+	This already shows that they commute up to a phase. The proof that this phase is 1, is analogous to the morphism part of the proof of the above lemma. The last part, that this new map is a morphism as well now follows from the above lemma.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. Let
@@ -1274,7 +1281,7 @@ We now have to extend the above definition to the group
 	\end{align}
 \end{lemma}
 \begin{proof}
-	Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\text{Cone}_R(\alpha_0,\theta)$ such that
+	Take $x\in \IAC_R^W(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\text{Cone}_R^W(\alpha_0,\theta)$ such that
 	\begin{equation}
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y
 	\end{equation}
@@ -1338,18 +1345,18 @@ We now have to extend the above definition to the group
 	To prove this, observe that
 	\begin{align}
 	&\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v\tilde{a}y^\dagger\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\\
-	&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a^\dagger}\circ\xi\circ\Ad{a}.
+	&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a^\dagger}\circ\xi^{-1}\circ\Ad{a}.
 	\end{align}
 	Now inserting equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} in this gives
 	\begin{align}
-	&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{(\Phi)^{-1}}\circ\xi\circ\stkout{\Phi}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\\
-	&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger }\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi\circ\underline{\tau^{-1}\circ\tau}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\\
-	&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\tau\circ\xi\circ\tau^{-1}\circ\Ad{a^\dagger}\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi\circ\tau^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\circ\tau.
+	&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{(\Phi)^{-1}}\circ\xi^{-1}\circ\stkout{\Phi}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\\
+	&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger }\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi^{-1}\circ\underline{\tau^{-1}\circ\tau}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\\
+	&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\tau\circ\xi\circ\tau^{-1}\circ\Ad{a^\dagger}\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi^{-1}\circ\tau^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\circ\tau.
 	\end{align}
 	Using again equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} now yields:
 	\begin{align}
-	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{\Phi^{-1}}\circ\tau\circ\xi\circ\tau^{-1}\circ\stkout{\Phi}\circ\tau\circ\xi\circ\tau^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\circ\tau\\
-	&=\pi_0\circ\alpha_0\circ\Theta\circ\stkout{\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi\circ\tau^{-1}\circ\tau\circ\xi\circ\tau^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}}\circ\tau
+	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\stkout{\Phi^{-1}}\circ\tau\circ\xi\circ\tau^{-1}\circ\stkout{\Phi}\circ\tau\circ\xi^{-1}\circ\tau^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\circ\tau\\
+	&=\pi_0\circ\alpha_0\circ\Theta\circ\stkout{\gamma^{H}_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\tau\circ\xi\circ\tau^{-1}\circ\tau\circ\xi^{-1}\circ\tau^{-1}\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}}\circ\tau
 	\end{align}
 	concluding the proof of equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part2}. We will now show that the expression in equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part1} is the identity. First we will show that the $A$'s in equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part1} cancel. By equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part2} we get that
 	\begin{equation}
