@@ -492,7 +492,7 @@ We will also define a generalisation of this. We will define a subgroup of $\UU(
 	concluding the proof.
 \end{proof}
 \begin{remark}
-	The main reason for the introduction of the $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ and $\IAC^W_\sigma(\alpha_0,\theta,\Theta)$ subgroups is that they are still (inner after) cone operators when translated. More specifically, let $x\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then both $vxv^\dagger$ and $v^\dagger x v$ are elements of $x\in\textrm{Cone}_\sigma(\alpha_0,\theta)$. The analogous statement is also true for the $\IAC$ operators.
+	The main reason for the introduction of the $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ and $\IAC^W_\sigma(\alpha_0,\theta,\Theta)$ subgroups is that they are still (inner after) cone operators when translated. More specifically, let $x\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then both $vxv^\dagger$ and $v^\dagger x v$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. The analogous statement is also true for the $\IAC$ operators.
 \end{remark}
 The following lemma shows that if a unitary on the GNS space of $\omega_0$ has an adjoint action that is the product of cones then it is a product of cone operators:
 \begin{lemma}\label{lem:UsingIrreducibilityAndWignerTheorem}
@@ -1296,7 +1296,7 @@ We now have to extend the above definition to the group
 	\end{align}
 \end{lemma}
 \begin{proof}
-	Take $x\in \IAC_R^W(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\text{Cone}_R^W(\alpha_0,\theta)$ such that
+	Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\text{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y
 	\end{equation}
@@ -1335,7 +1335,11 @@ We now have to extend the above definition to the group
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Phi\circ\eta_g\circ\beta_g^U(A)\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ \gamma^{H}_{0;1}\circ\gamma^{H_\text{split}}_{1;0} \circ\eta_g\circ\beta_g^U(A).
 	\end{align}
-	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof of the first item. The proof of the second item looks very similar. We now get that (the part with $v$ replaced with $v^\dagger$ and $\tau$ by $\tau^{-1}$ is equivalent)
+	Filling this in equation \eqref{eq:phi1phi2matchingConditionEquation} concludes the proof of the first item. The proof of the second item looks very similar. Now take $x\in \IAC_R^W(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\text{Cone}_R^W(\alpha_0,\theta)$ such that
+	\begin{equation}
+		x=\pi_0\circ\alpha_0\circ\Theta(A)y
+	\end{equation}
+	We now get that (the part with $v$ replaced with $v^\dagger$ and $\tau$ by $\tau^{-1}$ is equivalent)
 	\begin{equation}
 		vxv^\dagger=\pi\circ\alpha_0\circ\Theta\circ\tau(A)vyv^\dagger.
 	\end{equation}
