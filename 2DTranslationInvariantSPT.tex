@@ -1239,18 +1239,33 @@ We now have to extend the above definition to the group
 	\begin{equation}
 		\phi_1:\IAC_{L\times R}(\alpha_0,\theta,\Theta)\rightarrow\UU(\HH):ab\mapsto \phi_{1,L}(a)\phi_{1,R}(b)
 	\end{equation}
-	where $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. This is well defined, by which we mean that
-	\begin{equation}
-		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a).
-	\end{equation}
-	This is still a morphism.
+	where $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. This satisfies two points.
+	\begin{enumerate}
+		\item It is well defined, by which we mean that for any $a,\tilde{a}\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and for any $b,\tilde{b}\in \IAC_{R}(\alpha_0,\theta,\Theta)$ such that $ab=\tilde{a}\tilde{b}$ we have that
+		\begin{equation}
+			\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,L}(\tilde a)\phi_{1,R}(\tilde b).
+		\end{equation}
+		\item It is still a group homeomorphism.
+	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	First notice that using the previous lemma (equation \eqref{eq:ConditionDefinitionOfGroupMorphism} in particular) one can show that indeed
+	The fist item is trivial, this is because the fact that $ab=\tilde{a}\tilde{b}$ already implies that $(a,b)$ and $(\tilde{a},\tilde{b})$ can only differ up to an exchange in phase. To show the second item, we only have to show that
 	\begin{equation}
-		\Ad{\phi_{1,L}(a)\phi_{1,R}(b)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}=\Ad{\phi_{1,R}(b)\phi_{1,L}(a)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_\text{split}}_{1;0}.
+		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a)
 	\end{equation}
-	This already shows that they commute up to a phase. The proof that this phase is 1, is analogous to the morphism part of the proof of the above lemma. The last part, that this new map is a morphism as well now follows from the above lemma.
+	for any $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and for any $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. To show this, we first write out $b=\pi_0\circ\alpha_0\circ\Theta(B)y_b$ where $B\in\UU(\AA_R)$ and where $y_b\in\textrm{Cone}_R(\alpha_0,\theta)$. We can now split the proof in two parts. First we want to prove that
+	\begin{equation}
+		\Ad{\phi_{1,L}(a)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{0;1}^H\circ\gamma^\Hsplit_{1;0}(B)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{0;1}^H\circ\gamma^\Hsplit_{1;0}(B).
+	\end{equation}
+	This can be done using equation \eqref{eq:ConditionDefinitionOfGroupMorphism}. Secondly we want to prove that
+	\begin{equation}
+		\Ad{\phi_{1,L}(a)}(\phi_{1,R}(y_b))=(\phi_{1,R}(y_b)).
+	\end{equation}
+	We can rewrite this equation to
+	\begin{equation}
+		\Ad{\phi_{1,R}(y_b)}(\phi_{1,L}(a))=(\phi_{1,L}(a)).
+	\end{equation}
+	We now write out $a=\pi_0\circ\alpha_0\circ\Theta(A)y_a$ with $A\in\UU(\AA_L)$ and $y_a\in\textrm{Cone}_L(\alpha_0,\theta)$. We again split the proof of this equality in two parts. The equality with the invariance of the $A$ part again uses equation \eqref{eq:ConditionDefinitionOfGroupMorphism}. The equality with the invariance of the $y_a$ part can be done by inserting the definition and observing that the $\tilde{a}$ cancel.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. Let
@@ -1265,10 +1280,10 @@ We now have to extend the above definition to the group
 \begin{proof}
 	To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} we obtain:
 	\begin{align}
-		\Ad{\phi_2(W_g)}\circ\pi_0&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{a}\circ\eta_g\circ\beta_g^U\circ\Ad{a^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
-		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}\circ\stkout{\Phi_{0;1}^{-1}}\circ\eta_g\circ\beta_g^U\circ\stkout{\Phi_{0;1}}\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
+		\Ad{\phi_2(v^{-p}W_g v^{p})}\circ\pi_0&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{a}\circ\tau^{-p}\circ\eta_g\circ\beta_g^U\circ\tau^p\circ\Ad{a^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}\circ\stkout{\Phi_{0;1}^{-1}}\circ\tau^{-p}\circ\eta_g\circ\beta_g^U\circ\tau^p\circ\stkout{\Phi_{0;1}}\circ\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
 	\end{align}
-	Since $\Phi$ commutes with both the $\eta_g$ and with the $\beta_g^U$ the result follows.
+	Since $\Phi$ commutes with both the $\tau^{-p}\circ\eta_g\circ\tau^p$ and with the $\beta_g^{\tau^{-p}(U)}$ the result follows.
 \end{proof}
 \begin{lemma}\label{lem:phi1phi2matchingCondition}
 	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_R(\alpha_0,\theta,\Theta)$ we have that
@@ -1469,6 +1484,7 @@ We now have to extend the above definition to the group
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ and $\tilde{K}_g^\sigma$ are operators belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
+\clearpage
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U\in\hom(G,U(\CC^d))$ an on site group action arbitrary. Let
 \begin{equation}
@@ -1763,7 +1779,7 @@ Using this we can show that:
 \begin{proof}
 	Clearly the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. The proof that it is independent of the choice of phases is just as trivial.
 \end{proof}
-One can also define this index starting from operators acting on the left. As the following lemma shows this makes no difference (does not give us a new index):
+One can also define this index starting from operators acting on the left. As the following lemma shows this gives us the opposite index (the complex conjugate of the $U(1)$-representation):
 \begin{lemma}
 	Define $\tilde{\alpha}(g)$ such that
 	\begin{equation}\label{eq:DefinitionOfTheH_1IndexAlternative}
@@ -2050,7 +2066,7 @@ We now have to extend the above definition to the group
 	\begin{equation}
 		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a).
 	\end{equation}
-	This is still a morphism.
+	This is still a group homeomorphism.
 \end{lemma}
 \begin{proof}
 	Identical to the proof of lemma \ref{lem:extensionOfPhi1Definition}.
@@ -2150,7 +2166,7 @@ In what follows, let $A_L\defeq A_L(1)$ and $A_R\defeq A_R(1)$. Furthermore, def
 	\begin{equation}
 		A\defeq \gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{H_\text{split}}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger).
 	\end{equation}
-	Now we only have to show that indeed $A\in\UU(\AA_{W(C_\theta)^c})$. To do this, take $X\in\AA_{W(C_\theta)}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then we get that $A\in\UU(\AA_{W(C_\theta)}')$. Since by corolary 3.1 of \cite{NaScWe_2013} we get that $\UU(\AA_{W(C_\theta)}')=\UU(\AA_{W(C_\theta)^c})$ this is sufficient to conclude the proof. To show this, observe that
+	Now we only have to show that indeed $A\in\UU(\AA_{W(C_\theta)^c})$. To do this, take $X\in\AA_{W(C_\theta)}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then we get that $A\in\UU(\AA_{W(C_\theta)}')$. Since by corollary 3.1 of \cite{NaScWe_2013} we get that $\UU(\AA_{W(C_\theta)}')=\UU(\AA_{W(C_\theta)^c})$ this is sufficient to conclude the proof. To show this, observe that
 	\begin{align}
 		\Ad{A}(X)&=\gamma^{H_\text{split}}_{0;1}\circ\nu\circ\gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}\circ\Ad{A_L\otimes A_R}\circ\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\stkout{\nu^{-1}}\circ\stkout{\gamma^{H_\text{split}}_{1;0}\circ\gamma^{H_\text{split}}_{0;1}}\\
 		&\nonumber
@@ -2286,7 +2302,7 @@ The second property is that the following lemma holds:
 	\begin{equation}
 		\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)
 	\end{equation}
-	be the homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphismTwoTranslations}. Take similarly
+	be the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphismTwoTranslations}. Take similarly
 	\begin{equation}
 		\phi_2:\{\Ad{w^{-p}v^{-s}}(W_g)|g\in G,p,s\in\{-1,0,1\}\}\rightarrow \UU(\HH)
 	\end{equation}
@@ -2611,7 +2627,7 @@ Let $\BB$ be the quasi local $C^*$ algebra defined with on the one dimensional l
 \end{equation}
 We will denote the space of pure states satisfying the split property by $\mathcal{S}\PP(\AA)$. Now let us additionally ask that $\omega$ is invariant under the group action ($\omega\circ\beta_g=\omega$). The following now holds:
 \begin{lemma}
-	There exists maps $u_\sigma:G\rightarrow \UU(\HH_\sigma)$ (for all $\sigma\in\{L,R\}$) satisfying
+	There exist maps $u_\sigma:G\rightarrow \UU(\HH_\sigma)$ (for all $\sigma\in\{L,R\}$) satisfying
 	\begin{align}
 		\Ad{u_\sigma(g)}\circ\pi_\sigma&=\pi_\sigma\circ\beta_g^\sigma&u_L(g)\otimes u_R(g)\Omega&=\Omega.
 	\end{align}
@@ -2633,11 +2649,10 @@ This can now be used to define the one dimensional SPT index:
 \end{proof}
 Now let us assume additionally (on top of the split property and the $G$-invariance) that $\omega$ be translation invariant. To this end, let $\nu$ be the automorphism that translates $\BB$ by one site to the right. We assume that $\omega\circ\nu=\omega$. The following now holds:
 \begin{lemma}
-	There exists a $w\in\UU(\HH)$ such that
+	There exists a unique $w\in\UU(\HH)$ such that
 	\begin{align}
 		\Ad{w}\circ\pi&=\pi\circ\nu&w\Omega&=\Omega.
 	\end{align}
-	This $w$ is unique up to a $G$-dependent phase.
 \end{lemma}
 \begin{proof}
 	Since $\omega\circ\nu=\omega$, we get that
@@ -2969,14 +2984,14 @@ Additionally when we add the group action, we get:
 \begin{proof}
 	In this proof, take again $H_{\text{split}}=H_L+H_R$. First we show that equation \eqref{eq:TwoAngleLemmaPart3Equation2} implies equation \eqref{eq:TwoAngleLemmaPart3Equation1}. This is because using (the inverse of) equation \eqref{eq:TwoAngleLemmaPart3Equation1} we get that
 	\begin{align}
-		&=\gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\gamma^H_{s;t}\circ\beta_{g^{-1}}^U\circ(\tilde{\eta}_g)^{-1}\\
+		&\gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\gamma^H_{s;t}\circ\beta_{g^{-1}}^U\circ(\tilde{\eta}_g)^{-1}\\
 		&=(\text{Inner})\circ \gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\gamma^H_{s;t}\circ\gamma^\Hsplit_{t;s}\circ\beta_{g^{-1}}^U\circ(\eta_g)^{-1}\circ\gamma^\Hsplit_{s;t}\circ\underline{\gamma^H_{t;s}\circ\gamma^H_{s;t}}.
 	\end{align}
 	Now using the fact that by lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} item 2, $\gamma^H_{s;t}\circ\gamma^\Hsplit_{t;s}\in\textrm{GVAut}_1(\AA)$ this gives us
 	\begin{align}
 		&=(\text{Inner})\circ\stkout{\gamma^H_{t;s}\circ\eta_g\circ\beta_g^U\circ\beta_{g^{-1}}^U\circ(\eta_g)^{-1}\circ\gamma^H_{s;t}}.
 	\end{align}
-	This concludes the proof that equation \eqref{eq:TwoAngleLemmaPart3Equation2} implies equation \eqref{eq:TwoAngleLemmaPart3Equation1}. Now we only have to prove equation \eqref{eq:TwoAngleLemmaPart3Equation2}. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{GSQAut}_1(\AA_\sigma)$.
+	By taking $a_2$ such that $\Ad{a_2}$ is this inner automorphism, we can conclude the proof that equation \eqref{eq:TwoAngleLemmaPart3Equation2} implies equation \eqref{eq:TwoAngleLemmaPart3Equation1}. Now we only have to prove equation \eqref{eq:TwoAngleLemmaPart3Equation2}. To finish the proof we now only have to use the fact that the $\gamma^{H_\sigma}_{0;1}$ are in $\textrm{GSQAut}_1(\AA_\sigma)$.
 \end{proof}
 \subsection{The two translation symmetries}
 This section will define the classes of automorphisms required in the assumptions and proofs about the $H^1$-valued translation index. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut2}):
@@ -2997,12 +3012,12 @@ This section will define the classes of automorphisms required in the assumption
 \end{figure}
 We now have to define a different horizontal automorphism:
 \begin{definition}
-	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}_2(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{\nu^{\sigma}(C_\theta\cap^\sigma)}}$ for each $\sigma\in\{L,R\}$ such that
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}_2(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\AA$ and some $\alpha_\sigma\in\Aut{\AA_{\nu^{\sigma}(C_\theta\cap\sigma)}}$ for each $\sigma\in\{L,R\}$ such that
 	\begin{equation}
 		\alpha=\Ad{a}\circ\alpha_L\otimes\alpha_R.
 	\end{equation}
 \end{definition}
-We will let the definition of vertical automorphism stay the same, namely $\textrm{VAut}_2(\AA)=\textrm{VAut}_1(\AA)$ and $\textrm{GVAut}_2(\AA)=\textrm{GVAut}_1(\AA)$.
+The main reason why we introduce this new class of automorphisms is that if $\alpha\in\textrm{HAut}_2(\AA)$ we automatically have that the translations of $\alpha$ in the horizontal directions, $\nu^{-1}\circ\alpha\circ\nu$ and $\nu\circ\alpha\circ\nu^{-1}$ are elements of $\textrm{HAut}_1(\AA)$. We will let the definition of vertical automorphism stay the same, namely $\textrm{VAut}_2(\AA)=\textrm{VAut}_1(\AA)$ and $\textrm{GVAut}_2(\AA)=\textrm{GVAut}_1(\AA)$.
 \begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphismsTwoTranslations}
 	Lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} will still be true when we exchange all the $_1$'s for $_2$'s.
 \end{lemma}
