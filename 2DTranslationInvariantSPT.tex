@@ -351,7 +351,7 @@ This is almost completely identical to assumption \ref{assumption1d}, the only d
 	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
 \end{proof}
 \subsection{SRE implies previous assumptions}\label{sec:Results_1}
-The assumptions in the previous subsection are rather technical. In this section we show that these assumptions are strictly weaker then assumptions that are more natural. The assumptions on the states will now be that they are short range entangled. This is defined as follows:
+The assumptions in the previous subsection are rather technical. In this section we show that these assumptions are strictly weaker than assumptions that are more natural. The assumptions on the states will now be that they are short range entangled. This is defined as follows:
 \begin{definition}\label{def:sre}
 	We say that a pure state $\omega\in\PP(\AA)$ is short range entangled (in short an SRE state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
 \end{definition}
@@ -1534,19 +1534,11 @@ Clearly the above lemma implies that the $H^2$-valued index is invariant under t
 \begin{remark}\label{rem:OnSiteUnitaryTransformationH3ValuedIndex}
 	Clearly the same argument can be used to argue that the $H^3$-valued index is invariant under the same transformation.
 \end{remark}
-\subsection{Proof of theorem \ref{thrm:MainResult1}}\label{sec:ProofOfMainResult1}
-We will first prove lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
+\subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}}\label{sec:ProofOfMainResult1}
+We will provide a proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
 \SREImpliesQDisentanglableOneTranslation*
 \begin{proof}
 	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:the-one-translation-symmetry}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
-\end{proof}
-Now we are ready to provide the proof
-\begin{proof}[Proof of theorem \ref{thrm:MainResult1}]
-	Take
-	\begin{equation}
-	\omega\in \{\omega\in\PP(\AA)|\omega\text{ is an SRE state},\omega\circ\beta_g=\omega\text{ and }\omega\circ\tau=\omega\}
-	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, $\omega$ satisfies assumption \ref{assumption}. Using theorem \ref{thrm:ExistenceFirstIndex} we get that there indeed exists a well defined index and that it is invariant under locally generated automorphisms and satisfies item 3. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1d}. We can now use the result of section \ref{sec:OneTranslationDirectionExample} to conclude the proof of item 2. This concludes the proof of the theorem.
 \end{proof}
 \input{Figures/Figure5}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
@@ -2518,18 +2510,11 @@ Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take
 	&=\textrm{Index}^{\AA,U}_{2\text{ trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
 \end{align}
 The proof is completely analogous to the proof presented in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}.
-\subsection{Proof of theorem \ref{thrm:MainResult2}}\label{sec:ProofOfMainResult2}
+\subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}}\label{sec:ProofOfMainResult2}
 We will first prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we restate here for convenience:
 \SREImpliesQDisentanglableTwoTranslations*
 \begin{proof}
 	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition \ref{def:SQAut2}) and observe that the resulting $\eta_g$ has the right support.
-\end{proof}
-\begin{proof}[Proof of theorem \ref{thrm:MainResult2}]
-	Take
-	\begin{equation}
-	\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
-	\end{equation}
-	arbitrary. By lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} it satisfies assumption \ref{assumption:2Translations}. Using theorem \ref{thrm:ExistenceSecondIndex} we get that there indeed exists a well defined index that is invariant under locally generated automorphisms and satisfies item 4. By lemma \ref{lem:SRE_Implies_Assumption_1d} we get that the $\phi$ presented in part 2 of the theorem satisfies assumption \ref{assumption1dWithTranslation}. We can now use the result of section \ref{sec:TwoTranslationDirectionsExample} to conclude the proof of item 2. Item 3 is proven in section \ref{sec:H^1IndexInvariantUnderRotations} concluding the proof of the theorem.
 \end{proof}
 \appendix
 \section{Representations and states}
