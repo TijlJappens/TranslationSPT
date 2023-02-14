@@ -266,7 +266,7 @@ We now state the result that using assumption \ref{assumption} we can define an 
 		\begin{equation}
 			\textrm{Index}^{\AA,U}(\omega)=\textrm{Index}^{\AA,U}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item For $\phi\in\PP(\BB)$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the state $\omega_\phi$ as defined in \ref{def:InfiniteTensorProduct} satisfies
+		\item For $\phi\in\PP(\BB)$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the state $\omega_\phi$ as defined in definition \ref{def:InfiniteTensorProduct} satisfies
 		\begin{equation}
 			\textrm{Index}^{\BB,U}_{1d}(\phi)=\textrm{Index}^{\AA,U}(\omega).
 		\end{equation}
@@ -281,7 +281,7 @@ We now state the result that using assumption \ref{assumption} we can define an 
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
-	This statement is proven in section \ref{sec:ProofFirstStatement}.
+	This statement is proven in subsection \ref{sec:ProofOf:thrm:ExistenceFirstIndex}.
 \end{proof}
 \input{Figures/Figure3}
 Now we will present the assumption from which we can define the $H^1(G,\TT)$-valued index (see figure \ref{fig:SetupForTwoTranslations} for the support of the automorphisms).
@@ -348,7 +348,7 @@ This is almost completely identical to assumption \ref{assumption1d}, the only d
 	\end{enumerate}
 \end{theorem}
 \begin{proof}
-	This statement is proven in section \ref{sec:TwoDirectionTraslationInvariance}.
+	This statement is proven in subsection \ref{sec:ProofOf:thrm:ExistenceSecondIndex}.
 \end{proof}
 \subsection{SRE implies previous assumptions}\label{sec:Results_1}
 The assumptions in the previous subsection are rather technical. In this section we show that these assumptions are strictly weaker than assumptions that are more natural. The assumptions on the states will now be that they are short range entangled. This is defined as follows:
@@ -366,7 +366,7 @@ We will use the exact same definition (with the same $F$-function) for states ov
 	Any $G$-invariant SRE state $\phi\in\PP(\BB)$ satisfies assumption \ref{assumption1d}.
 \end{restatable}
 \begin{proof}
-	See subsection \ref{sec:OneTranslationDirectionExample}.
+	See subsection \ref{sec:ProofOfMainResult1}.
 \end{proof}
 These two results imply that to any $G$-invariant translation invariant SRE state I can associate a consistent LGA invariant $H^3(G,\TT)\oplus H^2(G,\TT)$-valued SPT index. The first index is the index when there are no translations and the last index is the one from theorem \ref{thrm:ExistenceFirstIndex}.
 \begin{restatable}{lemma}{SREImpliesQDisentanglableTwoTranslations}\label{lem:SRE_Implies_QDisentanglable_TwoTranslations}
@@ -558,7 +558,7 @@ We now have to define one more object (remember that $v$ was defined in lemma \r
 	\end{align}
 	Using lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} concludes the proof that these unitaries exist and are unique up to a $G-$dependent phase.
 \end{proof}
-\subsection{Definition of the index}
+\subsection{Definition of the index}\label{sec:DefinitionH2Index}
 \begin{lemma}\label{lem:Definition2Cochain}
 	There exists a $C:G^2\rightarrow U(1)$ such that 
 	\begin{equation}\label{eq:Definition2Cochain}
@@ -897,11 +897,6 @@ Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spat
 \end{equation}
 In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra. Going forward we will define a state on $\AA$ using a state on $\BB$. This state on $\BB$ has to satisfy assumption \ref{assumption1d} which we restate here for convenience:
 \assumptionOneDimensionalOne*
-We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here for convenience:
-\SREImpliesAssumptionOneDimensional*
-\begin{proof}
-	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
-\end{proof}
 \begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
 	This $\phi$ satisfies the split property.
 \end{lemma}
@@ -1534,11 +1529,21 @@ Clearly the above lemma implies that the $H^2$-valued index is invariant under t
 \begin{remark}\label{rem:OnSiteUnitaryTransformationH3ValuedIndex}
 	Clearly the same argument can be used to argue that the $H^3$-valued index is invariant under the same transformation.
 \end{remark}
-\subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}}\label{sec:ProofOfMainResult1}
+\subsection{Proof of theorem \ref{thrm:ExistenceFirstIndex}}\label{sec:ProofOf:thrm:ExistenceFirstIndex}
+In this section we summarise the proof of theorem \ref{thrm:ExistenceFirstIndex}:
+\begin{proof}
+	The 2-cochain was defined in subsection \ref{sec:DefinitionH2Index}. The proof that it wasn't dependent on any of the choices made in assumption \ref{assumption} was done in subsection \ref{sec:IndexIsInvariantUnderChoices}. The first item in the list concerning the invariance under locally generated automorphisms was shown in subsection \ref{sec:IndexInvariantUnderLGA}. The proof of the second item concerning the relation between the 1d SPT index and the 2d translation SPT index is done in subsection \ref{sec:OneTranslationDirectionExample}. The proof of the third item concerning the stacking is done in subsection \ref{sec:StackingOneTranslation}. The proof of the last item concerning a change of basis of the on site Hilbert space is done in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}. This concludes the proof.
+\end{proof}
+\subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} and lemma \ref{lem:SRE_Implies_Assumption_1d}}\label{sec:ProofOfMainResult1}
 We will provide a proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
 \SREImpliesQDisentanglableOneTranslation*
 \begin{proof}
 	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:the-one-translation-symmetry}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
+\end{proof}
+We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here for convenience:
+\SREImpliesAssumptionOneDimensional*
+\begin{proof}
+	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
 \end{proof}
 \input{Figures/Figure5}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
@@ -1559,7 +1564,7 @@ Similarly as before we will also need the generalisation of this definition:
 		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
 	\end{equation}
 \end{definition}
-\subsection{Definition of the index}
+\subsection{Definition of the index}\label{sec:DefinitionH1Index}
  First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v\in U(\HH_0)$, $W_g\in U(\HH_0)$, $u_\sigma(g,h)\in \textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$ and $K_g^\sigma\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ (for every $g,h\in G$) and then later on we will show independence on the choice of these objects. We remind the reader of some equalities from section \ref{sec:ProofFirstStatement}
 \begin{align}
 		\Ad{v}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\\
@@ -1768,7 +1773,7 @@ One can also define this index starting from operators acting on the left. As th
 	\end{equation}
 	These two results can only be consistent if the lemma holds.
 \end{proof}
-\subsection{The $H^1(G,\TT)$-valued index is invariant under choices}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under choices}\label{sec:IndexIsInvariantUnderChoicesTwoTranslations}
 In this section we will show that the index is only dependent on $\omega$ and not on the choices of our automorphisms nor on $\omega_0$. On this last item we remark:
 \begin{remark}\label{rem:NontrivialProductState}
 	A product state can have a non-trivial $H^1(G,\TT)$ index and the index is not defined relative to $\omega_0$ so in particular
@@ -1955,7 +1960,7 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 	&=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
 \end{align}
 showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$.
-\subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H^1IndexInvariantUnderRotations}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H1ValuedIndexInvariantUnderLGA's}
 The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. To this end let $H\in \BB_{F_\phi}([0,1])$ be a $G$-invariant, translation invariant (in both directions) one parameter family of interactions. In the rest of this section we will define (for notational simplicity) $H_{\text{split}}\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. Clearly, this $H_{\text{split}}$ is translation invariant in the vertical direction but not in the horizontal direction. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA} but with some notable differences. We first need a different version of lemma \ref{lem:DefinitionOfGroupMorphismVAutEquation} (in fact it is almost completely identical only the definition of $H_{\text{split}}$ is now slightly different) and use this to define some objects used in the rest of the section:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismVAutEquationTwoTranslations}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. There exist $\Phi^U_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$, both commuting with $\beta_g$, such that there exists some $a\in\UU(\AA)$ satisfying that
@@ -2503,13 +2508,18 @@ be two states. The goal of this section is to prove that
 	\textrm{Index}^{\AA^2,U(g)\otimes U(g)}_{\text{2 trans}}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}^{\AA,U(g)}_{\text{2 trans}}(\omega_1)\textrm{Index}^{\AA,U(g)}_{\text{2 trans}}(\omega_2).
 \end{equation}
 The proof of this is completely analogous to what was in section \ref{sec:StackingOneTranslation}.
-\subsection{The $H^1$-valued index is invariant of choice of basis of on site Hilbert space}
+\subsection{The $H^1$-valued index is invariant of choice of basis of on site Hilbert space}\label{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space-TwoTranslations}
 Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this subsection we will prove that
 \begin{align}
 	&\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}_{2\text{ trans}}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
 	&=\textrm{Index}^{\AA,U}_{2\text{ trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
 \end{align}
 The proof is completely analogous to the proof presented in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}.
+\subsection{Proof of theorem \ref{thrm:ExistenceSecondIndex}}\label{sec:ProofOf:thrm:ExistenceSecondIndex}
+In this section we summarise the proof of theorem \ref{thrm:ExistenceSecondIndex}:
+\begin{proof}
+	The 2-cochain was defined in subsection \ref{sec:DefinitionH1Index}. The proof that it wasn't dependent on any of the choices made in assumption \ref{assumption:2Translations} was done in subsection \ref{sec:IndexIsInvariantUnderChoicesTwoTranslations}. The first item in the list concerning the invariance under locally generated automorphisms was shown in subsection \ref{sec:H1ValuedIndexInvariantUnderLGA's}. The proof of the second item concerning the relation between the 1d SPT index and the 2d translation SPT index is done in subsection \ref{sec:TwoTranslationDirectionsExample}. The proof of the third item concerning the stacking is done in subsection \ref{sec:StackingTwoTranslations}. The proof of the last item concerning a change of basis of the on site Hilbert space is done in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space-TwoTranslations}. This concludes the proof.
+\end{proof}
 \subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}}\label{sec:ProofOfMainResult2}
 We will first prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we restate here for convenience:
 \SREImpliesQDisentanglableTwoTranslations*
@@ -2702,7 +2712,7 @@ In this section, let $\AA$ be a quasi local $C^*$ algebra over $\ZZ$.
 	\begin{equation}
 		\Ad{A}=\gamma^{\Phi_L+\Phi_R}_{0;1}\circ\gamma^\Phi_{1;0}.
 	\end{equation}
-	Moreover, this $A$ is summable (see definition \ref{def:SummableOperator}). More generally there exists a continuous (in norm topology) one parameter family $\lambda\in[0,1]\mapsto A_\lambda\in\UU(\AA)$ such that $A_\lambda$ is summable for each $\lambda$ and such that
+	Moreover, this $A$ is summable (this was defined in subsection \ref{sec:QuasiLocalC*Algebra}). More generally there exists a continuous (in norm topology) one parameter family $\lambda\in[0,1]\mapsto A_\lambda\in\UU(\AA)$ such that $A_\lambda$ is summable for each $\lambda$ and such that
 	\begin{equation}
 		\Ad{A_\lambda}=\gamma^{\Phi_L+\Phi_R}_{0;\lambda}\circ\gamma^\Phi_{\lambda;0}.
 	\end{equation}
