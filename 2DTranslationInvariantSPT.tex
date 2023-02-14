@@ -395,7 +395,33 @@ where $\mu$ was the rotation automorphism and Index was defined in theorem \ref{
 \begin{proof}
 	This is proven in subsection \ref{sec:H1ValuedIndexInvariantUnderRotations}.
 \end{proof}
-\subsection{Some remarks}
+Now all that is left to show is that the indices defined here are constant on the stable equivalence classes introduced in the introduction. To this end let $\expval{\cdot}_\sim$, $\expval{\cdot}_\sim^1$, $\expval{\cdot}_\sim^2$ and $\expval{\cdot}_\sim^3$ be the stable equivalence classes without translation symmetry, with only the $\tau$ translation symmetry, with only the $\nu$ translation symmetry and with both the $\tau$ and $\nu$ translation symmetry respectively. We now show the following lemma:
+\begin{lemma}
+	Take $(\omega_1,U_1)$ and $(\omega_2,U_2)$ such that $\omega_1\in\PP(\AA_1)$ and $\omega_2\in\PP(\AA_2)$ are SRE states and are invariant under $\beta_g^1=i_{U_1(g)}$ and $\beta_g^2=i_{U_2(g)}$ respectively. The following three statements now hold true:
+	\begin{enumerate}
+		\item If $\expval{\omega_1,U_1}_\sim=\expval{\omega_2,U_2}_\sim$ then
+		\begin{equation}
+			\textrm{Index}^{\AA_1,U_1}_{\text{no trans}}(\omega_1)=\textrm{Index}^{\AA_2,U_2}_{\text{no trans}}(\omega_2)
+		\end{equation}
+		where $\textrm{Index}_{\text{no trans}}$ is the SPT index introduced in \cite{ogata2021h3gmathbb} (see subsection \ref{sec:SomeRemarks} for why this is well defined in this context).
+		\item If additionally all objects are invariant under $\tau$ and $\expval{\omega_1,U_1}_\sim^1=\expval{\omega_2,U_2}_\sim^1$ then
+		\begin{equation}
+			\textrm{Index}^{\AA_1,U_1}(\omega_1)=\textrm{Index}^{\AA_2,U_2}(\omega_2)
+		\end{equation}
+		where $\textrm{Index}$ is the index introduced in theorem \ref{thrm:ExistenceFirstIndex}.
+		\item If additionally all objects are invariant under $\nu$ and $\expval{\omega_1,U_1}_\sim^2=\expval{\omega_2,U_2}_\sim^2$ then
+		\begin{equation}
+			\textrm{Index}^{\AA_1,U_1}(\omega_1\circ\mu)=\textrm{Index}^{\AA_2,U_2}(\omega_2\circ\mu)
+		\end{equation}
+		where $\mu$ was the rotation automorphism.
+		\item If additionally all objects are invariant under both $\tau$ and $\nu$ and $\expval{\omega_1,U_1}_\sim^3=\expval{\omega_2,U_2}_\sim^3$ then
+		\begin{equation}
+			\textrm{Index}^{\AA_1,U_1}_{\text{2 trans}}(\omega_1)=\textrm{Index}^{\AA_2,U_2}_{\text{2 trans}}(\omega_2)
+		\end{equation}
+		where $\textrm{Index}_{\text{2 trans}}$ is the index introduced in \ref{thrm:ExistenceSecondIndex}.
+	\end{enumerate}
+\end{lemma}
+\subsection{Comparison with \cite{ogata2021h3gmathbb}}\label{sec:SomeRemarks}
 The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all the set of states considered is a priori different. Namely, for any state $\psi\in \PP(\AA)$, we define two different conditions
 \begin{enumerate}
 	\item There exists a $\Phi\in\PP_{\text{SL}}$\footnote{This is defined in \cite{ogata2021h3gmathbb} but it essentially means bounded interaction that is connected to a trivial (without overlapping terms) interaction.} such that $\psi$ is the unique gapped groundstate of $\Phi$.
@@ -404,10 +430,33 @@ The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a 
 However in theorem 5.1 of \cite{ogata2021h3gmathbb} it is proven that the first item implies the second item. If one then looks at the definition of the index there, one could as well have started from the second condition. This is precisely what we did in this paper. As a side note, one should also be able to prove that the second item implies the first item by using theorem D.5 of \cite{ogata2021h3gmathbb} with $\mathcal{K}_t$ the disentangler and $\Phi$ a gapped interaction that has the product state as its groundstate. However, we won't work this out explicitly in this paper.\\\\
 When we add the group, the story changes considerably. Let us define the two different equivalence classes. To this end, let $\psi_1$ and $\psi_2$ be two (pure) $G$-invariant states that are unique gapped groundstates of $\Phi_0$ and $\Phi_1\in\PP_{\text{SL},\beta}$ respectively. The following two conditions define different equivalence classes:
 \begin{enumerate}
-	\item There exists bounded a path of gapped interactions $\lambda\mapsto\tilde\Phi(\lambda)$ (see \cite{ogata2021h3gmathbb} for precise definitions) such that $\psi_1$ and $\psi_2$ are unique gapped groundstates of $\tilde{\Phi}(0)$ and $\tilde{\Phi}(1)$ respectively.
+	\item There exists a $G$-invariant, bounded path of gapped interactions $\lambda\mapsto\tilde\Phi(\lambda)$ (see \cite{ogata2021h3gmathbb} for precise definitions) such that $\psi_1$ and $\psi_2$ are unique gapped groundstates of $\tilde{\Phi}(0)$ and $\tilde{\Phi}(1)$ respectively.
 	\item There exists a $G$-invariant LGA, $\gamma^\Psi_{0;1}$ such that $\psi_1\circ\gamma^H_{0;1}=\psi_2$.
 \end{enumerate}
-A priori those two conditions are not equivalent. However in \cite{ogata2021h3gmathbb} it is proven that, the first equivalence implies the second one. The proof that equivalent states have the same index only uses the second condition. This means that one could also have taken the second equivalence condition as the starting point. This is exactly what we do in this paper. One should also be able to show that the first condition implies the second one using a similar construction as in the above remark without the group and averaging the resulting interaction over the group (where one then has to use that a finite group has a normalised Haar measure).
+A priori those two conditions are not equivalent. However in \cite{ogata2021h3gmathbb} it is proven that, the first equivalence implies the second one. The proof that equivalent states have the same index only uses the second condition. This means that one could also have taken the second equivalence condition as the starting point. This is exactly what we do in this paper. One should also be able to show that the first condition implies the second one using a similar construction as in the above remark without the group and averaging the resulting interaction over the group (where one then has to use that a finite group has a normalised Haar measure).\\\\
+There where two things that are in theorems \ref{thrm:ExistenceFirstIndex} and \ref{thrm:ExistenceSecondIndex} but where not discussed in \cite{ogata2021h3gmathbb}. This is the part that the index is a group homomorphism under stacking and the part that the index is independent on the choice of basis for the on site Hilbert space. However, on inspection of the arguments used in subsections \ref{sec:StackingOneTranslation} and \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space} one can conclude that these also hold for the $H^3$-valued index.\\\\
+All in all we have provided a proof that the work done in \cite{ogata2021h3gmathbb} also implies the following theorem:
+\begin{theorem}\label{thrm:ExistenceOriginalIndex}
+	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
+	\begin{equation}
+		\textrm{Index}^{\AA,U}_{\text{no trans}}:\{\omega\in\PP(\AA)| \omega\text{ is SRE and }G\text{-invariant}\}\rightarrow H^3(G,\TT)
+	\end{equation}
+	that is well defined (doesn't depend on the choice of disentangler). This map will satisfy:
+	\begin{enumerate}
+		\item For any $G$ invariant family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ we have that
+		\begin{equation}
+			\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega)=\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega\circ\gamma^\Phi_{0;1}).
+		\end{equation}
+		\item This index is a group homomorphism under the stacking operator by which we mean that
+		\begin{equation}
+			\textrm{Index}_{\text{no trans}}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{no trans}}^{\AA,U}(\omega_1)+\textrm{Index}_{\text{no trans}}^{\AA,U}(\omega_2).
+		\end{equation}
+		\item The index is independent on the choice of basis for the on site Hilbert space by which we mean that for any on site unitary $V$ we get that
+		\begin{equation}
+			\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}_{\text{no trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega).
+		\end{equation}
+	\end{enumerate}
+\end{theorem}
 \section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
 In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
 \assumptionOne*
