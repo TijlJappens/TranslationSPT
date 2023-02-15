@@ -126,7 +126,7 @@ for all $I\subset\Gamma$ finite and $A\in\AA_I$. More specifically, let $G$ be a
 \beta^\Gamma_g(A)=i_{U(g)}^\Gamma=\Ad{\otimes_{i\in I} U_i(g)}(A)
 \end{equation}
 for any $g\in G$, $I\subset\Gamma$ finite and $A\in\AA_I$. Clearly, any unitary transformation of our representation $U(\cdot)\rightarrow V^\dagger U(\cdot) V$ induces a transformation of the group action $\beta_g\rightarrow i_{V}^{-1}\circ\beta_g\circ i_V$.\\\\
-Throughout our paper when we are discussing translation invariance in the vertical direction we will ask that the group action is translation invariant in the vertical direction ($\tau\circ\beta_g^\Gamma=\beta_g^{\tau(\Gamma)}\circ\tau$). If we also have translation invariance in the horizontal direction, we will also ask that the group action be translation invariant in that direction as well ($\nu\circ\beta_g^\Gamma=\beta_g^{\nu(\Gamma)}\circ\nu$). As it turns out, in showing that the $H^1$-valued index is consistent with all the conjectures of the introduction, we will even require that the on site group action $U_i(g)$ is the same at each site. In what follows we will always assume this.\\\\
+Throughout our paper when we are discussing translation invariance in the vertical direction we will ask that the group action is translation invariant in the vertical direction ($\tau\circ\beta_g^\Gamma=\beta_g^{\tau(\Gamma)}\circ\tau$). If we also have translation invariance in the horizontal direction, we will also ask that the group action be translation invariant in that direction as well ($\nu\circ\beta_g^\Gamma=\beta_g^{\nu(\Gamma)}\circ\nu$). As it turns out, in showing that the $H^1$-valued index is consistent with all the conjectures of the introduction, we will even require that the on site group action $U_i(g)$ is the same at each site. In what follows we will always assume this. This means that when we denote an on site symmetry action we merely have to give one representation $U\in\hom(G,\UU(\CC^d))$ and when we denote a unitary transformation of the on site Hilbert space we only have to give a single unitary $V\in \UU(\CC^d)$, we will use this notation frequently.\\\\
 Clearly by construction there is a tensor product operation on this $C^*$ algebra in the sense that for any $\Gamma_1,\Gamma_2\subset\ZZ^2$ satisfying that $\Gamma_1\cap\Gamma_2=\emptyset$ we can define a bilinear, surjective map
 \begin{equation}
 \otimes:\AA_{\Gamma_1}\times\AA_{\Gamma_2}\rightarrow \AA_{\Gamma_1\cup\Gamma_2}.
@@ -187,6 +187,29 @@ with initial condition $\gamma^{\Phi}_{s;s}(A)=A$ (the existence of this automor
 	\gamma^\Phi_{s;t}&=\Ad{u^\Phi_{s;t}}&u^\Phi_{s;t}&\defeq\mathcal{T}\exp(-i\int_t^s\d s'\sum_{I\in\mathfrak{B}_{\ZZ^2}}\Phi(s',t)).
 \end{align}
 Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant) that then the LGA it generates commutes with the group action (the translation automorphism) as well.
+\subsection{The stable equivalence class}\label{sec:StableEquivalenceClasses}
+We will now define a subset of these states that we will call short range entangled (SRE):
+\begin{definition}\label{def:sre}
+	Let $\omega\in\PP(\AA)$. We say that $\omega$ is an SRE state if and only if there exists a $\phi\in]0,1[$ such that there exists an interaction $\Phi\in\BB_{F_\phi}([0,1])$ such that $\omega\circ\gamma^\Phi_{0;1}$ is a product state. We then call $\gamma^\Phi_{0;1}$ a disentangler for $\omega$.
+\end{definition}
+On the set of $G$-invariant SRE states we will now define three stable equivalence classes depending on the additional imposed symmetry:
+\begin{definition}
+	Take $(\omega_1,U_1)$ and $(\omega_2,U_2)$ elements of
+	\begin{equation}
+		S_0=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G\}
+	\end{equation}
+	for two algebras $\AA_1$ and $\AA_2$\footnote{With two different algebras we simply mean two different on site dimensions because we already fixed each on site dimension to be identical.}. We say that $\expval{\omega_1,U_1}_\sim=\expval{\omega_2,U_2}_\sim$ if and only if there exists a $\phi\in]0,1[$ such that there exists a $G$-invariant interaction $\Phi$, trivial elements of $S_0$ (see subsection \ref{sec:States}), $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ for algebras $\tilde\AA_1$ and $\tilde\AA_2$ respectively and an on site unitary such that
+	\begin{align}
+		\omega_1\otimes_{\text{stack}}\phi_1\circ i_V&=\omega_2\otimes_{\text{stack}}\phi_2\circ\gamma^\Phi_{0;1}&V^\dagger U_{1}(g)\otimes \tilde{U}_{1}(g)V&=U_{2}(g)\otimes \tilde{U}_{2}(g).
+	\end{align}
+\end{definition}
+We also define similar equivalence classes $\expval{\cdot}_\sim^1,\expval{\cdot}_\sim^2$ and $\expval{\cdot}_\sim^3$ on
+\begin{align}
+	S_1&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\tau=\omega\}\\
+	S_2&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\nu=\omega\}\\
+	S_3&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\tau=\omega,\:\omega\circ\nu=\omega\}
+\end{align}
+respectively. Here we now also demand that the interactions and the trivial states are invariant under the additional translation symmetries.
 \subsection{(Borel) Group cohomology groups}\label{sec:GroupCohomology}
 In this paper we define the Group cohomology groups using the algebraic approach. A standard reference for Group cohomology is \cite{benson1991representations}. Let $G$ be an arbitrary finite group. For any $n\in\NN$, let $C^n(G,M)$ (in principle this can be for any (left) G-module $M$ but in this paper we will always take $M=\TT$ with the addition and the trivial group action\footnote{So in particular when we write $g_1 \phi(g_2,\cdots,g_n)$ for any $\phi\in C^{n-1}(G,M)$ we will sometimes identify it simply with $\phi(g_2,\cdots,g_n)$.}) be the group of all functions from $G^n$ to $M$. We will use additive notation on this space and denote the group operator by $+$ and the inverse of an element of the group $\phi$ by $-\phi$. Now define the coboundary homomorphisms
 \begin{equation}
@@ -352,10 +375,7 @@ This is almost completely identical to assumption \ref{assumption1d}, the only d
 	This statement is proven in subsection \ref{sec:ProofOf:thrm:ExistenceSecondIndex}.
 \end{proof}
 \subsection{SRE implies previous assumptions}\label{sec:Results_1}
-The assumptions in the previous subsection are rather technical. In this section we show that these assumptions are strictly weaker than assumptions that are more natural. The assumptions on the states will now be that they are short range entangled. This is defined as follows:
-\begin{definition}\label{def:sre}
-	We say that a pure state $\omega\in\PP(\AA)$ is short range entangled (in short an SRE state) if and only if there exists a one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) such that $\omega\circ\gamma^{\Phi}_{0;1}$ is a product state. We then call $\gamma^{\Phi}_{0;1}$ a disentangler for $\omega$.
-\end{definition}
+The assumptions in the previous subsection are rather technical. In this section we show that these assumptions are strictly weaker than assumptions that are more natural. The assumptions on the states will now be that they are short range entangled (see definition \ref{def:sre}).\\\\
 We will use the exact same definition (with the same $F$-function) for states over the quasi local $C^*$-algebra over $\ZZ$, $\BB$. We are now ready to show that SRE implies the previous assumptions.
 \begin{restatable}{lemma}{SREImpliesQDisentanglableOneTranslation}\label{lem:SRE_Implies_QDisentanglable_OneTranslation}
 	Take $\omega\in\PP(\AA)$ a short range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
@@ -396,26 +416,26 @@ where $\mu$ was the rotation automorphism and Index was defined in theorem \ref{
 \begin{proof}
 	This is proven in subsection \ref{sec:H1ValuedIndexInvariantUnderRotations}.
 \end{proof}
-Now all that is left to show is that the indices defined here are constant on the stable equivalence classes introduced in the introduction. To this end let $\expval{\cdot}_\sim$, $\expval{\cdot}_\sim^1$, $\expval{\cdot}_\sim^2$ and $\expval{\cdot}_\sim^3$ be the stable equivalence classes without translation symmetry, with only the $\tau$ translation symmetry, with only the $\nu$ translation symmetry and with both the $\tau$ and $\nu$ translation symmetry respectively. We now show the following lemma:
+Now all that is left to show is that the indices defined here are constant on the stable equivalence classes introduced in the introduction and later on clarified in subsection \ref{sec:StableEquivalenceClasses}. To this end let $\expval{\cdot}_\sim$, $\expval{\cdot}_\sim^1$, $\expval{\cdot}_\sim^2$ and $\expval{\cdot}_\sim^3$ be the stable equivalence classes without translation symmetry, with only the $\tau$ translation symmetry, with only the $\nu$ translation symmetry and with both the $\tau$ and $\nu$ translation symmetry respectively. We now show the following lemma:
 \begin{lemma}\label{lem:IndicesConstantOnStableEquivalenceClasses}
-	Take $(\omega_1,U_1)$ and $(\omega_2,U_2)$ such that $\omega_1\in\PP(\AA_1)$ and $\omega_2\in\PP(\AA_2)$ are SRE states and are invariant under $\beta_g^1=i_{U_1(g)}$ and $\beta_g^2=i_{U_2(g)}$ respectively. The following three statements now hold true:
+	Take $(\omega_1,U_1)$ and $(\omega_2,U_2)$ elements of $S_0$ (see subsection \ref{sec:StableEquivalenceClasses}) for algebras $\AA_1$ and $\AA_2$. The following three statements now hold true:
 	\begin{enumerate}
 		\item If $\expval{\omega_1,U_1}_\sim=\expval{\omega_2,U_2}_\sim$ then
 		\begin{equation}
 			\textrm{Index}^{\AA_1,U_1}_{\text{no trans}}(\omega_1)=\textrm{Index}^{\AA_2,U_2}_{\text{no trans}}(\omega_2)
 		\end{equation}
 		where $\textrm{Index}_{\text{no trans}}$ is the SPT index introduced in \cite{ogata2021h3gmathbb} (see subsection \ref{sec:SomeRemarks} for why this is well defined in this context).
-		\item If additionally all objects are invariant under $\tau$ and $\expval{\omega_1,U_1}_\sim^1=\expval{\omega_2,U_2}_\sim^1$ then
+		\item If additionally $(\omega_1,U_1),(\omega_2,U_2)\in S_1$ and $\expval{\omega_1,U_1}_\sim^1=\expval{\omega_2,U_2}_\sim^1$ then
 		\begin{equation}
 			\textrm{Index}^{\AA_1,U_1}(\omega_1)=\textrm{Index}^{\AA_2,U_2}(\omega_2)
 		\end{equation}
 		where $\textrm{Index}$ is the index introduced in theorem \ref{thrm:ExistenceFirstIndex}.
-		\item If additionally all objects are invariant under $\nu$ and $\expval{\omega_1,U_1}_\sim^2=\expval{\omega_2,U_2}_\sim^2$ then
+		\item If additionally $(\omega_1,U_1),(\omega_2,U_2)\in S_2$ and $\expval{\omega_1,U_1}_\sim^2=\expval{\omega_2,U_2}_\sim^2$ then
 		\begin{equation}
 			\textrm{Index}^{\AA_1,U_1}(\omega_1\circ\mu)=\textrm{Index}^{\AA_2,U_2}(\omega_2\circ\mu)
 		\end{equation}
 		where $\mu$ was the rotation automorphism.
-		\item If additionally all objects are invariant under both $\tau$ and $\nu$ and $\expval{\omega_1,U_1}_\sim^3=\expval{\omega_2,U_2}_\sim^3$ then
+		\item If additionally $(\omega_1,U_1),(\omega_2,U_2)\in S_3$ and $\expval{\omega_1,U_1}_\sim^3=\expval{\omega_2,U_2}_\sim^3$ then
 		\begin{equation}
 			\textrm{Index}^{\AA_1,U_1}_{\text{2 trans}}(\omega_1)=\textrm{Index}^{\AA_2,U_2}_{\text{2 trans}}(\omega_2)
 		\end{equation}
