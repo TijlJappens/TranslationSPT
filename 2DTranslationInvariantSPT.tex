@@ -105,10 +105,13 @@ be the horizontal cone (the green area in figure \ref{fig:SetupWithQAutomorphism
 \begin{equation}
 	W(\Gamma)\defeq \Gamma\cup\tau(\Gamma)\cup\tau^{-1}(\Gamma).
 \end{equation}
-For example, the red area in figure \ref{fig:SetupWithQAutomorphism} is $W(C_\theta)^c$. In the later part we will also need to rotate our lattice by $90^\circ$ (clockwise) so call $\mu$ the bijection on $\ZZ^2$ that does precisely this.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.}
+For example, the red area in figure \ref{fig:SetupWithQAutomorphism} is $W(C_\theta)^c$. In the later part we will also need to rotate our lattice by $90^\circ$ (clockwise) so call $\mu$ the bijection on $\ZZ^2$ that does precisely this.\footnote{We will not discuss rotation invariant states in this paper. The $\mu$ is only defined to make certain constructions work.} Finally we will need to define the horizontal lines and the finite horizontal line
+\begin{align}
+	L_j&\defeq \{(i,j)|i\in\ZZ\}&L_j^n&\defeq \{(i,j)|i\in\ZZ\cap[-n,n]\}.
+\end{align}
 \subsection{Quasi local $C^*$ algebra}\label{sec:QuasiLocalC*Algebra}
 The setup in this paper will be very similar to the setup in \cite{ogata2021h3gmathbb} and is just the standard setup for defining quantum spin systems. For the rest of this paper, take $d\in\NN_+$ arbitrary. This number will be called the on site dimension\footnote{In principle in the case were there is only one translation we can let $d$ be $x$-dependent but for simplicity let us take $d$ constant over the lattice.}. For each $z\in\ZZ^2$, let $\AA_{\{z\}}$ be an isomorphic copy of $\BB(\CC^d)$ (the bounded operators on $\CC^d$). In what follows, let $\mathfrak{G}_{\ZZ^2}$ be the set of finite subsets of $\ZZ^2$. For any $\Lambda\in\mathfrak{G}_{\ZZ^2}$, we set $\AA_\Lambda=\bigotimes_{z\in\Lambda}\AA_{\{z\}}$. We define the local algebra as $\AA_{\text{loc}}=\bigcup_{\Lambda\in \mathfrak{G}_{\ZZ^2}}\AA_{\Lambda}$ and define the quasi local $C^*$ algebra as the norm closure of the local algebra ($\AA=\overline{\AA_{\text{loc}}}$). Similarly, for any (possibly infinite) subset $\Gamma\subset\ZZ^2$ we set $\AA_{\text{loc},\Gamma}=\bigcup_{\Lambda\in \mathfrak{G}_{\Gamma}}\AA_{\Lambda}$ and $\AA_\Gamma=\overline{\AA_{\text{loc},\Gamma}}$.\\\\
-Throughout this paper we will sometimes require a stronger form of locality than merely being in the norm completion of the local algebra. Specifically when $\Gamma=\ZZ$ (or rather the $x$-axis $(\ZZ,0)$) we will say that an operator $A\in\AA_{\ZZ}$ is summable if and only if there exists a sequence $A_n\in\AA_{[-n,n]}$ such that
+Throughout this paper we will sometimes require a stronger form of locality than merely being in the norm completion of the local algebra. Specifically when $\Gamma=L_j$ is a horizontal line. We will say that an operator $A\in\AA_{L_j}$ is summable if and only if there exists a sequence $A_n\in\AA_{L_{j}^n}$ on the finite horizontal lines such that
 \begin{equation}
 	\sum_{i=0}^{\infty}\norm{A-A_n}<\infty.
 \end{equation}
@@ -147,14 +150,15 @@ We say that a linear functional $\omega:\AA\rightarrow \CC$ is a state if it pos
 \end{equation}
 must satisfy $\omega_1=\omega_2=\omega$. The set of pure states on $\AA$ will be called $\PP(\AA)$. In this paper we will often refer to the GNS triple. For its definition, construction and properties we refer to \cite{bratteli1979operator}. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will call a pure state $\phi$ on $\AA_\Gamma$ a product state if for any $\Lambda\subset\Gamma$, the restriction $\phi|_{\AA_\Lambda}$ is still pure.\\\\
 We will call a state $\omega$, $G$-invariant if $\omega\circ\beta_g=\omega$ (where $\beta_g=i_{U(g)}$ with $U$ an on site group action). Moreover, let $U$ we say that a $G$-invariant product state $\phi$ is trivial with respect to $U$ (we will sometimes denote this as $(\phi,U)$ is trivial) if $\phi(U_i(g))=1$ for all $i\in\ZZ^2$.\\\\
-There is a natural way to construct a pure $G$-invariant state on the quasi local $C^*$-algebra over $\ZZ^2$, $\AA_{\ZZ^2}$ using a pure $G$-invariant state on the quasi local $C^*$-algebra over $\ZZ$, $\AA_\ZZ$\footnote{When applied to a trivial state on $\AA_\ZZ$ this will also give a trivial state on $\AA_{\ZZ^2}$.}.
+There is a natural way to construct a pure $G$-invariant state on the quasi local $C^*$-algebra over $\ZZ^2$, $\AA_{\ZZ^2}$ using a pure $G$-invariant state on the quasi local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$\footnote{When applied to a trivial state on $\AA_{L_0}$ this will also give a trivial state on $\AA_{\ZZ^2}$.}.
 \begin{definition}\label{def:InfiniteTensorProduct}
-	Let $L_j=\{(i,j)|i\in\ZZ\}\subset\ZZ^2$ be a horizontal line. Let $\phi\in\PP(\AA_{L_0})$ be a state that is $G$-invariant under a group action $\beta_g^{L_0}$. Define $\phi_i\in\PP(\AA_{L_i})$ as $\phi_i:=\phi_0\circ\tau^{-i}$. We define the infinite tensor product state $\omega_\phi$ as
+	Let $\phi\in\PP(\AA_{L_0})$ be a state that is $G$-invariant under a group action $\beta_g^{L_0}$. Define $\phi_i\in\PP(\AA_{L_i})$ as $\phi_i:=\phi_0\circ\tau^{-i}$. We define the infinite tensor product state $\omega_\phi$ as
 	\begin{equation}
 		\omega_\phi:=\bigotimes_{j\in\ZZ}\phi_j.
 	\end{equation}
 	This is a $G$-invariant pure state over $\ZZ^2$ that is invariant under the automorphism $\tau$.
 \end{definition}
+The proof that this is a well defined state is done in definition \ref{def:InfiniteTensorProductState}.
 \subsection{Interactions and locally generated automorphisms}\label{sec:Interactions}
 An interaction $\Phi$ is a map
 \begin{equation}
@@ -266,12 +270,12 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		\item translation invariant ($\omega\circ\tau=\omega$).
 	\end{enumerate}
 \end{restatable}
-We will also require a similar subclass of automorphisms and states on the quasi local $C^*$-algebra over $\ZZ$, which we will call $\BB$. We now define the assumption
+We will also require a similar subclass of automorphisms and states on the quasi local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$. We now define the assumption
 \begin{restatable}{assumption}{assumptionOneDimensionalOne}\label{assumption1d}
-	Take $\phi\in\PP(\BB)$ such that
+	Take $\phi\in\PP(\AA_{L_0})$ such that
 	\begin{enumerate}
 		\item $\phi\circ\beta_g=\phi$.
-		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and a summable operator $b\in\UU(\BB)$ such that
+		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\AA_{L_0\cap L}}$, $\tilde\alpha_R\in\Aut{\AA_{L_0\cap R}}$ and a summable operator $b\in\UU(\AA_{L_0})$ such that
 		\begin{equation}
 			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_{L}\otimes\tilde\alpha_{R}
 		\end{equation}
@@ -290,7 +294,7 @@ We now state the result that using assumption \ref{assumption} we can define an 
 		\begin{equation}
 			\textrm{Index}^{\AA,U}(\omega)=\textrm{Index}^{\AA,U}(\omega\circ\gamma^{\Phi}_{0;1}).
 		\end{equation}
-		\item For $\phi\in\PP(\BB)$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the state $\omega_\phi$ as defined in definition \ref{def:InfiniteTensorProduct} satisfies
+		\item For $\phi\in\PP(\AA_{L_0})$, any a one dimensional $G$-invariant state satisfying assumption \ref{assumption1d}, the state $\omega_\phi$ as defined in definition \ref{def:InfiniteTensorProduct} satisfies
 		\begin{equation}
 			\textrm{Index}^{\BB,U}_{1d}(\phi)=\textrm{Index}^{\AA,U}(\omega).
 		\end{equation}
@@ -334,10 +338,10 @@ Now we will present the assumption from which we can define the $H^1(G,\TT)$-val
 \end{restatable}
 Similar to before, we also require an assumption for states on the quasi local $C^*$-algebra over $\ZZ$.
 \begin{restatable}{assumption}{assumptionOneDimensionalTwo}\label{assumption1dWithTranslation}
-	Take $\phi\in\PP(\BB)$ such that
+	Take $\phi\in\PP(\AA_{L_0})$ such that
 	\begin{enumerate}
 		\item $\phi\circ\beta_g=\phi$.
-		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\BB_L}$, $\tilde\alpha_R\in\Aut{\BB_R}$ and a summable (see subsection \ref{sec:QuasiLocalC*Algebra} for the definition) operator $b\in\UU(\BB)$ such that
+		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\AA_{L_0\cap L}}$, $\tilde\alpha_R\in\Aut{\AA_{L_0\cap R}}$ and a summable (see subsection \ref{sec:QuasiLocalC*Algebra} for the definition) operator $b\in\UU(\AA_{L_0})$ such that
 		\begin{equation}
 			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
 		\end{equation}
@@ -376,7 +380,7 @@ This is almost completely identical to assumption \ref{assumption1d}, the only d
 \end{proof}
 \subsection{SRE implies previous assumptions}\label{sec:Results_1}
 The assumptions in the previous subsection are rather technical. In this section we show that these assumptions are strictly weaker than assumptions that are more natural. The assumptions on the states will now be that they are short range entangled (see definition \ref{def:sre}).\\\\
-We will use the exact same definition (with the same $F$-function) for states over the quasi local $C^*$-algebra over $\ZZ$, $\BB$. We are now ready to show that SRE implies the previous assumptions.
+We will use the exact same definition (with the same $F$-function) for states over the quasi local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$. We are now ready to show that SRE implies the previous assumptions.
 \begin{restatable}{lemma}{SREImpliesQDisentanglableOneTranslation}\label{lem:SRE_Implies_QDisentanglable_OneTranslation}
 	Take $\omega\in\PP(\AA)$ a short range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
 \end{restatable}
@@ -384,7 +388,7 @@ We will use the exact same definition (with the same $F$-function) for states ov
 	See subsection \ref{sec:ProofOfMainResult1}.
 \end{proof}
 \begin{restatable}{lemma}{SREImpliesAssumptionOneDimensional}\label{lem:SRE_Implies_Assumption_1d}
-	Any $G$-invariant SRE state $\phi\in\PP(\BB)$ satisfies assumption \ref{assumption1d}.
+	Any $G$-invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1d}.
 \end{restatable}
 \begin{proof}
 	See subsection \ref{sec:ProofOfMainResult1}.
@@ -397,7 +401,7 @@ These two results imply that to any $G$-invariant translation invariant SRE stat
 	See subsection \ref{sec:ProofOfMainResult2}.
 \end{proof}
 \begin{restatable}{lemma}{SREImpliesAssumptionOneDimensionalTwoTranlations}\label{lem:SRE_Implies_Assumption_1dTwoTranslations}
-	Any $G$-invariant, translation invariant SRE state $\phi\in\PP(\BB)$ satisfies assumption \ref{assumption1dWithTranslation}.
+	Any $G$-invariant, translation invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1dWithTranslation}.
 \end{restatable}
 \begin{proof}
 	Trivially follows from lemma \ref{lem:SRE_Implies_Assumption_1d}.
@@ -964,11 +968,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{proof}
 Due to all these considerations we will write the index as $\textrm{Index}^{\AA,U}(\omega)$ from here on onward.
 \subsection{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
-Take $\BB=\overline{\BB_{\text{loc}}}$ the quasi local $C^*$ algebra in one spatial dimension such that
-\begin{equation}
-	\AA=\overline{\textrm{span}\left\{\left.\bigotimes_{j\in J}(\BB_{\text{loc}})_j\right|J\subset \ZZ\:\text{finite}\right\}}.
-\end{equation}
-In words this is expressed as the 2d quasi local algebra is the norm closure of the product of the 1d local algebra. Going forward we will define a state on $\AA$ using a state on $\BB$. This state on $\BB$ has to satisfy assumption \ref{assumption1d} which we restate here for convenience:
+In this section we will give a special class of translation invariant states that satisfy assumption \ref{assumption}. We start our construction by taking a state $\phi\in\PP(\AA_{L_0})$ that satisfies assumption \ref{assumption1d}. We restate this assumption here for convenience:
 \assumptionOneDimensionalOne*
 \begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
 	This $\phi$ satisfies the split property.
@@ -978,14 +978,18 @@ In words this is expressed as the 2d quasi local algebra is the norm closure of 
 \end{proof}
 By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d SPT index (see appendix \ref{sec:OneDimensionalIndices}). For any $j\in\ZZ$ and $n\in\NN$ take
 \begin{align}
-	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j,n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
+	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j}^{n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
 	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
 \end{align}
+We introduce some additional notation, for any automorphism $\alpha\in\Aut{\AA_{L_0}}$ we define 
+\begin{equation}
+	\alpha_{(\cdot,j)}\defeq \tau^j\circ\alpha\circ\tau^{-j}.
+\end{equation}
 We will now define the infinite tensor product state.
 \begin{definition}\label{def:InfiniteTensorProductState}
-	Take $\phi\in\PP(\BB)$ arbitrary. There exists a unique state $\omega$ satisfying that for any $i\in\ZZ$ we have that for any $A\in\AA_{L_i}$ and $B\in\AA_{L_i^c}$
+	Take $\phi\in\PP(\AA_{L_0})$ arbitrary. There exists a unique state $\omega$ satisfying that for any $i\in\ZZ$ we have that for any $A\in\AA_{L_i}$ and $B\in\AA_{L_i^c}$
 	\begin{equation}
-		\omega(A\otimes B)=\phi(A)\omega(B).
+		\omega(A\otimes B)=\phi\circ\tau^{-j}(A)\omega(B).
 	\end{equation}
 \end{definition}
 \begin{proof}
@@ -1000,11 +1004,7 @@ We have that:
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
-	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ recursively such that for any $A_{1}\in\AA_{L_j}$ and $A_{2}\in\AA_{\ZZ^2/L_j}$ (for some $j$) we have that
-	\begin{equation}
-		\alpha(A_1\otimes A_2)=\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}(A_1)\alpha(A_2).
-	\end{equation}
-	This Automorphism indeed satisfies that
+	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ as the infinite product state of $\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}$. This Automorphism indeed satisfies that
 	\begin{equation}
 		\omega_0\defeq \omega\circ\alpha^{-1}
 	\end{equation}
@@ -1012,7 +1012,7 @@ We have that:
 	\begin{equation}
 		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B)
 	\end{equation}
-	so that it is clearly a product state. We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\BB_{[-n(j),n(j)]})$ where $n(j)\in\NN$ is the largest number such that $L_{j,n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
+	so that it is clearly a product state. We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\AA_{L_0^{n(j)}})$ where $n(j)\in\NN$ is the largest number such that $L_{j}^{n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
 	\begin{equation}
 		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_\abs{j}^\dagger}_{(\cdot,j)}.
 	\end{equation}
@@ -1022,7 +1022,7 @@ We have that:
 	\end{equation}
 	Now define
 	\begin{equation}
-		\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}(b^\dagger b_\abs{j})_{(\cdot,j)}.
+		\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}\tau^j (b^\dagger b_\abs{j}).
 	\end{equation}
 	We will now show that the limit
 	\begin{equation}
@@ -1041,7 +1041,7 @@ We have that:
 	\begin{equation}
 		A\otimes B-C\otimes D=(A-C+C)\otimes B-C\otimes D=(A-C)\otimes B+C\otimes (B-D).
 	\end{equation}
-	By using this property recursively we get
+	By using this property and the triangle inequality recursively we get
 	\begin{align}
 	&\norm{\bigotimes_{i=-n}^{-n_0}(b^\dagger b_\abs{i})_i\bigotimes_{i=n_0}^{n}(b^\dagger b_i)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
 	&\leq 2\sum_{i=n_0}^{n}\norm{b^\dagger b_i-\id_{\HH_{L_i}}}<2\epsilon.
@@ -1977,7 +1977,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{proof}
 Due to all these considerations we will write this index as $\textrm{Index}_{2\text{ trans}}^{\AA,U}(\omega)$ from here on onward.
 \subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
-This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. We still define $\AA$ as the closure of the tensor product of the $\BB$. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\BB$ and that our one dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation} which we restate here for convenience:
+This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation} which we restate here for convenience:
 \assumptionOneDimensionalTwo*
 Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$ valued index for it (see appendix \ref{sec:OneDimensionalIndices}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
 \begin{lemma}
