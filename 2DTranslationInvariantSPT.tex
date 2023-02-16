@@ -144,7 +144,7 @@ where $\AA^2$ is the quasi local $C^*$ algebra on $\ZZ^2$ constructed from an on
 \end{equation}
 for any $\Lambda\in\mathfrak{G}_{\ZZ^2}$ (in fact stacking can be defined for any automorphism, not just the group action).
 \subsection{States on $\AA$}\label{sec:States}
-We say that a linear functional $\omega:\AA\rightarrow \CC$ is a state if it positive and normalized. This means that for any $A\in\AA$, $\omega(A^\dagger A)\geq 0$ and that $\omega(\id)=1$. We denote the set of states on $\AA$ by $\mathcal{S}(\AA)$. In this paper we will work exclusively with states that are pure, in this setting this means that it is extremal in the sense that for any $p\in]0,1[$, the only two other states $\omega_1,\omega_2\in\mathcal{S}(\AA)$ that satisfy
+We say that a linear functional $\omega:\AA\rightarrow \CC$ is a state if it positive and normalized. This means that for any $A\in\AA$, $\omega(A^\dagger A)\geq 0$ and that $\omega(\id)=1$. We denote the set of states on $\AA$ by $\mathcal{S}(\AA)$. In this paper we will work exclusively with states that are pure. In this setting, $\omega\in\mathcal{S}(\AA)$ being pure means that it is extremal in the sense that for any $p\in]0,1[$, the only two other states $\omega_1,\omega_2\in\mathcal{S}(\AA)$ that satisfy
 \begin{equation}
 	\omega=p\omega_1+(1-p)\omega_2
 \end{equation}
@@ -202,7 +202,7 @@ On the set of $G$-invariant SRE states we will now define three stable equivalen
 	\begin{equation}
 		S_0=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G\}
 	\end{equation}
-	for two algebras $\AA_1$ and $\AA_2$\footnote{With two different algebras we simply mean two different on site dimensions because we already fixed each on site dimension to be identical.}. We say that $\expval{\omega_1,U_1}_\sim=\expval{\omega_2,U_2}_\sim$ if and only if there exists a $\phi\in]0,1[$ such that there exists a $G$-invariant interaction $\Phi$, trivial elements of $S_0$ (see subsection \ref{sec:States}), $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ for algebras $\tilde\AA_1$ and $\tilde\AA_2$ respectively and an on site unitary such that
+	for two algebras $\AA_1$ and $\AA_2$\footnote{With two different algebras we simply mean two different on site dimensions because we already fixed each on site dimension to be identical.}. We say that $\expval{\omega_1,U_1}_\sim=\expval{\omega_2,U_2}_\sim$ if and only if there exists a $\phi\in]0,1[$ such that there exists a $G$-invariant interaction $\Phi\in\BB_{F_\phi}([0,1])$, trivial elements of $S_0$ (see subsection \ref{sec:States}), $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ for algebras $\tilde\AA_1$ and $\tilde\AA_2$ respectively and an on site unitary such that
 	\begin{align}
 		\omega_1\otimes_{\text{stack}}\phi_1\circ i_V&=\omega_2\otimes_{\text{stack}}\phi_2\circ\gamma^\Phi_{0;1}&V^\dagger U_{1}(g)\otimes \tilde{U}_{1}(g)V&=U_{2}(g)\otimes \tilde{U}_{2}(g).
 	\end{align}
@@ -933,7 +933,7 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 	\end{equation}
 	there exist $\tilde{\delta}_g\in\UU(\HH_0)$ such that
 	\begin{equation}
-		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\alpha=\pi_0\circ\alpha\circ\tilde{\beta}_{g,2}(\tilde{\beta}_{g,1})^{-1}.
+		\Ad{\tilde{\delta}_g}\circ\pi_0\circ\alpha=\pi_0\circ\alpha\circ\tilde{\beta}_{g,2}\circ(\tilde{\beta}_{g,1})^{-1}.
 	\end{equation}
 	Inserting equation \eqref{eq:InvarianceUnderChoiceBetaTwoBetas} and \eqref{eq:InvarianceUnderChoiceBetaAlphaDecomposition} in this gives
 	\begin{equation}
@@ -1528,7 +1528,6 @@ We now have to extend the above definition to the group
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ and $\tilde{K}_g^\sigma$ are operators belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
-\clearpage
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U\in\hom(G,U(\CC^d))$ an on site group action arbitrary. Let
 \begin{equation}
