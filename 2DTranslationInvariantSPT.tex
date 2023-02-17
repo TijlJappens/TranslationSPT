@@ -2297,25 +2297,7 @@ The second property is that the following lemma holds:
 	\begin{equation}
 		\Ad{v^\dagger W_g v}(v^\dagger a_\sigma^\dagger v a_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma.
 	\end{equation}
-<<<<<<< HEAD
-	We will prove this equality in two steps. First we will find some $B_\sigma\in\UU(\AA)$ such that
-	\begin{equation}
-		\pi_0\circ\alpha_0\circ\Theta(B_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma
-	\end{equation}
-	then we will show that $B_\sigma\in\AA_{(W(C_\theta)\cap\sigma)^c}$ and that $\beta_g^{\tau(U)}(B_\sigma)=B_\sigma$. To find $B_\sigma$, we write out
-	\begin{equation}
-		v^\dagger a_\sigma^\dagger v a_\sigma=\pi_0\circ\alpha_0\circ\Theta(\tau^{-1}(A_\sigma^\dagger)A_\sigma)
-	\end{equation}
-	and observe that we can take $B_\sigma \defeq \tau^{-1}(A_\sigma^\dagger)A_\sigma$. Now we will prove that $B_\sigma\in\UU(\AA_{W(C_\theta)^c\cap\sigma})=\UU(\AA_{(W(C_\theta)^c\cap\sigma)^c}')$. Take $X\in\AA_{(W(C_\theta)^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
-	\begin{align}
-		\Ad{B_\sigma}(X)&=\tau^{-1}\circ\Ad{A_\sigma^\dagger}\circ\tau\circ\Ad{A_\sigma}(X)\\
-		&=\tau^{-1}\circ\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{H_\text{split}}_{0;1}\circ\nu\circ \gamma^{H_\text{split}}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{H_\text{split}}_{0;1}\circ\nu^{-1}\circ\gamma^{H_\text{split}}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}(X)\\
-		&=X
-	\end{align}
-	concluding the proof. The fact that $\Ad{\beta_g^{\tau(U)}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{\tau(U)}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we again have to show that this expression is self adjoint which is a one line calculation.
-=======
 	This equality is proven in lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}.
->>>>>>> 67ea5994b2e0a9ce4fba4829e1072435001a16de
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
@@ -2611,7 +2593,7 @@ In this section we summarise the proof of theorem \ref{thrm:ExistenceSecondIndex
 	The 2-cochain was defined in subsection \ref{sec:DefinitionH1Index}. The proof that it wasn't dependent on any of the choices made in assumption \ref{assumption:2Translations} was done in subsection \ref{sec:IndexIsInvariantUnderChoicesTwoTranslations}. The first item in the list concerning the invariance under locally generated automorphisms was shown in subsection \ref{sec:H1ValuedIndexInvariantUnderLGA's}. The proof of the second item concerning the relation between the 1d SPT index and the 2d translation SPT index is done in subsection \ref{sec:TwoTranslationDirectionsExample}. The proof of the third item concerning the stacking is done in subsection \ref{sec:StackingTwoTranslations}. The proof of the last item concerning a change of basis of the on site Hilbert space is done in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space-TwoTranslations}. This concludes the proof.
 \end{proof}
 \subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}}\label{sec:ProofOfMainResult2}
-We will first prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we restate here for convenience:
+In this subsection we prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations} which we restate here for convenience:
 \SREImpliesQDisentanglableTwoTranslations*
 \begin{proof}
 	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition \ref{def:SQAut2}) and observe that the resulting $\eta_g$ has the right support.
