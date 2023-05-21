@@ -1423,35 +1423,21 @@ We now have to extend the above definition to the group
 	\end{equation}
 	Filling this in shows that the $A$'s cancel. Now, what is left to show is that
 	\begin{equation}
-		\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger=1.
+		\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger=1
 	\end{equation}
-	We will show this in two steps, first notice that because of equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part2} we get that
+	which is equivalent to showing that
 	\begin{equation}
-	\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta.
+		\Ad{y}(v^\dagger \tilde{a}^\dagger v \tilde{a})=v^\dagger \tilde{a}^\dagger v \tilde{a}.
 	\end{equation}
-	This already implies that there exists an $\alpha\in U(1)$ such that
-	\begin{equation}
-	\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger=\alpha.
+	To show this, first we use the definitions of these objects to see that this is equivalent to showing that
+	\begin{equation}\label{eq:proofOf:lem:phi1phi2matchingCondition:LastThingToProve}
+		\xi(\tau^{-1}(a^\dagger)a)=\tau^{-1}(a^\dagger)a.
 	\end{equation}
-	To show that $\alpha=1$ we merely have to show that
-	\begin{equation}
-		\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger=\left(\tilde{a}vyv^\dagger\tilde{a}^\dagger v \tilde{a}y^\dagger\tilde{a}^\dagger  v^\dagger\right)^\dagger.
-	\end{equation}
-	This is equivalent to showing that
-	\begin{equation}
-		\Ad{v^\dagger \tilde{a}^\dagger v\tilde{a}}\left(\Ad{y}\left(v^\dagger \tilde{a}^\dagger v \tilde{a}\right)\right)=\Ad{y}\left(v^\dagger \tilde{a}^\dagger v \tilde{a}\right).
-	\end{equation}
-	To show this we will fill in $v^\dagger\tilde{a}^\dagger v\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(\tau^{-1}(a^\dagger)a)$ in this which gives
-	\begin{align}
-		&\Ad{v^\dagger \tilde{a}^\dagger v\tilde{a} y}\circ \pi_0\circ\alpha_0\circ\Theta(\tau^{-1}(a^\dagger)a)\\
-		\label{eq:ProofOfPropertiesOfphi1phi2LemmaAlphaIs1Part}
-		&=\pi_0\circ\alpha_0\circ\Ad{\tau^{-1}(a^\dagger)a}\circ\xi(\tau^{-1}(a^\dagger)a).
-	\end{align}
 	However, since
 	\begin{equation}
 		\Ad{\tau^{-1}(a^\dagger)a}=\tau^{-1}\circ\Phi\circ\gamma^{H_{\text{split}}}_{0;1}\circ\gamma^H_{1;0}\circ\tau\circ\gamma^H_{0;1}\circ\gamma^{H_{\text{split}}}_{1;0}\circ\Phi^{-1}=\tau^{-1}\circ\Phi\circ\tau\circ\Phi^{-1}
 	\end{equation}
-	we get that $\Ad{\tau^{-1}(a^\dagger)a}$ commutes with $\xi$. After filling this in equation \eqref{eq:ProofOfPropertiesOfphi1phi2LemmaAlphaIs1Part} we get the desired result. This concludes the proof.
+	we get that $\tau^{-1}(a^\dagger)a\in\UU(\AA_{W(C_\theta)})'=\UU(\AA_{W(C_\theta)^c})$, where the last equality is again because of section 3 in \cite{NaScWe_2013}. This concludes the proof of \ref{eq:proofOf:lem:phi1phi2matchingCondition:LastThingToProve} concluding the proof of this lemma.
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
 	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
