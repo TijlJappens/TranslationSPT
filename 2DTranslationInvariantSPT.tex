@@ -304,7 +304,7 @@ We now state the result that using assumption \ref{assumption} we can define an 
 		\end{equation}
 		\item The index is independent on the choice of basis for the on site Hilbert space by which we mean that for any on site unitary $V$ we get that
 		\begin{equation}
-			\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}(\omega\circ i_V)=\textrm{Index}^{\AA,U}(\omega).
+			\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}(\omega\circ i_V)=\textrm{Index}^{\AA,U}(\omega).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -371,7 +371,7 @@ This is almost completely identical to assumption \ref{assumption1d}, the only d
 		\end{equation}
 		\item The index is independent on the choice of basis for the on site Hilbert space by which we mean that for any on site unitary $V$ we get that
 		\begin{equation}
-			\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}_{\text{2 trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega).
+			\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{\text{2 trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -481,7 +481,7 @@ All in all we have provided a proof that the work done in \cite{ogata2021h3gmath
 		\end{equation}
 		\item The index is independent on the choice of basis for the on site Hilbert space by which we mean that for any on site unitary $V$ we get that
 		\begin{equation}
-			\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}_{\text{no trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega).
+			\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{\text{no trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega).
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
@@ -865,56 +865,7 @@ We have that:
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
-	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ as the infinite product automorphism of $\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}$. This Automorphism indeed satisfies that
-	\begin{equation}
-		\omega_0\defeq \omega\circ\alpha^{-1}
-	\end{equation}
-	is a product state. This is because for any $A\in\AA_{L_{i}}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
-	\begin{equation}
-		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B).
-	\end{equation}
-	We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\AA_{L_0^{n(j)}})$ where $n(j)\in\NN$ is the largest number such that $L_{j}^{n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
-	\begin{equation}
-		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_\abs{j}^\dagger}_{(\cdot,j)}.
-	\end{equation}
-	Let $\alpha_\sigma\in\Aut{\AA_\sigma}$ be
-	\begin{equation}
-		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma^{-1})_{(\cdot,j)}.
-	\end{equation}
-	Now define
-	\begin{equation}
-		\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}\tau^j (b^\dagger b_\abs{j}).
-	\end{equation}
-	We will now show that the limit
-	\begin{equation}
-		\tilde V_1\defeq\lim_{m\rightarrow\infty}\tilde V_{1,m}
-	\end{equation}
-	exists (is an element of $\AA$). By construction we have that for any $\epsilon$ there exists an $n_0>0$ such that
-	\begin{equation}
-		\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}<\epsilon
-	\end{equation}
-	for all $n>n_0$. We will now show that our sequence is a Cauchy sequence. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
-	\begin{align}
-		\norm{\tilde{V}_{1,n}-\tilde{V}_{1,m}}&\leq \norm{\tilde{V}_{1,n}-\tilde{V}_{1,n_0}}+\norm{\tilde{V}_{1,m}-\tilde{V}_{1,n_0}}\\
-		&=\norm{\tilde{V}_{1,n}\tilde{V}_{1,n_0}^\dagger-\id}+\norm{\tilde{V}_{1,m}\tilde{V}_{1,n_0}^\dagger-\id}.
-	\end{align}
-	We will find a bound on the first therm as the bound of the second therm is analogous. First notice that we have for any tensor product that
-	\begin{equation}
-		A\otimes B-C\otimes D=(A-C+C)\otimes B-C\otimes D=(A-C)\otimes B+C\otimes (B-D).
-	\end{equation}
-	By using this property and the triangle inequality recursively we get
-	\begin{align}
-	&\norm{\bigotimes_{i=-n}^{-n_0}(b^\dagger b_\abs{i})_i\bigotimes_{i=n_0}^{n}(b^\dagger b_i)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
-	&\leq 2\sum_{i=n_0}^{n}\norm{b^\dagger b_i-\id_{\HH_{L_i}}}<2\epsilon.
-	\end{align}
-	This proves that the sequence is a Cauchy sequence and hence the convergence follows. To conclude the proof, we merely have to define $V_1\defeq \alpha_0(\tilde{V}_1)$. We then get
-	\begin{align}
-		\Ad{V_1}\circ \alpha_0\circ \Theta&= \alpha_0\circ\Ad{\tilde V_1}\circ \Theta\\
-		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger b_\abs{j}}\circ \Ad{b_\abs{j}^\dagger}_{(\cdot,j)}\\
-		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger}_{(\cdot,j)}\\
-		&=\alpha
-	\end{align}
-	concluding the proof.
+	The proof is in lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -1419,7 +1370,7 @@ concluding the proof.
 \subsection{The $H^2$-valued index is invariant of choice of basis of on site Hilbert space}\label{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}
 Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this subsection we will prove that
 \begin{align}
-	&\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
+	&\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
 	&=\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
 \end{align}
 We do this by proving the following lemma:
@@ -1430,7 +1381,7 @@ We do this by proving the following lemma:
 	\end{equation}
 	for a GNS triple for $\omega_0$, $(\HH_0,\pi_0,\Omega_0)$ then $W_g,u_R(g,h),K^R_g$ are also operators belonging to
 	\begin{equation}
-		\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)
+		\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)
 	\end{equation}
 	for the GNS triple for $\omega_0\circ i_V$ given by $(\HH_0,\pi_0\circ i_V,\Omega_0)$.
 \end{lemma}
@@ -1797,7 +1748,7 @@ Since this state satisfies the split property (see lemma \ref{lem:phiExampleCons
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega$ satisfies assumption \ref{assumption:2Translations}.
 \end{lemma}
 \begin{proof}
-	The proof of this lemma is analogous to the proof of lemma \ref{lem:TensorProductStateHasWellDefinedH^2Index}.
+	The proof of this lemma is given in lemma \ref{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}.
 \end{proof}
 This shows that $\omega$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -2397,7 +2348,7 @@ The proof of this is completely analogous to what was in section \ref{sec:Stacki
 \subsection{The $H^1$-valued index is invariant of choice of basis of on site Hilbert space}\label{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space-TwoTranslations}
 Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this subsection we will prove that
 \begin{align}
-	&\textrm{Index}^{\AA,\Ad{V^\dagger}\circ U}_{2\text{ trans}}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
+	&\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{2\text{ trans}}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
 	&=\textrm{Index}^{\AA,U}_{2\text{ trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
 \end{align}
 The proof is completely analogous to the proof presented in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}.
@@ -2465,6 +2416,68 @@ By restriction this gives rise to an automorphism $\tau_\AA:\UU(\HH_\AA)\rightar
 	\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\tau_\AA\circ\pi_\AA\otimes\tau_\BB\circ\pi_\BB=\Ad{U_\AA\otimes U_\BB}\circ(\pi_\AA\otimes\pi_\BB).
 \end{equation}
 By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelevant phase) we need that $U=U_\AA\otimes U_\BB$ concluding the proof.
+\end{proof}
+\section{Properties of infinite tensor product states}
+\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}
+	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
+\end{lemma}
+\begin{proof}
+	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ as the infinite product automorphism of $\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}$. This Automorphism indeed satisfies that
+	\begin{equation}
+		\omega_0\defeq \omega\circ\alpha^{-1}
+	\end{equation}
+	is a product state. This is because for any $A\in\AA_{L_{i}}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
+	\begin{equation}
+		\omega_0(A\otimes B)=\phi_0(A)\phi_0(B).
+	\end{equation}
+	We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\AA_{L_0^{n(j)}})$ where $n(j)\in\NN$ is the largest number such that $L_{j}^{n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
+	\begin{equation}
+		\Theta=\bigotimes_{j\in\ZZ}\Ad{b_\abs{j}^\dagger}_{(\cdot,j)}.
+	\end{equation}
+	Let $\alpha_\sigma\in\Aut{\AA_\sigma}$ be
+	\begin{equation}
+		\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma^{-1})_{(\cdot,j)}.
+	\end{equation}
+	Now define
+	\begin{equation}
+		\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}\tau^j (b^\dagger b_\abs{j}).
+	\end{equation}
+	We will now show that the limit
+	\begin{equation}
+		\tilde V_1\defeq\lim_{m\rightarrow\infty}\tilde V_{1,m}
+	\end{equation}
+	exists (is an element of $\AA$). By construction we have that for any $\epsilon$ there exists an $n_0>0$ such that
+	\begin{equation}
+		\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}<\epsilon
+	\end{equation}
+	for all $n>n_0$. We will now show that our sequence is a Cauchy sequence. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
+	\begin{align}
+		\norm{\tilde{V}_{1,n}-\tilde{V}_{1,m}}&\leq \norm{\tilde{V}_{1,n}-\tilde{V}_{1,n_0}}+\norm{\tilde{V}_{1,m}-\tilde{V}_{1,n_0}}\\
+		&=\norm{\tilde{V}_{1,n}\tilde{V}_{1,n_0}^\dagger-\id}+\norm{\tilde{V}_{1,m}\tilde{V}_{1,n_0}^\dagger-\id}.
+	\end{align}
+	We will find a bound on the first therm as the bound of the second therm is analogous. First notice that we have for any tensor product that
+	\begin{equation}
+		A\otimes B-C\otimes D=(A-C+C)\otimes B-C\otimes D=(A-C)\otimes B+C\otimes (B-D).
+	\end{equation}
+	By using this property and the triangle inequality recursively we get
+	\begin{align}
+		&\norm{\bigotimes_{i=-n}^{-n_0}(b^\dagger b_\abs{i})_i\bigotimes_{i=n_0}^{n}(b^\dagger b_i)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
+		&\leq 2\sum_{i=n_0}^{n}\norm{b^\dagger b_i-\id_{\HH_{L_i}}}<2\epsilon.
+	\end{align}
+	This proves that the sequence is a Cauchy sequence and hence the convergence follows. To conclude the proof, we merely have to define $V_1\defeq \alpha_0(\tilde{V}_1)$. We then get
+	\begin{align}
+		\Ad{V_1}\circ \alpha_0\circ \Theta&= \alpha_0\circ\Ad{\tilde V_1}\circ \Theta\\
+		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger b_\abs{j}}\circ \Ad{b_\abs{j}^\dagger}_{(\cdot,j)}\\
+		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger}_{(\cdot,j)}\\
+		&=\alpha
+	\end{align}
+	concluding the proof.
+\end{proof}
+\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}
+	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega$ satisfies assumption \ref{assumption:2Translations}.
+\end{lemma}
+\begin{proof}
+	The proof of this lemma is analogous to the proof of lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}. Since we can take $\eta_g=\id$ here the change in support of $\eta_g$ from lemma \ref{assumption} is not an issue. If the one dimensional state is $\nu$ invariant, it follows that the infinite product state is as well. This concludes the proof of this lemma.
 \end{proof}
 \section{Proof of lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
 In this section we prove lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
