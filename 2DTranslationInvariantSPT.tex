@@ -982,105 +982,7 @@ We will then use this property to define a morphism:
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	In this proof we take $\sigma=R$, the proof when $\sigma=L$ is equivalent. Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\textrm{Cone}_R(\alpha_0,\theta,\Theta)$ such that
-	\begin{equation}
-	x=\pi_0\circ\alpha_0\circ\Theta(A)y
-	\end{equation}
-	and take $\xi\in\Aut{\AA_{W(C_\theta)}\cap \AA_R}$ the automorphism such that
-	\begin{equation}
-	\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
-	\end{equation}
-	Take $a$ and $\Phi=\Phi^U\otimes\Phi^D$ as given in equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. We now define
-	\begin{equation}
-		\phi_{1,R}(x)\defeq \pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\tilde{a}y\tilde{a}^\dagger.
-	\end{equation}
-	We now have to prove three things:
-	\begin{enumerate}
-		\item It satisfies equation \eqref{eq:ConditionDefinitionOfGroupMorphism}.
-		\item This map is well defined (independent of our choices).
-		\item This is a group homomorphism.
-	\end{enumerate}
-	To show the first item just observe that
-	\begin{align}
-		&\Ad{\phi_{1,R}(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
-		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
-		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}.
-	\end{align}
-	Now we insert $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}=\text{Id}$ and obtain:
-	\begin{align}
-		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ(\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0})\\
-		\nonumber
-		&\quad\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}.
-	\end{align}
-	Using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} this gives
-	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\Phi^{-1}\circ\xi\circ\Phi\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\xi
-	\end{align}
-	concluding the proof of the first item. To show the second item, suppose we have two different representatives of $x$, say
-\begin{equation}
-	x=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1=\pi_0\circ\alpha_0\circ\Theta(A_2)y_2.
-\end{equation}
-By construction, this implies that
-\begin{equation}\label{eq:ProofThatphi1IsIndependentOfChoiceOfRepresentative}
-	\pi_0\circ\alpha_0\circ\Theta(A_2^\dagger A_1)=y_2 y_1^\dagger.
-\end{equation}
-This implies that $\Ad{A_2^\dagger A_2}\in\Aut{\AA_{W(C_\theta)\cap R}}$ and hence we require that $A_2^\dagger A_1\in\UU(\AA_{(W(C_\theta)\cap R)^c}')=\UU(\AA_{W(C_\theta)\cap R})$ (this last equality follows from section 3 of \cite{NaScWe_2013}). By using this equation combined with lemma \ref{lem:PropertyTilde_a} we get that
-\begin{align}
-	\Ad{\tilde{a}}(y_2y_1^\dagger)&=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta(A_2^\dagger A_1)\\
-	&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger A_1).
-\end{align}
-Reworking this equation gives the desired
-\begin{equation}
-	\phi_{1,R}(\pi_0\circ\alpha_0\circ\Theta(A_1)y_1)=\phi_{1,R}(\pi_0\circ\alpha_0\circ\Theta(A_2)y_2).
-\end{equation}
-To then show the third item take $x_1,x_2\in \IAC_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\UU(\AA_R),y_1,y_2\in \textrm{Cone}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{W(C_\theta)}\cap\AA_R}$ such that
-	\begin{align}
-		x_i&=\pi_0\circ\alpha_0\circ\Theta(A_i)y_i&\Ad{y_i}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_i.
-	\end{align}
-	We have
-	\begin{align}
-		x_1x_2&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_2\\
-		&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_1^{\dagger}y_1y_2\\
-		&=\pi_0\circ\alpha_0\circ\Theta(A_1\xi_1(A_2))y_1y_2
-	\end{align}
-	giving
-	\begin{equation}
-		\phi_{1,R}(x_1x_2)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1y_2\tilde{a}^\dagger.
-	\end{equation}
-	where $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. Filling this in gives
-	\begin{align}
-		&\phi_{1,R}(x_1x_2)\phi_{1,R}(x_2)^\dagger\phi_{1,R}(x_1)^\dagger\\
-		\label{eq:HomomorphismCondition}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1\stkout{y_2\tilde{a}^\dagger \tilde{a}y_2^\dagger}\tilde{a}^\dagger\\
-		\nonumber
-		&\quad\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)\tilde{a}y_1^\dagger\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1^\dagger).
-	\end{align}
-	Writing out a part of this gives:
-	\begin{align}
-		&\Ad{\tilde{a}y_1\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi_1\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger).
-	\end{align}
-	Using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} now yields:
-	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi_1\circ\Phi(A_2^\dagger)\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Phi\circ\xi_1(A_2^\dagger)\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\xi_1(A_2^\dagger).
-	\end{align}
-	This shows that
-	\begin{equation}
-		\Ad{\tilde{a}y_1\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\xi_1(A_2^\dagger).
-	\end{equation}
-	Inserting this in equation \eqref{eq:HomomorphismCondition} shows that
-	\begin{equation}
-		\phi_{1,R}(x_1x_2)\phi_{1,R}(x_1)^\dagger\phi_{1,R}(x_2)^\dagger=\id
-	\end{equation}
-	concluding the proof of the third item. To show the last two items one only has to work out
-	\begin{equation}
-		\Ad{\tilde{a}^\dagger \phi_{1,R}(x)\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta
-	\end{equation}
-	in both situations. Doing this concludes the proof.
+	The proof is presented after lemma \ref{lem:DefinitionOfGroupMorphismAppendix}.
 \end{proof}
 We now have to extend the above definition to the group
 \begin{equation}
@@ -1101,23 +1003,7 @@ We now have to extend the above definition to the group
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	The fist item is trivial, this is because the fact that $ab=\tilde{a}\tilde{b}$ already implies that $(a,b)$ and $(\tilde{a},\tilde{b})$ can only differ up to an exchange in phase. To show the second item, we only have to show that
-	\begin{equation}
-		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a)
-	\end{equation}
-	for any $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and for any $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. To show this, we first write out $b=\pi_0\circ\alpha_0\circ\Theta(B)y_b$ where $B\in\UU(\AA_R)$ and where $y_b\in\textrm{Cone}_R(\alpha_0,\theta)$. We can now split the proof in two parts. First we want to prove that
-	\begin{equation}
-		\Ad{\phi_{1,L}(a)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{0;1}^H\circ\gamma^\Hsplit_{1;0}(B)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{0;1}^H\circ\gamma^\Hsplit_{1;0}(B).
-	\end{equation}
-	This can be done using equation \eqref{eq:ConditionDefinitionOfGroupMorphism}. Secondly we want to prove that
-	\begin{equation}
-		\Ad{\phi_{1,L}(a)}(\phi_{1,R}(y_b))=(\phi_{1,R}(y_b)).
-	\end{equation}
-	We can rewrite this equation to
-	\begin{equation}
-		\Ad{\phi_{1,R}(y_b)}(\phi_{1,L}(a))=(\phi_{1,L}(a)).
-	\end{equation}
-	We now write out $a=\pi_0\circ\alpha_0\circ\Theta(A)y_a$ with $A\in\UU(\AA_L)$ and $y_a\in\textrm{Cone}_L(\alpha_0,\theta)$. We again split the proof of this equality in two parts. The equality with the invariance of the $A$ part again uses equation \eqref{eq:ConditionDefinitionOfGroupMorphism}. The equality with the invariance of the $y_a$ part can be done by inserting the definition and observing that the $\tilde{a}$ cancel.
+	This proof is done under lemma  \ref{lem:extensionOfPhi1DefinitionAppendix}.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. Let
@@ -1644,12 +1530,12 @@ This example will be very similar to what was done in section \ref{sec:OneTransl
 \assumptionOneDimensionalTwo*
 Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$ valued index for it (see appendix \ref{sec:OneDimensionalIndices}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
 \begin{lemma}
-	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega$ satisfies assumption \ref{assumption:2Translations}.
+	Let $\omega_\phi$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega_\phi$ satisfies assumption \ref{assumption:2Translations}.
 \end{lemma}
 \begin{proof}
 	The proof of this lemma is given in lemma \ref{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}.
 \end{proof}
-This shows that $\omega$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
+This shows that $\omega_\phi$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
 	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
 \end{equation}
@@ -1695,7 +1581,7 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 	&=\alpha(g)w^\dagger (\id_{H_{L_{>-1}}}\otimes \id_{\HH_{L_{-1},L}}\otimes k^R(g)\otimes \id_{H_{L_{<-1}}}) w\\
 	&=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
 \end{align}
-showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{1d trans}}(\phi)$.
+showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H1ValuedIndexInvariantUnderLGA's}
 The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. To this end let $H\in \BB_{F_\phi}([0,1])$ be a $G$-invariant, translation invariant (in both directions) one parameter family of interactions. In the rest of this section we will define (for notational simplicity) $\HsplitTilde\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. Clearly, this $\HsplitTilde$ is translation invariant in the vertical direction but not in the horizontal direction. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA} but with some notable differences. We first need a different version of lemma \ref{lem:DefinitionOfGroupMorphismVAutEquation} (in fact it is almost completely identical only the definition of $\Hsplit$ is now slightly different) and use this to define some objects used in the rest of the section:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismVAutEquationTwoTranslations}
@@ -1737,15 +1623,15 @@ We now need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorph
 		\end{equation}
 		\item it is well defined (independent of the choice of $A$ and $y$).
 		\item it is a group homomorphism.
-		\item in general
+		\item we have that
 			\begin{equation}
 				\tilde{a}^\dagger\phiTilde_1(x)\tilde{a}\in\IAC_\sigma(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
 			\end{equation}
-			If on top of this, when $x\in\IAC_{\nu^\sigma(\sigma)}$ then
+			If on top of this $x\in\IAC_{\nu^\sigma(\sigma)}$ then
 			\begin{equation}
 				\tilde{a}^\dagger\phiTilde_1(x)\tilde{a}\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
 			\end{equation}
-			A similar statement holds when $\IAC_{\sigma}^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ or when $\IAC_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+		\item when additionally $x\in\IAC_{\sigma}^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ or when $x\in\IAC_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ we obtain a similar result.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1818,8 +1704,8 @@ The $\phiTilde_1$ and $\phiTilde_2$ defined previously satisfy that for any $x\i
 \begin{proof}
 	This lemma is proven in \ref{lem:SplittedAutomorphismAfterTranslatedIsVertical}.
 \end{proof}
-In what follows, let $A_L\defeq A_L(1)$, $A_R\defeq A_R(1)$ and $\Phi^{\mu\nu}=\Phi^{\mu\nu}(1)$. Furthermore, define $a_L\defeq \pi_0\circ\alpha_0\circ\Theta(A_L)$ and $a_R\defeq \pi_0\circ\alpha_0\circ\Theta(A_R)$. We will now show some properties for these operators. The first one is that they can be used to exchange $w$ and $\phiTilde_1/\phiTilde_2$:
-\begin{lemma}
+In what follows, let $A_L\defeq A_L(1)$, $A_R\defeq A_R(1)$ and $\Phi^{\mu\nu}=\Phi^{\mu\nu}(1)$. We will now show some properties for these operators. The first one is that they can be used to exchange $w$ and $\phiTilde_1/\phiTilde_2$:
+\begin{lemma}\label{lem:TranslationOutOfPhi_KW}
 	Define
 	\begin{align}
 		a_L&\defeq \pi_0\circ\alpha_0\circ\Theta(A_L)&a_R&\defeq \pi_0\circ\alpha_0\circ\Theta(A_R)
@@ -1834,82 +1720,15 @@ In what follows, let $A_L\defeq A_L(1)$, $A_R\defeq A_R(1)$ and $\Phi^{\mu\nu}=\
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	We will only show the first equality as the second one is completely analogous. We need to show that
-	\begin{align}
-		\phiTilde_1(K)&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)}(\phiTilde_1(w^\dagger K w))\\
-		&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)}(\tilde{a}w^\dagger K w\tilde{a}^\dagger)\\
-		&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)}(\tilde{a}w^\dagger \tilde{a}^\dagger \phiTilde_1(K) \tilde{a}^\dagger w\tilde{a}^\dagger)\\
-		&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)}(\phiTilde_1(K)).
-	\end{align}
-	To do this, we first find an $A\in\UU(\AA)$ such that
-	\begin{equation}
-		\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A)=w\phiTilde_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)
-	\end{equation}
-	and then we will prove that $A\in\UU(\AA_{W(C_\theta)^c})$. It should be clear that the result follows from this\footnote{This is most easily seen from\begin{equation}
-			\Ad{\phiTilde_1(K)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A)=\phiTilde_1(\Ad{K}\circ\pi_0\circ\alpha_0\circ\Theta(A))=\phiTilde_1(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A).
-	\end{equation}}. Finding this $A$ can be done by working out
-	\begin{equation}
-		w\phiTilde_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)=\pi_0\circ\alpha_0\circ\Theta\left(\nu\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger\right).
-	\end{equation}
-	First we insert $\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}=\text{Id}$ to obtain
-	\begin{equation}
-		=\pi_0\circ\alpha_0\circ\Theta\circ\underline{\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}}\left(\nu\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger\right).
-	\end{equation}
-	Using the fact that $H$ is translation invariant allows us to cancel it giving
-	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(\gamma^{\HsplitTilde}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger))\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(\gamma^{\HsplitTilde}_{0;1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger)).
-	\end{align}
-	This shows that we can take
-	\begin{equation}
-		A\defeq \gamma^{\HsplitTilde}_{0;1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger).
-	\end{equation}
-	Now we only have to show that indeed $A\in\UU(\AA_{W(C_\theta)^c})$. To do this, take $X\in\AA_{W(C_\theta)}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then we get that $A\in\UU(\AA_{W(C_\theta)}')$. Since by corollary 3.1 of \cite{NaScWe_2013} we get that $\UU(\AA_{W(C_\theta)}')=\UU(\AA_{W(C_\theta)^c})$ this is sufficient to conclude the proof. To show this, observe that
-	\begin{align}
-		\Ad{A}(X)&=\gamma^{\HsplitTilde}_{0;1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}\circ\Ad{A_L\otimes A_R}\circ\nu\circ\gamma^{\HsplitTilde}_{0;1}\circ\stkout{\nu^{-1}}\circ\stkout{\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{\HsplitTilde}_{0;1}}\\
-		&\nonumber
-		\qquad\circ\gamma^H_{1;0}\circ\stkout{\nu}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(X)
-	\end{align}
-	where the cancellation is done using the fact that $H$ is translation invariant. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we obtain
-	\begin{equation}
-		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(X).
-	\end{equation}
-	Now using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations} we get
-	\begin{equation}
-		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ(\Phi^U\otimes\Phi^D)^{-1}\circ\nu^{-1}\circ\Phi^U\otimes\Phi^D(X)=X
-	\end{equation}
-	concluding the proof.
+	The proof is presented after lemma \ref{lem:TranslationOutOfPhi_KW_Appendix}.
 \end{proof}
 The second property is that the following lemma holds:
-\begin{lemma}\label{lem:EqualityTwoTranslationsUsingConnectedPath}
-	For all $\sigma\in\{L,R\}$, the following equality holds:
-	\begin{equation}
-		\Ad{W_g}(a_\sigma^\dagger v a_\sigma v^\dagger)=a_\sigma^\dagger v a_\sigma v^\dagger.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	We will prove this equality in two steps. First we will find some $B_\sigma\in\UU(\AA)$ such that
-	\begin{equation}
-		\pi_0\circ\alpha_0\circ\Theta(B_\sigma)=a_\sigma^\dagger v a_\sigma v^\dagger 
-	\end{equation}
-	then we will show that $B_\sigma\in\AA_{(W(C_\theta)\cap\sigma)^c}$ (his already proves invariance under $\eta_g$) and that $\beta_g^{U}(B_\sigma)=B_\sigma$ (concluding the proof of being invariant under $\eta_g\circ\beta_g^U$). To find $B_\sigma$, we write out                                                                                                                                                                                                              
-	\begin{equation}
-		a_\sigma^\dagger v a_\sigma v^\dagger=\pi_0\circ\alpha_0\circ\Theta(A_\sigma^\dagger\tau(A_\sigma))
-	\end{equation}
-	and observe that we can take $B_\sigma \defeq A_\sigma^\dagger\tau(A_\sigma)$. Now we will prove that $B_\sigma\in\UU(\AA_{C_\theta^c\cap\sigma})=\UU(\AA_{(C_\theta^c\cap\sigma)^c}')$. Take $X\in\AA_{(C_\theta^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
-	\begin{align}
-		\Ad{B_L\otimes B_R}(X)&=\Ad{A_L^\dagger\otimes A_R^\dagger}\circ\tau\circ\Ad{A_L\otimes A_R}\circ\tau^{-1}(X)\\
-		&=\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{\HsplitTilde}_{0;1}\circ\nu\circ \gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}}\circ\tau\circ\stkout{\nu\circ\gamma^{\HsplitTilde}_{0;1}\circ\nu^{-1}\circ\gamma^{\HsplitTilde}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\tau^{-1}(X)\\
-		&=X
-	\end{align}
-	concluding the proof. The fact that $\Ad{\beta_g^{U}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{U}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we have to use two things. First, we use the fact that $\alpha$ has to be a $U(1)$-representation. Secondly, because we can make this construction for every $\lambda$ (I mean the $\lambda$ from lemma \ref{lem:TranslatingSplittedTimeEvolution}) we need that $\alpha$ must be connected to the trivial $U(1)$-representation through a continuous path. However, because our group is finite we can use lemma \ref{lem:FiniteGroupsHaveDiscreteU(1)Representations} to conclude that $\alpha$ is trivial an hence the result follows.
-\end{proof}
-\begin{lemma}
+\begin{lemma}\label{lem:DefinitionOfEpsilons}
 	Define $\epsilon^L_g\in\IAC_L(\alpha_0,\theta)$ and $\epsilon^R_g\in\IAC_R(\alpha_0,\theta)$ through
 	\begin{align}
 		\epsilon_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}(A_\sigma\:\eta_g^\sigma\circ\beta_{g}^{U\sigma}(A_\sigma^\dagger))
 	\end{align}
-	(where $A_\sigma$ was defined in equation \ref{eq:TranslatingSplittedTimeEvolution}) then
+	(where $A_\sigma$ was defined in lemma \ref{lem:TranslatingSplittedTimeEvolution}) then
 	\begin{align}
 		w^\dagger \phiTilde_2(W_g)w &= \phiTilde_1(\epsilon_g^L\otimes\epsilon_g^R)\phiTilde_2(w^\dagger W_g w)\\
 		\label{eq:TransformationOfKUnderEpsilon}
@@ -1917,51 +1736,7 @@ The second property is that the following lemma holds:
 	\end{align}
 \end{lemma}
 \begin{proof}
-	By equation \eqref{eq:TranslationOutOfPhi_W} we get that
-	\begin{align}
-		w^\dagger\phiTilde_2(W_g)w&=\phiTilde_1(w^\dagger \: a_L\otimes a_R \: w)\phiTilde_2(w^\dagger W_g w)\phiTilde_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w)\\
-		&=\phiTilde_1(w^\dagger \: a_L\otimes a_R \: w)\Ad{\phiTilde_2(w^\dagger W_g w)}(\phiTilde_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w))\phiTilde_2(w^\dagger W_g w).
-	\end{align}
-	Using result 2 and 3 of lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex} on this now gives
-	\begin{align}
-		&=\phiTilde_1(w^\dagger \: a_L\otimes a_R \:\Ad{W_g}(a_L^\dagger\otimes a_R^\dagger)w)\phiTilde_2(w^\dagger W_g w)\\
-		&=\phiTilde_1(w^\dagger a_L\Ad{W_g}(a_L^\dagger)\otimes a_R \Ad{W_g}( a_R^\dagger)w)\phiTilde_2(w^\dagger W_g w).
-	\end{align}
-	Since
-	\begin{align}
-		a_\sigma\Ad{W_g}(a_\sigma^\dagger)&=\pi_0\circ\alpha_0\circ\Theta(A_\sigma\eta_g^\sigma\circ\beta_g^{\sigma U}(A_\sigma^\dagger))\\
-		w^\dagger a_\sigma\Ad{W_g}(a_\sigma^\dagger)w&=\epsilon_g^\sigma
-	\end{align}
-	the first result follows. For the second result we start by using equation \eqref{eq:TranslationOutOfPhi_K} which gives us
-	\begin{align}
-		w^\dagger \phiTilde_1(K_g^\sigma)w&=\phiTilde_1(w^\dagger a_L\otimes a_R K_g^\sigma a_L^\dagger\otimes a_R^\dagger w)\\
-		&=\phiTilde_1(w^\dagger a_\sigma K_g^\sigma a_\sigma^\dagger w).
-	\end{align}
-	Inserting $v^\dagger W_g va_\sigma^\dagger a_\sigma v^\dagger W_g^\dagger v=\id$ in this gives us
-	\begin{align}
-		&=\phiTilde_1(w^\dagger a_\sigma \underline{\Ad{v^\dagger W_g v}(a_\sigma^\dagger a_\sigma)} K_g^\sigma a_\sigma^\dagger w)\\
-		&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{(K_g^\stkout{\sigma})^\dagger v^\dagger W_g v}(a_\sigma) a_\sigma^\dagger w).
-	\end{align}
-	We now use the fact that $K_g W_g=v^\dagger W_g v$ to get
-	\begin{align}
-		&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{W_g}(a_\sigma) a_\sigma^\dagger w)\\
-		&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  (\epsilon_g^\sigma)^\dagger w).
-	\end{align}
-	Inserting $w w^\dagger$ in this and using the second result of lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex} gives
-	\begin{align}
-		&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)\underline{w w^\dagger}K_g^\sigma \underline{w w^\dagger}  (\epsilon_g^\sigma)^\dagger w)\\
-		&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)w)\phiTilde_1( w^\dagger K_g^\sigma w ) \phiTilde_1( w^\dagger  (\epsilon_g^\sigma)^\dagger w)\\
-		&=\underline{v^\dagger}\phiTilde_1(\underline{v} w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)w \underline{v^\dagger})\underline{v}\phiTilde_1( w^\dagger K_g^\sigma w ) \phiTilde_1( w^\dagger  (\epsilon_g^\sigma)^\dagger w).
-	\end{align}
-	The only thing we now have to prove is that
-	\begin{equation}\label{eq:5.126}
-		a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)=v^\dagger a_\sigma \Ad{W_g}(a_\sigma^\dagger)v=v^\dagger w \epsilon_g^\sigma w^\dagger v
-	\end{equation}
-	since inserting this, concludes the proof. To do this notice that we can rewrite equation \eqref{eq:5.126} as
-	\begin{equation}
-		\Ad{v^\dagger W_g v}(v^\dagger a_\sigma^\dagger v a_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma.
-	\end{equation}
-	This equality is proven in lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}.
+	This lemma is proven after lemma \ref{lem:DefinitionOfEpsilonsAppendix}. The proof of \ref{lem:DefinitionOfEpsilonsAppendix} hinges on lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}. We also remark that this last lemma is the only place where the compactness of the group is used in the main body of this paper.
 \end{proof}
 \begin{theorem}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
@@ -2379,7 +2154,164 @@ By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelev
 \begin{proof}
 	The proof of this lemma is analogous to the proof of lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}. Since we can take $\eta_g=\id$ here the change in support of $\eta_g$ from lemma \ref{assumption} is not an issue. If the one dimensional state is $\nu$ invariant, it follows that the infinite product state is as well. This concludes the proof of this lemma.
 \end{proof}
-\section{Some properties of $\phi_1$, $\phi_2$, $\phiTilde_1$ and $\phiTilde_2$}
+\section{Some properties of $\phi_1$ and $\phi_2$}
+\begin{lemma}\label{lem:DefinitionOfGroupMorphismAppendix}
+	Let $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$ and define the map
+	\begin{align}
+		\phi_{1,\sigma}&:\IAC_\sigma(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
+		\nonumber
+		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phi_1(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\tilde{a}y\tilde{a}^\dagger
+	\end{align}
+	where $A\in\UU(\AA_\sigma)$ and $y\in\textrm{Cone}_\sigma(\alpha_0,\theta)$. This map satisfies that
+	\begin{enumerate}
+		\item  for (the unique) $\xi\in\Aut{\AA_{W(C_\theta)\cap\sigma}}$ such that
+		\begin{equation}
+			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
+		\end{equation}
+		we get that
+		\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphismAppendix}
+			\Ad{\phi_{1,\sigma}(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\xi.
+		\end{equation}
+		\item it is well defined (independent of the choice of $A$ and $y$).
+		\item it is a group homomorphism.
+		\item $\tilde{a}^\dagger \phi_1(x)\tilde{a}\in\IAC_\sigma(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+		\item if $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$ then  $\tilde{a}^\dagger \phi_1(x)\tilde{a}\in\IAC_\sigma^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	In this proof we take $\sigma=R$, the proof when $\sigma=L$ is equivalent. Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\textrm{Cone}_R(\alpha_0,\theta,\Theta)$ such that
+	\begin{equation}
+		x=\pi_0\circ\alpha_0\circ\Theta(A)y
+	\end{equation}
+	and take $\xi\in\Aut{\AA_{W(C_\theta)}\cap \AA_R}$ the automorphism such that
+	\begin{equation}
+		\Ad{y}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi.
+	\end{equation}
+	Take $a$ and $\Phi=\Phi^U\otimes\Phi^D$ as given in equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. We now define
+	\begin{equation}
+		\phi_{1,R}(x)\defeq \pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\tilde{a}y\tilde{a}^\dagger.
+	\end{equation}
+	We now have to prove three things:
+	\begin{enumerate}
+		\item It satisfies equation \eqref{eq:ConditionDefinitionOfGroupMorphismAppendix}.
+		\item This map is well defined (independent of our choices).
+		\item This is a group homomorphism.
+	\end{enumerate}
+	To show the first item just observe that
+	\begin{align}
+		&\Ad{\phi_{1,R}(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
+		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
+		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}.
+	\end{align}
+	Now we insert $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}=\text{Id}$ and obtain:
+	\begin{align}
+		&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ(\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0})\\
+		\nonumber
+		&\quad\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}.
+	\end{align}
+	Using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} this gives
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\Phi^{-1}\circ\xi\circ\Phi\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{A}\circ\xi
+	\end{align}
+	concluding the proof of the first item. To show the second item, suppose we have two different representatives of $x$, say
+	\begin{equation}
+		x=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1=\pi_0\circ\alpha_0\circ\Theta(A_2)y_2.
+	\end{equation}
+	By construction, this implies that
+	\begin{equation}\label{eq:ProofThatphi1IsIndependentOfChoiceOfRepresentative}
+		\pi_0\circ\alpha_0\circ\Theta(A_2^\dagger A_1)=y_2 y_1^\dagger.
+	\end{equation}
+	This implies that $\Ad{A_2^\dagger A_2}\in\Aut{\AA_{W(C_\theta)\cap R}}$ and hence we require that $A_2^\dagger A_1\in\UU(\AA_{(W(C_\theta)\cap R)^c}')=\UU(\AA_{W(C_\theta)\cap R})$ (this last equality follows from section 3 of \cite{NaScWe_2013}). By using this equation combined with lemma \ref{lem:PropertyTilde_a} we get that
+	\begin{align}
+		\Ad{\tilde{a}}(y_2y_1^\dagger)&=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta(A_2^\dagger A_1)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger A_1).
+	\end{align}
+	Reworking this equation gives the desired
+	\begin{equation}
+		\phi_{1,R}(\pi_0\circ\alpha_0\circ\Theta(A_1)y_1)=\phi_{1,R}(\pi_0\circ\alpha_0\circ\Theta(A_2)y_2).
+	\end{equation}
+	To then show the third item take $x_1,x_2\in \IAC_R(\alpha_0,\Theta)$ arbitrary. Take $A_1,A_2\in\UU(\AA_R),y_1,y_2\in \textrm{Cone}_R(\alpha_0,\Theta)$ and $\xi_1,\xi_2\in\Aut{\AA_{W(C_\theta)}\cap\AA_R}$ such that
+	\begin{align}
+		x_i&=\pi_0\circ\alpha_0\circ\Theta(A_i)y_i&\Ad{y_i}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_i.
+	\end{align}
+	We have
+	\begin{align}
+		x_1x_2&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_2\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_1^{\dagger}y_1y_2\\
+		&=\pi_0\circ\alpha_0\circ\Theta(A_1\xi_1(A_2))y_1y_2
+	\end{align}
+	giving
+	\begin{equation}
+		\phi_{1,R}(x_1x_2)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1y_2\tilde{a}^\dagger.
+	\end{equation}
+	where $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. Filling this in gives
+	\begin{align}
+		&\phi_{1,R}(x_1x_2)\phi_{1,R}(x_2)^\dagger\phi_{1,R}(x_1)^\dagger\\
+		\label{eq:HomomorphismCondition}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1\stkout{y_2\tilde{a}^\dagger \tilde{a}y_2^\dagger}\tilde{a}^\dagger\\
+		\nonumber
+		&\quad\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)\tilde{a}y_1^\dagger\tilde{a}^\dagger \pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1^\dagger).
+	\end{align}
+	Writing out a part of this gives:
+	\begin{align}
+		&\Ad{\tilde{a}y_1\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi_1\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger).
+	\end{align}
+	Using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} now yields:
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi_1\circ\Phi(A_2^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Phi\circ\xi_1(A_2^\dagger)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\xi_1(A_2^\dagger).
+	\end{align}
+	This shows that
+	\begin{equation}
+		\Ad{\tilde{a}y_1\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\xi_1(A_2^\dagger).
+	\end{equation}
+	Inserting this in equation \eqref{eq:HomomorphismCondition} shows that
+	\begin{equation}
+		\phi_{1,R}(x_1x_2)\phi_{1,R}(x_1)^\dagger\phi_{1,R}(x_2)^\dagger=\id
+	\end{equation}
+	concluding the proof of the third item. To show the last two items one only has to work out
+	\begin{equation}
+		\Ad{\tilde{a}^\dagger \phi_{1,R}(x)\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta
+	\end{equation}
+	in both situations. Doing this concludes the proof.
+\end{proof}
+\begin{lemma}\label{lem:extensionOfPhi1DefinitionAppendix}
+	Define
+	\begin{equation}
+	\phi_1:\IAC_{L\times R}(\alpha_0,\theta,\Theta)\rightarrow\UU(\HH):ab\mapsto \phi_{1,L}(a)\phi_{1,R}(b)
+	\end{equation}
+	where $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. This satisfies two points.
+	\begin{enumerate}
+		\item It is well defined, by which we mean that for any $a,\tilde{a}\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and for any $b,\tilde{b}\in \IAC_{R}(\alpha_0,\theta,\Theta)$ such that $ab=\tilde{a}\tilde{b}$ we have that
+		\begin{equation}
+		\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,L}(\tilde a)\phi_{1,R}(\tilde b).
+		\end{equation}
+		\item It is still a group homomorphism.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	The fist item is trivial, this is because the fact that $ab=\tilde{a}\tilde{b}$ already implies that $(a,b)$ and $(\tilde{a},\tilde{b})$ can only differ up to an exchange in phase. To show the second item, we only have to show that
+	\begin{equation}
+	\phi_{1,L}(a)\phi_{1,R}(b)=\phi_{1,R}(b)\phi_{1,L}(a)
+	\end{equation}
+	for any $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and for any $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. To show this, we first write out $b=\pi_0\circ\alpha_0\circ\Theta(B)y_b$ where $B\in\UU(\AA_R)$ and where $y_b\in\textrm{Cone}_R(\alpha_0,\theta)$. We can now split the proof in two parts. First we want to prove that
+	\begin{equation}
+	\Ad{\phi_{1,L}(a)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{0;1}^H\circ\gamma^\Hsplit_{1;0}(B)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma_{0;1}^H\circ\gamma^\Hsplit_{1;0}(B).
+	\end{equation}
+	This can be done using equation \eqref{eq:ConditionDefinitionOfGroupMorphismAppendix}. Secondly we want to prove that
+	\begin{equation}
+	\Ad{\phi_{1,L}(a)}(\phi_{1,R}(y_b))=(\phi_{1,R}(y_b)).
+	\end{equation}
+	We can rewrite this equation to
+	\begin{equation}
+	\Ad{\phi_{1,R}(y_b)}(\phi_{1,L}(a))=(\phi_{1,L}(a)).
+	\end{equation}
+	We now write out $a=\pi_0\circ\alpha_0\circ\Theta(A)y_a$ with $A\in\UU(\AA_L)$ and $y_a\in\textrm{Cone}_L(\alpha_0,\theta)$. We again split the proof of this equality in two parts. The equality with the invariance of the $A$ part again uses equation \eqref{eq:ConditionDefinitionOfGroupMorphism}. The equality with the invariance of the $y_a$ part can be done by inserting the definition and observing that the $\tilde{a}$ cancel.
+\end{proof}
 \begin{lemma}\label{lem:phi1phi2matchingConditionAppendix}
 	The $\phi_1$ and $\phi_2$ defined in lemma \ref{lem:extensionOfPhi1Definition} and \ref{lem:DefinitionOfWgMap} satisfy that for any $x\in\IAC_{L\times R}(\alpha_0,\theta,\Theta)$ we have that
 	\begin{equation}
@@ -2494,6 +2426,8 @@ By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelev
 	\end{equation}
 	we get that $\tau^{-1}(a^\dagger)a\in\UU(\AA_{W(C_\theta)})'=\UU(\AA_{W(C_\theta)^c})$, where the last equality is again because of section 3 in \cite{NaScWe_2013}. This concludes the proof of \ref{eq:proofOf:lem:phi1phi2matchingCondition:LastThingToProveAppendix} concluding the proof of this lemma.
 \end{proof}
+\section{Some properties of $\phiTilde_1$ and $\phiTilde_2$}
+We now prove lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex}.
 \begin{lemma}\label{lem:phi1phi2matchingConditionH1ValuedIndexAppendix}
 	The $\phiTilde_1$ and $\phiTilde_2$ defined previously satisfy that for any $x\in\IAC_{\sigma}(\alpha_0,\theta,\Theta)$ we have that
 	\begin{align}
@@ -2504,7 +2438,155 @@ By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelev
 	for any $p,s\in\{0,1\}$. For the second equation we need the stronger condition that $x\in\IAC_{\sigma}^W(\alpha_0,\theta,\Theta)$.
 \end{lemma}
 \begin{proof}
-	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingCondition}. The only difference is that now the $W_g$ is generalized to $w^{-p} W_g w^{p}$. This is possible because the support of $\eta_g$ is smaller in assumption \ref{assumption:2Translations} then it is in assumption \ref{assumption} and therefore everything still splits and therefore, everything is still well defined.
+	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingConditionAppendix}. The only difference is that now the $W_g$ is generalized to $w^{-p} W_g w^{p}$. This is possible because the support of $\eta_g$ is smaller in assumption \ref{assumption:2Translations} then it is in assumption \ref{assumption} and therefore everything still splits and therefore, everything is still well defined.
+\end{proof}
+We now prove lemma \ref{lem:TranslationOutOfPhi_KW}.
+\begin{lemma}\label{lem:TranslationOutOfPhi_KW_Appendix}
+	Define
+	\begin{align}
+		a_L&\defeq \pi_0\circ\alpha_0\circ\Theta(A_L)&a_R&\defeq \pi_0\circ\alpha_0\circ\Theta(A_R)
+	\end{align}
+	with $A_\sigma$ as defined in lemma \ref{lem:TranslatingSplittedTimeEvolution}. For any $K\in\text{Cone}_{L\times\nu(R)}(\alpha_0,\theta)$ we get that
+	\begin{equation}\label{eq:TranslationOutOfPhi_K_Appendix}
+		w^\dagger \phiTilde_1(K)w=\phiTilde_1(w^\dagger \: a_L\otimes a_R \: K \: a_L^\dagger\otimes a_R^\dagger \: w).
+	\end{equation}
+	Similarly we have that
+	\begin{equation}\label{eq:TranslationOutOfPhi_W_Appendix}
+		w^\dagger \phiTilde_2(W_g)w=\phiTilde_1(w^\dagger \: a_L\otimes a_R \: w)\phiTilde_2(w^\dagger W_g w)\phiTilde_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w).
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	We will only show the first equality as the second one is completely analogous. We need to show that
+	\begin{align}
+		\phiTilde_1(K)&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)}(\phiTilde_1(w^\dagger K w))\\
+		&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)}(\tilde{a}w^\dagger K w\tilde{a}^\dagger)\\
+		&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)}(\tilde{a}w^\dagger \tilde{a}^\dagger \phiTilde_1(K) \tilde{a}^\dagger w\tilde{a}^\dagger)\\
+		&=\Ad{w\phiTilde_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)}(\phiTilde_1(K)).
+	\end{align}
+	To do this, we first find an $A\in\UU(\AA)$ such that
+	\begin{equation}
+		\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A)=w\phiTilde_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)
+	\end{equation}
+	and then we will prove that $A\in\UU(\AA_{W(C_\theta)^c})$. It should be clear that the result follows from this\footnote{This is most easily seen from\begin{equation}
+			\Ad{\phiTilde_1(K)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A)=\phiTilde_1(\Ad{K}\circ\pi_0\circ\alpha_0\circ\Theta(A))=\phiTilde_1(\pi_0\circ\alpha_0\circ\Theta(A))=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A).
+	\end{equation}}. Finding this $A$ can be done by working out
+	\begin{equation}
+		w\phiTilde_1(w^\dagger a_L\otimes a_R w)w^\dagger (w \tilde{a}w^\dagger \tilde{a}^\dagger)=\pi_0\circ\alpha_0\circ\Theta\left(\nu\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger\right).
+	\end{equation}
+	First we insert $\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}=\text{Id}$ to obtain
+	\begin{equation}
+		=\pi_0\circ\alpha_0\circ\Theta\circ\underline{\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}}\left(\nu\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\nu(a)a^\dagger\right).
+	\end{equation}
+	Using the fact that $H$ is translation invariant allows us to cancel it giving
+	\begin{align}
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(\gamma^{\HsplitTilde}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger))\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(\gamma^{\HsplitTilde}_{0;1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger)).
+	\end{align}
+	This shows that we can take
+	\begin{equation}
+		A\defeq \gamma^{\HsplitTilde}_{0;1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger).
+	\end{equation}
+	Now we only have to show that indeed $A\in\UU(\AA_{W(C_\theta)^c})$. To do this, take $X\in\AA_{W(C_\theta)}$ arbitrary. If we can show that $\Ad{A}(X)=X$ for any such $X$ then we get that $A\in\UU(\AA_{W(C_\theta)}')$. Since by corollary 3.1 of \cite{NaScWe_2013} we get that $\UU(\AA_{W(C_\theta)}')=\UU(\AA_{W(C_\theta)^c})$ this is sufficient to conclude the proof. To show this, observe that
+	\begin{align}
+		\Ad{A}(X)&=\gamma^{\HsplitTilde}_{0;1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}\circ\Ad{A_L\otimes A_R}\circ\nu\circ\gamma^{\HsplitTilde}_{0;1}\circ\stkout{\nu^{-1}}\circ\stkout{\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{\HsplitTilde}_{0;1}}\\
+		&\nonumber
+		\qquad\circ\gamma^H_{1;0}\circ\stkout{\nu}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(X)
+	\end{align}
+	where the cancellation is done using the fact that $H$ is translation invariant. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we obtain
+	\begin{equation}
+		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^H_{1;0}\circ\Ad{a}\circ\nu^{-1}\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(X).
+	\end{equation}
+	Now using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations} we get
+	\begin{equation}
+		\Ad{A}(X)=(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\nu\circ(\Phi^U\otimes\Phi^D)^{-1}\circ\nu^{-1}\circ\Phi^U\otimes\Phi^D(X)=X
+	\end{equation}
+	concluding the proof.
+\end{proof}
+We will now prove a small lemma that we will need to prove lemma \ref{lem:DefinitionOfEpsilons}.
+\begin{lemma}\label{lem:EqualityTwoTranslationsUsingConnectedPath}
+	For all $\sigma\in\{L,R\}$, the following equality holds:
+	\begin{equation}
+	\Ad{W_g}(a_\sigma^\dagger v a_\sigma v^\dagger)=a_\sigma^\dagger v a_\sigma v^\dagger.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	We will prove this equality in two steps. First we will find some $B_\sigma\in\UU(\AA)$ such that
+	\begin{equation}
+	\pi_0\circ\alpha_0\circ\Theta(B_\sigma)=a_\sigma^\dagger v a_\sigma v^\dagger 
+	\end{equation}
+	then we will show that $B_\sigma\in\AA_{(W(C_\theta)\cap\sigma)^c}$ (his already proves invariance under $\eta_g$) and that $\beta_g^{U}(B_\sigma)=B_\sigma$ (concluding the proof of being invariant under $\eta_g\circ\beta_g^U$). To find $B_\sigma$, we write out                                                                                                                                                                                                              
+	\begin{equation}
+	a_\sigma^\dagger v a_\sigma v^\dagger=\pi_0\circ\alpha_0\circ\Theta(A_\sigma^\dagger\tau(A_\sigma))
+	\end{equation}
+	and observe that we can take $B_\sigma \defeq A_\sigma^\dagger\tau(A_\sigma)$. Now we will prove that $B_\sigma\in\UU(\AA_{C_\theta^c\cap\sigma})=\UU(\AA_{(C_\theta^c\cap\sigma)^c}')$. Take $X\in\AA_{(C_\theta^c\cap\sigma)^c}$ arbitrary. Using equation \eqref{eq:TranslatingSplittedTimeEvolution} we have that
+	\begin{align}
+	\Ad{B_L\otimes B_R}(X)&=\Ad{A_L^\dagger\otimes A_R^\dagger}\circ\tau\circ\Ad{A_L\otimes A_R}\circ\tau^{-1}(X)\\
+	&=\bigotimes_{\mu\nu}\Phi^{\mu\nu}\circ\stkout{\gamma^{\HsplitTilde}_{0;1}\circ\nu\circ \gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}}\\
+	\nonumber
+	&\qquad\circ\tau\circ\stkout{\nu\circ\gamma^{\HsplitTilde}_{0;1}\circ\nu^{-1}\circ\gamma^{\HsplitTilde}_{1;0}}\circ(\bigotimes_{\mu\nu}\Phi^{\mu\nu})^{-1}\circ\tau^{-1}(X)\\
+	&=X
+	\end{align}
+	concluding the proof. The fact that $\Ad{\beta_g^{U}(B_\sigma)}=\Ad{B_\sigma}$ follows from this same equation as well. This already shows that that there exists a $G$-dependent phase $\alpha(g)$ such that $\beta_g^{U}(B_\sigma)B_\sigma^\dagger=\alpha(g)\id_\AA$. To show that $\alpha(g)=1$ we have to use two things. First, we use the fact that $\alpha$ has to be a $U(1)$-representation. Secondly, because we can make this construction for every $\lambda$ (I mean the $\lambda$ from lemma \ref{lem:TranslatingSplittedTimeEvolution}) we need that $\alpha$ must be connected to the trivial $U(1)$-representation through a continuous path. However, because our group is finite we can use lemma \ref{lem:FiniteGroupsHaveDiscreteU(1)Representations} to conclude that $\alpha$ is trivial an hence the result follows.
+\end{proof}
+We now provide a proof of lemma \ref{lem:DefinitionOfEpsilons}.
+\begin{lemma}\label{lem:DefinitionOfEpsilonsAppendix}
+	Define $\epsilon^L_g\in\IAC_L(\alpha_0,\theta)$ and $\epsilon^R_g\in\IAC_R(\alpha_0,\theta)$ through
+	\begin{align}
+	\epsilon_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}(A_\sigma\:\eta_g^\sigma\circ\beta_{g}^{U\sigma}(A_\sigma^\dagger))
+	\end{align}
+	(where $A_\sigma$ was defined in lemma \ref{lem:TranslatingSplittedTimeEvolution}) then
+	\begin{align}
+	w^\dagger \phiTilde_2(W_g)w &= \phiTilde_1(\epsilon_g^L\otimes\epsilon_g^R)\phiTilde_2(w^\dagger W_g w)\\
+	\label{eq:TransformationOfKUnderEpsilonAppendix}
+	w^\dagger \phiTilde_1(K_g^\sigma)w&=v^\dagger\phiTilde_1(\epsilon_g^\sigma)v\phiTilde_1(w^\dagger K_g^\sigma w)\phiTilde_1(\epsilon_g^\sigma)^\dagger.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	By equation \eqref{eq:TranslationOutOfPhi_W} we get that
+	\begin{align}
+	w^\dagger\phiTilde_2(W_g)w&=\phiTilde_1(w^\dagger \: a_L\otimes a_R \: w)\phiTilde_2(w^\dagger W_g w)\phiTilde_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w)\\
+	&=\phiTilde_1(w^\dagger \: a_L\otimes a_R \: w)\Ad{\phiTilde_2(w^\dagger W_g w)}(\phiTilde_1(w^\dagger \: a_L^\dagger\otimes a_R^\dagger \: w))\phiTilde_2(w^\dagger W_g w).
+	\end{align}
+	Using result 2 and 3 of lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex} on this now gives
+	\begin{align}
+	&=\phiTilde_1(w^\dagger \: a_L\otimes a_R \:\Ad{W_g}(a_L^\dagger\otimes a_R^\dagger)w)\phiTilde_2(w^\dagger W_g w)\\
+	&=\phiTilde_1(w^\dagger a_L\Ad{W_g}(a_L^\dagger)\otimes a_R \Ad{W_g}( a_R^\dagger)w)\phiTilde_2(w^\dagger W_g w).
+	\end{align}
+	Since
+	\begin{align}
+	a_\sigma\Ad{W_g}(a_\sigma^\dagger)&=\pi_0\circ\alpha_0\circ\Theta(A_\sigma\eta_g^\sigma\circ\beta_g^{\sigma U}(A_\sigma^\dagger))\\
+	w^\dagger a_\sigma\Ad{W_g}(a_\sigma^\dagger)w&=\epsilon_g^\sigma
+	\end{align}
+	the first result follows. For the second result we start by using equation \eqref{eq:TranslationOutOfPhi_K} which gives us
+	\begin{align}
+	w^\dagger \phiTilde_1(K_g^\sigma)w&=\phiTilde_1(w^\dagger a_L\otimes a_R K_g^\sigma a_L^\dagger\otimes a_R^\dagger w)\\
+	&=\phiTilde_1(w^\dagger a_\sigma K_g^\sigma a_\sigma^\dagger w).
+	\end{align}
+	Inserting $v^\dagger W_g va_\sigma^\dagger a_\sigma v^\dagger W_g^\dagger v=\id$ in this gives us
+	\begin{align}
+	&=\phiTilde_1(w^\dagger a_\sigma \underline{\Ad{v^\dagger W_g v}(a_\sigma^\dagger a_\sigma)} K_g^\sigma a_\sigma^\dagger w)\\
+	&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{(K_g^\stkout{\sigma})^\dagger v^\dagger W_g v}(a_\sigma) a_\sigma^\dagger w).
+	\end{align}
+	We now use the fact that $K_g W_g=v^\dagger W_g v$ to get
+	\begin{align}
+	&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  \Ad{W_g}(a_\sigma) a_\sigma^\dagger w)\\
+	&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)K_g^\sigma  (\epsilon_g^\sigma)^\dagger w).
+	\end{align}
+	Inserting $w w^\dagger$ in this and using the second result of lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndex} gives
+	\begin{align}
+	&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)\underline{w w^\dagger}K_g^\sigma \underline{w w^\dagger}  (\epsilon_g^\sigma)^\dagger w)\\
+	&=\phiTilde_1(w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)w)\phiTilde_1( w^\dagger K_g^\sigma w ) \phiTilde_1( w^\dagger  (\epsilon_g^\sigma)^\dagger w)\\
+	&=\underline{v^\dagger}\phiTilde_1(\underline{v} w^\dagger a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)w \underline{v^\dagger})\underline{v}\phiTilde_1( w^\dagger K_g^\sigma w ) \phiTilde_1( w^\dagger  (\epsilon_g^\sigma)^\dagger w).
+	\end{align}
+	The only thing we now have to prove is that
+	\begin{equation}\label{eq:5.126Appendix}
+	a_\sigma \Ad{v^\dagger W_g v}(a_\sigma^\dagger)=v^\dagger a_\sigma \Ad{W_g}(a_\sigma^\dagger)v=v^\dagger w \epsilon_g^\sigma w^\dagger v
+	\end{equation}
+	since inserting this, concludes the proof. To do this notice that we can rewrite equation \eqref{eq:5.126Appendix} as
+	\begin{equation}
+	\Ad{v^\dagger W_g v}(v^\dagger a_\sigma^\dagger v a_\sigma)=v^\dagger a_\sigma^\dagger v a_\sigma.
+	\end{equation}
+	This equality is proven in lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}.
 \end{proof}
 \section{Proof of lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
 In this section we prove lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
