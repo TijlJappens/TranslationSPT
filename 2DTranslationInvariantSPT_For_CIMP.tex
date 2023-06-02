@@ -84,10 +84,10 @@ A final remark:
 	H^3(\ZZ^2\times G,\TT)\cong \bigoplus_{i=0}^3 H^i(\ZZ,\TT)\otimes H^{3-i}(\ZZ\times G,\TT)\cong H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT).
 	\end{equation}
 \end{remark}
-The layout of this paper is as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for SRE states. In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we then prove the statements. Section \ref{sec:ProofFirstStatement} provides a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} provides a proof of the second statement. The results in this paper rely heavily on the methods that where developed in \cite{ogata2021h3gmathbb}.
+The layout of this paper is as follows: First in section \ref{sec:Setup} we explain the setup and define the concept of locally generated automorphisms. In section \ref{sec:Results_1} we state the two results for SRE states. In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we then prove the statements. Section \ref{sec:ProofFirstStatement} provides a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} provides a proof of the second statement. The results in this paper rely heavily on the methods that where developed in \cite{ogata2021h3gmathbb}.
 \subsection*{Acknowledgements}
 T.J. was supported in part by the FWO under grant G098919N.\\\\
-We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process. For example, we are very grateful for the proposed changes of lemma A.3 of \cite{jappens2023spt} and the mistake in subsection \ref{sec:OneTranslationDirectionExample} (the previous assumption was too weak).
+We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process. For example, we are very grateful for the proposed changes of lemma A.3 of \cite{jappens2023spt}, the mistake they found in subsection \ref{sec:OneTranslationDirectionExample} (the previous assumption was too weak) and the mistakes they found in sections \ref{sec:IndexInvariantUnderLGA} and \ref{sec:H1ValuedIndexInvariantUnderLGA's}.
 \subsection*{Data availability statement}
 No new data were created or analyzed in this study. Data sharing is not applicable to this article.
 \section{Setup and definitions}\label{sec:Setup}
@@ -210,7 +210,8 @@ We also define similar equivalence classes $\expval{\cdot}_\sim^1,\expval{\cdot}
 	S_2&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\nu=\omega\}\\
 	S_3&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\tau=\omega,\:\omega\circ\nu=\omega\}
 \end{align}
-respectively. Here we now also demand that the interactions and the trivial states are invariant under the additional translation symmetries.
+respectively. Here we now also demand that the interactions and the trivial states are invariant under the additional translation symmetries.\\\\
+Finally we will use $H^n(G,\TT)$ to denote the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a (group) module under addition with trivial group action). For the definition of these group cohomology modules we refer to \cite{benson1991representations}.
 \section{Results}
 This section will contain three different parts. First we discuss the main result starting from some rather abstract assumptions. In the second part we present the claim that these assumptions are implied by some more natural assumptions relating to short range entanglement. In the last part of the section we compare our assumptions to those made in \cite{ogata2021h3gmathbb}.
 \subsection{Statement of the result in terms of Q-automorphisms}\label{sec:Results_2}
@@ -1071,7 +1072,7 @@ We are now ready to provide a proof of equation \ref{eq:IndexMorphismUnderStacki
 	&C(g,h)\\
 	\nonumber
 	&=(K_{g,1}^R\otimes K_{g,2}^R)\Ad{W_{g,1}\otimes W_{g,2}}\left((K_{h,1}^R\otimes K_{h,2}^R)\Ad{(W_{h,1}\otimes W_{h,2})(W_{gh,1}\otimes W_{gh,2})^\dagger}\left((K_{gh,1}^R\otimes K_{gh,2}^R)^\dagger\right)\right)\\
-	&(u^R_1(g,h)\otimes u^R_2(g,h))v^\dagger (u^R_1(g,h)\otimes u^R_2(g,h))^\dagger v\\
+	&\qquad(u^R_1(g,h)\otimes u^R_2(g,h))v^\dagger (u^R_1(g,h)\otimes u^R_2(g,h))^\dagger v\\
 	&=C_1(g,h)C_2(g,h)
 \end{align}
 concluding the proof.
