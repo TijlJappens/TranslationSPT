@@ -62,7 +62,7 @@ We also look at the case where there is a second translation symmetry (so the sy
 	\end{equation}
 	induces a sequence (of group morphisms) on the stable equivalence classes. By this we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover, this induced sequence is exact and split.
 \end{conjecture}
-Translation invariant SPT states in one spatial dimension are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix \ref{sec:OneDimensionalIndices}). From this and the last two conjectures, we expect there is an
+Translation invariant SPT states in one spatial dimension are known to carry an $H^2(G,\TT)\oplus H^1(G,\TT)$ valued index (see appendix H of \cite{jappens2023spt}). From this and the last two conjectures, we expect there is an
 \begin{equation}\label{eq:2TranslationsIntroduction}
 	H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)
 \end{equation}
@@ -87,7 +87,7 @@ A final remark:
 The layout of this paper is as follows: First in section \ref{sec:Setup} we explain the setup, define the concept of locally generated automorphisms and give the algebraic definition of group cohomology. In section \ref{sec:Results_1} we state the two results for SRE states. In section \ref{sec:Results_2}, we state the first result using the weaker assumption \ref{assumption} and the second result using the weaker assumption \ref{assumption:2Translations}. It is using these weaker assumptions that we then prove the statements. Section \ref{sec:ProofFirstStatement} provides a proof of the first statement whereas section \ref{sec:TwoDirectionTraslationInvariance} provides a proof of the second statement. The results in this paper rely heavily on the methods that where developed in \cite{ogata2021h3gmathbb}.
 \subsection*{Acknowledgements}
 T.J. was supported in part by the FWO under grant G098919N.\\\\
-We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process. For example, we are very grateful for the proposed changes of lemma \ref{lem:SplittingOfUnitary} and the mistake in subsection \ref{sec:OneTranslationDirectionExample} (the previous assumption was too weak).
+We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process. For example, we are very grateful for the proposed changes of lemma A.3 of \cite{jappens2023spt} and the mistake in subsection \ref{sec:OneTranslationDirectionExample} (the previous assumption was too weak).
 \subsection*{Data availability statement}
 No new data were created or analyzed in this study. Data sharing is not applicable to this article.
 \section{Setup and definitions}\label{sec:Setup}
@@ -419,7 +419,7 @@ Now all that is left to show is that the indices defined here are constant on th
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	This is shown in appendix \ref{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}.
+	This is shown in appendix F of \cite{jappens2023spt}.
 \end{proof}
 \subsection{Comparison with \cite{ogata2021h3gmathbb}}\label{sec:SomeRemarks}
 The first thing we would like to remark is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all the set of states considered is a priori different. Namely, for any state $\psi\in \PP(\AA)$, we define two different conditions
@@ -433,7 +433,7 @@ When we add the group, the story changes considerably. Let us define the two dif
 	\item There exists a $G$-invariant, bounded path of gapped interactions $\lambda\mapsto\tilde\Phi(\lambda)$ (see \cite{ogata2021h3gmathbb} for precise definitions) such that $\psi_1$ and $\psi_2$ are unique gapped groundstates of $\tilde{\Phi}(0)$ and $\tilde{\Phi}(1)$ respectively.
 	\item There exists a $G$-invariant LGA, $\gamma^\Psi_{0;1}$ such that $\psi_1\circ\gamma^H_{0;1}=\psi_2$.
 \end{enumerate}
-A priori those two conditions are not equivalent. However in \cite{ogata2021h3gmathbb} it is proven that, the first equivalence implies the second one. The proof that equivalent states have the same index only uses the second condition. This means that one could also have taken the second equivalence condition as the starting point. This is exactly what we do in this paper. One should also be able to show that the first condition implies the second one using a similar construction as in the above remark without the group and averaging the resulting interaction over the group (where one then has to use that a finite group has a normalised Haar measure).\\\\
+A priori those two conditions are not equivalent. However in \cite{ogata2021h3gmathbb} it is proven that, the first equivalence implies the second one. The proof that equivalent states have the same index only uses the second condition. This means that one could also have taken the second equivalence condition as the starting point. This is exactly what we do in this paper. One should also be able to show that the second condition implies the first one using a similar construction as in the above remark without the group and averaging the resulting interaction over the group (where one then has to use that a finite group has a normalised Haar measure).\\\\
 There where two things that are in theorems \ref{thrm:ExistenceFirstIndex} and \ref{thrm:ExistenceSecondIndex} but where not discussed in \cite{ogata2021h3gmathbb}. This is the part that the index is a group homomorphism under stacking and the part that the index is independent on the choice of basis for the on site Hilbert space. However, on inspection of the arguments used in subsections \ref{sec:StackingOneTranslation} and \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space} one can conclude that these also hold for the $H^3$-valued index.\\\\
 All in all we have provided a proof that the work done in \cite{ogata2021h3gmathbb} also implies the following theorem:
 \begin{theorem}\label{thrm:ExistenceOriginalIndex}
@@ -458,7 +458,7 @@ All in all we have provided a proof that the work done in \cite{ogata2021h3gmath
 	\end{enumerate}
 \end{theorem}
 \section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
-In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. Fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple (see theorem \ref{thrm:ExistenceGNS}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0=\alpha_L\otimes\alpha_R$ and $\Theta$ a choice of decomposition for $\alpha$ such that $\Theta$ and $\eta_g$ commute (see figure \ref{fig:SetupWithQAutomorphism}). Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. Fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple (see theorem A.1 of \cite{jappens2023spt}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0=\alpha_L\otimes\alpha_R$ and $\Theta$ a choice of decomposition for $\alpha$ such that $\Theta$ and $\eta_g$ commute (see figure \ref{fig:SetupWithQAutomorphism}). Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
 \begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
@@ -466,7 +466,7 @@ In this section we will define the $H^2(G,\TT)$-valued index starting from assum
 	\end{align}
 \end{lemma}
 \begin{proof}
-	Since $\omega\circ\tau=\omega$ we get by the uniqueness of the GNS triple (see corollary \ref{cor:ExistenceOfUnitary}) that there exists a unique $\tilde{v}\in\UU(\HH_0)$ satisfying
+	Since $\omega\circ\tau=\omega$ we get by the uniqueness of the GNS triple (see corollary A.2 of \cite{jappens2023spt}) that there exists a unique $\tilde{v}\in\UU(\HH_0)$ satisfying
 	\begin{align}
 		\Ad{\tilde{v}}\circ\pi_0\circ\alpha&=\pi_0\circ\alpha\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
 	\end{align}
@@ -505,7 +505,7 @@ We will also define a generalisation of this. We will define a subgroup of $\UU(
 	\begin{align}\label{eq:CommutantProperty}
 		\IAC_R(\alpha_0,\theta,\Theta)&\subseteq\IAC_L(\alpha_0,\theta,\Theta)'&\IAC_L(\alpha_0,\theta,\Theta)&\subseteq\IAC_R(\alpha_0,\theta,\Theta)'.
 	\end{align}
-	If additionally $y\in \textrm{Cone}_L^W(\alpha_0,\theta)$ we will say that $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$.
+	If additionally $y\in \textrm{Cone}_\sigma^W(\alpha_0,\theta)$ we will say that $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$.
 \end{definition}
 \begin{proof}
 	Take $u_L\in\IAC_L(\alpha_0,\theta,\Theta)$ and $u_R\in\IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A_\sigma\in\UU(\AA_\sigma)$ and $v_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for $\sigma\in\{L,R\}$) such that $u_\sigma=\pi_0\circ\alpha_0\circ\Theta(A_\sigma)v_\sigma$. We then get
@@ -544,7 +544,7 @@ The following lemma shows that if a unitary on the GNS space of $\omega_0$ has a
 	These are unique up to a phase.
 \end{lemma}
 \begin{proof}
-Using lemma \ref{lem:SplittingOfUnitary} the result follows.
+Using lemma A.3 of \cite{jappens2023spt} the result follows.
 \end{proof}
 Following Yoshiko Ogata \cite{ogata2021h3gmathbb} we now define objects using the following lemma:
 \begin{lemma}\label{lem:Definition_W_And_u}
@@ -579,7 +579,7 @@ These objects will be the starting point for our definition. Clearly the $u_\sig
 	\begin{equation}
 		\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0=\pi_L\circ\alpha_L\otimes\pi_R\circ\alpha_R\circ\zeta_{g,R}.
 	\end{equation}
-	Using lemma \ref{lem:SplittingOfUnitary} there exists a $Z_{g,R}\in\UU(\HH_R)$ satisfying that $\Ad{W_g}(\Xi^R)=\id_{\HH_L}\otimes Z_{g,R}$. To show the second result we only need to observe that for any $A\in\UU(\AA_R)$ we get that
+	Using lemma A.3 of \cite{jappens2023spt} there exists a $Z_{g,R}\in\UU(\HH_R)$ satisfying that $\Ad{W_g}(\Xi^R)=\id_{\HH_L}\otimes Z_{g,R}$. To show the second result we only need to observe that for any $A\in\UU(\AA_R)$ we get that
 	\begin{align}
 		\Ad{W_g}\left(\pi_0\circ\alpha_0\circ\Theta(A)\Xi_R\right)&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A)\Ad{W_g}(\Xi_R)\\
 		&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_R(A)\Ad{W_g}(\Xi_R).
@@ -609,32 +609,13 @@ We now have to define one more object (remember that $v$ was defined in lemma \r
 \begin{lemma}\label{lem:Definition2Cochain}
 	There exists a $C:G^2\rightarrow U(1)$ such that 
 	\begin{equation}\label{eq:Definition2Cochain}
-		K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_
-		R(g,h)=C(g,h)v^\dagger u_R(g,h)v
+	K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_
+	R(g,h)=C(g,h)v^\dagger u_R(g,h)v
 	\end{equation}
 	for all $g,h\in G.$
 \end{lemma}
 \begin{proof}
-	Since the GNS representation is irreducible this is equivalent to showing that the left and righthandside of equation \eqref{eq:Definition2Cochain} have the same adjoint action on the GNS representation. We first prove the result for the full tensor product. By using the definition of $u(g,h)$ we get
-	\begin{align}\label{eq:ProofOf:lem:Definition2CochainFirstEquation}
-		v^\dagger u_L(g,h)v v^\dagger u_R(g,h) v&=v^\dagger (u_L(g,h)\otimes u_R(g,h)) v\\
-		&=v^\dagger W_g W_h W_{gh}^{-1}v.
-	\end{align}
-	Now using the definition of $K_g$ gives:
-	\begin{align}
-		\eqref{eq:ProofOf:lem:Definition2CochainFirstEquation}&=K_gW_g v^\dagger W_h W_{gh}^{-1}v\\
-		&=K_gW_g K_h W_h v^\dagger W_{gh}^{-1}v\\
-		&=K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger\\
-		&=K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger W_{gh}W_h^\dagger W_g^\dagger W_gW_hW_{gh}^\dagger\\
-		&=K_g\Ad{W_g}\left(K_h\Ad{W_hW_{gh}^\dagger}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
-			R(g,h).
-	\end{align}
-	Using lemma \ref{lem:AdjointOverConeIsInCone} we get that
-	\begin{align}
-		&(K_g^L\otimes K_g^R)\Ad{W_g}\left((K_h^L\otimes K_h^R)\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^L\otimes K_{gh}^R)^{-1}\right)\right)\\
-		&=K_g^L\Ad{W_g}\left(K_h^L\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^L)^\dagger\right)\right)\otimes K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)
-	\end{align}
-	concluding the proof.
+	The proof is presented after lemma B.1 of \cite{jappens2023spt}.
 \end{proof}
 \begin{lemma}
 	The function $C$ as defined in lemma \ref{lem:Definition2Cochain} is a 2-cochain.
@@ -657,7 +638,7 @@ We now have to define one more object (remember that $v$ was defined in lemma \r
 	\begin{equation}
 		\stkout{C'(g,h,k)}=C(h,k)C(gh,k)^{-1}C(g,hk)C(g,h)^{-1}\stkout{C'(g,h,k)}
 	\end{equation}
-	proving the result. The invariance of the three cochain is proven in lemma \ref{lem:3cochainIsInvariant}.
+	proving the result. The invariance of the three cochain is proven in lemma G.1 of \cite{jappens2023spt}.
 \end{proof}
 Our translation index is now defined as
 \begin{definition}
@@ -736,7 +717,7 @@ We now show that the index is invariant under some transformation parametrised b
 	then equation \eqref{eq:Definition2Cochain}, defining the index of $v,W_{g,1},u_{\sigma,1}(g,h)$ and $K_{g,1}^\sigma$, is still valid when we replace these operators by $v,W_{g,2},u_{\sigma,2}(g,h)$ and $K_{g,2}^\sigma$ respectively. The two cochain also remains unchanged.
 \end{lemma}
 \begin{proof}
-	This is proven in lemma \ref{lem:TransformationUnderDeltaAppendix}.
+	This is proven in lemma G.2 of \cite{jappens2023spt}.
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBeta}
@@ -806,7 +787,7 @@ In this section we will give a special class of translation invariant states tha
 \begin{proof}
 	Take $(\HH_L\otimes\HH_R,\pi_L\otimes\pi_R,\Omega_L\otimes\Omega_R)$ a GNS triple of $\phi_0$. By construction $(\HH_L\otimes\HH_R,\pi_L\circ\tilde\alpha_L\otimes\pi_R\circ\tilde\alpha_R,\pi_L\otimes\pi_R(b^\dagger)\Omega_L\otimes\Omega_R)$ is a GNS triple of $\phi$. This concludes the proof that $\phi$ satisfies the split property.
 \end{proof}
-By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d SPT index (see appendix \ref{sec:OneDimensionalIndices}). For any $j\in\ZZ$ and $n\in\NN$ take
+By the result of \cite{ogata2019classification} this implies that $\phi$ has a well defined 1d SPT index (see appendix H of \cite{jappens2023spt}). For any $j\in\ZZ$ and $n\in\NN$ take
 \begin{align}
 	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j}^{n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
 	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
@@ -834,7 +815,7 @@ We have that:
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
-	The proof is in lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}.
+	The proof is in lemma C.1 of \cite{jappens2023spt}.
 \end{proof}
 This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -908,7 +889,7 @@ For the remainder of the section we will use a decomposition using the following
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	This follows from the fact that $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\in \textrm{GVAut}_1(\AA)$ (see lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2).
+	This follows from the fact that $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\in \textrm{GVAut}_1(\AA)$ (see lemma J.4 of \cite{jappens2023spt} part 2).
 \end{proof}
 In what follows, we will define $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$. The main property we will use of this operator is that it satisfies the following lemma:
 \begin{lemma}\label{lem:PropertyTilde_a}
@@ -951,7 +932,7 @@ We will then use this property to define a morphism:
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	The proof is presented after lemma \ref{lem:DefinitionOfGroupMorphismAppendix}.
+	The proof is presented after lemma D.1 of \cite{jappens2023spt}.
 \end{proof}
 We now have to extend the above definition to the group
 \begin{equation}
@@ -972,7 +953,7 @@ We now have to extend the above definition to the group
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	This proof is done under lemma  \ref{lem:extensionOfPhi1DefinitionAppendix}.
+	This proof is done under lemma  D.2 of \cite{jappens2023spt}.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. Let
@@ -1004,7 +985,7 @@ We now have to extend the above definition to the group
 	\end{align}
 \end{lemma}
 \begin{proof}
-	This lemma is proven under lemma \ref{lem:phi1phi2matchingConditionAppendix}.
+	This lemma is proven under lemma D.3 of \cite{jappens2023spt}.
 \end{proof}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
 	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
@@ -1012,74 +993,50 @@ We now have to extend the above definition to the group
 \begin{proof}
 	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\AA_{W(C_{\theta_3})^c}}$ such that
 	\begin{equation}
-		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 	Take $\tilde{\beta}_{g,1}$ such that $\omega\circ\tilde{\beta}_{g,1}=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ satisfying
 	\begin{equation}
-		\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
+	\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
 	\end{equation}
 	Take $W_g,u_{L/R}(g,h),v$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma^{H}_{0;1}\in\QAut{\AA}$. To show this notice that
 	\begin{align}
-		\alpha\circ\gamma^{H}_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
-		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
+	\alpha\circ\gamma^{H}_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
+	&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemma J.5 of \cite{jappens2023spt} and lemma J.4 of \cite{jappens2023spt} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
-		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
-		\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
-		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
+	\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
+	\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
+	(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\tilde\beta_{g,1}\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma\in\Aut{\AA_{C_{\theta_2}\cap\sigma}}$ through lemma \ref{lem:TwoAngleLemmaPart3}. It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\tilde\beta_{g,1}\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma\in\Aut{\AA_{C_{\theta_2}\cap\sigma}}$ through lemma J.7 of \cite{jappens2023spt}. It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
 	\begin{align}
-		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
-		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
-		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}
-		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
+	\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
+	\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
+	\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}
+	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
 	Take $\Phi$ like in equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} and define
 	\begin{equation}
-		\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)
+	\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)
 	\end{equation}
 	the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Take similarly
 	\begin{equation}
-		\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
+	\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)
 	\end{equation}
 	the map defined in \ref{lem:DefinitionOfWgMap} with arbitrary phase. The following operators now belong to $\omega\circ\gamma^{H}_{0;1}:$
 	\begin{align}
-		\label{eq:IndexInvariantUnderLGANewOperator1}
-		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
-		\label{eq:IndexInvariantUnderLGANewOperator2}
-		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
-		\label{eq:IndexInvariantUnderLGANewOperator3}
-		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
-		\label{eq:IndexInvariantUnderLGANewOperator4}
-		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger
+	\label{eq:IndexInvariantUnderLGANewOperator1}
+	\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
+	\label{eq:IndexInvariantUnderLGANewOperator2}
+	\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
+	\label{eq:IndexInvariantUnderLGANewOperator3}
+	\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
+	\label{eq:IndexInvariantUnderLGANewOperator4}
+	\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger
 	\end{align}
-	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g})$ and $A_1$ was defined in equation \eqref{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
-	\begin{equation}
-		\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi
-	\end{equation}
-	we get that
-	\begin{equation}\label{eq:IndexInvariantUnderLGA_A1_Transformation}
-		\Ad{\pi_0(A_1)x\pi_0(A_1^\dagger)}\circ\pi_0\circ\alpha_0\circ\gamma^{\Hsplit}_{0;1}\circ\tilde{\Theta}=\pi_0\circ\alpha_0\circ\gamma^{\Hsplit}_{0;1}\circ\tilde{\Theta}\circ\gamma^H_{1;0}\circ\xi\circ\gamma^H_{0;1}.
-	\end{equation}
-	This already proves that
-	\begin{align}
-		\Ad{\pi_0(A_1)v\pi_0(A_1^\dagger)}\circ\pi_0\circ\alpha_0\circ\gamma^{\Hsplit}_{0;1}\circ\tilde{\Theta}&=\pi_0\circ\alpha_0\circ\gamma^{\Hsplit}_{0;1}\circ\tilde{\Theta}\circ\gamma^H_{1;0}\circ\tau\circ\gamma^H_{0;1}\\
-		&=\pi_0\circ\alpha_0\circ\gamma^{\Hsplit}_{0;1}\circ\tilde{\Theta}\circ\tau.
-	\end{align}
-	To show the second one we get that
-	\begin{align}
-		&\Ad{\phi_1(\delta_g)\phi_2(W_g)}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\Ad{\phi_1(\delta_g)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Ad{\gamma^{H_L}_{0;1}(A_{2,g}^L)\otimes\gamma^{H_R}_{0;1}(A_{2,g}^R)}\circ\eta_g\circ\beta_g^U\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\Ad{A_{2,g}^L\otimes A_{2,g}^R}\circ\gamma^{\Hsplit}_{1;0}\circ\eta_g\circ\beta_g^U\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}.
-	\end{align}
-	Using equation \eqref{eq:IndexInvariantUnderLGAEtaTildeDefiniton2} on this we obtain
-	\begin{equation}
-		=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
-	\end{equation}
-	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ and $\tilde{K}_g^\sigma$ are operators belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
+	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g})$ and $A_1$ was defined in equation \eqref{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. This is shown after lemma K.1 of \cite{jappens2023spt}.
 \end{proof}
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U\in\hom(G,U(\CC^d))$ an on site group action arbitrary. Let
@@ -1162,11 +1119,11 @@ In this section we summarise the proof of theorem \ref{thrm:ExistenceFirstIndex}
 \subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} and lemma \ref{lem:SRE_Implies_Assumption_1d}}\label{sec:ProofOfMainResult1}
 We will provide a proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}.
 \begin{proof}
-	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:the-one-translation-symmetry}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
+	Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one parameter family of interactions. By lemma J.4 of \cite{jappens2023spt} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix J.1 of \cite{jappens2023spt}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
 \end{proof}
 We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d}.
 \begin{proof}
-	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
+	The proof simply uses lemma I.1 of \cite{jappens2023spt}.
 \end{proof}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates the lattice to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is a relation between these automorphisms. Specifically, the automorphism $\tau$ that translated the lattice upwards by one site can now be written as $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. For an overview of the supports see figure \ref{fig:SetupForTwoTranslationsNearProof}. In this section we will need a stronger version of the cone operators (from definition \ref{def:ConeOperators}):
@@ -1219,57 +1176,20 @@ In what follows, we will need the vertical analogue of the $v$. We define the ho
 	\begin{equation}
 		\Ad{w^\dagger W_g w W_g^\dagger}\circ\pi_0=\pi_0\circ (\alpha_L\circ\nu^{-1}\circ\eta_g^L\circ\nu\circ(\eta_g^L)^{-1}\circ\alpha_L^{-1})\otimes(\alpha_R\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_R^{-1}).
 	\end{equation}
-	To do this one only has to use that $\beta_g^U$ commutes with $\nu$. By lemma \ref{lem:SplittingOfUnitary} the result now follows.
+	To do this one only has to use that $\beta_g^U$ commutes with $\nu$. By lemma A.3 of \cite{jappens2023spt} the result now follows.
 \end{proof}
 \begin{lemma}\label{lem:DefinitionAlpha}
 	There exists an $\alpha:G\rightarrow U(1)$ satisfying
 	\begin{equation}\label{eq:DefinitionOfTheH_1Index}
-		v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
+	v^\dagger b_g^R vh_g K_g^R (b_g^R)^\dagger=\alpha(g)w^\dagger K_g^R w
 	\end{equation}
 	where
 	\begin{equation}
-		h_g\defeq\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g)).
+	h_g\defeq\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)}(g)).
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	We have that
-	\begin{align}
-		&\Ad{w^\dagger K_g^R w}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{align}
-	Now we will use the fact that because of translation invariance of the group action, we have that $\tau^{-1}\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}=\beta_g^{RL_{-1}}$ with $L_j=\{(x,y)\in\ZZ^2|y=j\}$. This leads to
-	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\underline{\tau^{-1}}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
-		&=\Ad{\underline{v^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{align}
-	Inserting $b^R_g v v^\dagger (b^R_g)^\dagger$ now gives
-	\begin{equation}
-		=\Ad{v^\dagger\underline{b^R_g v v^\dagger (b^R_g)^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{equation}
-	 Using the inverse of equation \eqref{eq:automorphismBelongingTo_b} we now get
-	\begin{align}
-		&=\Ad{v^\dagger b^R_g v }\circ \pi_0\circ\alpha_0\circ\Theta\circ\underline{\tau^{-1}\circ\eta_g^R\circ\nu^{-1}\circ\stkout{(\eta_g^R)^{-1}\circ\nu}}\circ\stkout{\nu^{-1}\circ\eta_g^R}\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
-		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{align}
-	Now we will use the fact that $\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ\nu=\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}$ to obtain
-	\begin{equation}
-		=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{equation}
-	Since (as you can check in figure \ref{fig:SetupForTwoTranslationsNearProof}) $\tau^{-1}(\eta_g^R(\tau(U_{(-1,-1)}(g))))=U_{(-1,-1)}(g)$ this gives
-	\begin{align}
-		&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{U_{(-1,-1)}(g)}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
-		&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{align}
-	Now using again that $\tau\circ\beta_g^{R,L_{-1}}=\beta_{g}^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}$ we get:
-	\begin{align}
-		&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\beta_{g}^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
-		&=\Ad{v^\dagger b_g^R vh_gK_g^R}\circ\pi_0\circ\alpha_0\circ\Theta\circ\eta_g^R\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
-	\end{align}
-	After again using \eqref{eq:automorphismBelongingTo_b} we obtain:
-	\begin{align}
-		=\Ad{v^\dagger b_g^R vh_gK_g^R(b_g^R)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta.
-	\end{align}
-	By the irreducibility of $\pi_0$ this implies that there indeed exists such an $\alpha$.
+	The proof is presented after B.2 of \cite{jappens2023spt}.
 \end{proof}
 We have that $h_g\in\IAC_L(\theta,\alpha_0,\Theta)$. On top of that we also have that
 \begin{lemma}\label{lem:W_g_And_h_g_Commute}
@@ -1326,7 +1246,7 @@ Using this we can show that:
 	\begin{equation}
 		\stkout{C(g,h)}=\stkout{C(g,h)}\frac{\alpha(g)\alpha(h)}{\alpha(gh)}
 	\end{equation}
-	which would clearly conclude the proof. This is proven in lemma \ref{lem:2cochainIsInvariant}.
+	which would clearly conclude the proof. This is proven in lemma G.3 of \cite{jappens2023spt}.
 \end{proof}
 \begin{definition}
 	Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha}. Take $\phi\in\hom(G,\TT)$ such that $\alpha(g)=\exp(i\phi(g))$. We define the 2 translation index as
@@ -1366,7 +1286,7 @@ In this section we will show that the index is only dependent on $\omega$ and no
 	\begin{equation}
 		\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\beta_g^U,\textrm{Id},\textrm{Id},\textrm{Id},\omega_0,\omega_0)
 	\end{equation}
-	can still be non-trivial. In fact in this case we get $\alpha(g)=\omega_0(U_{(-1,-1)}(g))$. To show this, notice that we can take $b_g=\id_{\HH}$ and we can chose $K_g^R$ so that it leaves the cyclic vector of $\omega_0$, $\Omega_0$ invariant. Applying the definition of the index on this cyclic vector then gives us $h_g\Omega_0=\alpha(g)\Omega_0$. This obviously implies that $\bra{\Omega_0}\ket{h_g\Omega_0}=\alpha(g)\bra{\Omega_0}\ket{\Omega_0}$ giving us indeed the advertised equation.
+	can still be non-trivial. In fact in this case we get $\alpha(g)=\omega_0(U_{(-1,-1)}(g))$. To show this, notice that we can take $b_g=\id_{\HH}$ and we can choose $K_g^R$ so that it leaves the cyclic vector of $\omega_0$, $\Omega_0$ invariant. Applying the definition of the index on this cyclic vector then gives us $h_g\Omega_0=\alpha(g)\Omega_0$. This obviously implies that $\bra{\Omega_0}\ket{h_g\Omega_0}=\alpha(g)\bra{\Omega_0}\ket{\Omega_0}$ giving us indeed the advertised equation.
 \end{remark}
 We will now show independence of $\alpha$ and its decomposition.
 \begin{lemma}
@@ -1407,31 +1327,15 @@ In what follows we will need that the index is invariant under the following tra
 \begin{lemma}\label{lem:TransformationUnderDeltaTwoTranslations}
 	Take $\omega_0,\theta,\alpha_0,\Theta$ and $\eta_g$ as usual, take $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma$ and $b_{g,1}^\sigma$ operators corresponding to these automorphisms and take $\delta^\sigma_g\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\Theta,\theta)$ (for all $\sigma\in\{L,R\}$ and all $g\in G$). Define
 	\begin{align}
-		W_{g,2}&\defeq\delta_g W_{g,1}\\
-		u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
-		K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger\\
-		b_{g,2}^\sigma&\defeq w^\dagger\delta^\sigma_g w b_{g,1}^\sigma (\delta^\sigma_g)^\dagger
+	W_{g,2}&\defeq\delta_g W_{g,1}\\
+	u_{\sigma,2}(g,h)&\defeq \delta_g^\sigma W_{g,1}\delta_h^\sigma W_{g,1}^\dagger u_{\sigma,1}(g,h)(\delta_{gh}^\sigma)^\dagger\\
+	K^\sigma_{g,2}&\defeq v^\dagger \delta_g^\sigma v K_{g,1}^\sigma (\delta_g^\sigma)^\dagger\\
+	b_{g,2}^\sigma&\defeq w^\dagger\delta^\sigma_g w b_{g,1}^\sigma (\delta^\sigma_g)^\dagger
 	\end{align}
-	then the index of $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma,h_g$ and $b_{g,1}^\sigma$ is equal to the index of $v,w,W_{g,2},u_{\sigma,2}(g,h),h_g,K_{g,2}^\sigma$ and $b_{g,2}^\sigma$.
+	then the index of $v,w,W_{g,1},u_{\sigma,1}(g,h),K_{g,1}^\sigma,h_g$ and $b_{g,1}^\sigma$ is equal to the index of $v,w,W_{g,2},u_{\sigma,2}(g,h),h_g,K_{g,2}^\sigma$ and $b_{g,2}^\sigma$. The one cochain also remains unchanged.
 \end{lemma}
 \begin{proof}
-	We define the index in function of the new variables:
-	\begin{align}
-		\alpha_2(g)&\defeq v^\dagger b^R_{g,2}v h_g K^R_{g,2}(b^R_{2,g})^\dagger w^\dagger (K^R_{2,g})^\dagger w\\
-		&=v^\dagger \left(w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger\right) v h_g \left(v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger\right) \left(w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger\right)^\dagger w^\dagger (v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger)^\dagger w\\
-		&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger v h_g v^\dagger \delta_g^R v K_{g,1}^R \stkout{(\delta_g^R)^\dagger \delta_g^R} (b_{1,g}^R)^\dagger w^\dagger \stkout{(\delta_g^R)^\dagger w w^\dagger \delta_g^R} (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w.
-	\end{align}
-	If we now insert $vv^\dagger,$ we obtain
-	\begin{align}
-		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R v\stkout{v^\dagger (\delta^R_g)^\dagger v} h_g \stkout{v^\dagger \delta_g^R v} K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w
-	\end{align}
-	where the cancelation is due to the fact that $v^\dagger \delta^R_g v\in\textrm{IAC}_{R}(\alpha_0,\theta,\Theta)$ whereas $h_g\in \textrm{IAC}_{L}(\alpha_0,\theta,\Theta)$. Again after inserting $vv^\dagger$ and $ww^\dagger$ we now get
-	\begin{align}
-		\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w \underline{v v^\dagger} b_{g,1}^R v h_g K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger \underline{ww^\dagger} v^\dagger (\delta_g^R)^\dagger v  w\\
-		&=\stkout{v^\dagger w^\dagger\delta^R_g w v} \alpha_1(g) \stkout{w^\dagger v^\dagger (\delta_g^R)^\dagger v  w}\\
-		&=\alpha_1(g)
-	\end{align}
-	concluding the proof.
+	The proof is given after lemma G.4 of \cite{jappens2023spt}.
 \end{proof}
 We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
 \begin{lemma}\label{lem:InvarianceUnderChoiceBetaTwoTranslations}
@@ -1490,12 +1394,12 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \end{proof}
 Due to all these considerations we will write this index as $\textrm{Index}_{2\text{ trans}}^{\AA,U}(\omega)$ from here on onward.
 \subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
-This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation}. Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$ valued index for it (see appendix \ref{sec:OneDimensionalIndices}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
+This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation}. Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$ valued index for it (see appendix H of \cite{jappens2023spt}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
 \begin{lemma}
 	Let $\omega_\phi$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega_\phi$ satisfies assumption \ref{assumption:2Translations}.
 \end{lemma}
 \begin{proof}
-	The proof of this lemma is given in lemma \ref{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}.
+	The proof of this lemma is given in lemma C.2 of \cite{jappens2023spt}.
 \end{proof}
 This shows that $\omega_\phi$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
 \begin{equation}
@@ -1553,7 +1457,7 @@ The goal of this section is to show that the index we constructed is invariant u
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	This follows from the fact that because of \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof because of the new definition of $\HsplitTilde$ compared to the definition of $\Hsplit$.) $\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\in \textrm{GVAut}_1(\AA)$.
+	This follows from the fact that because of J.4 of \cite{jappens2023spt} part 2 (or a slight modification thereof because of the new definition of $\HsplitTilde$ compared to the definition of $\Hsplit$.) $\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\in \textrm{GVAut}_1(\AA)$.
 \end{proof}
 This lemma is almost identical to lemma \ref{lem:DefinitionOfGroupMorphismVAutEquation}. The only difference is the definition of $\HsplitTilde$ compared to $\Hsplit$. In analogy to lemma \ref{lem:PropertyTilde_a} we will define $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$. The main property we will use of this operator is that it satisfies the following lemma:
 \begin{lemma}\label{lem:PropertyTilde_aTwoTranslations}
@@ -1644,7 +1548,7 @@ The $\phiTilde_1$ and $\phiTilde_2$ defined previously satisfy that for any $x\i
 	for any $p,s\in\{0,1\}$. For the second equation we need the stronger condition that $x\in\IAC_{\sigma}^W(\alpha_0,\theta,\Theta)$.
 \end{lemma}
 \begin{proof}
-	This lemma is proven under lemma \ref{lem:phi1phi2matchingConditionH1ValuedIndexAppendix}.
+	This lemma is proven under lemma E.1 of \cite{jappens2023spt}.
 \end{proof}
 \begin{lemma}\label{lem:TranslatingSplittedTimeEvolution}
 	There exist maps
@@ -1664,7 +1568,7 @@ The $\phiTilde_1$ and $\phiTilde_2$ defined previously satisfy that for any $x\i
 	and that $\Phi^{\mu\nu}\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}$.
 \end{lemma}
 \begin{proof}
-	This lemma is proven in \ref{lem:SplittedAutomorphismAfterTranslatedIsVertical}.
+	This lemma is proven in J.13 of \cite{jappens2023spt}.
 \end{proof}
 In what follows, let $A_L\defeq A_L(1)$, $A_R\defeq A_R(1)$ and $\Phi^{\mu\nu}=\Phi^{\mu\nu}(1)$. We will now show some properties for these operators. The first one is that they can be used to exchange $w$ and $\phiTilde_1/\phiTilde_2$:
 \begin{lemma}\label{lem:TranslationOutOfPhi_KW}
@@ -1682,7 +1586,7 @@ In what follows, let $A_L\defeq A_L(1)$, $A_R\defeq A_R(1)$ and $\Phi^{\mu\nu}=\
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	The proof is presented after lemma \ref{lem:TranslationOutOfPhi_KW_Appendix}.
+	The proof is presented after lemma E.2 of \cite{jappens2023spt}.
 \end{proof}
 The second property is that the following lemma holds:
 \begin{lemma}\label{lem:DefinitionOfEpsilons}
@@ -1698,118 +1602,71 @@ The second property is that the following lemma holds:
 	\end{align}
 \end{lemma}
 \begin{proof}
-	This lemma is proven after lemma \ref{lem:DefinitionOfEpsilonsAppendix}. The proof of \ref{lem:DefinitionOfEpsilonsAppendix} hinges on lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}. We also remark that this last lemma is the only place where the compactness of the group is used in the main body of this paper.
+	This lemma is proven after lemma E.4 of \cite{jappens2023spt}. The proof of E.4 hinges on lemma E.3. We also remark that this last lemma is the only place where the compactness of the group is used in this paper.
 \end{proof}
-\begin{theorem}
+\begin{theorem}\label{thrm:IndexInvariantUnderLGA_TwoTrans}
 	$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
 \end{theorem}
 \begin{proof}
 	The start of the proof is identical to the proof of theorem \ref{thrm:IndexInvariantUnderLGA}. Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\AA_{W\left(C_{\theta_3}\right)^c}}$ such that
 	\begin{equation}
-		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+	\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
 	Take $\tilde{\beta}_{g,1}$ such that $\omega\circ\tilde{\beta}_{g,1}=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{\sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_1}\cap\sigma)}}$ (for $\sigma\in\{L,R\}$) satisfying
 	\begin{equation}
-		\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
+	\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
 	\end{equation}
 	Take $W_g,v,w,K_g^{L/R}$ and $b_g^{L/R}$ operators belonging to these automorphisms. Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma^H_{0;1}\in\QAut{\AA}$. To show this notice that
 	\begin{align}
-		\alpha\circ\gamma^H_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\HsplitTilde}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
-		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
+	\alpha\circ\gamma^H_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\HsplitTilde}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
+	&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\HsplitTilde}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemma J.5 and J.4 of \cite{jappens2023spt} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
-		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
-		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
+	\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
+	\label{eq:DefinitionOfA1TwoTranslations}
+	(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma \ref{lem:TwoAngleLemmaPart3ForTwoTranlations}. It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma$ through lemma J.12 of \cite{jappens2023spt}. It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_{\nu^{\sigma}(\sigma)})$ such that
 	\begin{align}
-		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1TwoTrans}
-		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
-		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2TwoTrans}
-		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_{\nu^{\sigma}(\sigma)}}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_{\nu^{\sigma}(\sigma)}}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
+	\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1TwoTrans}
+	\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
+	\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2TwoTrans}
+	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_{\nu^{\sigma}(\sigma)}}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_{\nu^{\sigma}(\sigma)}}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
 	\end{align}
 	Take $\Phi$ satisfying equation \ref{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations} arbitrary and define 
 	\begin{equation}
-		\delta_g^\sigma:=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{\HsplitTilde}_{0;1}(A_{2,g}^\sigma).
+	\delta_g^\sigma:=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{\HsplitTilde}_{0;1}(A_{2,g}^\sigma).
 	\end{equation}
 	Let
 	\begin{equation}
-		\phiTilde_1:\IAC_{L\times R}(\alpha_0,\Theta) \rightarrow \UU(\HH)
+	\phiTilde_1:\IAC_{L\times R}(\alpha_0,\Theta) \rightarrow \UU(\HH)
 	\end{equation}
 	be the group homomorphism defined from lemma \ref{lem:PropertyTilde_aTwoTranslationsLeftAndRight}. Take similarly
 	\begin{equation}
-		\phiTilde_2:\{\Ad{w^{-p}v^{-s}}(W_g)|g\in G,p,s\in\{-1,0,1\}\}\rightarrow \UU(\HH)
+	\phiTilde_2:\{\Ad{w^{-p}v^{-s}}(W_g)|g\in G,p,s\in\{-1,0,1\}\}\rightarrow \UU(\HH)
 	\end{equation}
 	the map defined in \ref{lem:DefinitionOfWgMapTwoTranslations}. The following operators now belong to $\omega\circ\gamma^{H}_{0;1}:$
 	\begin{align}
-		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
-		\tilde{w}&=\pi_0(A_1)w\pi_0(A_1)^\dagger\\
-		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
-		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger\\
-		\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phi_1(\delta_g^R)w \phi_1(\epsilon_g^R)\phi_1(b_g^R)\phi_1(\delta_g^R)^\dagger\pi_0(A_1)^\dagger\\
-		\tilde{h}_g&=\pi_0(A_1)\phi_1(h_g)\pi_0(A_1).
+	\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
+	\tilde{w}&=\pi_0(A_1)w\pi_0(A_1)^\dagger\\
+	\tilde{W}_g&=\pi_0(A_1)\phiTilde_1(\delta^L_g\otimes\delta^R_g)\phiTilde_2( W_g)\pi_0(A_1^\dagger)\\
+	\tilde{K}_g^\sigma&=\pi_0(A_1)\phiTilde_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger\\
+	\tilde{b}_g^\sigma&=\pi_0(A_1)w^\dagger \phiTilde_1(\delta_g^R)w \phiTilde_1(\epsilon_g^R)\phiTilde_1(b_g^R)\phiTilde_1(\delta_g^R)^\dagger\pi_0(A_1)^\dagger\\
+	\tilde{h}_g&=\pi_0(A_1)\phiTilde_1(h_g)\pi_0(A_1).
 	\end{align}
 	First we will show that this transformation indeed leaves the index invariant, then we will show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. Let $\alpha\in\hom(G,U(1))$ be the old index and $\tilde{\alpha}\in\hom(G,U(1))$ the new one (of course I can only speak about the new index if these new operators are operators belonging to $\omega\circ\gamma^H_{0;1}$. Let us assume this for now and prove it later.). We have that
-\begin{align}
-\alpha(g)&=v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w\\
-&=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w)\\
-&=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger)\phi_1( w^\dagger (K_g^R)^\dagger w).
-\end{align}
-Using equation \eqref{eq:TransformationOfKUnderEpsilon} on this gives us
-\begin{align}
-&=\phi_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger)\phi_1((\epsilon_g^R)^\dagger)w^\dagger\phi_1(  (K_g^R)^\dagger )wv^\dagger \phi_1(\epsilon_g^R)v\\
-&=\phi_1(v^\dagger \epsilon_g^R b_g^R v h_g K_g^R (b_g^R)^\dagger (\epsilon_g^R)^\dagger)w^\dagger\phi_1(  (K_g^R)^\dagger )w.
-\end{align}
-This shows that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously). The fact that the index is invariant under the $\phi_1(\delta_g)$ part is now completely equivalent to the proof of lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. The proof that the first four operators belong to $\omega\circ\gamma^H_{0;1}$ is completely analogous to what was done in the proof of \ref{thrm:IndexInvariantUnderLGA} and we will therefore focus on the $\tilde{b}_g^\sigma$ part. To show this, observe that we have
 	\begin{align}
-		&\Ad{\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}\circ\Ad{A_R\: \eta_g^R\circ\beta_g^{RU}(A_R^\dagger)}\circ\stkout{\nu\circ\nu^{-1}}\circ\eta_g^R\circ\nu\\
-		\nonumber
-		&\qquad\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}\circ\Ad{A_R\: \eta_g^R\circ\beta_g^{RU}(A_R^\dagger)}\circ\eta_g^R\circ\underline{\beta_g^{RU}}\circ\nu\\
-		\nonumber
-		&\qquad\circ\underline{(\beta_g^{\nu^{-1}(RU)})^{-1}}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}\circ\Ad{A_R}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_R^\dagger}\circ\nu\\
-		\nonumber
-		&\qquad\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\underline{\nu^{-1}\circ\nu}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-1}\circ\Ad{A_R}\circ\eta_g^R\circ\beta_g^{RU}\circ\Ad{A_R^\dagger}\circ\nu\circ\underline{\gamma^{\Hsplit}_{0;1}}\\
-		\nonumber
-		&\qquad \circ\underline{\nu^{-1}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}.
+	\alpha(g)&=v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w\\
+	&=\phiTilde_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger w^\dagger (K_g^R)^\dagger w)\\
+	&=\phiTilde_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger)\phiTilde_1( w^\dagger (K_g^R)^\dagger w).
 	\end{align}
-After using the restriction to $R$ of equation \eqref{eq:TranslatingSplittedTimeEvolution}, this leads to
+	Using equation \eqref{eq:TransformationOfKUnderEpsilon} on this gives us
 	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\underline{\gamma^{\HsplitTilde}_{1;0}\circ\stkout{(\otimes_\mu\Phi^{\mu\nu(R)})^{-1}}}\circ\eta_g^R\circ\beta_g^{RU}\circ\underline{\stkout{(\otimes_\mu\Phi^{\mu\nu(R)})}\circ\gamma^{\HsplitTilde}_{0;1}}\circ\nu\\
-		\nonumber
-		&\qquad \circ\gamma^{\HsplitTilde}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}.
+	&=\phiTilde_1(v^\dagger b_g^R v h_g K_g^R (b_g^R)^\dagger)\phiTilde_1((\epsilon_g^R)^\dagger)w^\dagger\phiTilde_1(  (K_g^R)^\dagger )wv^\dagger \phiTilde_1(\epsilon_g^R)v\\
+	&=\phiTilde_1(v^\dagger \epsilon_g^R b_g^R v h_g K_g^R (b_g^R)^\dagger (\epsilon_g^R)^\dagger)w^\dagger\phiTilde_1(  (K_g^R)^\dagger )w.
 	\end{align}
-	On the other hand we have that
-	\begin{equation}
-		\Ad{w^\dagger \phi_1(\delta_g^\sigma)w}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\Ad{A^\sigma_{2,g}}\circ\gamma^H_{1;0}\circ\nu.
-	\end{equation}
-	This leads us to
-	\begin{align}
-		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\gamma^H_{0;1}\circ\Ad{A_{2,g}^R}\circ\gamma^{\HsplitTilde}_{1;0}\circ\eta_g^R\circ\beta_g^{RU}\circ\gamma^{\HsplitTilde}_{0;1}\circ\nu\\
-		\nonumber
-		&\qquad \circ\gamma^{\HsplitTilde}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{RU}\circ\nu\\
-		\nonumber
-		&\qquad \circ\gamma^{\HsplitTilde}_{1;0}\circ(\beta_g^{\nu^{-1}(RU)})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}.
-	\end{align}
-	Now define $S=\{(0,y)|y\in\ZZ\}$ then
-	\begin{align}
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\stkout{\beta_g^S}\circ\nu\\
-		\nonumber
-		&\qquad \circ\gamma^{\HsplitTilde}_{1;0}\circ\stkout{(\beta_g^{\nu^{-1}(S)})^{-1}}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}.
-	\end{align}
-	Doing the same thing on the right will give us
-	\begin{align}
-		&\Ad{w^\dagger\phi_1(\delta_g^R)w\phi_1(\epsilon_g^R b_g^R)\phi_1(\delta_g^R)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\beta_g^{\nu(RU)}\circ\nu\circ\gamma^{\HsplitTilde}_{1;0}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ\gamma^{\HsplitTilde}_{0;1}\circ\Ad{(A_{2,g}^R)^\dagger}\circ\gamma^{H}_{1;0}\\
-		&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\nu^{-1}\circ\tilde\eta_g^R\circ\stkout{\beta_g^{\nu(RU)}}\circ\nu\circ\stkout{(\beta_g^{RU})^{-1}}\circ(\tilde\eta_g^R)^{-1}\circ\circ\gamma^{H}_{1;0}.
-	\end{align}
-	The role that the $A_1$ will play is analogous to the proof of \ref{thrm:IndexInvariantUnderLGA}, concluding the proof.
+	This shows that the index is invariant under the $\phiTilde_1$ and $\epsilon^R_g$ part (simultaneously). The fact that the index is invariant under the $\phiTilde_1(\delta_g)$ part is now completely equivalent to the proof of lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. This concludes this part of the proof. Now we only need to show that these operators indeed belong to $\omega\circ\gamma^H_{0;1}$. This is proven in lemma K.2 of \cite{jappens2023spt}.
 \end{proof}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under rotations by $90^\circ$}\label{sec:H1ValuedIndexInvariantUnderRotations}
 Take
@@ -1834,7 +1691,7 @@ Sometimes we will need a specific decomposition of this locally generated Automo
 	where $\Phi_i$ is the restriction of $\Phi$ to region $i\in\{1,2,3,4\}$.
 \end{lemma}
 \begin{proof}
-	Completely analogous to the proof of (for example) \ref{lem:PropertiesLocallyGeneratedAutomorphisms}.
+	Completely analogous to the proof of (for example) J.4 of \cite{jappens2023spt}.
 \end{proof}
 Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{\nu^{\sigma}(C_\theta\cap\sigma)}}$ and $\eta^\rho_{2,g}\in\Aut{\AA_{\tau^{\rho}(\mu(C_\theta)\cap\rho)}}$ be such that the automorphisms
 \begin{align}
@@ -1867,7 +1724,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 		\nonumber
 		&\qquad\otimes \left(\pi_{0,3}\otimes\pi_{0,4}\circ\gamma^{\Phi_3+\Phi_4}_{0;1}\circ\eta_g^L\circ\tilde{\eta}_g^D\circ(\beta_g^{LD})^{-1}\circ\gamma^{\Phi_3+\Phi_4}_{1;0}\right).
 	\end{align}
-	By appendix \ref{lem:SplittingOfUnitary}, there exist $\tilde{X}_g\in\UU(\HH_{0,1}\otimes\HH_{0,2})$ and $\tilde{Y}_g\in\UU(\HH_{0,3}\otimes\HH_{0,4})$ such that
+	By appendix A.3 of \cite{jappens2023spt}, there exist $\tilde{X}_g\in\UU(\HH_{0,1}\otimes\HH_{0,2})$ and $\tilde{Y}_g\in\UU(\HH_{0,3}\otimes\HH_{0,4})$ such that
 	\begin{equation}
 		\tilde{X}_g\otimes\tilde{Y}_g=\pi_0(B^\dagger)W_g\tilde{W}_{g^{-1}}\pi_0(B).
 	\end{equation}
@@ -1899,7 +1756,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	holds. Moreover $\tilde\alpha=\textrm{Index}_{\text{2 trans}}(\omega\circ\mu)$.
 \end{lemma}
 \begin{proof}
-	The existence of the $v,w,K_g^R$ and $b_g^R$ is due to the fact that $\gamma^\Phi_{0;1}\in \QAut{\AA}$. This follows from lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} and from the fact that $\textrm{SQAut}_1(\AA)\subset \QAut{\AA}$. By construction this also implies that indeed $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. We now only have to show the second part of the proof. We have that
+	The existence of the $v,w,K_g^R$ and $b_g^R$ is due to the fact that $\gamma^\Phi_{0;1}\in \QAut{\AA}$. This follows from lemma J.4 of \cite{jappens2023spt} and from the fact that $\textrm{SQAut}_1(\AA)\subset \QAut{\AA}$. By construction this also implies that indeed $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. We now only have to show the second part of the proof. We have that
 	\begin{align}
 		\Ad{\tilde{K}_g^U}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\Ad{(b_g^R)^\dagger w^\dagger X_g w X_g^\dagger}\circ\pi_0\circ\gamma^\Phi_{0;1}\\
 		&=\Ad{(b_g^R)^\dagger w^\dagger X_g w}\circ\pi_0\circ\gamma^\Phi_{0;1}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ(\tilde{\eta}_g^U)^{-1}\\
@@ -1937,7 +1794,7 @@ satisfy $\omega\circ\tilde{\beta}_{g,1}=\omega\circ\tilde{\beta}_{g,2}=\omega$. 
 	\begin{align}
 		\gamma^\Phi_{0;1}&=\Ad{B}\circ\bigotimes_{i=1}^4\gamma^{\Phi_i}_{0;1}\circ\Theta&\pi_0&=\bigotimes_{i=1}^4\pi_{0,i}
 	\end{align}
-	where the $\pi_{0,i}$ are irreducible representations in $\AA_i$, the areas $i$ are indicated in figure \ref{fig:IndexInvariantUnderRotationDecomposition} and the $\Theta$ have support in the areas shaded red. This shows that up to some inner automorphisms the operators with an $R$ on top act on different parts of the decomposition of $\pi_0$ then the operators with a $U$ on top do. Combining this with lemma \ref{lem:SplittingOfUnitary} concludes the proof.
+	where the $\pi_{0,i}$ are irreducible representations in $\AA_i$, the areas $i$ are indicated in figure \ref{fig:IndexInvariantUnderRotationDecomposition} and the $\Theta$ have support in the areas shaded red. This shows that up to some inner automorphisms the operators with an $R$ on top act on different parts of the decomposition of $\pi_0$ then the operators with a $U$ on top do. Combining this with lemma A.3 of \cite{jappens2023spt} concludes the proof.
 \end{proof}
 \begin{lemma}
 	$\tilde{\alpha}(g)=\alpha(g)$.
@@ -1996,7 +1853,7 @@ In this section we summarise the proof of theorem \ref{thrm:ExistenceSecondIndex
 \subsection{Proof of lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}}\label{sec:ProofOfMainResult2}
 In this subsection we prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}.
 \begin{proof}
-	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition \ref{def:SQAut2}) and observe that the resulting $\eta_g$ has the right support.
+	Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition J.8 of \cite{jappens2023spt}) and observe that the resulting $\eta_g$ has the right support.
 \end{proof}
 \bibliography{TSPT}
 \bibliographystyle{plain}
