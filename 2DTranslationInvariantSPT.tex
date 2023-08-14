@@ -314,42 +314,17 @@ We now state the result that using assumption \ref{assumption} we can define an 
 \input{Figures/Figure3}
 Now we will present the assumption from which we can define the $H^1(G,\TT)$-valued index (see figure \ref{fig:SetupForTwoTranslations} for the support of the automorphisms).
 \begin{restatable}{assumption}{assumptionTwo}\label{assumption:2Translations}
-	Let $\omega\in\PP(\AA)$ be
+	Let $\omega\in\PP(\AA)$ satisfy assumption \ref{assumption} with the additional properties that
 	\begin{enumerate}
-		\item such that there exists an automorphism $\alpha\in\QAut{\AA}$ and a product state $\omega_0\in\PP(\AA)$ satisfying
-		\begin{align}
-			\omega=\omega_0\circ\alpha.
-		\end{align}
-		\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map
-		\begin{equation}
-			\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g
-		\end{equation}
-		satisfying
-		\begin{align}
-			\label{eq:2TranslationsCondition3part1}
-			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g&=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
-		\end{align}
-		for some $V_{g,2}\in\UU(\AA),$ $\eta^L_g\in\Aut{\AA_{\nu^{-1}(C_\theta\cap L)}}$ and  $\eta^R_g\in\Aut{\AA_{\nu(C_\theta\cap R)}}$.
-		\item translation invariant in both directions
-		\begin{align}
-			\omega\circ\tau&=\omega&\omega\circ\nu&=\omega.
-		\end{align}
+		\item $\eta^L_g\in\Aut{\AA_{\nu^{-1}(C_\theta\cap L)}}$ and  $\eta^R_g\in\Aut{\AA_{\nu(C_\theta\cap R)}}$.
+		\item $\omega$ is also translation invariant in the other direction ($\omega\circ\nu=\omega$).
 	\end{enumerate}
 \end{restatable}
 Similar to before, we also require an assumption for states on the quasi local $C^*$-algebra over $\ZZ$.
 \begin{restatable}{assumption}{assumptionOneDimensionalTwo}\label{assumption1dWithTranslation}
-	Take $\phi\in\PP(\AA_{L_0})$ such that
-	\begin{enumerate}
-		\item $\phi\circ\beta_g=\phi$.
-		\item there exist automorphisms $\tilde\alpha_L\in\Aut{\AA_{L_0\cap L}}$, $\tilde\alpha_R\in\Aut{\AA_{L_0\cap R}}$ and a summable (see subsection \ref{sec:QuasiLocalC*Algebra} for the definition) operator $b\in\UU(\AA_{L_0})$ such that
-		\begin{equation}
-			\phi_0=\phi\circ\Ad{b}\circ\tilde\alpha_L\otimes\tilde\alpha_R
-		\end{equation}
-		is a product state.
-		\item $\phi\circ\nu=\phi$.
-	\end{enumerate}
+	Let $\phi\in\PP(\AA_{L_0})$ satisfy assumption \ref{assumption1d} with the additional property that $\phi$ is translation invariant ($\phi\circ\nu=\phi$).
 \end{restatable}
-This is almost completely identical to assumption \ref{assumption1d}, the only difference is the added translation symmetry. We are now ready to state the second main result:
+We are now ready to state the second main result:
 \begin{theorem}\label{thrm:ExistenceSecondIndex}
 	For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on site group action $U\in\hom(G,U(\CC^d))$, there exists a map
 	\begin{equation}
