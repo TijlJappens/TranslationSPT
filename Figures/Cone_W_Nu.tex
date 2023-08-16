@@ -1,0 +1,36 @@
+\documentclass[preview=false]{standalone}
+\begin{document}
+
+\begin{tikzpicture}
+	\draw[draw=white,line width=0mm] (1+\s,0) coordinate (a) -- (\s,0) coordinate (b) -- (1+\s,1) coordinate (c);
+	
+	\fill[fill=green!30!white] (-1*\s,0) -- (-6*\s,-5*\s) -- (-6*\s,5*\s);
+	\fill[fill=green!30!white] (1*\s,0) -- (6*\s,-5*\s) -- (6*\s,5*\s);
+	\fill[fill=red!30!white] (0,1*\s) -- (4*\s,5*\s) -- (-4*\s,5*\s);
+	\fill[fill=red!30!white] (0,-1*\s) -- (4*\s,-5*\s) -- (-4*\s,-5*\s);
+		
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=0:4*\s] (\x,\x+1*\s);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=-4*\s:0] (\x,-\x+1*\s);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=0:4*\s] (\x,-\x-1*\s);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=-4*\s:0] (\x,\x-1*\s);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=0:5*\s] (\x+1*\s,\x);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=0:5*\s] (\x+1*\s,-\x);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=-5*\s:0] (\x-1*\s,-\x);
+	\draw[draw=black,line width=0.3mm]
+	plot[smooth,samples=2,domain=-5*\s:0] (\x-1*\s,\x);
+		
+	\draw[draw=black,line width=0.3mm] (1*\s,0) -- (3*\s,0);
+	\pic [draw, ->, "$\theta$", angle eccentricity=1.5, angle radius=\s*1.5cm,line width=0.3mm] {angle=a--b--c};
+		
+	\node at (-4*\s,0) {$\xi_L$};
+	\node at (4.5*\s,0) {$\xi_R$};
+	\node at (0,3*\s) {$\Theta$};
+\end{tikzpicture}
+\end{document}

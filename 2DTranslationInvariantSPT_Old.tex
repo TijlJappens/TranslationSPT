@@ -241,21 +241,10 @@ In what follows we will denote the group action on $H^n(G,M)$ also in the same a
 \section{Results}
 This section will contain three different parts. First we discuss the main result starting from some rather abstract assumptions. In the second part we present the claim that these assumptions are implied by some more natural assumptions relating to short range entanglement. In the last part of the section we compare our assumptions to those made in \cite{ogata2021h3gmathbb}.
 \subsection{Statement of the result in terms of Q-automorphisms}\label{sec:Results_2}
-\begin{figure}
-	\centering
-	\def\s{0.5}
-	\resizebox{0.40\textwidth}{!}{%
-		\input{Figures/AlphaLeftRight.tex}}
-	$\qquad$
-	\def\s{0.4}
-	\resizebox{0.50\textwidth}{!}{%
-		\input{Figures/Cone_W_Nu_Eta.tex}}
-	\caption{These figures indicate the support area of the different automorphisms in a particular decomposition of the $\textrm{QAut}$. The angle $\theta$ needs to be smaller then or equal to what was indicated here so that the $\Theta$ and the $\eta_g$ (possibly after widening by one site vertically and one site horizontally) commute.}
-	\label{fig:SetupWithQAutomorphism}
-\end{figure}
+\input{Figures/Figure1}
 Similarly what was done in \cite{ogata2021h3gmathbb}, we will define an index on the space of states that can be disentangled by a Q-automorphism. This class of automorphisms is defined as:
 \begin{definition}
-	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$\footnote{Note that our definition of $\QAut{\AA}$ is slightly different from the definition of $\textrm{QAut}(\AA)$ from \cite{ogata2021h3gmathbb} because of this vertical widening $W$.} such that
+	Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\QAut{\AA}$ if and only if $\forall\theta\in]0,\pi/2[$ there exists an $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and a $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$\footnote{Note that our definition of $\QAut{\AA}$ is slightly different from the definition of $\textrm{QAut}(\AA)$ from \cite{ogata2021h3gmathbb} because of this widening $W$.} such that
 	\begin{equation}
 		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
 	\end{equation}
@@ -276,7 +265,7 @@ We will often write $\alpha_0$ to mean $\alpha_L\otimes\alpha_R$. In this paper 
 		\begin{align}
 			\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
 		\end{align}
-		for some $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_{\nu^{-1}(C_\theta\cap L)}}$ and $\eta^R_g\in\Aut{\AA_{\nu(C_\theta\cap R)}}$.
+		for some $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_{C_\theta\cap L}}$ and $\eta^R_g\in\Aut{\AA_{C_\theta\cap R}}$.
 		\item translation invariant ($\omega\circ\tau=\omega$).
 	\end{enumerate}
 \end{restatable}
@@ -321,9 +310,14 @@ We now state the result that using assumption \ref{assumption} we can define an 
 \begin{proof}
 	This statement is proven in subsection \ref{sec:ProofOf:thrm:ExistenceFirstIndex}.
 \end{proof}
-The assumption from which we can define the $H^1(G,\TT)$-valued index is the same one with an additional translation invariance:
+\input{Figures/Figure3}
+Now we will present the assumption from which we can define the $H^1(G,\TT)$-valued index (see figure \ref{fig:SetupForTwoTranslations} for the support of the automorphisms).
 \begin{restatable}{assumption}{assumptionTwo}\label{assumption:2Translations}
-	Let $\omega\in\PP(\AA)$ satisfy assumption \ref{assumption} with the additional property that it is also translation invariant in the other direction ($\omega\circ\nu=\omega$).
+	Let $\omega\in\PP(\AA)$ satisfy assumption \ref{assumption} with the additional properties that
+	\begin{enumerate}
+		\item $\eta^L_g\in\Aut{\AA_{\nu^{-1}(C_\theta\cap L)}}$ and  $\eta^R_g\in\Aut{\AA_{\nu(C_\theta\cap R)}}$.
+		\item $\omega$ is also translation invariant in the other direction ($\omega\circ\nu=\omega$).
+	\end{enumerate}
 \end{restatable}
 Similar to before, we also require an assumption for states on the quasi local $C^*$-algebra over $\ZZ$.
 \begin{restatable}{assumption}{assumptionOneDimensionalTwo}\label{assumption1dWithTranslation}
@@ -465,178 +459,138 @@ All in all we have provided a proof that the work done in \cite{ogata2021h3gmath
 		\end{equation}
 	\end{enumerate}
 \end{theorem}
-\section{Cone and translation operators}
-\begin{figure}
-	\centering
-	\def\s{0.4}
-	\resizebox{0.21\textwidth}{!}{%
-		\input{Figures/Cone.tex}}
-	$\quad$
-	\def\s{0.4}
-	\resizebox{0.21\textwidth}{!}{%
-		\input{Figures/Cone_W.tex}}
-	$\quad$
-	\def\s{0.4}
-	\resizebox{0.21\textwidth}{!}{%
-		\input{Figures/Cone_Nu.tex}}
-	$\quad$
-	\def\s{0.4}
-	\resizebox{0.24\textwidth}{!}{%
-		\input{Figures/Cone_W_Nu.tex}}
-	\caption{This is a graphical depiction of the support of the automorphisms $\xi_L$ and $\xi_R$ with respect to $\Theta$ in the definitions of $\textrm{Cone}_{\sigma}(\alpha_0,\theta)$, $\textrm{Cone}_{\sigma}^W(\alpha_0,\theta)$, $\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ and $\textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$ respectively.}
-	\label{fig:ConeOperators}
-\end{figure}
-In this section, we will fix certain objects that we will later on use to define an $H^2(G,\TT)-$valued index for states satisfying assumption \ref{assumption} and an $H^1(G,\TT)-$valued index for states satisfying assumption \ref{assumption:2Translations}. To this end, let $\omega\in\PP(\AA)$ satisfy assumption \ref{assumption}. Fix a product state $\omega_0$ and an $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$, a GNS triple (see theorem 2.3.16 in \cite{bratteli1979operator}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\AA_\sigma$. We also fix, $V_1$, $\alpha_0=\alpha_L\otimes\alpha_R$ and $\Theta$ as a choice of decomposition for $\alpha$ such that $\Theta$ and $\eta_g$ commute (see figure \ref{fig:SetupWithQAutomorphism}). Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
-\begin{lemma}\label{lem:Definition_v_And_w}
+\section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
+In this section we will define the $H^2(G,\TT)$-valued index starting from assumption \ref{assumption}. We will restate this assumption here for convenience:
+\assumptionOne*
+In what follows, we will first fix certain objects to define the index and then in section \ref{sec:IndexIsInvariantUnderChoices} we will show that it is independent of all these choices. Fix an $\omega_0$ and an $\alpha$. Fix $(\HH_0=\HH_L\otimes\HH_R,\pi_0=\pi_L\otimes\pi_R,\Omega_0)$ a GNS triple (see theorem 2.3.16 in \cite{bratteli1979operator}) of $\omega_0$ where ($\forall\sigma\in\{L,R\}$) $\pi_\sigma:\AA_\sigma\rightarrow\BB(\HH_\sigma)$ is a GNS representation of the restriction of $\omega_0$ to $\sigma$. Fix as well $V_1,\alpha_0=\alpha_L\otimes\alpha_R$ and $\Theta$ a choice of decomposition for $\alpha$ such that $\Theta$ and $\eta_g$ commute (see figure \ref{fig:SetupWithQAutomorphism}). Because we will be working with states that are translation invariant it make sense to define the translation action on the GNS space of $\omega_0$:
+\begin{lemma}\label{lem:Definition_v}
 	There exists a unique $v\in\UU(\HH_0)$ such that
 	\begin{align}
-	\Ad{v}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)v\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
-	\end{align}
-	If additionally, $\omega$ satisfies assumption \ref{assumption:2Translations}, there exists a unique $w\in\UU(\HH_0)$ such that
-	\begin{align}
-	\Ad{w}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)w\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
+		\Ad{v}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)v\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
 	\end{align}
 \end{lemma}
 \begin{proof}
-	We only do the first part as the second part is analogous. Since $\omega\circ\tau=\omega$ we get by the uniqueness of the GNS triple (see Corollary 2.3.17 and Theorem 2.3.19 from \cite{bratteli1979operator}) that there exists a unique $\tilde{v}\in\UU(\HH_0)$ satisfying
+	Since $\omega\circ\tau=\omega$ we get by the uniqueness of the GNS triple (see Corollary 2.3.17 and Theorem 2.3.19 from \cite{bratteli1979operator}) that there exists a unique $\tilde{v}\in\UU(\HH_0)$ satisfying
 	\begin{align}
-	\Ad{\tilde{v}}\circ\pi_0\circ\alpha&=\pi_0\circ\alpha\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
+		\Ad{\tilde{v}}\circ\pi_0\circ\alpha&=\pi_0\circ\alpha\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
 	\end{align}
 	Since $\alpha=\Ad{V_1}\circ\alpha_0\circ\Theta$ we get that
 	\begin{align}
-	\Ad{\pi_0(V_1^\dagger)\tilde{v}\pi_0(V_1)}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
+		\Ad{\pi_0(V_1^\dagger)\tilde{v}\pi_0(V_1)}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\tau&\tilde{v}\Omega_0&=\Omega_0.
 	\end{align}
 	Choosing $v=\pi_0(V_1^\dagger)\tilde{v}\pi_0(V_1)$  concludes the proof.
 \end{proof}
-We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms (see figure \ref{fig:ConeOperators} for a graphical depiction of the supports of $\xi$):
+\subsection{Cone operators}
+ We now define a subgroup of $\UU(\HH_0)$ that includes the representations of cone automorphisms:
 \begin{definition}\label{def:ConeOperators}
 	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\alpha_0\defeq \alpha_L\otimes\alpha_R$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\sigma$ (or in short $x\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{\AA_{W(C_\theta)\cap\sigma}}$ such that
 	\begin{equation}
-	\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
+		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
 	\end{equation}
 	$\textrm{Cone}_\sigma(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\id_{\ZZ^2/\sigma}$. We have that
 	\begin{align}\label{eq:CommutantPropertyCones}
-	\textrm{Cone}_R(\alpha_0,\theta)&\subseteq\textrm{Cone}_L(\alpha_0,\theta)'&\textrm{Cone}_L(\alpha_0,\theta)&\subseteq\textrm{Cone}_R(\alpha_0,\theta)'.
+		\textrm{Cone}_R(\alpha_0,\theta)&\subseteq\textrm{Cone}_L(\alpha_0,\theta)'&\textrm{Cone}_L(\alpha_0,\theta)&\subseteq\textrm{Cone}_R(\alpha_0,\theta)'.
 	\end{align}
-	If additionally $\xi\in\Aut{\AA_{C_\theta\cap\sigma}}$, $\xi\in\Aut{\AA_{\nu^\sigma(W(C_\theta)\cap\sigma)}}$ or $\xi\in\Aut{\AA_{\nu^\sigma(C_\theta\cap\sigma)}}$ respectively, we will say that $x\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$, $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ or $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$ respectively.
+	If additionally $\xi\in\Aut{\AA_{C_\theta\cap\sigma}}$ we will say that $x\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$.
 \end{definition}
 \begin{proof}
 	The proof of equation \eqref{eq:CommutantPropertyCones} just follows from the fact that we defined $\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
 	\begin{align}
-	\textrm{Cone}_L(\alpha_0,\theta)&\subseteq \UU(\HH_L)\otimes\id_{\HH_R}&\textrm{Cone}_R(\alpha_0,\theta)&\subseteq \id_{\HH_L} \otimes \UU(\HH_R).
+		\textrm{Cone}_L(\alpha_0,\theta)&\subseteq \UU(\HH_L)\otimes\id_{\HH_R}&\textrm{Cone}_R(\alpha_0,\theta)&\subseteq \id_{\HH_L} \otimes \UU(\HH_R).
 	\end{align}
 \end{proof}
-We will also define a generalization of this. We will define a subgroup of $\UU(\HH_0)$ that includes both the group $\pi_0\circ\alpha_0\circ\Theta(\UU(\AA_R))$ and the representations of cone automorphisms:
+We will also define a generalisation of this. We will define a subgroup of $\UU(\HH_0)$ that includes both the group $\pi_0\circ\alpha_0\circ\Theta(\UU(\AA_R))$ and the representations of cone automorphisms:
 \begin{definition}
 	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\sigma$ (or in short $x\in \IAC_\sigma(\alpha_0,\theta,\Theta)$) if there exists an $A\in\UU(\AA_\sigma)$ and a $y\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
 	\begin{equation}
-	x=\pi_0\circ\alpha_0\circ\Theta(A)y.
+		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
 	\end{equation}
 	$\IAC_\sigma$ is a subgroup of $\UU(\HH_0)$. We get that
 	\begin{align}\label{eq:CommutantProperty}
-	\IAC_R(\alpha_0,\theta,\Theta)&\subseteq\IAC_L(\alpha_0,\theta,\Theta)'&\IAC_L(\alpha_0,\theta,\Theta)&\subseteq\IAC_R(\alpha_0,\theta,\Theta)'.
+		\IAC_R(\alpha_0,\theta,\Theta)&\subseteq\IAC_L(\alpha_0,\theta,\Theta)'&\IAC_L(\alpha_0,\theta,\Theta)&\subseteq\IAC_R(\alpha_0,\theta,\Theta)'.
 	\end{align}
-	If, additionally, $y\in \textrm{Cone}_\sigma^W(\alpha_0,\theta)$ we will say that $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$. If $A\in\UU(\AA_{\nu^\sigma(\sigma)})$ and $y\in \textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$, we say that $x\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta)$. If $A\in\UU(\AA_{\nu^\sigma(\sigma)})$ and $y\in \textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$, we say that $x\in\IAC_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta,\Theta)$.
+	If additionally $y\in \textrm{Cone}_\sigma^W(\alpha_0,\theta)$ we will say that $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$.
 \end{definition}
 \begin{proof}
 	Take $u_L\in\IAC_L(\alpha_0,\theta,\Theta)$ and $u_R\in\IAC_R(\alpha_0,\theta,\Theta)$ arbitrary. Take $A_\sigma\in\UU(\AA_\sigma)$ and $v_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for $\sigma\in\{L,R\}$) such that $u_\sigma=\pi_0\circ\alpha_0\circ\Theta(A_\sigma)v_\sigma$. We have to prove that $[u_L,u_R]=0$. To do this, we need three things. First of all, by construction we get that $[A_L,A_R]=0$. Secondly, we showed in \ref{eq:CommutantPropertyCones} that $[v_L,v_R]=0$. We now only have to show that $[\pi_0\circ\alpha_0\circ\Theta(A_L),v_R]$ (and vice versa) as using these three properties repeatedly on the expression $[u_L,u_R]$ shows that it vanishes. This property is clearly equivalent to showing that $\Ad{v_R}\circ \pi_0\circ\alpha_0\circ\Theta(A_L)=\pi_0\circ\alpha_0\circ\Theta(A_L)$. Using definition \ref{def:ConeOperators} and the fact that $\xi_R$ and $\Theta$ commute, this reduces to showing that $\xi_R(A_L)=A_L$. This is true by construction.
 \end{proof}
 \begin{remark}
-	The main reason for the introduction of the $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ and $\IAC^W_\sigma(\alpha_0,\theta,\Theta)$ subgroups is that they are still (inner after) cone operators when translated. More specifically, let $y\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then both $vyv^\dagger$ and $v^\dagger y v$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. The analogous statement is also true for the $\IAC$ operators. Similarly, in the case there are two translation symmetries, we get that for $x\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ or $x\in\IAC_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta,\Theta)$, both $wx w^\dagger$ and $w^\dagger x w$ are in $\IAC_{\sigma}(\alpha_0,\theta,\Theta)$ or $\IAC_{\sigma}^W(\alpha_0,\theta,\Theta)$ respectively.
+	The main reason for the introduction of the $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ and $\IAC^W_\sigma(\alpha_0,\theta,\Theta)$ subgroups is that they are still (inner after) cone operators when translated. More specifically, let $x\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then both $vxv^\dagger$ and $v^\dagger x v$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. The analogous statement is also true for the $\IAC$ operators.
 \end{remark}
 The following lemma shows that if a unitary on the GNS space of $\omega_0$ has an adjoint action that is the product of cones then it is a product of cone operators:
 \begin{lemma}\label{lem:UsingIrreducibilityAndWignerTheorem}
-	Take $x\in\UU(\HH_0)$ such that there exist $\xi_\sigma\in\Aut{\AA_{C_\theta\cap\sigma}}$ (for $\sigma\in\{L,R\}$) satisfying
+	Take $x\in\UU(\HH_0)$ such that there exist $\xi_\sigma\in\Aut{\AA_{C_\theta}\cap\AA_\sigma}$ (for $\sigma\in\{L,R\}$) satisfying
 	\begin{equation}
-	\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi_L\otimes\xi_R
+		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi_L\otimes\xi_R
 	\end{equation}
 	then there exist $x_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
 	\begin{equation}
-	x=x_L\otimes x_R.
+		x=x_L\otimes x_R.
 	\end{equation}
 	These are unique up to a phase.
 \end{lemma}
 \begin{proof}
-	Using lemma \ref{lem:SplittingOfUnitary}, the result follows.
+Using lemma \ref{lem:SplittingOfUnitary} the result follows.
 \end{proof}
-Following Yoshiko Ogata \cite{ogata2021h3gmathbb}, we now define objects using the following lemma:
+Following Yoshiko Ogata \cite{ogata2021h3gmathbb} we now define objects using the following lemma:
 \begin{lemma}\label{lem:Definition_W_And_u}
 	There unitaries $W_g\in\UU(\HH_0)$ and $u_{\sigma}(g,h)\in\UU(\HH_{\sigma})$ for all $g,h\in G$ and for all $\sigma\in\{L,R\}$ satisfying
 	\begin{align}
-	\Ad{W_g}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\circ\Theta^{-1}\circ\alpha_0^{-1}\\
-	\Ad{u_\sigma(g,h)}\circ\pi_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\eta_h^{\sigma}\circ(\beta_g^{\sigma U})^{-1}\circ(\eta^\sigma_{gh})^{-1}\circ\alpha_\sigma^{-1}\\
-	u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}.
+		\Ad{W_g}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+		\Ad{u_\sigma(g,h)}\circ\pi_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\eta_h^{\sigma}\circ(\beta_g^{\sigma U})^{-1}\circ(\eta^\sigma_{gh})^{-1}\circ\alpha_\sigma^{-1}\\
+		u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}.
 	\end{align}
 \end{lemma}
 \begin{proof}
 	The result follows from the fact that assumption \ref{assumption} is sufficient to define the objects used in lemma 2.1 and definition 2.2 of \cite{ogata2021h3gmathbb}.
 \end{proof}
-These objects will be the starting point for our definition. Clearly the $u_\sigma(g,h)$ are elements of $\textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$. The $W_g$ have the following property:
+These objects will be the starting point for our definition. Clearly the $u_\sigma(g,h)$ are elements of $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$. The $W_g$ have the following property:
 \begin{lemma}\label{lem:AdjointOverConeIsInCone}
-	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$), then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$). If, more generally, we take $\Xi^\sigma\in\IAC_\sigma(\alpha_0,\Theta)$, then $\Ad{W_g}(\Xi^\sigma)\in\IAC_\sigma(\alpha_0,\Theta)$. Similarly if $\Xi^{\sigma}\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$, then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$. If additionally, $\Xi^{\sigma}\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ or $\Xi^{\sigma}\in\textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$, $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ and $\textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$ respectively.
+	Take $\Xi^{\sigma}\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $\sigma\in\{L,R\}$) then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ (for all $g\in G$).	If more generally we take $\Xi^\sigma\in\IAC_\sigma(\alpha_0,\Theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\IAC_\sigma(\alpha_0,\Theta)$. Similarly if $\Xi^{\sigma}\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then $\Ad{W_g}(\Xi^\sigma)\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$.
 \end{lemma}
 \begin{proof}
 	Take $\tilde{\Xi}^\sigma$ such that $\Xi^\sigma=\tilde{\Xi}^\sigma\otimes\id_{\HH_{\sigma^c}}$. Take $\xi_\sigma\in\Aut{\AA_{W(C_\theta)\cap\sigma}}$ such that
 	\begin{equation}
-	\Ad{\tilde\Xi^\sigma}\circ\pi_\sigma\circ\alpha_\sigma=\pi_\sigma\circ\alpha_\sigma\circ \xi_\sigma.
+		\Ad{\tilde\Xi^\sigma}\circ\pi_\sigma\circ\alpha_\sigma=\pi_\sigma\circ\alpha_\sigma\circ \xi_\sigma.
 	\end{equation}
 	We have that
 	\begin{equation}
-	\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\zeta_{g,R}
+		\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\zeta_{g,R}
 	\end{equation}
 	where
 	\begin{equation}
-	\zeta_{g,\sigma}\defeq \eta_g\circ\beta_g^{U}\circ\xi_\sigma\circ(\beta_g^{U})^{-1}\circ\eta_g^{-1}.
+		\zeta_{g,\sigma}\defeq \eta_g\circ\beta_g^{U}\circ\xi_\sigma\circ(\beta_g^{U})^{-1}\circ\eta_g^{-1}.
 	\end{equation}
 	Since $\zeta_{g,\sigma}\in\Aut{\AA_{C_\theta}\cap\AA_{\sigma}}$ we get that
 	\begin{equation}
-	\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0=\pi_L\circ\alpha_L\otimes\pi_R\circ\alpha_R\circ\zeta_{g,R}.
+		\Ad{\Ad{W_g}(\Xi^R)}\circ\pi_0\circ\alpha_0=\pi_L\circ\alpha_L\otimes\pi_R\circ\alpha_R\circ\zeta_{g,R}.
 	\end{equation}
 	Using lemma \ref{lem:SplittingOfUnitary} there exists a $Z_{g,R}\in\UU(\HH_R)$ satisfying that $\Ad{W_g}(\Xi^R)=\id_{\HH_L}\otimes Z_{g,R}$. To show the second result we only need to observe that for any $A\in\UU(\AA_R)$ we get that
 	\begin{align}
-	\Ad{W_g}\left(\pi_0\circ\alpha_0\circ\Theta(A)\Xi_R\right)&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A)\Ad{W_g}(\Xi_R)\\
-	&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_R(A)\Ad{W_g}(\Xi_R).
+		\Ad{W_g}\left(\pi_0\circ\alpha_0\circ\Theta(A)\Xi_R\right)&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A)\Ad{W_g}(\Xi_R)\\
+		&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_R(A)\Ad{W_g}(\Xi_R).
 	\end{align}
 	By the previous result, this is clearly in $\IAC_R(\alpha_0,\theta,\Theta)$ concluding the proof.
 \end{proof}
-We now have to define two more objects (remember that $v$ was defined in lemma \ref{lem:Definition_v_And_w}):
+We now have to define one more object (remember that $v$ was defined in lemma \ref{lem:Definition_v}):
 \begin{lemma}\label{lem:Definition_K}
-	There exist $K_g^{L}\in\textrm{Cone}_{\nu^L(L)}(\alpha_0,\theta)$ and $K_g^{R}\in\textrm{Cone}_{\nu^R(R)}(\alpha_0,\theta)$ such that
+	There exist $K_g^L\in\textrm{Cone}_L(\alpha_0,\theta)$ and $K_g^R\in\textrm{Cone}_R(\alpha_0,\theta)$ such that
 	\begin{equation}
-	v^\dagger W_g v W_g^\dagger=K_g^L\otimes K_g^R=K_g
+		v^\dagger W_g v W_g^\dagger=K_g^L\otimes K_g^R=K_g
 	\end{equation}
 	and they are unique (up to a phase). They satisfy the identity
 	\begin{equation}
-	\Ad{K^R_g}\circ\pi_0=\pi_0\circ \alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_0^{-1}.\quad\footnote{Observe in particular that $\Theta$ has cancelled out}
+		\Ad{K^R_g}\circ\pi_0=\pi_0\circ \alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}\circ\alpha_0^{-1}.\quad\footnote{Observe in particular that $\Theta$ has cancelled out}
 	\end{equation}
 \end{lemma}
 \begin{proof}
 	By some straightforward calculation we have that
 	\begin{align}
-	\Ad{K_g}\circ\pi_0&=\Ad{v^\dagger W_g v W_g^\dagger}\circ\pi_0\\
-	&=\bigotimes_{\sigma=L,R}\pi_\sigma\circ\alpha_\sigma\circ\tau^{-1}\circ \eta_g^\sigma\circ\beta_g^{\sigma U}\circ\tau\circ(\beta_g^{\sigma U})^{-1}\circ(\eta_g^{\sigma})^{-1}\circ\alpha_\sigma^{-1}.
+		\Ad{K_g}\circ\pi_0&=\Ad{v^\dagger W_g v W_g^\dagger}\circ\pi_0\\
+		&=\bigotimes_{\sigma=L,R}\pi_\sigma\circ\alpha_\sigma\circ\tau^{-1}\circ \eta_g^\sigma\circ\beta_g^{\sigma U}\circ\tau\circ(\beta_g^{\sigma U})^{-1}\circ(\eta_g^{\sigma})^{-1}\circ\alpha_\sigma^{-1}.
 	\end{align}
 	Using lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} concludes the proof that these unitaries exist and are unique up to a $G-$dependent phase.
 \end{proof}
-If, additionally, $\omega$ satisfies assumption \ref{assumption1dWithTranslation}, we can use these objects to define $b^\sigma_g$:
-\begin{lemma}
-	There exist a $b_g^L\in\textrm{Cone}_{\nu^{-1}(L)}^W(\alpha_0,\theta)$ and a $b_g^R\in\textrm{Cone}_{R}^W(\alpha_0,\theta)$ (both unique up to an exchange of a $G-$dependent phase) satisfying that
-	\begin{equation}
-	w^\dagger W_g w W_g^\dagger=b_g:=b_g^L\otimes b_g^R.
-	\end{equation}
-	It will satisfy
-	\begin{equation}\label{eq:automorphismBelongingTo_b}
-	\Ad{b_g^\sigma\otimes\id_{\HH_{\ZZ^2/\sigma}}}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\nu^{-1}\circ\eta_g^\sigma\circ\nu\circ(\eta_g^\sigma)^{-1}.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	It is easy enough to show that
-	\begin{equation}
-	\Ad{w^\dagger W_g w W_g^\dagger}\circ\pi_0=\pi_0\circ (\alpha_L\circ\nu^{-1}\circ\eta_g^L\circ\nu\circ(\eta_g^L)^{-1}\circ\alpha_L^{-1})\otimes(\alpha_R\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_R^{-1}).
-	\end{equation}
-	To do this one only has to use that $\beta_g^U$ commutes with $\nu$. By lemma \ref{lem:SplittingOfUnitary} the result now follows.
-\end{proof}
-\section{The $H^2(G,\TT)$-valued index}\label{sec:ProofFirstStatement}
 \subsection{Definition of the index}\label{sec:DefinitionH2Index}
 \begin{lemma}\label{lem:Definition2Cochain}
 	There exists a $C:G^2\rightarrow U(1)$ such that 
@@ -1469,9 +1423,59 @@ We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here
 \input{Figures/Figure5}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates the lattice to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is a relation between these automorphisms. Specifically, the automorphism $\tau$ that translated the lattice upwards by one site can now be written as $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
-\assumptionTwo*
+\assumptionTwo*$\:$\\
+For an overview of the supports see figure \ref{fig:SetupForTwoTranslationsNearProof}. In this section we will need a stronger version of the cone operators (from definition \ref{def:ConeOperators}):
+\begin{definition}
+	Take $0<\theta<\pi/2$ and $\alpha_L\in\Aut{\AA_{L}}$ and $\alpha_R\in\Aut{\AA_{R}}$. Take $\sigma\in\{L,R\}$ and $x\in\UU(\HH_{\sigma})\otimes\id_{\HH_{\ZZ^2/\sigma}}$ then we say that $x$ is a cone operator on $\nu^\sigma(\sigma)$\footnote{Where we define $\nu^L\defeq \nu^{-1}$ and $\nu^R\defeq \nu$.} (or in short $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$) if and only if there exists a $\xi\in\Aut{\AA_{W(\nu^\sigma(C_\theta\cap\sigma))}}$ such that
+	\begin{equation}
+		\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi.
+	\end{equation}
+	$\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ is a subgroup of $\UU(\HH_\sigma)\otimes\id_{\ZZ^2/\sigma}$. If additionally $\xi\in\Aut{\AA_{\nu^\sigma(C_\theta\cap\sigma)}}$ we will say that $x\in\textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$.
+\end{definition}
+Similarly as before we will also need the generalisation of this definition:
+\begin{definition}
+	Take $0<\theta<\pi/2$, $\alpha_L\in\Aut{\AA_{L}}$, $\alpha_R\in\Aut{\AA_{R}}$ and $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$. Take $\sigma\in\{L,R\}$ and take $x\in\UU(\HH_0)$ then we say that $x$ is an inner after cone operator on $\nu^\sigma(\sigma)$ (or in short $x\in \IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta)$) if there exists an $A\in\UU(\AA_{\nu^\sigma(\sigma)})$ and a $y\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ such that
+	\begin{equation}
+		x=\pi_0\circ\alpha_0\circ\Theta(A)y.
+	\end{equation}
+\end{definition}
 \subsection{Definition of the index}\label{sec:DefinitionH1Index}
- First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v\in U(\HH_0)$, $W_g\in U(\HH_0)$, $u_\sigma(g,h)\in \textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$ and $K_g^\sigma\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ (for every $g,h\in G$) and then later on we will show independence on the choice of these objects.
+ First notice that since this assumption is strictly stronger then the assumption in \ref{assumption} we can still define all the objects we did before. So in what follows fix a $v\in U(\HH_0)$, $W_g\in U(\HH_0)$, $u_\sigma(g,h)\in \textrm{Cone}_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta)$ and $K_g^\sigma\in\textrm{Cone}_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ (for every $g,h\in G$) and then later on we will show independence on the choice of these objects. We remind the reader of some equalities from section \ref{sec:ProofFirstStatement}
+\begin{align}
+		\Ad{v}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\tau\\
+		\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\\
+		\Ad{u_\sigma(g,h)}\circ\pi_\sigma\circ\alpha_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\eta_h^{\sigma}\circ(\beta_g^{\sigma U})^{-1}\circ(\eta^\sigma_{gh})^{-1}\\
+		u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}\\
+		\Ad{K^R_g}\circ\pi_0\circ\alpha_0&=\pi_0\circ \alpha_0\circ \tau^{-1}\circ \eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta_g^{R})^{-1}.
+	\end{align}
+In what follows, we will need the vertical analogue of the $v$. We define the horizontal translation operator:
+\begin{lemma}\label{lem:Definition_w}
+	There exists a unique $w\in\UU(\HH_0)$ such that
+	\begin{align}
+		\Ad{w}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\nu\circ\Theta^{-1}\circ\alpha_0^{-1}&&\text{and}&\pi_0(V_1)w\pi_0(V_1^\dagger)\Omega_0&=\Omega_0.
+	\end{align}
+\end{lemma}
+\begin{proof}
+	Analogous to the proof of \ref{lem:Definition_v}.
+\end{proof}
+ We can use these objects to define $b^\sigma_g$:
+\begin{lemma}
+	There exist a $b_g^L\in\textrm{Cone}_{\nu^{-1}(L)}^W(\alpha_0,\theta)$ and a $b_g^R\in\textrm{Cone}_{R}^W(\alpha_0,\theta)$ (both unique up to an exchange of a $G-$dependent phase) satisfying that
+	\begin{equation}
+		w^\dagger W_g w W_g^\dagger=b_g:=b_g^L\otimes b_g^R.
+	\end{equation}
+	It will satisfy
+	\begin{equation}\label{eq:automorphismBelongingTo_b}
+		\Ad{b_g^\sigma\otimes\id_{\HH_{\ZZ^2/\sigma}}}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\nu^{-1}\circ\eta_g^\sigma\circ\nu\circ(\eta_g^\sigma)^{-1}.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	It is easy enough to show that
+	\begin{equation}
+		\Ad{w^\dagger W_g w W_g^\dagger}\circ\pi_0=\pi_0\circ (\alpha_L\circ\nu^{-1}\circ\eta_g^L\circ\nu\circ(\eta_g^L)^{-1}\circ\alpha_L^{-1})\otimes(\alpha_R\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_R^{-1}).
+	\end{equation}
+	To do this one only has to use that $\beta_g^U$ commutes with $\nu$. By lemma \ref{lem:SplittingOfUnitary} the result now follows.
+\end{proof}
 \begin{lemma}\label{lem:DefinitionAlpha}
 	There exists an $\alpha:G\rightarrow U(1)$ satisfying
 	\begin{equation}\label{eq:DefinitionOfTheH_1Index}
