@@ -1069,9 +1069,9 @@ We will now show that the index is independent on the choice of $\tilde{\beta}_g
 \begin{proof}
 	Take $0<\theta_1<\theta_2<\pi/2$. Take $\alpha\in \QAut{\AA}$ and (for all $\sigma\in\{L,R\}$) take $\eta_{g,1}^\sigma\in\Aut{\AA_{\nu^{\sigma}(\sigma\cap C_{\theta_1})}}$ and $\eta_{g,2}^\sigma\in\Aut{\AA_{\nu^{\sigma}(\sigma\cap C_{\theta_2})}}$ to be operators belonging to $\tilde{\beta}_{g,1}$ and $\tilde{\beta}_{g,2}$ leaving $\omega$ invariant. Since $\Aut{\AA_{\nu^{\sigma}(\sigma\cap C_{\theta_1})}}\subset \Aut{\AA_{\nu^{\sigma}(\sigma\cap C_{\theta_2})}}$ the result now follows from lemma \ref{lem:InvarianceUnderChoiceBeta}.
 \end{proof}
-Due to all these considerations we will write the $H^2(G,\TT)$ and $H^1(G,\TT)$-valued indices as $\textrm{Index}^{\AA,U}(\omega)$ and $\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega)$ from here on onward.
+Due to all these considerations, from here onward, we will write the $H^2(G,\TT)$ and $H^1(G,\TT)$-valued indices as $\textrm{Index}^{\AA,U}(\omega)$ and $\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega)$ respectively.
 \section{Examples}
-In this section we will give a special class of translation invariant states that satisfy assumption \ref{assumption}. We start our construction by taking a state $\phi\in\PP(\AA_{L_0})$ that satisfies assumption \ref{assumption1d}. We restate this assumption here for convenience:
+In subsections \ref{sec:ExampleOneTranslation} and \ref{sec:ExampleTwoTranslations} we will give a special class of translation invariant states that satisfy assumptions \ref{assumption} and \ref{assumption:2Translations} respectively. We start our construction by taking a state $\phi\in\PP(\AA_{L_0})$ that satisfies assumption \ref{assumption1d}. We restate this assumption here for convenience:
 \assumptionOneDimensionalOne*
 \begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
 	This $\phi$ satisfies the split property.
@@ -1079,9 +1079,7 @@ In this section we will give a special class of translation invariant states tha
 \begin{proof}
 	Take $(\HH_L\otimes\HH_R,\pi_L\otimes\pi_R,\Omega_L\otimes\Omega_R)$ a GNS triple of $\phi_0$. By construction $(\HH_L\otimes\HH_R,\pi_L\circ\tilde\alpha_L\otimes\pi_R\circ\tilde\alpha_R,\pi_L\otimes\pi_R(b^\dagger)\Omega_L\otimes\Omega_R)$ is a GNS triple of $\phi$. This concludes the proof that $\phi$ satisfies the split property.
 \end{proof}
-\subsection{Example with non-trivial $H^2(G,\TT)$-valued index}
-
-By the result of \cite{ogata2019classification}, lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty} implies that $\phi$ has a well defined 1d SPT index (see appendix \ref{sec:OneDimensionalIndices}). For any $j\in\ZZ$ and $n\in\NN$ take
+For any $j\in\ZZ$ and $n\in\NN$, take
 \begin{align}
 	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j}^{n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
 	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
@@ -1104,24 +1102,29 @@ We will now define the infinite tensor product state.
 	\end{equation}
 	where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
 \end{proof}
-We have that:
+In what follows, we will fix a GNS triple for $\omega_0$ that is of the form:
+\begin{equation}
+	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
+\end{equation}
+where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
+\begin{remark}\label{rem:GNS_One_Dimensional}
+	We have (by construction) that
+	\begin{equation}
+		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
+	\end{equation}
+	is a GNS representation of $\phi$. 
+\end{remark}
+\subsection{Example with non-trivial $H^2(G,\TT)$-valued index}\label{sec:ExampleOneTranslation}
+By the result of \cite{ogata2019classification}, lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty} implies that $\phi$ has a well defined 1d SPT index (see appendix \ref{sec:OneDimensionalIndices}).  The following lemma says that the infinite tensor product state also has a well defined $H^2(G,\TT)$-valued index.
 \begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^2Index}
 	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
 \end{lemma}
 \begin{proof}
 	The proof is in lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}.
 \end{proof}
-This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$. We now fix a GNS triple of $\omega_0$ that is of the form
-\begin{equation}
-	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
-\end{equation}
-where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
-\begin{remark}\label{rem:GNS_One_Dimensional}
-	We clearly have (by construction) that
-	\begin{equation}
-		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
-	\end{equation}
-	is a GNS representation of $\phi$. This implies that if we take any $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
+This shows that $\omega$ has a well defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$.
+\begin{remark}
+	Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 	\begin{equation}
 		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
@@ -1137,13 +1140,13 @@ Let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisf
 \end{align}
 Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>-1},L}\otimes\HH_{L_{>-1},R})$ be the unique operator such that
 \begin{align}
-	\Ad{\tilde w_{g}}\circ\pi_{L_{>-1}}&=\pi_{L_{>-1}}\circ\alpha|_{L_{>-1}}\circ\beta_g^{\tau^{i}(U)}\circ \alpha^{-1}|_{L_{>-1}}&\tilde w_{g}\Omega_{L_{>-1}}&=\Omega_{L_{>-1}}.
+	\Ad{\tilde w_{g}}\circ\pi_{L_{>-1}}&=\pi_{L_{>-1}}\circ\alpha|_{L_{>-1}}\circ\beta_g^{U}\circ \alpha^{-1}|_{L_{>-1}}&\tilde w_{g}\Omega_{L_{>-1}}&=\Omega_{L_{>-1}}.
 \end{align}
 Clearly both functions are (linear) representation of the group. Now define
 \begin{equation}\label{eq:ChoiceOfW_g_ExampleH2Index}
 	W_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1).
 \end{equation}
-This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\id_{\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
+This operator valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\id_{\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
 \begin{align}
 	K_g&=v^\dagger W_g v W_g^\dagger\\
 	&=v^\dagger \pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) v W_g^\dagger\\
@@ -1173,8 +1176,8 @@ We now get (using this equation and the fact that $W_g$ is a representation)
 	&=k_g^R k_h^R (k_{gh}^R)^\dagger\otimes \id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}
 \end{align}
 and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
-\subsection{Example with non-trivial $H^1(G,\TT)$-valued index}
-This example will be very similar to what was done in section \ref{sec:OneTranslationDirectionExample}. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation} which we restate here for convenience:
+\subsection{Example with non-trivial $H^1(G,\TT)$-valued index}\label{sec:ExampleTwoTranslations}
+This example will be very similar to what was done in subsection \ref{sec:ExampleOneTranslation}. In this case however we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation} which we restate here for convenience:
 \assumptionOneDimensionalTwo*
 Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$-valued index for it (see appendix \ref{sec:OneDimensionalIndices}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
 \begin{lemma}
@@ -1183,17 +1186,9 @@ Since this state satisfies the split property (see lemma \ref{lem:phiExampleCons
 \begin{proof}
 	The proof of this lemma is given in lemma \ref{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}.
 \end{proof}
-This shows that $\omega_\phi$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$. Just like in section \ref{sec:OneTranslationDirectionExample}, we fix a GNS triple of $\omega_0$ that is of the form
-\begin{equation}
-	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
-\end{equation}
-where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
+This shows that $\omega_\phi$ indeed has a well defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 \begin{remark}\label{rem:GNS_One_DimensionalTwoTranslations}
-	We clearly have (by construction) that
-	\begin{equation}
-		\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}
-	\end{equation}
-	is a GNS representation of $\phi$. This implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
+	Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
 	\begin{equation}
 		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
@@ -1231,8 +1226,6 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 \end{align}
 showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 \section{}\label{sec:ProofFirstStatement}
-\subsection{Example (consistency with conjecture \ref{conj})}\label{sec:OneTranslationDirectionExample}
-
 \subsection{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
 The goal of this section is now to show that the index we constructed is invariant under locally generated automorphisms (the final proof of this statement is under theorem \ref{thrm:IndexInvariantUnderLGA}). To this end let $H\in\BB_{F_\phi}([0,1])$ be $G$-invariant, translation invariant (in the vertical direction) one parameter family of interactions. Define furthermore for notational simplicity in this section $\Hsplit=H_L+H_R$ (with $H_L$ and $H_R$ the restrictions of $H$ as defined in \ref{sec:Interactions}). Clearly we have that $\gamma^{\Hsplit}_{t;s}=\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}$ and we still have that $\gamma^{\Hsplit}_{t;s}\circ\tau=\tau\circ\gamma^{\Hsplit}_{t;s}$ (just like we have for $H$).\\\\
 For the remainder of the section we will use a decomposition using the following lemma:
