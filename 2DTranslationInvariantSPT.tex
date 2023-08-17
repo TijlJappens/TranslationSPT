@@ -1225,9 +1225,10 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 	&=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
 \end{align}
 showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
-\section{}\label{sec:ProofFirstStatement}
-\subsection{Index is invariant under locally generated automorphisms}\label{sec:IndexInvariantUnderLGA}
-The goal of this section is now to show that the index we constructed is invariant under locally generated automorphisms (the final proof of this statement is under theorem \ref{thrm:IndexInvariantUnderLGA}). To this end let $H\in\BB_{F_\phi}([0,1])$ be $G$-invariant, translation invariant (in the vertical direction) one parameter family of interactions. Define furthermore for notational simplicity in this section $\Hsplit=H_L+H_R$ (with $H_L$ and $H_R$ the restrictions of $H$ as defined in \ref{sec:Interactions}). Clearly we have that $\gamma^{\Hsplit}_{t;s}=\gamma^{H_L}_{t;s}\otimes\gamma^{H_R}_{t;s}$ and we still have that $\gamma^{\Hsplit}_{t;s}\circ\tau=\tau\circ\gamma^{\Hsplit}_{t;s}$ (just like we have for $H$).\\\\
+\section{Invariance of the indices under LGAs}\label{sec:AllIndicesInvariantUnderLGA}
+The goal of this section is now to show that the indices we constructed are invariant under locally generated automorphisms. To this end, we let $H\in\BB_{F_\phi}([0,1])$, be a $G$-invariant, translation invariant (in the vertical direction) one parameter family of interactions.
+\subsection{The morphisms $\phi_1$ and $\phi_2$}
+The goal of this section is to define a pair of morphisms, $\phi_1$ and $\phi_2$, that will be used for defining the operators belonging to $\omega\circ\gamma^H_{0;1}$. For notational simplicity in this section $\Hsplit=H_{\nu^{-1}(L)}+H_{\nu(R)}$ (with $H_{\nu^{-1}(L)}$ and $H_{\nu(R)}$ the restrictions of $H$ as defined in \ref{sec:Interactions}). Clearly we have that $\gamma^{\Hsplit}_{t;s}=\gamma^{H_{\nu^{-1}(L)}}_{t;s}\otimes\gamma^{H_{\nu(R)}}_{t;s}$ and we still have that $\gamma^{\Hsplit}_{t;s}\circ\tau=\tau\circ\gamma^{\Hsplit}_{t;s}$ (just like we have for $H$).\\\\
 For the remainder of the section we will use a decomposition using the following lemma:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismVAutEquation}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. There exist $\Phi^U_{0;1}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{0;1}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$, both commuting with $\beta_g$, such that there exists some $a\in\UU(\AA)$ satisfying that
@@ -1275,7 +1276,7 @@ We will then use this property to define a morphism:
 		\item it is well defined (independent of the choice of $A$ and $y$).
 		\item it is a group homomorphism.
 		\item $\tilde{a}^\dagger \phi_1(x)\tilde{a}\in\IAC_\sigma(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
-		\item if $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$ then  $\tilde{a}^\dagger \phi_1(x)\tilde{a}\in\IAC_\sigma^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$.
+		\item if additionally, $x\in \IAC_\sigma^W(\alpha_0,\theta,\Theta)$, $\IAC_{\nu^{\sigma}(\sigma)}(\alpha_0,\theta,\Theta)$ or $\IAC_{\nu^{\sigma}(\sigma)}^W (\alpha_0,\theta,\Theta)$ then  $\tilde{a}^\dagger \phi_1(x)\tilde{a}\in\IAC_\sigma^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$, $\IAC_{\nu^{\sigma}(\sigma)}(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ or $\IAC_{\nu^{\sigma}(\sigma)}^W (\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ respectively.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -1549,6 +1550,7 @@ We now have to extend the above definition to the group
 	\end{equation}
 	we get that $\tau^{-1}(a^\dagger)a\in\UU(\AA_{W(C_\theta)})'=\UU(\AA_{W(C_\theta)^c})$, where the last equality is again because of section 3 in \cite{NaScWe_2013}. This concludes the proof of \ref{eq:proofOf:lem:phi1phi2matchingCondition:LastThingToProveAppendix} concluding the proof of this lemma.
 \end{proof}
+\subsection{The $H^2(G,\TT)$-valued index is invariant under LGAs}\label{sec:IndexInvariantUnderLGA}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA}
 	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
 \end{theorem}
@@ -1616,6 +1618,11 @@ We now have to extend the above definition to the group
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ and $\tilde{K}_g^\sigma$ are operators belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
 \end{proof}
+\subsection{The $H^1(G,\TT)$-valued index is invariant under LGAs}
+\section{}\label{sec:ProofFirstStatement}
+\subsection{Index is invariant under locally generated automorphisms}
+
+
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U\in\hom(G,U(\CC^d))$ an on site group action arbitrary. Let
 \begin{equation}
