@@ -1226,9 +1226,9 @@ By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we ge
 \end{align}
 showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 \section{Invariance of the indices under LGAs}\label{sec:AllIndicesInvariantUnderLGA}
-The goal of this section is now to show that the indices we constructed are invariant under locally generated automorphisms. To this end, we let $H\in\BB_{F_\phi}([0,1])$, be a $G$-invariant, translation invariant (in the vertical direction) one parameter family of interactions.
+The goal of this section is now to show that the indices we constructed are invariant under locally generated automorphisms. More specifically, if we let $H\in\BB_{F_\phi}([0,1])$, be a $G$-invariant, translation invariant (in the vertical direction) one parameter family of interactions, then we will show that $\textrm{Index}(\omega\circ\gamma^H_{0;1})=\textrm{Index}(\omega)$. If additionally, $\omega$ and $H$ are translation invariant in both directions then we will show that $\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1})=\textrm{Index}_{\text{2 trans}}(\omega)$.
 \subsection{The morphisms $\phi_1$ and $\phi_2$}
-The goal of this section is to define a pair of morphisms, $\phi_1$ and $\phi_2$, that will be used for defining the operators belonging to $\omega\circ\gamma^H_{0;1}$. For notational simplicity in this section $\Hsplit=H_{\nu^{-1}(L)}+H_{\nu(R)}$ (with $H_{\nu^{-1}(L)}$ and $H_{\nu(R)}$ the restrictions of $H$ as defined in \ref{sec:Interactions}). Clearly we have that $\gamma^{\Hsplit}_{t;s}=\gamma^{H_{\nu^{-1}(L)}}_{t;s}\otimes\gamma^{H_{\nu(R)}}_{t;s}$ and we still have that $\gamma^{\Hsplit}_{t;s}\circ\tau=\tau\circ\gamma^{\Hsplit}_{t;s}$ (just like we have for $H$).\\\\
+The goal of this section is to define a pair of morphisms, $\phi_1$ and $\phi_2$, that will be used for defining the operators belonging to $\omega\circ\gamma^H_{0;1}$. For notational simplicity in this section $\Hsplit=H_{\nu^{-1}(L)}+H_{\nu(R)}$ (with $H_{\nu^{-1}(L)}$ and $H_{\nu(R)}$ the restrictions of $H$ as defined in \ref{sec:Interactions}). Clearly we have that $\gamma^{\Hsplit}_{t;s}=\gamma^{H_{\nu^{-1}(L)}}_{t;s}\otimes\gamma^{H_{\nu(R)}}_{t;s}$ and we still have that $\gamma^{\Hsplit}_{t;s}\circ\tau=\tau\circ\gamma^{\Hsplit}_{t;s}$ (just like we have for $H$). Additionally, in the case where there are two translation symmetries, we get that $\nu(\Hsplit)=H_L+H_{\nu\circ\nu(R)}$ while $\nu^{-1}(\Hsplit)=H_{\nu^{-1}\circ\nu^{-1}(L)}+H_{R}$.\\\\
 For the remainder of the section we will use a decomposition using the following lemma:
 \begin{lemma}\label{lem:DefinitionOfGroupMorphismVAutEquation}
 	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. There exist $\Phi^U_{0;1}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{0;1}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$, both commuting with $\beta_g$, such that there exists some $a\in\UU(\AA)$ satisfying that
@@ -1420,12 +1420,21 @@ We now have to extend the above definition to the group
 \begin{lemma}\label{lem:DefinitionOfWgMap}
 	Define again $\tilde{a}$ through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation}. Let
 	\begin{equation}
-		\phi_2:\{v^{-p} W_g v^{p}|g\in G,p\in\{-1,0,1\}\}\rightarrow \UU(\HH):v^{-p} W_g v^{p}\mapsto \tilde{a}v^{-p} W_g v^{p}\tilde{a}^\dagger.
+		\phi_2:\{\Ad{v^{-p}}(W_g)|g\in G,p\in\{-1,0,1\}\}\rightarrow \UU(\HH):\Ad{v^{-p}} (W_g)\mapsto \Ad{\tilde{a}v^{-p}} (W_g)
 	\end{equation}
-	This satisfies
-	\begin{equation}\label{eq:lemDefinitionOfWgMapCondition}
-		\Ad{\phi_2(v^{-p}W_g v^{p})}\circ\pi_0=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\tau^{-p}\circ\eta_g\circ\beta_g^U\circ\tau^p\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
-	\end{equation}
+	for the case where there is one translation symmetry, and let
+    \begin{align}
+		\phi_2&:\{\Ad{w^{-s}v^{-p}}(W_g)|g\in G\text{ and }s,p\in\{-1,0,1\}\}\rightarrow \UU(\HH)\\
+        \nonumber
+        &:\Ad{w^{-s}v^{-p}} (W_g)\mapsto \Ad{\tilde{a}w^{-s}v^{-p}} (W_g)
+	\end{align}
+    in the case where $\omega$ and $H$ are translation invariant in both directions. This satisfies
+	\begin{align}\label{eq:lemDefinitionOfWgMapCondition}
+		&\Ad{\phi_2(w^{-s}v^{-p}W_g v^{p}w^{s})}\circ\pi_0\\
+        \nonumber
+        &=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\nu^{-s}\circ\tau^{-p}\circ\eta_g\circ\beta_g^U\circ\tau^p\circ\nu^{s}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}
+	\end{align}
+    (where $s=0$ in the case where there is just one translation symmetry).
 \end{lemma}
 \begin{proof}
 	To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} we obtain:
@@ -1437,16 +1446,18 @@ We now have to extend the above definition to the group
 	Since $\Phi$ commutes with both the $\tau^{-p}\circ\eta_g\circ\tau^p$ and with the $\beta_g^{\tau^{-p}(U)}$ the result follows.
 \end{proof}
 \begin{lemma}\label{lem:phi1phi2matchingCondition}
-	The $\phi_1$ and $\phi_2$ defined previously satisfy that for any $x\in\IAC_{L\times R}(\alpha_0,\theta,\Theta)$ we have that
-	\begin{equation}
-		\phi_1(\Ad{W_g}(x))=\Ad{\phi_2(W_g)}(\phi_1(x)).
-	\end{equation}
+	Take $\phi_1$ and $\phi_2$ be as defined previously. Take $s\in\{-1,0,1\}$ and take $p\in\{-1,0,1\}$ arbitrary in the case where $\omega$ and $H$ have two translation symmetries while while we take $p=0$ in the case where we only have one translation symmetry. For any $x\in\IAC_{L\times R}(\alpha_0,\theta,\Theta)$, we have that
+	\begin{align}
+		\phi_1(\Ad{w^{-p} W_g w^{p}}(x))&=\Ad{\phi_2(w^{-p} W_g w^{p})}(\phiTilde_1(x))\\
+		\phi_2(\Ad{v^s}(w^{-p} W_gw^{p}))&=\Ad{v^s}(\phi_2(w^{-p} W_g w^{p}))
+	\end{align}
 	If additionally $x\in\IAC_{L\times R}^W(\alpha_0,\theta,\Theta)$ we get that
 	\begin{align}
-		\phi_1(\Ad{v}(x))&=\Ad{v}(\phi_1(x))&\phi_1(\Ad{v^\dagger}(x))&=\Ad{v^\dagger}(\phi_1(x)).
+		\phi_1(\Ad{v^{s}}(x))&=\Ad{v^{s}}(\phi_1(x)).
 	\end{align}
 \end{lemma}
 \begin{proof}
+    {\color{red}The proof doesn't reflect the generallity of the lemma yet.}\\
 	Take $x\in \IAC_R(\alpha_0,\theta,\Theta)$ arbitrary (the proof for $x\in \IAC_L(\alpha_0,\theta,\Theta)$ is analogous). Take $A\in\UU(\AA_R)$ and $y\in\cone_R(\alpha_0,\theta)$ such that
 	\begin{equation}
 	x=\pi_0\circ\alpha_0\circ\Theta(A)y
@@ -1620,9 +1631,6 @@ We now have to extend the above definition to the group
 \end{proof}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under LGAs}
 \section{}\label{sec:ProofFirstStatement}
-\subsection{Index is invariant under locally generated automorphisms}
-
-
 \subsection{Stacking in the $H^2(G,\TT)$-valued index}\label{sec:StackingOneTranslation}
 Take $\AA$ a quasi local $C^*$ algebra on a two dimensional lattice and take $U\in\hom(G,U(\CC^d))$ an on site group action arbitrary. Let
 \begin{equation}
@@ -1716,112 +1724,7 @@ We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
 In this section we discuss translation invariance not just in the vertical direction but in two directions simultaneously. Let $\nu\in\Aut{\AA}$ be the automorphism that translates the lattice to the right by one site. Let $\mu\in\Aut{\AA}$ be the automorphism that rotates the lattice by $90^\circ$ clockwise. There is a relation between these automorphisms. Specifically, the automorphism $\tau$ that translated the lattice upwards by one site can now be written as $\tau=\mu^{-1}\circ\nu\circ\mu$. We now let our state $\omega$ satisfy assumption \ref{assumption:2Translations}. We will restate this assumption here for convenience
 \assumptionTwo*
- 
-
-\subsection{Example (consistency with conjecture \ref{conj2})}\label{sec:TwoTranslationDirectionsExample}
-
 \subsection{The $H^1(G,\TT)$-valued index is invariant under locally generated automorphisms}\label{sec:H1ValuedIndexInvariantUnderLGA's}
-The goal of this section is to show that the index we constructed is invariant under locally generated automorphisms. To this end let $H\in \BB_{F_\phi}([0,1])$ be a $G$-invariant, translation invariant (in both directions) one parameter family of interactions. In the rest of this section we will define (for notational simplicity) $\HsplitTilde\defeq H_{\nu^{-1}(L)}+H_{\nu(R)}$. Clearly, this $\HsplitTilde$ is translation invariant in the vertical direction but not in the horizontal direction. The proof is very similar to what was done in theorem \ref{thrm:IndexInvariantUnderLGA} but with some notable differences. We first need a different version of lemma \ref{lem:DefinitionOfGroupMorphismVAutEquation} (in fact it is almost completely identical only the definition of $\Hsplit$ is now slightly different) and use this to define some objects used in the rest of the section:
-\begin{lemma}\label{lem:DefinitionOfGroupMorphismVAutEquationTwoTranslations}
-	Take $0<\theta<\pi/2$ and $\Theta\in \Aut{\AA_{W(C_\theta)^c}}$. There exist $\Phi^U_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap U}}$ and $\Phi^D_{s;t}\in\Aut{\AA_{W(C_\theta)^c\cap D}}$, both commuting with $\beta_g$, such that there exists some $a\in\UU(\AA)$ satisfying that
-	\begin{equation}\label{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations}
-	\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}=\Ad{a}\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}.
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	This follows from the fact that because of \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (or a slight modification thereof because of the new definition of $\HsplitTilde$ compared to the definition of $\Hsplit$.) $\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\in \textrm{GVAut}_1(\AA)$.
-\end{proof}
-This lemma is almost identical to lemma \ref{lem:DefinitionOfGroupMorphismVAutEquation}. The only difference is the definition of $\HsplitTilde$ compared to $\Hsplit$. In analogy to lemma \ref{lem:PropertyTilde_a} we will define $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$. The main property we will use of this operator is that it satisfies the following lemma:
-\begin{lemma}\label{lem:PropertyTilde_aTwoTranslations}
-	Let $A\in\UU(\AA_{W(C_\theta)\cap\sigma})$ then
-	\begin{equation}
-	\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0(A)=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta(A)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A).
-	\end{equation}
-\end{lemma}
-\begin{proof}
-	Analogous to the proof of lemma \ref{lem:PropertyTilde_a}.
-\end{proof}
-We now need a slightly modified version of lemma \ref{lem:DefinitionOfGroupMorphism}:
-\begin{lemma}\label{lem:DefinitionOfGroupMorphismTwoTranslations}
-	Take $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$ and define the map
-	\begin{align}
-		\phiTilde_{1,\sigma}&:\IAC_{\sigma}(\alpha_0,\theta,\Theta) \rightarrow \UU(\HH)\\
-		\nonumber
-		&:x=\pi_0\circ\alpha_0\circ\Theta(A)y\mapsto \phiTilde_{1,\sigma}(x)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}(A)\tilde{a}y\tilde{a}^\dagger
-	\end{align}
-	where $A\in\AA_{\sigma}$ and $y\in\textrm{Cone}_{\sigma}(\alpha_0,\theta)$. This map satisfies that
-	\begin{enumerate}
-		\item  for (the unique) $\xi\in\Aut{\AA_{C_\theta\cap \sigma}}$ such that
-		\begin{equation}
-			\Ad{y}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi
-		\end{equation}
-		we get that
-		\begin{equation}\label{eq:ConditionDefinitionOfGroupMorphismTwoTranslations}
-			\Ad{\phiTilde_1(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\Ad{A}\circ\xi.
-		\end{equation}
-		\item it is well defined (independent of the choice of $A$ and $y$).
-		\item it is a group homomorphism.
-		\item we have that
-			\begin{equation}
-				\tilde{a}^\dagger\phiTilde_1(x)\tilde{a}\in\IAC_\sigma(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
-			\end{equation}
-			If on top of this $x\in\IAC_{\nu^\sigma(\sigma)}$ then
-			\begin{equation}
-				\tilde{a}^\dagger\phiTilde_1(x)\tilde{a}\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1}).
-			\end{equation}
-		\item when additionally $x\in\IAC_{\sigma}^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ or when $x\in\IAC_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta,\Theta\circ \Phi^U_{0;1}\otimes\Phi^D_{0;1})$ we obtain a similar result.
-	\end{enumerate}
-\end{lemma}
-\begin{proof}
-	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfGroupMorphism}.
-\end{proof}
-We now have to extend the above definition to the group
-\begin{equation}
-	\IAC_{L\times R}(\alpha_0,\theta,\Theta)=\{ab=ba|a\in\IAC_{L}(\alpha_0,\theta,\Theta),b\in\IAC_{R}(\alpha_0,\theta,\Theta)\}.
-\end{equation}
-\begin{lemma}\label{lem:PropertyTilde_aTwoTranslationsLeftAndRight}
-	Define
-	\begin{equation}
-		\phiTilde_1:\IAC_{L\times R}(\alpha_0,\theta,\Theta)\rightarrow\UU(\HH):ab\mapsto \phiTilde_{1,L}(a)\phiTilde_{1,R}(b)
-	\end{equation}
-	where $a\in \IAC_{L}(\alpha_0,\theta,\Theta)$ and $b\in \IAC_{R}(\alpha_0,\theta,\Theta)$. This is well defined, by which we mean that
-	\begin{equation}
-		\phiTilde_{1,L}(a)\phiTilde_{1,R}(b)=\phiTilde_{1,R}(b)\phiTilde_{1,L}(a).
-	\end{equation}
-	This is still a group homomorphism.
-\end{lemma}
-\begin{proof}
-	Identical to the proof of lemma \ref{lem:extensionOfPhi1Definition}.
-\end{proof}
-\begin{lemma}\label{lem:DefinitionOfWgMapTwoTranslations}
-	Define again $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$, with $a$ defined through equation \eqref{eq:DefinitionOfGroupMorphismVAutEquationTwoTranslations}. Let
-	\begin{align}
-		\phiTilde_2:&\{\Ad{w^{-p}v^{-s}}(W_g)|g\in G,p,s\in\{-1,0,1\}\}\rightarrow \UU(\HH):\\
-		\nonumber
-		&\Ad{w^{-p}v^{-s}}(W_g) \mapsto \Ad{\tilde{a} w^{-p}v^{-s}}(W_g).
-	\end{align}
-	This satisfies
-	\begin{align}\label{eq:lemDefinitionOfWgMapConditionTwoTranslations}
-		&\Ad{\phiTilde_2(w^{-p}v^{-s}W_g v^{s} w^p)}\circ\pi_0\circ\alpha_0\circ\Theta\\
-		\nonumber
-		&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\HsplitTilde}_{1;0}\circ\nu^{-p}\circ\tau^{-s}\circ\eta_g\circ\beta_g^U\circ\tau^s\circ\nu^p\circ\gamma^{\HsplitTilde}_{0;1}\circ\gamma^{H}_{1;0}.
-	\end{align}
-\end{lemma}
-\begin{proof}
-	The proof of this lemma is analogous to the proof of lemma \ref{lem:DefinitionOfWgMap}.
-\end{proof}
-\begin{lemma}\label{lem:phi1phi2matchingConditionH1ValuedIndex}
-The $\phiTilde_1$ and $\phiTilde_2$ defined previously satisfy that for any $x\in\IAC_{\sigma}(\alpha_0,\theta,\Theta)$ we have that
-	\begin{align}
-		\phiTilde_1(\Ad{w^{-p} W_g w^{p}}(x))&=\Ad{\phiTilde_2(w^{-p} W_g w^{p})}(\phiTilde_1(x))\\
-		\phiTilde_1(\Ad{v^{s}}(x))&=\Ad{v^{s}}(\phiTilde_1(x))\\
-		\phiTilde_2(\Ad{v^s}(w^{-p} W_gw^{p}))&=\Ad{v^s}(\phiTilde_2(w^{-p} W_g w^{p}))
-	\end{align}
-	for any $p,s\in\{0,1\}$. For the second equation we need the stronger condition that $x\in\IAC_{\sigma}^W(\alpha_0,\theta,\Theta)$.
-\end{lemma}
-\begin{proof}
-	The proof of this lemma is analogous to the proof of lemma \ref{lem:phi1phi2matchingCondition}. The only difference is that now the $W_g$ is generalized to $w^{-p} W_g w^{p}$. This is possible because the support of $\eta_g$ is smaller in assumption \ref{assumption:2Translations} then it is in assumption \ref{assumption} and therefore everything still splits and therefore, everything is still well defined.
-\end{proof}
 \begin{lemma}\label{lem:TranslatingSplittedTimeEvolution}
 	There exist maps
 	\begin{align}
