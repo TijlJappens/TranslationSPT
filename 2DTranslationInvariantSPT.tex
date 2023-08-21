@@ -2095,23 +2095,31 @@ concluding the proof of the first part. The second part is analogous.
 \begin{remark}\label{rem:StackingH3ValuedIndex}
 	Clearly the same argument can be used to argue that the $H^3$-valued index is invariant under stacking.
 \end{remark}
-\section{}\label{sec:ProofFirstStatement}\subsection{The $H^2$-valued index is invariant of choice of basis of on site Hilbert space}\label{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}
-Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this subsection we will prove that
-\begin{align}
-	&\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
-	&=\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
-\end{align}
+\section{The indices are independent on the choice of on-site Hilbert space}
+Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this section we will prove the following lemma:
+\begin{lemma}\label{lem:IndependenceOnChoiceOnSitHilbertSpace}
+	Let $\omega$ satisfy assumption \ref{assumption} then for any choice of automorphisms $(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)$ we get that
+	\begin{align}
+		&\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
+		&=\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
+	\end{align}
+	Additionally, when $\omega$ satisfies assumption \ref{assumption:2Translations}, we get that
+	\begin{align}
+		&\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{\textrm{2 trans}}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
+		&=\textrm{Index}^{\AA,U}_{\textrm{2 trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
+	\end{align}
+\end{lemma}
 We do this by proving the following lemma:
-\begin{lemma}
-	Let $W_g,u_R(g,h),K^R_g$ be operators belonging to
+\begin{lemma}\label{lem:IndependenceOnChoiceOnSitHilbertSpaceOperatorsBelongingTo}
+	Let $W_g$, $u_R(g,h)$, $v$ and $K^R_g$ be operators belonging to
 	\begin{equation}
 		\textrm{Index}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)
 	\end{equation}
-	for a GNS triple for $\omega_0$, $(\HH_0,\pi_0,\Omega_0)$ then $W_g,u_R(g,h),K^R_g$ are also operators belonging to
+	for a GNS triple for $\omega_0$, $(\HH_0,\pi_0,\Omega_0)$ then $W_g$, $u_R(g,h)$, $v$ and $K^R_g$ are also operators belonging to
 	\begin{equation}
 		\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)
 	\end{equation}
-	for the GNS triple for $\omega_0\circ i_V$ given by $(\HH_0,\pi_0\circ i_V,\Omega_0)$.
+	for the GNS triple for $\omega_0\circ i_V$ given by $(\HH_0,\pi_0\circ i_V,\Omega_0)$. In the case where $\omega$ is translation invariant in both directions, the same holds for the additional operators $w$, $b_g^R$ and $h_g$.
 \end{lemma}
 \begin{proof}
 	To show this, we merely have to observe that for any $x\in U(\HH_0)$ satisfying that
@@ -2124,10 +2132,11 @@ We do this by proving the following lemma:
 	\end{equation}
 	concluding the proof.
 \end{proof}
-Clearly the above lemma implies that the $H^2$-valued index is invariant under the desired transformation.
+The proof that lemma \ref{lem:IndependenceOnChoiceOnSitHilbertSpaceOperatorsBelongingTo} implies lemma \ref{lem:IndependenceOnChoiceOnSitHilbertSpace} is trivial.
 \begin{remark}\label{rem:OnSiteUnitaryTransformationH3ValuedIndex}
 	Clearly the same argument can be used to argue that the $H^3$-valued index is invariant under the same transformation.
 \end{remark}
+\section{}\label{sec:ProofFirstStatement}
 \subsection{Proof of theorem \ref{thrm:ExistenceFirstIndex}}\label{sec:ProofOf:thrm:ExistenceFirstIndex}
 In this section we summarise the proof of theorem \ref{thrm:ExistenceFirstIndex}:
 \begin{proof}
@@ -2145,13 +2154,6 @@ We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here
 	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
 \end{proof}
 \section{The $H^1(G,\TT)$-valued index}\label{sec:TwoDirectionTraslationInvariance}
-\subsection{The $H^1$-valued index is invariant of choice of basis of on site Hilbert space}\label{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space-TwoTranslations}
-Let $V \in U(\CC^d)$ be a unitary operator on the on site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this subsection we will prove that
-\begin{align}
-	&\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{2\text{ trans}}(\theta,i_V^{-1}\circ\tilde{\beta}_g\circ i_V,i_V^{-1}\circ\eta_g\circ i_V,i_V^{-1}\circ\alpha_0\circ i_V,i_V^{-1}\circ\Theta\circ i_V,\omega\circ i_V,\omega_0\circ i_V)\\
-	&=\textrm{Index}^{\AA,U}_{2\text{ trans}}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0).
-\end{align}
-The proof is completely analogous to the proof presented in subsection \ref{sec:the-h2-valued-index-is-invariant-of-choice-of-basis-of-on-site-hilbert-space}.
 \subsection{Proof of theorem \ref{thrm:ExistenceSecondIndex}}\label{sec:ProofOf:thrm:ExistenceSecondIndex}
 In this section we summarise the proof of theorem \ref{thrm:ExistenceSecondIndex}:
 \begin{proof}
