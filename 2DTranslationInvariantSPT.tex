@@ -1730,51 +1730,51 @@ We conclude this subsection by showing that the following lemma holds:
 	\end{equation}
 	This equality is proven in lemma \ref{lem:EqualityTwoTranslationsUsingConnectedPath}.
 \end{proof}
-\subsection{The $H^2(G,\TT)$-valued index is invariant under LGAs}\label{sec:IndexInvariantUnderLGA}
-\begin{theorem}\label{thrm:IndexInvariantUnderLGA}
-	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
-\end{theorem}
+\subsection{Operators belonging to $\omega\circ\gamma^H_{0;1}$}
+The goal of this subsection is to take automorphisms and operators belonging to $\omega$ and relate them to operators belonging to $\omega\circ\gamma^H_{0;1}$. To this end, take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$, for some product state, $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\AA_{W(C_{\theta_3})^c}}$ such that
+\begin{equation}
+\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
+\end{equation}
+Take $\tilde{\beta}_{g,1}$ such that $\omega\circ\tilde{\beta}_{g,1}=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{\sigma}\in\Aut{\AA_{\nu^\sigma(C_{\theta_1}\cap \sigma)}}$ satisfying
+\begin{equation}
+\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
+\end{equation}
+Take $W_g,u_{L/R}(g,h),v$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Additionally, in the case where both $\omega$ and $H$ are translation invariant in both directions, take $w$, $b_g^{L/R}$ and $h_g$, the additional operators belonging to this state. Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma^{H}_{0;1}\in\QAut{\AA}$. To show this notice that
+\begin{align}
+\alpha\circ\gamma^{H}_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
+&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
+\end{align}
+Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+\begin{align}
+\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
+\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
+(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
+\end{align}
+If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma\in\Aut{\AA_{C_{\theta_2}\cap\sigma}}$ through lemma \ref{lem:TwoAngleLemmaPart3}. It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
+\begin{align}
+	\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
+	\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
+	\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}
+	\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
+\end{align}
+Take some $a$ and $\Phi$ like in equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} and use this to define $\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)$ the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism} and $\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)$ the map defined in \ref{lem:DefinitionOfWgMap}. Now take $A_1$ as in equation \eqref{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1} and define $\delta_g^\sigma\defeq \pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g})$ where $A^\sigma_{2,g}$ is as defined in equation \eqref{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}. The following lemma now holds:
+\begin{lemma}\label{lem:OperatorsBelongingToOmegaAfterH}
+The following operators belong to $\omega\circ\gamma^{H}_{0;1}:$
+\begin{align}
+	\label{eq:IndexInvariantUnderLGANewOperator1}
+	\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
+	\label{eq:IndexInvariantUnderLGANewOperator2}
+	\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
+	\label{eq:IndexInvariantUnderLGANewOperator3}
+	\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
+	\label{eq:IndexInvariantUnderLGANewOperator4}
+	\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger.
+\end{align}
+\end{lemma}
 \begin{proof}
-	Take $\alpha\in\QAut{\AA}$ such that $\omega=\omega_0\circ\alpha$ for some product state $\omega_0$. Take $0<\theta_1<\theta_2<\theta_3<\pi/2$ arbitrary. Take $\alpha_L\in\Aut{\AA_L},\alpha_R\in\Aut{\AA_R},V_1\in\UU(\AA)$ and $\Theta\in\Aut{\AA_{W(C_{\theta_3})^c}}$ such that
+	To do this, we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$, satisfying that $\exists\xi\in\Aut{\AA}$, such that
 	\begin{equation}
-		\alpha=\Ad{V_1}\circ\alpha_L\otimes\alpha_R\circ\Theta.
-	\end{equation}
-	Take $\tilde{\beta}_{g,1}$ such that $\omega\circ\tilde{\beta}_{g,1}=\omega$ and such that there exists some $V_{2,g}\in\UU(\AA)$ and some $\eta_g^{L/R}\in\Aut{\AA_{C_{\theta_1}}\cap\AA_{L/R}}$ satisfying
-	\begin{equation}
-		\tilde{\beta}_{g,1}=\Ad{V_{2,g}}\circ\eta_{g}^L\otimes\eta_{g}^R\circ\beta_g^U.
-	\end{equation}
-	Take $W_g,u_{L/R}(g,h),v$ and $K_g^{L/R}$ operators belonging to these automorphisms (see lemmas \ref{lem:Definition_W_And_u} and \ref{lem:Definition_K}). Clearly $\alpha\circ\gamma^H_{0;1}$ satisfies $\omega\circ\gamma^{H}_{0;1}=\omega_0\circ\alpha\circ\gamma^{H}_{0;1}$. We also have that $\alpha\circ\gamma^{H}_{0;1}\in\QAut{\AA}$. To show this notice that
-	\begin{align}
-		\alpha\circ\gamma^{H}_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
-		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
-	\end{align}
-	Because of lemma \ref{lem:TwoAngleLemmaPart1} and lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
-	\begin{align}
-		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
-		\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
-		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
-	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma\in\Aut{\AA_{C_{\theta_2}\cap\sigma}}$ through lemma \ref{lem:TwoAngleLemmaPart3}. It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_\sigma)$ such that
-	\begin{align}
-		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
-		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
-		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton2}
-		\tilde{\eta}_g^\sigma&=\Ad{A_{2,g}^\sigma}\circ\gamma^{H_\sigma}_{1;0}\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\gamma^{H_\sigma}_{0;1}\circ(\beta_g^{\sigma U})^{-1}.
-	\end{align}
-	Take $\Phi$ like in equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} and define $\phi_1:\IAC_R(\alpha_0,\Theta) \rightarrow \UU(\HH)$ the group homomorphism defined from lemma \ref{lem:DefinitionOfGroupMorphism}. Take similarly $\phi_2:\{W_g|g\in G\}\rightarrow \UU(\HH)$	the map defined in \ref{lem:DefinitionOfWgMap} with arbitrary phase. The following operators now belong to $\omega\circ\gamma^{H}_{0;1}:$
-	\begin{align}
-		\label{eq:IndexInvariantUnderLGANewOperator1}
-		\tilde{v}&=\pi_0(A_1)v\pi_0(A_1)^\dagger\\
-		\label{eq:IndexInvariantUnderLGANewOperator2}
-		\tilde{W}_g&=\pi_0(A_1)\phi_1(\delta^L_g\otimes\delta^R_g)\phi_2( W_g)\pi_0(A_1^\dagger)\\
-		\label{eq:IndexInvariantUnderLGANewOperator3}
-		\tilde u_\sigma(g,h)&=\pi_0(A_1) \phi_1\left(\delta^\sigma_g W_g\delta^\sigma_h W_g^\dagger u_\sigma(g,h)(\delta^\sigma_{gh})^\dagger\right)\pi_0(A_1)^\dagger\\
-		\label{eq:IndexInvariantUnderLGANewOperator4}
-		\tilde{K}_g^\sigma&=\pi_0(A_1)\phi_1(v^\dagger \delta_g^\sigma v K_g^\sigma (\delta_g^\sigma)^\dagger) \pi_0(A_1)^\dagger
-	\end{align}
-	where $\delta^\sigma_g=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H_\sigma}_{0;1}(A^\sigma_{2,g})$ and $A_1$ was defined in equation \eqref{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}. All that is left to show is that operators \eqref{eq:IndexInvariantUnderLGANewOperator1} through \eqref{eq:IndexInvariantUnderLGANewOperator4} are indeed operators belonging to $\omega\circ\gamma^{H}_{0;1}$. To do this we first state that a small calculation shows that $\forall x\in\UU(\HH_0)$ satisfying that $\exists\xi\in\Aut{\AA}$ such that
-	\begin{equation}
-	\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi
+	\Ad{x}\circ\pi_0\circ\alpha_0\circ\Theta=\pi_0\circ\alpha_0\circ\Theta\circ\xi,
 	\end{equation}
 	we get that
 	\begin{equation}\label{eq:IndexInvariantUnderLGA_A1_Transformation}
@@ -1797,6 +1797,13 @@ We conclude this subsection by showing that the following lemma holds:
 	=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}.
 	\end{equation}
 	Inserting this in equation \eqref{eq:IndexInvariantUnderLGA_A1_Transformation} with $x=\phi_1(\delta_g)\phi_2(W_g)$ and $\xi=\gamma^H_{0;1}\circ\tilde{\eta}_g\circ\beta_g^U\circ\gamma^H_{1;0}$ now proves the fact that $\tilde{W}_g$ is an operator belonging to $\omega\circ\gamma^H_{0;1}$. Proving that $\tilde u_\sigma(g,h)$ and $\tilde{K}_g^\sigma$ are operators belonging to $\omega\circ\gamma_{0;1}^H$ is completely analogous. This concludes the proof.
+\end{proof}
+\subsection{The $H^2(G,\TT)$-valued index is invariant under LGAs}\label{sec:IndexInvariantUnderLGA}
+\begin{theorem}\label{thrm:IndexInvariantUnderLGA}
+	$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
+\end{theorem}
+\begin{proof}
+	To show this, we merely have to show that the index is invariant under the transformations indicated in lemma \ref{lem:OperatorsBelongingToOmegaAfterH}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
 \end{proof}
 \subsection{The $H^1(G,\TT)$-valued index is invariant under LGAs}
 \begin{theorem}\label{thrm:IndexInvariantUnderLGA_TwoTrans}
