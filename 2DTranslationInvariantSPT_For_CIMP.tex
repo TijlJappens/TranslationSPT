@@ -216,7 +216,7 @@
 				\omega=\omega_0\circ\alpha.
 			\end{align}
 			\item such that there exists a $\theta\in]0,\pi/2[$ for which there exists a map, $\tilde\beta:G\rightarrow\Aut{\AA}:g\mapsto\tilde\beta_g$, satisfying
-			\begin{align}
+			\begin{align}\label{eq:DecompositionOfBetaTilde}
 				\omega\circ\tilde\beta_g&=\omega&\tilde\beta_g=\Ad{V_{g,2}}\circ\eta^L_g\otimes\eta^R_g\circ\beta^U_g
 			\end{align}
 			for some $V_{g,2}\in\UU(\AA),\eta^L_g\in\Aut{\AA_{\nu^{-1}(C_\theta\cap L)}}$ and $\eta^R_g\in\Aut{\AA_{\nu(C_\theta\cap R)}}$.
@@ -284,66 +284,26 @@
 		This statement is also proven in subsection \ref{sec:ProofOfMainTheorems}.
 	\end{proof}
 	\subsection{SRE implies previous assumptions}\label{sec:Results_1}
-	The assumptions in the previous subsection are rather technical. In this section, we show that these assumptions are strictly weaker than assumptions that are more natural. The assumptions on the states will now be that they are short-range entangled (see definition \ref{def:sre}).\\\\
-	We will use the same definition (with the same $F$-function) for states over the quasi-local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$. We are now ready to show that SRE implies the previous assumptions.
-	\begin{restatable}{lemma}{SREImpliesQDisentanglableOneTranslation}\label{lem:SRE_Implies_QDisentanglable_OneTranslation}
-		Take $\omega\in\PP(\AA)$ a short-range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
-	\end{restatable}
-	\begin{restatable}{lemma}{SREImpliesAssumptionOneDimensional}\label{lem:SRE_Implies_Assumption_1d}
-		Any $G$-invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1d}.
-	\end{restatable}
-	These two results imply that to any $G$-invariant translation invariant SRE state I can associate a consistent LGA invariant $H^3(G,\TT)\oplus H^2(G,\TT)$-valued SPT index. The first index is the index when there are no translations and the last index is the one from theorem \ref{thrm:ExistenceFirstIndex}.
-	\begin{restatable}{lemma}{SREImpliesQDisentanglableTwoTranslations}\label{lem:SRE_Implies_QDisentanglable_TwoTranslations}
-		Let $\omega$ be a short-range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
-	\end{restatable}
-	\begin{proof}
-		The proof of the last three lemmas is written in appendix \ref{sec:ProofOfMainResult1}.
-	\end{proof}
-	\begin{restatable}{lemma}{SREImpliesAssumptionOneDimensionalTwoTranlations}\label{lem:SRE_Implies_Assumption_1dTwoTranslations}
-		Any $G$-invariant, translation invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1dWithTranslation}.
-	\end{restatable}
-	\begin{proof}
-		Trivially follows from lemma \ref{lem:SRE_Implies_Assumption_1d}.
-	\end{proof}
-	This shows that if a $G$-invariant SRE state is translation invariant in two directions I can find a consistent LGA invariant $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)\oplus H^1(G,\TT)$ valued SPT index. The first index is again the index when there are no translations, the second and third indices are given by
-	\begin{align}
-		\omega&\mapsto \textrm{Index}(\omega)&&\text{and}&\omega\mapsto \textrm{Index}(\omega\circ\mu)
-	\end{align}
-	where $\mu$ was the rotation automorphism and Index was defined in theorem \ref{thrm:ExistenceFirstIndex}. Finally the $H^1(G,\TT)$-valued index is defined in theorem \ref{thrm:ExistenceSecondIndex}. We now only have to show that there is no additional $H^1(G,\TT)$-valued index:
-	\begin{restatable}{lemma}{RotationDoesntChangeHOneIndex}\label{lem:RotationDoesn'tChangeH1Index}
-		Let $\mu$ be the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ degrees, then $\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega\circ\mu)$.
-	\end{restatable}
-	\begin{proof}
-		This is proven in subsection \ref{sec:H1ValuedIndexInvariantUnderRotations}.
-	\end{proof}
-	Now all that is left to show is that the indices defined here are constant on the stable equivalence classes introduced in the introduction and later on clarified in subsection \ref{sec:StableEquivalenceClasses}. To this end let $\expval{\cdot}_\sim$, $\expval{\cdot}_\sim^1$, $\expval{\cdot}_\sim^2$ and $\expval{\cdot}_\sim^3$ be the stable equivalence classes without translation symmetry, with only the $\tau$ translation symmetry, with only the $\nu$ translation symmetry and with both the $\tau$ and $\nu$ translation symmetry respectively. We now show the following lemma:
-	\begin{lemma}\label{lem:IndicesConstantOnStableEquivalenceClasses}
-		Take $(\omega_1,U_1)$ and $(\omega_2,U_2)$ elements of $S_0$ (see subsection \ref{sec:StableEquivalenceClasses}) for algebras $\AA_1$ and $\AA_2$. The following three statements now hold:
+	The assumptions in the previous subsection are rather technical. However, it turns out that any SRE state, with some additional symmetries, naturally satisfies these assumptions. The precise statements and proofs are formulated in section \ref{sec:ProofOfMainResult1} but we will describe them in words here.
+	\\\\
+	As is shown in appendix \ref{sec:properties-of-locally-generated-automorphisms-2d}, which is based on the work in \cite{ogata2021h3gmathbb}, for any one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$, we have that $\gamma^\Phi_{0;1}\in\QAut{\AA}$. This implies the following. Take any SRE state $\omega$ (see definition \ref{def:sre}), with entangler $\gamma^\Phi_{0;1}$, and product state $\omega_0$ such that $\omega=\omega_0\circ \gamma^\Phi_{0;1}$. We can simply define the $\alpha$ from assumption \ref{assumption} to be equal to this $\gamma^\Phi_{0;1}$. Similarly, in \cite{ogata2021h3gmathbb} is has been shown that if this state has an additional on site symmetry, we can use the $\Phi$ and $\omega_0$ to construct some $\tilde\beta_g$ that can be decomposed like in equation \eqref{eq:DecompositionOfBetaTilde} for any angle.
+	\\\\
+	It should also be said that we use the same definition of SRE (with the same $F$-function) for states over the quasi-local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$. This is because we will use the 1D SRE states to create translation invariant 2D SRE states. Since the $F$-norm of a sum of disjoint interactions has an $F$-norm given by the highest of the $F$-norms of its sub-interactions, this means that to ensure that the resulting state has a well defined index, we will need as similar $F$-norm and not something weaker.
+	\\\\
+	Additionally, it turns out that the indices that are defined in the last subsection are independent on the choice of representative of the equivalence classes introduced in \ref{sec:StableEquivalenceClasses}.
+	\\\\
+	All in all, we will show the following theorem:
+	\begin{theorem}\label{lem:IndicesConstantOnStableEquivalenceClasses}
+		Take $(\omega,U)\in S_0$ (see subsection \ref{sec:StableEquivalenceClasses}) for the algebra $\AA$. The following statements now hold:
 		\begin{enumerate}
-			\item If $\expval{\omega_1,U_1}_\sim=\expval{\omega_2,U_2}_\sim$ then
-			\begin{equation}
-				\textrm{Index}^{\AA_1,U_1}_{\text{no trans}}(\omega_1)=\textrm{Index}^{\AA_2,U_2}_{\text{no trans}}(\omega_2)
-			\end{equation}
-			where $\textrm{Index}_{\text{no trans}}$ is the SPT index introduced in \cite{ogata2021h3gmathbb} (see subsection \ref{sec:SomeRemarks} for why this is well-defined in this context).
-			\item If additionally $(\omega_1,U_1),(\omega_2,U_2)\in S_1$ and $\expval{\omega_1,U_1}_\sim^1=\expval{\omega_2,U_2}_\sim^1$ then
-			\begin{equation}
-				\textrm{Index}^{\AA_1,U_1}(\omega_1)=\textrm{Index}^{\AA_2,U_2}(\omega_2)
-			\end{equation}
-			where $\textrm{Index}$ is the index introduced in theorem \ref{thrm:ExistenceFirstIndex}.
-			\item If additionally $(\omega_1,U_1),(\omega_2,U_2)\in S_2$ and $\expval{\omega_1,U_1}_\sim^2=\expval{\omega_2,U_2}_\sim^2$ then
-			\begin{equation}
-				\textrm{Index}^{\AA_1,U_1}(\omega_1\circ\mu)=\textrm{Index}^{\AA_2,U_2}(\omega_2\circ\mu)
-			\end{equation}
-			where $\mu$ was the rotation automorphism.
-			\item If additionally $(\omega_1,U_1),(\omega_2,U_2)\in S_3$ and $\expval{\omega_1,U_1}_\sim^3=\expval{\omega_2,U_2}_\sim^3$ then
-			\begin{equation}
-				\textrm{Index}^{\AA_1,U_1}_{\text{2 trans}}(\omega_1)=\textrm{Index}^{\AA_2,U_2}_{\text{2 trans}}(\omega_2)
-			\end{equation}
-			where $\textrm{Index}_{\text{2 trans}}$ is the index introduced in theorem \ref{thrm:ExistenceSecondIndex}.
+			\item $\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim$.
+			\item If additionally, $(\omega,U)\in S_1$, $\textrm{Index}^{\AA,U}(\omega)$ is also well defined and independent on the choice of representative of $\expval{\omega}_\sim^1$.
+			\item If in stead, $(\omega,U)\in S_2$, $\textrm{Index}^{\AA,U}(\omega\circ\mu)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim^2$.
+			\item If additionally, $(\omega,U)\in S_3$, $\textrm{Index}^{\AA,U}_{\textrm{2 trans}}(\omega)=\textrm{Index}^{\AA,U}_{\textrm{2 trans}}(\omega\circ\mu)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim^3$.
 		\end{enumerate}
-	\end{lemma}
+	\end{theorem}
 	\begin{proof}
-		This is shown in appendix \ref{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}.
+		This is shown in section \ref{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}.
 	\end{proof}
 	\subsection{Comparison with \cite{ogata2021h3gmathbb}}\label{sec:SomeRemarks}
 	The first thing we would like to remark on is that in \cite{ogata2021h3gmathbb}, a different equivalence class on states is used. First of all the set of states considered is a priori different. Namely, for any state $\psi\in \PP(\AA)$, we define two different conditions
@@ -2049,25 +2009,29 @@
 	\begin{proof}
 		The 2-cochain was defined in subsection \ref{sec:DefinitionH1Index}. The proof that it wasn't dependent on any of the choices made in assumption \ref{assumption:2Translations} was done in subsection \ref{sec:IndexIsInvariantUnderChoices}. The first item in the list concerning the invariance under locally generated automorphisms was shown in subsection \ref{sec:IndexInvariantUnderLGA}. The proof of the second item concerning the relation between the 1d SPT index and the 2d translation SPT index is done in subsection \ref{sec:ExampleTwoTranslations}. The proof of the third item concerning the stacking is done in section \ref{sec:the-role-of-stacking}. The proof of the last item concerning a change of basis of the on-site Hilbert space is done in section \ref{sec:the-indices-are-independent-on-the-choice-of-on-site-hilbert-space}. This concludes the proof.
 	\end{proof}
-	\section{Proof of the lemmas in section \ref{sec:Results_1}}\label{sec:ProofOfMainResult1}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
-	We will provide a proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
-	\SREImpliesQDisentanglableOneTranslation*
+	\section{Proof of theorem \ref{lem:IndicesConstantOnStableEquivalenceClasses}}\label{sec:ProofOfMainResult1}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
+	Before we prove the theorem, we will first list some required lemmas along with their proof.
+	\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_OneTranslation}
+		Take $\omega\in\PP(\AA)$ a short-range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
+	\end{lemma}
 	\begin{proof}
 		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:the-one-translation-symmetry}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
 	\end{proof}
-	We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here for convenience:
-	\SREImpliesAssumptionOneDimensional*
-	\begin{proof}
-		The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
-	\end{proof}
-	We now prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}, which we restate here for convenience:
-	\SREImpliesQDisentanglableTwoTranslations*
+	\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_TwoTranslations}
+		Let $\omega$ be a short-range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
+	\end{lemma}
 	\begin{proof}
 		Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition \ref{def:SQAut2}) and observe that the resulting $\eta_g$ has the right support.
 	\end{proof}
-	Finally, we prove lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
+	\begin{lemma}\label{lem:RotationDoesn'tChangeH1Index}
+		Let $\mu$ be the automorphism that rotates every element of the $C^*$ algebra by $90^\circ$ degrees, then $\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega)=\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega\circ\mu)$.
+	\end{lemma}
 	\begin{proof}
-		We will only prove the first item as all the other proofs are analogous. First notice that the equivalence implies that there exist product states $\phi_1\in\PP(\tilde\AA_1)$ and $\phi_2\in\PP(\tilde\AA_2)$ and group actions $\tilde U_1$ and $\tilde U_2$ such that the combinations $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ are trivial (see \ref{sec:States} for what this means). Moreover, these will satisfy that there exists a unitary transformation of the on-site Hilbert space, $V$ such that
+		This is proven in subsection \ref{sec:H1ValuedIndexInvariantUnderRotations}.
+	\end{proof}
+	Finally, we prove Theorem \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
+	\begin{proof}
+		The last few lemmas show that the indices are all well defined. Now we only have to show that they are independent on the choice of representative.	We will only prove the first item as all the other proofs are analogous. First notice that the equivalence implies that there exist product states $\phi_1\in\PP(\tilde\AA_1)$ and $\phi_2\in\PP(\tilde\AA_2)$ and group actions $\tilde U_1$ and $\tilde U_2$ such that the combinations $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ are trivial (see \ref{sec:States} for what this means). Moreover, these will satisfy that there exists a unitary transformation of the on-site Hilbert space, $V$ such that
 	\begin{align}
 	\omega_1\otimes_{\text{stack}}\phi_1\circ i_V&=\omega_2\otimes_{\text{stack}}\phi_2\circ\gamma^\Phi_{0;1}&V^\dagger U_{1}(g)\otimes \tilde{U}_{1}(g)V&=U_{2}(g)\otimes \tilde{U}_{2}(g)
 	\end{align}
@@ -2177,6 +2141,18 @@
 	\begin{proof}
 		The proof of this lemma is analogous to the proof of lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}. Since we can take $\eta_g=\id$ here the change in support of $\eta_g$ from lemma \ref{assumption} is not an issue. If the one-dimensional state is $\nu$ invariant, it follows that the infinite product state is as well. This concludes the proof of this lemma.
 	\end{proof}
+\begin{lemma}\label{lem:SRE_Implies_Assumption_1d}
+	Any $G$-invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1d}.
+\end{lemma}
+\begin{proof}
+	The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
+\end{proof}
+\begin{lemma}\label{lem:SRE_Implies_Assumption_1dTwoTranslations}
+	Any $G$-invariant, translation invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1dWithTranslation}.
+\end{lemma}
+\begin{proof}
+	Trivially follows from lemma \ref{lem:SRE_Implies_Assumption_1d}.
+\end{proof}
 	\section{Some calculations with cochains}
 	\begin{lemma}\label{lem:3cochainIsInvariant}
 		The three-cochain $C'(g,h,k)$ defined through
