@@ -2049,10 +2049,25 @@
 	\begin{proof}
 		The 2-cochain was defined in subsection \ref{sec:DefinitionH1Index}. The proof that it wasn't dependent on any of the choices made in assumption \ref{assumption:2Translations} was done in subsection \ref{sec:IndexIsInvariantUnderChoices}. The first item in the list concerning the invariance under locally generated automorphisms was shown in subsection \ref{sec:IndexInvariantUnderLGA}. The proof of the second item concerning the relation between the 1d SPT index and the 2d translation SPT index is done in subsection \ref{sec:ExampleTwoTranslations}. The proof of the third item concerning the stacking is done in section \ref{sec:the-role-of-stacking}. The proof of the last item concerning a change of basis of the on-site Hilbert space is done in section \ref{sec:the-indices-are-independent-on-the-choice-of-on-site-hilbert-space}. This concludes the proof.
 	\end{proof}
-	\section{Proof of lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
-In this section we prove lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
-\begin{proof}
-	We will only prove the first item as all the other proofs are analogous. First notice that the equivalence implies that there exist product states $\phi_1\in\PP(\tilde\AA_1)$ and $\phi_2\in\PP(\tilde\AA_2)$ and group actions $\tilde U_1$ and $\tilde U_2$ such that the combinations $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ are trivial (see \ref{sec:States} for what this means). Moreover, these will satisfy that there exists a unitary transformation of the on-site Hilbert space, $V$ such that
+	\section{Proof of the lemmas in section \ref{sec:Results_1}}\label{sec:ProofOfMainResult1}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
+	We will provide a proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
+	\SREImpliesQDisentanglableOneTranslation*
+	\begin{proof}
+		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:the-one-translation-symmetry}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
+	\end{proof}
+	We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here for convenience:
+	\SREImpliesAssumptionOneDimensional*
+	\begin{proof}
+		The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
+	\end{proof}
+	We now prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}, which we restate here for convenience:
+	\SREImpliesQDisentanglableTwoTranslations*
+	\begin{proof}
+		Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition \ref{def:SQAut2}) and observe that the resulting $\eta_g$ has the right support.
+	\end{proof}
+	Finally, we prove lemma \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
+	\begin{proof}
+		We will only prove the first item as all the other proofs are analogous. First notice that the equivalence implies that there exist product states $\phi_1\in\PP(\tilde\AA_1)$ and $\phi_2\in\PP(\tilde\AA_2)$ and group actions $\tilde U_1$ and $\tilde U_2$ such that the combinations $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ are trivial (see \ref{sec:States} for what this means). Moreover, these will satisfy that there exists a unitary transformation of the on-site Hilbert space, $V$ such that
 	\begin{align}
 	\omega_1\otimes_{\text{stack}}\phi_1\circ i_V&=\omega_2\otimes_{\text{stack}}\phi_2\circ\gamma^\Phi_{0;1}&V^\dagger U_{1}(g)\otimes \tilde{U}_{1}(g)V&=U_{2}(g)\otimes \tilde{U}_{2}(g)
 	\end{align}
@@ -2065,25 +2080,10 @@ In this section we prove lemma \ref{lem:IndicesConstantOnStableEquivalenceClasse
 	\textrm{Index}^{\tilde \AA_1,\tilde U_1}_{\text{no trans}}(\phi_1)=\textrm{Index}^{\tilde \AA_2,\tilde U_2}_{\text{no trans}}(\phi_2)=1.
 	\end{equation}
 	This is trivially true. Only in the last part with the $H^1$-valued index does one need that the $(\phi,\tilde U)$ pairs are trivial (see remark \ref{rem:NontrivialProductState}). For the other three statements, it is enough that we have $G$-invariant product states.
-\end{proof}
+	\end{proof}
 	\clearpage
 	\appendix
-	\section{Proof of lemmas \ref{lem:SRE_Implies_QDisentanglable_OneTranslation}, \ref{lem:SRE_Implies_Assumption_1d} and \ref{lem:SRE_Implies_Assumption_1d}}\label{sec:ProofOfMainResult1}
-	We will provide a proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} which we state here for convenience:
-	\SREImpliesQDisentanglableOneTranslation*
-	\begin{proof}
-		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:the-one-translation-symmetry}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
-	\end{proof}
-	We will now prove lemma \ref{lem:SRE_Implies_Assumption_1d} that we restate here for convenience:
-	\SREImpliesAssumptionOneDimensional*
-	\begin{proof}
-		The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
-	\end{proof}
-	Lastly, we prove lemma \ref{lem:SRE_Implies_QDisentanglable_TwoTranslations}, which we restate here for convenience:
-	\SREImpliesQDisentanglableTwoTranslations*
-	\begin{proof}
-		Completely analogous to the proof of lemma \ref{lem:SRE_Implies_QDisentanglable_OneTranslation} except that the support area of the $\eta_g$ automorphism has become smaller. To deal with this, replace the $\textrm{SQAut}(\AA)$ in theorem 3.1 of \cite{ogata2021h3gmathbb} by $\textrm{SQAut}_2(\AA)$ (see definition \ref{def:SQAut2}) and observe that the resulting $\eta_g$ has the right support.
-	\end{proof}
+	
 	\section{Splitting of a unitary}
 	The following lemma follows from Wigner's theorem:
 	\begin{lemma}\label{lem:SplittingOfUnitary}
