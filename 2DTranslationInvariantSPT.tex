@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside]{article}
+\documentclass[11pt,a4paper,twoside]{article}
 \input{myPackage.tex}
 \title{SPT indices emerging from translation invariance in two-dimensional quantum spin systems}
 \author{Tijl Jappens\footnote{Institute for Theoretical Physics, Katholieke Universiteit Leuven.}}
@@ -91,9 +91,6 @@
 	\subsection*{Data availability statement}
 	No new data were created or analyzed in this study. Data sharing is not applicable to this article.
 	\section{Setup and definitions}\label{sec:Setup}
-	\begin{remark}
-		This paper is a shorter version of the ArXiv paper \cite{jappens2023spt} and will often refer to it for many of the proofs and some of the definitions.
-	\end{remark}
 	In this paper, we work in the two-dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
 	\begin{align}
 		L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x\geq 0\right.\right\}\\
@@ -420,17 +417,43 @@
 	\begin{remark}
 		The main reason for the introduction of the $\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ and $\IAC^W_\sigma(\alpha_0,\theta,\Theta)$ subgroups is that they are still (inner after) cone operators when translated. More specifically, let $y\in\textrm{Cone}_\sigma^W(\alpha_0,\theta)$ then both $vyv^\dagger$ and $v^\dagger y v$ are elements of $\textrm{Cone}_\sigma(\alpha_0,\theta)$. The analogous statement is also true for the $\IAC$ operators. Similarly, in the case where there are two translation symmetries, we get that for $x\in\IAC_{\nu^\sigma(\sigma)}(\alpha_0,\theta)$ or $x\in\IAC_{\nu^\sigma(\sigma)}^W(\alpha_0,\theta,\Theta)$, both $wx w^\dagger$ and $w^\dagger x w$ are in $\IAC_{\sigma}(\alpha_0,\theta,\Theta)$ or $\IAC_{\sigma}^W(\alpha_0,\theta,\Theta)$ respectively.
 	\end{remark}
-	The following lemma shows that if a unitary on the GNS space of $\omega_0$ has an adjoint action that is the product of cones then it is a product of cone operators:
+	There is a standard lemma we will often refer to:
+	\begin{lemma}\label{lem:SplittingOfUnitary}
+		Let $\AA$ and $\BB$ be arbitrary unital $C^*$-algebras. Let $(\HH_\AA,\pi_\AA)$ and $(\HH_\BB,\pi_\BB)$ be arbitrary irreducible $*$-representations on $\AA$ and $\BB$ respectively. Let $U\in\UU(\HH_\AA\otimes\HH_\BB)$ be such that there exists an $\alpha_\AA\in\Aut{\AA}$ and an $\alpha_\BB\in\Aut{\BB}$ satisfying
+		\begin{equation}
+			\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\pi_\AA\circ\alpha_\AA\otimes\pi_\BB\circ\alpha_\BB
+		\end{equation}
+		then there exists a $U_\AA\in\UU(\HH_\AA)$ and a $U_\BB\in\UU(\HH_\BB)$ such that
+		\begin{equation}
+			U=U_\AA\otimes U_\BB.
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		From the assumptions we see that $\forall A\in\AA$
+		\begin{equation}
+			\Ad{U}\circ\pi_\AA\otimes\pi_\BB(A\otimes\id)=\pi_\AA\circ\alpha_\AA(A)\otimes\id\subset \BB(\HH_\AA)\otimes\id.
+		\end{equation}
+		Since $\Ad{U}$ is continuous in weak operator topology (on $\BB(\HH_{\AA}\otimes\HH_{\BB})$), it follows that we can extend the map
+		\begin{equation}
+			\Ad{U}|_{\textrm{Im}(\pi_\AA)}:\textrm{Im}(\pi_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id
+		\end{equation}
+		to the closure in weak operator topology. By irreducibility (and the Von Neumann bicomutant theorem), we get that $\pi_\AA(\AA)''=\BB(\HH_\AA)$ and therefore we get a map
+		\begin{equation}
+			\Ad{U}|_{\BB(\HH_\AA)\otimes\id}:\BB(\HH_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id.
+		\end{equation}
+		By restriction, this gives rise to an automorphism $\tau_\AA:\UU(\HH_\AA)\rightarrow\UU(\HH_\AA)$. By Wigners theorem any automorphism of $\BB(\HH_\AA)$ is inner and therefore there exists a $U_\AA$ such that $\tau_\AA=\Ad{U_\AA}$. Doing the same on $\BB$ gives us similarly a $\tau_\BB$ and a $U_\BB$. We now get
+		\begin{equation}
+			\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\tau_\AA\circ\pi_\AA\otimes\tau_\BB\circ\pi_\BB=\Ad{U_\AA\otimes U_\BB}\circ(\pi_\AA\otimes\pi_\BB).
+		\end{equation}
+		By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelevant phase) we need that $U=U_\AA\otimes U_\BB$ concluding the proof.
+	\end{proof}
+	Among other things, it shows that if a unitary on the GNS space of $\omega_0$ has an adjoint action that is the product of cones then it is a product of cone operators:
 	\begin{lemma}\label{lem:UsingIrreducibilityAndWignerTheorem}
 		Take $x\in\UU(\HH_0)$ such that there exist $\xi_\sigma\in\Aut{\AA_{C_\theta\cap\sigma}}$ (for $\sigma\in\{L,R\}$) satisfying
 		\begin{equation}
 			\Ad{x}\circ\pi_0\circ\alpha_0=\pi_0\circ\alpha_0\circ\xi_L\otimes\xi_R
 		\end{equation}
-		then there exist $x_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that
-		\begin{equation}
-			x=x_L\otimes x_R.
-		\end{equation}
-		These are unique up to a phase.
+		then there exist $x_\sigma\in\textrm{Cone}_\sigma(\alpha_0,\theta)$ such that $x=x_L\otimes x_R$. These are unique up to a phase.
 	\end{lemma}
 	\begin{proof}
 		Using lemma \ref{lem:SplittingOfUnitary}, the result follows.
@@ -526,8 +549,7 @@
 	\begin{proof}
 		Since the GNS representation is irreducible this is equivalent to showing that the left and righthand side of equation \eqref{eq:Definition2Cochain} have the same adjoint action on the GNS representation. We first prove the result for the full tensor product. By using the definition of $u(g,h)$ we get
 		\begin{align}\label{eq:ProofOf:lem:Definition2CochainFirstEquation}
-			v^\dagger u_L(g,h)v v^\dagger u_R(g,h) v&=v^\dagger (u_L(g,h)\otimes u_R(g,h)) v\\
-			&=v^\dagger W_g W_h W_{gh}^{-1}v.
+			v^\dagger u_L(g,h)v v^\dagger u_R(g,h) v&=v^\dagger (u_L(g,h)\otimes u_R(g,h)) v=v^\dagger W_g W_h W_{gh}^{-1}v.
 		\end{align}
 		Now using the definition of $K_g$ gives:
 		\begin{align}
@@ -944,156 +966,175 @@
 	\end{proof}
 	Due to all these considerations, from here onward, we will write the $H^2(G,\TT)$ and $H^1(G,\TT)$-valued indices as $\textrm{Index}^{\AA,U}(\omega)$ and $\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega)$ respectively.
 	\section{Examples}\label{sec:examples}
-	In subsections \ref{sec:ExampleOneTranslation} and \ref{sec:ExampleTwoTranslations} we will give a special class of translation invariant states that satisfy assumptions \ref{assumption} and \ref{assumption:2Translations} respectively. We start our construction by taking a state $\phi\in\PP(\AA_{L_0})$ that satisfies assumption \ref{assumption1d}. We restate this assumption here for convenience:
-	\assumptionOneDimensionalOne*
-	\begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
-		This $\phi$ satisfies the split property.
-	\end{lemma}
-	\begin{proof}
-		Take $(\HH_L\otimes\HH_R,\pi_L\otimes\pi_R,\Omega_L\otimes\Omega_R)$ a GNS triple of $\phi_0$. By construction $(\HH_L\otimes\HH_R,\pi_L\circ\tilde\alpha_L\otimes\pi_R\circ\tilde\alpha_R,\pi_L\otimes\pi_R(b^\dagger)\Omega_L\otimes\Omega_R)$ is a GNS triple of $\phi$. This concludes the proof that $\phi$ satisfies the split property.
-	\end{proof}
-	For any $j\in\ZZ$ and $n\in\NN$, take
-	\begin{align}
-		L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j}^{n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
-		L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
-	\end{align}
-	We introduce some additional notation, for any automorphism $\alpha\in\Aut{\AA_{L_0}}$ we define 
+In subsections \ref{sec:ExampleOneTranslation} and \ref{sec:ExampleTwoTranslations} we will give a special class of translation invariant states that satisfy assumptions \ref{assumption} and \ref{assumption:2Translations} respectively. We start our construction by taking a state $\phi\in\PP(\AA_{L_0})$ that satisfies assumption \ref{assumption1d}. This state satisfies the following lemma:
+\begin{lemma}\label{lem:phiExampleConsistentWithConjectureSplitProperty}
+	This $\phi$ satisfies the split property.
+\end{lemma}
+\begin{proof}
+	Take $(\HH_L\otimes\HH_R,\pi_L\otimes\pi_R,\Omega_L\otimes\Omega_R)$ a GNS triple of $\phi_0$. By construction $(\HH_L\otimes\HH_R,\pi_L\circ\tilde\alpha_L\otimes\pi_R\circ\tilde\alpha_R,\pi_L\otimes\pi_R(b^\dagger)\Omega_L\otimes\Omega_R)$ is a GNS triple of $\phi$. This concludes the proof that $\phi$ satisfies the split property.
+\end{proof}
+For any $j\in\ZZ$ and $n\in\NN$, take
+\begin{align}
+	L_j&\defeq \{(x,y)\in\ZZ^2|y=j\}&L_{j}^{n}&\defeq \{(x,y)\in\ZZ^2|y=j,x\in[-n,n]\}\\
+	L_{<j}&\defeq \{(x,y)\in\ZZ^2|y<j\}&L_{>j}&\defeq \{(x,y)\in\ZZ^2|y>j\}.
+\end{align}
+We introduce some additional notation, for any automorphism $\alpha\in\Aut{\AA_{L_0}}$ we define 
+\begin{equation}
+	\alpha_{(\cdot,j)}\defeq \tau^j\circ\alpha\circ\tau^{-j}.
+\end{equation}
+We will now define the infinite tensor product state.
+\begin{definition}\label{def:InfiniteTensorProductState}
+	Take $\phi\in\PP(\AA_{L_0})$ arbitrary. There exists a unique state $\omega$ satisfying that for any $i\in\ZZ$ we have that for any $A\in\AA_{L_i}$ and $B\in\AA_{L_i^c}$
 	\begin{equation}
-		\alpha_{(\cdot,j)}\defeq \tau^j\circ\alpha\circ\tau^{-j}.
+		\omega(A\otimes B)=\phi\circ\tau^{-j}(A)\omega(B).
 	\end{equation}
-	We will now define the infinite tensor product state.
-	\begin{definition}\label{def:InfiniteTensorProductState}
-		Take $\phi\in\PP(\AA_{L_0})$ arbitrary. There exists a unique state $\omega$ satisfying that for any $i\in\ZZ$ we have that for any $A\in\AA_{L_i}$ and $B\in\AA_{L_i^c}$
-		\begin{equation}
-			\omega(A\otimes B)=\phi\circ\tau^{-j}(A)\omega(B).
-		\end{equation}
-	\end{definition}
-	\begin{proof}
-		Clearly, this condition gives a construction by induction for $\omega(A)$ for each $A\in\AA_{\text{loc}}$. For general elements we define
-		\begin{equation}
-			\omega(A)\defeq \lim_{n\rightarrow\infty}\omega(A_n)
-		\end{equation}
-		where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
-	\end{proof}
-	In what follows, we will fix a GNS triple for $\omega_0$ that is of the form:
+\end{definition}
+\begin{proof}
+	Clearly, this condition gives a construction by induction for $\omega(A)$ for each $A\in\AA_{\text{loc}}$. For general elements we define
 	\begin{equation}
-		\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
+		\omega(A)\defeq \lim_{n\rightarrow\infty}\omega(A_n)
 	\end{equation}
-	where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
-	\begin{remark}\label{rem:GNS_One_Dimensional}
-		We have (by construction) that $\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}$ is a GNS representation of $\phi$. 
-	\end{remark}
-	\subsection{Example with non-trivial \texorpdfstring{$H^2(G,\TT)$}{}-valued index}\label{sec:ExampleOneTranslation}
-	By the result of \cite{ogata2019classification}, lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty} implies that $\phi$ has a well-defined 1d SPT index (see appendix \ref{sec:OneDimensionalIndices}).  The following lemma says that the infinite tensor product state also has a well-defined $H^2(G,\TT)$-valued index.
-	\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^2Index}
-		Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
-	\end{lemma}
-	\begin{proof}
-		The proof is in lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}.
-	\end{proof}
-	This shows that $\omega$ has a well-defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$.
-	\begin{remark}
-		Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
-		\begin{equation}
-			\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
-		\end{equation}
-		then there exists a 2 cochain $C$ satisfying that
-		\begin{equation}
-			k^R(g)k^R(h)k^R(gh)^{-1}=C(g,h)\id_{\HH_{L_{-1},R}}
-		\end{equation}
-		and that the equivalence class this cochain is in, is given by $\textrm{Index}_{1d}(\phi)$.
-	\end{remark}
-	Let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
-	\begin{align}
-		\Ad{\tilde{k}_g}\circ\pi_{L_{-1}}&=\pi_{L_{-1}}\circ \circ\alpha|_{L_{-1}}\circ\beta_g^{L_{-1}}\circ \alpha^{-1}|_{L_{-1}}&\tilde k_g\Omega_{L_{-1}}&=\Omega_{L_{-1}}.
-	\end{align}
-	Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>-1},L}\otimes\HH_{L_{>-1},R})$ be the unique operator such that
-	\begin{align}
-		\Ad{\tilde w_{g}}\circ\pi_{L_{>-1}}&=\pi_{L_{>-1}}\circ\alpha|_{L_{>-1}}\circ\beta_g^{U}\circ \alpha^{-1}|_{L_{>-1}}&\tilde w_{g}\Omega_{L_{>-1}}&=\Omega_{L_{>-1}}.
-	\end{align}
-	Clearly, both functions are (linear) representations of the group. Now define
-	\begin{equation}\label{eq:ChoiceOfW_g_ExampleH2Index}
-		W_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1).
-	\end{equation}
-	This operator-valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\id_{\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
-	\begin{align}
-		K_g&=v^\dagger W_g v W_g^\dagger\\
-		&=v^\dagger \pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) v W_g^\dagger\\
-		&=\pi_{0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{0}(V_1) W_g^\dagger.
-	\end{align}
-	Notice however that $\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v$ and $\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}$ both leave the cyclic vector invariant and have the same adjoint action on the GNS representation. By the uniqueness of such operators, we get that
+	where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
+\end{proof}
+In what follows, we will fix a GNS triple for $\omega_0$ that is of the form:
+\begin{equation}
+	\left(\HH_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\HH_{\rho,\sigma},\pi_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\pi_{\rho,\sigma},\Omega_0=\bigotimes_{\substack{\sigma\in\{L,R\}\\ \rho\in\{L_{>-1},L_{-1},L_{<-1}\}}}\Omega_{\rho,\sigma}\right)
+\end{equation}
+where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations.
+\begin{remark}\label{rem:GNS_One_Dimensional}
+	We have (by construction) that $\pi_{L_{-1},L}\circ\alpha_L|_{L_{-1}}\otimes \pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}$ is a GNS representation of $\phi$. 
+\end{remark}
+\subsection{Example with non-trivial \texorpdfstring{$H^2(G,\TT)$}{}-valued index}\label{sec:ExampleOneTranslation}
+By the result of \cite{ogata2019classification}, lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty} implies that $\phi$ has a well-defined 1d SPT index. The following lemma says that the infinite tensor product state also has a well-defined $H^2(G,\TT)$-valued index.
+\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^2Index}
+	Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
+\end{lemma}
+\begin{proof}
+	To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ as the infinite product automorphism of $\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}$. This Automorphism indeed satisfies that $\omega_0\defeq \omega\circ\alpha^{-1}$ is a product state. This is because for any $A\in\AA_{L_{i}}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that $\omega_0(A\otimes B)=\phi_0(A)\phi_0(B)$. We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\AA_{L_0^{n(j)}})$ where $n(j)\in\NN$ is the largest number such that $L_{j}^{n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through $\Theta=\bigotimes_{j\in\ZZ}\Ad{b_\abs{j}^\dagger}_{(\cdot,j)}$. Let $\alpha_\sigma\in\Aut{\AA_\sigma}$ be $\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma^{-1})_{(\cdot,j)}$. Now define
 	\begin{equation}
-		K_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) W_g^\dagger.
+		\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}\tau^j (b^\dagger b_\abs{j}).
 	\end{equation}
-	Using the adjoint of equation \eqref{eq:ChoiceOfW_g_ExampleH2Index} this gives
+	We will now show that the limit $\tilde V_1\defeq\lim_{m\rightarrow\infty}\tilde V_{1,m}$ exists (is an element of $\AA$). By construction we have that for any $\epsilon$ there exists an $n_0>0$ such that
+	\begin{equation}
+		\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}<\epsilon
+	\end{equation}
+	for all $n>n_0$. We will now show that our sequence is a Cauchy sequence. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
 	\begin{align}
-		K_g&=\pi_{0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1)\\
-		&=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}}
+		\norm{\tilde{V}_{1,n}-\tilde{V}_{1,m}}&\leq \norm{\tilde{V}_{1,n}-\tilde{V}_{1,n_0}}+\norm{\tilde{V}_{1,m}-\tilde{V}_{1,n_0}}=\norm{\tilde{V}_{1,n}\tilde{V}_{1,n_0}^\dagger-\id}+\norm{\tilde{V}_{1,m}\tilde{V}_{1,n_0}^\dagger-\id}.
 	\end{align}
-	where $\tilde{v}=\pi_0(V_1)^\dagger v\pi_0(V_1)$. Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
+	We will find a bound on the first term as the bound of the second term is analogous. First notice that we have for any tensor product that
 	\begin{equation}
-		k^L_g\otimes k^R_g=\pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b)
+		A\otimes B-C\otimes D=(A-C+C)\otimes B-C\otimes D=(A-C)\otimes B+C\otimes (B-D).
 	\end{equation}
-	and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that $\forall g,h\in G$
-	\begin{equation}
-		[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},W_h]=0.
-	\end{equation}
-	We now get (using this equation and the fact that $W_g$ is a representation)
+	By using this property and the triangle inequality recursively we get
 	\begin{align}
-		&K_g^R W_g K_h^R W_h W_{gh}^\dagger (K_{gh}^R)^\dagger \stkout{W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}\\
-		&=\stkout{W_g W_h W_{gh}^\dagger} K_g^R K_h^R (K_{gh}^R)^\dagger\\
-		&=k_g^R k_h^R (k_{gh}^R)^\dagger\otimes \id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}
+		&\norm{\bigotimes_{i=-n}^{-n_0}(b^\dagger b_\abs{i})_i\bigotimes_{i=n_0}^{n}(b^\dagger b_i)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\leq 2\sum_{i=n_0}^{n}\norm{b^\dagger b_i-\id_{\HH_{L_i}}}<2\epsilon.
 	\end{align}
-	and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
-	\subsection{Example with non-trivial \texorpdfstring{$H^1(G,\TT)$}{}-valued index}\label{sec:ExampleTwoTranslations}
-	This example will be very similar to what was done in subsection \ref{sec:ExampleOneTranslation}. In this case, however, we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one-dimensional state is invariant under this automorphism. We will need assumption \ref{assumption1dWithTranslation} which we restate here for convenience:
-	\assumptionOneDimensionalTwo*
-	Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$-valued index for it (see appendix \ref{sec:OneDimensionalIndices}). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
-	\begin{lemma}
-		Let $\omega_\phi$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega_\phi$ satisfies assumption \ref{assumption:2Translations}.
-	\end{lemma}
-	\begin{proof}
-		The proof of this lemma is given in lemma \ref{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}.
-	\end{proof}
-	This shows that $\omega_\phi$ indeed has a well-defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
-	\begin{remark}\label{rem:GNS_One_DimensionalTwoTranslations}
-		Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
-		\begin{equation}
-			\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
-		\end{equation}
-		and $w_{L_{-1}}$ to be such that
-		\begin{equation}
-			\Ad{w_{L_{-1}}}\circ\pi_{L_{-1},L}\otimes \pi_{L_{-1},R}=\pi_{L_{-1},L}\otimes \pi_{L_{-1},R}\circ\nu
-		\end{equation}
-		then there exists a $U(1)$ representation $\alpha$ satisfying that
-		\begin{equation}
-			(\pi_{L_{-1},L}(U_{(-1,-1)}(g))\otimes \id_{\HH_{L_{-1},R}}) (\id_{\HH_{L_{-1},L}}\otimes k^R(g))=\alpha(g) w_{L_{-1}}^\dagger(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}
-		\end{equation}
-		and that it is given by $\textrm{Index}_{\text{1d trans}}(\phi)$.
-	\end{remark}
-	Just like in subsection \ref{sec:ExampleOneTranslation}, let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
+	This proves that the sequence is a Cauchy sequence and hence the convergence follows. To conclude the proof, we merely have to define $V_1\defeq \alpha_0(\tilde{V}_1)$. We then get
 	\begin{align}
-		\Ad{\tilde{k}_g}\circ\pi_{L_{-1}}&=\pi_{L_{-1}}\circ \circ\alpha|_{L_{-1}}\circ\beta_g^{L_{-1}}\circ \alpha^{-1}|_{L_{-1}}&\tilde k_g\Omega_{L_{-1}}&=\Omega_{L_{-1}}.
+		\Ad{V_1}\circ \alpha_0\circ \Theta&= \alpha_0\circ\Ad{\tilde V_1}\circ=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger b_\abs{j}}\circ \Ad{b_\abs{j}^\dagger}_{(\cdot,j)}\\
+		&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger}_{(\cdot,j)}=\alpha
 	\end{align}
-	We can take
+	concluding the proof.
+\end{proof}
+This shows that $\omega$ has a well-defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$.
+\begin{remark}
+	Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 	\begin{equation}
-		K_g=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}} =\id_{H_{L_{>-1}}}\otimes (k_g^L\otimes k_g^R) \otimes\id_{\HH_{L_{<-1}}}.
+		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
-	Similarly we can take $w_\rho\in\HH_\rho$ (where $\rho\in\{L_{>-1},L_{-1},L_{<-1}\}$) satisfying
+	then there exists a 2 cochain $C$ satisfying that
 	\begin{equation}
-		\Ad{w_\rho}\circ\pi_\rho\circ\alpha_{0}|_\rho\circ\Theta|_\rho=\pi_\rho\circ\alpha_{0}|_\rho\circ\Theta|_\rho\circ\nu
+		k^R(g)k^R(h)k^R(gh)^{-1}=C(g,h)\id_{\HH_{L_{-1},R}}
 	\end{equation}
-	and then we get that $w=w_{L_{>-1}}\otimes w_{L_{-1}}\otimes w_{L_{<-1}}$. Since $\eta_g=\textrm{Id}_{\AA}$ we can simply take $b_g^\sigma=\id_{\HH_\sigma}$. We now have that
+	and that the equivalence class this cochain is in, is given by $\textrm{Index}_{1d}(\phi)$.
+\end{remark}
+Let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
+\begin{align}
+	\Ad{\tilde{k}_g}\circ\pi_{L_{-1}}&=\pi_{L_{-1}}\circ \circ\alpha|_{L_{-1}}\circ\beta_g^{L_{-1}}\circ \alpha^{-1}|_{L_{-1}}&\tilde k_g\Omega_{L_{-1}}&=\Omega_{L_{-1}}.
+\end{align}
+Similarly, let $\tilde{w}:G\rightarrow\UU(\HH_{L_{>-1},L}\otimes\HH_{L_{>-1},R})$ be the unique operator such that
+\begin{align}
+	\Ad{\tilde w_{g}}\circ\pi_{L_{>-1}}&=\pi_{L_{>-1}}\circ\alpha|_{L_{>-1}}\circ\beta_g^{U}\circ \alpha^{-1}|_{L_{>-1}}&\tilde w_{g}\Omega_{L_{>-1}}&=\Omega_{L_{>-1}}.
+\end{align}
+Clearly, both functions are (linear) representations of the group. Now define
+\begin{equation}\label{eq:ChoiceOfW_g_ExampleH2Index}
+	W_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{H_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1).
+\end{equation}
+This operator-valued function is also a linear representation and satisfies the conditions indicated in lemma \ref{lem:Definition_W_And_u}. Since $W_g$ is a linear representation we get that $W_gW_hW_{gh}^{-1}=\id_{\HH_0}$. This implies that we can take $u_\sigma(g,h)=\bigotimes_{\rho\in\{L_{>-1},L_{-1},L_{<-1}\}}\id_{\HH_{\sigma,\rho}}$ (for any $\sigma\in\{L,R\}$). All that is now left is to calculate $K^\sigma_g\in\UU(\HH_\sigma)$. We get that
+\begin{align}
+	K_g&=v^\dagger W_g v W_g^\dagger=v^\dagger \pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) v W_g^\dagger\\
+	&=\pi_{0}(V_1)^{\dagger}\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v \pi_{0}(V_1) W_g^\dagger.
+\end{align}
+Notice however that $\tilde v^\dagger(\tilde{w}_g\otimes\id_{\HH_{L_{-1}}}\otimes\id_{\HH_{L_{<-1}}}) \tilde v$ and $\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}$ both leave the cyclic vector invariant and have the same adjoint action on the GNS representation. By the uniqueness of such operators, we get that
+\begin{equation}
+	K_g=\pi_{0}(V_1)^{\dagger}(\tilde{w}_g\otimes\tilde{k}_g\otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1) W_g^\dagger.
+\end{equation}
+Using the adjoint of equation \eqref{eq:ChoiceOfW_g_ExampleH2Index} this gives
+\begin{align}
+	K_g&=\pi_{0}(V_1)^{\dagger}(\id_{H_{L_{>-1}}}\otimes \tilde k_g \otimes\id_{\HH_{L_{<-1}}}) \pi_{0}(V_1)\\
+	&=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}}
+\end{align}
+where $\tilde{v}=\pi_0(V_1)^\dagger v\pi_0(V_1)$. Now there exists a $k^L:G\rightarrow \UU(\HH_{L_{-1},L})$ and a $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
+\begin{equation}
+	k^L_g\otimes k^R_g=\pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b)
+\end{equation}
+and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that $\forall g,h\in G$
+\begin{equation}
+	[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},W_h]=0.
+\end{equation}
+We now get (using this equation and the fact that $W_g$ is a representation)
+\begin{align}
+	&K_g^R W_g K_h^R W_h W_{gh}^\dagger (K_{gh}^R)^\dagger \stkout{W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}=\stkout{W_g W_h W_{gh}^\dagger} K_g^R K_h^R (K_{gh}^R)^\dagger\\
+	&=k_g^R k_h^R (k_{gh}^R)^\dagger\otimes \id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}
+\end{align}
+and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
+\subsection{Example with non-trivial \texorpdfstring{$H^1(G,\TT)$}{}-valued index}\label{sec:ExampleTwoTranslations}
+This example will be very similar to what was done in subsection \ref{sec:ExampleOneTranslation}. In this case, however, we will require that the translation morphism $\nu$ acts as an automorphism on the $C^*$ algebra $\AA_{L_i}$ (for all $i$) and that our one-dimensional state is invariant under this automorphism. In this part, we let $\phi\in\PP(\AA)$ satisfy assumption \ref{assumption1dWithTranslation}. Since this state satisfies the split property (see lemma \ref{lem:phiExampleConsistentWithConjectureSplitProperty}) we can define an $H^1(G,\TT)$-valued index for it (see appendix \ref{sec:OneDimensionalIndices} for a construction of this index). Now we will take again the infinite tensor product (see definition \ref{def:InfiniteTensorProductState}) of such states then we get:
+\begin{lemma}
+	Let $\omega_\phi$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega_\phi$ satisfies assumption \ref{assumption:2Translations}.
+\end{lemma}
+\begin{proof}
+	This lemma follows from lemma \ref{lem:TensorProductStateHasWellDefinedH^2Index}.
+\end{proof}
+This shows that $\omega_\phi$ indeed has a well-defined $H^1(G,\TT)$ index. We will now show that $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
+\begin{remark}\label{rem:GNS_One_DimensionalTwoTranslations}
+	Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \HH_{L_{-1},R}$ such that
 	\begin{equation}
-		\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)})\id_{\HH_L}\otimes K_g^R=\id_{\HH_{L_{>-1}}}\otimes(\pi_{L_{-1},L}\circ\tilde\alpha_L(U_{(-1,-1)})\otimes k^R(g))\otimes\id_{\HH_{L_{>-1}}}.
+		\Ad{k^R(g)}\circ\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}=\pi_{L_{-1},R}\circ\alpha_R|_{L_{-1}}\circ\beta_{g}^{L_{-1}\cap R}
 	\end{equation}
-	By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we get that
-	\begin{align}
-		&=\id_{H_{L_{>-1}}}\otimes\alpha(g) w_{L_{-1}}(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}^\dagger\otimes \id_{H_{L_{<-1}}}\\
-		&=\alpha(g)w^\dagger (\id_{H_{L_{>-1}}}\otimes \id_{\HH_{L_{-1},L}}\otimes k^R(g)\otimes \id_{H_{L_{<-1}}}) w\\
-		&=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
-	\end{align}
-	showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
+	and $w_{L_{-1}}$ to be such that
+	\begin{equation}
+		\Ad{w_{L_{-1}}}\circ\pi_{L_{-1},L}\otimes \pi_{L_{-1},R}=\pi_{L_{-1},L}\otimes \pi_{L_{-1},R}\circ\nu
+	\end{equation}
+	then there exists a $U(1)$ representation $\alpha$ satisfying that
+	\begin{equation}
+		(\pi_{L_{-1},L}(U_{(-1,-1)}(g))\otimes \id_{\HH_{L_{-1},R}}) (\id_{\HH_{L_{-1},L}}\otimes k^R(g))=\alpha(g) w_{L_{-1}}^\dagger(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}
+	\end{equation}
+	and that it is given by $\textrm{Index}_{\text{1d trans}}(\phi)$.
+\end{remark}
+Just like in subsection \ref{sec:ExampleOneTranslation}, let $\tilde k:G\rightarrow \UU(\HH_{L_{-1}})$ be the unique operator that satisfies
+\begin{align}
+	\Ad{\tilde{k}_g}\circ\pi_{L_{-1}}&=\pi_{L_{-1}}\circ \circ\alpha|_{L_{-1}}\circ\beta_g^{L_{-1}}\circ \alpha^{-1}|_{L_{-1}}&\tilde k_g\Omega_{L_{-1}}&=\Omega_{L_{-1}}.
+\end{align}
+We can take
+\begin{equation}
+	K_g=\id_{H_{L_{>-1}}}\otimes \pi_{L_{-1}}(b)^\dagger \tilde k_g \pi_{L_{-1}}(b) \otimes\id_{\HH_{L_{<-1}}} =\id_{H_{L_{>-1}}}\otimes (k_g^L\otimes k_g^R) \otimes\id_{\HH_{L_{<-1}}}.
+\end{equation}
+Similarly we can take $w_\rho\in\HH_\rho$ (where $\rho\in\{L_{>-1},L_{-1},L_{<-1}\}$) satisfying
+\begin{equation}
+	\Ad{w_\rho}\circ\pi_\rho\circ\alpha_{0}|_\rho\circ\Theta|_\rho=\pi_\rho\circ\alpha_{0}|_\rho\circ\Theta|_\rho\circ\nu
+\end{equation}
+and then we get that $w=w_{L_{>-1}}\otimes w_{L_{-1}}\otimes w_{L_{<-1}}$. Since $\eta_g=\textrm{Id}_{\AA}$ we can simply take $b_g^\sigma=\id_{\HH_\sigma}$. We now have that
+\begin{equation}
+	\pi_0\circ\alpha_0\circ\Theta(U_{(-1,-1)})\id_{\HH_L}\otimes K_g^R=\id_{\HH_{L_{>-1}}}\otimes(\pi_{L_{-1},L}\circ\tilde\alpha_L(U_{(-1,-1)})\otimes k^R(g))\otimes\id_{\HH_{L_{>-1}}}.
+\end{equation}
+By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we get that
+\begin{align}
+	&=\id_{H_{L_{>-1}}}\otimes\alpha(g) w_{L_{-1}}(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}^\dagger\otimes \id_{H_{L_{<-1}}}\\
+	&=\alpha(g)w^\dagger (\id_{H_{L_{>-1}}}\otimes \id_{\HH_{L_{-1},L}}\otimes k^R(g)\otimes \id_{H_{L_{<-1}}}) w=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
+\end{align}
+showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
 	\section{Invariance of the indices under LGAs}\label{sec:AllIndicesInvariantUnderLGA}
 	The goal of this section is now to show that the indices we constructed are invariant under locally generated automorphisms. More specifically, if we let $H\in\BB_{F_\phi}([0,1])$, be a $G$-invariant, translation invariant (in the vertical direction) one-parameter family of interactions, then we will show that $\textrm{Index}(\omega\circ\gamma^H_{0;1})=\textrm{Index}(\omega)$. If additionally, $\omega$ and $H$ are translation invariant in both directions then we will show that $\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1})=\textrm{Index}_{\text{2 trans}}(\omega)$.
 	\subsection{The morphisms \texorpdfstring{$\phi_1$}{} and \texorpdfstring{$\phi_2$}{}}
@@ -2046,112 +2087,6 @@
 	\end{proof}
 	\clearpage
 	\appendix
-	
-	\section{Splitting of a unitary}
-	The following lemma follows from Wigner's theorem:
-	\begin{lemma}\label{lem:SplittingOfUnitary}
-		Let $\AA$ and $\BB$ be arbitrary unital $C^*$-algebras. Let $(\HH_\AA,\pi_\AA)$ and $(\HH_\BB,\pi_\BB)$ be arbitrary irreducible $*$-representations on $\AA$ and $\BB$ respectively. Let $U\in\UU(\HH_\AA\otimes\HH_\BB)$ be such that there exists an $\alpha_\AA\in\Aut{\AA}$ and an $\alpha_\BB\in\Aut{\BB}$ satisfying
-		\begin{equation}
-			\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\pi_\AA\circ\alpha_\AA\otimes\pi_\BB\circ\alpha_\BB
-		\end{equation}
-		then there exists a $U_\AA\in\UU(\HH_\AA)$ and a $U_\BB\in\UU(\HH_\BB)$ such that
-		\begin{equation}
-			U=U_\AA\otimes U_\BB.
-		\end{equation}
-	\end{lemma}
-	\begin{proof}
-		From the assumptions we see that $\forall A\in\AA$
-		\begin{equation}
-			\Ad{U}\circ\pi_\AA\otimes\pi_\BB(A\otimes\id)=\pi_\AA\circ\alpha_\AA(A)\otimes\id\subset \BB(\HH_\AA)\otimes\id.
-		\end{equation}
-		Since $\Ad{U}$ is continuous in weak operator topology (on $\BB(\HH_{\AA}\otimes\HH_{\BB})$), it follows that we can extend the map
-		\begin{equation}
-			\Ad{U}|_{\textrm{Im}(\pi_\AA)}:\textrm{Im}(\pi_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id
-		\end{equation}
-		to the closure in weak operator topology. By irreducibility (and the Von Neumann bicomutant theorem), we get that $\pi_\AA(\AA)''=\BB(\HH_\AA)$ and therefore we get a map
-		\begin{equation}
-			\Ad{U}|_{\BB(\HH_\AA)\otimes\id}:\BB(\HH_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id.
-		\end{equation}
-		By restriction, this gives rise to an automorphism $\tau_\AA:\UU(\HH_\AA)\rightarrow\UU(\HH_\AA)$. By Wigners theorem any automorphism of $\BB(\HH_\AA)$ is inner and therefore there exists a $U_\AA$ such that $\tau_\AA=\Ad{U_\AA}$. Doing the same on $\BB$ gives us similarly a $\tau_\BB$ and a $U_\BB$. We now get
-		\begin{equation}
-			\Ad{U}\circ(\pi_\AA\otimes\pi_\BB)=\tau_\AA\circ\pi_\AA\otimes\tau_\BB\circ\pi_\BB=\Ad{U_\AA\otimes U_\BB}\circ(\pi_\AA\otimes\pi_\BB).
-		\end{equation}
-		By the irreducibility of $\pi_\AA\otimes\pi_\BB$ we get that (up to some irrelevant phase) we need that $U=U_\AA\otimes U_\BB$ concluding the proof.
-	\end{proof}
-	\section{Properties of infinite tensor product states}
-	\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}
-		Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1d} then $\omega$ satisfies assumption \ref{assumption}.
-	\end{lemma}
-	\begin{proof}
-		To show that $\tilde{\beta}_g$ exists note that we can take $\tilde{\beta}_g$ to be simply $\beta_g^{U}$. The translation invariance was true by construction. We now only have to find an $\alpha\in\QAut{\AA}$ that satisfies $\omega=\omega_0\circ\alpha$. We define $\alpha$ as the infinite product automorphism of $\tilde{\alpha}_L^{-1}\otimes\tilde{\alpha}_R^{-1}\circ\Ad{b^\dagger}$. This Automorphism indeed satisfies that
-		\begin{equation}
-			\omega_0\defeq \omega\circ\alpha^{-1}
-		\end{equation}
-		is a product state. This is because for any $A\in\AA_{L_{i}}$, $B\in\AA_{L_{j}}$ with $i\neq j$ we have that
-		\begin{equation}
-			\omega_0(A\otimes B)=\phi_0(A)\phi_0(B).
-		\end{equation}
-		We will now show that $\alpha\in\QAut{\AA}$. To do this, take $0<\theta<\pi/2$ and let $b_j$ be a summable sequence converging to $b$ such that $b_j\in\UU(\AA_{L_0^{n(j)}})$ where $n(j)\in\NN$ is the largest number such that $L_{j}^{n(j)}\subset W(C_\theta)^c$. Define $\Theta\in\Aut{\AA_{W(C_\theta)^c}}$ through
-		\begin{equation}
-			\Theta=\bigotimes_{j\in\ZZ}\Ad{b_\abs{j}^\dagger}_{(\cdot,j)}.
-		\end{equation}
-		Let $\alpha_\sigma\in\Aut{\AA_\sigma}$ be
-		\begin{equation}
-			\alpha_\sigma\defeq \bigotimes_{j\in\ZZ}(\tilde\alpha_\sigma^{-1})_{(\cdot,j)}.
-		\end{equation}
-		Now define
-		\begin{equation}
-			\tilde V_{1,m}\defeq\bigotimes_{j\in\ZZ\cap[-m,m]}\tau^j (b^\dagger b_\abs{j}).
-		\end{equation}
-		We will now show that the limit
-		\begin{equation}
-			\tilde V_1\defeq\lim_{m\rightarrow\infty}\tilde V_{1,m}
-		\end{equation}
-		exists (is an element of $\AA$). By construction we have that for any $\epsilon$ there exists an $n_0>0$ such that
-		\begin{equation}
-			\epsilon_n\defeq\sum_{i=n}^\infty\norm{b-b_i}<\epsilon
-		\end{equation}
-		for all $n>n_0$. We will now show that our sequence is a Cauchy sequence. Let $\epsilon>0$ and take $n_0$ accordingly. For any $n,m\geq n_0$ we have that
-		\begin{align}
-			\norm{\tilde{V}_{1,n}-\tilde{V}_{1,m}}&\leq \norm{\tilde{V}_{1,n}-\tilde{V}_{1,n_0}}+\norm{\tilde{V}_{1,m}-\tilde{V}_{1,n_0}}\\
-			&=\norm{\tilde{V}_{1,n}\tilde{V}_{1,n_0}^\dagger-\id}+\norm{\tilde{V}_{1,m}\tilde{V}_{1,n_0}^\dagger-\id}.
-		\end{align}
-		We will find a bound on the first term as the bound of the second term is analogous. First notice that we have for any tensor product that
-		\begin{equation}
-			A\otimes B-C\otimes D=(A-C+C)\otimes B-C\otimes D=(A-C)\otimes B+C\otimes (B-D).
-		\end{equation}
-		By using this property and the triangle inequality recursively we get
-		\begin{align}
-			&\norm{\bigotimes_{i=-n}^{-n_0}(b^\dagger b_\abs{i})_i\bigotimes_{i=n_0}^{n}(b^\dagger b_i)_i-\id_{\HH_{L_{-n,\ldots,-n_0}}}\otimes\id_{\HH_{L_{n_0,\ldots,n}}}}\\
-			&\leq 2\sum_{i=n_0}^{n}\norm{b^\dagger b_i-\id_{\HH_{L_i}}}<2\epsilon.
-		\end{align}
-		This proves that the sequence is a Cauchy sequence and hence the convergence follows. To conclude the proof, we merely have to define $V_1\defeq \alpha_0(\tilde{V}_1)$. We then get
-		\begin{align}
-			\Ad{V_1}\circ \alpha_0\circ \Theta&= \alpha_0\circ\Ad{\tilde V_1}\circ \Theta\\
-			&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger b_\abs{j}}\circ \Ad{b_\abs{j}^\dagger}_{(\cdot,j)}\\
-			&=\bigotimes_{j\in\ZZ}\tilde\alpha_0^{-1}\circ\Ad{b^\dagger}_{(\cdot,j)}\\
-			&=\alpha
-		\end{align}
-		concluding the proof.
-	\end{proof}
-	\begin{lemma}\label{lem:TensorProductStateHasWellDefinedH^1IndexAppendix}
-		Let $\omega$ be the infinite tensor product of a state $\phi$ that satisfies assumption \ref{assumption1dWithTranslation} then $\omega$ satisfies assumption \ref{assumption:2Translations}.
-	\end{lemma}
-	\begin{proof}
-		The proof of this lemma is analogous to the proof of lemma \ref{lem:TensorProductStateHasWellDefinedH^2IndexAppendix}. Since we can take $\eta_g=\id$ here the change in support of $\eta_g$ from lemma \ref{assumption} is not an issue. If the one-dimensional state is $\nu$ invariant, it follows that the infinite product state is as well. This concludes the proof of this lemma.
-	\end{proof}
-	\begin{lemma}\label{lem:SRE_Implies_Assumption_1d}
-		Any $G$-invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1d}.
-	\end{lemma}
-	\begin{proof}
-		The proof simply uses lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}.
-	\end{proof}
-	\begin{lemma}\label{lem:SRE_Implies_Assumption_1dTwoTranslations}
-		Any $G$-invariant, translation invariant SRE state $\phi\in\PP(\AA_{L_0})$ satisfies assumption \ref{assumption1dWithTranslation}.
-	\end{lemma}
-	\begin{proof}
-		Trivially follows from lemma \ref{lem:SRE_Implies_Assumption_1d}.
-	\end{proof}
 	\section{Some calculations with cochains}
 	\begin{lemma}\label{lem:3cochainIsInvariant}
 		The three-cochain $C'(g,h,k)$ defined through
