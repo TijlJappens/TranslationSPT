@@ -1,5 +1,11 @@
 \documentclass[11pt,a4paper,twoside]{article}
 \input{myPackage.tex}
+
+%For ArXiv version use 0 for CIMP version use 1
+\def\version{1}
+
+\newcommand{\versionDifference}[2]{\ifthenelse{\version=0}{#1}{#2}}
+
 \title{SPT indices emerging from translation invariance in two-dimensional quantum spin systems}
 \author{Tijl Jappens\footnote{Institute for Theoretical Physics, Katholieke Universiteit Leuven.}}
 \date{\today}
@@ -11,22 +17,22 @@
 		We consider SPT-phases with on-site $G$ (where $G$ is any finite group) symmetry for two-dimensional quantum spin systems. We then impose translation invariance in one direction and observe that on top of the $H^3(G,\TT)$-valued index constructed in \cite{ogata2021h3gmathbb}, an additional $H^2(G,\TT)$-valued index emerges. We also show that if we impose translation invariance in two directions, on top of the expected $H^3(G,\TT)\oplus H^2(G,\TT)\oplus H^2(G,\TT)$ valued index, an additional $H^1(G,\TT)$-valued index emerges.
 	\end{abstract}
 	\section{Introduction}
-	In 2010, Chen, Gu and Wen \cite{chen_gu_wen_2011} introduced the notion of symmetry-protected topological phases of matter (SPT). They first considered one-dimensional matrix product states and later on, Chen, Liu and Wen \cite{Chen_2011}, extended this to two-dimensional projective entangled pair models. Afterwards, in \cite{Chen_2013} this was extended to other dimensions. This last reference used a setup involving so-called lattice nonlinear sigma models and provided an $H^{d+1}(G,U(1))$ valued index for any $d$-dimensional lattice nonlinear sigma model. Another possible setup in which one can define SPT phases is in quantum spin systems (defined in section \ref{sec:QuasiLocalC*Algebra}). To define SPT phases in this setting, one needs to fix a finite group $G$ with an on-site group action $g\mapsto U_g$ (with $g\in G$), defining a global group action $\beta_g$ (also defined in section \ref{sec:QuasiLocalC*Algebra}). A state $\omega$, is then called $G$-invariant, if $\omega\circ\beta_g=\omega$. Afterwards, one needs to impose a restriction on the space of states. We\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states used in \cite{kapustin2021classification} or the unique gapped ground state of a G invariant interaction presented in the introduction of \cite{ogata2021h3gmathbb}.} ask that our states are short-range entangled (SRE), see definition \ref{def:sre}. A state $\omega$ is short-range entangled if there is a disentangler $\gamma$. This is a locally generated automorphism, produced by a one-parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ ($\gamma=\gamma_{0;1}^\Phi$ as defined in section \ref{sec:Interactions}) satisfying that $\omega\circ\gamma$ is a product state. Combining these two definitions, we say that $\omega$ is an SPT state if it is short-range entangled and $G$-invariant.
+	In 2010, Chen, Gu and Wen \cite{chen_gu_wen_2011} introduced the notion of symmetry-protected topological phases of matter (SPT). They first considered one-dimensional matrix product states and later on, Chen, Liu and Wen \cite{Chen_2011}, extended this to two-dimensional projective entangled pair models. Afterwards, in \cite{Chen_2013} this concept was extended to other dimensions. This last reference used a setup involving so-called lattice non-linear sigma models and provided an $H^{d+1}(G,U(1))$ valued index for any $d$-dimensional lattice non-linear sigma model. Another possible setup in which one can define SPT phases is in quantum spin systems (defined in section \ref{sec:QuasiLocalC*Algebra}). To define SPT phases in this setting, one needs to fix a finite group $G$ with an on-site group action $g\mapsto U_g$ (with $g\in G$), defining a global group action $\beta_g$ (also defined in section \ref{sec:QuasiLocalC*Algebra}). A state $\omega$, is then called $G$-invariant, if $\omega\circ\beta_g=\omega$. Afterwards, one needs to restrict the space of states. We\footnote{There are other definitions possible like for instance the concept of invertible G-invariant states used in \cite{kapustin2021classification} or the unique gapped ground state of a G invariant interaction presented in the introduction of \cite{ogata2021h3gmathbb}.} ask that our states are short-range entangled (SRE), see definition \ref{def:sre}. A state $\omega$ is short-range entangled if there is a disentangler $\gamma$. This is a locally generated automorphism, produced by a one-parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ ($\gamma=\gamma_{0;1}^\Phi$ as defined in section \ref{sec:Interactions}) satisfying that $\omega\circ\gamma$ is a product state. Combining these two definitions, we say that $\omega$ is an SPT state if it is short-range entangled and $G$-invariant.
 	\\\\
 	One then defines an equivalence relation on these SPT states by saying that $\omega_1$ is equivalent to $\omega_2$ with respect to the on-site group action $U$ if there exists a $G$-invariant one-parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$ such that $\omega_1\circ\gamma^\Phi_{0;1}=\omega_2$ (again, see section \ref{sec:Interactions} for the definitions). One can then extend this equivalence to the stronger notion of being stably equivalent. This goes as follows: one defines an operation called stacking that takes two SPT states $\omega_1$ and $\omega_2$ and outputs a third one $\omega_1\otimes_{\text{stack}}\omega_2$ (and similarly for the group action). This $\otimes_\text{stack}$ is defined in section \ref{sec:QuasiLocalC*Algebra}. In short, it is the tensor product at the level of the on-site Hilbert space. One then defines another equivalence relation and says that two SPT states with on-site group actions $(\omega_1,U_1)$ and $(\omega_2,U_2)$ are stably equivalent if and only if there exist trivial\footnote{A trivial state is a $G$-invariant product state that transforms trivially under the on-site group action (see remark \ref{rem:NontrivialProductState}).} SPTs with their group actions, $(\phi_1,\tilde{U}_1)$ and $(\phi_2,\tilde{U}_2)$ and a ($G$ independent) unitary $V$ mapping between the respective on-site Hilbert spaces\footnote{The reader can think of this $V$ as being a unitary transformation of the on-site group action.}, such that
 	\begin{enumerate}
 		\item $V^\dagger U_{1,g}\otimes \tilde{U}_{1,g}V=U_{2,g}\otimes \tilde{U}_{2,g}$ for all $g\in G$.
 		\item $\omega_1\otimes_{\text{stack}}\phi_1\circ i_V$ (where $i_V$ is defined in section \ref{sec:QuasiLocalC*Algebra}) is equivalent to $\omega_2\otimes_{\text{stack}}\phi_2$ with respect to the above on-site group action.
 	\end{enumerate}
-	In one spatial dimension so-called matrix product states (\cite{Chen_2011},\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}) can be used to construct non-trivial SPT states. Later on and more generally it was shown in \cite{ogata2019classification} that any $G$-invariant state satisfying the split property (this includes any SRE state) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a (group) module under addition with trivial group action).} index and that this index is constant on the (stable) equivalence classes. Later on in \cite{kapustin2021classification} it was then shown that this classification problem is complete (the index, seen as a map from the set of stable equivalence classes to $H^2(G,\TT)$ is injective.). In two spatial dimensions, more recently in \cite{ogata2021h3gmathbb}, it was proven there is an $H^3(G,\TT)$-valued index that is constant on the (stable) equivalence classes\footnote{In \cite{ogata2021h3gmathbb}, there is no mention of the stacking operation but using remark \ref{rem:StackingH3ValuedIndex} and remark \ref{rem:OnSiteUnitaryTransformationH3ValuedIndex}, one can clearly extend it to the stable equivalence class.}.
+	In one spatial dimension so-called matrix product states (\cite{Chen_2011},\cite{pollman2012symmetry},\cite{schuch2011MatrixProduct}) can be used to construct non-trivial SPT states. Later on and more generally it was shown in \cite{ogata2019classification} that any $G$-invariant state satisfying the split property (this includes any SRE state) carries an $H^2(G,\TT)$-valued\footnote{By $H^n(G,\TT)$ we mean the n-th (Borel) group cohomology of $G$ with coefficients in the torus $\TT$ (seen as a (group) module under addition with trivial group action).} index and that this index is constant on the (stable) equivalence classes. Later on in \cite{kapustin2021classification} it was then shown that this classification problem is complete (the index, seen as a map from the set of stable equivalence classes to $H^2(G,\TT)$ is injective.). In two spatial dimensions, more recently in \cite{ogata2021h3gmathbb}, it was proven there is an $H^3(G,\TT)$-valued index that is constant on the (stable) equivalence classes\footnote{In \cite{ogata2021h3gmathbb}, there is no mention of the stacking operation but using remark \ref{rem:StackingH3ValuedIndex} and remark \ref{rem:OnSiteUnitaryTransformationH3ValuedIndex}, one can extend it to the stable equivalence class.}.
 	\\\\
 	We've used stacking to define the stable equivalence relation. Stacking however plays a more general role. It is widely believed that it allows us to define an (abelian) group structure on the set of stable equivalence classes\footnote{The stacking with a trivial state will then be related to the identity of this group}. Although it is nowhere stated explicitly, the author thinks that the literature (like, for example, \cite{kapustin2021classification}) suggests the following conjecture:
 	\begin{conjecture}\label{conj:StableEquivGroupStructure}
-		Let $S$ be the set of stable SPT classes for some fixed group and a fixed lattice. Let $*$ be the map
+		Take some fixed group and a fixed lattice. Let $S$ be the set of stable SPT classes defined through the above equivalence class. Let $*$ be the map
 		\begin{equation}
 			*:S^2\rightarrow S:(\expval{\omega_1,U_1}_{\sim},\expval{\omega_2,U_2}_{\sim})\mapsto \expval{\omega_1\otimes_\text{stack}\omega_2,U_1\otimes U_2}_{\sim}.
 		\end{equation}
-		Then $*$ is well-defined (independent of the choice of representative) and $S$ together with the $*$ operation forms an abelian group.
+		Then $*$ is well-defined (independent of the choice of representative) and $S$ equipped with the $*$ operation forms an abelian group.
 	\end{conjecture}
 	Before proceeding, we make three remarks on this conjecture:
 	\begin{enumerate}
@@ -46,7 +52,7 @@
 		\end{equation}
 		induces a sequence (of group morphisms) on the stable equivalence classes. By this, we mean that the class of $f(\phi)$ only depends on the class of $\phi$ and similarly for $g$. Moreover, this induced sequence is exact and split.
 	\end{conjecture}
-	Clearly, this implies that
+	This implies that
 	\begin{equation}
 		\{\text{2d translation invariant SPT classification}\}\simeq \{\text{1d SPT classification}\}\oplus \{\text{2d SPT classification}\}.
 	\end{equation}
@@ -90,13 +96,14 @@
 	We are grateful to the referees of Communications in Mathematical Physics for their constructive input during the review process. For example, we are very grateful for the proposed changes of lemma \ref{lem:SplittingOfUnitary}, the mistake they found in section \ref{sec:examples} (the previous assumption was too weak), and the mistakes they found in section \ref{sec:AllIndicesInvariantUnderLGA}.
 	\subsection*{Data availability statement}
 	No new data were created or analyzed in this study. Data sharing is not applicable to this article.
+	\versionDifference{}{\subsection*{ArXiv version}This paper is a more compact version of the ArXiv version \cite{jappens2023spt}. We will sometimes refer to this version.}
 	\section{Setup and definitions}\label{sec:Setup}
 	In this paper, we work in the two-dimensional lattice $\ZZ^2$. We will first need some specific subsets of $\ZZ^2$, so let
 	\begin{align}
 		L&\defeq \left\{(x,y)\in\ZZ^2\left|x<0\right.\right\},&R&\defeq \left\{(x,y)\in\ZZ^2\left|x\geq 0\right.\right\}\\
 		U&\defeq \left\{(x,y)\in\ZZ^2\left|y\geq 0\right.\right\},&D&\defeq \left\{(x,y)\in\ZZ^2\left|y<0\right.\right\}
 	\end{align}
-	be the left, right, upper and lower half-planes respectively, and let
+	be the left, right, upper, and lower half-planes respectively, and let
 	\begin{equation}
 		C_\theta\defeq \left\{(x,y)\in\ZZ^2\left|\tan(\theta)\leq\abs{\frac{y}{x}}\right.\right\}
 	\end{equation}
@@ -139,7 +146,7 @@
 	\end{equation}
 	for any $\Lambda\in\mathfrak{G}_{\ZZ^2}$ (in fact stacking can be defined for any automorphism, not just the group action).
 	\subsection{States on \texorpdfstring{$\AA$}{}}\label{sec:States}
-	We will use $\PP(\AA)$ to denote the set of pure states on $\AA$ (see \cite{bratteli1979operator}). In this paper, we will often refer to the GNS triple. For its definition, construction and properties we refer to \cite{bratteli1979operator}. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will call a pure state $\phi$ on $\AA_\Gamma$ a product state if for any $\Lambda\subset\Gamma$, the restriction $\phi|_{\AA_\Lambda}$ is still pure. We will call a state $\omega$, $G$-invariant if $\omega\circ\beta_g=\omega$ (where $\beta_g=i_{U(g)}$ with $U$ an on site group action). Moreover, we say that a $G$-invariant product state $\phi$ is trivial with respect to $U$ (we will sometimes denote this as $(\phi,U)$ is trivial) if $\phi(U_i(g))=1$ for all $i\in\ZZ^2$.\\\\
+	We will use $\PP(\AA)$ to denote the set of pure states on $\AA$ (see \cite{bratteli1979operator}). In this paper, we will often refer to the GNS triple. For its definition, construction, and properties we refer to \cite{bratteli1979operator}. We will sometimes write the tensor product of states $\omega\otimes\phi$ to be such that $(\omega\otimes\phi)(a\otimes b)=\omega(a)\phi(b)$ and similarly for the stacking tensor product. We will call a pure state $\phi$ on $\AA_\Gamma$ a product state if for any $\Lambda\subset\Gamma$, the restriction $\phi|_{\AA_\Lambda}$ is still pure. We will call a state $\omega$, $G$-invariant if $\omega\circ\beta_g=\omega$ (where $\beta_g=i_{U(g)}$ with $U$ an on site group action). Moreover, we say that a $G$-invariant product state $\phi$ is trivial with respect to $U$ (we will sometimes denote this as $(\phi,U)$ is trivial) if $\phi(U_i(g))=1$ for all $i\in\ZZ^2$.\\\\
 	There is a natural way to construct a pure $G$-invariant state on the quasi local $C^*$-algebra over $\ZZ^2$, $\AA_{\ZZ^2}$ using a pure $G$-invariant state on the quasi local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$\footnote{When applied to a trivial state on $\AA_{L_0}$ this will also give a trivial state on $\AA_{\ZZ^2}$.}.
 	\begin{definition}\label{def:InfiniteTensorProduct}
 		Let $\phi\in\PP(\AA_{L_0})$ be a state that is $G$-invariant under a group action $\beta_g^{L_0}$. Define $\phi_i\in\PP(\AA_{L_i})$ as $\phi_i:=\phi_0\circ\tau^{-i}$. We define the infinite tensor product state $\omega_\phi$ as $\omega_\phi:=\bigotimes_{j\in\ZZ}\phi_j$. This is a $G$-invariant pure state over $\ZZ^2$ that is invariant under the automorphism $\tau$.
@@ -154,7 +161,7 @@
 	\begin{equation}\label{eq:OurFFunction}
 		F_\phi:\RR^+\rightarrow\RR^+:r\mapsto \frac{\exp(-r^\phi)}{(1+r)^4}.
 	\end{equation}
-	This $F$-function is particularly useful to us because, as was shown in \cite{ogata2021h3gmathbb}, if $\Phi\in\BB_{F_\phi}([0,1])$, we can decompose the automorphism into different parts. More precisely, we can show that $\gamma^{\Phi}_{s;t}\in\QAut{\AA}$ where $\QAut{\AA}$ is defined in \ref{def:QAut}\footnote{In appendix \ref{sec:properties-of-locally-generated-automorphisms-2d} we show a stronger version of this statement.}.
+	This $F$-function is particularly useful to us because, as was shown in \cite{ogata2021h3gmathbb}, if $\Phi\in\BB_{F_\phi}([0,1])$, we can decompose the automorphism into different parts. More precisely, we can show that $\gamma^{\Phi}_{s;t}\in\QAut{\AA}$ where $\QAut{\AA}$ is defined in \ref{def:QAut}\footnote{In appendix \versionDifference{\ref{sec:properties-of-locally-generated-automorphisms-1d}}{B of \cite{jappens2023spt}} we show a stronger version of this statement.}.
 	\\\\
 	Sometimes we will say that an interaction is $G$-invariant. By this we simply mean that $\beta_g(\Phi(I))=\Phi(I)$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). Similarly, if we say an interaction is translation invariant we mean that $\tau(\Phi(I))=\Phi(\tau(I))$ (for all $I\in\mathfrak{G}_{\ZZ^2}$). It should be clear that if an interaction is $G$-invariant (translation invariant), then the LGA it generates commutes with the group action (the translation automorphism) as well.
 	\subsection{The stable equivalence class}\label{sec:StableEquivalenceClasses}
@@ -274,7 +281,7 @@
 			\begin{equation}
 				\textrm{Index}_{\text{2 trans}}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega_1)+\textrm{Index}_{\text{2 trans}}^{\AA,U}(\omega_2).
 			\end{equation}
-			\item The index is independent on the choice of basis for the on-site Hilbert space. By this we mean that, for any on-site unitary $V$, we get that $\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{\text{2 trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega)$.
+			\item The index is independent of the choice of basis for the on-site Hilbert space. By this we mean that, for any on-site unitary $V$, we get that $\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{\text{2 trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{2 trans}}(\omega)$.
 		\end{enumerate}
 	\end{theorem}
 	\begin{proof}
@@ -283,11 +290,11 @@
 	\subsection{SRE implies previous assumptions}\label{sec:Results_1}
 	The assumptions in the previous subsection are rather technical. However, it turns out that any SRE state, with some additional symmetries, naturally satisfies these assumptions. The precise statements and proofs are formulated in section \ref{sec:ProofOfMainResult1} but we will describe them in words here.
 	\\\\
-	As is shown in appendix \ref{sec:properties-of-locally-generated-automorphisms-2d}, which is based on the work in \cite{ogata2021h3gmathbb}, for any one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$, we have that $\gamma^\Phi_{0;1}\in\QAut{\AA}$. This implies the following. Take any SRE state $\omega$ (see definition \ref{def:sre}), with entangler $\gamma^\Phi_{0;1}$, and product state $\omega_0$ such that $\omega=\omega_0\circ \gamma^\Phi_{0;1}$. We can simply define the $\alpha$ from assumption \ref{assumption} to be equal to this $\gamma^\Phi_{0;1}$. Similarly, in \cite{ogata2021h3gmathbb} is has been shown that if this state has an additional on site symmetry, we can use the $\Phi$ and $\omega_0$ to construct some $\tilde\beta_g$ that can be decomposed like in equation \eqref{eq:DecompositionOfBetaTilde} for any angle.
+	As is shown in appendix \versionDifference{\ref{sec:properties-of-locally-generated-automorphisms-2d}}{C of \cite{jappens2023spt}}, which is based on the work in \cite{ogata2021h3gmathbb}, for any one parameter family of interactions $\Phi\in\BB_{F_\phi}([0,1])$, we have that $\gamma^\Phi_{0;1}\in\QAut{\AA}$. This implies the following. Take any SRE state $\omega$ (see definition \ref{def:sre}), with entangler $\gamma^\Phi_{0;1}$, and product state $\omega_0$ such that $\omega=\omega_0\circ \gamma^\Phi_{0;1}$. We can simply define the $\alpha$ from assumption \ref{assumption} to be equal to this $\gamma^\Phi_{0;1}$. Similarly, in \cite{ogata2021h3gmathbb} it has been shown that if this state has an additional on-site symmetry, we can use the $\Phi$ and $\omega_0$ to construct some $\tilde\beta_g$ that can be decomposed like in equation \eqref{eq:DecompositionOfBetaTilde} for any angle.
 	\\\\
-	It should also be said that we use the same definition of SRE (with the same $F$-function) for states over the quasi-local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$. This is because we will use the 1D SRE states to create translation invariant 2D SRE states. Since the $F$-norm of a sum of disjoint interactions has an $F$-norm given by the highest of the $F$-norms of its sub-interactions, this means that to ensure that the resulting state has a well defined index, we will need as similar $F$-norm and not something weaker.
+	It should also be said that we use the same definition of SRE (with the same $F$-function) for states over the quasi-local $C^*$-algebra over $\ZZ$, $\AA_{L_0}$. This is because we will use the 1D SRE states to create translation-invariant 2D SRE states. Since the $F$-norm of a sum of disjoint interactions has an $F$-norm given by the highest of the $F$-norms of its sub-interactions, this means that to ensure that the resulting state has a well-defined index, we will need a similar $F$-norm and not something weaker.
 	\\\\
-	Additionally, it turns out that the indices that are defined in the last subsection are independent on the choice of representative of the equivalence classes introduced in \ref{sec:StableEquivalenceClasses}.
+	Additionally, it turns out that the indices that are defined in the last subsection are independent of the choice of representative of the equivalence classes introduced in \ref{sec:StableEquivalenceClasses}.
 	\\\\
 	All in all, we will show the following theorem:
 	\begin{theorem}\label{lem:IndicesConstantOnStableEquivalenceClasses}
@@ -295,7 +302,7 @@
 		\begin{enumerate}
 			\item $\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim$.
 			\item If additionally, $(\omega,U)\in S_1$, $\textrm{Index}^{\AA,U}(\omega)$ is also well defined and independent on the choice of representative of $\expval{\omega}_\sim^1$.
-			\item If in stead, $(\omega,U)\in S_2$, $\textrm{Index}^{\AA,U}(\omega\circ\mu)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim^2$.
+			\item If instead, $(\omega,U)\in S_2$, $\textrm{Index}^{\AA,U}(\omega\circ\mu)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim^2$.
 			\item If additionally, $(\omega,U)\in S_3$, $\textrm{Index}^{\AA,U}_{\textrm{2 trans}}(\omega)=\textrm{Index}^{\AA,U}_{\textrm{2 trans}}(\omega\circ\mu)$ is well defined and independent on the choice of representative of $\expval{\omega}_\sim^3$.
 		\end{enumerate}
 	\end{theorem}
@@ -315,7 +322,7 @@
 		\item There exists a $G$-invariant LGA, $\gamma^\Psi_{0;1}$ such that $\psi_1\circ\gamma^H_{0;1}=\psi_2$.
 	\end{enumerate}
 	A priori those two conditions are not equivalent. However, in \cite{ogata2021h3gmathbb} it is proven that the first equivalence implies the second one. The proof that equivalent states have the same index only uses the second condition. This means that one could also have taken the second equivalence condition as the starting point. This is exactly what we do in this paper. One should also be able to show that the second condition implies the first one using a similar construction as in the above remark without the group and averaging the resulting interaction over the group (where one then has to use that a finite group has a normalized Haar measure).\\\\
-	There were two things that are in theorems \ref{thrm:ExistenceFirstIndex} and \ref{thrm:ExistenceSecondIndex} but were not discussed in \cite{ogata2021h3gmathbb}. This is the part that the index is a group homomorphism under stacking and the part that the index is independent on the choice of basis for the on-site Hilbert space. However, on inspection of the arguments used in this paper one can conclude that these also hold for the $H^3$-valued index.\\\\
+	There were two things that are in theorems \ref{thrm:ExistenceFirstIndex} and \ref{thrm:ExistenceSecondIndex} but were not discussed in \cite{ogata2021h3gmathbb}. This is the part that proves that the index is a group homomorphism under stacking and the part that the index is independent of the choice of basis for the on-site Hilbert space. However, on inspection of the arguments used in this paper one can conclude that these also hold for the $H^3$-valued index.\\\\
 	All in all, we have provided a proof that the work done in \cite{ogata2021h3gmathbb} also implies the following theorem:
 	\begin{theorem}\label{thrm:ExistenceOriginalIndex}
 		For any $\AA$ satisfying the construction from section \ref{sec:QuasiLocalC*Algebra} and any choice of on-site group action $U\in\hom(G,U(\CC^d))$, there exists a map
@@ -332,7 +339,7 @@
 			\begin{equation}
 				\textrm{Index}_{\text{no trans}}^{\AA^2,U\otimes U}(\omega_1\otimes_{\text{stack}}\omega_2)=\textrm{Index}_{\text{no trans}}^{\AA,U}(\omega_1)+\textrm{Index}_{\text{no trans}}^{\AA,U}(\omega_2).
 			\end{equation}
-			\item The index is independent on the choice of basis for the on-site Hilbert space by which we mean that for any on-site unitary $V$ we get that
+			\item The index is independent of the choice of basis for the on-site Hilbert space by which we mean that for any on-site unitary $V$ we get that
 			\begin{equation}
 				\textrm{Index}^{\AA,\Ad{V^\dagger}(U)}_{\text{no trans}}(\omega\circ i_V) =\textrm{Index}^{\AA,U}_{\text{no trans}}(\omega).
 			\end{equation}
@@ -345,7 +352,7 @@
 		\begin{align}
 			\Ad{u_\sigma(g)}\circ\pi_\sigma&=\pi_\sigma\circ\beta_g^\sigma&u_L(g)\otimes u_R(g)\Omega&=\Omega.
 		\end{align}
-		They are unique up to a $G$-dependent phase. Furthermore,here exists a 2-cochain $C:G^2\rightarrow U(1)$ that satisfies
+		They are unique up to a $G$-dependent phase. Furthermore, there exists a 2-cochain $C:G^2\rightarrow U(1)$ that satisfies
 		\begin{align}
 			u_R(g)u_R(h)u_R(gh)^{\dagger}&=C(g,h)\id_{H_R}&u_L(g)u_L(h)u_L(gh)^{\dagger}&=C(g,h)^{-1}\id_{H_L}.
 		\end{align}
@@ -354,7 +361,7 @@
 	\begin{proof}
 		See \cite{ogata2019classification}.
 	\end{proof}
-	The cohomology class of this 2-cochain is called the one dimensional SPT index. Now let us assume additionally (on top of the split property and the $G$-invariance) that $\omega$ be translation invariant. To this end, let $\nu$ be the automorphism that translates $\BB$ by one site to the right. We assume that $\omega\circ\nu=\omega$. The following now holds:
+	The cohomology class of this 2-cochain is called the one-dimensional SPT index. Now let us assume additionally (on top of the split property and the $G$-invariance) that $\omega$ be translation invariant. To this end, let $\nu$ be the automorphism that translates $\BB$ by one site to the right. We assume that $\omega\circ\nu=\omega$. The following now holds:
 	\begin{lemma}
 		There exists a unique $w\in\UU(\HH)$ such that
 		\begin{align}
@@ -399,7 +406,7 @@
 		\begin{align}\label{eq:DefinitionSplitting1DAppendix}
 			\gamma^\Phi_{0;\lambda}&=\Ad{A_\lambda}\circ\gamma^{\Phi_{\text{split}}}_{0;\lambda}&A_0&=\id_\AA.
 		\end{align}
-		and define $A\defeq A_1$. This exists because of lemma \ref{sec:properties-of-locally-generated-automorphisms-1d}. By construction $(\HH,\pi\circ\gamma^{\Phi_{\text{split}}}_{0;1},\pi(A^\dagger)\Omega)$ is a GNS triple of $\omega\circ\gamma^\Phi_{0;1}$. Let $\tilde{w}\defeq \pi(A^\dagger)w\pi(A)$ then $\tilde{\alpha}(g)\defeq \pi(U_{-1}(g))u_R(g)\tilde{w}^\dagger u_R(g)^\dagger \tilde{w}$ is the index of $\omega\circ\gamma^\Phi_{0;1}$. Putting the $A$'s to the front and inserting the old index gives
+		and define $A\defeq A_1$. This exists because of lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms1d}}{B.1. of \cite{jappens2023spt}}. By construction $(\HH,\pi\circ\gamma^{\Phi_{\text{split}}}_{0;1},\pi(A^\dagger)\Omega)$ is a GNS triple of $\omega\circ\gamma^\Phi_{0;1}$. Let $\tilde{w}\defeq \pi(A^\dagger)w\pi(A)$ then $\tilde{\alpha}(g)\defeq \pi(U_{-1}(g))u_R(g)\tilde{w}^\dagger u_R(g)^\dagger \tilde{w}$ is the index of $\omega\circ\gamma^\Phi_{0;1}$. Putting the $A$'s to the front and inserting the old index gives
 		\begin{equation}
 			\tilde{\alpha}(g)=\alpha(g)w^\dagger \pi\circ\beta_g^R(\nu(A^\dagger)A)\pi(A^\dagger\nu(A))w.
 		\end{equation}
@@ -514,7 +521,7 @@
 		\begin{equation}
 			\Ad{U}|_{\textrm{Im}(\pi_\AA)}:\textrm{Im}(\pi_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id
 		\end{equation}
-		to the closure in weak operator topology. By irreducibility (and the Von Neumann bicomutant theorem), we get that $\pi_\AA(\AA)''=\BB(\HH_\AA)$ and therefore we get a map
+		to the closure in weak operator topology. By irreducibility (and the Von Neumann bicommutant theorem), we get that $\pi_\AA(\AA)''=\BB(\HH_\AA)$ and therefore we get a map
 		\begin{equation}
 			\Ad{U}|_{\BB(\HH_\AA)\otimes\id}:\BB(\HH_\AA)\otimes\id\rightarrow \BB(\HH_\AA)\otimes\id.
 		\end{equation}
@@ -614,7 +621,7 @@
 	\end{proof}
 	\section{Defining the indices}
 	In this section, we will use the objects defined in section \ref{sec:ConeAndTranslationOperators} to define the $H^2(G,\TT)$-valued index introduced in theorem \ref{thrm:ExistenceFirstIndex} and the $H^1(G,\TT)$-valued index introduced in theorem \ref{thrm:ExistenceSecondIndex}.
-	\subsection{The \texorpdfstring{$H^2(G,\TT)$}{}-valued index}\label{sec:DefinitionH2Index}
+	\subsection{The \texorpdfstring{$H^2(G,\TT)$}{H2}-valued index}\label{sec:DefinitionH2Index}
 	\begin{lemma}\label{lem:Definition2Cochain}
 		There exists a $C:G^2\rightarrow U(1)$ such that 
 		\begin{equation}\label{eq:Definition2Cochain}
@@ -642,7 +649,7 @@
 		\end{align}
 		concluding the proof.
 	\end{proof}
-	We the next goal is to prove that this function $C$ is a $2$-cochain. We will do this by proving that the $3$-cochain constructed in \cite{ogata2021h3gmathbb} is invariant under some substitution. More precicely, we will use:
+	We the next goal is to prove that this function $C$ is a $2$-cochain. We will do this by proving that the $3$-cochain constructed in \cite{ogata2021h3gmathbb} is invariant under some substitution. More precisely, we will use:
 	\begin{lemma}\label{lem:3cochainIsInvariant}
 		The three-cochain $C'(g,h,k)$ defined through
 		\begin{equation}\label{eq:defintion3CochainProof2Cochain}
@@ -655,7 +662,7 @@
 		\end{align}
 	\end{lemma}
 	\begin{proof}
-		This lemma is proven in detail in lemma \ref{lem:3cochainIsInvariantAppendix}. It is a straightforward but tedious calculation that relies only on the commutation properties of cone operators and the definition of $u_L\otimes u_R(g,h)$.
+		This lemma is proven in detail in lemma \versionDifference{\ref{lem:3cochainIsInvariantAppendix}}{A.1. of \cite{jappens2023spt}}. It is a straightforward but tedious calculation that relies only on the commutation properties of cone operators and the definition of $u_L\otimes u_R(g,h)$.
 	\end{proof}
 	\begin{lemma}
 		The function $C$ as defined in lemma \ref{lem:Definition2Cochain} is a 2-cochain.
@@ -665,12 +672,7 @@
 		\begin{align}
 			W_g&\rightarrow v^\dagger W_g v&u_R(g,h)&\rightarrow v^\dagger u_R(g,h)v.
 		\end{align}
-		If we now prove that it is also invariant under the substitution
-		\begin{align}\label{eq:SubstitutionForProofCochain}
-			W_g&\rightarrow K_g W_g&u_R(g,h)&\rightarrow K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)u_
-			R(g,h)
-		\end{align}
-		we have proved our result because using equation \eqref{eq:Definition2Cochain} we then get that
+		If we now prove that it is also invariant under the substitution in equation \ref{eq:SubstitutionForProofCochain}, we have proved our result because using equation \eqref{eq:Definition2Cochain} we then get that
 		\begin{equation}
 			\stkout{C'(g,h,k)}=C(h,k)C(gh,k)^{-1}C(g,hk)C(g,h)^{-1}\stkout{C'(g,h,k)}
 		\end{equation}
@@ -685,7 +687,7 @@
 		and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,K_g^L$ and $K_g^R$.\footnote{Even though we explicitly wrote down the on-site group action $U$, this index is only dependent on $\Ad{U}$.}
 	\end{definition}
 	\begin{proof}
-		Clearly, the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
+		The construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
 		\begin{align}
 			u_L(g,h)&\rightarrow \alpha(g)\alpha(g)\alpha(gh)^{-1}\beta(g,h)^{-1} u_L(g,h)&u_R(g,h)&\rightarrow \beta(g,h)u_R(g,h)\\
 			W_g&\rightarrow\alpha(g)W_g&v&\rightarrow \gamma v.
@@ -694,9 +696,9 @@
 		\begin{align}
 			K_g^L&\rightarrow \delta(g)^{-1}K_g^L&K_g^R&\rightarrow \delta(g)K_g^R
 		\end{align}
-		we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is clearly still in the same equivalence class concluding the proof.
+		we get $C(g,h)\rightarrow \delta(g)\delta(h)\delta(gh)^{-1}C(g,h)$ which is still in the same equivalence class concluding the proof.
 	\end{proof}
-	\subsection{The \texorpdfstring{$H^1(G,\TT)$}{}-valued index}\label{sec:DefinitionH1Index}
+	\subsection{The \texorpdfstring{$H^1(G,\TT)$}{H1}-valued index}\label{sec:DefinitionH1Index}
 	\input{Figures/Figure5}
 	\begin{lemma}\label{lem:DefinitionAlpha}
 		There exists an $\alpha:G\rightarrow U(1)$ satisfying
@@ -824,7 +826,7 @@
 		The $\alpha$ defined previously is a $U(1)$-representation.
 	\end{lemma}
 	\begin{proof}
-		Take the definition of the 2-cochain (lemma \ref{lem:Definition2Cochain}). Clearly, this equation is invariant under the substitution
+		Take the definition of the 2-cochain (lemma \ref{lem:Definition2Cochain}). This equation is invariant under the substitution
 		\begin{align}
 			K_g^R&\mapsto w^\dagger K_g^R w&W_g&\mapsto w^\dagger W_g w&u_R(g,h)&\mapsto w^\dagger u_R(g,h)w.
 		\end{align}
@@ -836,17 +838,17 @@
 		\begin{equation}
 			\stkout{C(g,h)}=\stkout{C(g,h)}\frac{\alpha(g)\alpha(h)}{\alpha(gh)}
 		\end{equation}
-		which would clearly conclude the proof. This invariance is proven in lemma \ref{lem:2cochainIsInvariant}.
+		which would conclude the proof. This invariance is proven in lemma \ref{lem:2cochainIsInvariant}.
 	\end{proof}
 	\begin{definition}\label{def:DefinitionOfTheH1ValuedIndex}
 		Let $\alpha$ be the $U(1)$-representation defined in lemma \ref{lem:DefinitionAlpha}. Take $\phi\in\hom(G,\TT)$ such that $\alpha(g)=\exp(i\phi(g))$. We define the 2 translation index as
 		\begin{equation}
 			\textrm{Index}_{2\:\text{trans}}^{\AA,U}(\theta,\tilde{\beta}_g,\eta_g,\alpha_0,\Theta,\omega,\omega_0)\defeq \phi\in H^1(G,\TT)
 		\end{equation}
-		and (as advertised) it is only a function of the automorphisms (and the product state) not on the choice of the GNS triple of $\omega_0$ or on the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.\footnote{It is however explicitly dependent on the on-site group action $U$, and not only $\Ad{U}$.}
+		and (as advertised) it is only a function of the automorphisms (and the product state) not of the choice of the GNS triple of $\omega_0$ or the choice of phases in $W_g,u_L(g,h),u_R(g,h),v,w,K^L_g,K^R_g,b^L_g$ and $b^R_g$.\footnote{It is however explicitly dependent on the on-site group action $U$, and not only $\Ad{U}$.}
 	\end{definition}
 	\begin{proof}
-		Clearly, the construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. The proof that it is independent of the choice of phases is just as trivial.
+		The construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. The proof that it is independent of the choice of phases is just as trivial.
 	\end{proof}
 	One can also define this index starting from operators acting on the left. As the following lemma shows this gives us the opposite index (the complex conjugate of the $U(1)$-representation):
 	\begin{lemma}
@@ -991,7 +993,7 @@
 		\end{align}
 		concluding the proof.
 	\end{proof}
-	We will now show that the index is independent on the choice of $\tilde{\beta}_g$ and its decomposition.
+	We will now show that the index is independent of the choice of $\tilde{\beta}_g$ and its decomposition.
 	\begin{lemma}\label{lem:InvarianceUnderChoiceBeta}
 		Take $\tilde{\beta}_{g,1},\tilde{\beta}_{g,2}\in\Aut{\AA},V_{g,21},V_{g,22}\in\UU(\AA),\eta_{g,1}^L,\eta_{g,2}^L\in \Aut{\AA_{\nu^{-1}(L\cap C_\theta)}}$ and $\eta_{g,1}^R,\eta_{g,2}^R\in \Aut{\AA_{\nu(R\cap C_\theta)}}$ such that there exist $V_{g,21},V_{g,22}\in\UU(\AA)$ satisfying
 		\begin{align}\label{eq:InvarianceUnderChoiceBetaTwoBetas}
@@ -1054,7 +1056,7 @@
 		Take $\phi\in\PP(\AA_{L_0})$ arbitrary. There exists a unique state $\omega$ satisfying that for any $i\in\ZZ$ we have that for any $A\in\AA_{L_i}$ and $B\in\AA_{L_i^c}$, $\omega(A\otimes B)=\phi\circ\tau^{-i}(A)\omega(B)$.
 	\end{definition}
 	\begin{proof}
-		Clearly, this condition gives a construction by induction for $\omega(A)$ for each $A\in\AA_{\text{loc}}$. For general elements we define $\omega(A)\defeq \lim_{n\rightarrow\infty}\omega(A_n)$ where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
+		This condition gives a construction by induction for $\omega(A)$ for each $A\in\AA_{\text{loc}}$. For general elements we define $\omega(A)\defeq \lim_{n\rightarrow\infty}\omega(A_n)$ where $A_n$ is a sequence in $\AA_{\text{loc}}$ converging in $\AA$.
 	\end{proof}
 	In what follows, we will fix a GNS triple for $\omega_0$, $(\HH_0,\pi_0,\Omega_0)$ that is of the form: $\HH_0=\bigotimes_{\rho\sigma}\HH_{\rho,\sigma}$, $\pi_0=\bigotimes_{\rho\sigma}\pi_{\rho,\sigma}$ and $\Omega_0=\bigotimes_{\rho\sigma}\Omega_{\rho,\sigma}$, where the $\pi_{\rho,\sigma}:\AA_{\rho\cap\sigma}\rightarrow\BB(\HH_{\rho,\sigma})$ are all irreducible representations for all $\rho\in \{L_{>-1},L_{-1},L_{<-1}\}$ and $\sigma\in\{L,R\}$.
 	\begin{remark}\label{rem:GNS_One_Dimensional}
@@ -1084,7 +1086,7 @@
 		\end{equation}
 		concluding the proof.
 	\end{proof}
-	This shows that $\omega$ has a well-defined 2d translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$.
+	This shows that $\omega$ has a well-defined 2D translation index. We will now show that $\textrm{Index}(\omega)=\textrm{Index}_{1d}(\phi)$.
 	\begin{remark}
 		Remark \ref{rem:GNS_One_Dimensional} implies that if we take any $k^R:G\rightarrow \UU(\HH_{L_{-1},R})$ such that
 		\begin{equation}
@@ -1185,7 +1187,7 @@
 		\end{equation}
 	\end{lemma}
 	\begin{proof}
-		This follows from the fact that $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\in \textrm{GVAut}_1(\AA)$ (see lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 which was based on similar statements made in \cite{ogata2021h3gmathbb}).
+		This follows from the fact that $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\in \textrm{GVAut}_1(\AA)$ (see lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} part 2 which was based on similar statements made in \cite{ogata2021h3gmathbb}).
 	\end{proof}
 	In what follows, we will define $\tilde{a}\defeq \pi_0\circ\alpha_0\circ\Theta(a)$. The main property we will use of this operator is that it satisfies the following lemma:
 	\begin{lemma}\label{lem:PropertyTilde_a}
@@ -1469,7 +1471,7 @@
 		and that $\Phi^{\mu\nu}(\lambda)\circ\beta_g=\beta_g\circ\Phi^{\mu\nu}(\lambda)$.
 	\end{lemma}
 	\begin{proof}
-		This lemma is proven in \ref{lem:SplittedAutomorphismAfterTranslatedIsVertical} which was based on similar statements made in \cite{ogata2021h3gmathbb}.
+		This lemma is proven in \versionDifference{\ref{lem:SplittedAutomorphismAfterTranslatedIsVertical}}{C.8. of \cite{jappens2023spt}} which was based on similar statements made in \cite{ogata2021h3gmathbb}.
 	\end{proof}
 	In what follows, let $A_L\defeq A_L(1)$, $A_R\defeq A_R(1)$ and $\Phi^{\mu\nu}=\Phi^{\mu\nu}(1)$. We will now show some properties for these operators. The first one is that they can indeed be used to exchange $w$ and $\phi_1/\phi_2$:
 	\begin{lemma}\label{lem:TranslationOutOfPhi_KW}
@@ -1618,13 +1620,13 @@
 		\alpha\circ\gamma^{H}_{0;1}&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\Theta\circ\gamma^H_{0;1}\\
 		&=\Ad{V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{H}_{0;1}\circ\gamma^{H}_{1;0}\circ\Theta\circ\gamma^H_{0;1}.
 	\end{align}
-	Because of lemmas \ref{lem:TwoAngleLemmaPart1} and \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2 (which where based on similar lemmas in \cite{ogata2021h3gmathbb}) there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
+	Because of lemmas \versionDifference{\ref{lem:TwoAngleLemmaPart1} and \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 2}{C.5. and C.4. part 2 of \cite{jappens2023spt}} (which where based on similar lemmas in \cite{ogata2021h3gmathbb}) there exists a $\tilde{\Theta}\in\Aut{\AA_{W(C_{\theta_2})^c}}$ and some $\tilde V_1,A_1\in\UU(\AA)$ such that
 	\begin{align}
 		\alpha\circ\gamma^H_{0;1}&=\Ad{\tilde V_1}\circ(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta\\
 		\label{eq:ProofThatTheH2IndexIsInvariantUnderLGA's_Definition_A1}
 		(\alpha_L\circ\gamma^{H_L}_{0;1}\otimes\alpha_R\circ\gamma^{H_R}_{0;1})\circ\tilde\Theta&=\Ad{A_1}\circ \alpha_L\otimes\alpha_R\circ\Theta\circ\gamma^{H}_{0;1}.
 	\end{align}
-	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_2}\cap\sigma)}}$ through lemma \ref{lem:TwoAngleLemmaPart3} (which was again based on similar lemmas from \cite{ogata2021h3gmathbb}). It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_{\nu^\sigma(\sigma)})$ such that
+	If we now define the automorphism $\tilde{\beta}_{g,2}=\gamma^{H}_{1;0}\circ\tilde\beta_{g,1}\circ\gamma^{H}_{0;1}$ then this indeed satisfies that $\omega\circ\gamma^{H}_{0;1}\circ\tilde{\beta}_{g,2}=\omega\circ\gamma^{H}_{0;1}$. Define $\tilde\eta_g^\sigma\in\Aut{\AA_{\nu^{\sigma}(C_{\theta_2}\cap\sigma)}}$ through lemma \versionDifference{\ref{lem:TwoAngleLemmaPart3}}{C.7. of \cite{jappens2023spt}} (which was again based on similar lemmas from \cite{ogata2021h3gmathbb}). It satisfies that there exists a $\tilde V_{2,g}\in\UU(\AA),A_{2,g}^{\sigma}\in\UU(\AA_{\nu^\sigma(\sigma)})$ such that
 	\begin{align}
 		\label{eq:IndexInvariantUnderLGAEtaTildeDefiniton1}
 		\gamma^{H}_{1;0}\tilde{\beta}_g\gamma^{H}_{0;1}&=\Ad{\tilde V_{2,g}}\circ\tilde{\eta}_g^L\otimes\tilde{\eta}_g^R\circ\beta_g^U\\
@@ -1723,7 +1725,7 @@
 		$\textrm{Index}(\omega)=\textrm{Index}(\omega\circ\gamma^H_{0;1})$
 	\end{theorem}
 	\begin{proof}
-		To show this, we merely have to show that the index is invariant under the transformations indicated in lemma \ref{lem:OperatorsBelongingToOmegaAfterH}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just due to the fact that both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
+		To show this, we merely have to show that the index is invariant under the transformations indicated in lemma \ref{lem:OperatorsBelongingToOmegaAfterH}. The fact that the index is invariant under $\Ad{\pi_0(A_1)}$ and under $\phi(\cdot)$ is just because both transformations are homomorphisms. To show that it is invariant under the transformation with de $\delta^\sigma_g$ we invoke lemma \ref{lem:TransformationUnderDelta}.
 	\end{proof}
 	\begin{theorem}\label{thrm:IndexInvariantUnderLGA_TwoTrans}
 		$\textrm{Index}_{\text{2 trans}}(\omega)=\textrm{Index}_{\text{2 trans}}(\omega\circ\gamma^H_{0;1}).$
@@ -1742,7 +1744,7 @@
 		\end{align}
 		This shows that the index is invariant under the $\phi_1$ and $\epsilon^R_g$ part (simultaneously). The fact that the index is invariant under the $\phi_1(\delta_g)$ part is now completely equivalent to the proof of lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. The fact that the index remains unchanged by the $\Ad{\pi_0(A_1)}$ transformation is trivial. This concludes the proof.
 	\end{proof}
-	\section{The \texorpdfstring{$H^1(G,\TT)$}{}-valued index is invariant under rotations by \texorpdfstring{$90^\circ$}{}}\label{sec:H1ValuedIndexInvariantUnderRotations}
+	\section{The \texorpdfstring{$H^1(G,\TT)$}{H1}-valued index is invariant under rotations by \texorpdfstring{$90^\circ$}{90}}\label{sec:H1ValuedIndexInvariantUnderRotations}
 	Take
 	\begin{equation}
 		\omega\in\left\{\omega\in\PP(\AA)\left| \begin{matrix}\omega\text{ is an SRE state,}\\\omega\circ\beta_g=\omega,\:\omega\circ\tau=\omega\text{ and }\omega\circ\nu=\omega\end{matrix} \right.\right\}
@@ -1763,7 +1765,7 @@
 		where $\Phi_i$ is the restriction of $\Phi$ to region $i\in\{1,2,3,4\}$.
 	\end{lemma}
 	\begin{proof}
-		Completely analogous to the proof of (for example) lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} which was in turn based on similar lemmas in \cite{ogata2021h3gmathbb}.
+		Completely analogous to the proof of (for example) lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} which was in turn based on similar lemmas in \cite{ogata2021h3gmathbb}.
 	\end{proof}
 	Let $A_{g,1},A_{g,2}\in\UU(\AA),\eta^\sigma_g\in\Aut{\AA_{\nu^{\sigma}(C_\theta\cap\sigma)}}$ and $\eta^\rho_{2,g}\in\Aut{\AA_{\tau^{\rho}(\mu(C_\theta)\cap\rho)}}$ be such that the automorphisms
 	\begin{align}
@@ -1819,7 +1821,7 @@
 		holds. Moreover $\tilde\alpha=\textrm{Index}_{\text{2 trans}}(\omega\circ\mu)$.
 	\end{lemma}
 	\begin{proof}
-		The existence of the $v,w,K_g^R$ and $b_g^R$ is due to the fact that $\gamma^\Phi_{0;1}\in \QAut{\AA}$. This follows from lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} (which was based on similar lemmas in \cite{ogata2021h3gmathbb}) and from the fact that $\textrm{SQAut}_1(\AA)\subset \QAut{\AA}$. By construction this also implies that indeed $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. We now only have to show the second part of the proof. We have that
+		The existence of the $v,w,K_g^R$ and $b_g^R$ is due to the fact that $\gamma^\Phi_{0;1}\in \QAut{\AA}$. This follows from lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} (which was based on similar lemmas in \cite{ogata2021h3gmathbb}) and from the fact that $\textrm{SQAut}_1(\AA)\subset \QAut{\AA}$. By construction this also implies that indeed $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. We now only have to show the second part of the proof. We have that
 		\begin{align}
 			\Ad{\tilde{K}_g^U}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\Ad{(b_g^R)^\dagger w^\dagger X_g w X_g^\dagger}\circ\pi_0\circ\gamma^\Phi_{0;1}\\
 			&=\Ad{(b_g^R)^\dagger w^\dagger X_g w}\circ\pi_0\circ\gamma^\Phi_{0;1}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ(\tilde{\eta}_g^U)^{-1}\\
@@ -1910,7 +1912,7 @@
 	\end{align}
 	concluding the proof of the first part. The second part is analogous.
 	\begin{remark}\label{rem:StackingH3ValuedIndex}
-		Clearly, the same argument can be used to argue that the $H^3$-valued index is invariant under stacking.
+		The same argument can be used to argue that the $H^3$-valued index is invariant under stacking.
 	\end{remark}
 	\section{The indices are independent on the choice of on-site Hilbert space}\label{sec:the-indices-are-independent-on-the-choice-of-on-site-hilbert-space}
 	Let $V \in U(\CC^d)$ be a unitary operator on the on-site Hilbert space and take $i_V$ as defined in subsection \ref{sec:QuasiLocalC*Algebra}. In this section we will prove the following lemma:
@@ -1951,7 +1953,7 @@
 	\end{proof}
 	The proof that lemma \ref{lem:IndependenceOnChoiceOnSitHilbertSpaceOperatorsBelongingTo} implies lemma \ref{lem:IndependenceOnChoiceOnSitHilbertSpace} is trivial.
 	\begin{remark}\label{rem:OnSiteUnitaryTransformationH3ValuedIndex}
-		Clearly, the same argument can be used to argue that the $H^3$-valued index is invariant under the same transformation.
+		The same argument can be used to argue that the $H^3$-valued index is invariant under the same transformation.
 	\end{remark}
 	\section{Proof of the main theorems}\label{sec:ProofOfMainTheorems}
 	We first summarise the proof of theorem \ref{thrm:ExistenceFirstIndex}:
@@ -1968,7 +1970,7 @@
 		Take $\omega\in\PP(\AA)$ a short-range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
 	\end{lemma}
 	\begin{proof}
-		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \ref{lem:PropertiesLocallyGeneratedAutomorphisms} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \ref{sec:properties-of-locally-generated-automorphisms-2d}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
+		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \versionDifference{\ref{sec:properties-of-locally-generated-automorphisms-2d}}{C of \cite{jappens2023spt}}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
 	\end{proof}
 	\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_TwoTranslations}
 		Let $\omega$ be a short-range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
@@ -1984,7 +1986,7 @@
 	\end{proof}
 	Finally, we prove Theorem \ref{lem:IndicesConstantOnStableEquivalenceClasses}:
 	\begin{proof}
-		The last few lemmas show that the indices are all well defined. Now we only have to show that they are independent on the choice of representative.	We will only prove the first item as all the other proofs are analogous. First notice that the equivalence implies that there exist product states $\phi_1\in\PP(\tilde\AA_1)$ and $\phi_2\in\PP(\tilde\AA_2)$ and group actions $\tilde U_1$ and $\tilde U_2$ such that the combinations $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ are trivial (see \ref{sec:States} for what this means). Moreover, these will satisfy that there exists a unitary transformation of the on-site Hilbert space, $V$ such that
+		The last few lemmas show that the indices are all well-defined. Now we only have to show that they are independent on the choice of representative.	We will only prove the first item as all the other proofs are analogous. First notice that the equivalence implies that there exist product states $\phi_1\in\PP(\tilde\AA_1)$ and $\phi_2\in\PP(\tilde\AA_2)$ and group actions $\tilde U_1$ and $\tilde U_2$ such that the combinations $(\phi_1,\tilde U_1)$ and $(\phi_2,\tilde U_2)$ are trivial (see \ref{sec:States} for what this means). Moreover, these will satisfy that there exists a unitary transformation of the on-site Hilbert space, $V$ such that
 		\begin{align}
 			\omega_1\otimes_{\text{stack}}\phi_1\circ i_V&=\omega_2\otimes_{\text{stack}}\phi_2\circ\gamma^\Phi_{0;1}&V^\dagger U_{1}(g)\otimes \tilde{U}_{1}(g)V&=U_{2}(g)\otimes \tilde{U}_{2}(g)
 		\end{align}
@@ -1994,6 +1996,8 @@
 		\end{equation}
 		Using item 2 of \ref{thrm:ExistenceOriginalIndex} this is satisfied if $\textrm{Index}^{\tilde \AA_1,\tilde U_1}_{\text{no trans}}(\phi_1)=\textrm{Index}^{\tilde \AA_2,\tilde U_2}_{\text{no trans}}(\phi_2)=1$. This is trivially true. Only in the last part with the $H^1$-valued index does one need that the $(\phi,\tilde U)$ pairs are trivial (see remark \ref{rem:NontrivialProductState}). For the other three statements, it is enough that we have $G$-invariant product states.
 	\end{proof}
+	
+	\versionDifference{
 	\appendix
 	\section{Some calculations with cochains}
 	\begin{lemma}\label{lem:3cochainIsInvariantAppendix}
@@ -2386,7 +2390,8 @@
 		\end{equation}
 		and this is by construction bounded and continuous in $\lambda$.
 	\end{proof}
-	\clearpage
+	}{}
+	
 	\bibliography{TSPT}
 	\bibliographystyle{plain}
 \end{document}
