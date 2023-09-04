@@ -182,8 +182,10 @@
 	\end{definition}
 	We also define similar equivalence classes $\expval{\cdot}_\sim^1,\expval{\cdot}_\sim^2$ and $\expval{\cdot}_\sim^3$ on
 	\begin{align}
+		\nonumber
 		S_1&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\tau=\omega\}\\
 		S_2&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\nu=\omega\}\\
+		\nonumber
 		S_3&=\{(\omega,U)\in\PP(\AA)\times\hom(G,U(\CC^d))|\omega\text{ is SRE},\:\omega\circ i_{U(g)}=\omega\:\forall g\in G,\:\omega\circ\tau=\omega,\:\omega\circ\nu=\omega\}
 	\end{align}
 	respectively. Here we now also demand that the interactions and the trivial states are invariant under the additional translation symmetries.
@@ -421,6 +423,7 @@
 		There exist maps
 		\begin{align}
 			\textrm{Index}_{1d}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\}\rightarrow H^2(G,\TT)\\
+			\nonumber
 			\textrm{Index}_{1d\text{ trans}}&:\{\omega\in\mathcal{S}\PP(\AA)|\omega\circ\beta_g=\omega\text{ and }\omega\circ\nu=\omega\}\rightarrow H^1(G,\TT)\cong \hom(G,\TT).
 		\end{align}
 		For any $G-$invariant family of interactions $\Phi\in\BB_{F}([0,1])$, we have that $\textrm{Index}_{1d}(\omega)=\textrm{Index}_{1d}(\omega\circ\gamma^\Phi_{0;1})$. For any $G-$invariant family of interactions $\Phi'\in\BB_{F}([0,1])$ that is also translation invariant, we have that $\textrm{Index}_{1d\text{ trans}}(\omega)=\textrm{Index}_{1d\text{ trans}}(\omega\circ\gamma^{\Phi'}_{0;1})$.
@@ -546,8 +549,10 @@
 	\begin{lemma}\label{lem:Definition_W_And_u}
 		There unitaries $W_g\in\UU(\HH_0)$ and $u_{\sigma}(g,h)\in\UU(\HH_{\sigma})$ for all $g,h\in G$ and for all $\sigma\in\{L,R\}$ satisfying
 		\begin{align}
+			\nonumber
 			\Ad{W_g}\circ\pi_0&=\pi_0\circ\alpha_0\circ\Theta\circ\eta_g\circ\beta_g^U\circ\Theta^{-1}\circ\alpha_0^{-1}\\
 			\Ad{u_\sigma(g,h)}\circ\pi_\sigma&=\pi_\sigma\circ\alpha_\sigma\circ\eta_g^\sigma\circ\beta_g^{\sigma U}\circ\eta_h^{\sigma}\circ(\beta_g^{\sigma U})^{-1}\circ(\eta^\sigma_{gh})^{-1}\circ\alpha_\sigma^{-1}\\
+			\nonumber
 			u_L(g,h)\otimes u_R(g,h)&=W_gW_hW_{gh}^{-1}.
 		\end{align}
 	\end{lemma}
@@ -578,6 +583,7 @@
 		Using lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} there exists a $Z_{g,R}\in\UU(\HH_R)$ satisfying that $\Ad{W_g}(\Xi^R)=\id_{\HH_L}\otimes Z_{g,R}$. To show the second result we only need to observe that for any $A\in\UU(\AA_R)$ we get that
 		\begin{align}
 			\Ad{W_g}\left(\pi_0\circ\alpha_0\circ\Theta(A)\Xi_R\right)&=\Ad{W_g}\circ\pi_0\circ\alpha_0\circ\Theta(A)\Ad{W_g}(\Xi_R)\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\xi_R(A)\Ad{W_g}(\Xi_R).
 		\end{align}
 		By the previous result, this is clearly in $\IAC_R(\alpha_0,\theta,\Theta)$ concluding the proof.
@@ -597,6 +603,7 @@
 		By some straightforward calculation, we have that
 		\begin{align}
 			\Ad{K_g}\circ\pi_0&=\Ad{v^\dagger W_g v W_g^\dagger}\circ\pi_0\\
+			\nonumber
 			&=\bigotimes_{\sigma=L,R}\pi_\sigma\circ\alpha_\sigma\circ\tau^{-1}\circ \eta_g^\sigma\circ\beta_g^{\sigma U}\circ\tau\circ(\beta_g^{\sigma U})^{-1}\circ(\eta_g^{\sigma})^{-1}\circ\alpha_\sigma^{-1}.
 		\end{align}
 		Using lemma \ref{lem:UsingIrreducibilityAndWignerTheorem} concludes the proof that these unitaries exist and are unique up to a $G-$dependent phase.
@@ -638,13 +645,16 @@
 		Now using the definition of $K_g$ gives:
 		\begin{align}
 			\eqref{eq:ProofOf:lem:Definition2CochainFirstEquation}&=K_gW_g v^\dagger W_h W_{gh}^{-1}v=K_gW_g K_h W_h v^\dagger W_{gh}^{-1}v\\
+			\nonumber
 			&=K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger=K_gW_g K_h W_h W_{gh}^\dagger K_{gh}^\dagger W_{gh}W_h^\dagger W_g^\dagger W_gW_hW_{gh}^\dagger\\
+			\nonumber
 			&=K_g\Ad{W_g}\left(K_h\Ad{W_hW_{gh}^\dagger}\left(K_{gh}^\dagger\right)\right)u_L(g,h)\otimes u_
 			R(g,h).
 		\end{align}
 		Using lemma \ref{lem:AdjointOverConeIsInCone} we get that
 		\begin{align}
 			&(K_g^L\otimes K_g^R)\Ad{W_g}\left((K_h^L\otimes K_h^R)\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^L\otimes K_{gh}^R)^{-1}\right)\right)\\
+			\nonumber
 			&=K_g^L\Ad{W_g}\left(K_h^L\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^L)^\dagger\right)\right)\otimes K_g^R\Ad{W_g}\left(K_h^R\Ad{W_hW_{gh}^\dagger}\left((K_{gh}^R)^\dagger\right)\right)
 		\end{align}
 		concluding the proof.
@@ -690,6 +700,7 @@
 		The construction is invariant under the choice of GNS triple since this simply amounts to an adjoint action by some unitary on every operator. Now we will show that it is invariant under the choice of phases of our operators. Clearly the 2-cochain $C$ is invariant under
 		\begin{align}
 			u_L(g,h)&\rightarrow \alpha(g)\alpha(g)\alpha(gh)^{-1}\beta(g,h)^{-1} u_L(g,h)&u_R(g,h)&\rightarrow \beta(g,h)u_R(g,h)\\
+			\nonumber
 			W_g&\rightarrow\alpha(g)W_g&v&\rightarrow \gamma v.
 		\end{align}
 		Under the transformation
@@ -714,6 +725,7 @@
 		Now we will use the fact that because of translation invariance of the group action, we have that $\tau^{-1}\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}=\beta_g^{RL_{-1}}$ with $L_j=\{(x,y)\in\ZZ^2|y=j\}$. This leads to
 		\begin{align}
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\underline{\tau^{-1}}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
+			\nonumber
 			&=\Ad{\underline{v^\dagger}}\circ \pi_0\circ\alpha_0\circ\Theta\circ\nu^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
 		\end{align}
 		Inserting $b^R_g v v^\dagger (b^R_g)^\dagger$ now gives
@@ -723,6 +735,7 @@
 		Using the inverse of equation \eqref{eq:automorphismBelongingTo_b} we now get
 		\begin{align}
 			&=\Ad{v^\dagger b^R_g v }\circ \pi_0\circ\alpha_0\circ\Theta\circ\underline{\tau^{-1}\circ\eta_g^R\circ\nu^{-1}\circ\stkout{(\eta_g^R)^{-1}\circ\nu}}\circ\stkout{\nu^{-1}\circ\eta_g^R}\circ\tau\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu\\
+			\nonumber
 			&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ(\eta_g^R)^{-1}\circ\nu.
 		\end{align}
 		Now we will use the fact that $\nu^{-1}\circ\beta_g^{R,L_{-1}}\circ\nu=\Ad{U_{(-1,-1)}(g)}\circ\beta_g^{R,L_{-1}}$ to obtain
@@ -732,11 +745,13 @@
 		Since (as you can check in figure \ref{fig:SetupForTwoTranslationsNearProof}) $\tau^{-1}(\eta_g^R(\tau(U_{(-1,-1)}(g))))=U_{(-1,-1)}(g)$ this gives
 		\begin{align}
 			&=\Ad{v^\dagger b_g^R v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{U_{(-1,-1)}(g)}\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
+			\nonumber
 			&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\tau\circ\beta_g^{R,L_{-1}}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
 		\end{align}
 		Now using again that $\tau\circ\beta_g^{R,L_{-1}}=\beta_{g}^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}$ we get:
 		\begin{align}
 			&=\Ad{v^\dagger b_g^R vh_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tau^{-1}\circ\eta_g^R\circ\beta_{g}^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu\\
+			\nonumber
 			&=\Ad{v^\dagger b_g^R vh_gK_g^R}\circ\pi_0\circ\alpha_0\circ\Theta\circ\eta_g^R\circ\nu^{-1}\circ(\eta_g^R)^{-1}\circ\nu.
 		\end{align}
 		After again using \eqref{eq:automorphismBelongingTo_b} we obtain:
@@ -805,16 +820,18 @@
 		To show this first notice that by using the fact that $h_g\in\IAC_R(\theta,\alpha_0,\Theta)'$ and lemma \ref{lem:W_g_And_h_g_Commute} we get that
 		\begin{align}
 			&K_g^R W_g K_h^R W_ hW_{gh}^\dagger(K_{gh}^R)^\dagger\\
+			\nonumber
 			&\mapsto v^\dagger b_g^R v \underline{h_g} K_g^R (b_g^R)^\dagger b_g^Lb_g^RW_g v^\dagger b_h^R v \underline{h_h} K_h^R (b_h^R)^\dagger b_h^Lb_h^RW_h W_{gh}^\dagger (b_{gh}^Lb_{gh}^R)^\dagger (v^\dagger b_{gh}^R v \underline{h_{gh}} K_{gh}^R (b_{gh}^R)^\dagger)^\dagger\\
+			\nonumber
 			&=\underline{h_gh_hh_{gh}^\dagger} v^\dagger b_g^R v  K_g^R (b_g^R)^\dagger b_g^Lb_g^RW_g v^\dagger b_h^R v  K_h^R (b_h^R)^\dagger b_h^Lb_h^RW_h W_{gh}^\dagger (b_{gh}^Lb_{gh}^R)^\dagger (v^\dagger b_{gh}^R v  K_{gh}^R (b_{gh}^R)^\dagger)^\dagger
 		\end{align}
 		(all the $h-$operators can be put in front). Since $h_g$ is an honest representation we get that the $h-$operators cancel out. This leaves us with checking that equation \eqref{eq:Definition2Cochain2TranslationSectionAppendix} is invariant under
 		\begin{align}
 			K_g^R&\mapsto v^\dagger b_g^R v K_g^R (b_g^R)^\dagger&W_g&\mapsto b_g^Lb_g^RW_g
 		\end{align}
-		\begin{equation}
+		\begin{equation*}
 			u_R(g,h)\mapsto b_g^R W_g b_h^R W_h W_{gh}^\dagger (b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h).
-		\end{equation}
+		\end{equation*}
 		Using the fact that
 		\begin{align}
 			(b_{gh}^R)^\dagger W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)&=(b_{gh}^R)^\dagger u_L(g,h)^\dagger=u_L(g,h)^\dagger(b_{gh}^R)^\dagger=W_{gh}W_h^\dagger W_g^\dagger u_R(g,h) (b_{gh}^R)^\dagger
@@ -894,16 +911,19 @@
 		We have (see \cite{ogata2021h3gmathbb} lemma 2.11)
 		\begin{align}
 			\Ad{xW_{g,1}x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\Theta_2\circ\eta_g\circ\beta_g^U\circ\Theta_2^{-1}\circ\alpha_{02}^{-1},\\
+			\nonumber
 			\Ad{xu_{R,1}(g,h)x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\eta_g^R\circ\beta_g^{RU}\circ\eta_h^R\circ\beta_{h}^{RU}\circ(\beta_{gh}^{RU})^{-1}\circ(\eta_{gh}^R)^{-1}\circ\alpha_{02}^{-1}.
 		\end{align}
 		Through similar arguments we get
 		\begin{align}
 			\Ad{xvx^\dagger}\circ\pi_0&=\pi_0\circ\alpha_{02}\circ\Theta_2\circ\tau\circ\Theta_2^{-1}\circ\alpha_{02}^{-1}\\
+			\nonumber
 			\Ad{xK^R_{g,1}x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\tau^{-1}\circ\eta_g^R\circ\beta_g^{RU}\circ\tau\circ(\beta_g^{RU})^{-1}\circ(\eta^R_g)^{-1}\circ\alpha_{02}^{-1}
 		\end{align}
 		and
 		\begin{align}
 			\Ad{xwx^\dagger}\circ\pi_0&=\pi_0\circ\alpha_{02}\circ\Theta_2\circ\nu\circ\Theta_2^{-1}\circ\alpha_{02}^{-1}\\
+			\nonumber
 			\Ad{xb^R_{g,1}x^\dagger}\circ\pi_0&=\pi_0\circ \alpha_{02}\circ\nu^{-1}\circ\eta_g^R\circ\nu\circ(\eta_g^R)^{-1}\circ\alpha_{02}^{-1}
 		\end{align}
 		in the case where $\omega$ satisfies assumption \ref{assumption:2Translations}. This shows that $xW_{g,1}x^\dagger$, $xu_{R,1}(g,h)x^\dagger$, $xvx^\dagger$, $xK^R_{g,1}x^\dagger$, $xwx^\dagger$ and $x b^R_{g,1}$ are operators belonging to the second choice. Since our index is invariant under this substitution this concludes the proof when $\omega_0=\omega_{01}=\omega_{02}$. Now suppose that $\omega_{01}\neq\omega_{02}$. Since they are both product states there exists a $\gamma\in\Aut{\AA}$ satisfying $\omega_{02}=\omega_{01}\circ\gamma$ that is of the form $\gamma=\gamma^L\otimes\gamma^R$. We now have
@@ -937,7 +957,9 @@
 		Since by lemma \ref{lem:AdjointOverConeIsInCone}, $ W_{g,1}\delta_g^\sigma W_{g,1}^\dagger\in\IAC_\sigma(\alpha_0,\theta,\Theta)$ (for $\sigma\in\{L,R\}$ and $g\in G$) we get by repetitive use of equation \eqref{eq:CommutantProperty} that
 		\begin{align}
 			&=\delta_g^L W_{g,1}\delta_h^L W_{g,1}^\dagger \underline{\delta_g^R W_{g,1}\delta_h^R W_{g,1}^\dagger} u_{L,1}(g,h)(\delta_{gh}^L)^\dagger  u_{R,1}(g,h)(\delta_{gh}^R)^\dagger\\
+			\nonumber
 			&=\delta_g^L \delta_g^R W_{g,1}\delta_h^L \stkout{ W_{g,1}^\dagger W_{g,1}}\delta_h^R W_{g,1}^\dagger u_{L,1}(g,h)  u_{R,1}(g,h)\underline{(\delta_{gh}^L)^\dagger}(\delta_{gh}^R)^\dagger\\
+			\nonumber
 			&=\delta_g W_{g,1}\delta_h \stkout{W_{g,1}^\dagger W_{g,1}} W_{h,1} W_{gh,1}^\dagger(\delta_{gh})^\dagger=W_{g,2}W_{h,2}W_{gh,2}^\dagger
 		\end{align}
 		concluding the proof of equation \eqref{eq:TransformationUnderDeltaProofNewUIsSplitAppendix}. Using this we obtain:
@@ -947,6 +969,7 @@
 		\end{align}
 		Filling this in the definition of the 2-cochain gives
 		\begin{align}
+			\nonumber
 			C_2(g,h)&=K_{g,2}^RW_{g,2}K_{h,2}^{R}W_{g,2}^\dagger u_{R,2}(g,h) (K_{gh,2}^R)^\dagger v^\dagger u_{R,2}(g,h)^\dagger v\\
 			&=v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger \delta_g W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \delta_g^\dagger\\
 			\nonumber
@@ -969,7 +992,9 @@
 			C_2(g,h)&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^R \stkout{\delta_g^L} W_{g,1}v^\dagger \delta_h^R v K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger \stkout{(\delta_g^L)^\dagger}\\
 			\nonumber
 			&\qquad  W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger W_{g,1}^\dagger (K_{g,1}^R)^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+			\nonumber
 			&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1}^\stkout{R} W_{g,1}v^\dagger \delta_h^R v \stkout{K_{h,1}^R (\delta_h^R)^\dagger W_{g,1}^\dagger W_{g,1}\delta_h^R (K_{h,1}^R)^\dagger} W_{g,1}^\dagger (K_{g,1}^\stkout{R})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v\\
+			\nonumber
 			&=C_1(g,h)v^\dagger \delta_g^R v K_{g,1} W_{g,1}v^\dagger \delta_h^R v W_{g,1}^\dagger (K_{g,1})^\dagger v^\dagger W_{g,1}(\delta^R_h)^\dagger W_{g,1}^\dagger(\delta_g^R)^\dagger v.
 		\end{align}
 		Using the fact that by definition $K_{g,1}W_{g,1}=v^\dagger W_{g,1}v$ we obtain
@@ -978,8 +1003,10 @@
 		\end{align}
 		concluding the proof of lemma \ref{lem:TransformationUnderDelta}. We now proceed with the proof of lemma \ref{lem:TransformationUnderDeltaTwoTranslations}. We define the index in function of the new variables:
 		\begin{align}
+			\nonumber
 			\alpha_2(g)&\defeq v^\dagger b^R_{g,2}v h_g K^R_{g,2}(b^R_{2,g})^\dagger w^\dagger (K^R_{2,g})^\dagger w\\
 			&=v^\dagger \left(w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger\right) v h_g \left(v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger\right) \left(w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger\right)^\dagger w^\dagger (v^\dagger \delta_g^R v K_{g,1}^R (\delta_g^R)^\dagger)^\dagger w\\
+			\nonumber
 			&=v^\dagger w^\dagger\delta^R_g w b_{g,1}^R (\delta^R_g)^\dagger v h_g v^\dagger \delta_g^R v K_{g,1}^R \stkout{(\delta_g^R)^\dagger \delta_g^R} (b_{1,g}^R)^\dagger w^\dagger \stkout{(\delta_g^R)^\dagger w w^\dagger \delta_g^R} (K_{g,1}^R)^\dagger v^\dagger (\delta_g^R)^\dagger v  w.
 		\end{align}
 		If we now insert $vv^\dagger,$ we obtain
@@ -989,6 +1016,7 @@
 		where the cancelation is due to the fact that $v^\dagger \delta^R_g v\in\textrm{IAC}_{R}(\alpha_0,\theta,\Theta)$ whereas $h_g\in \textrm{IAC}_{L}(\alpha_0,\theta,\Theta)$. Again after inserting $vv^\dagger$ and $ww^\dagger$ we now get
 		\begin{align}
 			\alpha_2(g)&=v^\dagger w^\dagger\delta^R_g w \underline{v v^\dagger} b_{g,1}^R v h_g K_{g,1}^R (b_{1,g}^R)^\dagger w^\dagger (K_{g,1}^R)^\dagger \underline{ww^\dagger} v^\dagger (\delta_g^R)^\dagger v  w\\
+			\nonumber
 			&=\stkout{v^\dagger w^\dagger\delta^R_g w v} \alpha_1(g) \stkout{w^\dagger v^\dagger (\delta_g^R)^\dagger v  w}=\alpha_1(g)
 		\end{align}
 		concluding the proof.
@@ -1126,6 +1154,7 @@
 	and these $k^\sigma_g$ will satisfy what was written in remark \ref{rem:GNS_One_Dimensional}. Define $K^\sigma_g=k^\sigma_g\otimes\id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}$. Notice that we have (by construction) that $\forall g,h\in G$, $[K^\sigma_g\otimes\id_{\HH_{\ZZ^2/\sigma}},W_h]=0$. We now get (using this equation and the fact that $W_g$ is a representation)
 	\begin{align}
 		&K_g^R W_g K_h^R W_h W_{gh}^\dagger (K_{gh}^R)^\dagger \stkout{W_{gh}W_h^\dagger W_g^\dagger u_R(g,h)}=\stkout{W_g W_h W_{gh}^\dagger} K_g^R K_h^R (K_{gh}^R)^\dagger\\
+		\nonumber
 		&=k_g^R k_h^R (k_{gh}^R)^\dagger\otimes \id_{\HH_{L_{>-1},\sigma}}\otimes\id_{\HH_{L_{<-1},\sigma}}
 	\end{align}
 	and by remark \ref{rem:GNS_One_Dimensional} this gives that $C(g,h)=\tilde{C}(g,h)$.
@@ -1172,6 +1201,7 @@
 	By what was written in remark \ref{rem:GNS_One_DimensionalTwoTranslations} we get that
 	\begin{align}
 		&=\id_{H_{L_{>-1}}}\otimes\alpha(g) w_{L_{-1}}(\id_{\HH_{L_{-1},L}}\otimes k^R(g))w_{L_{-1}}^\dagger\otimes \id_{H_{L_{<-1}}}\\
+		\nonumber
 		&=\alpha(g)w^\dagger (\id_{H_{L_{>-1}}}\otimes \id_{\HH_{L_{-1},L}}\otimes k^R(g)\otimes \id_{H_{L_{<-1}}}) w=\alpha(g)w^\dagger (\id_{\HH_L}\otimes K^R_g) w
 	\end{align}
 	showing that indeed $\textrm{Index}_{\text{2 trans}}(\omega_\phi)=\textrm{Index}_{\text{1d trans}}(\phi)$.
@@ -1200,6 +1230,7 @@
 		Using lemma \ref{lem:DefinitionOfGroupMorphismVAutEquation} we get that
 		\begin{align}
 			\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta(A)&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}(A)=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\Phi^U_{1;0}\otimes\Phi^D_{1;0}(A)\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)
 		\end{align}
 		here $\Phi_{1;0}=\Phi_{0;1}^{-1}$. This concludes the proof.
@@ -1239,8 +1270,10 @@
 		\end{enumerate}
 		To show the first item just observe that
 		\begin{align}
+			\nonumber
 			&\Ad{\phi_{1,R}(x)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
 			&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\pi_0\circ\alpha_0\circ\Theta(a)y\pi_0\circ\alpha_0\circ\Theta(a)^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\\
+			\nonumber
 			&=\Ad{\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}.
 		\end{align}
 		Now we insert $\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}=\text{Id}$ and obtain:
@@ -1273,6 +1306,7 @@
 		We have
 		\begin{align}
 			x_1x_2&=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_2=\pi_0\circ\alpha_0\circ\Theta(A_1)y_1\pi_0\circ\alpha_0\circ\Theta(A_2)y_1^{\dagger}y_1y_2\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta(A_1\xi_1(A_2))y_1y_2
 		\end{align}
 		giving
@@ -1281,6 +1315,7 @@
 		\end{equation}
 		where $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. Filling this in gives
 		\begin{align}
+			\nonumber
 			&\phi_{1,R}(x_1x_2)\phi_{1,R}(x_2)^\dagger\phi_{1,R}(x_1)^\dagger\\
 			\label{eq:HomomorphismCondition}
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_1\xi_1(A_2))\tilde{a}y_1\stkout{y_2\tilde{a}^\dagger \tilde{a}y_2^\dagger}\tilde{a}^\dagger\\
@@ -1290,6 +1325,7 @@
 		Writing out a part of this gives:
 		\begin{align}
 			&\Ad{\tilde{a}y_1\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger)\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\xi_1\circ\Ad{a^\dagger}\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A_2^\dagger).
 		\end{align}
 		Using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} now yields:
@@ -1350,8 +1386,10 @@
 	\begin{proof}
 		To show that this indeed satisfies equation \eqref{eq:lemDefinitionOfWgMapCondition} observe that using equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} we obtain:
 		\begin{align}
+			\nonumber
 			&\Ad{\phi_2(w^{-s}v^{-p}W_g v^{p}w^{s})}\circ\pi_0\\
 			&=\pi_0\circ \alpha_0\circ\Theta\circ\Ad{a}\circ\nu^{-s}\circ\tau^{-p}\circ\eta_g\circ\beta_g^U\circ\tau^p\circ\nu^{s}\circ\Ad{a^{\dagger}}\circ\Theta^{-1}\circ\alpha_0^{-1}\\
+			\nonumber
 			&=\pi_0\circ \alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{H_L}_{1;0}\otimes\gamma^{H_L}_{1;0}\circ\stkout{\Phi_{0;1}^{-1}}\circ\nu^{-s}\circ\tau^{-p}\circ\eta_g\circ\tau^p\circ\nu^{s}\circ\beta_g^{\tau^{-p}(U)}\circ\stkout{\Phi_{0;1}}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\circ\Theta^{-1}\circ\alpha_0^{-1}.
 		\end{align}
 		Since $\Phi$ commutes with both the $\nu^{-s}\circ\tau^{-p}\circ\eta_g\circ\tau^p\circ\nu^s$ and with the $\beta_g^{\tau^{-p}(U)}$ the result follows.
@@ -1375,6 +1413,7 @@
 		Take $a$ and $\Phi$ as given in equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} and take $\tilde{a}=\pi_0\circ\alpha_0\circ\Theta(a)$. We now get
 		\begin{align}
 			\Ad{w^{-p}W_gw^{p}} (x) &=\Ad{w^{-p}W_gw^{p}}\circ\pi_0\circ\alpha_0\circ\Theta(A) \Ad{w^{-p}W_gw^{p}}(y)\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\nu^{-p}\circ\eta_g\circ\nu^{p}\circ\beta_g^U(A) \Ad{w^{-p}W_gw^{p}}(y).
 		\end{align}
 		We still have that $\Ad{w^{-p}W_gw^{p}}(y)\in\cone_R(\alpha_0,\theta)$. This is because there exists a $\tilde{\xi}\in\Aut{\AA_{C_\theta}\cap \AA_R}$ such that
@@ -1387,17 +1426,19 @@
 		\end{equation}
 		Filling this in gives (where we've used $\tilde{W}_g\defeq w^{-p}W_g w^{p}$ and $\tilde{\eta}_g\defeq \nu^{-p}\circ\eta_g\circ\nu^{p}$ for notational simplicity)
 		\begin{align}
-			&\phi_1(\tilde{W}_gx\tilde{W}_g^\dagger)\phi_2(\tilde{W}_g)\phi_1(x)^\dagger\phi_2(\tilde{W}_g)^\dagger\\
 			\label{eq:phi1phi2matchingConditionEquationAppendix}
-			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\tilde{\eta}_g\circ\beta_g^U(A)\tilde{a}\tilde{W}_g\stkout{y\tilde{W}_g^\dagger\tilde{a}^\dagger}\\
+			&\phi_1(\tilde{W}_gx\tilde{W}_g^\dagger)\phi_2(\tilde{W}_g)\phi_1(x)^\dagger\phi_2(\tilde{W}_g)^\dagger\\
 			\nonumber
-			&\quad\stkout{\tilde{a}\tilde{W}_g\tilde{a}^\dagger\tilde{a}y^\dagger}\tilde{a}^\dagger\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)^\dagger\tilde{a}\tilde{W}_g^\dagger\tilde{a}^\dagger.
+			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\tilde{\eta}_g\circ\beta_g^U(A)\tilde{a}\tilde{W}_g\stkout{y\tilde{W}_g^\dagger\tilde{a}^\dagger}\stkout{\tilde{a}\tilde{W}_g\tilde{a}^\dagger\tilde{a}y^\dagger}\tilde{a}^\dagger\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)^\dagger\tilde{a}\tilde{W}_g^\dagger\tilde{a}^\dagger.
 		\end{align}
 		To prove that this is the identity operator observe that
 		\begin{align}
+			\nonumber
 			&\Ad{\tilde{a}\tilde{W}_g\tilde{a}^\dagger}\circ\pi_0\circ\alpha_0\circ\Theta\circ \gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)=\Ad{\tilde{a}\tilde{W}_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a^\dagger}\circ \gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}(A)\\
 			&=\Ad{\tilde{a}\tilde{W}_g}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Phi(A)=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta\circ\tilde{\eta}_g\circ\beta_g^U\circ\Phi(A)\\
+			\nonumber
 			&=\Ad{\tilde{a}}\circ\pi_0\circ\alpha_0\circ\Theta\circ\Phi\circ\tilde{\eta}_g\circ\beta_g^U(A)=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\Phi\circ\tilde{\eta}_g\circ\beta_g^U(A)\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ \gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0} \circ\tilde{\eta}_g\circ\beta_g^U(A).
 		\end{align}
 		Filling this in equation \eqref{eq:phi1phi2matchingConditionEquationAppendix} concludes the proof of the first item. The proof of the last item looks very similar. Now take $x\in \IAC_R^W(\alpha_0,\theta,\Theta)$ arbitrary. Take $A\in\UU(\AA_R)$ and $y\in\text{Cone}_R^W(\alpha_0,\theta)$ such that $x=\pi_0\circ\alpha_0\circ\Theta(A)y$. We now get that (the part with $v$ replaced with $v^\dagger$ and $\tau$ by $\tau^{-1}$ is equivalent)
@@ -1428,13 +1469,16 @@
 		\end{align}
 		Now inserting equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} in this gives
 		\begin{align}
+			\nonumber
 			&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger v}\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\stkout{(\Phi)^{-1}}\circ\xi^{-1}\circ\stkout{\Phi}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\\
 			&=\Ad{\tilde{a}vyv^\dagger\tilde{a}^\dagger }\circ\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\tau\circ\xi^{-1}\circ\underline{\tau^{-1}\circ\tau}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\Ad{a}\circ\tau\circ\xi\circ\tau^{-1}\circ\Ad{a^\dagger}\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\tau\circ\xi^{-1}\circ\tau^{-1}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\circ\tau.
 		\end{align}
 		Using again equation \eqref{eq:DefinitionOfGroupMorphismVAutEquation} now yields:
 		\begin{align}
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\stkout{\Phi^{-1}}\circ\tau\circ\xi\circ\tau^{-1}\circ\stkout{\Phi}\circ\tau\circ\xi^{-1}\circ\tau^{-1}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}\circ\tau\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\stkout{\gamma^{H}_{0;1}\circ\gamma^{\Hsplit}_{1;0}\circ\tau\circ\xi\circ\tau^{-1}\circ\tau\circ\xi^{-1}\circ\tau^{-1}\circ\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}}\circ\tau
 		\end{align}
 		concluding the proof of equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part2Appendix}. We will now show that the expression in equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part1Appendix} is the identity. First, we will show that the $A$'s in equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part1Appendix} cancel. By equation \eqref{eq:lem:phi1phi2matchingCondition:Proof_v_Part2Appendix} we get that
@@ -1506,6 +1550,7 @@
 		Using the fact that $H$ is translation invariant allows us to cancel it giving
 		\begin{align}
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(\gamma^{\Hsplit}_{0;1}\circ\stkout{\gamma^H_{1;0}}\circ\nu\circ\stkout{\gamma^H_{0;1}}\circ\gamma^{\Hsplit}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger))\\
+			\nonumber
 			&=\pi_0\circ\alpha_0\circ\Theta\circ\gamma^H_{0;1}\circ\gamma^{\Hsplit}_{1;0}(\gamma^{\Hsplit}_{0;1}\circ\nu\circ\gamma^{\Hsplit}_{1;0}\circ\nu^{-1}(A_L\otimes A_R)\gamma^{\Hsplit}_{0;1}\circ\gamma^H_{1;0}(\nu(a)a^\dagger)).
 		\end{align}
 		This shows that we can take
