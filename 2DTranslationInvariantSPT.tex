@@ -375,14 +375,10 @@
 	\end{proof}
 	We can use this to define an additional 1d index for translation invariant states. To do this, we will need to use the finiteness of the group explicitly. We will use one particular property of this, namely that finite groups have discrete U(1) representations. By this we mean the following:
 	\begin{lemma}\label{lem:FiniteGroupsHaveDiscreteU(1)Representations}
-		Let $G$ be a finite group. There exists an $\epsilon>0$ such that for all $\alpha\in\hom(G,U(1))$,
-		\begin{equation}
-			\min_{g\in G\setminus 1}\abs{\alpha(g)-1}<\epsilon
-		\end{equation}
-		holds if and only if $\alpha=1$.
+		Let $G$ be a finite group. Let $\alpha:[0,1]\rightarrow\hom(G,U(1)):\lambda\mapsto \alpha_\lambda$ be a map such that $\lambda\mapsto\alpha_\lambda(g)$ is continuous for all $g\in G$. If $\alpha_0(g)=1$ for all $g\in G$ then $\alpha_\lambda(g)=1$ for all $g\in G$ and all $\lambda\in[0,1]$.
 	\end{lemma}
 	\begin{proof}
-		We can simply take $\epsilon\defeq \abs{\exp(2\pi i/\abs{G})-1}$ where $\abs{G}$ is the amount of group elements. This is because if we assume that this minimum is smaller than $\epsilon$ for some $\alpha\in\hom(G,U(1))$, we can reach a contradiction. Namely, let $g\in G$ be the group element that gives the minimum. For all $n\in\NN\cap [1,\abs{G}+1]$, we get that all of the $\alpha(g)^n$ need to be different. This implies that multiplying $g$, $n$ times needs to be different for each $n$ but this is impossible since there are only $\abs{G}$ group elements.
+		 Take $\alpha$ as above with $\alpha_0(g)=1$ for all $g\in G$, we will prove that $\alpha_\lambda(g)=1$ for all $g\in G$ and all $\lambda\in[0,1]$. To do this, let $n$ be the order of $G$. It follows from Lagrange's theorem that $g^n=\id_G$ for all $g\in G$. This implies that there exists a unique ($\lambda$ and $g$ dependent) $k\in\NN\cap [0,n-1]$ such that $\alpha_\lambda(g)=\exp(2\pi ik/n)$. Since for any fixed $g\in G$,  $\alpha_\lambda(g)$ has to be continuously connected to $1$, we deduce that $k=0$ and hence the result follows.
 	\end{proof}
 	\begin{lemma}
 		There exists a (unique) $\alpha\in\hom(G,U(1))$ satisfying that
