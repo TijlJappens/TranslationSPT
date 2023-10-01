@@ -1945,7 +1945,7 @@
 		holds. Moreover $\tilde\alpha=\textrm{Index}_{\text{2 trans}}(\omega\circ\mu)$.
 	\end{lemma}
 	\begin{proof}
-		The existence of the $v,w,K_g^R$ and $b_g^R$ is due to the fact that $\gamma^\Phi_{0;1}\in \QAut{\AA}$. This follows from lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} (which was based on similar lemmas in \cite{ogata2021h3gmathbb}) and from the fact that $\textrm{SQAut}_1(\AA)\subset \QAut{\AA}$. By construction this also implies that indeed $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. We now only have to show the second part of the proof. We have that
+		The existence of the $v,w,K_g^R$ and $b_g^R$ is due to the fact that $\gamma^\Phi_{0;1}\in \QAut{\AA}$. This follows from lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} (which was based on similar lemmas in \cite{ogata2021h3gmathbb}) and from the fact that $\textrm{SQAut}_1(\AA)\subset \QAut{\AA}$ (see definition \ref{def:SQAut2}). By construction this also implies that indeed $\alpha=\textrm{Index}_{\text{2 trans}}(\omega)$. We now only have to show the second part of the proof. We have that
 		\begin{align}
 			\Ad{\tilde{K}_g^U}\circ\pi_0\circ\gamma^\Phi_{0;1}&=\Ad{(b_g^R)^\dagger w^\dagger X_g w X_g^\dagger}\circ\pi_0\circ\gamma^\Phi_{0;1}\\
 			&=\Ad{(b_g^R)^\dagger w^\dagger X_g w}\circ\pi_0\circ\gamma^\Phi_{0;1}\circ(\beta_g^{RU})^{-1}\circ(\eta_g^R)^{-1}\circ(\tilde{\eta}_g^U)^{-1}\\
@@ -2089,12 +2089,32 @@
 		The 2-cochain was defined in subsection \ref{sec:DefinitionH1Index}. The proof that it wasn't dependent on any of the choices made in assumption \ref{assumption:2Translations} was done in subsection \ref{sec:IndexIsInvariantUnderChoices}. The first item in the list concerning the invariance under locally generated automorphisms was shown in subsection \ref{sec:IndexInvariantUnderLGA}. The proof of the second item concerning the relation between the 1d SPT index and the 2d translation SPT index is done in subsection \ref{sec:ExampleTwoTranslations}. The proof of the third item concerning the stacking is done in section \ref{sec:the-role-of-stacking}. The proof of the last item concerning a change of basis of the on-site Hilbert space is done in section \ref{sec:the-indices-are-independent-on-the-choice-of-on-site-hilbert-space}. This concludes the proof.
 	\end{proof}
 	\section{Proof of theorem \ref{lem:IndicesConstantOnStableEquivalenceClasses}}\label{sec:ProofOfMainResult1}\label{sec:ProofOf:lem:IndicesConstantOnStableEquivalenceClasses}
-	Before we prove the theorem, we first need a stronger version of the  will first list some required lemmas along with their proof.
+	\begin{figure}
+		\includegraphics[width=0.5\textwidth]{Figures/AlphaFirstDecomposition2.png}
+		\includegraphics[width=0.5\textwidth]{Figures/AlphaSecondDecomposition2.png}
+		\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ$_1$-automorphism acting on the upper half-plane.}
+		\label{fig:SetupSQAut2}
+	\end{figure}
+	We will use the notation
+	\begin{align}
+		C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
+	\end{align}
+	where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut2}):
+	\begin{definition}\label{def:SQAut2}
+		Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_1(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{[0,\theta_1]}\cap\sigma)}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma)}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(W(C_{[0,\theta_3]})/\nu^\sigma(C_{[0,\theta_2]}\cap\sigma))\cap\rho\cap\sigma)}},\\
+		\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{\tau^\rho(C_{[\theta_3,\pi/2]}\cap\rho)}},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma)}},\\
+		\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma)}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{\tau^{\rho}(C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma)}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$, $\tau^D=\tau^{-1}$, $\nu^R=\nu$ and $\nu^L=\nu^{-1}$) such that
+		\begin{equation}
+			\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
+		\end{equation}
+		If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}_1(\AA)$.
+	\end{definition}
+	As a remark, notice that this definition is not identical to the de definition given in \cite{ogata2021h3gmathbb} due to the translation operators. Before we prove the theorem, we will first list some required lemmas along with their proof.
 	\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_OneTranslation}
 		Take $\omega\in\PP(\AA)$ a short-range entangled state that is $G$-invariant and translation invariant then it satisfies assumption \ref{assumption}.
 	\end{lemma}
 	\begin{proof}
-		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ (by which we mean the definition of SQAut as presented in appendix \versionDifference{\ref{sec:properties-of-locally-generated-automorphisms-2d}}{C of \cite{jappens2023spt}}, not the one in \cite{ogata2021h3gmathbb}) since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to use the fact that $\gamma^{\Phi'}_{0;1}$ is also an SQAut in the definition by \cite{ogata2021h3gmathbb}. This concludes the proof that assumption \ref{assumption} is satisfied.
+		Let $\gamma^{\Phi'}_{0;1}$ be the disentangler with $\Phi'\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) a one-parameter family of interactions. By lemma \versionDifference{\ref{lem:PropertiesLocallyGeneratedAutomorphisms}}{C.4. of \cite{jappens2023spt}} part 5 (which is just a slight modification of section 5 from \cite{ogata2021h3gmathbb}) we have that $\gamma^{\Phi'}_{0;1}\in\textrm{SQAut}_1(\AA)$ since $\textrm{SQAut}_1(\AA)\subset\QAut{\AA}$ this implies that $\gamma^{\Phi'}_{0;1}\in\QAut{\AA}$. The existence of the $\tilde{\beta}_g$ was done in \cite{ogata2021h3gmathbb} section 3, where one has to substitute the support of the cones used there by the shifted cones seen in the definition of the $\textrm{SQAut}_2$. This concludes the proof that assumption \ref{assumption} is satisfied.
 	\end{proof}
 	\begin{lemma}\label{lem:SRE_Implies_QDisentanglable_TwoTranslations}
 		Let $\omega$ be a short-range entangled state that is $G$-invariant and translation invariant in two directions then it satisfies assumption \ref{assumption:2Translations}.
@@ -2200,27 +2220,7 @@
 		where $C_1$ is the cone one obtains by putting the $B_{n,L}$ on top of each other whereas $C_2$ is the right half plane of $\ZZ^2$. The proof that the sum over the cones is bounded is done explicitly in \cite{ogata2021h3gmathbb}.
 	\end{proof}
 	\section{Properties of locally generated automorphisms: 2d}\label{sec:properties-of-locally-generated-automorphisms-2d}
-	\begin{figure}
-		\includegraphics[width=0.5\textwidth]{Figures/AlphaFirstDecomposition2.png}
-		\includegraphics[width=0.5\textwidth]{Figures/AlphaSecondDecomposition2.png}
-		\caption{This figure shows the support of the different automorphisms present in the decomposition of an SQ$_1$-automorphism acting on the upper half-plane.}
-		\label{fig:SetupSQAut2}
-	\end{figure}
-	In this section, let $\AA$ be a quasi-local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yoshiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed in \cite{doi:10.1063/1.5095769}. We will use the notation
-	\begin{align}
-		C_{[0,\theta]}&\defeq C_{\theta}&C_{]\theta_1,\theta_2]}&\defeq C_{\theta_2}/C_{\theta_1}&C_{]\theta,\pi/2]}&\defeq \ZZ^2/C_{\theta}
-	\end{align}
-	where $0<\theta<\pi/2$ and $0<\theta_1<\theta_2<\pi_2$. In analogy with section 2.1 from \cite{ogata2021h3gmathbb} we will define some classes of automorphisms (see figure \ref{fig:SetupSQAut2}):
-	\begin{definition}\label{def:SQAut2}
-		Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{SQAut}_2(\AA)$ if and only if for any $0<\theta_{0.8}<\theta_{1}<\theta_{1.2}<\theta_{1.8}<\theta_{2}<\theta_{2.2}<\theta_{2.8}<\theta_3<\theta_{3.2}<\pi/2$ there exist $a\in\AA$, $\alpha_{[0,\theta_1], \sigma}\in\Aut{\AA_{\nu^{\sigma}(C_{[0,\theta_1]}\cap\sigma)}},\:\alpha_{]\theta_1,\theta_2],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_1,\theta_2]}\cap\rho\cap\sigma)}},\:\alpha_{]\theta_2,\theta_3],\sigma,\rho}\in\Aut{\AA_{(W(C_{[0,\theta_3]})/\nu^\sigma(C_{[0,\theta_2]}\cap\sigma))\cap\rho\cap\sigma)}},\\
-		\alpha_{]\theta_3,\pi/2],\rho}\in\Aut{\AA_{\tau^\rho(C_{[\theta_3,\pi/2]}\cap\rho)}},\:\alpha_{]\theta_{0.8},\theta_{1.2}],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_{0.8},\theta_{1.2}]}\cap\rho\cap\sigma)}},\\
-		\alpha_{]\theta_{1.8},\theta_{2.2}],\sigma,\rho}\in\Aut{\AA_{\nu^{\sigma}(C_{]\theta_{1.8},\theta_{2.2}]}\cap\rho\cap\sigma)}}$ and  $\alpha_{]\theta_{2.8},\theta_{3.2}],\sigma,\rho}\in\Aut{\AA_{\tau^{\rho}(C_{]\theta_{2.8},\theta_{3.2}]}\cap\rho\cap\sigma)}}$ for any $\rho\in\{U,D\}$ and $\sigma\in\{L,R\}$ (here $\tau^U=\tau$, $\tau^D=\tau^{-1}$, $\nu^R=\nu$ and $\nu^L=\nu^{-1}$) such that
-		\begin{equation}
-			\alpha=\Ad{a}\circ \bigotimes_{\sigma}\alpha_{[0,\theta_1],\sigma}\circ\bigotimes_{\sigma,\rho}\alpha_{]\theta_1,\theta_2],\sigma,\rho}\circ\bigotimes_{\rho}\alpha_{[\theta_3,\pi/2]}\circ\bigotimes_{\rho,\sigma}\left(\alpha_{]\theta_{0.8},\theta_{1.2}],\rho,\sigma}\otimes\alpha_{]\theta_{1.8},\theta_{2.2}],\rho,\sigma}\otimes\alpha_{]\theta_{2.8},\theta_{3.2}],\rho,\sigma} \right).
-		\end{equation}
-		If additionally everything (except $a$) commutes with $\beta_g^U$ we say that $\alpha\in \textrm{GSQAut}_2(\AA)$.
-	\end{definition}
-	As a remark, notice that this definition is not identical to the de definition given in \cite{ogata2021h3gmathbb} due to the translation operators. We now need two additional classes of automorphisms:
+	In this section, let $\AA$ be a quasi-local $C^*$ algebra over $\ZZ^2$. Take $H\in\BB_{F_\phi}([0,1])$ (for some $0<\phi<1$) and $\gamma^H_{s;t}$ its locally generated automorphism (see section \ref{sec:Interactions}). We will now show some properties of this locally generated automorphism $\gamma^H_{s;t}$. In this section we will heavily rely on the framework and theorems of Yoshiko Ogata \cite{ogata2021h3gmathbb} who in her turn relies heavily on the framework developed in \cite{doi:10.1063/1.5095769}. We now need two additional classes of automorphisms:
 	\begin{definition}
 		Take $\alpha\in\Aut{\AA}$. We say that $\alpha\in\textrm{HAut}_1(\AA)$ if and only if for any $0<\theta<\pi/2$ there exists an $a\in\UU(\AA)$ and some $\alpha_\sigma\in\Aut{\AA_{\nu^{\sigma}(C_\theta\cap\sigma)}}$ for each $\sigma\in\{L,R\}$ such that
 		\begin{equation}
@@ -2234,7 +2234,7 @@
 		\end{equation}
 		If furthermore $\alpha_U\circ\beta_g^U=\beta_g^U\circ\alpha_U$ we say that $\alpha\in\textrm{GVAut}_1(\AA)$.
 	\end{definition}
-	Now we will state some properties of locally generated automorphisms:
+	Additionally, remember the definition of the $\textrm{QAut}_2(\AA)$ that was presented in definition \ref{def:SQAut2}. Now we will state some properties of locally generated automorphisms:
 	\begin{lemma}\label{lem:PropertiesLocallyGeneratedAutomorphisms}
 		Take $H$ an interaction such that there exists a $0<\phi<1$ satisfying that $\norm{H}_{f_\phi}\leq 1$. The following statements now hold (for any $s,t\in\RR$):
 		\begin{enumerate}
